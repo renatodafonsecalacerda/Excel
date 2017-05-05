@@ -1,0 +1,455 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0073)http://www.ambienteoffice.com.br/officevba/early_binding_vs_late_binding/ -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head id="ctl00_head1"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>
+	Early Binding Vs Late Binding - VBA - Ambiente Office
+</title><link href="./Early Binding Vs Late Binding - VBA - Ambiente Office_files/StyleSheet.css" type="text/css" rel="stylesheet">
+<script async="" type="text/javascript" src="./Early Binding Vs Late Binding - VBA - Ambiente Office_files/ca-pub-5660991104621730.js"></script><script type="text/javascript" async="" src="./Early Binding Vs Late Binding - VBA - Ambiente Office_files/ga.js"></script><script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-27458279-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function () {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
+        <style type="text/css">
+            .auto-style1 {
+                width: 119px;
+                height: 500px;
+            }
+        </style>
+        <script type="text/javascript" src="./Early Binding Vs Late Binding - VBA - Ambiente Office_files/saved_resource"></script><style type="text/css">.gscb_a{display:inline-block;font:27px/13px arial,sans-serif}.gsst_a .gscb_a{color:#a1b9ed;cursor:pointer}.gsst_a:hover .gscb_a,.gsst_a:focus .gscb_a{color:#36c}.gsst_a{display:inline-block}.gsst_a{cursor:pointer;padding:0 4px}.gsst_a:hover{text-decoration:none!important}.gsst_b{font-size:16px;padding:0 2px;position:relative;user-select:none;-webkit-user-select:none;white-space:nowrap}.gsst_e{opacity:0.55;}.gsst_a:hover .gsst_e,.gsst_a:focus .gsst_e{opacity:0.72;}.gsst_a:active .gsst_e{opacity:1;}.gsst_f{background:white;text-align:left}.gsst_g{background-color:white;border:1px solid #ccc;border-top-color:#d9d9d9;box-shadow:0 2px 4px rgba(0,0,0,0.2);-webkit-box-shadow:0 2px 4px rgba(0,0,0,0.2);margin:-1px -3px;padding:0 6px}.gsst_h{background-color:white;height:1px;margin-bottom:-1px;position:relative;top:-1px}.gsib_a{width:100%;padding:4px 6px 0}.gsib_a,.gsib_b{vertical-align:top}.gssb_c{border:0;position:absolute;z-index:989}.gssb_e{border:1px solid #ccc;border-top-color:#d9d9d9;box-shadow:0 2px 4px rgba(0,0,0,0.2);-webkit-box-shadow:0 2px 4px rgba(0,0,0,0.2);cursor:default}.gssb_f{visibility:hidden;white-space:nowrap}.gssb_k{border:0;display:block;position:absolute;top:0;z-index:988}.gsdd_a{border:none!important}.gsq_a{padding:0}.gscsep_a{display:none}.gssb_a{padding:0 7px}.gssb_a,.gssb_a td{white-space:nowrap;overflow:hidden;line-height:22px}#gssb_b{font-size:11px;color:#36c;text-decoration:none}#gssb_b:hover{font-size:11px;color:#36c;text-decoration:underline}.gssb_g{text-align:center;padding:8px 0 7px;position:relative}.gssb_h{font-size:15px;height:28px;margin:0.2em;-webkit-appearance:button}.gssb_i{background:#eee}.gss_ifl{visibility:hidden;padding-left:5px}.gssb_i .gss_ifl{visibility:visible}a.gssb_j{font-size:13px;color:#36c;text-decoration:none;line-height:100%}a.gssb_j:hover{text-decoration:underline}.gssb_l{height:1px;background-color:#e5e5e5}.gssb_m{color:#000;background:#fff}.gsfe_a{border:1px solid #b9b9b9;border-top-color:#a0a0a0;box-shadow:inset 0px 1px 2px rgba(0,0,0,0.1);-moz-box-shadow:inset 0px 1px 2px rgba(0,0,0,0.1);-webkit-box-shadow:inset 0px 1px 2px rgba(0,0,0,0.1);}.gsfe_b{border:1px solid #4d90fe;outline:none;box-shadow:inset 0px 1px 2px rgba(0,0,0,0.3);-moz-box-shadow:inset 0px 1px 2px rgba(0,0,0,0.3);-webkit-box-shadow:inset 0px 1px 2px rgba(0,0,0,0.3);}.gssb_a{padding:0 7px}.gssb_e{border:0}.gssb_l{margin:5px 0}.gssb_c .gsc-completion-container{position:static}.gssb_c{z-index:5000}.gsc-completion-container table{background:transparent;font-size:inherit;font-family:inherit}.gssb_c > tbody > tr,.gssb_c > tbody > tr > td,.gssb_d,.gssb_d > tbody > tr,.gssb_d > tbody > tr > td,.gssb_e,.gssb_e > tbody > tr,.gssb_e > tbody > tr > td{padding:0;margin:0;border:0}.gssb_a table,.gssb_a table tr,.gssb_a table tr td{padding:0;margin:0;border:0}</style><script>window["_GOOG_TRANS_EXT_VER"] = "1";</script><script type="text/javascript" src="./Early Binding Vs Late Binding - VBA - Ambiente Office_files/search.I.js"></script></head>
+    <body style="">
+	    <div class="texto" style="position: absolute; left: 50%; margin-left: -512px;">
+			<form name="aspnetForm" method="post" action="http://www.ambienteoffice.com.br/officevba/early_binding_vs_late_binding/Default.aspx" id="aspnetForm">
+<div>
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKLTcwODg1MTE2NmRkAxs3KBjFMoBxHmY7gCmdBykD8ok=">
+</div>
+
+				<div>
+				    <img src="./Early Binding Vs Late Binding - VBA - Ambiente Office_files/topo.jpg" alt="titulo.jpg"></div>
+				<table cellpadding="1" cellspacing="1" style="width: 1000px; text-align: left;">
+					<tbody><tr>
+						<td style="background-color: #E7DAD1; padding-left: 7px;" valign="top">
+							<p><strong>Home</strong></p>
+							<p><a href="http://www.ambienteoffice.com.br/default.aspx">Principal</a></p>
+                            <p><a href="http://www.ambienteoffice.com.br/RSS.xml">
+                              <img src="./Early Binding Vs Late Binding - VBA - Ambiente Office_files/RSS.png" style="width: 16px; height: 16px;">
+                              Assinar</a>
+                            </p>
+                            <p>&nbsp;</p>
+							<p><strong>Dicas</strong></p>
+                            <p><a href="http://www.ambienteoffice.com.br/excel">Excel</a></p>
+                            <p><a href="http://www.ambienteoffice.com.br/word">Word</a></p>
+                            <p><a href="http://www.ambienteoffice.com.br/outlook">Outlook</a></p>
+							<p><a href="http://www.ambienteoffice.com.br/officevba">Office/VBA</a></p>
+							<p><a href="http://www.ambienteoffice.com.br/suplementos">Suplementos</a></p>
+							<p><a href="http://www.ambienteoffice.com.br/videos">Vídeos</a></p>
+                            <p><a href="http://www.ambienteoffice.com.br/outros">Outros</a></p>
+                            <script type="text/javascript"><!--
+                                google_ad_client = "ca-pub-5660991104621730";
+                                /* ac1 */
+                                google_ad_slot = "6799049033";
+                                google_ad_width = 120;
+                                google_ad_height = 600;
+//-->
+</script>
+<script type="text/javascript" src="./Early Binding Vs Late Binding - VBA - Ambiente Office_files/show_ads.js">
+</script><ins id="aswift_0_expand" style="display:inline-table;border:none;height:600px;margin:0;padding:0;position:relative;visibility:visible;width:120px;background-color:transparent"><ins id="aswift_0_anchor" style="display:block;border:none;height:600px;margin:0;padding:0;position:relative;visibility:visible;width:120px;background-color:transparent"><iframe width="120" height="600" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;"></iframe></ins></ins>
+                            
+                            </td>
+						<td style="width: 86.5%; height: 743px;" valign="top">
+							
+                                <p>
+                                    <strong>Busque neste site:</strong></p>
+                                <div id="cse" style="width: 100%;"><div class="gsc-control-cse gsc-control-cse-pt_BR"><div class="gsc-control-wrapper-cse" dir="ltr"><form class="gsc-search-box" accept-charset="utf-8"><table cellspacing="0" cellpadding="0" class="gsc-search-box"><tbody><tr><td class="gsc-input"><input autocomplete="off" type="text" size="10" class=" gsc-input" name="search" title="pesquisar" id="gsc-i-id1" dir="ltr" spellcheck="false" style="outline: none; background: url(http://www.google.com/cse/intl/pt_BR/images/google_custom_search_watermark.gif) 0% 50% no-repeat rgb(255, 255, 255);"><input type="hidden" name="bgresponse" id="bgresponse"></td><td class="gsc-search-button"><input type="button" value="Pesquisar" class="gsc-search-button" title="pesquisar"></td><td class="gsc-clear-button"><div class="gsc-clear-button" title="limpar resultados">&nbsp;</div></td></tr></tbody></table><table cellspacing="0" cellpadding="0" class="gsc-branding"><tbody><tr><td class="gsc-branding-user-defined"></td><td class="gsc-branding-text"><div class="gsc-branding-text">tecnologia</div></td><td class="gsc-branding-img"><img src="./Early Binding Vs Late Binding - VBA - Ambiente Office_files/small-logo.png" class="gsc-branding-img"></td></tr></tbody></table></form><div class="gsc-results-wrapper-nooverlay"><div class="gsc-tabsAreaInvisible"><div class="gsc-tabHeader gsc-inline-block gsc-tabhActive">Pesquisa personalizada do Google</div><span class="gs-spacer"> </span></div><div class="gsc-tabsAreaInvisible"></div><div class="gsc-above-wrapper-area-invisible"><table cellspacing="0" cellpadding="0" class="gsc-above-wrapper-area-container"><tbody><tr><td class="gsc-result-info-container"><div class="gsc-result-info-invisible"></div></td></tr></tbody></table></div><div class="gsc-adBlockInvisible"></div><div class="gsc-wrapper"><div class="gsc-adBlockInvisible"></div><div class="gsc-resultsbox-invisible"><div class="gsc-resultsRoot gsc-tabData gsc-tabdActive"><table cellspacing="0" cellpadding="0" class="gsc-resultsHeader"><tbody><tr><td class="gsc-twiddleRegionCell"><div class="gsc-twiddle"><div class="gsc-title">Web</div></div><div class="gsc-stats"></div><div class="gsc-results-selector gsc-all-results-active"><div class="gsc-result-selector gsc-one-result" title="mostrar um resultado">&nbsp;</div><div class="gsc-result-selector gsc-more-results" title="mostrar mais resultados">&nbsp;</div><div class="gsc-result-selector gsc-all-results" title="mostrar todos os resultados">&nbsp;</div></div></td><td class="gsc-configLabelCell"></td></tr></tbody></table><div><div class="gsc-expansionArea"></div></div></div></div></div></div></div></div></div>
+<script src="./Early Binding Vs Late Binding - VBA - Ambiente Office_files/jsapi" type="text/javascript"></script>
+<script type="text/javascript">
+    google.load('search', '1', { language: 'pt-BR' });
+    google.setOnLoadCallback(function () {
+        var customSearchControl = new google.search.CustomSearchControl(
+      '004825401037283249796:-fqe-je_inq');
+
+        customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+        customSearchControl.draw('cse');
+    }, true);
+</script><script src="./Early Binding Vs Late Binding - VBA - Ambiente Office_files/saved_resource(1)" type="text/javascript"></script><link href="./Early Binding Vs Late Binding - VBA - Ambiente Office_files/default+pt_BR.css" type="text/css" rel="stylesheet"><script src="./Early Binding Vs Late Binding - VBA - Ambiente Office_files/default+pt_BR.I.js" type="text/javascript"></script>
+                                &nbsp;<link rel="stylesheet" href="./Early Binding Vs Late Binding - VBA - Ambiente Office_files/default.css" type="text/css"><script type="text/javascript"><!--
+    google_ad_client = "ca-pub-5660991104621730";
+    /* cab1 */
+    google_ad_slot = "1307987105";
+    google_ad_width = 728;
+    google_ad_height = 90;
+//-->
+</script><script type="text/javascript" src="./Early Binding Vs Late Binding - VBA - Ambiente Office_files/show_ads.js">
+</script><ins id="aswift_1_expand" style="display:inline-table;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent"><ins id="aswift_1_anchor" style="display:block;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent"><iframe width="728" height="90" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_1" name="aswift_1" style="left:0;position:absolute;top:0;"></iframe></ins></ins>
+                            
+							
+    <p class="titulo">Early Binding Vs Late Binding</p>
+    <p><em>Última atualização: 10/06/2012</em></p>
+    <p><a href="http://www.ambienteoffice.com.br/officevba/early_binding_vs_late_binding/#introducao">Introdução</a></p>
+    <p align="left"><a href="http://www.ambienteoffice.com.br/officevba/early_binding_vs_late_binding/#exemplo">Exemplo</a></p>
+    <p><a href="http://www.ambienteoffice.com.br/officevba/early_binding_vs_late_binding/#comparacao_entre_early_binding_e_late_binding">Comparação 
+        entre Early Binding e Late Binding</a></p>
+    <p><a href="http://www.ambienteoffice.com.br/officevba/early_binding_vs_late_binding/#usar_early_binding_e_late_binding_no_mesmo_codigo">Usar Early Binding e 
+        Late Binding no mesmo Código</a></p>
+    <p><a href="http://www.ambienteoffice.com.br/officevba/early_binding_vs_late_binding/#referencias">Referências</a></p>
+    <p>&nbsp;</p>
+    <p class="titulo" id="introducao">Introdução</p>
+    <p>Existem dois métodos de programação no que tange o uso de objetos 
+        em VBA: <strong>Early Binding</strong> (<em>Ligação Atual</em>) e <strong>Late Binding</strong> 
+        (<em>Ligação Tardia</em>)</p>
+    <p>Essas técnicas se manifestam na etapa de 
+        declaração de variáveis (<a href="http://www.ambienteoffice.com.br/officevba/declaracao_de_variavel/">clique aqui para 
+        saber mais sobre declaração de variáveis</a>).</p>
+    <p>Basicamente, no Early Binding as variáveis são declaradas já com o 
+        tipo de dado que ela vai assumir, ou seja, antes de serem invocadas. Em contrapartida, no Late 
+        Binding, as variáveis são declaradas como objeto e assumem seu tipo na <strong>primeira 
+        vez que uma atribuição à ela é feita</strong>.</p>
+    <p>&nbsp;</p>
+    <p><span class="titulo" id="exemplo">Exemplo</span></p>
+    <p>Suponha que, a partir do PowerPoint eu queria criar uma Pasta de 
+        Trabalho do Excel, e numa Planilha, povoar nas linhas as informações de cada 
+        Shape: o Slide em que aparece, o tipo de Shape e seu texto, caso tenha.</p>
+    <p>Para efeitos didáticos, vamos implementar primeiramente o código da 
+        rotina acima através do 
+        Late Binding:</p>
+    <pre class="csharpcode"><span class="kwrd">Sub</span> ExportaExcel_LateBinding()
+    
+    <span class="rem">'Declarações de objetos do PowerPoint</span>
+    <span class="kwrd">Dim</span> shp <span class="kwrd">As</span> <span class="kwrd">Object</span>
+    <span class="kwrd">Dim</span> sld <span class="kwrd">As</span> <span class="kwrd">Object</span>
+    
+    <span class="rem">'Declarações de objetos do Excel</span>
+    <span class="kwrd">Dim</span> xlApp <span class="kwrd">As</span> <span class="kwrd">Object</span>
+    <span class="kwrd">Dim</span> wb <span class="kwrd">As</span> <span class="kwrd">Object</span>
+    <span class="kwrd">Dim</span> ws <span class="kwrd">As</span> <span class="kwrd">Object</span>
+    
+    <span class="kwrd">Dim</span> n <span class="kwrd">As</span> <span class="kwrd">Long</span>
+    
+    <span class="rem">'Criar instância do Excel</span>
+    <span class="kwrd">Set</span> xlApp = CreateObject(<span class="str">"Excel.Application"</span>)
+    xlApp.Visible = <span class="kwrd">True</span>
+    <span class="kwrd">Set</span> wb = xlApp.Workbooks.Add
+    <span class="kwrd">Set</span> ws = wb.Sheets(1)
+    
+    <span class="kwrd">With</span> ws
+        .Range(<span class="str">"A1:D1"</span>) = Array(<span class="str">"Nome do Slide"</span>, <span class="str">"Nome do shape"</span>, <span class="str">"Tipo"</span>, <span class="str">"Texto"</span>)
+        n = 2
+        <span class="kwrd">For</span> <span class="kwrd">Each</span> sld <span class="kwrd">In</span> ActivePresentation.Slides
+            <span class="kwrd">For</span> <span class="kwrd">Each</span> shp <span class="kwrd">In</span> sld.Shapes
+                .Cells(n, <span class="str">"A"</span>) = sld.Name
+                .Cells(n, <span class="str">"B"</span>) = shp.Name
+                <span class="kwrd">Select</span> <span class="kwrd">Case</span> shp.Type
+                    <span class="kwrd">Case</span> msoPicture
+                        .Cells(n, <span class="str">"C"</span>) = <span class="str">"Figura (msoPicture)"</span>
+                    <span class="kwrd">Case</span> msoPlaceholder
+                        .Cells(n, <span class="str">"C"</span>) = <span class="str">"Texto (msoPlaceholder)"</span>
+                        .Cells(n, <span class="str">"D"</span>) = shp.TextFrame.TextRange.Text
+                    <span class="kwrd">Case</span> <span class="kwrd">Else</span>
+                        .Cells(n, <span class="str">"C"</span>) = <span class="str">"Outro tipo"</span>
+                <span class="kwrd">End</span> <span class="kwrd">Select</span>
+                n = n + 1
+            <span class="kwrd">Next</span> shp
+        <span class="kwrd">Next</span> sld
+        .Columns.AutoFit
+    <span class="kwrd">End</span> <span class="kwrd">With</span>
+    
+    <span class="kwrd">Set</span> ws = <span class="kwrd">Nothing</span>
+    <span class="kwrd">Set</span> wb = <span class="kwrd">Nothing</span>
+    <span class="kwrd">Set</span> xlApp = <span class="kwrd">Nothing</span>
+    
+    <span class="kwrd">Set</span> shp = <span class="kwrd">Nothing</span>
+    <span class="kwrd">Set</span> sld = <span class="kwrd">Nothing</span>
+    
+<span class="kwrd">End</span> Sub</pre>
+    <p>Vale ressaltar que esse código é executado <strong>a partir do VBA 
+        do PowerPoint</strong>. Veja que tanto os objetos de PowerPoint 
+        como os de Excel foram declarados apenas como objetos.</p>
+    <p>Observe que, por exemplo, <strong>xlApp</strong> só tomou a forma de um 
+        <strong>Excel 
+        Application</strong> no momento em que foi invocado o comando que utiliza a variável. 
+        Você pode verificar isso escrevendo, na Janela de Verificação Imediata, o 
+        comando <strong>?TypeName(xlApp)</strong> e verificar como a variável toma forma: ela começa com 
+        valor <strong>Empty</strong>, mas logo após executar a linha <strong>Set xlApp = 
+        CreateObject("Excel.Application")</strong> ela assume um tipo <strong>
+        Application</strong> (Nesse caso ela é um Application da biblioteca do Excel).</p>
+    <p>Na técnica do Early Binding, declara-se especificamente o tipo 
+        das variáveis antes de elas serem usadas no código, conforme 
+        mostrado abaixo na linhas em negrito:</p>
+<!-- code formatted by http://manoli.net/csharpformat/ -->
+    <pre class="csharpcode"><span class="kwrd">Sub</span> EarlyBinding()
+    
+    <span class="rem">'Declarações de objetos do PowerPoint</span>
+<strong>    </strong><span class="kwrd"><strong>Dim</strong></span><strong> shp </strong><span class="kwrd"><strong>As</strong></span><strong> PowerPoint.Shape
+    </strong><span class="kwrd"><strong>Dim</strong></span><strong> sld </strong><span class="kwrd"><strong>As</strong></span><strong> PowerPoint.Slide
+</strong>    
+    <span class="rem">'Declarações de objetos do Excel</span>
+<strong>    </strong><span class="kwrd"><strong>Dim</strong></span><strong> xlApp </strong><span class="kwrd"><strong>As</strong></span><strong> Excel.Application
+    </strong><span class="kwrd"><strong>Dim</strong></span><strong> wb </strong><span class="kwrd"><strong>As</strong></span><strong> Excel.Workbook
+    </strong><span class="kwrd"><strong>Dim</strong></span><strong> ws </strong><span class="kwrd"><strong>As</strong></span><strong> Excel.Worksheet
+</strong>    
+    <span class="kwrd">Dim</span> n <span class="kwrd">As</span> <span class="kwrd">Long</span>
+    
+    <span class="rem">'Criar instância do Excel</span>
+    <span class="kwrd">Set</span> xlApp = CreateObject(<span class="str">"Excel.Application"</span>)
+    xlApp.Visible = <span class="kwrd">True</span>
+    <span class="kwrd">Set</span> wb = xlApp.Workbooks.Add
+    <span class="kwrd">Set</span> ws = wb.Sheets(1)
+    
+    <span class="kwrd">With</span> ws
+        .Range(<span class="str">"A1:D1"</span>) = Array(<span class="str">"Nome do Slide"</span>, <span class="str">"Nome do shape"</span>, <span class="str">"Tipo"</span>, <span class="str">"Texto"</span>)
+        n = 2
+        <span class="kwrd">For</span> <span class="kwrd">Each</span> sld <span class="kwrd">In</span> ActivePresentation.Slides
+            <span class="kwrd">For</span> <span class="kwrd">Each</span> shp <span class="kwrd">In</span> sld.Shapes
+                .Cells(n, <span class="str">"A"</span>) = sld.Name
+                .Cells(n, <span class="str">"B"</span>) = shp.Name
+                <span class="kwrd">Select</span> <span class="kwrd">Case</span> shp.Type
+                    <span class="kwrd">Case</span> msoPicture
+                        .Cells(n, <span class="str">"C"</span>) = <span class="str">"Figura (msoPicture)"</span>
+                    <span class="kwrd">Case</span> msoPlaceholder
+                        .Cells(n, <span class="str">"C"</span>) = <span class="str">"Texto (msoPlaceholder)"</span>
+                        .Cells(n, <span class="str">"D"</span>) = shp.TextFrame.TextRange.Text
+                    <span class="kwrd">Case</span> <span class="kwrd">Else</span>
+                        .Cells(n, <span class="str">"C"</span>) = <span class="str">"Outro tipo"</span>
+                <span class="kwrd">End</span> <span class="kwrd">Select</span>
+                n = n + 1
+            <span class="kwrd">Next</span> shp
+        <span class="kwrd">Next</span> sld
+        .Columns.AutoFit
+    <span class="kwrd">End</span> <span class="kwrd">With</span>
+    
+    <span class="kwrd">Set</span> ws = <span class="kwrd">Nothing</span>
+    <span class="kwrd">Set</span> wb = <span class="kwrd">Nothing</span>
+    <span class="kwrd">Set</span> xlApp = <span class="kwrd">Nothing</span>
+    
+    <span class="kwrd">Set</span> shp = <span class="kwrd">Nothing</span>
+    <span class="kwrd">Set</span> sld = <span class="kwrd">Nothing</span>
+    
+<span class="kwrd">End</span> Sub</pre>
+    <p>Tirando a parte em negrito, o resto do código continua o mesmo. No entanto, iremos nos 
+        deparar com um problema se tentarmos executar o código, conforme figura abaixo:</p>
+    <p>
+        <img src="./Early Binding Vs Late Binding - VBA - Ambiente Office_files/001.jpg" style="width: 810px; height: 360px"></p>
+        <p>Esse problema 
+        aconteceu porque a variável <strong>xlApp</strong> foi declarada por um tipo (que é<strong> 
+        Excel.Application</strong>) que não foi previamente definido ou que não está nas 
+        referências das bibliotecas do VBE. Logo, para esse exemplo funcionar, deve-se 
+        adicionar a biblioteca<strong> Microsoft Excel XX.0 Object Library</strong> (onde 
+        <strong>XX</strong> é o 
+        número da versão do seu Office). <a href="http://www.ambienteoffice.com.br/officevba/referencias_e_bibliotecas/default.aspx">Para saber 
+        como visualizar, adicionar e remover referências à bibliotecas, clique aqui</a>.</p>
+    <p>O motivo do VBE ter encontrado a biblioteca <strong>PowerPoint.Shape</strong> e não 
+        ter encontrado <strong>Excel.Application</strong> se dá pelo fato do VBE utilizado para executar 
+        o código ser do PowerPoint. Logo, a biblioteca<strong> Microsoft PowerPoint XX.0 Object 
+        Library</strong>, por padrão já é uma referência ao VBE do PowerPoint.</p>
+    <p>Ao adicionar a referência ao Excel, tente executar o código 
+        novamente. Ele produzirá o mesmo resultado do caso da implementação em Late 
+        Binding (código da rotina <strong>ExportaExcel_LateBinding</strong>).</p>
+    <p>Note que, para o caso do Early Binding, poderia-se fazer as 
+        declarações suprimindo os prefixos Excel e Powerpoint que o programa funcionaria 
+        da mesma forma:</p>
+    <pre class="csharpcode"><span class="kwrd">Sub</span> EarlyBinding2()
+
+    <span class="rem">'Declarações de objetos do PowerPoint</span>
+    <span class="kwrd">Dim</span> shp <span class="kwrd">As</span> Shape
+    <span class="kwrd">Dim</span> sld <span class="kwrd">As</span> Slide
+    
+    <span class="rem">'Declarações de objetos do Excel</span>
+    <span class="kwrd">Dim</span> xlApp <span class="kwrd">As</span> Application
+    <span class="kwrd">Dim</span> wb <span class="kwrd">As</span> Workbook
+    <span class="kwrd">Dim</span> ws <span class="kwrd">As</span> Worksheet
+
+    <span class="rem">'continuação do código...</span>
+</pre>
+    <p>Pessoalmente, quando trabalho com a integração entre mais de uma Aplicação, gosto 
+        de adicionar o prefixo <strong>Excel. </strong>e <strong>&nbsp;PowerPoint.</strong> para saber de qual 
+        biblioteca específica é uma 
+        variável.</p>
+    <p>Dessa forma, elimina-se também a possiblidade de duplicidades de 
+        declaração. Por exemplo: suponha que você refira à uma biblioteca do Excel e uma 
+        do Word num código e declare uma variável como <strong>Range</strong>. O 
+        problema é que em ambas as bibliotecas existe o Objeto <strong>Range</strong> (<strong>Excel.Range</strong> 
+        existe e <strong>Word.Range </strong>existe) e isso pode causar problemas na 
+        execução do 
+        código, dependendo da hierarquia de como as bibliotecas do Excel e do Word estão 
+        inseridas. Além disso, essa prática mantém seu código autodocumentado.</p>
+    <p>Extrapolando ainda mais um pouco, para o exemplo <strong>EarlyBinding2</strong>, 
+        temos uma semi-etapa de Late Binding para a declaração de <strong>xlApp</strong>, pois ela foi 
+        definida como um <strong>Application</strong> genérico, e só na instrução 
+        <strong>Set xlApp = 
+        CreateObject("Excel.Application")</strong> que é especificada que ela é um Application de 
+        Excel.</p>
+    <p>&nbsp;</p>
+    <p id="comparacao_entre_early_binding_e_late_binding">
+        <span class="titulo">Comparação Entre Early Binding e Late Binding</span></p>
+    <p>Muitas pessoas adotam o Early Binding. 
+        Os motivos principais são:</p>
+    <p>-As declarações das variáveis ficam mais organizadas, e por consequência a 
+        depuração do código é mais fácil.</p>
+    <p>-A velocidade de execução do código é normalmente maior, porque a máquina virtual 
+        VBA não faz conversões de tipos de dados de objetos para outros tipos e os tipos 
+        de variáveis são pré-compilados (no caso do Late Binding, os tipos de dados são 
+        convertidos em tempo de execução).</p>
+    <p>-Ao escrever o código com uma referência à biblioteca específica 
+        adicionada, o recurso <em>Intellisense</em> é ativado, como mostrado abaixo:</p>
+    <p>
+        <img src="./Early Binding Vs Late Binding - VBA - Ambiente Office_files/005.jpg" style="width: 337px; height: 194px"></p>
+    <p>-Você tem acesso à modelagem do objeto completa no menu de Ajuda;</p>
+    <p>-Acesso às constantes das outras aplicações, inclusive por 
+        <em>Intellisense</em>. Por exemplo, </p>
+<pre class="csharpcode"><span class="kwrd">Option</span> Explicit
+
+<span class="kwrd">Sub</span> Exemplo1()
+    <span class="kwrd">Dim</span> objWord <span class="kwrd">As</span> Word.Application
+    <span class="kwrd">Set</span> objWord = <span class="kwrd">New</span> Word.Application
+    
+    <span class="kwrd">With</span> objWord
+        .Visible = <span class="kwrd">True</span>
+        .Activate
+        .WindowState = wdWindowStateMaximize
+        .Documents.Open (<span class="str">"c:\temp\temp.doc"</span>)
+    <span class="kwrd">End</span> <span class="kwrd">With</span>
+<span class="kwrd">End</span> Sub</pre>
+    <p>Essa rotina cria uma instância do Word, maximiza a janela através e 
+        abre um Documento. Note que, no momento em que se digita o símbolo <strong>=</strong> 
+        do <strong>.WindowState =</strong>, aparecerá a janela abaixo, caso a referência 
+        à biblioteca Word estiver adicionada:</p>
+    <p>
+        <img src="./Early Binding Vs Late Binding - VBA - Ambiente Office_files/002.jpg" style="width: 528px; height: 326px"></p>
+        <p>Como a biblioteca 
+        está adicionada, o VBE reconhece e atribui valor às constantes. Para esse mesmo 
+        caso, no caso de a biblioteca não estar adicionada (Late Binding), obteríamos o 
+        erro:</p>
+        <p>
+            <img src="./Early Binding Vs Late Binding - VBA - Ambiente Office_files/003.jpg" style="width: 506px; height: 593px"></p>
+    <p>Para esse caso, 
+        teríamos que substituir essa constante por seu valor, que é <em>1</em>. Como 
+        saber que o valor é <em>1</em>? Simples: adicione a referência temporariamente em seu 
+        projeto (ou abra o Word) e digite, na Janela de Verificação Imediata, a linha de 
+        comando<br>
+&nbsp;<strong>?wdWindowStateMaximize</strong> e pressione <em>Enter</em>:</p>
+    <p>
+        <img src="./Early Binding Vs Late Binding - VBA - Ambiente Office_files/006.jpg" style="width: 393px; height: 203px"></p>
+    <p>A questão do recurso do Intellisense é uma grande 
+        vantagem. No Late Binding, o programador escreve o código às 
+        escuras porque o VBE não dá nenhuma dica de quais são as propriedades ou 
+        métodos de cada tipo de objeto.</p>
+    <p>No entanto, se uma Aplicação feita em Early Binding é distribuída para vários 
+        usuários com diversas versões de Office diferentes, recomenda-se usar o Late 
+        Binding porque um computador que tem a versão <em>5.0</em> de uma biblioteca não 
+        executará nenhuma ação de uma biblioteca versão<em> 6.0</em>, por exemplo. Na melhor das 
+        hipóteses, deve-se nivelar a biblioteca por baixo (ou seja, se existem 
+        plataformas com bibliotecas <em>5.0</em>, <em>6.0</em>, <em>7.0</em> e <em>8.0</em>, o programador deve fazer 
+        referência à biblioteca <em>5.0</em>), para que todas as versões da biblioteca tenham 
+        melhor compatibilidade com o código.</p>
+    <p>Para o caso do Late Binding, suas vantagens são:</p>
+    <p>-enquanto a <em>velocidade de execução</em> no Early Binding é 
+        maior, no Late Binding a <em>velocidade de compilação</em> é maior porque o VBE 
+        não precisa ler bibliotecas adicionais para começar a execução do código. Além 
+        disso, o projeto VBA, ao ser aberto, carrega mais rápido pelo mesmo motivo. </p>
+    <p>-O Late Binding atribui a um objeto não só o tipo de biblioteca em 
+        tempo de execução, mas também a versão do mesmo. Por exemplo, se você fizer uma 
+        referência à biblioteca <strong>Microsoft Excel 8.0 Object Library</strong>, seu 
+        código executará sem problemas num computador que tenha a mesma biblioteca na 
+        versão <em>9.0</em>, ocorrendo essa conversão em tempo de execução.</p>
+    <p>Para a afirmação acima, no caso do Early Binding, pode ser que uma 
+        biblioteca versão <em>14.0 (Office 2010)</em> não esteja presente num computador que 
+        possui apenas o <em>Office 12.0 (2007)</em> 
+        e, ao executar o documento no <em>Office 2007</em>, o usuário pode se deparar com 
+        bibliotecas ausentes (onde está <strong>AUSENTE</strong>, na figura abaixo):</p>
+        <p>
+            <img src="./Early Binding Vs Late Binding - VBA - Ambiente Office_files/004.jpg" style="width: 451px; height: 357px"></p>
+    <p>Nesse caso, o usuário deve 
+        manualmente remover essa biblioteca e adicionar uma compatível, como a <strong>
+        Microsoft Word 12.0 Object Library</strong>, se estiver utilizando o <em>Office 
+        2007</em>, por exemplo.</p>
+    <p>Pessoalmente, utilizo a técnica descrita abaixo para desfrutar das vantagens de 
+        ambos.</p>
+    <p>&nbsp;</p>
+    <p id="usar_early_binding_e_late_binding_no_mesmo_codigo"><span class="titulo">Usar Early Binding e Late Binding no Mesmo Código</span></p>
+    <p>Que tal aproveitar os benefícios do Early Binding e sua Aplicação em Late 
+        Binding? Veja como fazer isso:</p>
+<!-- code formatted by http://manoli.net/csharpformat/ -->
+    <pre class="csharpcode"><span class="preproc">#Const</span> blEarlyBinding = <span class="kwrd">True</span>
+
+<span class="kwrd">Sub</span> Early_e_Late()
+    
+    <span class="preproc">#If</span> blEarlyBinding <span class="kwrd">Then</span>
+        <span class="kwrd">Dim</span> appWord <span class="kwrd">As</span> Word.Application
+        <span class="kwrd">Dim</span> doc <span class="kwrd">As</span> Word.document
+        <span class="kwrd">Dim</span> rng <span class="kwrd">As</span> Word.Range
+        <span class="kwrd">Dim</span> prg <span class="kwrd">As</span> Word.Paragraph
+    <span class="preproc">#Else</span>
+        <span class="kwrd">Dim</span> appWord <span class="kwrd">As</span> <span class="kwrd">Object</span>
+        <span class="kwrd">Dim</span> doc <span class="kwrd">As</span> <span class="kwrd">Object</span>
+        <span class="kwrd">Dim</span> rng <span class="kwrd">As</span> <span class="kwrd">Object</span>
+        <span class="kwrd">Dim</span> prg <span class="kwrd">As</span> <span class="kwrd">Object</span>
+        <span class="kwrd">Dim</span> wdWindowStateMaximize <span class="kwrd">As</span> <span class="kwrd">Long</span>
+        wdWindowStateMaximize = 1
+    <span class="preproc">#End If</span>
+    
+    <span class="kwrd">Set</span> appWord = CreateObject(<span class="str">"Word.Application"</span>)
+    
+    <span class="kwrd">With</span> appWord
+        .Visible = <span class="kwrd">True</span>
+        .Activate
+        .WindowState = wdWindowStateMaximize
+        <span class="kwrd">Set</span> doc = appWord.Documents.Add
+        <span class="kwrd">Set</span> prg = doc.Paragraphs(1)
+        <span class="kwrd">Set</span> rng = prg.Range
+        rng = <span class="str">"Teste!"</span>
+    <span class="kwrd">End</span> <span class="kwrd">With</span>
+<span class="kwrd">End</span> Sub</pre>
+    <p>Foram usados símbolos de compilação condicional. No exemplo acima, as linhas 
+        precedidas de <strong>#</strong> são compiladas de acordo com o valor atribuído 
+        à <strong>blEarlyBinding</strong>. Em outras palavras, você não terá erros de 
+        compilação da parte que pode gerar erros de declaração se o teste condicional de
+        <strong>blEarlyBinding</strong> não for verdadeiro para o trecho de código.</p>
+    <p>Durante o tempo de desenvolvimento, adicione a biblioteca do Word e atribua <em>
+        True</em> à <strong>blEarlyBinding</strong>. Quando concluir seu projeto, 
+        atribua <em>False</em> para que o mesmo rode em Late Binding. Fazer manutenção 
+        do sistema numa estrutura dessa é bastante simples: Basta atribuir <em>True</em> 
+        à constante <strong>blEarlyBinding</strong> e aproveitar o Intellisense para 
+        editar seu código.</p>
+    <p>&nbsp;</p>
+    <p><span id="referencias" class="titulo">Referências</span></p>
+    <p><em>Bob Phillips</em>:
+        <a href="http://www.xldynamic.com/source/xld.EarlyLate.html">
+        http://www.xldynamic.com/source/xld.EarlyLate.html</a></p>
+    <p><em>Word MVP</em>:
+        <a href="http://www.word.mvps.org/FAQs/InterDev/EarlyvsLateBinding.htm">
+        http://www.word.mvps.org/FAQs/InterDev/EarlyvsLateBinding.htm</a></p>
+    <p><a href="http://www.ambienteoffice.com.br/officevba/declaracao_de_variavel/">Declaração de Variável</a></p>
+    <p><strong>Download</strong>: <a href="http://www.ambienteoffice.com.br/officevba/early_binding_vs_late_binding/exemplo.rar">Para baixar o conteúdo desta página, clique 
+        aqui</a>.</p>
+    
+							
+                                &nbsp;<script type="text/javascript"><!--
+    google_ad_client = "ca-pub-5660991104621730";
+    /* cab1 */
+    google_ad_slot = "1307987105";
+    google_ad_width = 728;
+    google_ad_height = 90;
+//-->
+</script><script type="text/javascript" src="./Early Binding Vs Late Binding - VBA - Ambiente Office_files/show_ads.js">
+</script><ins id="aswift_2_expand" style="display:inline-table;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent"><ins id="aswift_2_anchor" style="display:block;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent"><iframe width="728" height="90" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_2" name="aswift_2" style="left:0;position:absolute;top:0;"></iframe></ins></ins><p>
+                                    ---</p>
+                                <p>
+                                    <strong>Site de Felipe Costa Gualberto</strong>.</p>
+                                <p>
+                                    <strong>Belo Horizonte, Brasil, 2009-2013</strong>.</p>
+                                <p>
+                                    <a href="mailto:felipe@ambienteoffice.com.br">felipe@ambienteoffice.com.br</a></p>
+                            
+                        </td>
+					</tr>
+				</tbody></table>
+			</form>
+		</div>
+	
+<table cellspacing="0" cellpadding="0" class="gstl_50 gssb_c" style="width: 191px; display: none; top: 151px; left: 258px; position: absolute;"><tbody><tr><td class="gssb_f"></td><td class="gssb_e" style="width: 100%;"></td></tr></tbody></table><img id="hzDownscaled" style="position: absolute; top: -10000px;"><img id="hzDownscaled" style="position: absolute; top: -10000px;"></body></html>

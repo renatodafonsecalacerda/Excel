@@ -1,0 +1,1483 @@
+<!DOCTYPE html>
+<!-- saved from url=(0124)http://stackoverflow.com/questions/19881863/how-to-use-comparison-methods-between-class-object-modules-in-vba-in-a-similar-m -->
+<html itemscope="" itemtype="http://schema.org/QAPage"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <title>How to use comparison methods between class object modules in VBA in a similar manner as VB.NET? - Stack Overflow</title>
+    <link rel="shortcut icon" href="http://cdn.sstatic.net/stackoverflow/img/favicon.ico?v=038622610830">
+    <link rel="apple-touch-icon image_src" href="http://cdn.sstatic.net/stackoverflow/img/apple-touch-icon.png?v=fd7230a85918">
+    <link rel="search" type="application/opensearchdescription+xml" title="Stack Overflow" href="http://stackoverflow.com/opensearch.xml">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:domain" content="stackoverflow.com">
+    <meta property="og:type" content="website">
+    <meta property="og:image" itemprop="image primaryImageOfPage" content="http://cdn.sstatic.net/stackoverflow/img/apple-touch-icon@2.png?v=fde65a5a78c6">
+    <meta name="twitter:title" property="og:title" itemprop="title name" content="How to use comparison methods between class object modules in VBA in a similar manner as VB.NET?">
+    <meta name="twitter:description" property="og:description" itemprop="description" content="Due to new project in VBA I moved from VB.NET, to be honest don&#39;t really know how to deal between objects classes here. What I want to reach is comparing objects between different class object modu...">
+    <meta property="og:url" content="http://stackoverflow.com/questions/19881863/how-to-use-comparison-methods-between-class-object-modules-in-vba-in-a-similar-m">
+    <link rel="canonical" href="./How to use comparison methods between class object modules in VBA in a similar manner as VB.NET  - Stack Overflow_files/How to use comparison methods between class object modules in VBA in a similar manner as VB.NET  - Stack Overflow.htm">
+
+    
+    
+    <script type="text/javascript" async="" src="./How to use comparison methods between class object modules in VBA in a similar manner as VB.NET  - Stack Overflow_files/ados"></script><script async="" src="./How to use comparison methods between class object modules in VBA in a similar manner as VB.NET  - Stack Overflow_files/quant.js"></script><script async="" src="./How to use comparison methods between class object modules in VBA in a similar manner as VB.NET  - Stack Overflow_files/beacon.js"></script><script async="" src="./How to use comparison methods between class object modules in VBA in a similar manner as VB.NET  - Stack Overflow_files/analytics.js"></script><script type="text/javascript" async="" src="./How to use comparison methods between class object modules in VBA in a similar manner as VB.NET  - Stack Overflow_files/ados.js"></script><script src="./How to use comparison methods between class object modules in VBA in a similar manner as VB.NET  - Stack Overflow_files/jquery.min.js"></script>
+    <script src="./How to use comparison methods between class object modules in VBA in a similar manner as VB.NET  - Stack Overflow_files/stub.en.js"></script>
+    <link rel="stylesheet" type="text/css" href="./How to use comparison methods between class object modules in VBA in a similar manner as VB.NET  - Stack Overflow_files/all.css">
+    
+    <link rel="alternate" type="application/atom+xml" title="Feed for question &#39;How to use comparison methods between class object modules in VBA in a similar manner as VB.NET?&#39;" href="http://stackoverflow.com/feeds/question/19881863">
+    <script>
+        
+        StackExchange.ready(function () {
+                
+                StackExchange.using("snippets", function () {
+                    StackExchange.snippets.initSnippetRenderer();
+                });
+                
+
+            StackExchange.using("postValidation", function () {
+                StackExchange.postValidation.initOnBlurAndSubmit($('#post-form'), 2, 'answer');
+            });
+
+            
+            StackExchange.question.init({showAnswerHelp:true,totalCommentCount:0,shownCommentCount:0,highlightColor:'#F4A83D',backgroundColor:'#FFF',questionId:19881863});
+
+            styleCode();
+
+                StackExchange.realtime.subscribeToQuestion('1', '19881863');
+            
+                    });
+    </script>
+
+
+    <script>
+        StackExchange.init({"locale":"en","stackAuthUrl":"https://stackauth.com","serverTime":1412182307,"networkMetaHostname":"meta.stackexchange.com","routeName":"Questions/Show","styleCode":true,"enableUserHovercards":true,"snippets":{"enabled":true,"domain":"stacksnippets.net"},"site":{"name":"Stack Overflow","description":"Q&A for professional and enthusiast programmers","isNoticesTabEnabled":true,"recaptchaPublicKey":"6LdchgIAAAAAAJwGpIzRQSOFaO0pU6s44Xt8aTwc","recaptchaAudioLang":"en","enableNewTagCreationWarning":true,"nonAsciiTags":true,"enableSocialMediaInSharePopup":true,"useGoogleOAuth2":true},"user":{"fkey":"af3f937384eab2d1a668912556f02889","isAnonymous":true,"ab":{"tutorial_tooltips":{"v":"a","g":1},"homepage_recommended_algo":{"v":"a","g":2}}}});
+        StackExchange.using.setCacheBreakers({"js/prettify-full.en.js":"c7d1ec4aa6e8","js/moderator.en.js":"3bf88d4bfb80","js/full-anon.en.js":"9289fc03a234","js/full.en.js":"c5db865b77e4","js/wmd.en.js":"45c6111e65cf","js/third-party/jquery.autocomplete.min.js":"e5f01e97f7c3","js/third-party/jquery.autocomplete.min.en.js":"","js/mobile.en.js":"909ba559e645","js/help.en.js":"3f77ed7484ba","js/tageditor.en.js":"464d150473b9","js/tageditornew.en.js":"2535dc08e2b8","js/inline-tag-editing.en.js":"0d46482340f9","js/revisions.en.js":"e707189c34fa","js/review.en.js":"a6abbbced8b4","js/tagsuggestions.en.js":"7dfec0d2a2d7","js/post-validation.en.js":"1dafdfbd8885","js/explore-qlist.en.js":"4e6f969d97ee","js/events.en.js":"a99a5a8e0d38","js/keyboard-shortcuts.en.js":"154ddd240b31","js/external-editor.en.js":"0cab63d6a599","js/external-editor.en.js":"0cab63d6a599","js/snippet-javascript.en.js":"5cd767fdc718","js/snippet-javascript-codemirror.en.js":"e68888264f27"});
+        StackExchange.using("gps", function() {
+             StackExchange.gps.init(true);
+        });
+    </script>
+    
+        <script>
+            StackExchange.ready(function () {
+                $('#nav-tour').click(function () {
+                    StackExchange.using("gps", function() {
+                        StackExchange.gps.track("aboutpage.click", { aboutclick_location: "headermain" }, true);
+                    });
+                });
+            });
+        </script>
+    
+    
+<script async="" src="./How to use comparison methods between class object modules in VBA in a similar manner as VB.NET  - Stack Overflow_files/full-anon.en.js"></script><script async="" src="./How to use comparison methods between class object modules in VBA in a similar manner as VB.NET  - Stack Overflow_files/snippet-javascript.en.js"></script><script async="" src="./How to use comparison methods between class object modules in VBA in a similar manner as VB.NET  - Stack Overflow_files/post-validation.en.js"></script><script async="" src="./How to use comparison methods between class object modules in VBA in a similar manner as VB.NET  - Stack Overflow_files/prettify-full.en.js"></script><script async="" src="./How to use comparison methods between class object modules in VBA in a similar manner as VB.NET  - Stack Overflow_files/external-editor.en.js"></script><script type="text/javascript" src="./How to use comparison methods between class object modules in VBA in a similar manner as VB.NET  - Stack Overflow_files/adFeedback.js"></script><link rel="stylesheet" href="http://static.adzerk.net/Extensions/adFeedback.css"><link href="./How to use comparison methods between class object modules in VBA in a similar manner as VB.NET  - Stack Overflow_files/sidebar.min.css" type="text/css" rel="stylesheet"></head>
+<body class="question-page new-topbar">
+    <noscript>&lt;div id="noscript-padding"&gt;&lt;/div&gt;</noscript>
+    <div id="notify-container"></div>
+    <div id="overlay-header"></div>
+    <div id="custom-header"></div>
+<div class="topbar">
+    <div class="topbar-wrapper">
+        
+        <div class="js-topbar-dialog-corral">
+
+<div class="topbar-dialog siteSwitcher-dialog dno">
+    <div class="header">
+        <h3><a href="http://stackoverflow.com/">current community</a></h3>
+    </div>
+    <div class="modal-content current-site-container">
+        <ul class="current-site">
+                <li>
+                        <div class="related-links">
+            <a href="http://chat.stackoverflow.com/" class="js-gps-track" data-gps-track="site_switcher.click({ item_type:6 })">chat</a>
+                    <a href="http://blog.stackoverflow.com/" class="js-gps-track" data-gps-track="site_switcher.click({ item_type:7 })">blog</a>
+            </div>
+
+
+
+
+    <a href="http://stackoverflow.com/" class="current-site-link site-link js-gps-track" data-id="1" data-gps-track="
+        site_switcher.click({ item_type:3 })">
+        <div class="site-icon favicon favicon-stackoverflow" title="Stack Overflow"></div>
+        Stack Overflow
+    </a>
+
+                </li>
+                <li class="related-site">
+                        <div class="L-shaped-icon-container">
+        <span class="L-shaped-icon"></span>
+    </div>
+
+                    
+
+
+
+    <a href="http://meta.stackoverflow.com/" class="site-link js-gps-track" data-id="552" data-gps-track="
+            site.switch({ target_site:552, item_type:3 }),
+        site_switcher.click({ item_type:4 })">
+        <div class="site-icon favicon favicon-stackoverflowmeta" title="Meta Stack Overflow"></div>
+        Meta Stack Overflow
+    </a>
+
+                </li>
+                            <li class="related-site">
+                        <div class="L-shaped-icon-container">
+        <span class="L-shaped-icon"></span>
+    </div>
+
+                    <a class="site-link js-gps-track" href="http://careers.stackoverflow.com/?utm_source=stackoverflow.com&utm_medium=site-ui&utm_campaign=multicollider" data-gps-track="site_switcher.click({ item_type:9 })">
+                        <div class="site-icon favicon favicon-careers" title="Stack Overflow Careers"></div>
+                        Careers 2.0
+                    </a>
+                </li>
+        </ul>
+    </div>
+    
+    <div class="header" id="your-communities-header">
+        <h3>
+your communities        </h3>
+            
+    </div>
+    <div class="modal-content" id="your-communities-section">
+            
+            <div class="call-to-login">
+                        <a href="https://stackoverflow.com/users/signup?returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f19881863%2fhow-to-use-comparison-methods-between-class-object-modules-in-vba-in-a-similar-m" class="js-gps-track" data-gps-track="site_switcher.click({ item_type:10 })">Sign up</a>
+                    or
+                    <a href="https://stackoverflow.com/users/login?returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f19881863%2fhow-to-use-comparison-methods-between-class-object-modules-in-vba-in-a-similar-m" class="js-gps-track" data-gps-track="site_switcher.click({ item_type:11 })">log in</a>
+
+                    to customize your list.
+            </div>
+    </div>
+    
+    <div class="header">
+        <h3><a href="http://stackexchange.com/sites">more stack exchange communities</a></h3>
+    </div>
+    <div class="modal-content">
+            <div class="child-content"></div>
+    </div>
+</div>
+        </div>
+
+        <div class="network-items">
+            
+            <a href="http://stackexchange.com/" class="topbar-icon icon-site-switcher yes-hover js-site-switcher-button js-gps-track" data-gps-track="site_switcher.show" title="A list of all 129 Stack Exchange sites">
+                <span class="hidden-text">Stack Exchange</span>
+            </a>
+            
+        </div>
+
+        <div class="topbar-links">
+            
+                <div class="links-container">
+                    <span class="topbar-menu-links">
+                            <a href="https://stackoverflow.com/users/signup?returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f19881863%2fhow-to-use-comparison-methods-between-class-object-modules-in-vba-in-a-similar-m" class="login-link">sign up</a>
+                            <a href="https://stackoverflow.com/users/login?returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f19881863%2fhow-to-use-comparison-methods-between-class-object-modules-in-vba-in-a-similar-m" class="login-link">log in</a>
+                            <a href="http://stackoverflow.com/tour">tour</a>
+
+                            <a href="http://stackoverflow.com/questions/19881863/how-to-use-comparison-methods-between-class-object-modules-in-vba-in-a-similar-m#" class="icon-help js-help-button" title="Help Center and other resources">
+        help
+        <span class="triangle"></span>
+    </a>
+    <div class="topbar-dialog help-dialog js-help-dialog dno">
+        <div class="modal-content">
+            <ul>
+                                    <li>
+                        <a href="http://stackoverflow.com/tour" class="js-gps-track" data-gps-track="help_popup.click({ item_type:1 })">
+                            Tour
+                            <span class="item-summary">
+                                Start here for a quick overview of the site
+                            </span>
+                        </a>
+                    </li>
+                <li>
+                    <a href="http://stackoverflow.com/help" class="js-gps-track" data-gps-track="help_popup.click({ item_type:4 })">
+                        Help Center
+                        <span class="item-summary">
+                            Detailed answers to any questions you might have
+                        </span>
+                    </a>
+                </li>
+                    <li>
+                        <a href="http://meta.stackoverflow.com/" class="js-gps-track" data-gps-track="help_popup.click({ item_type:2 })">
+                            Meta
+                            <span class="item-summary">
+                                Discuss the workings and policies of this site
+                            </span>
+                        </a>
+                    </li>
+            </ul>
+        </div>
+    </div>
+
+                            <a href="http://careers.stackoverflow.com/">careers 2.0</a>
+                    </span>
+                </div>
+
+			<div class="search-container">
+                <form id="search" action="http://stackoverflow.com/search" method="get" autocomplete="off">
+                    <input name="q" type="text" placeholder="search" value="" tabindex="1" autocomplete="off" maxlength="240">
+                </form>
+			</div>
+            	
+        </div>      
+    </div> 
+</div>
+<script>
+    StackExchange.ready(function () { StackExchange.topbar.init(); });
+</script>
+    <div class="container">
+        <div id="header" class="headeranon">
+            <br class="cbt">
+            <div id="hlogo">
+                <a href="http://stackoverflow.com/">
+                    Stack Overflow
+                </a>
+            </div>
+            <div id="hmenus">
+                <div class="nav mainnavs mainnavsanon">
+                    <ul>
+                        <li class="youarehere"><a id="nav-questions" href="http://stackoverflow.com/questions">Questions</a></li>
+                        <li><a id="nav-tags" href="http://stackoverflow.com/tags">Tags</a></li>
+                        <li><a id="nav-users" href="http://stackoverflow.com/users">Users</a></li>
+                        <li><a id="nav-badges" href="http://stackoverflow.com/help/badges">Badges</a></li>
+                        <li><a id="nav-unanswered" href="http://stackoverflow.com/unanswered">Unanswered</a></li>
+                    </ul>
+                </div>
+                <div class="nav askquestion">
+                    <ul>
+                        <li>
+                            <a id="nav-askquestion" href="http://stackoverflow.com/questions/ask">Ask Question</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+
+
+
+        <div id="content" class="snippet-hidden">
+            
+
+<div itemscope="" itemtype="http://schema.org/Question">
+	<link itemprop="image" href="http://cdn.sstatic.net/stackoverflow/img/apple-touch-icon.png">
+			<!--googleoff: all-->
+
+<div id="herobox-mini">
+    <div id="hero-content">
+        <span id="controls">
+            <a href="http://stackoverflow.com/tour" id="tell-me-more" class="button">Take the 2-minute tour</a>
+            <span id="close"><a title="click to dismiss">×</a></span>
+        </span>
+        <div id="blurb">
+            Stack Overflow is a question and answer site for professional and enthusiast programmers. It's 100% free, no registration required.
+        </div>        
+    </div>
+    <script>
+        $('#tell-me-more').click(function () {
+            var clickSource = $("body").attr("class") + '-mini';
+            if ($("body").hasClass("questions-page")) {
+                clickSource = 'questionpagemini';
+            } else if ($("body").hasClass("question-page")) {
+                clickSource = 'questionpagemini';
+            } else if ($("body").hasClass("home-page")) {
+                clickSource = 'homepagemini';
+            }
+
+            StackExchange.using("gps", function () {
+                StackExchange.gps.track("aboutpage.click", { aboutclick_location: clickSource } , true);
+            });
+        });
+        $('#herobox-mini #close').click(function () {
+            StackExchange.using("gps", function () {
+                StackExchange.gps.track("hero.action", { hero_action_type: "close" }, true);
+            });
+            $.cookie("hero", "none", { path: "/", expires: 365 });
+            var $hero = $("#herobox-mini");
+            $hero.slideUp('fast', function () { $hero.remove(); });
+            return false;
+        });
+    </script>
+</div>
+			<!--googleon: all-->
+			<div id="question-header">
+			<h1 itemprop="name"><a href="./How to use comparison methods between class object modules in VBA in a similar manner as VB.NET  - Stack Overflow_files/How to use comparison methods between class object modules in VBA in a similar manner as VB.NET  - Stack Overflow.htm" class="question-hyperlink">How to use comparison methods between class object modules in VBA in a similar manner as VB.NET?</a></h1>
+		</div>
+			<div id="mainbar">
+
+			
+
+<div class="question" data-questionid="19881863" id="question">
+
+    <script>
+                var ados = ados || {};ados.run = ados.run || [];
+                ados.run.push(function() { ados_add_placement(22,8277,"adzerk810154622",4).setZone(43) ; });                    
+            </script>
+            <div class="everyonelovesstackoverflow adzerk-vote" id="adzerk810154622"><a href="http://engine.adzerk.net/r?e=eyJhdiI6NDE0LCJhdCI6NCwiYnQiOjAsImNtIjoyOTExLCJjaCI6MTE3OCwiY3IiOjU5MjMsImRpIjoiNDBmNjFjNTE3NDBmNGI4ZjhkOGQ3NTQ0ZTYzMDVkZjMiLCJkbSI6MSwiZmMiOjEwMTg4LCJmbCI6NzQ3MiwiaXAiOiIxOTIuMTY4LjMuMjAiLCJrdyI6InZiLm5ldCx2YmEiLCJudyI6MjIsInBjIjowLCJwciI6MTYwNCwicnQiOjEsInJmIjoiaHR0cHM6Ly93d3cuZ29vZ2xlLmNvbS5ici8iLCJzdCI6ODI3NywidWsiOiJ1ZTEtMmQxNTUwYzU0Njc3NGNlYWFiMGNhNDI2MTgzM2UwNWIiLCJ6biI6NDMsInRzIjoxNDEyMTgyMzA4NTgyLCJ1ciI6Imh0dHA6Ly9jYXJlZXJzLnN0YWNrb3ZlcmZsb3cuY29tP3V0bV9zb3VyY2U9c3RhY2tleGNoYW5nZS5jb20mdXRtX21lZGl1bT1hZCZ1dG1fY2FtcGFpZ249aG91c2UtYWRzLWNhdGNoLWFsbC1hbGwtc2l0ZXMmdXRtX2NvbnRlbnQ9bGItcGRmIn0&s=jVvVA3dH2JgizTKRVA7fxjg21Jk" rel="nofollow" target="_blank" title=""><img src="./How to use comparison methods between class object modules in VBA in a similar manner as VB.NET  - Stack Overflow_files/46a9844d6e504212a85bc72ddd7dd829.png" title="" alt="" border="0" width="728" height="90"></a><img height="0px" width="0px" border="0" style="position:absolute;" src="./How to use comparison methods between class object modules in VBA in a similar manner as VB.NET  - Stack Overflow_files/i.gif"><div class="adzerk-vote-controls" style="display:none;"><div class="adzerk-vote-option adzerk-vote-up"><div class="adzerk-vote-icon"></div></div><div class="adzerk-vote-option adzerk-vote-down"><div class="adzerk-vote-icon"></div></div></div><div class="adzerk-vote-survey" style="display:none;"><form><span>No problem. We won't show you that ad again. Why didn't you like it?</span><ul><li><label><input type="radio" value="12" name="downvoteReason">Uninteresting</label></li><li><label><input type="radio" value="13" name="downvoteReason">Misleading</label></li><li><label><input type="radio" value="14" name="downvoteReason">Offensive</label></li><li><label><input type="radio" value="15" name="downvoteReason">Repetitive</label></li></ul><a href="http://stackoverflow.com/questions/19881863/how-to-use-comparison-methods-between-class-object-modules-in-vba-in-a-similar-m#" class="adzerk-vote-cancel">Oops! I didn't mean to do this.</a></form></div></div>    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+    <input type="hidden" name="_id_" value="19881863">
+    <a class="vote-up-off" title="This question shows research effort; it is useful and clear">up vote</a>
+    <span itemprop="upvoteCount" class="vote-count-post ">5</span>
+    <a class="vote-down-off" title="This question does not show any research effort; it is unclear or not useful">down vote</a>
+    
+    <a class="star-off" href="http://stackoverflow.com/questions/19881863/how-to-use-comparison-methods-between-class-object-modules-in-vba-in-a-similar-m#" title="This is a favorite question (click again to undo)">favorite</a>
+    <div class="favoritecount"><b>4</b></div>   
+
+</div>
+
+            </td>
+            
+<td class="postcell">
+<div>
+    <div class="post-text" itemprop="text">
+
+        <p>Due to new project in VBA I moved from VB.NET, to be honest don't really know how to deal between objects classes here. What I want to reach is comparing objects between different class object modules.</p>
+
+<p>e.g</p>
+
+<p><strong>class Employee</strong><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;properties: <code>Name</code>, <code>Age</code><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;point is: compare <code>Name</code>s between two Employees</p>
+
+<p>classes: <strong>Employee</strong> and <strong>Manager</strong><br>
+point is: compare <code>Name</code> from <strong>Employee</strong> with <code>Name</code> of <strong>Manager</strong></p>
+
+<p>I know how to in VB.NET, but how do I compare properties of different class module objects in VBA?</p>
+
+    </div>
+    <div class="post-taglist">
+        <a href="http://stackoverflow.com/questions/tagged/vb.net" class="post-tag js-gps-track" title="show questions tagged &#39;vb.net&#39;" rel="tag">vb.net</a> <a href="http://stackoverflow.com/questions/tagged/vba" class="post-tag js-gps-track" title="show questions tagged &#39;vba&#39;" rel="tag">vba</a> 
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/q/19881863" title="short permalink to this question" class="short-link" id="link-post-19881863">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/19881863/edit" class="suggest-edit-post" title="">improve this question</a></div>        
+    </td>
+    <td align="right" class="post-signature">
+<div class="user-info user-hover">
+    <div class="user-action-time">
+        <a href="http://stackoverflow.com/posts/19881863/revisions" title="show all edits to this post">edited <span title="2014-01-12 03:35:13Z" class="relativetime">Jan 12 at 3:35</span></a>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/641067/brettdj"><div class="gravatar-wrapper-32"><img src="./How to use comparison methods between class object modules in VBA in a similar manner as VB.NET  - Stack Overflow_files/pebdr.jpg" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/641067/brettdj">brettdj</a><br>
+        <span class="reputation-score" title="reputation score 26983" dir="ltr">27k</span><span title="11 gold badges"><span class="badge1"></span><span class="badgecount">11</span></span><span title="33 silver badges"><span class="badge2"></span><span class="badgecount">33</span></span><span title="73 bronze badges"><span class="badge3"></span><span class="badgecount">73</span></span>
+    </div>
+</div>    </td>
+    <td class="post-signature owner">
+        <div class="user-info ">
+    <div class="user-action-time">
+        asked <span title="2013-11-09 19:05:05Z" class="relativetime">Nov 9 '13 at 19:05</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/2829150/stackuser"><div><img src="./How to use comparison methods between class object modules in VBA in a similar manner as VB.NET  - Stack Overflow_files/ce47e6e41effa3a211993fd790d2b430" alt="" width="32" height="32" class="hoverZoomLink"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/2829150/stackuser">StackUser</a><br>
+        <span class="reputation-score" title="reputation score " dir="ltr">66</span><span title="5 bronze badges"><span class="badge3"></span><span class="badgecount">5</span></span>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</div>
+</td>
+        </tr>
+                
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-19881863" class="comments  dno">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+                        <tr><td></td><td></td></tr>
+                </tbody>
+		    </table>
+	    </div>
+            <div id="comments-link-19881863" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid answering questions in comments.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span><a class="js-show-link comments-link dno" title="expand to show all comments on this post, or add one of your own" href="http://stackoverflow.com/questions/19881863/how-to-use-comparison-methods-between-class-object-modules-in-vba-in-a-similar-m#" onclick=""></a>
+            </div>
+    </td>
+</tr>        </tbody></table>
+</div>
+
+			<div id="answers">
+
+				<a name="tab-top"></a>
+				<div id="answers-header">
+					<div class="subheader answers-subheader">
+						<h2>
+								1 Answer
+                                <span style="display:none;" itemprop="answerCount">1</span>
+						</h2>
+						<div>
+							<div id="tabs">
+        <a href="http://stackoverflow.com/questions/19881863/how-to-use-comparison-methods-between-class-object-modules-in-vba-in-a-similar-m?answertab=active#tab-top" title="Answers with the latest activity first">active</a>
+        <a href="http://stackoverflow.com/questions/19881863/how-to-use-comparison-methods-between-class-object-modules-in-vba-in-a-similar-m?answertab=oldest#tab-top" title="Answers in the order they were provided">oldest</a>
+        <a class="youarehere" href="http://stackoverflow.com/questions/19881863/how-to-use-comparison-methods-between-class-object-modules-in-vba-in-a-similar-m?answertab=votes#tab-top" title="Answers with the highest score first">votes</a>
+</div>
+						</div>
+					</div>    
+				</div>    
+
+
+
+
+  
+<a name="19908375"></a>
+<div id="answer-19908375" class="answer accepted-answer" data-answerid="19908375" itemscope="" itemtype="http://schema.org/Answer" itemprop="acceptedAnswer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+    <input type="hidden" name="_id_" value="19908375">
+    <a class="vote-up-off" title="This answer is useful">up vote</a>
+    <span itemprop="upvoteCount" class="vote-count-post ">18</span>
+    <a class="vote-down-off" title="This answer is not useful">down vote</a>
+    
+
+
+        <span class="vote-accepted-on load-accepted-answer-date" title="loading when this answer was accepted...">accepted</span>
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>VBA doesn't support <em>class polymorphism</em> so I recommend to change the way you're thinking about the <em><code>Employee</code></em> and <em><code>Manager</code></em> classes.</p>
+
+<p>You can't have an <em><code>Employee</code></em> class as a <em>base class</em> and then a separate <em><code>Manager</code></em> class that <strong>derives</strong> from <em><code>Employee</code></em>. They could be <strong>2 separate</strong> classes implementing a common interface. </p>
+
+<p>I will talk about it in detail in a bit. Let's now go through a few examples...</p>
+
+<hr>
+
+<h1>↓ Easy approach ↓</h1>
+
+<p></p><hr>
+<strong>A <code>base</code> class (<em><code>Person</code></em>) and child classes which derive from the base class. (<em>applies to C#, VB.NET, etc</em>)</strong><p></p>
+
+<p><em>but in VBA you have to think of it like this:</em></p>
+
+<p><strong>A base class which exposes an enum property describing the position.</strong> </p>
+
+<p>Something like </p>
+
+<p><img src="./How to use comparison methods between class object modules in VBA in a similar manner as VB.NET  - Stack Overflow_files/Jov1c.png" alt="enter image description here"></p>
+
+<p><img src="./How to use comparison methods between class object modules in VBA in a similar manner as VB.NET  - Stack Overflow_files/7ArYQ.png" alt="enter image description here"></p>
+
+<p>This is the easiest way to have a class exposing some properties. It allows you to add your <em><code>Person</code></em> objects into a collection and iterate over using the easy <em><code>for each</code></em> loop with <em>Intellisense</em>!</p>
+
+<p><img src="./How to use comparison methods between class object modules in VBA in a similar manner as VB.NET  - Stack Overflow_files/cfbEL.png" alt="enter image description here"></p>
+
+<p>Properties comparison system would be very very easy </p>
+
+<p><img src="./How to use comparison methods between class object modules in VBA in a similar manner as VB.NET  - Stack Overflow_files/c82bS.png" alt="enter image description here"></p>
+
+<p><em>note: same applies to enum as its implicitly converted to a number</em></p>
+
+<hr>
+
+<h1>↓ More complex approach ↓</h1>
+
+<hr>
+
+<p>Two separate classes which both expose public properties. For instance you have an <em><code>Employee</code></em> and <em><code>Manager</code></em> classes which both implement a <strong><code>Person</code> Interface</strong> and an additional <strong><code>Comparer</code></strong> class exposing a <em><code>Compare()</code></em> method</p>
+
+<p><img src="./How to use comparison methods between class object modules in VBA in a similar manner as VB.NET  - Stack Overflow_files/GTjM9.png" alt="enter image description here"></p>
+
+<p>In your VBA Project you need 4 class modules and a standard module</p>
+
+<p><img src="./How to use comparison methods between class object modules in VBA in a similar manner as VB.NET  - Stack Overflow_files/uJaKS.png" alt="enter image description here"></p>
+
+<p><strong><code>Person</code></strong> <em>(this is your Interface)</em></p>
+
+<pre class="lang-vb prettyprint prettyprinted"><code><span class="kwd">Public</span><span class="pln"> </span><span class="kwd">Property</span><span class="pln"> </span><span class="kwd">Get</span><span class="pln"> Name</span><span class="pun">()</span><span class="pln"> </span><span class="kwd">As</span><span class="pln"> </span><span class="kwd">String</span><span class="pln">
+</span><span class="kwd">End</span><span class="pln"> </span><span class="kwd">Property</span><span class="pln">
+
+</span><span class="kwd">Public</span><span class="pln"> </span><span class="kwd">Property</span><span class="pln"> </span><span class="kwd">Get</span><span class="pln"> Age</span><span class="pun">()</span><span class="pln"> </span><span class="kwd">As</span><span class="pln"> </span><span class="kwd">Long</span><span class="pln">
+</span><span class="kwd">End</span><span class="pln"> </span><span class="kwd">Property</span></code></pre>
+
+<p><em>this class is the interface which both the <code>Employee</code> and <code>Manager</code> both need to implement to share some common functions (getters for Names and Ages). Having the interface allows you to do the for each loop using the interface type variable as the enumerator. You will see in a minute</em>.</p>
+
+<p><strong><code>Employee</code></strong> and <strong><code>Manager</code></strong> are identical. <em>Obviously you may modify them to suit your real life solution</em>.</p>
+
+<pre class="lang-vb prettyprint prettyprinted"><code><span class="kwd">Implements</span><span class="pln"> Person
+
+</span><span class="kwd">Private</span><span class="pln"> name_ </span><span class="kwd">As</span><span class="pln"> </span><span class="kwd">String</span><span class="pln">
+</span><span class="kwd">Private</span><span class="pln"> age_ </span><span class="kwd">As</span><span class="pln"> </span><span class="kwd">Long</span><span class="pln">
+
+</span><span class="kwd">Public</span><span class="pln"> </span><span class="kwd">Property</span><span class="pln"> </span><span class="kwd">Get</span><span class="pln"> Name</span><span class="pun">()</span><span class="pln"> </span><span class="kwd">As</span><span class="pln"> </span><span class="kwd">String</span><span class="pln">
+    Name </span><span class="pun">=</span><span class="pln"> name_
+</span><span class="kwd">End</span><span class="pln"> </span><span class="kwd">Property</span><span class="pln">
+
+</span><span class="kwd">Public</span><span class="pln"> </span><span class="kwd">Property</span><span class="pln"> </span><span class="kwd">Let</span><span class="pln"> Name</span><span class="pun">(</span><span class="kwd">ByVal</span><span class="pln"> Value </span><span class="kwd">As</span><span class="pln"> </span><span class="kwd">String</span><span class="pun">)</span><span class="pln">
+    name_ </span><span class="pun">=</span><span class="pln"> Value
+</span><span class="kwd">End</span><span class="pln"> </span><span class="kwd">Property</span><span class="pln">
+
+</span><span class="kwd">Public</span><span class="pln"> </span><span class="kwd">Property</span><span class="pln"> </span><span class="kwd">Get</span><span class="pln"> Age</span><span class="pun">()</span><span class="pln"> </span><span class="kwd">As</span><span class="pln"> </span><span class="kwd">Long</span><span class="pln">
+    Age </span><span class="pun">=</span><span class="pln"> age_
+</span><span class="kwd">End</span><span class="pln"> </span><span class="kwd">Property</span><span class="pln">
+
+</span><span class="kwd">Public</span><span class="pln"> </span><span class="kwd">Property</span><span class="pln"> </span><span class="kwd">Let</span><span class="pln"> Age</span><span class="pun">(</span><span class="kwd">ByVal</span><span class="pln"> Value </span><span class="kwd">As</span><span class="pln"> </span><span class="kwd">Long</span><span class="pun">)</span><span class="pln">
+    age_ </span><span class="pun">=</span><span class="pln"> Value
+</span><span class="kwd">End</span><span class="pln"> </span><span class="kwd">Property</span><span class="pln">
+
+</span><span class="kwd">Private</span><span class="pln"> </span><span class="kwd">Property</span><span class="pln"> </span><span class="kwd">Get</span><span class="pln"> Person_Name</span><span class="pun">()</span><span class="pln"> </span><span class="kwd">As</span><span class="pln"> </span><span class="kwd">String</span><span class="pln">
+    Person_Name </span><span class="pun">=</span><span class="pln"> Name
+</span><span class="kwd">End</span><span class="pln"> </span><span class="kwd">Property</span><span class="pln">
+
+</span><span class="kwd">Private</span><span class="pln"> </span><span class="kwd">Property</span><span class="pln"> </span><span class="kwd">Get</span><span class="pln"> Person_Age</span><span class="pun">()</span><span class="pln"> </span><span class="kwd">As</span><span class="pln"> </span><span class="kwd">Long</span><span class="pln">
+    Person_Age </span><span class="pun">=</span><span class="pln"> Age
+</span><span class="kwd">End</span><span class="pln"> </span><span class="kwd">Property</span></code></pre>
+
+<p><strong><code>ComparerCls</code></strong> <em>you will use an instance of this class to compare two objects properties or references</em>. You do not necessarily need to have a class for this but I prefer it that way.</p>
+
+<pre class="lang-vb prettyprint prettyprinted"><code><span class="kwd">Public</span><span class="pln"> </span><span class="kwd">Enum</span><span class="pln"> ComparisonMethod
+    Names </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0</span><span class="pln"> </span><span class="com">' default</span><span class="pln">
+    Ages </span><span class="pun">=</span><span class="pln"> </span><span class="lit">1</span><span class="pln">
+    References </span><span class="pun">=</span><span class="pln"> </span><span class="lit">2</span><span class="pln">
+</span><span class="kwd">End</span><span class="pln"> </span><span class="kwd">Enum</span><span class="pln">
+
+</span><span class="com">' makes names the default comparison method</span><span class="pln">
+</span><span class="kwd">Public</span><span class="pln"> </span><span class="kwd">Function</span><span class="pln"> Compare</span><span class="pun">(</span><span class="kwd">ByRef</span><span class="pln"> obj1 </span><span class="kwd">As</span><span class="pln"> Person</span><span class="pun">,</span><span class="pln"> _
+                        </span><span class="kwd">ByRef</span><span class="pln"> obj2 </span><span class="kwd">As</span><span class="pln"> Person</span><span class="pun">,</span><span class="pln"> _
+                        </span><span class="kwd">Optional</span><span class="pln"> method </span><span class="kwd">As</span><span class="pln"> ComparisonMethod </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">)</span><span class="pln"> _
+                        </span><span class="kwd">As</span><span class="pln"> </span><span class="kwd">Boolean</span><span class="pln">
+
+    </span><span class="kwd">Select</span><span class="pln"> </span><span class="kwd">Case</span><span class="pln"> method
+        </span><span class="kwd">Case</span><span class="pln"> Ages
+            Compare </span><span class="pun">=</span><span class="pln"> IIf</span><span class="pun">(</span><span class="pln">obj1</span><span class="pun">.</span><span class="pln">Age </span><span class="pun">=</span><span class="pln"> obj2</span><span class="pun">.</span><span class="pln">Age</span><span class="pun">,</span><span class="pln"> </span><span class="lit">True</span><span class="pun">,</span><span class="pln"> </span><span class="lit">False</span><span class="pun">)</span><span class="pln">
+        </span><span class="kwd">Case</span><span class="pln"> References
+            Compare </span><span class="pun">=</span><span class="pln"> IIf</span><span class="pun">(</span><span class="pln">obj1 </span><span class="kwd">Is</span><span class="pln"> obj2</span><span class="pun">,</span><span class="pln"> </span><span class="lit">True</span><span class="pun">,</span><span class="pln"> </span><span class="lit">False</span><span class="pun">)</span><span class="pln">
+        </span><span class="kwd">Case</span><span class="pln"> </span><span class="kwd">Else</span><span class="pln">
+            Compare </span><span class="pun">=</span><span class="pln"> IIf</span><span class="pun">(</span><span class="pln">obj1</span><span class="pun">.</span><span class="pln">Name </span><span class="pun">=</span><span class="pln"> obj2</span><span class="pun">.</span><span class="pln">Name</span><span class="pun">,</span><span class="pln"> </span><span class="lit">True</span><span class="pun">,</span><span class="pln"> </span><span class="lit">False</span><span class="pun">)</span><span class="pln">
+    </span><span class="kwd">End</span><span class="pln"> </span><span class="kwd">Select</span><span class="pln">
+
+</span><span class="kwd">End</span><span class="pln"> </span><span class="kwd">Function</span></code></pre>
+
+<p>And your <strong><code>Module1</code></strong> code</p>
+
+<pre class="lang-vb prettyprint prettyprinted"><code><span class="kwd">Option</span><span class="pln"> Explicit
+
+</span><span class="kwd">Sub</span><span class="pln"> Main</span><span class="pun">()</span><span class="pln">
+
+    </span><span class="kwd">Dim</span><span class="pln"> emp </span><span class="kwd">As</span><span class="pln"> </span><span class="kwd">New</span><span class="pln"> Employee
+    emp</span><span class="pun">.</span><span class="pln">Name </span><span class="pun">=</span><span class="pln"> </span><span class="str">"person"</span><span class="pln">
+    emp</span><span class="pun">.</span><span class="pln">Age </span><span class="pun">=</span><span class="pln"> </span><span class="lit">25</span><span class="pln">
+
+    </span><span class="kwd">Dim</span><span class="pln"> man </span><span class="kwd">As</span><span class="pln"> </span><span class="kwd">New</span><span class="pln"> Manager
+    man</span><span class="pun">.</span><span class="pln">Name </span><span class="pun">=</span><span class="pln"> </span><span class="str">"manager"</span><span class="pln">
+    man</span><span class="pun">.</span><span class="pln">Age </span><span class="pun">=</span><span class="pln"> </span><span class="lit">25</span><span class="pln">
+
+    </span><span class="kwd">Dim</span><span class="pln"> People </span><span class="kwd">As</span><span class="pln"> </span><span class="kwd">New</span><span class="pln"> Collection
+    People</span><span class="pun">.</span><span class="pln">Add emp
+    People</span><span class="pun">.</span><span class="pln">Add man
+
+    </span><span class="kwd">Dim</span><span class="pln"> individual </span><span class="kwd">As</span><span class="pln"> Person
+    </span><span class="kwd">For</span><span class="pln"> </span><span class="kwd">Each</span><span class="pln"> individual </span><span class="kwd">In</span><span class="pln"> People
+        Debug</span><span class="pun">.</span><span class="pln">Print TypeName</span><span class="pun">(</span><span class="pln">individual</span><span class="pun">),</span><span class="pln"> individual</span><span class="pun">.</span><span class="pln">Name</span><span class="pun">,</span><span class="pln"> individual</span><span class="pun">.</span><span class="pln">Age
+    </span><span class="kwd">Next</span><span class="pln">
+
+</span><span class="kwd">End</span><span class="pln"> </span><span class="kwd">Sub</span></code></pre>
+
+<p>run the <em><code>Main()</code></em> sub and check out the results in the <em>Immediate Window</em></p>
+
+<p><img src="./How to use comparison methods between class object modules in VBA in a similar manner as VB.NET  - Stack Overflow_files/XFwRy.png" alt="enter image description here"></p>
+
+<p>The best part of the above code is the fact that you creating a reference variable of the <em><code>Person</code></em> interface. It allows you to loop through all items in collection which implement the interface. Also, you can use the Intellisense which is great if you have had many more properties and functions.</p>
+
+<hr>
+
+<p><strong>Comparison</strong></p>
+
+<hr>  
+
+<p>Take a look again at the code in the <code>ComparerCls</code> class </p>
+
+<p><img src="./How to use comparison methods between class object modules in VBA in a similar manner as VB.NET  - Stack Overflow_files/3QWw1.png" alt="enter image description here"></p>
+
+<p>I hope you see now why I have separated this to be a class. Its purpose is just to take care of the way the objects are being compared. You can specify the Enum order and modify the <code>Compare()</code> method itself to compare differently. Note the Optional parameter which allows you to call the Compare method without the method of comparison. </p>
+
+<p><img src="./How to use comparison methods between class object modules in VBA in a similar manner as VB.NET  - Stack Overflow_files/DVTil.png" alt="enter image description here"></p>
+
+<p>Now you can play around passing different parameters to the compare function. See what the results are like</p>
+
+<p>try combinations </p>
+
+<pre class="lang-vb prettyprint prettyprinted"><code><span class="pln">emp</span><span class="pun">.</span><span class="pln">Name </span><span class="pun">=</span><span class="pln"> </span><span class="str">"name"</span><span class="pln">
+man</span><span class="pun">.</span><span class="pln">Name </span><span class="pun">=</span><span class="pln"> </span><span class="str">"name"</span><span class="pln">
+
+Comparer</span><span class="pun">.</span><span class="pln">Compare</span><span class="pun">(</span><span class="pln">emp</span><span class="pun">,</span><span class="pln"> name</span><span class="pun">,</span><span class="pln"> Names</span><span class="pun">)</span><span class="pln">
+Comparer</span><span class="pun">.</span><span class="pln">Compare</span><span class="pun">(</span><span class="pln">emp</span><span class="pun">,</span><span class="pln"> name</span><span class="pun">,</span><span class="pln"> References</span><span class="pun">)</span><span class="pln">
+
+Comparer</span><span class="pun">.</span><span class="pln">Compare</span><span class="pun">(</span><span class="pln">emp</span><span class="pun">,</span><span class="pln"> emp</span><span class="pun">,</span><span class="pln"> References</span><span class="pun">)</span></code></pre>
+
+<hr>
+
+<p>If something is still unclear refer to <a href="http://stackoverflow.com/questions/19373081/how-to-use-the-implements-in-excel-vba/19379641#19379641"><strong>this answer about the <code>Implements</code> keyword in VBA</strong></a></p>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/19908375" title="short permalink to this answer" class="short-link" id="link-post-19908375">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/19908375/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info user-hover">
+    <div class="user-action-time">
+        answered <span title="2013-11-11 14:09:37Z" class="relativetime">Nov 11 '13 at 14:09</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/2140173/vba4all"><div class="gravatar-wrapper-32"><img src="./How to use comparison methods between class object modules in VBA in a similar manner as VB.NET  - Stack Overflow_files/OqhyN.png" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/2140173/vba4all">vba4all</a><br>
+        <span class="reputation-score" title="reputation score 17820" dir="ltr">17.8k</span><span title="8 gold badges"><span class="badge1"></span><span class="badgecount">8</span></span><span title="28 silver badges"><span class="badge2"></span><span class="badgecount">28</span></span><span title="52 bronze badges"><span class="badge3"></span><span class="badgecount">52</span></span>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-19908375" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+
+    <tr id="comment-29622621" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">great example thx for your time and contribute. But two questin due to that. As i can see the Person is an interface and other classes can implement that, but Person is actually the CLASS too and other classes implements from it in this case Manager and Employee in the example ( two properties) instead of properties could it be also methods? Second if possible Manager class can implement Person (class) interface why let's say Manager can't implement Employee's methods and fields as they are the same as Person?</span>
+                –&nbsp;
+                    <a href="http://stackoverflow.com/users/2829150/stackuser" title="66 reputation" class="comment-user owner">StackUser</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/19881863/how-to-use-comparison-methods-between-class-object-modules-in-vba-in-a-similar-m#comment29622621_19908375"><span title="2013-11-11 15:19:24Z" class="relativetime-clean">Nov 11 '13 at 15:19</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-29623535" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">@StackUser well, yes see <a href="http://stackoverflow.com/questions/19373081/how-to-use-the-implements-in-excel-vba/19379641#19379641"><b>this</b></a> for an example of how other classes implementing interfaces need to provide implementation of methods. I think the answer for the second question lies in the first few sentences of my answer. VBA does not support class polymorphism that's why one class can't derive from another.</span>
+                –&nbsp;
+                    <a href="http://stackoverflow.com/users/2140173/vba4all" title="17820 reputation" class="comment-user">vba4all</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/19881863/how-to-use-comparison-methods-between-class-object-modules-in-vba-in-a-similar-m#comment29623535_19908375"><span title="2013-11-11 15:42:50Z" class="relativetime-clean">Nov 11 '13 at 15:42</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-29623663" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">@StackUser if something is still unclear then maybe read <a href="http://stackoverflow.com/questions/3669270/vba-inheritance-analog-of-super"><b>this</b></a> answer too :)</span>
+                –&nbsp;
+                    <a href="http://stackoverflow.com/users/2140173/vba4all" title="17820 reputation" class="comment-user">vba4all</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/19881863/how-to-use-comparison-methods-between-class-object-modules-in-vba-in-a-similar-m#comment29623663_19908375"><span title="2013-11-11 15:45:36Z" class="relativetime-clean">Nov 11 '13 at 15:45</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-32197768" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of &#39;useful comment&#39; votes received" class="cool">1</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Top answers, upvoted !!!</span>
+                –&nbsp;
+                    <a href="http://stackoverflow.com/users/1817029/my-name-is" title="1552 reputation" class="comment-user">My-Name-Is</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/19881863/how-to-use-comparison-methods-between-class-object-modules-in-vba-in-a-similar-m#comment32197768_19908375"><span title="2014-01-25 18:49:37Z" class="relativetime-clean">Jan 25 at 18:49</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-35011278" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of &#39;useful comment&#39; votes received" class="cool">1</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">+1 awesome answer! very useful! didn't know we can use interfaces in VBA!</span>
+                –&nbsp;
+                    <a href="http://stackoverflow.com/users/3067523/simoco" title="23521 reputation" class="comment-user">simoco</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/19881863/how-to-use-comparison-methods-between-class-object-modules-in-vba-in-a-similar-m#comment35011278_19908375"><span title="2014-04-08 11:07:53Z" class="relativetime-clean">Apr 8 at 11:07</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+            <div id="comments-link-19908375" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span><a class="js-show-link comments-link dno" title="expand to show all comments on this post, or add one of your own" href="http://stackoverflow.com/questions/19881863/how-to-use-comparison-methods-between-class-object-modules-in-vba-in-a-similar-m#" onclick=""></a>
+            </div>
+    </td>
+</tr>    </tbody></table>
+</div>
+									<a name="new-answer"></a>
+						<form id="post-form" action="http://stackoverflow.com/questions/19881863/answer/submit" method="post" class="post-form">
+						    <input type="hidden" id="post-id" value="19881863">
+                            <input type="hidden" id="qualityBanWarningShown" name="qualityBanWarningShown" value="false">
+                            <input type="hidden" name="referrer" value="https://www.google.com.br/">
+							<h2 class="space">Your Answer</h2>
+
+
+
+            <script>
+            StackExchange.ifUsing("editor", function () {
+                StackExchange.using("externalEditor", function () {
+                    StackExchange.using("snippets", function () {
+                        StackExchange.snippets.init();
+                    });
+                });
+            }, "code-snippets");
+        </script>
+    
+
+<script>
+    StackExchange.ready(function() {
+        initTagRenderer("".split(" "), "".split(" "));
+       
+        StackExchange.using("externalEditor", function() {
+            // Have to fire editor after snippets, if snippets enabled
+            if (StackExchange.options.snippets.enabled) {
+                StackExchange.using("snippets", function() {
+                    createEditor();
+                });
+            }
+            else {
+                createEditor();
+            }
+        });
+
+        function createEditor() {
+            prepareEditor({
+                heartbeatType: 'answer',
+                bindNavPrevention: true,
+                postfix: "",
+                    onDemand: true,
+                    discardSelector: ".discard-answer"
+                ,immediatelyShowMarkdownHelp:true
+                });
+                
+
+        }
+    });  
+</script>
+
+
+<div id="post-editor" class="post-editor">
+
+    <div style="position: relative;">     
+        <div class="wmd-container">
+            <div id="wmd-button-bar" class="wmd-button-bar"><ul id="wmd-button-row" class="wmd-button-row"><li id="wmd-bold-button" class="wmd-button" style="left: 0px;"><span style="background-position: 0px -20px;"></span></li><li id="wmd-italic-button" class="wmd-button" style="left: 25px;"><span style="background-position: -20px -20px;"></span></li><li id="wmd-spacer1" class="wmd-spacer" style="left: 50px;"><span style="background-position: -40px -20px;"></span></li><li id="wmd-link-button" class="wmd-button" style="left: 75px;"><span style="background-position: -40px -20px;"></span></li><li id="wmd-quote-button" class="wmd-button" style="left: 100px;"><span style="background-position: -60px -20px;"></span></li><li id="wmd-code-button" class="wmd-button" style="left: 125px;"><span style="background-position: -80px -20px;"></span></li><li id="wmd-image-button" class="wmd-button" style="left: 150px;"><span style="background-position: -100px -20px;"></span></li><li id="wmd-spacer2" class="wmd-spacer" style="left: 175px;"><span style="background-position: -120px -20px;"></span></li><li id="wmd-olist-button" class="wmd-button" style="left: 200px;"><span style="background-position: -120px -20px;"></span></li><li id="wmd-ulist-button" class="wmd-button" style="left: 225px;"><span style="background-position: -140px -20px;"></span></li><li id="wmd-heading-button" class="wmd-button" style="left: 250px;"><span style="background-position: -160px -20px;"></span></li><li id="wmd-hr-button" class="wmd-button" style="left: 275px;"><span style="background-position: -180px -20px;"></span></li><li id="wmd-spacer3" class="wmd-spacer" style="left: 300px;"><span style="background-position: -200px -20px;"></span></li><li id="wmd-undo-button" class="wmd-button" style="left: 325px;"><span style="background-position: -200px -20px;"></span></li><li id="wmd-redo-button" class="wmd-button" style="left: 350px;"><span style="background-position: -220px -20px;"></span></li></ul></div>
+            <textarea id="wmd-input" class="wmd-input" name="post-text" cols="92" rows="15" tabindex="101" data-min-length=""></textarea>
+        </div>
+    </div>
+
+    <div class="fl" style="margin-top: 8px; height:24px;">&nbsp;</div>
+    <div id="draft-saved" class="draft-saved community-option fl" style="margin-top: 8px; height:24px; display:none;">draft saved</div>
+
+    <div id="draft-discarded" class="draft-discarded community-option fl" style="margin-top: 8px; height:24px; display:none;">draft discarded</div>
+
+
+
+    <div id="wmd-preview" class="wmd-preview"></div>
+    <div></div>
+    <div class="edit-block">
+        <input id="fkey" name="fkey" type="hidden" value="af3f937384eab2d1a668912556f02889">
+        <input id="author" name="author" type="text">
+    </div>
+</div>
+							<div style="position: relative;">
+								
+            <div class="form-item new-post-login">
+        
+                <div class="new-login-form">
+                    <div class="new-login-left">
+                        <h3>Sign up or <a id="login-link" href="http://stackoverflow.com/users/login?returnurl=%2fquestions%2f19881863%2fhow-to-use-comparison-methods-between-class-object-modules-in-vba-in-a-similar-m%23new-answer">log in</a></h3>
+                        <script>
+                            StackExchange.ready(function () {
+                                StackExchange.helpers.onClickDraftSave('#login-link');
+                            });
+                        </script>
+                        <div class="preferred-login google-login">
+                            <p><span class="icon"></span><span>Sign up using Google</span></p>
+                        </div>
+                        <div class="preferred-login facebook-login">
+                            <p><span class="icon"></span><span>Sign up using Facebook</span></p>
+                        </div>
+                        <div class="preferred-login stackexchange-login">
+                            <p><span class="icon"></span><span>Sign up using Stack Exchange</span></p>
+                        </div>
+                    </div>
+                    <input type="hidden" name="manual-openid" class="manual-openid">
+                    <input type="hidden" name="use-facebook" class="use-facebook" value="false">
+                    <input type="hidden" name="use-google-oauth2" class="use-google-oauth2" value="false">
+                    <input type="button" class="submit-openid" value="Submit" style="display:none">
+                    <div class="new-login-right">
+                                <h3>Post as a guest</h3>
+    <div class="form-item">
+        <table>
+        <tbody><tr>
+                    <script>
+                StackExchange.ready(function () {
+                    StackExchange.helpers.bindHelpOverlayEvents($('.vm input'));
+                });
+            </script>
+            <td class="vm">
+                <div>
+                    <label for="display-name">Name</label>
+                    <input id="display-name" name="display-name" type="text" size="30" maxlength="30" value="" tabindex="105">
+                </div>
+                <div>
+                    <label for="m-address">Email</label>
+                    <input id="m-address" name="m-address" type="text" size="30" maxlength="100" value="" tabindex="106">
+                    <span class="edit-field-overlay">required, but not shown</span>
+                </div>
+            </td>
+        </tr>
+        </tbody></table>
+    </div>
+
+                    </div>
+                </div>
+            </div>
+            <script>
+                StackExchange.ready(
+                    function () {
+                        StackExchange.openid.initPostLogin('.new-post-login', '%2fquestions%2f19881863%2fhow-to-use-comparison-methods-between-class-object-modules-in-vba-in-a-similar-m%23new-answer');
+                    }
+                );
+            </script>
+            <noscript>
+                        &lt;h3&gt;Post as a guest&lt;/h3&gt;
+    &lt;div class="form-item"&gt;
+        &lt;table&gt;
+        &lt;tr&gt;
+                    &lt;script&gt;
+                StackExchange.ready(function () {
+                    StackExchange.helpers.bindHelpOverlayEvents($('.vm input'));
+                });
+            &lt;/script&gt;
+            &lt;td class="vm"&gt;
+                &lt;div&gt;
+                    &lt;label for="display-name"&gt;Name&lt;/label&gt;
+                    &lt;input id="display-name" name="display-name" type="text" size="30" maxlength="30" value="" tabindex="105"&gt;
+                &lt;/div&gt;
+                &lt;div&gt;
+                    &lt;label for="m-address"&gt;Email&lt;/label&gt;
+                    &lt;input id="m-address" name="m-address" type="text" size="30" maxlength="100" value="" tabindex="106"&gt;
+                    &lt;span class="edit-field-overlay"&gt;required, but not shown&lt;/span&gt;
+                &lt;/div&gt;
+            &lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;/table&gt;
+    &lt;/div&gt;
+
+            </noscript>
+							</div>
+           
+															<div class="form-submit cbt">
+									<input id="submit-button" type="submit" value="Post Your Answer" tabindex="110">
+									<a href="http://stackoverflow.com/questions/19881863/how-to-use-comparison-methods-between-class-object-modules-in-vba-in-a-similar-m#" class="discard-answer dno">discard</a>
+
+<p class="privacy-policy-agreement">
+By posting your answer, you agree to the <a href="http://stackexchange.com/legal/privacy-policy" target="_blank">privacy policy</a> and <a href="http://stackexchange.com/legal/terms-of-service" target="_blank">terms of service</a>.</p>
+<input type="hidden" name="legalLinksShown" value="1">								</div>
+						</form>
+
+
+
+						<h2 class="bottom-notice" data-loc="1">
+Not the answer you're looking for?							Browse other questions tagged <a href="http://stackoverflow.com/questions/tagged/vb.net" class="post-tag" title="show questions tagged &#39;vb.net&#39;" rel="tag">vb.net</a> <a href="http://stackoverflow.com/questions/tagged/vba" class="post-tag" title="show questions tagged &#39;vba&#39;" rel="tag">vba</a>  or <a href="http://stackoverflow.com/questions/ask">ask your own question</a>.						</h2>
+			</div>
+		</div>
+				<div id="sidebar" class="show-votes">
+						    <div class="module question-stats">
+			        <table id="qinfo">
+			            <tbody><tr>
+			                <td>
+			                    <p class="label-key">asked</p>
+			                </td>
+			                <td style="padding-left: 10px">
+			                    <p class="label-key" title="2013-11-09 19:05:05Z"><b>10 months ago</b></p>
+			                </td>
+			            </tr>
+			            <tr>
+			                <td>
+			                    <p class="label-key">viewed</p>
+			                </td>
+
+			                <td style="padding-left: 10px">
+			                    <p class="label-key">
+			                        <b>1890 times</b>
+			                    </p>
+			                </td>
+			            </tr>
+			                <tr>
+			                    <td>
+			                        <p class="label-key">active</p>
+			                    </td>
+			                    <td style="padding-left: 10px">
+			                        <p class="label-key"><b><a href="http://stackoverflow.com/questions/19881863/how-to-use-comparison-methods-between-class-object-modules-in-vba-in-a-similar-m?lastactivity" class="lastactivity-link" title="2014-06-26 16:17:46Z">3 months ago</a></b></p>
+			                    </td>
+			                </tr>
+			        </tbody></table>
+			    </div>
+						
+			<script>
+                var ados = ados || {};ados.run = ados.run || [];
+                ados.run.push(function() { ados_add_placement(22,8277,"adzerk713543869",[17,2221]).setZone(45) ; });                    
+            </script>
+              
+        <div id="hireme" class=" orange looking tagged">  <a href="http://careers.stackoverflow.com/?a=33bEc&utm_source=stackoverflow.com&utm_medium=ad&utm_campaign=jobs-large-sidebar-orange-looking" class="top" target="_blank"> <span>Looking for a job?</span> </a> <ul class="jobs"> <li> <a href="http://careers.stackoverflow.com/jobs/61925/desenvolvedores-thoughtworks?a=51QcoSy9eF&utm_source=stackoverflow.com&utm_medium=ad&utm_campaign=jobs-large-sidebar-orange-looking" target="_blank" title="Desenvolvedores at ThoughtWorks. Click to learn more."> <span class="title">Desenvolvedores</span> <span class="company">ThoughtWorks</span> <span class="location">Porto Alegre, Brazil /…</span> <span class="post-tag">agile</span> <span class="post-tag">ruby</span> </a> </li> <li> <a href="http://careers.stackoverflow.com/jobs/69108/full-stack-web-developer-prontmed?a=5C0Rsry0M2&utm_source=stackoverflow.com&utm_medium=ad&utm_campaign=jobs-large-sidebar-orange-looking" target="_blank" title="Full-stack web developer at Prontmed. Click to learn more."> <span class="title">Full-stack web developer</span> <span class="company">Prontmed</span> <span class="location">São Paulo, Brazil</span> <span class="post-tag">angularjs</span> <span class="post-tag">c#</span> </a> </li> <li> <a href="http://careers.stackoverflow.com/jobs/68344/jedi-frontend-engineer-chaordic?a=5yakjuDshJ&utm_source=stackoverflow.com&utm_medium=ad&utm_campaign=jobs-large-sidebar-orange-looking" target="_blank" title="Jedi Frontend Engineer at Chaordic. Click to learn more."> <span class="title">Jedi Frontend Engineer</span> <span class="company">Chaordic</span> <span class="location">Florianopolis, Brazil /…</span> <span class="post-tag">css</span> <span class="post-tag">html</span> </a> </li> <li> <a href="http://careers.stackoverflow.com/jobs/53318/devops-architect-workshare-limited?a=4kuRoEAl0g&utm_source=stackoverflow.com&utm_medium=ad&utm_campaign=jobs-large-sidebar-orange-looking" target="_blank" title="DevOps Architect at Workshare Limited. Click to learn more."> <span class="title">DevOps Architect</span> <span class="company">Workshare Limited</span> <span class="location">London, UK</span> <span class="post-tag">chef</span> <span class="post-tag">ruby</span> </a> </li> </ul> <img alt="" class="impression" src="./How to use comparison methods between class object modules in VBA in a similar manner as VB.NET  - Stack Overflow_files/51QcoSy9eF-5C0Rsry0M2-5yakjuDshJ-4kuRoEAl0g-33bEc" style="display:none"></div>
+			  
+    
+            <div class="module sidebar-linked">
+	<h4 id="h-linked">Linked</h4>
+	<div class="linked" data-tracker="lq=1">
+<div class="spacer">
+	<a href="http://stackoverflow.com/q/19373081?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">11</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/19373081/how-to-use-the-implements-in-excel-vba?lq=1" class="question-hyperlink">How to use the Implements in Excel VBA</a>
+</div><div class="spacer">
+	<a href="http://stackoverflow.com/q/3669270?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">7</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/3669270/vba-inheritance-analog-of-super?lq=1" class="question-hyperlink">VBA inheritance, analog of super</a>
+</div><div class="spacer">
+	<a href="http://stackoverflow.com/q/21220317?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">3</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/21220317/vba-is-there-something-like-abstract-class?lq=1" class="question-hyperlink">VBA: is there something like Abstract Class?</a>
+</div><div class="spacer">
+	<a href="http://stackoverflow.com/q/24510264?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">2</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/24510264/vba-difference-between-public-variable-and-property?lq=1" class="question-hyperlink">VBA difference between public variable and property</a>
+</div><div class="spacer">
+	<a href="http://stackoverflow.com/q/20095181?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">1</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/20095181/excel-vba-how-to-pass-objects-as-optional-args-and-be-able-detect-them?lq=1" class="question-hyperlink">Excel VBA. How to pass objects as optional args and be able detect them?</a>
+</div><div class="spacer">
+	<a href="http://stackoverflow.com/q/23155054?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">1</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/23155054/include-in-excel-vba?lq=1" class="question-hyperlink">“Include” in Excel VBA?</a>
+</div><div class="spacer">
+	<a href="http://stackoverflow.com/q/21533681?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">-1</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/21533681/vba-custom-property-conundrum?lq=1" class="question-hyperlink">VBA Custom Property Conundrum</a>
+</div>			</div>
+</div>
+
+				<div class="module sidebar-related">
+					<h4 id="h-related">Related</h4>
+                    <div class="related js-gps-related-questions" data-tracker="rq=1">
+                        <div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/881570?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">69
+    </div>
+</a><a href="http://stackoverflow.com/questions/881570/classes-vs-modules-in-vb-net?rq=1" class="question-hyperlink">Classes vs. Modules in VB.Net</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/5092662?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">5
+    </div>
+</a><a href="http://stackoverflow.com/questions/5092662/set-property-of-vba-class-with-object-reference?rq=1" class="question-hyperlink">Set property of vba class with object reference</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/7778066?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes default">0
+    </div>
+</a><a href="http://stackoverflow.com/questions/7778066/how-can-i-use-vba-in-a-vb-net-application?rq=1" class="question-hyperlink">How can I use VBA in a VB.net application?</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/9525473?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes default">2
+    </div>
+</a><a href="http://stackoverflow.com/questions/9525473/how-to-pass-array-variable-from-vba-to-vb-net-function?rq=1" class="question-hyperlink">how to pass array variable from vba to vb.net function</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/10273394?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes default">3
+    </div>
+</a><a href="http://stackoverflow.com/questions/10273394/how-to-specify-a-code-module-as-the-object-ref-parameter-in-vb-net-callbyname?rq=1" class="question-hyperlink">How to specify a code module as the “Object Ref” parameter in VB.Net CallByName?</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/10508762?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes default">0
+    </div>
+</a><a href="http://stackoverflow.com/questions/10508762/vba-of-excel-calling-vb-net-class-through-tlb?rq=1" class="question-hyperlink">vba of EXCEL calling VB.NET class through tlb…</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/18532739?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">0
+    </div>
+</a><a href="http://stackoverflow.com/questions/18532739/converting-a-vba-module-to-a-com-object?rq=1" class="question-hyperlink">Converting a VBA module to a COM object</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/19858615?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes default">0
+    </div>
+</a><a href="http://stackoverflow.com/questions/19858615/syncing-libraries-between-vba-and-vb-net?rq=1" class="question-hyperlink">Syncing libraries between VBA and VB.NET</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/21004107?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes default">2
+    </div>
+</a><a href="http://stackoverflow.com/questions/21004107/why-doesnt-code-work-in-vb-net-but-works-in-vba-getobject?rq=1" class="question-hyperlink">Why doesn't code work in VB.net, but works in VBA; GetObject</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/24644738?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes default">0
+    </div>
+</a><a href="http://stackoverflow.com/questions/24644738/how-to-get-propertyinfo-from-custom-class-in-vba?rq=1" class="question-hyperlink">how to get propertyinfo from custom class in VBA</a>
+</div>
+
+                    </div>
+				</div>
+            
+<div id="hot-network-questions" class="module">
+    <h4>
+        <a href="http://stackexchange.com/questions?tab=hot" class="js-gps-track" data-gps-track="posts_hot_network.click({ item_type:1, location:11 })">
+            Hot Network Questions
+        </a>
+    </h4>
+    <ul>
+            <li>
+                <div class="favicon favicon-physics" title="Physics Stack Exchange"></div><a href="http://physics.stackexchange.com/questions/138003/why-does-my-wooden-door-disperse-light-into-a-rainbow-color-spectrum" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:151 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why does my wooden door disperse light into a rainbow color spectrum?
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-math" title="Mathematics Stack Exchange"></div><a href="http://math.stackexchange.com/questions/954031/the-real-line-and-finite-complement-topology-is-not-a-hausdorff" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:69 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    The real line, and finite complement topology is not a hausdorff
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-money" title="Personal Finance &amp; Money Stack Exchange"></div><a href="http://money.stackexchange.com/questions/37416/what-actually-inflation-means" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:93 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    What actually Inflation means....?
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-stackoverflow" title="Stack Overflow"></div><a href="http://stackoverflow.com/questions/26137325/c11-in-class-initializaton-with-doesnt-work-with-explicit-constructor" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:1 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    C++11: in-class initializaton with "= {}" doesn't work with explicit constructor
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-cs" title="Computer Science Stack Exchange"></div><a href="http://cs.stackexchange.com/questions/30457/union-of-two-regular-languages-that-doesnt-output-a-regular-language" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:419 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Union of two regular languages that doesn't output a regular language
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-stackoverflow" title="Stack Overflow"></div><a href="http://stackoverflow.com/questions/26139083/sfinae-check-for-operator" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:1 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    SFINAE check for operator+=
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-salesforce" title="Salesforce Stack Exchange"></div><a href="http://salesforce.stackexchange.com/questions/51107/can-two-person-accounts-be-merged-using-dml-merge-operation" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:459 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Can two Person Accounts be merged using DML merge operation?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-matheducators" title="Mathematics Educators Stack Exchange"></div><a href="http://matheducators.stackexchange.com/questions/4475/metonymy-in-mathematics" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:548 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Metonymy in mathematics
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-mathoverflow" title="MathOverflow"></div><a href="http://mathoverflow.net/questions/182006/what-is-the-most-useful-non-existing-object-of-your-field" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:504 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    What is the most useful non-existing object of your field?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-tex" title="TeX - LaTeX Stack Exchange"></div><a href="http://tex.stackexchange.com/questions/204012/ear-symbol-in-latex" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:85 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Ear symbol in LaTeX?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-english" title="English Language &amp; Usage Stack Exchange"></div><a href="http://english.stackexchange.com/questions/199218/adverb-clause-his-delight-evident" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:97 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Adverb clause: his delight evident
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-aviation" title="Aviation Stack Exchange"></div><a href="http://aviation.stackexchange.com/questions/8840/a319-rattling-noise-from-left-engine" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:528 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    A319 Rattling noise from left engine
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-rpg" title="Role-playing Games Stack Exchange"></div><a href="http://rpg.stackexchange.com/questions/48632/can-a-night-elf-swim-naked-in-a-volcano" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:122 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Can a Night Elf swim naked in a volcano?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-mathematica" title="Mathematica Stack Exchange"></div><a href="http://mathematica.stackexchange.com/questions/61050/how-to-deal-with-recursion-formula-in-mathematica" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:387 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How to deal with recursion formula in Mathematica?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-aviation" title="Aviation Stack Exchange"></div><a href="http://aviation.stackexchange.com/questions/8852/conserving-dumped-fuel" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:528 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Conserving Dumped Fuel
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-scifi" title="Science Fiction &amp; Fantasy Stack Exchange"></div><a href="http://scifi.stackexchange.com/questions/68722/why-didnt-dumbledore-ever-heal-his-nose" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:186 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why didn't Dumbledore ever heal his nose?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-codegolf" title="Programming Puzzles &amp; Code Golf Stack Exchange"></div><a href="http://codegolf.stackexchange.com/questions/38353/enclose-1009-pixels" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:200 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Enclose 1009 pixels
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-english" title="English Language &amp; Usage Stack Exchange"></div><a href="http://english.stackexchange.com/questions/199207/what-does-the-city-ferguson-learned-too-late-that-the-well-was-dry-mean" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:97 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    What does “The city (Ferguson) learned too late that the well was dry” mean?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-travel" title="Travel Stack Exchange"></div><a href="http://travel.stackexchange.com/questions/37053/may-an-air-company-change-the-aircraft" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:273 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    May an air company change the aircraft?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-biology" title="Biology Stack Exchange"></div><a href="http://biology.stackexchange.com/questions/21772/why-dont-mammals-have-more-than-4-limbs" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:375 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why don't mammals have more than 4 limbs?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-codereview" title="Code Review Stack Exchange"></div><a href="http://codereview.stackexchange.com/questions/64327/beastly-if-statement-adding-a-course-to-one-of-8-periods" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:196 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Beastly if statement, adding a course to one of 8 periods
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-ell" title="English Language Learners Stack Exchange"></div><a href="http://ell.stackexchange.com/questions/34587/why-are-baked-and-naked-not-pronounced-the-same" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:481 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why are "baked" and "naked" not pronounced the same?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-travel" title="Travel Stack Exchange"></div><a href="http://travel.stackexchange.com/questions/37054/when-you-are-on-your-way-to-a-place-where-youll-propose-how-do-you-get-the-ring" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:273 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    When you are on your way to a place where you'll propose how do you get the ring past airport security/custom, unnoticed by your "special one"?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-electronics" title="Electrical Engineering Stack Exchange"></div><a href="http://electronics.stackexchange.com/questions/131518/mounting-ac-dc-converter-on-pcb" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:135 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Mounting AC-DC converter on PCB
+                </a>
+
+            </li>
+    </ul>
+
+        
+</div>
+		</div>
+	
+<div id="feed-link">
+    <div id="feed-link-text">
+        <a href="http://stackoverflow.com/feeds/question/19881863" title="feed of this question and its answers">
+            <span class="feed-icon"></span>question feed
+        </a>
+    </div>
+</div>	<script>
+StackExchange.ready(function(){$.get('/posts/19881863/ivc/cd14');});
+</script>
+<noscript>
+    &lt;div&gt;&lt;img src="/posts/19881863/ivc/cd14" class="dno" alt="" width="0" height="0"&gt;&lt;/div&gt;
+</noscript><div style="display:none" id="prettify-lang">lang-vb</div></div>
+
+
+
+        </div>
+    </div>
+    <div id="footer" class="categories">
+        <div class="footerwrap">
+            <div id="footer-menu">
+                <div class="top-footer-links">
+                        <a href="http://stackoverflow.com/tour">tour</a>
+                    <a href="http://stackoverflow.com/help">help</a>
+                        <a href="http://stackoverflow.com/help/badges">badges</a>
+                    <a href="http://blog.stackoverflow.com/?blb=1">blog</a>
+                        <a href="http://chat.stackoverflow.com/">chat</a>
+                    <a href="http://data.stackexchange.com/">data</a>
+                    <a href="http://stackexchange.com/legal">legal</a>
+                    <a href="http://stackexchange.com/legal/privacy-policy">privacy policy</a>
+                    <a href="http://stackexchange.com/work-here">work here</a>
+                    <a href="http://stackexchange.com/mediakit">advertising info</a>
+
+                    <a onclick="StackExchange.switchMobile(&quot;on&quot;)">mobile</a>
+                    <b><a href="http://stackoverflow.com/contact">contact us</a></b>
+                        <b><a href="http://meta.stackoverflow.com/">feedback</a></b>
+                    
+                </div>
+                <div id="footer-sites">
+                    <table>
+    <tbody><tr>
+            <th colspan="3">
+                Technology
+            </th>
+            <th>
+                Life / Arts
+            </th>
+            <th>
+                Culture / Recreation
+            </th>
+            <th>
+                Science
+            </th>
+            <th>
+                Other
+            </th>
+    </tr>
+    <tr>
+            <td>
+                <ol>
+                        <li><a href="http://stackoverflow.com/" title="professional and enthusiast programmers">Stack Overflow</a></li>
+                        <li><a href="http://serverfault.com/" title="professional system and network administrators">Server Fault</a></li>
+                        <li><a href="http://superuser.com/" title="computer enthusiasts and power users">Super User</a></li>
+                        <li><a href="http://webapps.stackexchange.com/" title="power users of web applications">Web Applications</a></li>
+                        <li><a href="http://askubuntu.com/" title="Ubuntu users and developers">Ask Ubuntu</a></li>
+                        <li><a href="http://webmasters.stackexchange.com/" title="pro webmasters">Webmasters</a></li>
+                        <li><a href="http://gamedev.stackexchange.com/" title="professional and independent game developers">Game Development</a></li>
+                        <li><a href="http://tex.stackexchange.com/" title="users of TeX, LaTeX, ConTeXt, and related typesetting systems">TeX - LaTeX</a></li>
+                            </ol></td><td><ol>
+                        <li><a href="http://programmers.stackexchange.com/" title="professional programmers interested in conceptual questions about software development">Programmers</a></li>
+                        <li><a href="http://unix.stackexchange.com/" title="users of Linux, FreeBSD and other Un*x-like operating systems.">Unix &amp; Linux</a></li>
+                        <li><a href="http://apple.stackexchange.com/" title="power users of Apple hardware and software">Ask Different (Apple)</a></li>
+                        <li><a href="http://wordpress.stackexchange.com/" title="WordPress developers and administrators">WordPress Development</a></li>
+                        <li><a href="http://gis.stackexchange.com/" title="cartographers, geographers and GIS professionals">Geographic Information Systems</a></li>
+                        <li><a href="http://electronics.stackexchange.com/" title="electronics and electrical engineering professionals, students, and enthusiasts">Electrical Engineering</a></li>
+                        <li><a href="http://android.stackexchange.com/" title="enthusiasts and power users of the Android operating system">Android Enthusiasts</a></li>
+                        <li><a href="http://security.stackexchange.com/" title="Information security professionals">Information Security</a></li>
+                            </ol></td><td><ol>
+                        <li><a href="http://dba.stackexchange.com/" title="database professionals who wish to improve their database skills and learn from others in the community">Database Administrators</a></li>
+                        <li><a href="http://drupal.stackexchange.com/" title="Drupal developers and administrators">Drupal Answers</a></li>
+                        <li><a href="http://sharepoint.stackexchange.com/" title="SharePoint enthusiasts">SharePoint</a></li>
+                        <li><a href="http://ux.stackexchange.com/" title="user experience researchers and experts">User Experience</a></li>
+                        <li><a href="http://mathematica.stackexchange.com/" title="users of Mathematica">Mathematica</a></li>
+                        <li><a href="http://salesforce.stackexchange.com/" title="Salesforce administrators, implementation experts, developers and anybody in-between">Salesforce</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#technology" class="more">
+                                more (13)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://photo.stackexchange.com/" title="professional, enthusiast and amateur photographers">Photography</a></li>
+                        <li><a href="http://scifi.stackexchange.com/" title="science fiction and fantasy enthusiasts">Science Fiction &amp; Fantasy</a></li>
+                        <li><a href="http://graphicdesign.stackexchange.com/" title="Graphic Design professionals, students, and enthusiasts">Graphic Design</a></li>
+                        <li><a href="http://cooking.stackexchange.com/" title="professional and amateur chefs">Seasoned Advice (cooking)</a></li>
+                        <li><a href="http://diy.stackexchange.com/" title="contractors and serious DIYers">Home Improvement</a></li>
+                        <li><a href="http://money.stackexchange.com/" title="people who want to be financially literate">Personal Finance &amp; Money</a></li>
+                        <li><a href="http://academia.stackexchange.com/" title="academics and those enrolled in higher education">Academia</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#lifearts" class="more">
+                                more (10)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://english.stackexchange.com/" title="linguists, etymologists, and serious English language enthusiasts">English Language &amp; Usage</a></li>
+                        <li><a href="http://skeptics.stackexchange.com/" title="scientific skepticism">Skeptics</a></li>
+                        <li><a href="http://judaism.stackexchange.com/" title="those who base their lives on Jewish law and tradition and anyone interested in learning more">Mi Yodeya (Judaism)</a></li>
+                        <li><a href="http://travel.stackexchange.com/" title="road warriors and seasoned travelers">Travel</a></li>
+                        <li><a href="http://christianity.stackexchange.com/" title="committed Christians, experts in Christianity and those interested in learning more">Christianity</a></li>
+                        <li><a href="http://gaming.stackexchange.com/" title="passionate videogamers on all platforms">Arqade (gaming)</a></li>
+                        <li><a href="http://bicycles.stackexchange.com/" title="people who build and repair bicycles, people who train cycling, or commute on bicycles">Bicycles</a></li>
+                        <li><a href="http://rpg.stackexchange.com/" title="gamemasters and players of tabletop, paper-and-pencil role-playing games">Role-playing Games</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#culturerecreation" class="more">
+                                more (21)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://math.stackexchange.com/" title="people studying math at any level and professionals in related fields">Mathematics</a></li>
+                        <li><a href="http://stats.stackexchange.com/" title="people interested in statistics, machine learning, data analysis, data mining, and data visualization">Cross Validated (stats)</a></li>
+                        <li><a href="http://cstheory.stackexchange.com/" title="theoretical computer scientists and researchers in related fields">Theoretical Computer Science</a></li>
+                        <li><a href="http://physics.stackexchange.com/" title="active researchers, academics and students of physics">Physics</a></li>
+                        <li><a href="http://mathoverflow.net/" title="professional mathematicians">MathOverflow</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#science" class="more">
+                                more (7)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://stackapps.com/" title="apps, scripts, and development with the Stack Exchange API">Stack Apps</a></li>
+                        <li><a href="http://meta.stackexchange.com/" title="meta-discussion of the Stack Exchange family of Q&amp;A websites">Meta Stack Exchange</a></li>
+                        <li><a href="http://area51.stackexchange.com/" title="proposing new sites in the Stack Exchange network">Area 51</a></li>
+                        <li><a href="http://careers.stackoverflow.com/?utm_source=stackoverflow.com&utm_medium=site-ui&utm_campaign=footerlink">Stack Overflow Careers</a></li>
+                    
+                </ol>
+            </td>
+    </tr>
+</tbody></table>
+                </div>
+            </div>
+
+            <div id="copyright">
+                site design / logo © 2014 stack exchange inc; user contributions licensed under <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license">cc by-sa 3.0</a> 
+                with <a href="http://blog.stackoverflow.com/2009/06/attribution-required/" rel="license">attribution required</a>
+            </div>
+            <div id="svnrev">
+                rev 2014.10.1.1904
+            </div>
+            
+        </div>
+    </div>
+    <noscript>
+        &lt;div id="noscript-warning"&gt;Stack Overflow works best with JavaScript enabled&lt;img src="http://pixel.quantserve.com/pixel/p-c1rF4kxgLUzNc.gif" alt="" class="dno"&gt;&lt;/div&gt;
+    </noscript>
+<script>var p = "http", d = "static"; if (document.location.protocol == "https:") { p += "s"; d = "engine"; } var z = document.createElement("script"); z.type = "text/javascript"; z.async = true; z.src = p + "://" + d + ".adzerk.net/ados.js"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(z, s);</script>
+<script>
+    var ados = ados || {};
+    ados.run = ados.run || [];
+    ados.run.push(function () { ados_setKeywords('vb.net,vba');; ados_load(); });         
+</script>
+
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () { (i[r].q = i[r].q || []).push(arguments) }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m);
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+        ga('create', 'UA-5620270-1');        
+        
+        ga('set', 'dimension2', '|vb.net|vba|');         
+        ga('send', 'pageview');
+        var _qevents = _qevents || [],
+            _comscore = _comscore || [];
+        (function () {
+            var ssl='https:'==document.location.protocol,
+                s=document.getElementsByTagName('script')[0],
+                qc=document.createElement('script');
+            qc.async=true;
+            qc.src=(ssl?'https://secure':'http://edge')+'.quantserve.com/quant.js';
+            s.parentNode.insertBefore(qc, s);
+            var sc=document.createElement('script');
+            sc.async=true;
+            sc.src=(ssl?'https://sb':'http://b') + '.scorecardresearch.com/beacon.js';
+            s.parentNode.insertBefore(sc, s);
+        })();
+        _comscore.push({ c1: "2", c2: "17440561" });
+        _qevents.push({ qacct: "p-c1rF4kxgLUzNc" });
+    </script>        
+    
+    
+</body></html>

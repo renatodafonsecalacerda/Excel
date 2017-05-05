@@ -1,0 +1,211 @@
+
+<!-- saved from url=(0043)http://www.fontstuff.com/excel/exltut03.htm -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta http-equiv="Content-Language" content="en-gb">
+
+<title>Excel Tips: Put a Calendar Date Picker on an Excel Worksheet</title>
+<link rel="stylesheet" type="text/css" href="./Excel Tips  Put a Calendar Date Picker on an Excel Worksheet_files/fontstuffie.css">
+<style type="text/css">
+.auto-style1 {
+	text-align: center;
+}
+.auto-style2 {
+	color: #000080;
+}
+</style>
+</head>
+
+<body style="">
+<a name="top"></a>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+	<tbody><tr>
+		<td>
+		<img border="0" src="./Excel Tips  Put a Calendar Date Picker on an Excel Worksheet_files/bannerexcel_sm.gif" width="149" height="36" alt="Martin Green&#39;s Excel Tips" align="right"></td>
+	</tr>
+	<tr>
+		<td height="24" bgcolor="#000000"><font color="#FFFFFF"><b>|&nbsp;&nbsp;&nbsp;<a href="http://www.fontstuff.com/index.html"><font color="#FFFFFF">Home</font></a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href="http://www.fontstuff.com/excel/index.htm"><font color="#FFFFFF">Excel</font></a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href="http://www.fontstuff.com/access/index.htm"><font color="#FFFFFF">Access</font></a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href="http://www.fontstuff.com/word/index.htm"><font color="#FFFFFF">Word</font></a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href="http://www.fontstuff.com/outlook/index.htm"><font color="#FFFFFF">Outlook</font></a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href="http://www.fontstuff.com/vba/index.htm"><font color="#FFFFFF">VBA</font></a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href="http://www.fontstuff.com/ebooks/index.htm"><font color="#FFFFFF">eBooks</font></a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href="http://www.fontstuff.com/ebooks/free/index.htm"><font color="#FFFFFF">Handouts</font></a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href="http://www.fontstuff.com/siteindex.htm"><font color="#FFFFFF">Site 
+		Index</font></a>&nbsp;&nbsp;&nbsp;|</b></font></td>
+	</tr>
+</tbody></table>
+<p><font color="#FFFFFF"><b>&nbsp;</b></font></p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+	<tbody><tr>
+		<td width="22%" valign="top">
+		<table border="1" width="100%" cellspacing="0" cellpadding="0" bordercolor="#000000" bordercolorlight="#000000" bordercolordark="#000000" style="border-collapse: collapse">
+			<tbody><tr>
+				<td bgcolor="#000000" align="center" height="24"><font color="#FFFFFF"><b>
+				A Date Picker for Excel...</b></font></td>
+			</tr>
+			<tr>
+				<td bordercolordark="#000000">
+				<ul>
+					<li>
+					<a href="http://www.fontstuff.com/excel/index.htm">Excel Home</a></li>
+					<li>
+					<a href="http://www.fontstuff.com/excel/DatePickerOnExcelWorksheet.pdf">Download the tutorial in PDF format</a></li>
+					<li>
+					<a href="http://www.fontstuff.com/excel/exltut02.htm">Put a Permanently Open Calendar on a Worksheet</a></li>
+					<li><a href="http://www.fontstuff.com/vba/vbatut07.htm">A Pop-up Calendar for 
+					Excel</a></li>
+				</ul>
+				</td>
+			</tr>
+		</tbody></table>
+		</td>
+		<td><img border="0" src="./Excel Tips  Put a Calendar Date Picker on an Excel Worksheet_files/clearpixel.gif" width="25" height="1"></td>
+		<td>
+		<h1>Put a Date Picker Calendar on an Excel Worksheet</h1>
+		<p>Published:29 April 2013<br>
+		Author: Martin Green<br>
+		Screenshots: Excel 2010, Windows 7<br>
+		For Excel Versions: 2007, 2010</p>
+		<h2>About This Tutorial</h2>
+		<p>This tutorial shows you how to add a calendar an Excel 2007 or 2010 
+		worksheet using an ActiveX control. I wrote it as an alternative to my 
+		previous tutorial for Excel 2003 and 2007, <a href="http://www.fontstuff.com/excel/exltut02.htm">Put a 
+		Permanently Open Calendar on a Worksheet</a>, because the ActiveX 
+		control it used was dropped from version 2010 of the program. In the 
+		tutorial you place a calendar/date picker on a worksheet and link it to 
+		a specific cell. Although not very flexible it fulfils a purpose and has 
+		the advantage that, providing you want the calendar linked to a specific 
+		cell, no VBA programming is necessary. If you need it to be more 
+		flexible, with a simple line of code you can have it enter a date into 
+		any selected cell. If you want to create a really flexible and powerful 
+		pop-up calendar tool take a look at my VBA tutorial,
+		<a href="http://www.fontstuff.com/vba/vbatut07.htm">A Pop-up Calendar for Excel</a>.</p><h2>Place 
+		the ActiveX Control on the Worksheet</h2>
+		<p>The tool you require is located on the <b>Developer</b> tab so, if it 
+		isn't already visible, you need to show it on the Ribbon:</p><ul>
+			<li>In <b>Excel 2007</b> click the <b>Office Button</b> and choose
+			<b>Excel Options</b>. In the <b>Popular</b> section of the <i>Excel 
+			Options</i> dialog check the box marked <b>Show Developer tab in the 
+			Ribbon</b>. Click <b>OK</b> to return to Excel.</li>
+			<li>In <b>Excel 2010</b> click the <b>File</b> tab, choose <b>
+			Options</b> and in the <i>Excel Options</i> dialog choose <b>
+			Customize Ribbon</b>. In the <b>Main Tabs</b> section check the box 
+			marked <b>Developer</b> then click <b>OK</b> to return to Excel.</li>
+			</ul>
+			<p>In the <b>Controls</b> section of the <b>Developer</b> tab click 
+			the <b>Insert</b> button to display a selection of controls. Click 
+			the<b> More Controls</b> button to open the <i>More Controls</i> 
+			dialog.<b> </b>
+			</p><p align="center">
+			<img border="0" src="./Excel Tips  Put a Calendar Date Picker on an Excel Worksheet_files/exltut03_01.gif" width="284" height="244" alt="Click the More Controls button"></p><p>
+			The <i>More Controls</i> dialog offers a list of additional controls 
+			that are available. Scroll down the list and find <b>Microsoft Date 
+			and Time Picker Control</b>. The accompanying number will differ 
+			according to which version of Microsoft Excel you are using. Select 
+			it and click <b>OK</b>.</p><p align="center">
+			<img border="0" src="./Excel Tips  Put a Calendar Date Picker on an Excel Worksheet_files/exltut03_02.gif" width="337" height="121" alt="Select the Microsoft Date and Time Picker Control"></p><p>
+			Click on the worksheet approximately where you want the control to 
+			appear then use the mouse to resize and position it as you would any 
+			drawing object.</p><p align="center">
+			<img border="0" src="./Excel Tips  Put a Calendar Date Picker on an Excel Worksheet_files/exltut03_03.gif" width="532" height="225" alt="Place the ActiveX control on the worksheet"></p><p>
+			Note that the control is represented by an expression in the <i>
+			Formula Bar</i> and its name is shown in the <i>Name Box</i>.</p><h2>Link the Control to a Specific Cell</h2>
+			<h3>
+			Define the Control's Properties</h3>
+			<p>Before the Date and Time Picker Control can be used its 
+			properties must be defined. With the control selected, in the 
+			<strong>Controls</strong> section of the <strong>Developer</strong> tab click the <b>Properties</b> 
+			button. This opens the <i>Properties</i> window listing all the 
+			properties of the Date and Time Picker control. Here you can specify 
+			a format for the date, define a range of allowed dates as well as&nbsp; many 
+			other useful properties. 
+			</p><p>If you want to link the calendar to a specific cell so that, when 
+			a date is chosen it is entered into that cell only, you must enter 
+			the address of the cell into the <b>LinkedCell</b> property. In this 
+			example I have specified cell <b>A1</b>.</p><p align="center">
+			<img border="0" src="./Excel Tips  Put a Calendar Date Picker on an Excel Worksheet_files/exltut03_04.gif" width="230" height="136" alt="Enter the address of the linked cell in the Properties window"></p><h3>
+			Activate the Control</h3>
+		<p>
+			The calendar needs to be activated before it will work. Click the
+			<strong>Design Mode</strong> button on the <strong>Developer</strong> 
+			tab to take the worksheet out of design mode. Job done! To insert a 
+			date click the control's down-arrow to open the calendar. When you 
+			select a date the calendar will close and the date will be written 
+			into the specified cell.</p><p class="auto-style1">
+			<img border="0" src="./Excel Tips  Put a Calendar Date Picker on an Excel Worksheet_files/exltut03_05.gif" width="398" height="291" alt="Select a date to enter it into the specified cell"></p><p>
+			If you need to change anything simply put the worksheet back into 
+			design mode by clicking the <strong>Design Mode</strong> button. 
+			This will allow you to select any of the controls on the worksheet 
+			and will activate the appropriate tools on the Developer tab.</p><h2>
+			Link the Control to the Active Cell</h2>
+			<p>If you want the chosen date to be entered into the currently 
+			selected (active) cell, a little VBA code is required. <strong>Do not</strong> enter 
+			a cell address into the <strong>LinkedCell</strong> property of the 
+			control's property sheet. Instead, click the <strong>View Code</strong> 
+			button in the <strong>Controls </strong>section of the<strong> 
+			Developer</strong> tab. This opens the current worksheet's code 
+			module in the Visual Basic Editor.</p><p>At the top of the code window 
+		there are two drop-down lists, one marked<strong> (General)</strong> and 
+		the other marked <strong>(Declarations)</strong>. Open the <strong>
+		General</strong> list where you will see the name of the Date Picker 
+		control you placed on the worksheet (e.g. <em>DTPicker21</em>). Choose 
+		it. Excel automatically creates an empty event procedure. This isn't the 
+		one you want and you can delete it later but leave it there for now. 
+		Open the <strong>Declarations</strong> list and choose <strong>Change</strong>. 
+		This creates an empty procedure for the control's <em>Change</em> event. 
+		Any code you enter here will run automatically when the date in the Date 
+		Picker changes. (Now you can delete the one you didn't need.) Enter the 
+		code statement shown below (<em>Listing 1</em>).</p><p><strong><em>Listing 
+		1. A procedure to write the selected date into the active cell</em></strong></p><p class="code">
+		<span class="auto-style2">Private Sub</span> DTPicker21_Change()<br>&nbsp;&nbsp;&nbsp;&nbsp;ActiveCell.Value 
+		= Me.DTPicker21.Value<br><span class="auto-style2">End Sub</span></p><p>Open 
+		the <strong>Debug </strong>menu and choose <strong>Compile... </strong>
+		to check your code for errors and correct anything necessary then
+		<strong>Save</strong> your work. You can close the Visual Basic Editor 
+		and return to Excel. Click the <strong>Design Mode</strong> button on 
+		the <strong>Developer</strong> tab to take the worksheet out of design 
+		mode. Job done! Test your calendar by selecting a cell then choosing a 
+		date from the Date Picker.</p><h2>
+			Link the Control to All the Selected Cells</h2>
+		<p>
+			If you want the chosen date to be entered into all the currently 
+			selected cells, create a <em>Change</em> event procedure as 
+			described in the previous section and enter code as shown below (<em>Listing 
+			2</em>).</p><p>
+			<strong><em>Listing 2. A procedure to write the selected date into 
+			all the currently selected cells</em></strong></p><p>
+			<span class="codeblue">Private Sub</span><span class="code"> 
+			DTPicker21_Change()<br>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="codeblue">Dim</span><span class="code"> 
+			cell </span><span class="codeblue">As Object</span><span class="code"><br>
+			&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="codeblue">For Each</span><span class="code"> 
+			cell </span><span class="codeblue">In</span><span class="code"> 
+			Selection.Cells<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cell.Value = Me.DTPicker21.Value<br>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="codeblue">Next</span><span class="code"> 
+			cell<br></span><span class="codeblue">End Sub</span></p><p>Check,
+		<strong>Compile</strong> and <strong>Save</strong> your code then return 
+		to Excel and click the <strong>Design Mode</strong> button on the
+		<strong>Developer</strong> tab to take the worksheet out of design mode. 
+		Job done! Test your work by selecting a range of cells, either a 
+		rectangular block of cells or a non-contiguous multiple selection (click 
+		on one cell then [CTRL]+Click on other cells to select them as well).</p></td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td align="right"><a href="http://www.fontstuff.com/excel/exltut03.htm#top">^ top</a></td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td><font face="Verdana">©2013 </font>Martin Green <a href="mailto:martin@fontstuff.com">martin@fontstuff.com</a></td>
+	</tr>
+</tbody></table>
+
+
+
+
+td&gt;
+	
+	
+		&nbsp;
+		&nbsp;
+		<font face="Verdana">©2013 </font>Martin Green <a href="mailto:martin@fontstuff.com">martin@fontstuff.com</a>
+	
+
+
+
+
+
+<div id="goog_qs_tidbit_box" style="display:none"><div id="goog_qs-wrapper"><div id="goog_qs-box-toggle" style="background-image: url(chrome-extension://okanipcmceoeemlbjnmnbdibhgpbllgc/images/close.png);"></div><div id="goog_qs-box-info" class="goog_qs-box-title" style="background-image: url(chrome-extension://okanipcmceoeemlbjnmnbdibhgpbllgc/images/icon16x16.png);"><span class="goog_qs-nowrap">R<img>olagem</span> <span class="goog_qs-nowrap">r<img>ápida</span> <span class="goog_qs-nowrap">d<img>o</span> <span class="goog_qs-nowrap">G<img>oogle</span></div><div id="goog_qs-box-tidbits"><div id="goog_qs-box-msg"><span class="goog_qs-nowrap">E<img>sta</span> <span class="goog_qs-nowrap">p<img>ágina</span> <span class="goog_qs-nowrap">i<img>nteira</span> <span class="goog_qs-nowrap">p<img>arece</span> <span class="goog_qs-nowrap">s<img>er</span> <span class="goog_qs-nowrap">s<img>obre</span> <span class="goog_qs-query"><span class="goog_qs-nowrap">e<img>xcel</span> <span class="goog_qs-nowrap">d<img>atepicker</span></span>. A <span class="goog_qs-nowrap">R<img>olagem</span> <span class="goog_qs-nowrap">r<img>ápida</span> <span class="goog_qs-nowrap">a<img>parece</span> <span class="goog_qs-nowrap">q<img>uando</span> <span class="goog_qs-nowrap">a<img>penas</span> <span class="goog_qs-nowrap">a<img>lgumas</span> <span class="goog_qs-nowrap">p<img>artes</span> <span class="goog_qs-nowrap">d<img>a</span> <span class="goog_qs-nowrap">p<img>ágina</span> <span class="goog_qs-nowrap">s<img>ão</span> <span class="goog_qs-nowrap">r<img>elevantes.</span> <span class="goog_qs-learn-more"><span class="goog_qs-nowrap">S<img>aiba</span> <span class="goog_qs-nowrap">m<img>ais.</span></span></div></div></div></div><div id="gtx-trans" style="position: absolute; left: 909px; top: 1568.140625px;"><div class="gtx-trans-icon"></div></div></body></html>

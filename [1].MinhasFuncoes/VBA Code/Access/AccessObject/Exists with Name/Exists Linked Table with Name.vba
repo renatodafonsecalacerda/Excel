@@ -1,0 +1,1 @@
+<Boolean:IsLinkedTable> = DCount("*", "MSysObjects", "Name='" & <String:Name> & "' And [Type] = 6")

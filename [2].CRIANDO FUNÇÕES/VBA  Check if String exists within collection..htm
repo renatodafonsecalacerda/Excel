@@ -1,0 +1,1527 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0123)http://www.mrexcel.com/forum/excel-questions/277889-visual-basic-applications-check-if-string-exists-within-collection.html -->
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en" id="vbulletin_html"><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<!--<base href="http://www.mrexcel.com/forum/">--><base href="."><!--[if IE]></base><![endif]-->
+	<link rel="canonical" href="./VBA  Check if String exists within collection._files/VBA  Check if String exists within collection..htm">
+
+<meta id="e_vb_meta_bburl" name="vb_meta_bburl" content="http://www.mrexcel.com/forum">
+
+<meta name="generator" content="vBulletin 4.2.0">
+
+	<link rel="Shortcut Icon" href="http://www.mrexcel.com/forum/favicon.ico" type="image/x-icon">
+
+
+
+
+
+
+
+
+<script async="" type="text/javascript" src="./VBA  Check if String exists within collection._files/ca-pub-2974935598394359.js"></script><script type="text/javascript">
+<!--
+	if (typeof YAHOO === 'undefined') // Load ALL YUI Local
+	{
+		document.write('<script type="text/javascript" src="http://www.mrexcel.com/forum/clientscript/yui/yuiloader-dom-event/yuiloader-dom-event.js?v=420"><\/script>');
+		document.write('<script type="text/javascript" src="http://www.mrexcel.com/forum/clientscript/yui/connection/connection-min.js?v=420"><\/script>');
+		var yuipath = 'clientscript/yui';
+		var yuicombopath = '';
+		var remoteyui = false;
+	}
+	else	// Load Rest of YUI remotely (where possible)
+	{
+		var yuipath = 'clientscript/yui';
+		var yuicombopath = '';
+		var remoteyui = true;
+		if (!yuicombopath)
+		{
+			document.write('<script type="text/javascript" src="http://www.mrexcel.com/forum/clientscript/yui/connection/connection-min.js"><\/script>');
+		}
+	}
+	var SESSIONURL = "";
+	var SECURITYTOKEN = "guest";
+	var IMGDIR_MISC = "images/misc";
+	var IMGDIR_BUTTON = "images/buttons";
+	var vb_disable_ajax = parseInt("0", 10);
+	var SIMPLEVERSION = "420";
+	var BBURL = "http://www.mrexcel.com/forum";
+	var LOGGEDIN = 0 > 0 ? true : false;
+	var THIS_SCRIPT = "showthread";
+	var RELPATH = "showthread.php?t=277889";
+	var PATHS = {
+		forum : "",
+		cms   : "",
+		blog  : ""
+	};
+	var AJAXBASEURL = "http://www.mrexcel.com/forum/";
+// -->
+</script><script type="text/javascript" src="./VBA  Check if String exists within collection._files/yuiloader-dom-event.js"></script><script type="text/javascript" src="./VBA  Check if String exists within collection._files/connection-min.js"></script>
+<script type="text/javascript" src="./VBA  Check if String exists within collection._files/vbulletin-core.js"></script>
+
+
+
+
+
+	<link rel="stylesheet" type="text/css" href="./VBA  Check if String exists within collection._files/main-rollup.css">
+        
+
+	<!--[if lt IE 8]>
+	<link rel="stylesheet" type="text/css" href="http://www.mrexcel.com/forum/clientscript/vbulletin_css/style00003l/popupmenu-ie.css?d=1405762988" />
+	<link rel="stylesheet" type="text/css" href="http://www.mrexcel.com/forum/clientscript/vbulletin_css/style00003l/vbulletin-ie.css?d=1405762988" />
+	<link rel="stylesheet" type="text/css" href="http://www.mrexcel.com/forum/clientscript/vbulletin_css/style00003l/vbulletin-chrome-ie.css?d=1405762988" />
+	<link rel="stylesheet" type="text/css" href="http://www.mrexcel.com/forum/clientscript/vbulletin_css/style00003l/vbulletin-formcontrols-ie.css?d=1405762988" />
+	<link rel="stylesheet" type="text/css" href="http://www.mrexcel.com/forum/clientscript/vbulletin_css/style00003l/editor-ie.css?d=1405762988" />
+	<![endif]-->
+
+	<meta name="keywords" content="VBA,Check,if,String,exists,within,collection,string, mynum, doesitemexist, function, mycheck, error, collections, collection, exists, boolean, goto, phoenix, public, doesitemexistmyset, true, false, myset.count, mysetmynum, integer, resume, check, strings, approach, speed, terms, work, inefficient">
+	<meta name="description" content="Hello. I have two collections of Strings. I need to see if a certain String exists in these collections. This is what I have, but it doesn&#39;t work and">
+
+	<title> VBA:  Check if String exists within collection.</title>
+	<link rel="canonical" href="./VBA  Check if String exists within collection._files/VBA  Check if String exists within collection..htm">
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+	
+		<link rel="stylesheet" type="text/css" href="./VBA  Check if String exists within collection._files/showthread-rollup.css">
+	
+	<!--[if lt IE 8]><link rel="stylesheet" type="text/css" href="http://www.mrexcel.com/forum/clientscript/vbulletin_css/style00003l/toolsmenu-ie.css?d=1405762988" />
+	<link rel="stylesheet" type="text/css" href="http://www.mrexcel.com/forum/clientscript/vbulletin_css/style00003l/postlist-ie.css?d=1405762988" />
+	<link rel="stylesheet" type="text/css" href="http://www.mrexcel.com/forum/clientscript/vbulletin_css/style00003l/showthread-ie.css?d=1405762988" />
+	<link rel="stylesheet" type="text/css" href="http://www.mrexcel.com/forum/clientscript/vbulletin_css/style00003l/postbit-ie.css?d=1405762988" />
+	<link rel="stylesheet" type="text/css" href="http://www.mrexcel.com/forum/clientscript/vbulletin_css/style00003l/poll-ie.css?d=1405762988" /><![endif]-->
+<link rel="stylesheet" type="text/css" href="./VBA  Check if String exists within collection._files/additional.css">
+<script type="text/javascript" src="./VBA  Check if String exists within collection._files/vbseo_ui.js"></script>
+<script type="text/javascript">
+ YAHOO.util.Event.onDOMReady(function (){
+ 	vbseoui = new vBSEO_UI();
+ 	vbseoui.page_init(Array('postbody','blogbit','content','postcontainer','vbseo_like_postbit'), Array("php",1));
+ });
+</script>
+
+</head>
+
+<body>
+
+<div class="above_body"> <!-- closing tag is in template navbar -->
+<div id="header" class="floatcontainer doc_header" style="height:80px;">
+	<div><a name="top" href="http://www.mrexcel.com/forum/" class="logo-image"><img src="./VBA  Check if String exists within collection._files/vbulletin4_logo.png" alt="MrExcel Message Board - Powered by vBulletin" title="MrExcel Message Board - Powered by vBulletin"></a></div>
+	<div id="toplinks" class="toplinks">
+		
+			<ul class="nouser">
+			
+				<li><a href="http://www.mrexcel.com/forum/register.php" rel="nofollow">Register</a></li>
+			
+				<li><a rel="help" href="http://www.mrexcel.com/forum/faq.php">Help</a></li>
+				<li>
+			<script type="text/javascript" src="./VBA  Check if String exists within collection._files/vbulletin_md5.js"></script>
+			<form id="navbar_loginform" action="http://www.mrexcel.com/forum/login.php?do=login" method="post" onsubmit="md5hash(vb_login_password, vb_login_md5password, vb_login_md5password_utf, 0)">
+				<fieldset id="logindetails" class="logindetails">
+					<div>
+						<div>
+					<input type="text" class="textbox default-value" name="vb_login_username" id="navbar_username" size="10" accesskey="u" tabindex="101" value="User Name">
+					<input type="password" class="textbox" tabindex="102" name="vb_login_password" id="navbar_password" size="10" style="display: none;">
+					<input type="text" class="textbox default-value" tabindex="102" name="vb_login_password_hint" id="navbar_password_hint" size="10" value="Password" style="display: inline;">
+					<input type="submit" class="loginbutton" tabindex="104" value="Log in" title="Enter your username and password in the boxes provided to login, or click the &#39;register&#39; button to create a profile for yourself." accesskey="s">
+						</div>
+					</div>
+				</fieldset>
+				<div id="remember" class="remember">
+					<label for="cb_cookieuser_navbar"><input type="checkbox" name="cookieuser" value="1" id="cb_cookieuser_navbar" class="cb_cookieuser_navbar" accesskey="c" tabindex="103"> Remember Me?</label>
+				</div>
+
+				<input type="hidden" name="s" value="">
+				<input type="hidden" name="securitytoken" value="guest">
+				<input type="hidden" name="do" value="login">
+				<input type="hidden" name="vb_login_md5password">
+				<input type="hidden" name="vb_login_md5password_utf">
+			</form>
+			<script type="text/javascript">
+			YAHOO.util.Dom.setStyle('navbar_password_hint', "display", "inline");
+			YAHOO.util.Dom.setStyle('navbar_password', "display", "none");
+			vB_XHTML_Ready.subscribe(function()
+			{
+			//
+				YAHOO.util.Event.on('navbar_username', "focus", navbar_username_focus);
+				YAHOO.util.Event.on('navbar_username', "blur", navbar_username_blur);
+				YAHOO.util.Event.on('navbar_password_hint', "focus", navbar_password_hint);
+				YAHOO.util.Event.on('navbar_password', "blur", navbar_password);
+			});
+			
+			function navbar_username_focus(e)
+			{
+			//
+				var textbox = YAHOO.util.Event.getTarget(e);
+				if (textbox.value == 'User Name')
+				{
+				//
+					textbox.value='';
+					textbox.style.color='#000000';
+				}
+			}
+
+			function navbar_username_blur(e)
+			{
+			//
+				var textbox = YAHOO.util.Event.getTarget(e);
+				if (textbox.value == '')
+				{
+				//
+					textbox.value='User Name';
+					textbox.style.color='#777777';
+				}
+			}
+			
+			function navbar_password_hint(e)
+			{
+			//
+				var textbox = YAHOO.util.Event.getTarget(e);
+				
+				YAHOO.util.Dom.setStyle('navbar_password_hint', "display", "none");
+				YAHOO.util.Dom.setStyle('navbar_password', "display", "inline");
+				YAHOO.util.Dom.get('navbar_password').focus();
+			}
+
+			function navbar_password(e)
+			{
+			//
+				var textbox = YAHOO.util.Event.getTarget(e);
+				
+				if (textbox.value == '')
+				{
+					YAHOO.util.Dom.setStyle('navbar_password_hint', "display", "inline");
+					YAHOO.util.Dom.setStyle('navbar_password', "display", "none");
+				}
+			}
+			</script>
+				</li>
+				
+			</ul>
+		
+	</div>
+	<div class="ad_global_header">
+		
+		
+	</div>
+	<hr>
+</div>
+<div id="navbar" class="navbar">
+	<ul id="navtabs" class="navtabs floatcontainer">
+		
+		
+	<li class="selected" id="vbtab_forum">
+		<a class="navtab" href="http://www.mrexcel.com/forum/forum.php">Forum</a>
+		
+			<ul class="floatcontainer">
+				
+					
+						
+							<li id="vbflink_faq"><a href="http://www.mrexcel.com/forum/faq.php">FAQ</a></li>
+						
+					
+				
+					
+						<li class="popupmenu" id="vbmenu_actions">
+							<a href="javascript://" class="popupctrl" id="yui-gen1">Forum Actions</a>
+							<ul class="popupbody" id="yui-gen0">
+								
+									<li id="vbalink_mfr"><a rel="nofollow" href="http://www.mrexcel.com/forum/forumdisplay.php?do=markread&markreadhash=guest">Mark Forums Read</a></li>
+								
+								
+							</ul>
+						</li>
+					
+				
+					
+						<li class="popupmenu" id="vbmenu_qlinks">
+							<a href="javascript://" class="popupctrl" id="yui-gen3">Quick Links</a>
+							<ul class="popupbody" id="yui-gen2">
+								
+									<li id="vbqlink_posts"><a href="http://www.mrexcel.com/forum/search.php?do=getdaily&contenttype=vBForum_Post">Today's Posts</a></li>
+								
+								
+							</ul>
+						</li>
+					
+				
+				
+			</ul>
+		
+	</li>
+
+	<li id="vbtab_whatsnew">
+		<a rel="nofollow" class="navtab" href="http://www.mrexcel.com/forum/search.php?do=getnew&contenttype=vBForum_Post">Search New Posts</a>
+		
+	</li>
+
+	<li id="tab_mda1_165">
+		<a rel="nofollow" class="navtab" href="http://www.mrexcel.com/forum/search.php?do=process&type[]=1&replyless=1&replylimit=0&forumchoice[]=3&childforums=1&forumchoice[]=4&childforums=1&forumchoice[]=23&forumchoice[]=11&forumchoice[]=13">Zero Reply Posts</a>
+		
+	</li>
+
+	<li id="tab_mdew_206">
+		<a rel="nofollow" class="navtab" href="http://www.mrexcel.com/forum/subscription.php?folderid=0">Subscribed Threads</a>
+		
+	</li>
+
+	<li id="tab_ody5_645">
+		<a class="navtab" href="http://www.mrexcel.com/consult.html">MrExcel Consulting</a>
+		
+	</li>
+
+		
+	</ul>
+	
+		<div id="globalsearch" class="globalsearch">
+			<form action="http://www.mrexcel.com/forum/search.php?do=process" method="post" id="navbar_search" class="navbar_search">
+				
+				<input type="hidden" name="securitytoken" value="guest">
+				<input type="hidden" name="do" value="process">
+				<span class="textboxcontainer"><span><input type="text" value="" name="query" class="textbox" tabindex="99"></span></span>
+				<span class="buttoncontainer"><span><input type="image" class="searchbutton" src="./VBA  Check if String exists within collection._files/search.png" name="submit" onclick="document.getElementById(&#39;navbar_search&#39;).submit;" tabindex="100"></span></span>
+			</form>
+			<ul class="navbar_advanced_search">
+				<li><a href="http://www.mrexcel.com/forum/search.php" accesskey="4">Advanced Search</a></li>
+				
+			</ul>
+		</div>
+	
+</div>
+</div><!-- closing div for above_body -->
+
+<div class="body_wrapper">
+<div id="breadcrumb" class="breadcrumb">
+	<ul class="floatcontainer">
+		<li class="navbithome"><a href="http://www.mrexcel.com/forum/" accesskey="1"><img src="./VBA  Check if String exists within collection._files/navbit-home.png" alt="Home" title="Home"></a></li>
+		
+	<li class="navbit"><a href="http://www.mrexcel.com/forum/">Forum</a></li>
+
+	<li class="navbit"><a href="http://www.mrexcel.com/forum/#question-forums">Question Forums</a></li>
+
+	<li class="navbit"><a href="http://www.mrexcel.com/forum/excel-questions/">Excel Questions</a></li>
+
+		
+	<li class="navbit lastnavbit"><span> VBA:  Check if String exists within collection.</span></li>
+
+	</ul>
+	<hr>
+</div>
+
+
+
+<p align="center">
+<embed src="http://www.mrexcel.com/ads_2013/banner_110.swf" menu="false" quality="best" scale="exactfit" wmode="transparent" bgcolor="FFFFFF" width="515" height="103" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash"></p>
+
+
+<!-- Installed 4-October-2012 -->
+
+
+	<form action="http://www.mrexcel.com/forum/profile.php?do=dismissnotice" method="post" id="notices" class="notices">
+		<input type="hidden" name="do" value="dismissnotice">
+		<input type="hidden" name="s" value="">
+		<input type="hidden" name="securitytoken" value="guest">
+		<input type="hidden" id="dismiss_notice_hidden" name="dismiss_noticeid" value="">
+		<input type="hidden" name="url" value="">
+		<div id="vbseo_vhtml_0"><ol>			<li class="restore" id="navbar_notice_26">		<font size="3"> Become a <a href="http://www.mrexcel.com/forum/register.php"> <b>Registered Member</b> </a> (free) to remove the ad that appears in the top post. </font></li><li class="restore" id="navbar_notice_22">		If this is your first visit, be sure to		check out the <a href="http://www.mrexcel.com/forum/faq.php" target="_blank"><b>FAQ</b></a> by clicking the		link above. You may have to <a href="http://www.mrexcel.com/forum/register.php" target="_blank"><b>register</b></a>		before you can post: click the register link above to proceed. To start viewing messages,		select the forum that you want to visit from the selection below.</li><li class="restore" id="navbar_notice_28">		Click <font size="3"> <a rel="nofollow" href="http://www.mrexcel.com/forum/login.php?do=lostpw"> <b> here </b> </a> </font> to reset your password. You MUST have a valid e-mail address so that you may receive the instructions to complete the reset.</li>		</ol></div>
+	</form>
+
+
+
+
+	<div id="above_postlist" class="above_postlist">
+		
+		<div id="pagination_top" class="pagination_top">
+		
+			<div id="postpagestats_above" class="postpagestats">
+				Results 1 to 5 of 5
+			</div>
+		</div>
+	</div>
+	<div id="pagetitle" class="pagetitle"> 
+		<h1 class="relevant_replacement">VBA:  Check if String exists within collection.</h1><p class="relevant_replacement">This is a discussion on <em>VBA:  Check if String exists within collection.</em> within the <b>Excel Questions</b> forums, part of the Question Forums category; Hello.   
+ 
+I have two collections of Strings.  I need to see if a certain String exists in these collections.  This ...</p>
+		
+		
+	</div>
+	<div id="thread_controls" class="thread_controls toolsmenu">
+		<div>
+		<ul id="postlist_popups" class="postlist_popups popupgroup">
+			
+			
+			
+			<li class="popupmenu" id="linkbacktools">
+				<h6><a class="popupctrl" href="javascript://" id="yui-gen5">LinkBack</a><a name="goto_linkback"></a></h6>
+				<ul class="popupbody" id="yui-gen4">
+                                             
+					<li><a href="./VBA  Check if String exists within collection._files/VBA  Check if String exists within collection..htm" onclick="prompt(&#39;Use the following URL when referencing this thread from another forum or blog.&#39;,&#39;http://www.mrexcel.com/forum/excel-questions/277889-visual-basic-applications-check-if-string-exists-within-collection.html&#39;);return false;"><img class="inlineimg" src="./VBA  Check if String exists within collection._files/linkback_url.gif" alt="LinkBack URL" title="LinkBack URL"> LinkBack URL</a></li>
+					<li><a rel="nofollow" href="http://www.mrexcel.com/forum/misc.php?do=linkbacks"><img class="inlineimg" src="./VBA  Check if String exists within collection._files/linkback_about.gif" alt="About LinkBacks" title="About LinkBacks"> About LinkBacks</a></li>
+					
+						<li>&nbsp;</li>
+                                                <li>Bookmark &amp; Share</li>
+                                                <li><a rel="nofollow" href="http://digg.com/submit?phase=2&url=http%3A%2F%2Fwww.mrexcel.com%2Fforum%2Fexcel-questions%2F277889-visual-basic-applications-check-if-string-exists-within-collection.html&title=VBA%3A++Check+if+String+exists+within+collection." target="_blank">Digg this Thread!</a></li><li><a rel="nofollow" href="http://del.icio.us/post?url=http%3A%2F%2Fwww.mrexcel.com%2Fforum%2Fexcel-questions%2F277889-visual-basic-applications-check-if-string-exists-within-collection.html&title=VBA%3A++Check+if+String+exists+within+collection." target="_blank">Add Thread to del.icio.us</a></li><li><a rel="nofollow" href="http://technorati.com/faves/?add=http%3A%2F%2Fwww.mrexcel.com%2Fforum%2Fexcel-questions%2F277889-visual-basic-applications-check-if-string-exists-within-collection.html" target="_blank">Bookmark in Technorati</a></li><li><a rel="nofollow" href="http://twitter.com/home?status=VBA%3A++Check+if+String+exists+within+collection.%20http%3A%2F%2Fwww.mrexcel.com%2Fforum%2Fexcel-questions%2F277889-visual-basic-applications-check-if-string-exists-within-collection.html" target="_blank">Tweet this thread</a></li>
+					
+				</ul>
+			</li>
+<li class="popupmenu" id="threadtools">
+				<h6><a class="popupctrl" href="javascript://" id="yui-gen7">Thread Tools</a></h6>
+				<ul class="popupbody" id="yui-gen6">
+					<li><a href="http://www.mrexcel.com/forum/excel-questions/277889-visual-basic-applications-check-if-string-exists-within-collection-print.html" accesskey="3" rel="nofollow">Show Printable Version</a></li>
+					
+					<li>
+						
+							<a href="http://www.mrexcel.com/forum/subscription.php?do=addsubscription&t=277889" rel="nofollow">Subscribe to this Thread…</a>
+						
+					</li>
+					
+				</ul>
+			</li>
+
+			
+
+			
+
+			
+
+			
+				<li class="popupmenu" id="displaymodes">
+					<h6><a class="popupctrl" href="javascript://" id="yui-gen9">Display</a></h6>
+					<ul class="popupbody" id="yui-gen8">
+						<li><label>Linear Mode</label></li>
+						<li><a rel="nofollow" href="http://www.mrexcel.com/forum/excel-questions/277889-visual-basic-applications-check-if-string-exists-within-collection.html?mode=hybrid"> Switch to Hybrid Mode</a></li>
+						<li><a rel="nofollow" href="http://www.mrexcel.com/forum/excel-questions/277889-visual-basic-applications-check-if-string-exists-within-collection.html?mode=threaded#post1365638"> Switch to Threaded Mode</a></li>
+					</ul>
+				</li>
+			
+
+			
+			</ul>
+		</div>
+	</div>
+
+<div id="postlist" class="postlist restrain">
+	
+
+	
+		<ol id="posts" class="posts" start="1">
+			
+<li class="postbitlegacy postbitim postcontainer old" id="post_1365638">
+<!-- see bottom of postbit.css for .userinfo .popupmenu styles -->
+
+	<div class="posthead">
+			<span class="postdate old">
+				
+					<span class="date">Aug 24th, 2007,&nbsp;<span class="time">10:24 PM</span></span>
+				
+			</span>
+			<span class="nodecontrols">
+				
+					<a name="post1365638" href="http://www.mrexcel.com/forum/excel-questions/277889-visual-basic-applications-check-if-string-exists-within-collection.html#post1365638" class="postcounter">#1</a><a id="postcount1365638" name="1"></a>
+				
+				
+				
+			</span>
+	</div>
+	<div class="postdetails">
+		<div class="userinfo">
+			<div class="username_container">
+			
+				<div class="popupmenu memberaction" id="yui-gen10">
+	<a rel="nofollow" class="username offline " href="http://www.mrexcel.com/forum/members/sir-phoenix.html" title="Sir Phoenix is offline"><strong>Sir Phoenix</strong></a>
+	
+</div>
+				<img class="inlineimg onlinestatus" src="./VBA  Check if String exists within collection._files/user-offline.png" alt="Sir Phoenix is offline" border="0" title="Sir Phoenix is offline">
+
+			
+			</div>
+			<span class="usertitle">
+				Board Regular
+			</span>
+			
+			
+			
+			 
+			
+				<hr>
+				<dl class="userinfo_extra">
+					<dt>Join Date</dt> <dd>Aug 2006</dd>
+					<dt>Location</dt> <dd>Orange Park, FL</dd>
+					
+					<dt>Posts</dt> <dd>146</dd>	
+					
+				</dl>
+				
+				
+				<div class="imlinks">
+					    
+				</div>
+			
+		</div>
+		<div class="postbody">
+			<div class="postrow has_after_content">
+				
+				
+				<h2 class="title icon">
+					<img src="./VBA  Check if String exists within collection._files/icon1.png" alt="Default" title="Default"> VBA:  Check if String exists within collection.
+				</h2>
+				
+
+
+						
+							
+							<div id="ad_thread_first_post_content"><script async="" src="./VBA  Check if String exists within collection._files/adsbygoogle.js"></script>
+<!-- BoardTopicImage -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-2974935598394359" data-ad-slot="8003857391" data-adsbygoogle-status="done"><ins id="aswift_0_expand" style="display:inline-table;border:none;height:250px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent"><ins id="aswift_0_anchor" style="display:block;border:none;height:250px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent"><iframe width="300" height="250" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;"></iframe></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>
+						
+						
+				<div class="content hasad">
+					<div id="post_message_1365638">
+						<blockquote class="postcontent restore ">
+							Hello.  <br>
+<br>
+I have two collections of Strings.  I need to see if a certain String exists in these collections.  This is what I have, but it doesn't work and it's also inefficient in terms of speed.  Is there a better approach?  Thank you for your help.  <br>
+<br>
+-Sir Phoenix<br>
+<br>
+<div class="bbcode_container">
+	<div class="bbcode_description">Code:</div>
+	<pre class="bbcode_code" style="height:192px;">Public Function DoesItemExist(mySet As Collection, myCheck As String) As Boolean
+    On Error Resume Next
+    
+    Dim myNum As Integer
+        
+    DoesItemExist = False
+    For myNum = 0 To mySet.Count - 1
+        If myCheck = mySet(myNum) Then
+            DoesItemExist = True
+        End If
+    Next
+    On Error GoTo 0
+End Function</pre>
+</div>
+						</blockquote>
+					</div>
+
+					
+				</div>
+			</div>
+			
+			<div class="after_content">
+				
+				
+<div class="vbseo_buttons" id="lkbtn_1.277889.1365638">
+
+    <ul class="vbseo_links" style="visibility:visible">
+    
+    <li class="vbseo_share"><a href="http://www.mrexcel.com/forum/excel-questions/277889-visual-basic-applications-check-if-string-exists-within-collection.html#">Share</a>
+    <ul class="vbseo_share_body">
+	<li class="share_header">Share this post on</li>
+	
+    	<li class="right"><img src="./VBA  Check if String exists within collection._files/digg.gif" width="18px" height="18px" alt=""><a rel="nofollow" href="http://digg.com/submit?phase=2&url=http%3A%2F%2Fwww.mrexcel.com%2Fforum%2Fexcel-questions%2F277889-visual-basic-applications-check-if-string-exists-within-collection.html%23post1365638&title=VBA%3A++Check+if+String+exists+within+collection.">Digg</a></li>
+    
+    	<li class="left"><img src="./VBA  Check if String exists within collection._files/delicious.gif" width="18px" height="18px" alt=""><a rel="nofollow" href="http://del.icio.us/post?url=http%3A%2F%2Fwww.mrexcel.com%2Fforum%2Fexcel-questions%2F277889-visual-basic-applications-check-if-string-exists-within-collection.html%23post1365638&title=VBA%3A++Check+if+String+exists+within+collection.">Del.icio.us</a></li>
+    
+    	<li class="right"><img src="./VBA  Check if String exists within collection._files/technorati.gif" width="18px" height="18px" alt=""><a rel="nofollow" href="http://technorati.com/faves/?add=http%3A%2F%2Fwww.mrexcel.com%2Fforum%2Fexcel-questions%2F277889-visual-basic-applications-check-if-string-exists-within-collection.html%23post1365638">Technorati</a></li>
+    
+    	<li class="left"><img src="./VBA  Check if String exists within collection._files/twitter.png" width="18px" height="18px" alt=""><a rel="nofollow" href="http://twitter.com/home?status=VBA%3A++Check+if+String+exists+within+collection.%20http%3A%2F%2Fwww.mrexcel.com%2Fforum%2Fexcel-questions%2F277889-visual-basic-applications-check-if-string-exists-within-collection.html%23post1365638">Twitter</a></li>
+    
+    </ul>
+    </li>
+    
+    
+    
+    </ul>
+    
+    <div class="vbseo_liked" style="display:none"></div>
+
+
+</div>
+
+				
+					
+				
+				
+				
+			</div>
+			
+			<div class="cleardiv"></div>
+		</div>
+	</div>
+		<div class="postfoot">
+			<!-- <div class="postfoot_container"> -->
+			<div class="textcontrols floatcontainer">
+				<span class="postcontrols">
+					<img style="display:none" id="progress_1365638" src="./VBA  Check if String exists within collection._files/progress.gif" alt="">
+					
+					
+					
+						<a id="qrwq_1365638" class="newreply" href="http://www.mrexcel.com/forum/newreply.php?do=newreply&p=1365638" rel="nofollow" title="Reply With Quote"><img id="quoteimg_1365638" src="./VBA  Check if String exists within collection._files/clear.gif" alt="Reply With Quote" title="Reply With Quote">  Reply With Quote</a> 
+					
+					
+					
+				</span>
+				<span class="postlinking">
+					
+						
+					
+
+					
+					
+					
+					
+
+					
+					
+
+					
+					
+					
+					
+					
+				</span>
+			<!-- </div> -->
+			</div>
+		</div>
+	<hr>
+</li>
+
+<li class="postbitlegacy postbitim postcontainer old" id="post_1365702">
+<!-- see bottom of postbit.css for .userinfo .popupmenu styles -->
+
+	<div class="posthead">
+			<span class="postdate old">
+				
+					<span class="date">Aug 25th, 2007,&nbsp;<span class="time">02:32 AM</span></span>
+				
+			</span>
+			<span class="nodecontrols">
+				
+					<a name="post1365702" href="http://www.mrexcel.com/forum/excel-questions/277889-visual-basic-applications-check-if-string-exists-within-collection.html#post1365702" class="postcounter">#2</a><a id="postcount1365702" name="2"></a>
+				
+				
+				
+			</span>
+	</div>
+	<div class="postdetails">
+		<div class="userinfo">
+			<div class="username_container">
+			
+				<div class="popupmenu memberaction" id="yui-gen11">
+	<a rel="nofollow" class="username offline " href="http://www.mrexcel.com/forum/members/venkat1926.html" title="venkat1926 is offline"><strong>venkat1926</strong></a>
+	
+</div>
+				<img class="inlineimg onlinestatus" src="./VBA  Check if String exists within collection._files/user-offline.png" alt="venkat1926 is offline" border="0" title="venkat1926 is offline">
+
+			
+			</div>
+			<span class="usertitle">
+				Board Regular
+			</span>
+			
+			
+			
+			 
+			
+				<hr>
+				<dl class="userinfo_extra">
+					<dt>Join Date</dt> <dd>Aug 2005</dd>
+					
+					
+					<dt>Posts</dt> <dd>4,671</dd>	
+					
+				</dl>
+				
+				
+				<div class="imlinks">
+					    
+				</div>
+			
+		</div>
+		<div class="postbody">
+			<div class="postrow has_after_content">
+				
+				
+				<h2 class="title icon">
+					<img src="./VBA  Check if String exists within collection._files/icon1.png" alt="Default" title="Default"> 
+				</h2>
+				
+
+
+						
+						
+				<div class="content">
+					<div id="post_message_1365702">
+						<blockquote class="postcontent restore ">
+							see whether the revised function and the sub will be of use. <br>
+<br>
+sample sheet on which sub is based  is enclosed for reference<br>
+<br>
+run the sub "test" on this sample sheet and see whether you get what you want. <br>
+<br>
+t<b>he sub may be modified to suit you</b>. <br>
+<br>
+I visualized that even if the string in set 1 PARTIALLY exists in set 2  the return value will be TRUE<br>
+if you think of only whole string in the line<br>
+set cfind=........<br>
+in FUNCTION<br>
+change xlpart to xlwhole<br>
+<br>
+the function and sub are <br>
+<br>
+<br>
+ <div class="bbcode_container">
+	<div class="bbcode_description">Code:</div>
+	<pre class="bbcode_code" style="height:180px;">Function doesitemexist(set1 As range, set2 As range) As Boolean
+Dim cfind As range
+Dim mynum As Integer
+doesitemexist = False
+Dim x
+x = set1.Value
+
+With set2
+Set cfind = .Cells.Find(what:=x, lookat:=xlPart)
+If Not cfind Is Nothing Then doesitemexist = True
+End With
+
+End Function</pre>
+</div><div class="bbcode_container">
+	<div class="bbcode_description">Code:</div>
+	<pre class="bbcode_code" style="height:192px;">Sub test()
+Dim set1 As range
+Dim set2 As range
+Dim c As range
+Dim y As Boolean
+Set set1 = range("a1:a12")
+Set set2 = range("B1:B12")
+For Each c In set1
+y = doesitemexist(c, set2)
+
+MsgBox "existence of  " &amp; c &amp; " " &amp; y
+
+Next
+End Sub</pre>
+</div>the sample sheet is <br>
+<br>
+******** ******************** ************************************************************************&gt;<center><table cellspacing="0" cellpadding="0" align="center"><tbody><tr><td style="BORDER-RIGHT: #000000 0.5pt solid; BORDER-TOP: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid" bgcolor="#0c266b" colspan="5"><table width="100%" align="center" border="0"><tbody><tr><td align="left"><font color="white">Microsoft Excel - Book1</font></td><td style="FONT-SIZE: 9pt; COLOR: #ffffff; FONT-FAMILY: caption" align="right">___Running: xl2002 XP : OS = Windows XP </td></tr></tbody></table></td></tr><tr><td style="BORDER-RIGHT: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; HEIGHT: 25px" bgcolor="#d4d0c8" colspan="5"><table width="100%" align="center" border="0" valign="MIDDLE"><tbody><tr><td style="FONT-SIZE: 10pt; COLOR: #000000; FONT-FAMILY: caption">(<u>F</u>)ile (<u>E</u>)dit (<u>V</u>)iew (<u>I</u>)nsert (<u>O</u>)ptions (<u>T</u>)ools (<u>D</u>)ata (<u>W</u>)indow (<u>H</u>)elp <a href="http:/#javascript<b></b>:void(0)" target="_blank">(<u>A</u>)bout</a></td><td valign="center" align="right"><form name="formCb605117"><input *******="window.clipboardData.setData(&quot;Text&quot;,document.formFb202339.sltNb447362.value);" type="button" value="Copy Formula" name="btCb942116"></form></td></tr></tbody></table></td></tr><tr><td style="BORDER-RIGHT: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid" bgcolor="white" colspan="5"><table border="0"><tbody><tr><form name="formFb202339"></form><td style="WIDTH: 60px" align="middle" bgcolor="white"><select onchange="document.formFb202339.txbFb150492.value = document.formFb202339.sltNb447362.value" name="sltNb447362"><option value="" selected="">A1</option></select></td><td align="right" width="3%" bgcolor="#d4d0c8"><b>=</b></td><td align="left" bgcolor="white"><input size="80" value="a" name="txbFb150492"></td></tr></tbody></table></td></tr><tr><td style="BORDER-RIGHT: #000000 0.5pt solid; BORDER-TOP: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #d4d0c8" align="middle" width="2%"><br>
+</td><td style="BORDER-RIGHT: #000000 0.5pt solid; BORDER-TOP: #000000 0.5pt solid; FONT-SIZE: 10pt; COLOR: black; FONT-FAMILY: menu; BACKGROUND-COLOR: #d4d0c8" align="middle"><center>A</center></td><td style="BORDER-RIGHT: #000000 0.5pt solid; BORDER-TOP: #000000 0.5pt solid; FONT-SIZE: 10pt; COLOR: black; FONT-FAMILY: menu; BACKGROUND-COLOR: #d4d0c8" align="middle"><center>B</center></td><td style="BORDER-RIGHT: #000000 0.5pt solid; BORDER-TOP: #000000 0.5pt solid; FONT-SIZE: 10pt; COLOR: black; FONT-FAMILY: menu; BACKGROUND-COLOR: #d4d0c8" align="middle"><center>C</center></td><td style="BORDER-RIGHT: #000000 0.5pt solid; BORDER-TOP: #000000 0.5pt solid; FONT-SIZE: 10pt; COLOR: black; FONT-FAMILY: menu; BACKGROUND-COLOR: #d4d0c8" align="middle"><center>D</center></td></tr><tr><td style="BORDER-TOP: #000000 0.5pt solid; FONT-SIZE: 10pt; BORDER-LEFT: #000000 0.5pt solid; COLOR: #000000; FONT-FAMILY: menu; BACKGROUND-COLOR: #d4d0c8" align="middle" width="2%"><center>1</center></td><td style="BORDER-RIGHT: #d4d0c8 0.5pt solid; BORDER-TOP: #000000 0.5pt solid; FONT-SIZE: 10pt; VERTICAL-ALIGN: bottom; BORDER-LEFT: #000000 0.5pt solid; COLOR: #000000; BORDER-BOTTOM: #d4d0c8 0.5pt solid; FONT-FAMILY: Arial; BACKGROUND-COLOR: #ffffff; TEXT-ALIGN: left">a</td><td style="BORDER-RIGHT: #d4d0c8 0.5pt solid; BORDER-TOP: #000000 0.5pt solid; FONT-SIZE: 10pt; VERTICAL-ALIGN: bottom; COLOR: #000000; BORDER-BOTTOM: #d4d0c8 0.5pt solid; FONT-FAMILY: Arial; BACKGROUND-COLOR: #ffffff; TEXT-ALIGN: left">a</td><td style="BORDER-RIGHT: #d4d0c8 0.5pt solid; BORDER-TOP: #000000 0.5pt solid; FONT-SIZE: 10pt; VERTICAL-ALIGN: bottom; COLOR: #000000; BORDER-BOTTOM: #d4d0c8 0.5pt solid; FONT-FAMILY: Arial; BACKGROUND-COLOR: #ffffff; TEXT-ALIGN: right"> </td><td style="BORDER-RIGHT: #000000 0.5pt solid; BORDER-TOP: #000000 0.5pt solid; FONT-SIZE: 10pt; VERTICAL-ALIGN: bottom; COLOR: #000000; BORDER-BOTTOM: #d4d0c8 0.5pt solid; FONT-FAMILY: Arial; BACKGROUND-COLOR: #ffffff; TEXT-ALIGN: right"> </td></tr><tr><td style="BORDER-TOP: #000000 0.5pt solid; FONT-SIZE: 10pt; BORDER-LEFT: #000000 0.5pt solid; COLOR: #000000; FONT-FAMILY: menu; BACKGROUND-COLOR: #d4d0c8" align="middle" width="2%"><center>2</center></td><td style="BORDER-RIGHT: #d4d0c8 0.5pt solid; FONT-SIZE: 10pt; VERTICAL-ALIGN: bottom; BORDER-LEFT: #000000 0.5pt solid; COLOR: #000000; BORDER-BOTTOM: #d4d0c8 0.5pt solid; FONT-FAMILY: Arial; BACKGROUND-COLOR: #ffffff; TEXT-ALIGN: left">s</td><td style="BORDER-RIGHT: #d4d0c8 0.5pt solid; FONT-SIZE: 10pt; VERTICAL-ALIGN: bottom; COLOR: #000000; BORDER-BOTTOM: #d4d0c8 0.5pt solid; FONT-FAMILY: Arial; BACKGROUND-COLOR: #ffffff; TEXT-ALIGN: left">s</td><td style="BORDER-RIGHT: #d4d0c8 0.5pt solid; FONT-SIZE: 10pt; VERTICAL-ALIGN: bottom; COLOR: #000000; BORDER-BOTTOM: #d4d0c8 0.5pt solid; FONT-FAMILY: Arial; BACKGROUND-COLOR: #ffffff; TEXT-ALIGN: right"> </td><td style="BORDER-RIGHT: #000000 0.5pt solid; FONT-SIZE: 10pt; VERTICAL-ALIGN: bottom; COLOR: #000000; BORDER-BOTTOM: #d4d0c8 0.5pt solid; FONT-FAMILY: Arial; BACKGROUND-COLOR: #ffffff; TEXT-ALIGN: right"> </td></tr><tr><td style="BORDER-TOP: #000000 0.5pt solid; FONT-SIZE: 10pt; BORDER-LEFT: #000000 0.5pt solid; COLOR: #000000; FONT-FAMILY: menu; BACKGROUND-COLOR: #d4d0c8" align="middle" width="2%"><center>3</center></td><td style="BORDER-RIGHT: #d4d0c8 0.5pt solid; FONT-SIZE: 10pt; VERTICAL-ALIGN: bottom; BORDER-LEFT: #000000 0.5pt solid; COLOR: #000000; BORDER-BOTTOM: #d4d0c8 0.5pt solid; FONT-FAMILY: Arial; BACKGROUND-COLOR: #ffffff; TEXT-ALIGN: left">d</td><td style="BORDER-RIGHT: #d4d0c8 0.5pt solid; FONT-SIZE: 10pt; VERTICAL-ALIGN: bottom; COLOR: #000000; BORDER-BOTTOM: #d4d0c8 0.5pt solid; FONT-FAMILY: Arial; BACKGROUND-COLOR: #ffffff; TEXT-ALIGN: left">q</td><td style="BORDER-RIGHT: #d4d0c8 0.5pt solid; FONT-SIZE: 10pt; VERTICAL-ALIGN: bottom; COLOR: #000000; BORDER-BOTTOM: #d4d0c8 0.5pt solid; FONT-FAMILY: Arial; BACKGROUND-COLOR: #ffffff; TEXT-ALIGN: right"> </td><td style="BORDER-RIGHT: #000000 0.5pt solid; FONT-SIZE: 10pt; VERTICAL-ALIGN: bottom; COLOR: #000000; BORDER-BOTTOM: #d4d0c8 0.5pt solid; FONT-FAMILY: Arial; BACKGROUND-COLOR: #ffffff; TEXT-ALIGN: right"> </td></tr><tr><td style="BORDER-TOP: #000000 0.5pt solid; FONT-SIZE: 10pt; BORDER-LEFT: #000000 0.5pt solid; COLOR: #000000; FONT-FAMILY: menu; BACKGROUND-COLOR: #d4d0c8" align="middle" width="2%"><center>4</center></td><td style="BORDER-RIGHT: #d4d0c8 0.5pt solid; FONT-SIZE: 10pt; VERTICAL-ALIGN: bottom; BORDER-LEFT: #000000 0.5pt solid; COLOR: #000000; BORDER-BOTTOM: #d4d0c8 0.5pt solid; FONT-FAMILY: Arial; BACKGROUND-COLOR: #ffffff; TEXT-ALIGN: left">f</td><td style="BORDER-RIGHT: #d4d0c8 0.5pt solid; FONT-SIZE: 10pt; VERTICAL-ALIGN: bottom; COLOR: #000000; BORDER-BOTTOM: #d4d0c8 0.5pt solid; FONT-FAMILY: Arial; BACKGROUND-COLOR: #ffffff; TEXT-ALIGN: left">w</td><td style="BORDER-RIGHT: #d4d0c8 0.5pt solid; FONT-SIZE: 10pt; VERTICAL-ALIGN: bottom; COLOR: #000000; BORDER-BOTTOM: #d4d0c8 0.5pt solid; FONT-FAMILY: Arial; BACKGROUND-COLOR: #ffffff; TEXT-ALIGN: right"> </td><td style="BORDER-RIGHT: #000000 0.5pt solid; FONT-SIZE: 10pt; VERTICAL-ALIGN: bottom; COLOR: #000000; BORDER-BOTTOM: #d4d0c8 0.5pt solid; FONT-FAMILY: Arial; BACKGROUND-COLOR: #ffffff; TEXT-ALIGN: right"> </td></tr><tr><td style="BORDER-TOP: #000000 0.5pt solid; FONT-SIZE: 10pt; BORDER-LEFT: #000000 0.5pt solid; COLOR: #000000; FONT-FAMILY: menu; BACKGROUND-COLOR: #d4d0c8" align="middle" width="2%"><center>5</center></td><td style="BORDER-RIGHT: #d4d0c8 0.5pt solid; FONT-SIZE: 10pt; VERTICAL-ALIGN: bottom; BORDER-LEFT: #000000 0.5pt solid; COLOR: #000000; BORDER-BOTTOM: #d4d0c8 0.5pt solid; FONT-FAMILY: Arial; BACKGROUND-COLOR: #ffffff; TEXT-ALIGN: left">g</td><td style="BORDER-RIGHT: #d4d0c8 0.5pt solid; FONT-SIZE: 10pt; VERTICAL-ALIGN: bottom; COLOR: #000000; BORDER-BOTTOM: #d4d0c8 0.5pt solid; FONT-FAMILY: Arial; BACKGROUND-COLOR: #ffffff; TEXT-ALIGN: left">e</td><td style="BORDER-RIGHT: #d4d0c8 0.5pt solid; FONT-SIZE: 10pt; VERTICAL-ALIGN: bottom; COLOR: #000000; BORDER-BOTTOM: #d4d0c8 0.5pt solid; FONT-FAMILY: Arial; BACKGROUND-COLOR: #ffffff; TEXT-ALIGN: right"> </td><td style="BORDER-RIGHT: #000000 0.5pt solid; FONT-SIZE: 10pt; VERTICAL-ALIGN: bottom; COLOR: #000000; BORDER-BOTTOM: #d4d0c8 0.5pt solid; FONT-FAMILY: Arial; BACKGROUND-COLOR: #ffffff; TEXT-ALIGN: right"> </td></tr><tr><td style="BORDER-TOP: #000000 0.5pt solid; FONT-SIZE: 10pt; BORDER-LEFT: #000000 0.5pt solid; COLOR: #000000; FONT-FAMILY: menu; BACKGROUND-COLOR: #d4d0c8" align="middle" width="2%"><center>6</center></td><td style="BORDER-RIGHT: #d4d0c8 0.5pt solid; FONT-SIZE: 10pt; VERTICAL-ALIGN: bottom; BORDER-LEFT: #000000 0.5pt solid; COLOR: #000000; BORDER-BOTTOM: #d4d0c8 0.5pt solid; FONT-FAMILY: Arial; BACKGROUND-COLOR: #ffffff; TEXT-ALIGN: left">h</td><td style="BORDER-RIGHT: #d4d0c8 0.5pt solid; FONT-SIZE: 10pt; VERTICAL-ALIGN: bottom; COLOR: #000000; BORDER-BOTTOM: #d4d0c8 0.5pt solid; FONT-FAMILY: Arial; BACKGROUND-COLOR: #ffffff; TEXT-ALIGN: left">z</td><td style="BORDER-RIGHT: #d4d0c8 0.5pt solid; FONT-SIZE: 10pt; VERTICAL-ALIGN: bottom; COLOR: #000000; BORDER-BOTTOM: #d4d0c8 0.5pt solid; FONT-FAMILY: Arial; BACKGROUND-COLOR: #ffffff; TEXT-ALIGN: right"> </td><td style="BORDER-RIGHT: #000000 0.5pt solid; FONT-SIZE: 10pt; VERTICAL-ALIGN: bottom; COLOR: #000000; BORDER-BOTTOM: #d4d0c8 0.5pt solid; FONT-FAMILY: Arial; BACKGROUND-COLOR: #ffffff; TEXT-ALIGN: right"> </td></tr><tr><td style="BORDER-TOP: #000000 0.5pt solid; FONT-SIZE: 10pt; BORDER-LEFT: #000000 0.5pt solid; COLOR: #000000; FONT-FAMILY: menu; BACKGROUND-COLOR: #d4d0c8" align="middle" width="2%"><center>7</center></td><td style="BORDER-RIGHT: #d4d0c8 0.5pt solid; FONT-SIZE: 10pt; VERTICAL-ALIGN: bottom; BORDER-LEFT: #000000 0.5pt solid; COLOR: #000000; BORDER-BOTTOM: #d4d0c8 0.5pt solid; FONT-FAMILY: Arial; BACKGROUND-COLOR: #ffffff; TEXT-ALIGN: left">j</td><td style="BORDER-RIGHT: #d4d0c8 0.5pt solid; FONT-SIZE: 10pt; VERTICAL-ALIGN: bottom; COLOR: #000000; BORDER-BOTTOM: #d4d0c8 0.5pt solid; FONT-FAMILY: Arial; BACKGROUND-COLOR: #ffffff; TEXT-ALIGN: left">x</td><td style="BORDER-RIGHT: #d4d0c8 0.5pt solid; FONT-SIZE: 10pt; VERTICAL-ALIGN: bottom; COLOR: #000000; BORDER-BOTTOM: #d4d0c8 0.5pt solid; FONT-FAMILY: Arial; BACKGROUND-COLOR: #ffffff; TEXT-ALIGN: right"> </td><td style="BORDER-RIGHT: #000000 0.5pt solid; FONT-SIZE: 10pt; VERTICAL-ALIGN: bottom; COLOR: #000000; BORDER-BOTTOM: #d4d0c8 0.5pt solid; FONT-FAMILY: Arial; BACKGROUND-COLOR: #ffffff; TEXT-ALIGN: right"> </td></tr><tr><td style="BORDER-TOP: #000000 0.5pt solid; FONT-SIZE: 10pt; BORDER-LEFT: #000000 0.5pt solid; COLOR: #000000; FONT-FAMILY: menu; BACKGROUND-COLOR: #d4d0c8" align="middle" width="2%"><center>8</center></td><td style="BORDER-RIGHT: #d4d0c8 0.5pt solid; FONT-SIZE: 10pt; VERTICAL-ALIGN: bottom; BORDER-LEFT: #000000 0.5pt solid; COLOR: #000000; BORDER-BOTTOM: #d4d0c8 0.5pt solid; FONT-FAMILY: Arial; BACKGROUND-COLOR: #ffffff; TEXT-ALIGN: left">k</td><td style="BORDER-RIGHT: #d4d0c8 0.5pt solid; FONT-SIZE: 10pt; VERTICAL-ALIGN: bottom; COLOR: #000000; BORDER-BOTTOM: #d4d0c8 0.5pt solid; FONT-FAMILY: Arial; BACKGROUND-COLOR: #ffffff; TEXT-ALIGN: left">c</td><td style="BORDER-RIGHT: #d4d0c8 0.5pt solid; FONT-SIZE: 10pt; VERTICAL-ALIGN: bottom; COLOR: #000000; BORDER-BOTTOM: #d4d0c8 0.5pt solid; FONT-FAMILY: Arial; BACKGROUND-COLOR: #ffffff; TEXT-ALIGN: right"> </td><td style="BORDER-RIGHT: #000000 0.5pt solid; FONT-SIZE: 10pt; VERTICAL-ALIGN: bottom; COLOR: #000000; BORDER-BOTTOM: #d4d0c8 0.5pt solid; FONT-FAMILY: Arial; BACKGROUND-COLOR: #ffffff; TEXT-ALIGN: right"> </td></tr><tr><td style="BORDER-TOP: #000000 0.5pt solid; FONT-SIZE: 10pt; BORDER-LEFT: #000000 0.5pt solid; COLOR: #000000; FONT-FAMILY: menu; BACKGROUND-COLOR: #d4d0c8" align="middle" width="2%"><center>9</center></td><td style="BORDER-RIGHT: #d4d0c8 0.5pt solid; FONT-SIZE: 10pt; VERTICAL-ALIGN: bottom; BORDER-LEFT: #000000 0.5pt solid; COLOR: #000000; BORDER-BOTTOM: #d4d0c8 0.5pt solid; FONT-FAMILY: Arial; BACKGROUND-COLOR: #ffffff; TEXT-ALIGN: left">l</td><td style="BORDER-RIGHT: #d4d0c8 0.5pt solid; FONT-SIZE: 10pt; VERTICAL-ALIGN: bottom; COLOR: #000000; BORDER-BOTTOM: #d4d0c8 0.5pt solid; FONT-FAMILY: Arial; BACKGROUND-COLOR: #ffffff; TEXT-ALIGN: left">v</td><td style="BORDER-RIGHT: #d4d0c8 0.5pt solid; FONT-SIZE: 10pt; VERTICAL-ALIGN: bottom; COLOR: #000000; BORDER-BOTTOM: #d4d0c8 0.5pt solid; FONT-FAMILY: Arial; BACKGROUND-COLOR: #ffffff; TEXT-ALIGN: right"> </td><td style="BORDER-RIGHT: #000000 0.5pt solid; FONT-SIZE: 10pt; VERTICAL-ALIGN: bottom; COLOR: #000000; BORDER-BOTTOM: #d4d0c8 0.5pt solid; FONT-FAMILY: Arial; BACKGROUND-COLOR: #ffffff; TEXT-ALIGN: right"> </td></tr><tr><td style="BORDER-TOP: #000000 0.5pt solid; FONT-SIZE: 10pt; BORDER-LEFT: #000000 0.5pt solid; COLOR: #000000; FONT-FAMILY: menu; BACKGROUND-COLOR: #d4d0c8" align="middle" width="2%"><center>10</center></td><td style="BORDER-RIGHT: #d4d0c8 0.5pt solid; FONT-SIZE: 10pt; VERTICAL-ALIGN: bottom; BORDER-LEFT: #000000 0.5pt solid; COLOR: #000000; BORDER-BOTTOM: #d4d0c8 0.5pt solid; FONT-FAMILY: Arial; BACKGROUND-COLOR: #ffffff; TEXT-ALIGN: left">q</td><td style="BORDER-RIGHT: #d4d0c8 0.5pt solid; FONT-SIZE: 10pt; VERTICAL-ALIGN: bottom; COLOR: #000000; BORDER-BOTTOM: #d4d0c8 0.5pt solid; FONT-FAMILY: Arial; BACKGROUND-COLOR: #ffffff; TEXT-ALIGN: left">b</td><td style="BORDER-RIGHT: #d4d0c8 0.5pt solid; FONT-SIZE: 10pt; VERTICAL-ALIGN: bottom; COLOR: #000000; BORDER-BOTTOM: #d4d0c8 0.5pt solid; FONT-FAMILY: Arial; BACKGROUND-COLOR: #ffffff; TEXT-ALIGN: right"> </td><td style="BORDER-RIGHT: #000000 0.5pt solid; FONT-SIZE: 10pt; VERTICAL-ALIGN: bottom; COLOR: #000000; BORDER-BOTTOM: #d4d0c8 0.5pt solid; FONT-FAMILY: Arial; BACKGROUND-COLOR: #ffffff; TEXT-ALIGN: right"> </td></tr><tr><td style="BORDER-TOP: #000000 0.5pt solid; FONT-SIZE: 10pt; BORDER-LEFT: #000000 0.5pt solid; COLOR: #000000; FONT-FAMILY: menu; BACKGROUND-COLOR: #d4d0c8" align="middle" width="2%"><center>11</center></td><td style="BORDER-RIGHT: #d4d0c8 0.5pt solid; FONT-SIZE: 10pt; VERTICAL-ALIGN: bottom; BORDER-LEFT: #000000 0.5pt solid; COLOR: #000000; BORDER-BOTTOM: #d4d0c8 0.5pt solid; FONT-FAMILY: Arial; BACKGROUND-COLOR: #ffffff; TEXT-ALIGN: left">w</td><td style="BORDER-RIGHT: #d4d0c8 0.5pt solid; FONT-SIZE: 10pt; VERTICAL-ALIGN: bottom; COLOR: #000000; BORDER-BOTTOM: #d4d0c8 0.5pt solid; FONT-FAMILY: Arial; BACKGROUND-COLOR: #ffffff; TEXT-ALIGN: left">n</td><td style="BORDER-RIGHT: #d4d0c8 0.5pt solid; FONT-SIZE: 10pt; VERTICAL-ALIGN: bottom; COLOR: #000000; BORDER-BOTTOM: #d4d0c8 0.5pt solid; FONT-FAMILY: Arial; BACKGROUND-COLOR: #ffffff; TEXT-ALIGN: right"> </td><td style="BORDER-RIGHT: #000000 0.5pt solid; FONT-SIZE: 10pt; VERTICAL-ALIGN: bottom; COLOR: #000000; BORDER-BOTTOM: #d4d0c8 0.5pt solid; FONT-FAMILY: Arial; BACKGROUND-COLOR: #ffffff; TEXT-ALIGN: right"> </td></tr><tr><td style="BORDER-TOP: #000000 0.5pt solid; FONT-SIZE: 10pt; BORDER-LEFT: #000000 0.5pt solid; COLOR: #000000; FONT-FAMILY: menu; BACKGROUND-COLOR: #d4d0c8" align="middle" width="2%"><center>12</center></td><td style="BORDER-RIGHT: #d4d0c8 0.5pt solid; FONT-SIZE: 10pt; VERTICAL-ALIGN: bottom; BORDER-LEFT: #000000 0.5pt solid; COLOR: #000000; BORDER-BOTTOM: #d4d0c8 0.5pt solid; FONT-FAMILY: Arial; BACKGROUND-COLOR: #ffffff; TEXT-ALIGN: left">e</td><td style="BORDER-RIGHT: #d4d0c8 0.5pt solid; FONT-SIZE: 10pt; VERTICAL-ALIGN: bottom; COLOR: #000000; BORDER-BOTTOM: #d4d0c8 0.5pt solid; FONT-FAMILY: Arial; BACKGROUND-COLOR: #ffffff; TEXT-ALIGN: left">m</td><td style="BORDER-RIGHT: #d4d0c8 0.5pt solid; FONT-SIZE: 10pt; VERTICAL-ALIGN: bottom; COLOR: #000000; BORDER-BOTTOM: #d4d0c8 0.5pt solid; FONT-FAMILY: Arial; BACKGROUND-COLOR: #ffffff; TEXT-ALIGN: right"> </td><td style="BORDER-RIGHT: #000000 0.5pt solid; FONT-SIZE: 10pt; VERTICAL-ALIGN: bottom; COLOR: #000000; BORDER-BOTTOM: #d4d0c8 0.5pt solid; FONT-FAMILY: Arial; BACKGROUND-COLOR: #ffffff; TEXT-ALIGN: right"> </td></tr><tr><td style="BORDER-RIGHT: #000000 0.5pt solid; BORDER-TOP: #808080 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BACKGROUND-COLOR: #d4d0c8" colspan="5"><table width="100%" align="left" valign="TOP"><tbody><tr><td style="BORDER-RIGHT: #000000 0.5pt solid; BORDER-TOP: #808080 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; WIDTH: 120pt; BORDER-BOTTOM: #000000 0.5pt solid; BACKGROUND-COLOR: #ffffff" align="left"><u>sheet1</u></td><td> </td></tr></tbody></table></td></tr></tbody></table><br>
+<font color="#339966" size="1">[HtmlMaker 2.42] </font><font color="#339966" size="1">To see the formula in the cells just click on the cells hyperlink or click the Name box</font><br>
+<font color="red" size="1">PLEASE DO NOT QUOTE THIS TABLE IMAGE ON SAME PAGE! OTHEWISE, ERROR OF JavaScript OCCUR.</font></center>
+						</blockquote>
+					</div>
+
+					
+				</div>
+			</div>
+			
+			<div class="after_content">
+				
+				
+<div class="vbseo_buttons" id="lkbtn_1.277889.1365702">
+
+    <ul class="vbseo_links" style="visibility:visible">
+    
+    <li class="vbseo_share"><a href="http://www.mrexcel.com/forum/excel-questions/277889-visual-basic-applications-check-if-string-exists-within-collection.html#">Share</a>
+    <ul class="vbseo_share_body">
+	<li class="share_header">Share this post on</li>
+	
+    	<li class="right"><img src="./VBA  Check if String exists within collection._files/digg.gif" width="18px" height="18px" alt=""><a rel="nofollow" href="http://digg.com/submit?phase=2&url=http%3A%2F%2Fwww.mrexcel.com%2Fforum%2Fexcel-questions%2F277889-visual-basic-applications-check-if-string-exists-within-collection.html%23post1365702&title=VBA%3A++Check+if+String+exists+within+collection.">Digg</a></li>
+    
+    	<li class="left"><img src="./VBA  Check if String exists within collection._files/delicious.gif" width="18px" height="18px" alt=""><a rel="nofollow" href="http://del.icio.us/post?url=http%3A%2F%2Fwww.mrexcel.com%2Fforum%2Fexcel-questions%2F277889-visual-basic-applications-check-if-string-exists-within-collection.html%23post1365702&title=VBA%3A++Check+if+String+exists+within+collection.">Del.icio.us</a></li>
+    
+    	<li class="right"><img src="./VBA  Check if String exists within collection._files/technorati.gif" width="18px" height="18px" alt=""><a rel="nofollow" href="http://technorati.com/faves/?add=http%3A%2F%2Fwww.mrexcel.com%2Fforum%2Fexcel-questions%2F277889-visual-basic-applications-check-if-string-exists-within-collection.html%23post1365702">Technorati</a></li>
+    
+    	<li class="left"><img src="./VBA  Check if String exists within collection._files/twitter.png" width="18px" height="18px" alt=""><a rel="nofollow" href="http://twitter.com/home?status=VBA%3A++Check+if+String+exists+within+collection.%20http%3A%2F%2Fwww.mrexcel.com%2Fforum%2Fexcel-questions%2F277889-visual-basic-applications-check-if-string-exists-within-collection.html%23post1365702">Twitter</a></li>
+    
+    </ul>
+    </li>
+    
+    
+    
+    </ul>
+    
+    <div class="vbseo_liked" style="display:none"></div>
+
+
+</div>
+
+				
+				
+					<blockquote class="signature restore"><div class="signaturecontainer">I am not an expert. So better solutions may be available <br>
+MinE WINDOWS 7 AND  excel 2007(compatbililty mode)<br>
+venkat1926(at)gmail(dot)com<br>
+preferably do not send private messages in the newsgroup reply to newsgroup</div></blockquote>
+				
+				
+			</div>
+			
+			<div class="cleardiv"></div>
+		</div>
+	</div>
+		<div class="postfoot">
+			<!-- <div class="postfoot_container"> -->
+			<div class="textcontrols floatcontainer">
+				<span class="postcontrols">
+					<img style="display:none" id="progress_1365702" src="./VBA  Check if String exists within collection._files/progress.gif" alt="">
+					
+					
+					
+						<a id="qrwq_1365702" class="newreply" href="http://www.mrexcel.com/forum/newreply.php?do=newreply&p=1365702" rel="nofollow" title="Reply With Quote"><img id="quoteimg_1365702" src="./VBA  Check if String exists within collection._files/clear.gif" alt="Reply With Quote" title="Reply With Quote">  Reply With Quote</a> 
+					
+					
+					
+				</span>
+				<span class="postlinking">
+					
+						
+					
+
+					
+					
+					
+					
+
+					
+					
+
+					
+					
+					
+					
+					
+				</span>
+			<!-- </div> -->
+			</div>
+		</div>
+	<hr>
+</li>
+
+<li class="postbitlegacy postbitim postcontainer old" id="post_1365750">
+<!-- see bottom of postbit.css for .userinfo .popupmenu styles -->
+
+	<div class="posthead">
+			<span class="postdate old">
+				
+					<span class="date">Aug 25th, 2007,&nbsp;<span class="time">07:02 AM</span></span>
+				
+			</span>
+			<span class="nodecontrols">
+				
+					<a name="post1365750" href="http://www.mrexcel.com/forum/excel-questions/277889-visual-basic-applications-check-if-string-exists-within-collection.html#post1365750" class="postcounter">#3</a><a id="postcount1365750" name="3"></a>
+				
+				
+				
+			</span>
+	</div>
+	<div class="postdetails">
+		<div class="userinfo">
+			<div class="username_container">
+			
+				<div class="popupmenu memberaction" id="yui-gen12">
+	<a rel="nofollow" class="username offline " href="http://www.mrexcel.com/forum/members/sir-phoenix.html" title="Sir Phoenix is offline"><strong>Sir Phoenix</strong></a>
+	
+</div>
+				<img class="inlineimg onlinestatus" src="./VBA  Check if String exists within collection._files/user-offline.png" alt="Sir Phoenix is offline" border="0" title="Sir Phoenix is offline">
+
+			
+			</div>
+			<span class="usertitle">
+				Board Regular
+			</span>
+			
+			
+			
+			 
+			
+				<hr>
+				<dl class="userinfo_extra">
+					<dt>Join Date</dt> <dd>Aug 2006</dd>
+					<dt>Location</dt> <dd>Orange Park, FL</dd>
+					
+					<dt>Posts</dt> <dd>146</dd>	
+					
+				</dl>
+				
+				
+				<div class="imlinks">
+					    
+				</div>
+			
+		</div>
+		<div class="postbody">
+			<div class="postrow has_after_content">
+				
+				
+				<h2 class="title icon">
+					<img src="./VBA  Check if String exists within collection._files/icon1.png" alt="Default" title="Default"> 
+				</h2>
+				
+
+
+						
+						
+				<div class="content">
+					<div id="post_message_1365750">
+						<blockquote class="postcontent restore ">
+							Thank you for the code, but I cannot use that.  I specifically need an exact match returned from within a "Collection".  <span class="goog_qs-tidbit goog_qs-tidbit-0">Ideally, I'd be able to specify the String from the Collection like a name, but</span> that doesn't seem to work.  <br>
+<br>
+-Sir Phoenix
+						</blockquote>
+					</div>
+
+					
+				</div>
+			</div>
+			
+			<div class="after_content">
+				
+				
+<div class="vbseo_buttons" id="lkbtn_1.277889.1365750">
+
+    <ul class="vbseo_links" style="visibility:visible">
+    
+    <li class="vbseo_share"><a href="http://www.mrexcel.com/forum/excel-questions/277889-visual-basic-applications-check-if-string-exists-within-collection.html#">Share</a>
+    <ul class="vbseo_share_body">
+	<li class="share_header">Share this post on</li>
+	
+    	<li class="right"><img src="./VBA  Check if String exists within collection._files/digg.gif" width="18px" height="18px" alt=""><a rel="nofollow" href="http://digg.com/submit?phase=2&url=http%3A%2F%2Fwww.mrexcel.com%2Fforum%2Fexcel-questions%2F277889-visual-basic-applications-check-if-string-exists-within-collection.html%23post1365750&title=VBA%3A++Check+if+String+exists+within+collection.">Digg</a></li>
+    
+    	<li class="left"><img src="./VBA  Check if String exists within collection._files/delicious.gif" width="18px" height="18px" alt=""><a rel="nofollow" href="http://del.icio.us/post?url=http%3A%2F%2Fwww.mrexcel.com%2Fforum%2Fexcel-questions%2F277889-visual-basic-applications-check-if-string-exists-within-collection.html%23post1365750&title=VBA%3A++Check+if+String+exists+within+collection.">Del.icio.us</a></li>
+    
+    	<li class="right"><img src="./VBA  Check if String exists within collection._files/technorati.gif" width="18px" height="18px" alt=""><a rel="nofollow" href="http://technorati.com/faves/?add=http%3A%2F%2Fwww.mrexcel.com%2Fforum%2Fexcel-questions%2F277889-visual-basic-applications-check-if-string-exists-within-collection.html%23post1365750">Technorati</a></li>
+    
+    	<li class="left"><img src="./VBA  Check if String exists within collection._files/twitter.png" width="18px" height="18px" alt=""><a rel="nofollow" href="http://twitter.com/home?status=VBA%3A++Check+if+String+exists+within+collection.%20http%3A%2F%2Fwww.mrexcel.com%2Fforum%2Fexcel-questions%2F277889-visual-basic-applications-check-if-string-exists-within-collection.html%23post1365750">Twitter</a></li>
+    
+    </ul>
+    </li>
+    
+    
+    
+    </ul>
+    
+    <div class="vbseo_liked" style="display:none"></div>
+
+
+</div>
+
+				
+				
+				
+			</div>
+			
+			<div class="cleardiv"></div>
+		</div>
+	</div>
+		<div class="postfoot">
+			<!-- <div class="postfoot_container"> -->
+			<div class="textcontrols floatcontainer">
+				<span class="postcontrols">
+					<img style="display:none" id="progress_1365750" src="./VBA  Check if String exists within collection._files/progress.gif" alt="">
+					
+					
+					
+						<a id="qrwq_1365750" class="newreply" href="http://www.mrexcel.com/forum/newreply.php?do=newreply&p=1365750" rel="nofollow" title="Reply With Quote"><img id="quoteimg_1365750" src="./VBA  Check if String exists within collection._files/clear.gif" alt="Reply With Quote" title="Reply With Quote">  Reply With Quote</a> 
+					
+					
+					
+				</span>
+				<span class="postlinking">
+					
+						
+					
+
+					
+					
+					
+					
+
+					
+					
+
+					
+					
+					
+					
+					
+				</span>
+			<!-- </div> -->
+			</div>
+		</div>
+	<hr>
+</li>
+
+<li class="postbitlegacy postbitim postcontainer old" id="post_1365775">
+<!-- see bottom of postbit.css for .userinfo .popupmenu styles -->
+
+	<div class="posthead">
+			<span class="postdate old">
+				
+					<span class="date">Aug 25th, 2007,&nbsp;<span class="time">08:55 AM</span></span>
+				
+			</span>
+			<span class="nodecontrols">
+				
+					<a name="post1365775" href="http://www.mrexcel.com/forum/excel-questions/277889-visual-basic-applications-check-if-string-exists-within-collection.html#post1365775" class="postcounter">#4</a><a id="postcount1365775" name="4"></a>
+				
+				
+				
+			</span>
+	</div>
+	<div class="postdetails">
+		<div class="userinfo">
+			<div class="username_container">
+			
+				<div class="popupmenu memberaction" id="yui-gen13">
+	<a rel="nofollow" class="username offline " href="http://www.mrexcel.com/forum/members/veyselemre.html" title="veyselemre is offline"><strong>veyselemre</strong></a>
+	
+</div>
+				<img class="inlineimg onlinestatus" src="./VBA  Check if String exists within collection._files/user-offline.png" alt="veyselemre is offline" border="0" title="veyselemre is offline">
+
+			
+			</div>
+			<span class="usertitle">
+				New Member
+			</span>
+			
+			
+			
+			 
+			
+				<hr>
+				<dl class="userinfo_extra">
+					<dt>Join Date</dt> <dd>Mar 2006</dd>
+					
+					
+					<dt>Posts</dt> <dd>17</dd>	
+					
+				</dl>
+				
+				
+				<div class="imlinks">
+					    
+				</div>
+			
+		</div>
+		<div class="postbody">
+			<div class="postrow has_after_content">
+				
+				
+				<h2 class="title icon">
+					<img src="./VBA  Check if String exists within collection._files/icon1.png" alt="Default" title="Default"> 
+				</h2>
+				
+
+
+						
+						
+				<div class="content">
+					<div id="post_message_1365775">
+						<blockquote class="postcontent restore ">
+							<div class="bbcode_container">
+	<div class="bbcode_description">Code:</div>
+	<pre class="bbcode_code" style="height:144px;">Public Function DoesItemExist(mySet As Collection, myCheck As String) As Boolean
+Dim myNum As Integer
+    DoesItemExist = False
+    For myNum = 1 To mySet.Count
+        If myCheck = mySet(myNum) Then
+            DoesItemExist = True
+            Exit Function
+        End If
+    Next
+End Function</pre>
+</div>Or<br>
+<br>
+<div class="bbcode_container">
+	<div class="bbcode_description">Code:</div>
+	<pre class="bbcode_code" style="height:132px;">Public Function DoesItemExist(mySet As Collection, myCheck As String) As Boolean
+    DoesItemExist = False
+    For Each elm In mySet
+        If myCheck = elm Then
+            DoesItemExist = True
+            Exit Function
+        End If
+    Next
+End Function</pre>
+</div>
+						</blockquote>
+					</div>
+
+					
+				</div>
+			</div>
+			
+			<div class="after_content">
+				
+				
+<div class="vbseo_buttons" id="lkbtn_1.277889.1365775">
+
+    <ul class="vbseo_links" style="visibility:visible">
+    
+    <li class="vbseo_share"><a href="http://www.mrexcel.com/forum/excel-questions/277889-visual-basic-applications-check-if-string-exists-within-collection.html#">Share</a>
+    <ul class="vbseo_share_body">
+	<li class="share_header">Share this post on</li>
+	
+    	<li class="right"><img src="./VBA  Check if String exists within collection._files/digg.gif" width="18px" height="18px" alt=""><a rel="nofollow" href="http://digg.com/submit?phase=2&url=http%3A%2F%2Fwww.mrexcel.com%2Fforum%2Fexcel-questions%2F277889-visual-basic-applications-check-if-string-exists-within-collection.html%23post1365775&title=VBA%3A++Check+if+String+exists+within+collection.">Digg</a></li>
+    
+    	<li class="left"><img src="./VBA  Check if String exists within collection._files/delicious.gif" width="18px" height="18px" alt=""><a rel="nofollow" href="http://del.icio.us/post?url=http%3A%2F%2Fwww.mrexcel.com%2Fforum%2Fexcel-questions%2F277889-visual-basic-applications-check-if-string-exists-within-collection.html%23post1365775&title=VBA%3A++Check+if+String+exists+within+collection.">Del.icio.us</a></li>
+    
+    	<li class="right"><img src="./VBA  Check if String exists within collection._files/technorati.gif" width="18px" height="18px" alt=""><a rel="nofollow" href="http://technorati.com/faves/?add=http%3A%2F%2Fwww.mrexcel.com%2Fforum%2Fexcel-questions%2F277889-visual-basic-applications-check-if-string-exists-within-collection.html%23post1365775">Technorati</a></li>
+    
+    	<li class="left"><img src="./VBA  Check if String exists within collection._files/twitter.png" width="18px" height="18px" alt=""><a rel="nofollow" href="http://twitter.com/home?status=VBA%3A++Check+if+String+exists+within+collection.%20http%3A%2F%2Fwww.mrexcel.com%2Fforum%2Fexcel-questions%2F277889-visual-basic-applications-check-if-string-exists-within-collection.html%23post1365775">Twitter</a></li>
+    
+    </ul>
+    </li>
+    
+    
+    
+    </ul>
+    
+    <div class="vbseo_liked" style="display:none"></div>
+
+
+</div>
+
+				
+				
+				
+			</div>
+			
+			<div class="cleardiv"></div>
+		</div>
+	</div>
+		<div class="postfoot">
+			<!-- <div class="postfoot_container"> -->
+			<div class="textcontrols floatcontainer">
+				<span class="postcontrols">
+					<img style="display:none" id="progress_1365775" src="./VBA  Check if String exists within collection._files/progress.gif" alt="">
+					
+					
+					
+						<a id="qrwq_1365775" class="newreply" href="http://www.mrexcel.com/forum/newreply.php?do=newreply&p=1365775" rel="nofollow" title="Reply With Quote"><img id="quoteimg_1365775" src="./VBA  Check if String exists within collection._files/clear.gif" alt="Reply With Quote" title="Reply With Quote">  Reply With Quote</a> 
+					
+					
+					
+				</span>
+				<span class="postlinking">
+					
+						
+					
+
+					
+					
+					
+					
+
+					
+					
+
+					
+					
+					
+					
+					
+				</span>
+			<!-- </div> -->
+			</div>
+		</div>
+	<hr>
+</li>
+
+<li class="postbitlegacy postbitim postcontainer old" id="post_1365778">
+<!-- see bottom of postbit.css for .userinfo .popupmenu styles -->
+
+	<div class="posthead">
+			<span class="postdate old">
+				
+					<span class="date">Aug 25th, 2007,&nbsp;<span class="time">09:09 AM</span></span>
+				
+			</span>
+			<span class="nodecontrols">
+				
+					<a name="post1365778" href="http://www.mrexcel.com/forum/excel-questions/277889-visual-basic-applications-check-if-string-exists-within-collection.html#post1365778" class="postcounter">#5</a><a id="postcount1365778" name="5"></a>
+				
+				
+				
+			</span>
+	</div>
+	<div class="postdetails">
+		<div class="userinfo">
+			<div class="username_container">
+			
+				<div class="popupmenu memberaction" id="yui-gen14">
+	<a rel="nofollow" class="username offline " href="http://www.mrexcel.com/forum/members/sir-phoenix.html" title="Sir Phoenix is offline"><strong>Sir Phoenix</strong></a>
+	
+</div>
+				<img class="inlineimg onlinestatus" src="./VBA  Check if String exists within collection._files/user-offline.png" alt="Sir Phoenix is offline" border="0" title="Sir Phoenix is offline">
+
+			
+			</div>
+			<span class="usertitle">
+				Board Regular
+			</span>
+			
+			
+			
+			 
+			
+				<hr>
+				<dl class="userinfo_extra">
+					<dt>Join Date</dt> <dd>Aug 2006</dd>
+					<dt>Location</dt> <dd>Orange Park, FL</dd>
+					
+					<dt>Posts</dt> <dd>146</dd>	
+					
+				</dl>
+				
+				
+				<div class="imlinks">
+					    
+				</div>
+			
+		</div>
+		<div class="postbody">
+			<div class="postrow has_after_content">
+				
+				
+				<h2 class="title icon">
+					<img src="./VBA  Check if String exists within collection._files/icon1.png" alt="Default" title="Default"> 
+				</h2>
+				
+
+
+						
+						
+							
+						
+				<div class="content">
+					<div id="post_message_1365778">
+						<blockquote class="postcontent restore ">
+							These work.  It appears my problem was with something else entirely that I couldn't see at the time.  Thank you very much!
+						</blockquote>
+					</div>
+
+					
+				</div>
+			</div>
+			
+			<div class="after_content">
+				
+				
+<div class="vbseo_buttons" id="lkbtn_1.277889.1365778">
+
+    <ul class="vbseo_links" style="visibility:visible">
+    
+    <li class="vbseo_share"><a href="http://www.mrexcel.com/forum/excel-questions/277889-visual-basic-applications-check-if-string-exists-within-collection.html#">Share</a>
+    <ul class="vbseo_share_body">
+	<li class="share_header">Share this post on</li>
+	
+    	<li class="right"><img src="./VBA  Check if String exists within collection._files/digg.gif" width="18px" height="18px" alt=""><a rel="nofollow" href="http://digg.com/submit?phase=2&url=http%3A%2F%2Fwww.mrexcel.com%2Fforum%2Fexcel-questions%2F277889-visual-basic-applications-check-if-string-exists-within-collection.html%23post1365778&title=VBA%3A++Check+if+String+exists+within+collection.">Digg</a></li>
+    
+    	<li class="left"><img src="./VBA  Check if String exists within collection._files/delicious.gif" width="18px" height="18px" alt=""><a rel="nofollow" href="http://del.icio.us/post?url=http%3A%2F%2Fwww.mrexcel.com%2Fforum%2Fexcel-questions%2F277889-visual-basic-applications-check-if-string-exists-within-collection.html%23post1365778&title=VBA%3A++Check+if+String+exists+within+collection.">Del.icio.us</a></li>
+    
+    	<li class="right"><img src="./VBA  Check if String exists within collection._files/technorati.gif" width="18px" height="18px" alt=""><a rel="nofollow" href="http://technorati.com/faves/?add=http%3A%2F%2Fwww.mrexcel.com%2Fforum%2Fexcel-questions%2F277889-visual-basic-applications-check-if-string-exists-within-collection.html%23post1365778">Technorati</a></li>
+    
+    	<li class="left"><img src="./VBA  Check if String exists within collection._files/twitter.png" width="18px" height="18px" alt=""><a rel="nofollow" href="http://twitter.com/home?status=VBA%3A++Check+if+String+exists+within+collection.%20http%3A%2F%2Fwww.mrexcel.com%2Fforum%2Fexcel-questions%2F277889-visual-basic-applications-check-if-string-exists-within-collection.html%23post1365778">Twitter</a></li>
+    
+    </ul>
+    </li>
+    
+    
+    
+    </ul>
+    
+    <div class="vbseo_liked" style="display:none"></div>
+
+
+</div>
+
+				
+				
+				
+			</div>
+			
+			<div class="cleardiv"></div>
+		</div>
+	</div>
+		<div class="postfoot">
+			<!-- <div class="postfoot_container"> -->
+			<div class="textcontrols floatcontainer">
+				<span class="postcontrols">
+					<img style="display:none" id="progress_1365778" src="./VBA  Check if String exists within collection._files/progress.gif" alt="">
+					
+					
+					
+						<a id="qrwq_1365778" class="newreply" href="http://www.mrexcel.com/forum/newreply.php?do=newreply&p=1365778" rel="nofollow" title="Reply With Quote"><img id="quoteimg_1365778" src="./VBA  Check if String exists within collection._files/clear.gif" alt="Reply With Quote" title="Reply With Quote">  Reply With Quote</a> 
+					
+					
+					
+				</span>
+				<span class="postlinking">
+					
+						
+					
+
+					
+					
+					
+					
+
+					
+					
+
+					
+					
+					
+					
+					
+				</span>
+			<!-- </div> -->
+			</div>
+		</div>
+	<hr>
+</li>
+
+		</ol>
+		<div class="separator"></div>
+		<div class="postlistfoot">
+			
+		</div>
+
+	
+
+</div>
+
+<div id="below_postlist" class="noinlinemod below_postlist">
+	
+	<div id="pagination_bottom" class="pagination_bottom">
+	
+		
+	</div>
+</div>
+
+
+
+
+
+
+
+
+	<!-- next / previous links -->
+	<div class="navlinks">
+		
+			<strong>«</strong>
+			<a href="http://www.mrexcel.com/forum/excel-questions/277889-visual-basic-applications-check-if-string-exists-within-collection-prev-thread.html" rel="nofollow">Previous Thread</a>
+			|
+			<a href="http://www.mrexcel.com/forum/excel-questions/277889-visual-basic-applications-check-if-string-exists-within-collection-next-thread.html" rel="nofollow">Next Thread</a>
+			<strong>»</strong>
+		
+	</div>
+	<!-- / next / previous links -->
+
+<div id="thread_info" class="thread_info block">
+	
+	
+	
+	
+	
+	
+	<div class="options_block_container">
+		
+		<div class="options_block2">
+			<h4 class="blockhead options_correct">Like this thread? Share it with others</h4>
+			<div id="social_bookmarks_list" class="thread_info_block blockbody formcontrols floatcontainer options_correct">
+				<h5 class="blocksubhead">Like this thread? Share it with others</h5>
+				<ul class="icon_list"><li class="smallfont">
+	
+		<a rel="nofollow" href="http://twitter.com/share?text=VBA%3A++Check+if+String+exists+within+collection.&url=http%3A%2F%2Fwww.mrexcel.com%2Fforum%2Fexcel-questions%2F277889-visual-basic-applications-check-if-string-exists-within-collection.html" target="socialbookmark"><img src="./VBA  Check if String exists within collection._files/bookmarksite_twitter.png" alt="Submit to Twitter" title="Submit to Twitter"></a>
+	
+	<a rel="nofollow" href="http://twitter.com/share?text=VBA%3A++Check+if+String+exists+within+collection.&url=http%3A%2F%2Fwww.mrexcel.com%2Fforum%2Fexcel-questions%2F277889-visual-basic-applications-check-if-string-exists-within-collection.html" target="socialbookmark">Twitter</a>
+</li><li class="smallfont">
+	
+		<a rel="nofollow" href="http://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Fwww.mrexcel.com%2Fforum%2Fexcel-questions%2F277889-visual-basic-applications-check-if-string-exists-within-collection.html" target="socialbookmark"><img src="./VBA  Check if String exists within collection._files/bookmarksite_linkedin.png" alt="Submit to Linked In" title="Submit to Linked In"></a>
+	
+	<a rel="nofollow" href="http://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Fwww.mrexcel.com%2Fforum%2Fexcel-questions%2F277889-visual-basic-applications-check-if-string-exists-within-collection.html" target="socialbookmark">Linked In</a>
+</li><li class="smallfont">
+	
+		<a rel="nofollow" href="https://plus.google.com/share?url=http%3A%2F%2Fwww.mrexcel.com%2Fforum%2Fexcel-questions%2F277889-visual-basic-applications-check-if-string-exists-within-collection.html" target="socialbookmark"><img src="./VBA  Check if String exists within collection._files/bookmarksite_gplus.png" alt="Submit to Google" title="Submit to Google"></a>
+	
+	<a rel="nofollow" href="https://plus.google.com/share?url=http%3A%2F%2Fwww.mrexcel.com%2Fforum%2Fexcel-questions%2F277889-visual-basic-applications-check-if-string-exists-within-collection.html" target="socialbookmark">Google</a>
+</li><li class="smallfont">
+	
+		<a rel="nofollow" href="http://reddit.com/submit?url=http%3A%2F%2Fwww.mrexcel.com%2Fforum%2Fexcel-questions%2F277889-visual-basic-applications-check-if-string-exists-within-collection.html&title=VBA%3A++Check+if+String+exists+within+collection." target="socialbookmark"><img src="./VBA  Check if String exists within collection._files/bookmarksite_reddit.gif" alt="Submit to Reddit" title="Submit to Reddit"></a>
+	
+	<a rel="nofollow" href="http://reddit.com/submit?url=http%3A%2F%2Fwww.mrexcel.com%2Fforum%2Fexcel-questions%2F277889-visual-basic-applications-check-if-string-exists-within-collection.html&title=VBA%3A++Check+if+String+exists+within+collection." target="socialbookmark">Reddit</a>
+</li><li class="smallfont">
+	
+		<a rel="nofollow" href="http://www.stumbleupon.com/submit?url=http%3A%2F%2Fwww.mrexcel.com%2Fforum%2Fexcel-questions%2F277889-visual-basic-applications-check-if-string-exists-within-collection.html&title=VBA%3A++Check+if+String+exists+within+collection." target="socialbookmark"><img src="./VBA  Check if String exists within collection._files/bookmarksite_stumbleupon.gif" alt="Submit to StumbleUpon" title="Submit to StumbleUpon"></a>
+	
+	<a rel="nofollow" href="http://www.stumbleupon.com/submit?url=http%3A%2F%2Fwww.mrexcel.com%2Fforum%2Fexcel-questions%2F277889-visual-basic-applications-check-if-string-exists-within-collection.html&title=VBA%3A++Check+if+String+exists+within+collection." target="socialbookmark">StumbleUpon</a>
+</li></ul>
+			</div>
+		</div>
+		
+		<div class="options_block">
+			<h4 class="collapse blockhead options_correct">
+				<a class="collapse" id="collapse_posting_rules" href="http://www.mrexcel.com/forum/excel-questions/277889-visual-basic-applications-check-if-string-exists-within-collection.html#top"><img src="./VBA  Check if String exists within collection._files/collapse_40b.png" alt=""></a>
+				Posting Permissions
+			</h4>
+			<div id="posting_rules" class="thread_info_block blockbody formcontrols floatcontainer options_correct">
+				
+<div id="forumrules" class="info_subblock">
+
+	<ul class="youcandoblock">
+		<li>You <strong>may not</strong> post new threads</li>
+		<li>You <strong>may not</strong> post replies</li>
+		<li>You <strong>may not</strong> post attachments</li>
+		<li>You <strong>may not</strong> edit your posts</li>
+		<li>&nbsp;</li>
+	</ul>
+	<div class="bbcodeblock">
+		<ul>
+			<li><a rel="nofollow" href="http://www.mrexcel.com/forum/misc.php?do=bbcode" target="_blank">BB code</a> is <strong>On</strong></li>
+			<li><a rel="nofollow" href="http://www.mrexcel.com/forum/misc.php?do=showsmilies" target="_blank">Smilies</a> are <strong>On</strong></li>
+			<li><a rel="nofollow" href="http://www.mrexcel.com/forum/misc.php?do=bbcode#imgcode" target="_blank">[IMG]</a> code is <strong>On</strong></li>
+			<li><a rel="nofollow" href="http://www.mrexcel.com/forum/misc.php?do=bbcode#videocode" target="_blank">[VIDEO]</a> code is <strong>On</strong></li>
+			<li>HTML code is <strong>On</strong></li>
+<li><a rel="nofollow" href="http://www.mrexcel.com/forum/misc.php?do=linkbacks#trackbacks" target="_blank">Trackbacks</a> are <strong>On</strong></li>
+<li><a rel="nofollow" href="http://www.mrexcel.com/forum/misc.php?do=linkbacks#pingbacks" target="_blank">Pingbacks</a> are <strong>On</strong></li>
+<li><a rel="nofollow" href="http://www.mrexcel.com/forum/misc.php?do=linkbacks#refbacks" target="_blank">Refbacks</a> are <strong>On</strong></li>
+		</ul>
+	</div>
+	<p class="rules_link"><a rel="nofollow" href="http://www.mrexcel.com/forum/misc.php?do=showrules" target="_blank">Forum Rules</a></p>
+
+</div>
+
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+
+
+
+<p align="center">
+<br>
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-2974935598394359";
+/* Forum Footer Ads */
+google_ad_slot = "0938661449";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript" src="./VBA  Check if String exists within collection._files/show_ads.js">
+</script><ins id="aswift_1_expand" style="display:inline-table;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent"><ins id="aswift_1_anchor" style="display:block;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent"><iframe width="728" height="90" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_1" name="aswift_1" style="left:0;position:absolute;top:0;"></iframe></ins></ins>
+</p>
+
+
+<div style="clear: left">
+  <a href="http://www.dmca.com/Protection/Status.aspx?ID=47e0aa4b-d443-4e02-8f7a-6b6952299c80" title="DMCA"> <img src="./VBA  Check if String exists within collection._files/dmca_copyright_protected150b.png" alt="DMCA.com" title="DMCA.com"></a>
+  
+</div>
+
+<div id="footer" class="floatcontainer footer">
+
+	<form action="http://www.mrexcel.com/forum/" method="get" id="footer_select" class="footer_select">
+
+		
+			<select name="styleid" onchange="switch_id(this, &#39;style&#39;)">
+				<optgroup label="Quick Style Chooser"><option class="hidden"></option></optgroup>
+				
+					
+					<optgroup label=" Standard Styles">
+									
+					<option value="3" class="" selected="selected">-- vB4 Default Style</option>
+					
+					</optgroup>
+										
+				
+				
+					
+					<optgroup label=" Mobile Styles">
+					
+					<option value="4" class="">-- Default Mobile Style</option>
+					
+					</optgroup>
+										
+				
+			</select>	
+		
+		
+		
+	</form>
+
+	<ul id="footer_links" class="footer_links">
+		<li><a href="http://www.mrexcel.com/forum/sendmessage.php" rel="nofollow" accesskey="9">Contact Us</a></li>
+		<li><a href="http://www.mrexcel.com/">Ask Mr. Excel - Tips and Solutions for Excel</a></li>
+		
+		
+		
+		
+		<li><a href="http://www.mrexcel.com/privacy.shtml">Privacy Statement</a></li>
+		<li><a href="http://www.mrexcel.com/terms.shtml">Terms of Service</a></li>
+		<li><a href="http://www.mrexcel.com/forum/excel-questions/277889-visual-basic-applications-check-if-string-exists-within-collection.html#top" onclick="document.location.hash=&#39;top&#39;; return false;">Top</a></li>
+	</ul>
+	
+	
+	
+	
+	<script type="text/javascript">
+	<!--
+		// Main vBulletin Javascript Initialization
+		vBulletin_init();
+	//-->
+	</script>
+        
+</div>
+</div> <!-- closing div for body_wrapper -->
+<!-- OX Stripped 19-Mar-2014 ScP -->
+<div class="below_body">
+<div id="footer_time" class="shade footer_time">All times are GMT -4. The time now is <span class="time">05:27 PM</span>.</div>
+
+<div id="footer_copyright" class="shade footer_copyright">
+	<!-- Do not remove this copyright notice -->
+	Powered by <a href="https://www.vbulletin.com/" id="vbulletinlink">vBulletin®</a> Version 4.2.0 <br>Copyright © 2014 vBulletin Solutions, Inc. All rights reserved. 
+	<!-- Do not remove this copyright notice -->	
+</div>
+<div id="footer_morecopyright" class="shade footer_morecopyright">
+	<!-- Do not remove cronimage or your scheduled tasks will cease to function -->
+	
+	<!-- Do not remove cronimage or your scheduled tasks will cease to function -->
+	All contents Copyright 1998-2014 by MrExcel Consulting.
+	
+</div>
+ 
+
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+
+var vbseo_jshtml = new Array();
+vbseo_jshtml[0] = "<ol>			<li class=\"restore\" id=\"navbar_notice_26\">		<font size = 3> Become a <a href = \"http://www.mrexcel.com/forum/register.php\" > <b>Registered Member</b> </a> (free) to remove the ad that appears in the top post. </font size></li><li class=\"restore\" id=\"navbar_notice_22\">		If this is your first visit, be sure to		check out the <a href=\"http://www.mrexcel.com/forum/faq.php\" target=\"_blank\"><b>FAQ</b></a> by clicking the		link above. You may have to <a href=\"http://www.mrexcel.com/forum/register.php\" target=\"_blank\"><b>register</b></a>		before you can post: click the register link above to proceed. To start viewing messages,		select the forum that you want to visit from the selection below.</li><li class=\"restore\" id=\"navbar_notice_28\">		Click <font size = 3> <a rel=\"nofollow\" href = \"http://www.mrexcel.com/forum/login.php?do=lostpw\" > <b> here </b> </a> </font size> to reset your password. You MUST have a valid e-mail address so that you may receive the instructions to complete the reset.</li>		</ol>";
+
+for(var vi=0;vi<vbseo_jshtml.length;vi++)
+if(fetch_object("vbseo_vhtml_"+vi))fetch_object("vbseo_vhtml_"+vi).innerHTML = vbseo_jshtml[vi];
+
+window.orig_onload = window.onload;
+window.onload = function() {
+var cpost=document.location.hash.substring(1);var cpost2='';if(cpost){ var ispost=cpost.substring(0,4)=='post';if(ispost)cpost2='post_'+cpost.substring(4);if((cobj = fetch_object(cpost))||(cobj = fetch_object(cpost2))){cobj.scrollIntoView(true);}else if(ispost){cpostno = cpost.substring(4,cpost.length);if(parseInt(cpostno)>0){location.replace('http://www.mrexcel.com/forum/showthread.php?p='+cpostno);};} }
+
+if(typeof window.orig_onload == "function") window.orig_onload();
+}
+
+//]]>
+</script>
+
+<div id="goog_qs_tidbit_box" class="notranslate goog_qs-slideup"><div id="goog_qs-wrapper"><div id="goog_qs-box-toggle" title="Minimizar" style="background-image: url(chrome-extension://okanipcmceoeemlbjnmnbdibhgpbllgc/images/minimize.png);"></div><div id="goog_qs-box-help" title="Abrir a página de opções e a ajuda" style="background-image: url(chrome-extension://okanipcmceoeemlbjnmnbdibhgpbllgc/images/help.png);"></div><div id="goog_qs-box-info" style="background-image: url(chrome-extension://okanipcmceoeemlbjnmnbdibhgpbllgc/images/icon16x16.png);"><span class="goog_qs-nowrap">C<img>orrespondências</span> <span class="goog_qs-nowrap">n<img>a</span> <span class="goog_qs-nowrap">p<img>ágina</span> <span class="goog_qs-nowrap">p<img>ara</span> <span class="goog_qs-query"><span class="goog_qs-nowrap">c<img>ollection</span> <span class="goog_qs-nowrap">v<img>ba</span> <span class="goog_qs-nowrap">e<img>xcel</span> <span class="goog_qs-nowrap">l<img>ike</span> <span class="goog_qs-nowrap">s<img>tring</span></span></div><div id="goog_qs-box-tidbits"><div class="goog_qs-box-tidbit" title="Clique para ver este texto na página"><span class="goog_qs-nowrap">I<img>deally,</span> <span class="goog_qs-nowrap">I<img>'d</span> <span class="goog_qs-nowrap">b<img>e</span> <span class="goog_qs-nowrap">a<img>ble</span> <span class="goog_qs-nowrap">t<img>o</span> <span class="goog_qs-nowrap">s<img>pecify</span> <span class="goog_qs-nowrap">t<img>he</span> <em><span class="goog_qs-nowrap">S<img>tring</span></em> <span class="goog_qs-nowrap">f<img>rom</span> <span class="goog_qs-nowrap">t<img>he</span> <em><span class="goog_qs-nowrap">C<img>ollection</span> <span class="goog_qs-nowrap">l<img>ike</span></em> a <span class="goog_qs-nowrap">n<img>ame,</span> <span class="goog_qs-nowrap">b<img>ut...</span> <span class="goog_qs-go">»</span></div></div><div id="goog_qs-box-bottom"><div class="goog_qs-more-matches" id="goog_qs-box-more-tidbits"><span class="goog_qs-nowrap">M<img>ais</span> <span class="goog_qs-nowrap">c<img>orrespondências</span> <span class="goog_qs-go">»</span></div><div class="goog_qs-more-matches" id="goog_qs-box-fewer-tidbits" style="display:none"><span class="goog_qs-go">«</span>  <span class="goog_qs-nowrap">M<img>enos</span> <span class="goog_qs-nowrap">c<img>orrespondências</span></div><div id="goog_qs-box-feedback-link"><span class="goog_qs-nowrap">F<img>eedback</span></div> <div id="goog_qs-box-new-bug"><span class="goog_qs-nowrap">B<img>ug</span></div></div><div style="clear:both"></div></div></div></body></html>

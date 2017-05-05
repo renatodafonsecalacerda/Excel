@@ -1,0 +1,1681 @@
+<!DOCTYPE html>
+<!-- saved from url=(0070)http://stackoverflow.com/questions/5702362/vba-collection-list-of-keys -->
+<html itemscope="" itemtype="http://schema.org/QAPage"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <title>VBA collection: list of keys - Stack Overflow</title>
+    <link rel="shortcut icon" href="http://cdn.sstatic.net/stackoverflow/img/favicon.ico?v=038622610830">
+    <link rel="apple-touch-icon image_src" href="http://cdn.sstatic.net/stackoverflow/img/apple-touch-icon.png?v=fd7230a85918">
+    <link rel="search" type="application/opensearchdescription+xml" href="http://stackoverflow.com/opensearch.xml">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:domain" content="stackoverflow.com">
+    <meta property="og:type" content="website">
+    <meta property="og:image" itemprop="image primaryImageOfPage" content="http://cdn.sstatic.net/stackoverflow/img/apple-touch-icon@2.png?v=fde65a5a78c6">
+    <meta name="twitter:title" property="og:title" itemprop="title name" content="VBA collection: list of keys">
+    <meta name="twitter:description" property="og:description" itemprop="description" content="After I add some values to the VBA collection, is there any way to retain the list of all keys?
+
+For example
+
+Dim coll as new  Collection
+Dim str1, str2, str3
+str1=&quot;first string&quot;
+str2=&quot;second string&quot;
+">
+    <meta property="og:url" content="http://stackoverflow.com/questions/5702362/vba-collection-list-of-keys">
+    <link rel="canonical" href="./VBA collection  list of keys - Stack Overflow_files/VBA collection  list of keys - Stack Overflow.htm">
+
+    
+    
+    <script type="text/javascript" async="" src="./VBA collection  list of keys - Stack Overflow_files/ados"></script><script async="" src="./VBA collection  list of keys - Stack Overflow_files/quant.js"></script><script async="" src="./VBA collection  list of keys - Stack Overflow_files/beacon.js"></script><script async="" src="./VBA collection  list of keys - Stack Overflow_files/analytics.js"></script><script type="text/javascript" async="" src="./VBA collection  list of keys - Stack Overflow_files/ados.js"></script><script src="./VBA collection  list of keys - Stack Overflow_files/jquery.min.js"></script>
+    <script src="./VBA collection  list of keys - Stack Overflow_files/stub.en.js"></script>
+    <link rel="stylesheet" type="text/css" href="./VBA collection  list of keys - Stack Overflow_files/all.css">
+    
+    <link rel="alternate" type="application/atom+xml" href="http://stackoverflow.com/feeds/question/5702362">
+    <script>
+        
+        StackExchange.ready(function () {
+                
+                StackExchange.using("snippets", function () {
+                    StackExchange.snippets.initSnippetRenderer();
+                });
+                
+
+            StackExchange.using("postValidation", function () {
+                StackExchange.postValidation.initOnBlurAndSubmit($('#post-form'), 2, 'answer');
+            });
+
+            
+            StackExchange.question.init({showAnswerHelp:true,totalCommentCount:0,shownCommentCount:0,highlightColor:'#F4A83D',backgroundColor:'#FFF',questionId:5702362});
+
+            styleCode();
+
+                StackExchange.realtime.subscribeToQuestion('1', '5702362');
+            
+                    });
+    </script>
+
+
+    <script>
+        StackExchange.init({"locale":"en","stackAuthUrl":"https://stackauth.com","serverTime":1410902487,"networkMetaHostname":"meta.stackexchange.com","styleCode":true,"enableUserHovercards":true,"snippets":{"enabled":true,"domain":"stacksnippets.net"},"site":{"name":"Stack Overflow","description":"Q&A for professional and enthusiast programmers","isNoticesTabEnabled":true,"recaptchaPublicKey":"6LdchgIAAAAAAJwGpIzRQSOFaO0pU6s44Xt8aTwc","recaptchaAudioLang":"en","enableNewTagCreationWarning":true,"nonAsciiTags":true,"enableSocialMediaInSharePopup":true,"useGoogleOAuth2":true},"user":{"fkey":"6c4a91faf4de4e990869e3478cd60907","isAnonymous":true}});
+        StackExchange.using.setCacheBreakers({"js/prettify-full.en.js":"9eb7771d9f91","js/moderator.en.js":"2460e956e5a7","js/full-anon.en.js":"6052358d29ca","js/full.en.js":"987f931de6e8","js/wmd.en.js":"e97a38c17e1a","js/third-party/jquery.autocomplete.min.js":"e5f01e97f7c3","js/third-party/jquery.autocomplete.min.en.js":"","js/mobile.en.js":"5a1e717ab0e4","js/help.en.js":"ce2977cf4348","js/tageditor.en.js":"acbefb65df40","js/tageditornew.en.js":"0b911d185b36","js/inline-tag-editing.en.js":"21223186b436","js/revisions.en.js":"8e050c5bb5cd","js/review.en.js":"9ec0e82561d1","js/tagsuggestions.en.js":"d1ff9b84abe5","js/post-validation.en.js":"3a08ee3b0bf2","js/explore-qlist.en.js":"8b8b631bd679","js/events.en.js":"1c96e528c2a0","js/keyboard-shortcuts.en.js":"6f5b69c27859","js/external-editor.en.js":"67b1ef6d81ab","js/external-editor.en.js":"67b1ef6d81ab","js/snippet-javascript.en.js":"d5031c388030","js/snippet-javascript-codemirror.en.js":"55b5dc2f4e31"});
+        StackExchange.using("gps", function() {
+             StackExchange.gps.init(true);
+        });
+    </script>
+    
+        <script>
+            StackExchange.ready(function () {
+                $('#nav-tour').click(function () {
+                    StackExchange.using("gps", function() {
+                        StackExchange.gps.track("aboutpage.click", { aboutclick_location: "headermain" }, true);
+                    });
+                });
+            });
+        </script>
+    
+    
+<script async="" src="./VBA collection  list of keys - Stack Overflow_files/full-anon.en.js"></script><script async="" src="./VBA collection  list of keys - Stack Overflow_files/snippet-javascript.en.js"></script><script async="" src="./VBA collection  list of keys - Stack Overflow_files/post-validation.en.js"></script><script async="" src="./VBA collection  list of keys - Stack Overflow_files/prettify-full.en.js"></script><script async="" src="./VBA collection  list of keys - Stack Overflow_files/external-editor.en.js"></script><script type="text/javascript" src="./VBA collection  list of keys - Stack Overflow_files/adFeedback.js"></script><link rel="stylesheet" href="http://static.adzerk.net/Extensions/adFeedback.css"></head>
+<body class="question-page new-topbar" style="">
+    <noscript>&lt;div id="noscript-padding"&gt;&lt;/div&gt;</noscript>
+    <div id="notify-container"></div>
+    <div id="overlay-header"></div>
+    <div id="custom-header"></div>
+<div class="topbar">
+    <div class="topbar-wrapper">
+        
+        <div class="js-topbar-dialog-corral">
+
+<div class="topbar-dialog siteSwitcher-dialog dno">
+    <div class="header">
+        <h3><a href="http://stackoverflow.com/">current community</a></h3>
+    </div>
+    <div class="modal-content current-site-container">
+        <ul class="current-site">
+                <li>
+                        <div class="related-links">
+            <a href="http://chat.stackoverflow.com/" class="js-gps-track" data-gps-track="site_switcher.click({ item_type:6 })">chat</a>
+                    <a href="http://blog.stackoverflow.com/" class="js-gps-track" data-gps-track="site_switcher.click({ item_type:7 })">blog</a>
+            </div>
+
+
+
+
+    <a href="http://stackoverflow.com/" class="current-site-link site-link js-gps-track" data-id="1" data-gps-track="
+        site_switcher.click({ item_type:3 })">
+        <div class="site-icon favicon favicon-stackoverflow"></div>
+        Stack Overflow
+    </a>
+
+                </li>
+                <li class="related-site">
+                        <div class="L-shaped-icon-container">
+        <span class="L-shaped-icon"></span>
+    </div>
+
+                    
+
+
+
+    <a href="http://meta.stackoverflow.com/" class="site-link js-gps-track" data-id="552" data-gps-track="
+            site.switch({ target_site:552, item_type:3 }),
+        site_switcher.click({ item_type:4 })">
+        <div class="site-icon favicon favicon-stackoverflowmeta"></div>
+        Meta Stack Overflow
+    </a>
+
+                </li>
+                            <li class="related-site">
+                        <div class="L-shaped-icon-container">
+        <span class="L-shaped-icon"></span>
+    </div>
+
+                    <a class="site-link js-gps-track" href="http://careers.stackoverflow.com/?utm_source=stackoverflow.com&utm_medium=site-ui&utm_campaign=multicollider" data-gps-track="site_switcher.click({ item_type:9 })">
+                        <div class="site-icon favicon favicon-careers"></div>
+                        Careers 2.0
+                    </a>
+                </li>
+        </ul>
+    </div>
+    
+    <div class="header" id="your-communities-header">
+        <h3>
+your communities        </h3>
+            
+    </div>
+    <div class="modal-content" id="your-communities-section">
+            
+            <div class="call-to-login">
+                        <a href="https://stackoverflow.com/users/signup?returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f5702362%2fvba-collection-list-of-keys" class="js-gps-track" data-gps-track="site_switcher.click({ item_type:10 })">Sign up</a>
+                    or
+                    <a href="https://stackoverflow.com/users/login?returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f5702362%2fvba-collection-list-of-keys" class="js-gps-track" data-gps-track="site_switcher.click({ item_type:11 })">log in</a>
+
+                    to customize your list.
+            </div>
+    </div>
+    
+    <div class="header">
+        <h3><a href="http://stackexchange.com/sites">more stack exchange communities</a></h3>
+    </div>
+    <div class="modal-content">
+            <div class="child-content"></div>
+    </div>
+</div>
+        </div>
+
+        <div class="network-items">
+            
+            <a href="http://stackexchange.com/" class="topbar-icon icon-site-switcher yes-hover js-site-switcher-button js-gps-track" data-gps-track="site_switcher.show">
+                <span class="hidden-text">Stack Exchange</span>
+            </a>
+            
+        </div>
+
+        <div class="topbar-links">
+            
+                <div class="links-container">
+                    <span class="topbar-menu-links">
+                            <a href="https://stackoverflow.com/users/signup?returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f5702362%2fvba-collection-list-of-keys" class="login-link">sign up</a>
+                            <a href="https://stackoverflow.com/users/login?returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f5702362%2fvba-collection-list-of-keys" class="login-link">log in</a>
+                            <a href="http://stackoverflow.com/tour">tour</a>
+
+                            <a href="http://stackoverflow.com/questions/5702362/vba-collection-list-of-keys#" class="icon-help js-help-button">
+        help
+        <span class="triangle"></span>
+    </a>
+    <div class="topbar-dialog help-dialog js-help-dialog dno">
+        <div class="modal-content">
+            <ul>
+                                    <li>
+                        <a href="http://stackoverflow.com/tour" class="js-gps-track" data-gps-track="help_popup.click({ item_type:1 })">
+                            Tour
+                            <span class="item-summary">
+                                Start here for a quick overview of the site
+                            </span>
+                        </a>
+                    </li>
+                <li>
+                    <a href="http://stackoverflow.com/help" class="js-gps-track" data-gps-track="help_popup.click({ item_type:4 })">
+                        Help Center
+                        <span class="item-summary">
+                            Detailed answers to any questions you might have
+                        </span>
+                    </a>
+                </li>
+                    <li>
+                        <a href="http://meta.stackoverflow.com/" class="js-gps-track" data-gps-track="help_popup.click({ item_type:2 })">
+                            Meta
+                            <span class="item-summary">
+                                Discuss the workings and policies of this site
+                            </span>
+                        </a>
+                    </li>
+            </ul>
+        </div>
+    </div>
+
+                            <a href="http://careers.stackoverflow.com/">careers 2.0</a>
+                    </span>
+                </div>
+
+			<div class="search-container">
+                <form id="search" action="http://stackoverflow.com/search" method="get" autocomplete="off">
+                    <input name="q" type="text" placeholder="search" value="" tabindex="1" autocomplete="off" maxlength="240">
+                </form>
+			</div>
+            	
+        </div>      
+    </div> 
+</div>
+<script>
+    StackExchange.ready(function () { StackExchange.topbar.init(); });
+</script>
+    <div class="container">
+        <div id="header" class="headeranon">
+            <br class="cbt">
+            <div id="hlogo">
+                <a href="http://stackoverflow.com/">
+                    Stack Overflow
+                </a>
+            </div>
+            <div id="hmenus">
+                <div class="nav mainnavs mainnavsanon">
+                    <ul>
+                        <li class="youarehere"><a id="nav-questions" href="http://stackoverflow.com/questions">Questions</a></li>
+                        <li><a id="nav-tags" href="http://stackoverflow.com/tags">Tags</a></li>
+                        <li><a id="nav-users" href="http://stackoverflow.com/users">Users</a></li>
+                        <li><a id="nav-badges" href="http://stackoverflow.com/help/badges">Badges</a></li>
+                        <li><a id="nav-unanswered" href="http://stackoverflow.com/unanswered">Unanswered</a></li>
+                    </ul>
+                </div>
+                <div class="nav askquestion">
+                    <ul>
+                        <li>
+                            <a id="nav-askquestion" href="http://stackoverflow.com/questions/ask">Ask Question</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+
+
+
+        <div id="content" class="snippet-hidden">
+            
+
+<div itemscope="" itemtype="http://schema.org/Question">
+	<link itemprop="image" href="http://cdn.sstatic.net/stackoverflow/img/apple-touch-icon.png">
+			<!--googleoff: all-->
+
+<div id="herobox-mini">
+    <div id="hero-content">
+        <span id="controls">
+            <a href="http://stackoverflow.com/tour" id="tell-me-more" class="button">Take the 2-minute tour</a>
+            <span id="close"><a>×</a></span>
+        </span>
+        <div id="blurb">
+            Stack Overflow is a question and answer site for professional and enthusiast programmers. It's 100% free, no registration required.
+        </div>        
+    </div>
+    <script>
+        $('#tell-me-more').click(function () {
+            var clickSource = $("body").attr("class") + '-mini';
+            if ($("body").hasClass("questions-page")) {
+                clickSource = 'questionpagemini';
+            } else if ($("body").hasClass("question-page")) {
+                clickSource = 'questionpagemini';
+            } else if ($("body").hasClass("home-page")) {
+                clickSource = 'homepagemini';
+            }
+
+            StackExchange.using("gps", function () {
+                StackExchange.gps.track("aboutpage.click", { aboutclick_location: clickSource } , true);
+            });
+        });
+        $('#herobox-mini #close').click(function () {
+            StackExchange.using("gps", function () {
+                StackExchange.gps.track("hero.action", { hero_action_type: "close" }, true);
+            });
+            $.cookie("hero", "none", { path: "/", expires: 365 });
+            var $hero = $("#herobox-mini");
+            $hero.slideUp('fast', function () { $hero.remove(); });
+            return false;
+        });
+    </script>
+</div>
+			<!--googleon: all-->
+			<div id="question-header">
+			<h1 itemprop="name"><a href="./VBA collection  list of keys - Stack Overflow_files/VBA collection  list of keys - Stack Overflow.htm" class="question-hyperlink">VBA collection: list of keys</a></h1>
+		</div>
+			<div id="mainbar">
+
+			
+
+<div class="question" data-questionid="5702362" id="question">
+
+    <script>
+                var ados = ados || {};ados.run = ados.run || [];
+                ados.run.push(function() { ados_add_placement(22,8277,"adzerk680481714",4).setZone(43) ; });                    
+            </script>
+            <div class="everyonelovesstackoverflow adzerk-vote" id="adzerk680481714"><a href="http://engine.adzerk.net/r?e=eyJhdiI6NDE0LCJhdCI6NCwiYnQiOjAsImNtIjoyOTExLCJjaCI6MTE3OCwiY3IiOjU5MTcsImRpIjoiMzU3ZDczMGYxZTllNGJiZDg1MzZkOGVkZWFkYmM0YzQiLCJkbSI6MSwiZmMiOjEwMTgyLCJmbCI6NzQ3MiwiaXAiOiIxOTIuMTY4LjMuMjAiLCJrdyI6InZiYSxjb2xsZWN0aW9ucyIsIm53IjoyMiwicGMiOjAsInByIjoxNjA0LCJydCI6MSwicmYiOiJodHRwczovL3d3dy5nb29nbGUuY29tLmJyLyIsInN0Ijo4Mjc3LCJ1ayI6InVlMS1jNWY1NmU1ZDg0MjQ0Y2Y1YTZlMzlkZDNkNzhlNzdjMSIsInpuIjo0MywidHMiOjE0MTA5MDI0OTAwMDEsInVyIjoiaHR0cDovL2NhcmVlcnMuc3RhY2tvdmVyZmxvdy5jb20_dXRtX3NvdXJjZT1zdGFja292ZXJmbG93LmNvbSZ1dG1fbWVkaXVtPWFkJnV0bV9jYW1wYWlnbj1ob3VzZS1hZHMtY2F0Y2gtYWxsLWFsbC1zaXRlcyZ1dG1fY29udGVudD1sYi1ibG9nIn0&s=HDb4dU2qsVOg4RKrQTP6qa1-WYk" rel="nofollow" target="_blank"><img src="./VBA collection  list of keys - Stack Overflow_files/879d9e1805a6495a9e3cbeeffe6da2ad.png" alt="" border="0" width="728" height="90"></a><div class="adzerk-vote-controls" style="display:none;"><div class="adzerk-vote-option adzerk-vote-up"><div class="adzerk-vote-icon"></div></div><div class="adzerk-vote-option adzerk-vote-down"><div class="adzerk-vote-icon"></div></div></div><div class="adzerk-vote-survey" style="display:none;"><form><span>No problem. We won't show you that ad again. Why didn't you like it?</span><ul><li><label><input type="radio" value="12" name="downvoteReason">Uninteresting</label></li><li><label><input type="radio" value="13" name="downvoteReason">Misleading</label></li><li><label><input type="radio" value="14" name="downvoteReason">Offensive</label></li><li><label><input type="radio" value="15" name="downvoteReason">Repetitive</label></li></ul><a href="http://stackoverflow.com/questions/5702362/vba-collection-list-of-keys#" class="adzerk-vote-cancel">Oops! I didn't mean to do this.</a></form></div><img height="0px" width="0px" border="0" style="position:absolute;" src="./VBA collection  list of keys - Stack Overflow_files/i.gif"></div>    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+    <input type="hidden" name="_id_" value="5702362">
+    <a class="vote-up-off">up vote</a>
+    <span itemprop="upvoteCount" class="vote-count-post ">12</span>
+    <a class="vote-down-off">down vote</a>
+    
+    <a class="star-off" href="http://stackoverflow.com/questions/5702362/vba-collection-list-of-keys#">favorite</a>
+    <div class="favoritecount"><b>4</b></div>   
+
+</div>
+
+            </td>
+            
+<td class="postcell">
+<div>
+    <div class="post-text" itemprop="text">
+
+        <p>After I add some values to the VBA collection, is there any way to retain the list of all keys?</p>
+
+<p>For example</p>
+
+<pre class="lang-vb prettyprint prettyprinted"><code><span class="kwd">Dim</span><span class="pln"> coll </span><span class="kwd">as</span><span class="pln"> </span><span class="kwd">new</span><span class="pln">  Collection
+</span><span class="kwd">Dim</span><span class="pln"> str1</span><span class="pun">,</span><span class="pln"> str2</span><span class="pun">,</span><span class="pln"> str3
+str1</span><span class="pun">=</span><span class="str">"first string"</span><span class="pln">
+str2</span><span class="pun">=</span><span class="str">"second string"</span><span class="pln">
+str3</span><span class="pun">=</span><span class="str">"third string"</span><span class="pln">
+coll</span><span class="pun">.</span><span class="pln">add str1</span><span class="pun">,</span><span class="pln"> </span><span class="str">"first key"</span><span class="pln">
+coll</span><span class="pun">.</span><span class="pln">add str2</span><span class="pun">,</span><span class="pln"> </span><span class="str">"second key"</span><span class="pln">
+coll</span><span class="pun">.</span><span class="pln">add str3</span><span class="pun">,</span><span class="pln"> </span><span class="str">"third key"</span></code></pre>
+
+<p>I know how to retain the list of strings:</p>
+
+<pre class="lang-vb prettyprint prettyprinted"><code><span class="pln">first </span><span class="kwd">string</span><span class="pln">
+second </span><span class="kwd">string</span><span class="pln">
+third </span><span class="kwd">string</span></code></pre>
+
+<p>Once again: is there any way to retain the keys?</p>
+
+<pre class="lang-vb prettyprint prettyprinted"><code><span class="pln">first key
+second key
+third key</span></code></pre>
+
+<p>Note: <em>I'm using VBA through AutoCAD 2007</em></p>
+
+    </div>
+    <div class="post-taglist">
+        <a href="http://stackoverflow.com/questions/tagged/vba" class="post-tag js-gps-track" rel="tag">vba</a> <a href="http://stackoverflow.com/questions/tagged/collections" class="post-tag js-gps-track" rel="tag">collections</a> 
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/q/5702362" class="short-link" id="link-post-5702362">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/5702362/edit" class="suggest-edit-post">improve this question</a></div>        
+    </td>
+    <td class="post-signature owner">
+        <div class="user-info ">
+    <div class="user-action-time">
+        asked <span class="relativetime">Apr 18 '11 at 11:48</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/637648/artur-iwan"><div class="gravatar-wrapper-32"><img src="./VBA collection  list of keys - Stack Overflow_files/b478362de6fd687bd650bf6742740fca" alt="" width="32" height="32" class="hoverZoomLink"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/637648/artur-iwan">Artur Iwan</a><br>
+        <span class="reputation-score" dir="ltr">191</span><span><span class="badge1"></span><span class="badgecount">1</span></span><span><span class="badge2"></span><span class="badgecount">3</span></span><span><span class="badge3"></span><span class="badgecount">14</span></span>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</div>
+</td>
+        </tr>
+                
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-5702362" class="comments  dno">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+                        <tr><td></td><td></td></tr>
+                </tbody>
+		    </table>
+	    </div>
+            <div id="comments-link-5702362" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link ">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span><a class="js-show-link comments-link dno" href="http://stackoverflow.com/questions/5702362/vba-collection-list-of-keys#" onclick=""></a>
+            </div>
+    </td>
+</tr>        </tbody></table>
+</div>
+
+			<div id="answers">
+
+				<a name="tab-top"></a>
+				<div id="answers-header">
+					<div class="subheader answers-subheader">
+						<h2>
+								4 Answers
+                                <span style="display:none;" itemprop="answerCount">4</span>
+						</h2>
+						<div>
+							<div id="tabs">
+        <a href="http://stackoverflow.com/questions/5702362/vba-collection-list-of-keys?answertab=active#tab-top">active</a>
+        <a href="http://stackoverflow.com/questions/5702362/vba-collection-list-of-keys?answertab=oldest#tab-top">oldest</a>
+        <a class="youarehere" href="http://stackoverflow.com/questions/5702362/vba-collection-list-of-keys?answertab=votes#tab-top">votes</a>
+</div>
+						</div>
+					</div>    
+				</div>    
+
+
+
+
+  
+<a name="5702529"></a>
+<div id="answer-5702529" class="answer accepted-answer" data-answerid="5702529" itemscope="" itemtype="http://schema.org/Answer" itemprop="acceptedAnswer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+    <input type="hidden" name="_id_" value="5702529">
+    <a class="vote-up-off">up vote</a>
+    <span itemprop="upvoteCount" class="vote-count-post ">11</span>
+    <a class="vote-down-off">down vote</a>
+    
+
+
+        <span class="vote-accepted-on load-accepted-answer-date">accepted</span>
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>I don't thinks that possible with a vanilla collection without storing the key values in an independent array. The easiest alternative to do this is to add a reference to the Microsoft Scripting Runtime &amp; use a more capable Dictionary instead;</p>
+
+<pre class="lang-vb prettyprint prettyprinted"><code><span class="kwd">Dim</span><span class="pln"> coll </span><span class="kwd">As</span><span class="pln"> </span><span class="kwd">New</span><span class="pln"> Dictionary
+</span><span class="pun">...</span><span class="pln">
+</span><span class="kwd">Dim</span><span class="pln"> K </span><span class="kwd">As</span><span class="pln"> </span><span class="kwd">Variant</span><span class="pln">
+</span><span class="kwd">For</span><span class="pln"> </span><span class="kwd">Each</span><span class="pln"> K </span><span class="kwd">In</span><span class="pln"> coll</span><span class="pun">.</span><span class="pln">Keys
+    debug</span><span class="pun">.</span><span class="pln">print </span><span class="str">"Key: "</span><span class="pln"> </span><span class="pun">&amp;</span><span class="pln"> K </span><span class="pun">,</span><span class="pln"> </span><span class="str">"Value: "</span><span class="pln"> </span><span class="pun">&amp;</span><span class="pln"> coll</span><span class="pun">.</span><span class="pln">Item</span><span class="pun">(</span><span class="pln">K</span><span class="pun">)</span><span class="pln">
+</span><span class="kwd">Next</span></code></pre>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/5702529" class="short-link" id="link-post-5702529">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/5702529/edit" class="suggest-edit-post">improve this answer</a></div>                    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info ">
+    <div class="user-action-time">
+        answered <span class="relativetime">Apr 18 '11 at 12:00</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/246342/alex-k"><div class="gravatar-wrapper-32"><img src="./VBA collection  list of keys - Stack Overflow_files/a8ba0aea3f521082f18dd7c186e7d4c3" alt="" width="32" height="32" class="hoverZoomLink"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/246342/alex-k">Alex K.</a><br>
+        <span class="reputation-score" dir="ltr">68.3k</span><span><span class="badge1"></span><span class="badgecount">5</span></span><span><span class="badge2"></span><span class="badgecount">75</span></span><span><span class="badge3"></span><span class="badgecount">119</span></span>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-5702529" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+
+    <tr id="comment-6518141" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span class="cool">2</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Would it work on every computer for 100%?</span>
+                –&nbsp;
+                    <a href="http://stackoverflow.com/users/637648/artur-iwan" class="comment-user owner">Artur Iwan</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/5702362/vba-collection-list-of-keys#comment6518141_5702529"><span class="relativetime-clean">Apr 18 '11 at 13:33</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-6518303" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy"><span class="goog_qs-tidbit goog_qs-tidbit-0">I would like to say yes for all recent versions of windows as its part of windows</span> scripting, but I can't see a definitive answer.</span>
+                –&nbsp;
+                    <a href="http://stackoverflow.com/users/246342/alex-k" class="comment-user">Alex K.</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/5702362/vba-collection-list-of-keys#comment6518303_5702529"><span class="relativetime-clean">Apr 18 '11 at 13:43</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+            <div id="comments-link-5702529" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link ">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span><a class="js-show-link comments-link dno" href="http://stackoverflow.com/questions/5702362/vba-collection-list-of-keys#" onclick=""></a>
+            </div>
+    </td>
+</tr>    </tbody></table>
+</div>
+<script>
+                var ados = ados || {};ados.run = ados.run || [];
+                ados.run.push(function() { ados_add_placement(22,8277,"adzerk1975943185",4).setZone(44) ; });                    
+            </script>
+            <div class="everyonelovesstackoverflow adzerk-vote" id="adzerk1975943185"><a href="http://engine.adzerk.net/r?e=eyJhdiI6NDE0LCJhdCI6NCwiYnQiOjAsImNtIjoyOTExLCJjaCI6MTE3OCwiY3IiOjU5MjIsImRpIjoiMGNhZDA2MGEwYjQ3NDQ1MGEzZTNlMTI1NDdhMjBkYzgiLCJkbSI6MSwiZmMiOjEwMTg3LCJmbCI6NzQ3MiwiaXAiOiIxOTIuMTY4LjMuMjAiLCJrdyI6InZiYSxjb2xsZWN0aW9ucyIsIm53IjoyMiwicGMiOjAsInByIjoxNjA0LCJydCI6MSwicmYiOiJodHRwczovL3d3dy5nb29nbGUuY29tLmJyLyIsInN0Ijo4Mjc3LCJ1ayI6InVlMS1jNWY1NmU1ZDg0MjQ0Y2Y1YTZlMzlkZDNkNzhlNzdjMSIsInpuIjo0NCwidHMiOjE0MTA5MDI0OTAwMDQsInVyIjoiaHR0cDovL2NhcmVlcnMuc3RhY2tvdmVyZmxvdy5jb20_dXRtX3NvdXJjZT1zdGFja292ZXJmbG93LmNvbSZ1dG1fbWVkaXVtPWFkJnV0bV9jYW1wYWlnbj1ob3VzZS1hZHMtY2F0Y2gtYWxsLWFsbC1zaXRlcyZ1dG1fY29udGVudD1sYi1saW5rZWRpbiJ9&s=JjxLx5V8qf3RZMZKrjfJhI8cUCE" rel="nofollow" target="_blank"><img src="./VBA collection  list of keys - Stack Overflow_files/bee37138e0414d6f99d68ae55955c4fa.png" alt="" border="0" width="728" height="90"></a><div class="adzerk-vote-controls" style="display: none;"><div class="adzerk-vote-option adzerk-vote-up"><div class="adzerk-vote-icon"></div></div><div class="adzerk-vote-option adzerk-vote-down"><div class="adzerk-vote-icon"></div></div></div><div class="adzerk-vote-survey" style="display:none;"><form><span>No problem. We won't show you that ad again. Why didn't you like it?</span><ul><li><label><input type="radio" value="12" name="downvoteReason">Uninteresting</label></li><li><label><input type="radio" value="13" name="downvoteReason">Misleading</label></li><li><label><input type="radio" value="14" name="downvoteReason">Offensive</label></li><li><label><input type="radio" value="15" name="downvoteReason">Repetitive</label></li></ul><a href="http://stackoverflow.com/questions/5702362/vba-collection-list-of-keys#" class="adzerk-vote-cancel">Oops! I didn't mean to do this.</a></form></div><img height="0px" width="0px" border="0" style="position:absolute;" src="./VBA collection  list of keys - Stack Overflow_files/i(1).gif"></div>
+  
+<a name="5702524"></a>
+<div id="answer-5702524" class="answer" data-answerid="5702524" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+    <input type="hidden" name="_id_" value="5702524">
+    <a class="vote-up-off">up vote</a>
+    <span itemprop="upvoteCount" class="vote-count-post ">12</span>
+    <a class="vote-down-off">down vote</a>
+    
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>If you intend to use the default VB6 <code>Collection</code>, then the easiest you can do is:</p>
+
+<pre class="lang-vb prettyprint prettyprinted"><code><span class="pln">col1</span><span class="pun">.</span><span class="pln">add array</span><span class="pun">(</span><span class="str">"first key"</span><span class="pun">,</span><span class="pln"> </span><span class="str">"first string"</span><span class="pun">),</span><span class="pln"> </span><span class="str">"first key"</span><span class="pln">
+col1</span><span class="pun">.</span><span class="pln">add array</span><span class="pun">(</span><span class="str">"second key"</span><span class="pun">,</span><span class="pln"> </span><span class="str">"second string"</span><span class="pun">),</span><span class="pln"> </span><span class="str">"second key"</span><span class="pln">
+col1</span><span class="pun">.</span><span class="pln">add array</span><span class="pun">(</span><span class="str">"third key"</span><span class="pun">,</span><span class="pln"> </span><span class="str">"third string"</span><span class="pun">),</span><span class="pln"> </span><span class="str">"third key"</span></code></pre>
+
+<p>Then you can list all values:</p>
+
+<pre class="lang-vb prettyprint prettyprinted"><code><span class="kwd">Dim</span><span class="pln"> i </span><span class="kwd">As</span><span class="pln"> </span><span class="kwd">Variant</span><span class="pln">
+
+</span><span class="kwd">For</span><span class="pln"> </span><span class="kwd">Each</span><span class="pln"> i </span><span class="kwd">In</span><span class="pln"> col1
+  Debug</span><span class="pun">.</span><span class="pln">Print i</span><span class="pun">(</span><span class="lit">1</span><span class="pun">)</span><span class="pln">
+</span><span class="kwd">Next</span></code></pre>
+
+<p>Or all keys:</p>
+
+<pre class="lang-vb prettyprint prettyprinted"><code><span class="kwd">Dim</span><span class="pln"> i </span><span class="kwd">As</span><span class="pln"> </span><span class="kwd">Variant</span><span class="pln">
+
+</span><span class="kwd">For</span><span class="pln"> </span><span class="kwd">Each</span><span class="pln"> i </span><span class="kwd">In</span><span class="pln"> col1
+  Debug</span><span class="pun">.</span><span class="pln">Print i</span><span class="pun">(</span><span class="lit">0</span><span class="pun">)</span><span class="pln">
+</span><span class="kwd">Next</span></code></pre>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/5702524" class="short-link" id="link-post-5702524">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/5702524/edit" class="suggest-edit-post">improve this answer</a></div>                    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info ">
+    <div class="user-action-time">
+        answered <span class="relativetime">Apr 18 '11 at 12:00</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/11683/gserg"><div class="gravatar-wrapper-32"><img src="./VBA collection  list of keys - Stack Overflow_files/0669e82408554cea1a9c4d50948acb53" alt="" width="32" height="32" class="hoverZoomLink"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/11683/gserg">GSerg</a><br>
+        <span class="reputation-score" dir="ltr">34.3k</span><span><span class="badge1"></span><span class="badgecount">5</span></span><span><span class="badge2"></span><span class="badgecount">43</span></span><span><span class="badge3"></span><span class="badgecount">84</span></span>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-5702524" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+
+    <tr id="comment-6518160" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">I was using this solution before. I was looking for something more <i>pretty</i>. But thank you, anyway :)</span>
+                –&nbsp;
+                    <a href="http://stackoverflow.com/users/637648/artur-iwan" class="comment-user owner">Artur Iwan</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/5702362/vba-collection-list-of-keys#comment6518160_5702524"><span class="relativetime-clean">Apr 18 '11 at 13:34</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+            <div id="comments-link-5702524" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link ">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span><a class="js-show-link comments-link dno" href="http://stackoverflow.com/questions/5702362/vba-collection-list-of-keys#" onclick=""></a>
+            </div>
+    </td>
+</tr>    </tbody></table>
+</div>
+
+  
+<a name="7525901"></a>
+<div id="answer-7525901" class="answer" data-answerid="7525901" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+    <input type="hidden" name="_id_" value="7525901">
+    <a class="vote-up-off">up vote</a>
+    <span itemprop="upvoteCount" class="vote-count-post ">4</span>
+    <a class="vote-down-off">down vote</a>
+    
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>An alternative solution is to store the keys in a separate Collection:</p>
+
+<pre class="lang-vb prettyprint prettyprinted"><code><span class="com">'Initialise these somewhere.</span><span class="pln">
+</span><span class="kwd">Dim</span><span class="pln"> Keys </span><span class="kwd">As</span><span class="pln"> Collection</span><span class="pun">,</span><span class="pln"> Values </span><span class="kwd">As</span><span class="pln"> Collection
+
+</span><span class="com">'Add types for K and V as necessary.</span><span class="pln">
+</span><span class="kwd">Sub</span><span class="pln"> Add</span><span class="pun">(</span><span class="pln">K</span><span class="pun">,</span><span class="pln"> V</span><span class="pun">)</span><span class="pln"> 
+Keys</span><span class="pun">.</span><span class="pln">Add K
+Values</span><span class="pun">.</span><span class="pln">Add V</span><span class="pun">,</span><span class="pln"> K
+</span><span class="kwd">End</span><span class="pln"> </span><span class="kwd">Sub</span></code></pre>
+
+<p>You can maintain a separate sort order for the keys and the values, which can be useful sometimes.</p>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/7525901" class="short-link" id="link-post-7525901">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/7525901/edit" class="suggest-edit-post">improve this answer</a></div>                    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info ">
+    <div class="user-action-time">
+        answered <span class="relativetime">Sep 23 '11 at 7:56</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/960651/anonymous-coward"><div class="gravatar-wrapper-32"><img src="./VBA collection  list of keys - Stack Overflow_files/d120b96de50ef3745e636c857588059e" alt="" width="32" height="32" class="hoverZoomLink"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/960651/anonymous-coward">Anonymous Coward</a><br>
+        <span class="reputation-score" dir="ltr">41</span><span><span class="badge3"></span><span class="badgecount">1</span></span>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-7525901" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+
+    <tr id="comment-13272514" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">I used similiar algorithm sometimes, before Alex K. told me about the Dictionary. Now I use Dictionary and it's much better :) but thank you anyway.</span>
+                –&nbsp;
+                    <a href="http://stackoverflow.com/users/637648/artur-iwan" class="comment-user owner">Artur Iwan</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/5702362/vba-collection-list-of-keys#comment13272514_7525901"><span class="relativetime-clean">Apr 25 '12 at 7:59</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+            <div id="comments-link-7525901" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link ">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span><a class="js-show-link comments-link dno" href="http://stackoverflow.com/questions/5702362/vba-collection-list-of-keys#" onclick=""></a>
+            </div>
+    </td>
+</tr>    </tbody></table>
+</div>
+
+  
+<a name="9935108"></a>
+<div id="answer-9935108" class="answer" data-answerid="9935108" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+    <input type="hidden" name="_id_" value="9935108">
+    <a class="vote-up-off">up vote</a>
+    <span itemprop="upvoteCount" class="vote-count-post ">4</span>
+    <a class="vote-down-off">down vote</a>
+    
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>You can create a small class to hold the key and value, and then store objects of that class in the collection.</p>
+
+<p>Class KeyValue:</p>
+
+<pre class="lang-vb prettyprint prettyprinted"><code><span class="kwd">Public</span><span class="pln"> key </span><span class="kwd">As</span><span class="pln"> </span><span class="kwd">String</span><span class="pln">
+</span><span class="kwd">Public</span><span class="pln"> value </span><span class="kwd">As</span><span class="pln"> </span><span class="kwd">String</span><span class="pln">
+</span><span class="kwd">Public</span><span class="pln"> </span><span class="kwd">Sub</span><span class="pln"> Init</span><span class="pun">(</span><span class="pln">k </span><span class="kwd">As</span><span class="pln"> </span><span class="kwd">String</span><span class="pun">,</span><span class="pln"> v </span><span class="kwd">As</span><span class="pln"> </span><span class="kwd">String</span><span class="pun">)</span><span class="pln">
+    key </span><span class="pun">=</span><span class="pln"> k
+    value </span><span class="pun">=</span><span class="pln"> v
+</span><span class="kwd">End</span><span class="pln"> </span><span class="kwd">Sub</span></code></pre>
+
+<p>Then to use it:</p>
+
+<pre class="lang-vb prettyprint prettyprinted"><code><span class="kwd">Public</span><span class="pln"> </span><span class="kwd">Sub</span><span class="pln"> Test</span><span class="pun">()</span><span class="pln">
+    </span><span class="kwd">Dim</span><span class="pln"> col </span><span class="kwd">As</span><span class="pln"> Collection</span><span class="pun">,</span><span class="pln"> kv </span><span class="kwd">As</span><span class="pln"> KeyValue
+    </span><span class="kwd">Set</span><span class="pln"> col </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">New</span><span class="pln"> Collection
+    Store col</span><span class="pun">,</span><span class="pln"> </span><span class="str">"first key"</span><span class="pun">,</span><span class="pln"> </span><span class="str">"first string"</span><span class="pln">
+    Store col</span><span class="pun">,</span><span class="pln"> </span><span class="str">"second key"</span><span class="pun">,</span><span class="pln"> </span><span class="str">"second string"</span><span class="pln">
+    Store col</span><span class="pun">,</span><span class="pln"> </span><span class="str">"third key"</span><span class="pun">,</span><span class="pln"> </span><span class="str">"third string"</span><span class="pln">
+    </span><span class="kwd">For</span><span class="pln"> </span><span class="kwd">Each</span><span class="pln"> kv </span><span class="kwd">In</span><span class="pln"> col
+        Debug</span><span class="pun">.</span><span class="pln">Print kv</span><span class="pun">.</span><span class="pln">key</span><span class="pun">,</span><span class="pln"> kv</span><span class="pun">.</span><span class="pln">value
+    </span><span class="kwd">Next</span><span class="pln"> kv
+</span><span class="kwd">End</span><span class="pln"> </span><span class="kwd">Sub</span><span class="pln">
+
+</span><span class="kwd">Private</span><span class="pln"> </span><span class="kwd">Sub</span><span class="pln"> Store</span><span class="pun">(</span><span class="pln">col </span><span class="kwd">As</span><span class="pln"> Collection</span><span class="pun">,</span><span class="pln"> k </span><span class="kwd">As</span><span class="pln"> </span><span class="kwd">String</span><span class="pun">,</span><span class="pln"> v </span><span class="kwd">As</span><span class="pln"> </span><span class="kwd">String</span><span class="pun">)</span><span class="pln">
+    </span><span class="kwd">If</span><span class="pln"> </span><span class="pun">(</span><span class="pln">Contains</span><span class="pun">(</span><span class="pln">col</span><span class="pun">,</span><span class="pln"> k</span><span class="pun">))</span><span class="pln"> </span><span class="kwd">Then</span><span class="pln">
+        </span><span class="kwd">Set</span><span class="pln"> kv </span><span class="pun">=</span><span class="pln"> col</span><span class="pun">(</span><span class="pln">k</span><span class="pun">)</span><span class="pln">
+        kv</span><span class="pun">.</span><span class="pln">value </span><span class="pun">=</span><span class="pln"> v
+    </span><span class="kwd">Else</span><span class="pln">
+        </span><span class="kwd">Set</span><span class="pln"> kv </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">New</span><span class="pln"> KeyValue
+        kv</span><span class="pun">.</span><span class="pln">Init k</span><span class="pun">,</span><span class="pln"> v
+        col</span><span class="pun">.</span><span class="pln">Add kv</span><span class="pun">,</span><span class="pln"> k
+    </span><span class="kwd">End</span><span class="pln"> </span><span class="kwd">If</span><span class="pln">
+</span><span class="kwd">End</span><span class="pln"> </span><span class="kwd">Sub</span><span class="pln">
+
+</span><span class="kwd">Private</span><span class="pln"> </span><span class="kwd">Function</span><span class="pln"> Contains</span><span class="pun">(</span><span class="pln">col </span><span class="kwd">As</span><span class="pln"> Collection</span><span class="pun">,</span><span class="pln"> key </span><span class="kwd">As</span><span class="pln"> </span><span class="kwd">String</span><span class="pun">)</span><span class="pln"> </span><span class="kwd">As</span><span class="pln"> </span><span class="kwd">Boolean</span><span class="pln">
+    </span><span class="kwd">On</span><span class="pln"> </span><span class="kwd">Error</span><span class="pln"> </span><span class="kwd">GoTo</span><span class="pln"> NotFound
+    </span><span class="kwd">Dim</span><span class="pln"> itm </span><span class="kwd">As</span><span class="pln"> </span><span class="kwd">Object</span><span class="pln">
+    </span><span class="kwd">Set</span><span class="pln"> itm </span><span class="pun">=</span><span class="pln"> col</span><span class="pun">(</span><span class="pln">key</span><span class="pun">)</span><span class="pln">
+    Contains </span><span class="pun">=</span><span class="pln"> </span><span class="lit">True</span><span class="pln">
+MyExit</span><span class="pun">:</span><span class="pln">
+    </span><span class="kwd">Exit</span><span class="pln"> </span><span class="kwd">Function</span><span class="pln">
+NotFound</span><span class="pun">:</span><span class="pln">
+    Contains </span><span class="pun">=</span><span class="pln"> </span><span class="lit">False</span><span class="pln">
+    </span><span class="kwd">Resume</span><span class="pln"> MyExit
+</span><span class="kwd">End</span><span class="pln"> </span><span class="kwd">Function</span></code></pre>
+
+<p>This is of course similar to the Dictionary suggestion, except without any external dependencies. The class can be made more complex as needed if you want to store more information.</p>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/9935108" class="short-link" id="link-post-9935108">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/9935108/edit" class="suggest-edit-post">improve this answer</a></div>                    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info ">
+    <div class="user-action-time">
+        answered <span class="relativetime">Mar 29 '12 at 23:33</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/895964/davidl"><div class="gravatar-wrapper-32"><img src="./VBA collection  list of keys - Stack Overflow_files/527fb60ccd8e2648a11c50900c2e0af3" alt="" width="32" height="32" class="hoverZoomLink"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/895964/davidl">DavidL</a><br>
+        <span class="reputation-score" dir="ltr">78</span><span><span class="badge3"></span><span class="badgecount">4</span></span>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-9935108" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+
+    <tr id="comment-15791502" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Is there any advantage to using this method over the dictionary suggestion? Can you explain the disadvantage of an external dependency in this case?</span>
+                –&nbsp;
+                    <a href="http://stackoverflow.com/users/1146308/jackorangelantern" class="comment-user">JackOrangeLantern</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/5702362/vba-collection-list-of-keys#comment15791502_9935108"><span class="relativetime-clean">Aug 8 '12 at 17:42</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+            <div id="comments-link-9935108" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link ">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span><a class="js-show-link comments-link dno" href="http://stackoverflow.com/questions/5702362/vba-collection-list-of-keys#" onclick=""></a>
+            </div>
+    </td>
+</tr>    </tbody></table>
+</div>
+									<a name="new-answer"></a>
+						<form id="post-form" action="http://stackoverflow.com/questions/5702362/answer/submit" method="post" class="post-form">
+						    <input type="hidden" id="post-id" value="5702362">
+                            <input type="hidden" id="qualityBanWarningShown" name="qualityBanWarningShown" value="false">
+							<h2 class="space">Your Answer</h2>
+
+
+
+            <script>
+            StackExchange.ifUsing("editor", function () {
+                StackExchange.using("externalEditor", function () {
+                    StackExchange.using("snippets", function () {
+                        StackExchange.snippets.init();
+                    });
+                });
+            }, "code-snippets");
+        </script>
+    
+
+<script>
+    StackExchange.ready(function() {
+        initTagRenderer("".split(" "), "".split(" "));
+       
+        StackExchange.using("externalEditor", function() {
+            // Have to fire editor after snippets, if snippets enabled
+            if (StackExchange.options.snippets.enabled) {
+                StackExchange.using("snippets", function() {
+                    createEditor();
+                });
+            }
+            else {
+                createEditor();
+            }
+        });
+
+        function createEditor() {
+            prepareEditor({
+                heartbeatType: 'answer',
+                bindNavPrevention: true,
+                postfix: "",
+                    onDemand: true,
+                    discardSelector: ".discard-answer"
+                ,immediatelyShowMarkdownHelp:true
+                });
+                
+
+        }
+    });  
+</script>
+
+
+<div id="post-editor" class="post-editor">
+
+    <div style="position: relative;">     
+        <div class="wmd-container">
+            <div id="wmd-button-bar" class="wmd-button-bar"><ul id="wmd-button-row" class="wmd-button-row"><li id="wmd-bold-button" class="wmd-button" style="left: 0px;"><span style="background-position: 0px -20px;"></span></li><li id="wmd-italic-button" class="wmd-button" style="left: 25px;"><span style="background-position: -20px -20px;"></span></li><li id="wmd-spacer1" class="wmd-spacer" style="left: 50px;"><span style="background-position: -40px -20px;"></span></li><li id="wmd-link-button" class="wmd-button" style="left: 75px;"><span style="background-position: -40px -20px;"></span></li><li id="wmd-quote-button" class="wmd-button" style="left: 100px;"><span style="background-position: -60px -20px;"></span></li><li id="wmd-code-button" class="wmd-button" style="left: 125px;"><span style="background-position: -80px -20px;"></span></li><li id="wmd-image-button" class="wmd-button" style="left: 150px;"><span style="background-position: -100px -20px;"></span></li><li id="wmd-spacer2" class="wmd-spacer" style="left: 175px;"><span style="background-position: -120px -20px;"></span></li><li id="wmd-olist-button" class="wmd-button" style="left: 200px;"><span style="background-position: -120px -20px;"></span></li><li id="wmd-ulist-button" class="wmd-button" style="left: 225px;"><span style="background-position: -140px -20px;"></span></li><li id="wmd-heading-button" class="wmd-button" style="left: 250px;"><span style="background-position: -160px -20px;"></span></li><li id="wmd-hr-button" class="wmd-button" style="left: 275px;"><span style="background-position: -180px -20px;"></span></li><li id="wmd-spacer3" class="wmd-spacer" style="left: 300px;"><span style="background-position: -200px -20px;"></span></li><li id="wmd-undo-button" class="wmd-button" style="left: 325px;"><span style="background-position: -200px -20px;"></span></li><li id="wmd-redo-button" class="wmd-button" style="left: 350px;"><span style="background-position: -220px -20px;"></span></li></ul></div>
+            <textarea id="wmd-input" class="wmd-input" name="post-text" cols="92" rows="15" tabindex="101" data-min-length=""></textarea>
+        </div>
+    </div>
+
+    <div class="fl" style="margin-top: 8px; height:24px;">&nbsp;</div>
+    <div id="draft-saved" class="draft-saved community-option fl" style="margin-top: 8px; height:24px; display:none;">draft saved</div>
+
+    <div id="draft-discarded" class="draft-discarded community-option fl" style="margin-top: 8px; height:24px; display:none;">draft discarded</div>
+
+
+
+    <div id="wmd-preview" class="wmd-preview"></div>
+    <div></div>
+    <div class="edit-block">
+        <input id="fkey" name="fkey" type="hidden" value="6c4a91faf4de4e990869e3478cd60907">
+        <input id="author" name="author" type="text">
+    </div>
+</div>
+							<div style="position: relative;">
+								
+            <div class="form-item new-post-login">
+        
+                <div class="new-login-form">
+                    <div class="new-login-left">
+                        <h3>Sign up or <a id="login-link" href="http://stackoverflow.com/users/login?returnurl=%2fquestions%2f5702362%2fvba-collection-list-of-keys%23new-answer">log in</a></h3>
+                        <script>
+                            StackExchange.ready(function () {
+                                StackExchange.helpers.onClickDraftSave('#login-link');
+                            });
+                        </script>
+                        <div class="preferred-login google-login">
+                            <p><span class="icon"></span><span>Sign up using Google</span></p>
+                        </div>
+                        <div class="preferred-login facebook-login">
+                            <p><span class="icon"></span><span>Sign up using Facebook</span></p>
+                        </div>
+                        <div class="preferred-login stackexchange-login">
+                            <p><span class="icon"></span><span>Sign up using Stack Exchange</span></p>
+                        </div>
+                    </div>
+                    <input type="hidden" name="manual-openid" class="manual-openid">
+                    <input type="hidden" name="use-facebook" class="use-facebook" value="false">
+                    <input type="hidden" name="use-google-oauth2" class="use-google-oauth2" value="false">
+                    <input type="button" class="submit-openid" value="Submit" style="display:none">
+                    <div class="new-login-right">
+                                <h3>Post as a guest</h3>
+    <div class="form-item">
+        <table>
+        <tbody><tr>
+                    <script>
+                StackExchange.ready(function () {
+                    StackExchange.helpers.bindHelpOverlayEvents($('.vm input'));
+                });
+            </script>
+            <td class="vm">
+                <div>
+                    <label for="display-name">Name</label>
+                    <input id="display-name" name="display-name" type="text" size="30" maxlength="30" value="" tabindex="105">
+                </div>
+                <div>
+                    <label for="m-address">Email</label>
+                    <input id="m-address" name="m-address" type="text" size="30" maxlength="100" value="" tabindex="106">
+                    <span class="edit-field-overlay">required, but not shown</span>
+                </div>
+            </td>
+        </tr>
+        </tbody></table>
+    </div>
+
+                    </div>
+                </div>
+            </div>
+            <script>
+                StackExchange.ready(
+                    function () {
+                        StackExchange.openid.initPostLogin('.new-post-login', '%2fquestions%2f5702362%2fvba-collection-list-of-keys%23new-answer');
+                    }
+                );
+            </script>
+            <noscript>
+                        &lt;h3&gt;Post as a guest&lt;/h3&gt;
+    &lt;div class="form-item"&gt;
+        &lt;table&gt;
+        &lt;tr&gt;
+                    &lt;script&gt;
+                StackExchange.ready(function () {
+                    StackExchange.helpers.bindHelpOverlayEvents($('.vm input'));
+                });
+            &lt;/script&gt;
+            &lt;td class="vm"&gt;
+                &lt;div&gt;
+                    &lt;label for="display-name"&gt;Name&lt;/label&gt;
+                    &lt;input id="display-name" name="display-name" type="text" size="30" maxlength="30" value="" tabindex="105"&gt;
+                &lt;/div&gt;
+                &lt;div&gt;
+                    &lt;label for="m-address"&gt;Email&lt;/label&gt;
+                    &lt;input id="m-address" name="m-address" type="text" size="30" maxlength="100" value="" tabindex="106"&gt;
+                    &lt;span class="edit-field-overlay"&gt;required, but not shown&lt;/span&gt;
+                &lt;/div&gt;
+            &lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;/table&gt;
+    &lt;/div&gt;
+
+            </noscript>
+							</div>
+           
+															<div class="form-submit cbt">
+									<input id="submit-button" type="submit" value="Post Your Answer" tabindex="110">
+									<a href="http://stackoverflow.com/questions/5702362/vba-collection-list-of-keys#" class="discard-answer dno">discard</a>
+
+<p class="privacy-policy-agreement">
+By posting your answer, you agree to the <a href="http://stackexchange.com/legal/privacy-policy" target="_blank">privacy policy</a> and <a href="http://stackexchange.com/legal/terms-of-service" target="_blank">terms of service</a>.</p>
+<input type="hidden" name="legalLinksShown" value="1">								</div>
+						</form>
+
+
+
+						<h2 class="bottom-notice" data-loc="1">
+Not the answer you're looking for?							Browse other questions tagged <a href="http://stackoverflow.com/questions/tagged/vba" class="post-tag" rel="tag">vba</a> <a href="http://stackoverflow.com/questions/tagged/collections" class="post-tag" rel="tag">collections</a>  or <a href="http://stackoverflow.com/questions/ask">ask your own question</a>.						</h2>
+			</div>
+		</div>
+				<div id="sidebar" class="show-votes">
+						    <div class="module question-stats">
+			        <table id="qinfo">
+			            <tbody><tr>
+			                <td>
+			                    <p class="label-key">asked</p>
+			                </td>
+			                <td style="padding-left: 10px">
+			                    <p class="label-key"><b>3 years ago</b></p>
+			                </td>
+			            </tr>
+			            <tr>
+			                <td>
+			                    <p class="label-key">viewed</p>
+			                </td>
+
+			                <td style="padding-left: 10px">
+			                    <p class="label-key">
+			                        <b>50587 times</b>
+			                    </p>
+			                </td>
+			            </tr>
+			                <tr>
+			                    <td>
+			                        <p class="label-key">active</p>
+			                    </td>
+			                    <td style="padding-left: 10px">
+			                        <p class="label-key"><b><a href="http://stackoverflow.com/questions/5702362/vba-collection-list-of-keys?lastactivity" class="lastactivity-link">2 years ago</a></b></p>
+			                    </td>
+			                </tr>
+			        </tbody></table>
+			    </div>
+			<div class="module community-bulletin" data-tracker="cb=1">
+    <div class="related">
+                <div class="bulletin-title">
+                    Blog
+                </div>
+                <hr>
+    <div class="spacer">
+        <div class="bulletin-item-type">
+                <a href="http://blog.stackoverflow.com/2014/09/introducing-runnable-javascript-css-and-html-code-snippets/?cb=1" class="question-hyperlink">
+<div class="favicon favicon-stackexchangemeta"></div>                </a>
+            </div>
+                <div class="bulletin-item-content">
+                    <a href="http://blog.stackoverflow.com/2014/09/introducing-runnable-javascript-css-and-html-code-snippets/?cb=1" class="question-hyperlink">Introducing Runnable JavaScript, CSS, and HTML Code Snippets</a>
+                </div>
+                <br class="cbt">
+            </div>
+    </div>
+</div>			
+			<script>
+                var ados = ados || {};ados.run = ados.run || [];
+                ados.run.push(function() { ados_add_placement(22,8277,"adzerk533681244",[17,2221]).setZone(45) ; });                    
+            </script>
+            <div class="everyonelovesstackoverflow adzerk-vote" id="adzerk533681244"><a href="http://engine.adzerk.net/r?e=eyJhdiI6NDE0LCJhdCI6MTcsImJ0IjowLCJjbSI6ODQ3LCJjaCI6MTE3OCwiY3IiOjIzODU4LCJkaSI6ImE5ODliZjFjZGE2YTQ3NTVhMzJkZjhmYzMxOTkxODNlIiwiZG0iOjEsImZjIjo0Mzk0NjYsImZsIjoyMjMwODIsImlwIjoiMTkyLjE2OC4zLjIwIiwia3ciOiJ2YmEsY29sbGVjdGlvbnMiLCJudyI6MjIsInBjIjowLCJwciI6MTU2OCwicnQiOjEsInJmIjoiaHR0cHM6Ly93d3cuZ29vZ2xlLmNvbS5ici8iLCJzdCI6ODI3NywidWsiOiJ1ZTEtYzVmNTZlNWQ4NDI0NGNmNWE2ZTM5ZGQzZDc4ZTc3YzEiLCJ6biI6NDUsInRzIjoxNDEwOTAyNDkwMDA3LCJ1ciI6Imh0dHA6Ly9jYXJlZXJzLnN0YWNrb3ZlcmZsb3cuY29tLyJ9&s=PSZPiZbXyEW8po4OseuxYw3A1e0" rel="nofollow" target="_blank"><img src="./VBA collection  list of keys - Stack Overflow_files/fdec4733b4814d9e958b7f86c25020b5.jpg" alt="" border="0" width="220" height="250"></a><div class="adzerk-vote-controls" style="display:none;"><div class="adzerk-vote-option adzerk-vote-up"><div class="adzerk-vote-icon"></div></div><div class="adzerk-vote-option adzerk-vote-down"><div class="adzerk-vote-icon"></div></div></div><div class="adzerk-vote-survey" style="display:none;"><form><span>No problem. We won't show you that ad again. Why didn't you like it?</span><ul><li><label><input type="radio" value="12" name="downvoteReason">Uninteresting</label></li><li><label><input type="radio" value="13" name="downvoteReason">Misleading</label></li><li><label><input type="radio" value="14" name="downvoteReason">Offensive</label></li><li><label><input type="radio" value="15" name="downvoteReason">Repetitive</label></li></ul><a href="http://stackoverflow.com/questions/5702362/vba-collection-list-of-keys#" class="adzerk-vote-cancel">Oops! I didn't mean to do this.</a></form></div><img height="0px" width="0px" border="0" style="position:absolute;" src="./VBA collection  list of keys - Stack Overflow_files/i(2).gif"></div>  
+        <div id="hireme">
+            <script>
+window.careers_adurl="//careers.stackoverflow.com/gethired/js",window.careers_cssurl="//cdn-careers.sstatic.net/careers/gethired/sidebar.min.css?v=8e288ff29ede",window.careers_leaderboardcssurl="{leaderboardcssurl}",window.careers_companycssurl="//cdn-careers.sstatic.net/careers/gethired/company",window.careers_adselector="div#hireme",StackExchange.ready(function(){$.ajax({url:"//cdn-careers.sstatic.net/careers/gethired/loader.min.js?v=5d79b99e1559",dataType:"script",cache:!0})});            </script>
+            
+        </div>
+			<div style="margin-bottom: 10px;">
+        
+
+<style type="text/css">
+#newsletter-ad {
+    width: 190px;
+    height: 250px;
+    overflow: hidden;
+    background: url('//cdn.sstatic.net/stackoverflow/img/newsletter-ad.png');
+    padding: 0 15px 0 15px;
+}
+#newsletter-ad-header {
+    margin-top: 60px;
+}
+#newsletter-ad ul {
+    margin: 1em 0 1em 1.5em;
+}
+#newsletter-ad ul li {
+    margin-bottom: 5px;
+}
+#newsletter-signup-container {
+    text-align: center;
+}
+#newsletter-preview-container {
+    margin-top: 10px;
+    text-align: center;
+}
+#newsletter-email-input {
+    width: 200px;
+}
+</style>
+
+<script>
+    StackExchange.ready(function () {
+        StackExchange.newsletterAd.init();
+    });
+</script>
+
+<div id="newsletter-ad">
+    <p id="newsletter-ad-header">Get the <b>weekly newsletter!</b></p>
+    <ul>
+        <li>Top questions and answers</li>
+        <li>Important announcements</li>
+        <li>Unanswered questions</li>
+    </ul>
+    <div id="newsletter-signup-container"><input id="newsletter-signup" type="button" value="Sign up for the newsletter"></div>
+    <p id="newsletter-preview-container">see an <a href="http://stackexchange.com/newsletters/newsletter?site=stackoverflow.com" id="newsletter-preview">example newsletter</a></p>
+    <div class="dno">
+        
+<p class="privacy-policy-agreement">
+By subscribing, you agree to the <a href="http://stackexchange.com/legal/privacy-policy" target="_blank">privacy policy</a> and <a href="http://stackexchange.com/legal/terms-of-service" target="_blank">terms of service</a>.</p>
+<input type="hidden" name="legalLinksShown" value="1">
+    </div>
+</div>
+
+    </div>  
+    
+            <div class="module sidebar-linked">
+	<h4 id="h-linked">Linked</h4>
+	<div class="linked" data-tracker="lq=1">
+<div class="spacer">
+	<a href="http://stackoverflow.com/q/12561539?lq=1">
+		<div class="answer-votes answered-accepted default">3</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/12561539/vba-get-key-by-value-in-collection?lq=1" class="question-hyperlink">VBA get key by value in Collection</a>
+</div><div class="spacer">
+	<a href="http://stackoverflow.com/q/19371783?lq=1">
+		<div class="answer-votes  default">2</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/19371783/vba-excel-how-are-collection-keys-used?lq=1" class="question-hyperlink"><span class="goog_qs-tidbit goog_qs-tidbit-1">VBA Excel: How are Collection Keys Used?</span></a>
+</div>			</div>
+</div>
+
+				<div class="module sidebar-related">
+					<h4 id="h-related">Related</h4>
+                    <div class="related js-gps-related-questions" data-tracker="rq=1">
+                        <div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/2674341?rq=1">
+    <div class="answer-votes answered-accepted default">3
+    </div>
+</a><a href="http://stackoverflow.com/questions/2674341/excel-vba-passing-a-collection-from-a-class-to-a-module-issue?rq=1" class="question-hyperlink">Excel VBA: Passing a collection from a class to a module issue</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/3221660?rq=1">
+    <div class="answer-votes answered-accepted default">6
+    </div>
+</a><a href="http://stackoverflow.com/questions/3221660/cant-populate-vba-collection-with-custom-objects-using-collection-add?rq=1" class="question-hyperlink">Can't populate VBA Collection with Custom Objects using Collection.add</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/6331106?rq=1">
+    <div class="answer-votes answered-accepted default">6
+    </div>
+</a><a href="http://stackoverflow.com/questions/6331106/vba-adding-a-class-to-a-collection?rq=1" class="question-hyperlink">VBA Adding a class to a collection</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/12223603?rq=1">
+    <div class="answer-votes answered-accepted default">3
+    </div>
+</a><a href="http://stackoverflow.com/questions/12223603/vba-iteration-speed-of-variant-array-vs-typed-array-vs-non-keyed-collection?rq=1" class="question-hyperlink">VBA: Iteration speed of variant array vs. typed array vs. non-keyed collection</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/13673631?rq=1">
+    <div class="answer-votes default">2
+    </div>
+</a><a href="http://stackoverflow.com/questions/13673631/using-a-3-column-collection-in-excel-vba-and-searching-it?rq=1" class="question-hyperlink">Using a 3-column Collection in Excel VBA and searching it</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/14261584?rq=1">
+    <div class="answer-votes answered-accepted default">0
+    </div>
+</a><a href="http://stackoverflow.com/questions/14261584/vba-excel-finding-the-statistical-mode-of-a-collection?rq=1" class="question-hyperlink">VBA excel finding the statistical mode of a collection</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/17933983?rq=1">
+    <div class="answer-votes answered-accepted default">0
+    </div>
+</a><a href="http://stackoverflow.com/questions/17933983/add-array-to-collection-in-vba?rq=1" class="question-hyperlink">Add array to Collection in VBA</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/19371783?rq=1">
+    <div class="answer-votes default">2
+    </div>
+</a><a href="http://stackoverflow.com/questions/19371783/vba-excel-how-are-collection-keys-used?rq=1" class="question-hyperlink">VBA Excel: How are Collection Keys Used?</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/19613506?rq=1">
+    <div class="answer-votes answered-accepted default">0
+    </div>
+</a><a href="http://stackoverflow.com/questions/19613506/get-item-in-vba-collection-by-name?rq=1" class="question-hyperlink">Get item in VBA Collection by Name</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/24329872?rq=1">
+    <div class="answer-votes answered-accepted default">0
+    </div>
+</a><a href="http://stackoverflow.com/questions/24329872/vba-is-it-possible-to-pass-a-dictionary-collection-to-an-autofilter?rq=1" class="question-hyperlink">VBA is it possible to pass a Dictionary/Collection to an autofilter?</a>
+</div>
+
+                    </div>
+				</div>
+            
+<div id="hot-network-questions" class="module">
+    <h4>
+        <a href="http://stackexchange.com/questions?tab=hot" class="js-gps-track" data-gps-track="posts_hot_network.click({ item_type:1, location:11 })">
+            Hot Network Questions
+        </a>
+    </h4>
+    <ul>
+            <li>
+                <div class="favicon favicon-unix"></div><a href="http://unix.stackexchange.com/questions/155793/is-it-correct-to-use-certain-special-characters-when-naming-filenames-in-linux" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:106 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Is it correct to use certain special characters when naming filenames in Linux?
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-graphicdesign"></div><a href="http://graphicdesign.stackexchange.com/questions/38732/effectively-creating-this-effect-in-illustrator" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:174 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Effectively creating this effect in Illustrator?
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-superuser"></div><a href="http://superuser.com/questions/812173/what-is-this-cable-for-picture-included" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:3 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    What is this cable for (picture included)?
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-electronics"></div><a href="http://electronics.stackexchange.com/questions/129426/how-can-i-extend-this-circuit-to-use-it-in-our-real-life" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:135 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How can I extend this circuit to use it in our real life?
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-tex"></div><a href="http://tex.stackexchange.com/questions/201494/you-cant-use-macro-parameter-character-in-horizontal-line" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:85 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    you can't use `macro parameter character #` in horizontal line
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-codereview"></div><a href="http://codereview.stackexchange.com/questions/63049/returning-status-codes-from-business-layer" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:196 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Returning status codes from business layer
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-scifi"></div><a href="http://scifi.stackexchange.com/questions/67834/did-eru-trip-gollum" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:186 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Did Eru trip Gollum?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-mathematica"></div><a href="http://mathematica.stackexchange.com/questions/59836/display-quantity-in-full-form" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:387 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Display Quantity in full form
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-academia"></div><a href="http://academia.stackexchange.com/questions/28580/how-familiar-should-you-be-with-a-topic-before-assigning-it-as-a-thesis-to-an-un" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:415 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How familiar should you be with a topic before assigning it as a thesis to an undergraduate?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-stackoverflow"></div><a href="http://stackoverflow.com/questions/25864206/running-c-code-outside-of-functions-scope" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:1 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Running C++ code outside of functions scope
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-outdoors"></div><a href="http://outdoors.stackexchange.com/questions/6760/what-makes-certain-mountains-more-dangerous-than-others" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:395 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    What makes certain mountains more dangerous than others?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-english"></div><a href="http://english.stackexchange.com/questions/196668/why-is-cupboard-pronounced-with-a-silent-p" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:97 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why is "cupboard" pronounced with a silent "p"?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-english"></div><a href="http://english.stackexchange.com/questions/196732/does-a-phrase-by-itself-have-to-be-gramatically-correct" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:97 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Does a phrase "by itself" have to be gramatically correct
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-academia"></div><a href="http://academia.stackexchange.com/questions/28583/do-i-need-to-wait-for-a-journal-to-consent-to-paper-withdrawal-before-submitti" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:415 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Do I need to wait for a journal to "consent" to paper withdrawal before submitting elsewhere?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-security"></div><a href="http://security.stackexchange.com/questions/67484/pci-compliance-if-not-storing-or-transmitting-credit-card-data" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:162 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    PCI compliance if not storing or transmitting credit card data
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-dba"></div><a href="http://dba.stackexchange.com/questions/76726/what-exactly-does-the-last-value-window-function-do" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:182 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    What exactly does the last_value() window function do?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-english"></div><a href="http://english.stackexchange.com/questions/196709/is-there-a-metaphorical-word-or-phrase-for-a-potential-trouble-maker" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:97 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Is there a metaphorical word or phrase for a potential trouble maker?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-security"></div><a href="http://security.stackexchange.com/questions/67427/what-are-the-disadvantages-of-implementing-http-authentication-in-a-web-applicat" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:162 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    What are the disadvantages of implementing HTTP authentication in a web application?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-stackoverflow"></div><a href="http://stackoverflow.com/questions/25868430/why-is-defau4t-legal-in-a-switch-statement" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:1 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why is "defau4t" legal in a switch statement?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-photo"></div><a href="http://photo.stackexchange.com/questions/54274/i-tried-to-use-the-sunny-16-rule-but-it-didnt-work-why" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:61 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    I tried to use the "Sunny 16 rule" but it didn't work, why?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-scifi"></div><a href="http://scifi.stackexchange.com/questions/67847/why-doesnt-the-t-1000-continue-to-chase-after-john-connor" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:186 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why doesn't the T-1000 continue to chase after John Connor?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-movies"></div><a href="http://movies.stackexchange.com/questions/24650/is-fezs-country-ever-revealed" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:367 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Is Fez's country ever revealed?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-philosophy"></div><a href="http://philosophy.stackexchange.com/questions/15944/reasons-for-believing-in-monism" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:265 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Reasons for believing in Monism
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-salesforce"></div><a href="http://salesforce.stackexchange.com/questions/49516/making-regex-case-insensitive" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:459 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Making regex case-insensitive
+                </a>
+
+            </li>
+    </ul>
+
+        
+</div>
+		</div>
+	
+<div id="feed-link">
+    <div id="feed-link-text">
+        <a href="http://stackoverflow.com/feeds/question/5702362">
+            <span class="feed-icon"></span>question feed
+        </a>
+    </div>
+</div>	<script>
+StackExchange.ready(function(){$.get('/posts/5702362/ivc/51e1');});
+</script>
+<noscript>
+    &lt;div&gt;&lt;img src="/posts/5702362/ivc/51e1" class="dno" alt="" width="0" height="0"&gt;&lt;/div&gt;
+</noscript><div style="display:none" id="prettify-lang">lang-vb</div></div>
+
+
+
+        </div>
+    </div>
+    <div id="footer" class="categories">
+        <div class="footerwrap">
+            <div id="footer-menu">
+                <div class="top-footer-links">
+                        <a href="http://stackoverflow.com/tour">tour</a>
+                    <a href="http://stackoverflow.com/help">help</a>
+                        <a href="http://stackoverflow.com/help/badges">badges</a>
+                    <a href="http://blog.stackoverflow.com/?blb=1">blog</a>
+                        <a href="http://chat.stackoverflow.com/">chat</a>
+                    <a href="http://data.stackexchange.com/">data</a>
+                    <a href="http://stackexchange.com/legal">legal</a>
+                    <a href="http://stackexchange.com/legal/privacy-policy">privacy policy</a>
+                    <a href="http://stackexchange.com/work-here">work here</a>
+                    <a href="http://stackexchange.com/mediakit">advertising info</a>
+
+                    <a onclick="StackExchange.switchMobile(&quot;on&quot;)">mobile</a>
+                    <b><a href="http://stackoverflow.com/contact">contact us</a></b>
+                        <b><a href="http://meta.stackoverflow.com/">feedback</a></b>
+                    
+                </div>
+                <div id="footer-sites">
+                    <table>
+    <tbody><tr>
+            <th colspan="3">
+                Technology
+            </th>
+            <th>
+                Life / Arts
+            </th>
+            <th>
+                Culture / Recreation
+            </th>
+            <th>
+                Science
+            </th>
+            <th>
+                Other
+            </th>
+    </tr>
+    <tr>
+            <td>
+                <ol>
+                        <li><a href="http://stackoverflow.com/">Stack Overflow</a></li>
+                        <li><a href="http://serverfault.com/">Server Fault</a></li>
+                        <li><a href="http://superuser.com/">Super User</a></li>
+                        <li><a href="http://webapps.stackexchange.com/">Web Applications</a></li>
+                        <li><a href="http://askubuntu.com/">Ask Ubuntu</a></li>
+                        <li><a href="http://webmasters.stackexchange.com/">Webmasters</a></li>
+                        <li><a href="http://gamedev.stackexchange.com/">Game Development</a></li>
+                        <li><a href="http://tex.stackexchange.com/">TeX - LaTeX</a></li>
+                            </ol></td><td><ol>
+                        <li><a href="http://programmers.stackexchange.com/">Programmers</a></li>
+                        <li><a href="http://unix.stackexchange.com/">Unix &amp; Linux</a></li>
+                        <li><a href="http://apple.stackexchange.com/">Ask Different (Apple)</a></li>
+                        <li><a href="http://wordpress.stackexchange.com/">WordPress Development</a></li>
+                        <li><a href="http://gis.stackexchange.com/">Geographic Information Systems</a></li>
+                        <li><a href="http://electronics.stackexchange.com/">Electrical Engineering</a></li>
+                        <li><a href="http://android.stackexchange.com/">Android Enthusiasts</a></li>
+                        <li><a href="http://security.stackexchange.com/">Information Security</a></li>
+                            </ol></td><td><ol>
+                        <li><a href="http://dba.stackexchange.com/">Database Administrators</a></li>
+                        <li><a href="http://drupal.stackexchange.com/">Drupal Answers</a></li>
+                        <li><a href="http://sharepoint.stackexchange.com/">SharePoint</a></li>
+                        <li><a href="http://ux.stackexchange.com/">User Experience</a></li>
+                        <li><a href="http://mathematica.stackexchange.com/">Mathematica</a></li>
+                        <li><a href="http://salesforce.stackexchange.com/">Salesforce</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#technology" class="more">
+                                more (13)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://photo.stackexchange.com/">Photography</a></li>
+                        <li><a href="http://scifi.stackexchange.com/">Science Fiction &amp; Fantasy</a></li>
+                        <li><a href="http://graphicdesign.stackexchange.com/">Graphic Design</a></li>
+                        <li><a href="http://cooking.stackexchange.com/">Seasoned Advice (cooking)</a></li>
+                        <li><a href="http://diy.stackexchange.com/">Home Improvement</a></li>
+                        <li><a href="http://money.stackexchange.com/">Personal Finance &amp; Money</a></li>
+                        <li><a href="http://academia.stackexchange.com/">Academia</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#lifearts" class="more">
+                                more (10)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://english.stackexchange.com/">English Language &amp; Usage</a></li>
+                        <li><a href="http://skeptics.stackexchange.com/">Skeptics</a></li>
+                        <li><a href="http://judaism.stackexchange.com/">Mi Yodeya (Judaism)</a></li>
+                        <li><a href="http://travel.stackexchange.com/">Travel</a></li>
+                        <li><a href="http://christianity.stackexchange.com/">Christianity</a></li>
+                        <li><a href="http://gaming.stackexchange.com/">Arqade (gaming)</a></li>
+                        <li><a href="http://bicycles.stackexchange.com/">Bicycles</a></li>
+                        <li><a href="http://rpg.stackexchange.com/">Role-playing Games</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#culturerecreation" class="more">
+                                more (21)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://math.stackexchange.com/">Mathematics</a></li>
+                        <li><a href="http://stats.stackexchange.com/">Cross Validated (stats)</a></li>
+                        <li><a href="http://cstheory.stackexchange.com/">Theoretical Computer Science</a></li>
+                        <li><a href="http://physics.stackexchange.com/">Physics</a></li>
+                        <li><a href="http://mathoverflow.net/">MathOverflow</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#science" class="more">
+                                more (7)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://stackapps.com/">Stack Apps</a></li>
+                        <li><a href="http://meta.stackexchange.com/">Meta Stack Exchange</a></li>
+                        <li><a href="http://area51.stackexchange.com/">Area 51</a></li>
+                        <li><a href="http://careers.stackoverflow.com/?utm_source=stackoverflow.com&utm_medium=site-ui&utm_campaign=footerlink">Stack Overflow Careers</a></li>
+                    
+                </ol>
+            </td>
+    </tr>
+</tbody></table>
+                </div>
+            </div>
+
+            <div id="copyright">
+                site design / logo © 2014 stack exchange inc; user contributions licensed under <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license">cc by-sa 3.0</a> 
+                with <a href="http://blog.stackoverflow.com/2009/06/attribution-required/" rel="license">attribution required</a>
+            </div>
+            <div id="svnrev">
+                rev 2014.9.16.1860
+            </div>
+            
+        </div>
+    </div>
+    <noscript>
+        &lt;div id="noscript-warning"&gt;Stack Overflow works best with JavaScript enabled&lt;img src="http://pixel.quantserve.com/pixel/p-c1rF4kxgLUzNc.gif" alt="" class="dno"&gt;&lt;/div&gt;
+    </noscript>
+<script>var p = "http", d = "static"; if (document.location.protocol == "https:") { p += "s"; d = "engine"; } var z = document.createElement("script"); z.type = "text/javascript"; z.async = true; z.src = p + "://" + d + ".adzerk.net/ados.js"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(z, s);</script>
+<script>
+    var ados = ados || {};
+    ados.run = ados.run || [];
+    ados.run.push(function () { ados_setKeywords('vba,collections');; ados_load(); });         
+</script>
+
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () { (i[r].q = i[r].q || []).push(arguments) }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m);
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+        ga('create', 'UA-5620270-1');        
+        
+        ga('set', 'dimension2', '|vba|collections|');         
+        ga('send', 'pageview');
+        var _qevents = _qevents || [],
+            _comscore = _comscore || [];
+        (function () {
+            var ssl='https:'==document.location.protocol,
+                s=document.getElementsByTagName('script')[0],
+                qc=document.createElement('script');
+            qc.async=true;
+            qc.src=(ssl?'https://secure':'http://edge')+'.quantserve.com/quant.js';
+            s.parentNode.insertBefore(qc, s);
+            var sc=document.createElement('script');
+            sc.async=true;
+            sc.src=(ssl?'https://sb':'http://b') + '.scorecardresearch.com/beacon.js';
+            s.parentNode.insertBefore(sc, s);
+        })();
+        _comscore.push({ c1: "2", c2: "17440561" });
+        _qevents.push({ qacct: "p-c1rF4kxgLUzNc" });
+    </script>        
+    
+    
+<div id="goog_qs_tidbit_box" class="notranslate goog_qs-slideup"><div id="goog_qs-wrapper"><div id="goog_qs-box-toggle" style="background-image: url(chrome-extension://okanipcmceoeemlbjnmnbdibhgpbllgc/images/minimize.png);"></div><div id="goog_qs-box-help" style="background-image: url(chrome-extension://okanipcmceoeemlbjnmnbdibhgpbllgc/images/help.png);"></div><div id="goog_qs-box-info" style="background-image: url(chrome-extension://okanipcmceoeemlbjnmnbdibhgpbllgc/images/icon16x16.png);"><span class="goog_qs-nowrap">C<img>orrespondências</span> <span class="goog_qs-nowrap">n<img>a</span> <span class="goog_qs-nowrap">p<img>ágina</span> <span class="goog_qs-nowrap">p<img>ara</span> <span class="goog_qs-query"><span class="goog_qs-nowrap">c<img>ollection</span> <span class="goog_qs-nowrap">v<img>ba</span> <span class="goog_qs-nowrap">e<img>xcel</span> <span class="goog_qs-nowrap">l<img>ike</span> <span class="goog_qs-nowrap">k<img>ey</span></span></div><div id="goog_qs-box-tidbits"><div class="goog_qs-box-tidbit">I <span class="goog_qs-nowrap">w<img>ould</span> <em><span class="goog_qs-nowrap">l<img>ike</span></em> <span class="goog_qs-nowrap">t<img>o</span> <span class="goog_qs-nowrap">s<img>ay</span> <span class="goog_qs-nowrap">y<img>es</span> <span class="goog_qs-nowrap">f<img>or</span> <span class="goog_qs-nowrap">a<img>ll</span> <span class="goog_qs-nowrap">r<img>ecent</span> <span class="goog_qs-nowrap">v<img>ersions</span> <span class="goog_qs-nowrap">o<img>f</span> <span class="goog_qs-nowrap">w<img>indows</span> <span class="goog_qs-nowrap">a<img>s</span> <span class="goog_qs-nowrap">i<img>ts</span> <span class="goog_qs-nowrap">p<img>art</span> <span class="goog_qs-nowrap">o<img>f</span> <span class="goog_qs-nowrap">w<img>indows...</span> <span class="goog_qs-go">»</span></div><div class="goog_qs-box-tidbit"><em><span class="goog_qs-nowrap">V<img>BA</span> <span class="goog_qs-nowrap">E<img>xcel</span></em>: <span class="goog_qs-nowrap">H<img>ow</span> <span class="goog_qs-nowrap">a<img>re</span> <em><span class="goog_qs-nowrap">C<img>ollection</span> <span class="goog_qs-nowrap">K<img>eys</span></em> <span class="goog_qs-nowrap">U<img>sed?...</span> <span class="goog_qs-go">»</span></div></div><div id="goog_qs-box-bottom"><div class="goog_qs-more-matches" id="goog_qs-box-more-tidbits"><span class="goog_qs-nowrap">M<img>ais</span> <span class="goog_qs-nowrap">c<img>orrespondências</span> <span class="goog_qs-go">»</span></div><div class="goog_qs-more-matches" id="goog_qs-box-fewer-tidbits" style="display:none"><span class="goog_qs-go">«</span>  <span class="goog_qs-nowrap">M<img>enos</span> <span class="goog_qs-nowrap">c<img>orrespondências</span></div><div id="goog_qs-box-feedback-link"><span class="goog_qs-nowrap">F<img>eedback</span></div> <div id="goog_qs-box-new-bug"><span class="goog_qs-nowrap">B<img>ug</span></div></div><div style="clear:both"></div></div></div></body></html>

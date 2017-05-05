@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<!-- saved from url=(0046)http://www.wiseowl.co.uk/blog/s237/classes.htm -->
+<html class=" js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths" lang="en" style=""><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta charset="utf-8">
+         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Classes and Class Modules</title>
+
+        <!-- canonical is standardised for any page -->
+        <link href="./Classes and Class Modules_files/Classes and Class Modules.htm" rel="canonical">
+
+        <link href="http://www.wiseowl.co.uk/Content/css?v=4dg-gUnMOPyD9UCAn6L_Ampl5-0-CtA2nnvkZyAlqMc1" rel="stylesheet">
+
+        <script async="" src="./Classes and Class Modules_files/analytics.js"></script><script src="./Classes and Class Modules_files/modernizr"></script>
+
+        <script src="./Classes and Class Modules_files/foundation"></script>
+
+        
+        <!-- Fonts - Note to self, look at removing extra weights if not being used -->
+       
+
+        <!-- Favicons -->
+        <link rel="shortcut icon" href="http://www.wiseowl.co.uk/favicon.ico" type="image/x-icon">
+        <link rel="apple-touch-icon" href="http://www.wiseowl.co.uk/apple-touch-icon.png">
+        <link rel="apple-touch-icon" sizes="57x57" href="http://www.wiseowl.co.uk/apple-touch-icon-57x57.png">
+      
+        <link rel="apple-touch-icon" sizes="72x72" href="http://www.wiseowl.co.uk/apple-touch-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="http://www.wiseowl.co.uk/apple-touch-icon-76x76.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="http://www.wiseowl.co.uk/apple-touch-icon-114x114.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="http://www.wiseowl.co.uk/apple-touch-icon-120x120.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="http://www.wiseowl.co.uk/apple-touch-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="http://www.wiseowl.co.uk/apple-touch-icon-152x152.png">
+        <meta name="apple-mobile-web-app-title" content="Wise Owl">
+        
+        <!-- Foundation IE 8 and earlier -->
+        <!--[if lt IE 9]>
+          <link rel="stylesheet" href="/css/ie8-grid-foundation-4.css">
+        <![endif]-->
+                        
+    <meta class="foundation-mq-small"><meta class="foundation-mq-medium"><meta class="foundation-mq-large"><style></style></head>
+    <body style="">
+
+        
+        <!-- mobile phone top right menu -->
+        <div class="mobile-menu"></div>
+
+        <!-- normal top menu -->
+        <div class="top-menu full-width">
+          <div class="row">
+            <div class="left large-6 columns">
+              <ul>
+                <li class="dropdown">
+                  <a href="http://www.wiseowl.co.uk/sundry/about-wise-owl/">About us</a>
+                  <ul>
+                    <li><a href="http://www.wiseowl.co.uk/sundry/about-wise-owl/">What we do</a></li>
+                    <li><a href="http://www.wiseowl.co.uk/trainers/">Meet the Wise Owls</a></li>
+                    <li><a href="http://www.wiseowl.co.uk/benefits/">Why we're different</a></li>
+                    <li><a href="http://www.wiseowl.co.uk/enquiry/">Contact us</a></li>
+                  </ul>
+                </li>
+                <li><a href="http://www.wiseowl.co.uk/venue/">Training centres</a></li>
+                <li><a href="http://www.wiseowl.co.uk/reviews/">Testimonials</a></li>
+                <li class="dropdown">
+                  <a href="http://www.wiseowl.co.uk/resources/">Resources</a>
+                  <ul>
+                    <li><a href="http://www.wiseowl.co.uk/blog/">Blogs</a></li>
+                    <li><a href="http://www.wiseowl.co.uk/courseware/">Courseware</a></li>
+                    <li><a href="http://www.wiseowl.co.uk/free-exercises/">Exercises</a></li>
+                    <li><a href="http://www.wiseowl.co.uk/newsletter/">Newsletters</a></li>
+                    <li><a href="http://www.wiseowl.co.uk/skill/">Skills assessment</a></li>
+                    <li><a href="http://www.wiseowl.co.uk/blog/tutorials/">Tutorials</a></li>
+                    <li><a href="http://www.wiseowl.co.uk/videos/">Videos</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+            <div class="right large-6 columns">
+              <ul>
+                <li class="contact">01457 858877</li>
+                <li><a class="button--alpha" href="http://www.wiseowl.co.uk/enquiry/">Contact</a></li>
+                  <li><a class="button--bravo" href="http://www.wiseowl.co.uk/sundry/client-log-in/">Sign in</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Wise Owl logo and buttons header -->
+        <div class="header full-width">
+          <div class="row">
+            <div class="large-5 columns">
+              <div class="medium-center">
+                  
+                <div class="logo--main"><a href="http://www.wiseowl.co.uk/">WiseOwl Training - Established 1992</a></div>
+                
+              </div>
+            </div>
+            <div class="large-7 columns">
+              <div id="jsHidden" class="our-courses large-4 columns woScriptHide" style="visibility: visible;">
+
+                <a class="button--alpha" href="http://www.wiseowl.co.uk/blog/s237/classes.htm#">Our Courses</a>
+                <div class="our-courses__dropdown">
+                  <div class="col">
+                    <div class="our-courses__logo--office"></div>
+                    <ul>
+                      <li><a href="http://www.wiseowl.co.uk/ms-access/">Access</a></li>
+                      <li><a href="http://www.wiseowl.co.uk/excel/">Excel</a></li>
+                      <li><a href="http://www.wiseowl.co.uk/vba-macros/">VBA</a></li>
+                      <li><a href="http://www.wiseowl.co.uk/powerpivot/">PowerPivot</a></li>
+                      
+                    </ul>
+                  </div>
+                  <div class="col">
+                    <div class="our-courses__logo--net"></div>
+                    <ul>
+                      <li><a href="http://www.wiseowl.co.uk/c-sharp/">Visual C#</a></li>
+                      <li><a href="http://www.wiseowl.co.uk/visual-basic/">Visual Basic</a></li>
+                      <li><a href="http://www.wiseowl.co.uk/asp-net/">ASP.NET</a></li>
+                      <li><a href="http://www.wiseowl.co.uk/winforms/">WinForms</a></li>
+                      <li><a href="http://www.wiseowl.co.uk/wpf/">WPF</a></li>
+                    </ul>
+                  </div>
+                  <div class="col last-child">
+                    <div class="our-courses__logo--sql"></div>
+                    <ul>
+                      <li><a href="http://www.wiseowl.co.uk/sql/">SQL</a></li>
+                      <li><a href="http://www.wiseowl.co.uk/reporting-services/">SSRS</a></li>
+                      <li><a href="http://www.wiseowl.co.uk/integration-services/">SSIS</a></li>
+                      <li><a href="http://www.wiseowl.co.uk/analysis-services/">SSAS</a></li>
+                      <li><a href="http://www.wiseowl.co.uk/report-builder/">Report Builder</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="large-8 columns">
+<form action="http://www.wiseowl.co.uk/search/start" method="post">                    <input class="search" type="text" name="what" value="Search for something here!" onfocus="if(this.value==&#39;Search for something here!&#39;) this.value=&#39;&#39;;">
+                    <button type="submit" value="search" class="search__submit">Go</button>
+</form>              </div>
+            </div>
+          </div>
+        </div>
+        
+        <script>
+
+            // if JavaScript enabled, show courses button
+            document.getElementById('jsHidden').style.visibility = 'visible';
+
+        </script>
+
+        <div id="body">
+            
+            <!-- could use this to have optional sections to slot in -->
+            
+            <div class="breadcrumb full-width"><div class="row"><div class="large-12 columns"><ul><li class="breadcrumb__home"><a href="http://www.wiseowl.co.uk/">Wise Owl Training</a></li><li><a href="http://www.wiseowl.co.uk/blog/">Blogs</a></li><li><a href="./Classes and Class Modules_files/Classes and Class Modules.htm">Creating classes in VBA - class modules</a></li></ul></div></div></div>
+
+<div class="full-width main-content-wrap">
+    <div class="row">
+        <div class="large-12 columns">
+
+            
+            <div class="main-content large-9 columns right">
+
+                
+                    <div class="woBlogShowBox">
+                        <div class="woBlogShowBoxTitle1">Creating classes in VBA - class modules</div>
+                        <div class="woBlogShowBoxTitle2">Part one of a six-part series of blogs</div>
+
+                        <div class="woBlogShowBoxList">
+
+                            <p>Those who want to add spice to their VBA programming can learn how to create classes, or class modules, and become object-orientated programmers.&amp;nbsp; It's difficult, but fun - and this multi-part blog will guide you along the way.</p>
+
+                            
+                            <ol>
+                                    <li>Classes and Class Modules (this blog)</li>
+                                    <li><a href="http://www.wiseowl.co.uk/blog/s237/class-examples.htm">Three Class Examples: from Excel, Life and Me!</a></li>
+                                    <li><a href="http://www.wiseowl.co.uk/blog/s237/class-simple.htm">Creating and Coding a Class: a Simple Worked Example</a></li>
+                                    <li><a href="http://www.wiseowl.co.uk/blog/s237/class-events.htm">Running Code at Instantiation and Termination</a></li>
+                                    <li><a href="http://www.wiseowl.co.uk/blog/s237/class-properties.htm">Coding Properties for Classes</a></li>
+                                    <li><a href="http://www.wiseowl.co.uk/blog/s237/class-hangman.htm">A Worked Example: Playing Hangman in Excel</a></li>
+                            </ol>
+
+                            
+                                <p class="woBlogShowBoxSummaryEnd">This blog is part of our <a href="http://www.wiseowl.co.uk/blog/s161/online-excel-vba-training.htm">free Excel VBA tutorial</a>.&nbsp; Our <a href="http://www.wiseowl.co.uk/powerpivot/">classroom courses in VBA</a> aren't free, alas, but they do&nbsp;provide a more structured way to learn to program.</p>
+
+                        </div>
+                    </div>
+
+                
+                <div class="woBlogShowPost">
+                    <p>
+                        Posted by 
+                        <a href="http://www.wiseowl.co.uk/blog/author/andybrown.htm">Andy Brown</a>
+                         on 05 March 2012 | 5 comments
+                    </p>
+                </div>
+
+                
+                    <div class="woBlogShowBlog woBlogShowMulti">
+                
+
+<h1>Classes and Class Modules</h1>
+<p>If you've been reading the rest of this fairly substantial on-line training 
+blog on VBA in Excel, you'll now be something of a guru - but there may be one 
+thing which still puzzles you.&nbsp; Namely the following:</p>
+<div class="bpImageLeft">
+				<img src="./Classes and Class Modules_files/i1.jpg" alt="Inserting a class module" title="Inserting a class module"><p>What on earth is a class module?</p></div><div class="bpImgClear">&nbsp;</div><p>
+The answer to that question is not a short one!&nbsp; This blog attempts to 
+explain what classes are and why and when you might choose to use them.</p>
+<div class="hint-wrapper">
+<p>VBA is an object-orientated programming (OOP) language, meaning that it works 
+with <a href="http://www.wiseowl.co.uk/blog/s189/excel-object-model.htm">objects</a> (and their properties and methods).&nbsp; Using classes, you too can 
+now become an object-orientated programmer!</p>
+</div>
+<h2>What Classes Are</h2>
+<p>The following gives a quick summary of what classes are, but to understand 
+them properly I'd recommend reading the rest of this blog 
+carefully.</p>
+<div class="hint-wrapper">
+<p>It takes even good programmers a fair while to understand what on earth 
+classes are, and how you would use them (I can still remember struggling to 
+understand what they were about).&nbsp; Be patient with yourself!</p>
+</div>
+<p>You've already seen many classes in Excel.&nbsp; For example, a worksheet is 
+a class because:</p>
+<ul>
+				<li>It has properties (such as its name); </li>
+				<li>You can apply methods to it (such as deleting it or 
+				protecting it); and</li>
+				<li>You can instantiate new objects based on the class (that is, 
+				you can create new worksheets which follow the rules laid down 
+				in the class).</li>
+</ul>
+<p>A <em>class</em> (or <em>class module </em>- the two things are synonymous) 
+is an object designed by yourself, with its own set of properties and methods.&nbsp; 
+For example, if you work in a hamburger store you might create an <strong>Order</strong> 
+object with the following properties and methods:</p>
+<div class="bpTable">
+<table cellspacing="0px">
+<tbody><tr>
+<th>
+Member</th>
+<th>
+Type</th>
+<th>
+Notes</th>
+</tr>
+<tr>
+<td>
+<strong>Value</strong></td>
+<td>
+Property</td>
+<td>
+The value of the order</td>
+</tr>
+<tr>
+<td>
+<strong>Take</strong></td>
+<td>
+Method</td>
+<td>
+What you do to an order at the start</td>
+</tr>
+<tr>
+<td>
+<strong>Purchaser</strong></td>
+<td>
+Property</td>
+<td>
+Who it is who is placing the order</td>
+</tr>
+<tr>
+<td>
+<strong>WhenOrdered</strong></td>
+<td>
+Property</td>
+<td>
+The date and time of the order</td>
+</tr>
+<tr>
+<td>
+<strong>Deliver</strong></td>
+<td>
+Method</td>
+<td>
+When you give the customer their order</td>
+</tr>
+</tbody></table>
+</div>
+<p>It's not obvious what any of these things would mean in an Excel 
+context, however!</p>
+<h2>Reasons to Learn Classes</h2>
+<p>There is a powerful reason not to learn classes: they're not straightforward 
+to understand and use.&nbsp; So why would you ever want to learn them?&nbsp; 
+Well, here are some reasons:</p>
+<div class="bpTable">
+<table cellspacing="0px">
+<tbody><tr>
+<th>
+Reason
+</th>
+<th>
+More explanation</th>
+</tr>
+<tr>
+<td>
+<em>Fun</em></td>
+<td>
+Classes are fun.&nbsp; Programming using objects that you've created is - when 
+you eventually get into the swing of it - both easier and more satisfying than normal 
+programming.</td>
+</tr>
+<tr>
+<td>
+<em>Career path</em></td>
+<td>
+If you enjoy programming in VBA, the chances are that you may go on to programme 
+in other languages.&nbsp; There's a strong chance that these will use the 
+concept of classes far more than VBA does: C#, Visual Basic and Java are all object-orientated programming languages.</td>
+</tr>
+<tr>
+<td>
+<em>Understanding downloaded macros</em></td>
+<td>
+Sometimes when you want to solve a problem, Googling will reveal a solution 
+which incorporates classes.&nbsp; If you want to understand how to tweak any 
+such solution, you'll need to at least understand how classes work.</td>
+</tr>
+<tr>
+<td>
+<em>Better programming</em></td>
+<td>
+There's just a chance that classes will make you a better VBA programmer.&nbsp; 
+Being able to include classes within any solution that you create gives you more 
+tools at your disposal as a programmer.</td>
+</tr>
+</tbody></table>
+</div>
+<div class="hint-wrapper">
+<p>However, Excel contains most of the classes that you would frequently want: 
+ranges, worksheets and workbooks, for example.&nbsp; You can survive as a VBA 
+programmer without knowing how to create classes.</p>
+</div>
+<h2>Inheritance</h2>
+<p>Many OOP (Object-Orientated Programming - see above) languages include the 
+concept of inheritance.&nbsp; It's worth noting here that VBA doesn't, which is 
+one reason that many programming snobs will state - quite correctly - that VBA 
+isn't a true object-orientated programming language.</p>
+<p>&nbsp;</p>
+<p>After all that preamble, then, it's time to take a deep breath and see in 
+more detail what a class is, using 3 examples:</p>
+<ul>
+				<li>A class built into Excel (a workbook);</li>
+				<li>A class built into life (a baby, as it happens); and</li>
+				<li>A class that we'll design ourselves (an input box).</li>
+</ul>
+<p>Let's begin!</p>
+<p>&nbsp;</p>
+
+
+                </div>
+
+                
+                    <div class="woBlogShowComment">
+                       <h2>This blog has 5 comments</h2>
+                    
+                        
+                            <div class="woBlogShowCommentTitle">
+                                Comment added on 01 September 2012 at 11:58 GMT
+                            </div>
+                            <div class="woBlogShowCommentText">
+                                <p class="i1"><span class="codeKeyword"><font color="#0000ff">For</font></span> LetterPosition = 1 <span class="codeKeyword"><font color="#0000ff">To</font></span> Len(Alphabet)</p>
+<p class="i2">SpacedAlphabet = SpacedAlphabet &amp; Mid(Alphabet, LetterPosition, 1) &amp; " "</p>
+<p class="i1"><span class="codeKeyword"><font color="#0000ff">Next</font></span> LetterPosition</p>
+<p class="i1">&nbsp;</p>
+<p class="i1">This code is from your blog, It contains a variable 'Alphabet' which I cannot identify from within the&nbsp;code block. Can you enlightem me?</p>
+                            </div>
+                                 <div class="woBlogShowCommentTitleReply">
+                                    Reply from Andy Brown
+                                </div>
+                                <div class="woBlogShowCommentTextReply">
+                                    <p><em>Alphabet </em>would be a string constant containing the letters which you could guess.&nbsp; Something like:</p>
+<p><strong>Public Const Alphabet As String = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"</strong></p>
+<p>would do the trick.&nbsp; Seems to have escaped the code published on the blog.</p>
+                                </div>
+                            <div class="woBlogShowCommentTitle">
+                                Comment added on 11 September 2012 at 17:13 GMT
+                            </div>
+                            <div class="woBlogShowCommentText">
+                                <p>I LOVE this blog - thank you for providing this valuable&nbsp;info. source, for having a personality,&nbsp;and for taking the time to (novel idea) explain things before demonstrating them!</p>
+<p>"IfCanReadMaps=True" </p>
+<p>Cracked me up <em>and</em> taught me something!</p>
+                            </div>
+                            <div class="woBlogShowCommentTitle">
+                                Comment added on 26 October 2012 at 17:01 GMT
+                            </div>
+                            <div class="woBlogShowCommentText">
+                                I took a different approach to design the class. I just want to know if the <b>data-function-flow</b> makes sense. Thank you.<br><br>modMain----------------------------------------------------------------------------------------<br><br>Option Explicit<br>Dim ObjclsInputBox As clsInputBox<br><br>Sub Main()<br>&nbsp;&nbsp;&nbsp; Dim StrName As String<br>&nbsp;&nbsp;&nbsp; Dim i As Integer<br>&nbsp;&nbsp;&nbsp; Set ObjclsInputBox = New clsInputBox<br>&nbsp;&nbsp;&nbsp; ' let class generate the random letter and keep it<br>&nbsp;&nbsp;&nbsp; ObjclsInputBox.GenerateRandomLetter<br>&nbsp;&nbsp;&nbsp; i = 1<br>&nbsp;&nbsp;&nbsp; <br><br>&nbsp;&nbsp;&nbsp; ' user has to guess a letter<br>&nbsp;&nbsp;&nbsp; ' user has 3 chances to guess a letter<br>&nbsp;&nbsp;&nbsp; Do While (i &lt; 4)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; StrName = InputBox("Type a Letter", "Your Letter", "Type here")<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ' if no letter written then say<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; If Len(StrName) = 0 Or StrName = "" Then<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MsgBox "No Letter"<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Set ObjclsInputBox = Nothing<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Exit Do<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ' otherwise process the letter<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Else<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ObjclsInputBox.StrLetterGuessed = StrName<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ObjclsInputBox.StartGuessing<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; End If<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; i = i + 1<br>&nbsp;&nbsp;&nbsp; Loop<br>&nbsp;&nbsp;&nbsp; <br>&nbsp;&nbsp;&nbsp; MsgBox "The letter you type is " &amp; ObjclsInputBox.BolLetterGuessed<br><br>End Sub<br><br>modMain End----------------------------------------------------------------------------------<br><br>clsInputBox-------------------------------------------------------------------------------------<br>Option Explicit<br>' easiest way to define a property for a class<br>' we make it public, so we can set it's value from outsite the class<br>' :)<br>Public StrLetterGuessed As String<br>Public BolLetterGuessed As Boolean<br><br>' outside world doesn't need to know my class's private properties :)<br>Private StrRandomLetter As String<br><br>' there will be a randomizer picking a letter<br>Public Function GenerateRandomLetter()<br>&nbsp;&nbsp;&nbsp; StrRandomLetter = Chr(CInt(Rnd * 26) + 65)<br>End Function<br><br>Public Function StartGuessing()<br>&nbsp;&nbsp;&nbsp; If UCase(StrLetterGuessed) = StrRandomLetter Then<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; BolLetterGuessed = True<br>&nbsp;&nbsp;&nbsp; Else<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; BolLetterGuessed = False<br>&nbsp;&nbsp;&nbsp; End If<br>End Function<br><br>clsInputBox End--------------------------------------------------------------------------------<br>
+                            </div>
+                                 <div class="woBlogShowCommentTitleReply">
+                                    Reply from Andy Brown
+                                </div>
+                                <div class="woBlogShowCommentTextReply">
+                                    <p>A <strong>Sub</strong> procedure in a class is a method, which you can call without storing the return value.&nbsp; I can't see any reason to make <strong>StartGuessing </strong>a function, as it doesn't return a value.&nbsp; Aside from that the VBA looks fine, although I'm not quite sure what you're trying to achieve with it.</p>
+                                </div>
+                            <div class="woBlogShowCommentTitle">
+                                Comment added on 07 January 2013 at 09:21 GMT
+                            </div>
+                            <div class="woBlogShowCommentText">
+                                <p>hi, happy new year,</p>
+<p>thanks for the nice example,</p>
+<p>i have only two questions - when i download the full hangman game - </p>
+<p>1) could you improve the remaining letters - when you guess 'a', it is still on the list of letters to be used (do you see it too? is it a feature or a bug?)</p>
+<p>2) why when i try to resize cell a1 my excel crashes (i killed it after it stopped responding)</p>
+<p>thanks, Kaska</p>
+                            </div>
+                                 <div class="woBlogShowCommentTitleReply">
+                                    Reply from Andy Brown
+                                </div>
+                                <div class="woBlogShowCommentTextReply">
+                                    <p>Yes, you could improve the game in many ways!&nbsp; It's intended as an aid to understanding VBA - it's a long way off a final release ...</p>
+<p>As to why cell Excel crashes after you expand cell A1 - 'fraid I have no idea.&nbsp; It sounds like something peculiar to your installation of Excel.&nbsp; I'd try restarting your computer!</p>
+                                </div>
+                            <div class="woBlogShowCommentTitle">
+                                Comment added on 09 July 2013 at 08:47 GMT
+                            </div>
+                            <div class="woBlogShowCommentText">
+                                The following would solve the problem raised by mrwoka in his post<br><br>Change this in the the clsGame class:<br><br><i>Private Sub RemoveLetter(WhichLetter As String)<br><br>&nbsp;&nbsp;&nbsp; 'remove this letter and the space before it<br>&nbsp;&nbsp;&nbsp; If WhichLetter = "A" Then<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Range("GuessesLeft").Value = Replace(Range("GuessesLeft").Value, WhichLetter, "")<br>&nbsp;&nbsp;&nbsp; Else<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Range("GuessesLeft").Value = Replace(Range("GuessesLeft").Value, " " &amp; WhichLetter, "")<br>&nbsp;&nbsp;&nbsp; End If<br>End Sub<br><br></i>Andy thanks a million times for this very clear explanation of classes with this game and all the pages and effort preceeding it !<br>
+                            </div>
+                    </div>
+                    <p>
+                        A full-blown discussion forum is being built for this site, which will allow you once more to add comments and discussion threads. 
+                    </p>
+                
+            </div>
+                
+             
+                
+
+<div class="woMenu3 large-3 columns left">
+            
+    
+        <p class="woMenuTitle">BLOGS BY TOPIC</p>
+        <div class="woMenuBlock">
+            <ul class="woMenuList">
+
+                <li class="woMenuItem"><a href="http://www.wiseowl.co.uk/blog/">Blog home page (251)</a></li>
+                <li class="woMenuItem"><a href="http://www.wiseowl.co.uk/blog/family/general.htm">General (15)</a></li>
+                <li class="woMenuItemCurrent"><a href="http://www.wiseowl.co.uk/blog/family/ms-office.htm">MS Office (134)</a></li>
+                <li class="woMenuItem"><a href="http://www.wiseowl.co.uk/blog/family/sql-server.htm">SQL Server (86)</a></li>
+                <li class="woMenuItem"><a href="http://www.wiseowl.co.uk/blog/family/dot-net-programming.htm">.NET (30)</a></li>
+
+            </ul>
+        </div>
+        <p class="woMenuTitle">BLOGS BY AUTHOR</p>
+        <div class="woMenuBlock">
+            <ul class="woMenuList">
+
+                <li class="woMenuItem"><a href="http://www.wiseowl.co.uk/blog/author/andrewgould.htm">Andrew Gould  (78)</a></li>
+                <li class="woMenuItemCurrent"><a href="http://www.wiseowl.co.uk/blog/author/andybrown.htm">Andy Brown  (157)</a></li>
+                <li class="woMenuItem"><a href="http://www.wiseowl.co.uk/blog/author/davidwakefield.htm">David Wakefield  (3)</a></li>
+                <li class="woMenuItem"><a href="http://www.wiseowl.co.uk/blog/author/jennybrown.htm">Jenny Brown  (1)</a></li>
+                <li class="woMenuItem"><a href="http://www.wiseowl.co.uk/blog/author/michaelallsop.htm">Michael Allsop  (12)</a></li>
+
+            </ul>
+        </div>
+        <p class="woMenuTitle">BLOGS BY YEAR</p>
+        <div class="woMenuBlock">
+            <ul class="woMenuList">
+
+                <li class="woMenuItem"><a href="http://www.wiseowl.co.uk/blog/year/2010.htm">2010 (2)</a></li>
+                <li class="woMenuItem"><a href="http://www.wiseowl.co.uk/blog/year/2011.htm">2011 (76)</a></li>
+                <li class="woMenuItemCurrent"><a href="http://www.wiseowl.co.uk/blog/year/2012.htm">2012 (100)</a></li>
+                <li class="woMenuItem"><a href="http://www.wiseowl.co.uk/blog/year/2013.htm">2013 (45)</a></li>
+                <li class="woMenuItem"><a href="http://www.wiseowl.co.uk/blog/year/2014.htm">2014 (28)</a></li>
+
+            </ul>
+        </div>
+
+</div>
+
+
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+        
+               
+        <div class="footer full-width">
+          <div class="row">
+            <div class="large-12 columns tac">
+              <ul class="social-icons">
+                <li class="icon-facebook"><a href="https://www.facebook.com/pages/Wise-Owl-Business-Solutions/145553635466759">Facebook</a></li>
+                <li class="icon-twitter"><a href="https://twitter.com/wiseowltraining">Twitter</a></li>
+                <li class="icon-youtube"><a href="https://www.youtube.com/user/WiseOwlTutorials">YouTube</a></li>
+                <li class="icon-gplus"><a href="https://plus.google.com/112502917747148301991/">g+</a></li>
+              </ul>
+            </div>
+            <div class="large-12 columns tac">
+        	    <div class="footer-note">
+        		    <p>© Wise Owl Business Solutions Ltd 2014. All Rights Reserved</p>
+        		    <p><a href="http://www.wiseowl.co.uk/site-map.htm">Sitemap</a></p>
+        		    <p><a href="http://www.wiseowl.co.uk/sundry/terms-conditions/">Terms &amp; Conditions</a></p>                    
+        		    <p><a href="http://www.wiseowl.co.uk/sundry/privacy-policy/">Privacy policy</a></p>
+        	    </div>
+            </div>
+          
+          </div>
+        </div>
+        
+        <!--[if gt IE 8]><!-->
+        <script src="./Classes and Class Modules_files/all-and-ie9-up"></script>
+
+        <!--<![endif]-->
+
+        <!--[if lt IE 9]><!-->
+        <script src="./Classes and Class Modules_files/all-and-ie8-down"></script>
+
+        <!--<![endif]-->
+
+        <script src="./Classes and Class Modules_files/all"></script>
+
+
+        <!-- most pages won't have this section in -->
+        
+
+        <!-- Google Analytics -->
+        <script>
+            (function (i, s, o, g, r, a, m) {
+                i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date(); a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+            })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+            ga('create', 'UA-7467174-1', 'auto');
+            ga('send', 'pageview');
+
+        </script>
+
+    
+
+</body></html>

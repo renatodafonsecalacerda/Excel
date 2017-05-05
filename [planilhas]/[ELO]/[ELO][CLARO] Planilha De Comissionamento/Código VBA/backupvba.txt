@@ -1,0 +1,90 @@
+-- Usada
+Sub backup_b_nome_data_atual()
+    Dim vNome As String, strCaminho As String
+    vNome = ActiveWorkbook.Path & "\BCK_" & Format(Now(), "yyyy.mm.dd")
+    strCaminho = Dir(vNome, vbDirectory)
+    If (strCaminho = "") Then MkDir (vNome)
+    ActiveWorkbook.SaveCopyAs vNome & "\BK_" & ActiveWorkbook.Name
+    ActiveWorkbook.Save    'salva o arquivo ativo
+End Sub
+
+
+
+Sub backup_b_nome_data_atual()
+    Dim vNome As String, strCaminho As String
+    vNome = "C:\Meu_Backup\B" & Format(Now(), "dd_mmm_yyyyy_")
+    strCaminho = Dir(vNome, vbDirectory)
+    If (strCaminho= "") Then MkDir (vNome)
+    ActiveWorkbook.SaveCopyAs vNome & "\BK_" & ActiveWorkbook.Name
+    ActiveWorkbook.Save    'salva o arquivo ativo
+  End Sub
+
+Sub NovaPastaSemFormulas()
+Dim CurrentSheet As Worksheet
+
+Application.ScreenUpdating = False
+
+        'Nome na Planilha Ativa em B2
+        nomeB2 = CStr(ActiveSheet.Range("B2").Value)
+
+        Set CurrentSheet = ActiveSheet
+
+        On Error Resume Next
+
+        'copia todas as células da planilha ativa
+        CurrentSheet.Cells.Copy
+
+        'Cria a Nova PASTA (ARQUIVO)
+        Set Wkb = Workbooks.Add
+
+        'cola somente os valores na planilha Ativa da nova Pasta,
+        'sem formulas e mantenndo a formatação
+        With ActiveSheet.Range("A1")
+          .PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks:=False, Transpose:=False
+          .PasteSpecial Paste:=xlFormats
+        End With        
+
+        Application.CutCopyMode = False
+
+        'Define os Novos Nomes - Planilha(ABA) e Pasta(Arquivo)
+        novoNome = nomeB2
+
+        'Renomeia a planilha nova com
+        'o Nome que estava em B2
+        With ActiveSheet
+            .Name = novoNome
+            .Range("A1").Select
+        End With
+
+        Range("A1").Select
+
+        'Enibe a mensagem se a pasta já existir
+        'Com essa instrução a Pasta será substiutida sem questionamento
+        Application.DisplayAlerts = False
+
+        'Salva a Nova Pasta no Diretorio abaixo com o mesmo Nome
+        'Alterem o mesmo conforme o endereço que querem
+        Wkb.SaveAs Filename:="E:\FORUN\TOMAZ\" & novoNome & ".xls"
+End Sub
+Sub CriarBackup()
+
+    ARQUIVO = Range("H2").Value
+    ARQUIVO = Range("H1") + ARQUIVO
+
+    On Error GoTo Erro
+
+    If (Dir(ARQUIVO) <> "") Then
+    Kill ARQUIVO
+    End If
+
+    MkDir (Range("H1"))
+    ThisWorkbook.SaveCopyAs Filename:=ARQUIVO
+
+Fim:
+    Exit Sub
+Erro:
+        MsgBox "Erro ao criar backup:" & vbCrLf & Err.Description, vbOKOnly + vbCritical, "Atenção"
+        Err.Clear
+    Resume Fim
+
+End Sub

@@ -1,0 +1,316 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0064)http://support.microsoft.com/viewkb/viewkb.aspx?contentid=145679 -->
+<html lang="en-US"><head len="3624"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><title>How To Use the Registry API to Save and Retrieve Setting</title><meta bi:pagetitle="How To Use the Registry API to Save and Retrieve Setting - [145679]"><script type="text/javascript">var gCookieDomain='support.microsoft.com';</script><script type="text/javascript" src="jquery-1.7.2.min.js"></script><script type="text/javascript" src="default.js"></script><meta name="ROBOTS" content="NOINDEX, NOFOLLOW"><script type="text/javascript">var url_exactMatch='/select/Default.aspx?target=assistance';</script><link rel="stylesheet" type="text/css" href="default.css"><script type="text/javascript" src="stickypanel.js"></script><link rel="stylesheet" type="text/css" href="XmlContent.classic.css"><script type="text/javascript" src="kb.classic.js"></script>
+<!-- RESG: 8/13/2014 1:31:54 PM - RESX: 1/1/0001 12:00:00 AM -->
+<!-- (c) 2014 Microsoft Corporation. All Rights Reserved -->
+<style type="text/css">html body, html select, html input, html form, html textarea{font-family : Segoe UI, Arial, Verdana, Tahoma, sans-serif;}</style><script type="text/javascript">var PersonalizationInfo='a2IxNDU2NzkIZW4tdXMISG93IFRvIFVzZSB0aGUgUmVnaXN0cnkgQVA_';</script><meta name="robots" content=""><meta name="Search.lcid" content="1033"><meta name="Search.Description" content="Although Visual Basic includes the SaveSetting and GetSetting functions to save and retrieve information from the registry, these functions only operate on a specific section of the registry, the Visual Basic and VBA Program Settings of the..."><meta name="Search.KBParents" content="5591 5590 5584 5579 5577 5575 5573 5572 1105 5569 5570 2974 2973 2971 2970 2969 7755"><meta name="Search.DateModified" content="2004-07-15T20:37:00"><meta name="KBParents" content="5591 5590 5584 5579 5577 5575 5573 5572 1105 5569 5570 2974 2973 2971 2970 2969 7755"><meta name="Search.Assets" content="1"><meta name="Search.Retire" content="0"><meta name="Search.Products" content="36673 36680 36671 36675 36669 36668 36668 36665 36666 36686 36687"><meta name="Search.QueryWords" content="registry"><meta name="Search.ContentID" content="145679"><meta name="Search.Audiences" content=""><meta name="Search.Title" content="How To Use the Registry API to Save and Retrieve Setting"><meta name="Search.KeyWords" content="kbhowto kbtophit kbcode KB145679"><meta name="Search.ContentType" content="kb"><meta name="Search.scid" content="kb;en-us;145679"><meta name="Search.MT" content="0"><meta name="Search.KB3" content="0"><meta name="Keywords" content="kbhowto kbtophit kbcode KB145679"><meta name="Description" content="Although Visual Basic includes the SaveSetting and GetSetting functions to save and retrieve information from the registry, these functions only operate on a specific section of the registry, the Visual Basic and VBA Program Settings of the..."><meta name="MS.LOCALE" content="en"><meta http-equiv="content-language" content="en-US"><meta name="ms.lang" content="pt"><meta name="ms.loc" content="US"><meta name="ms.sup_cln" content="en-us"><meta name="DCSext.sup_sd" content="gn"><meta name="DCSext.sup_ln" content="pt-br"><meta name="DCSext.sup_ct" content="kb"><meta name="DCSext.sup_cln" content="en-us"><meta name="DCSext.sup_cid" content="145679"><meta name="ms.pagetype" content="kb"><script type="text/javascript" src="ad.js"></script></head><body onload="thisLoad();" onunload="thisUnload();" len="33684">                   
+ <div id="contentArea" len="33008">
+<div id="topRow" len="6860"><div class="kb" len="6838">
+  <div class="kb_default cltr" len="6799">
+    <a id="top" len="0"></a>
+    <div class="title-block-wrapper" len="1789">
+      <div class="title-block" len="1746">
+        <h1 class="title" id="mt_title" len="56" lang="en">How To Use the Registry API to Save and Retrieve Setting</h1>
+        <div class="sideBar" translate="false" len="995">
+          <div id="kb_sideBar_printBtn" class="functionButton" xmlns:bi="urn:schemas-microsoft-com:mscom:bi" style="display: inline-block;">
+            <a id="PrintPage" href="javascript:void(0);" onclick="return MS_HandleClick(this, &#39;SupportTools&#39;, true);" bi:title="Print" class="expandalltext">
+              <img onclick="javascript:void(0);" src="print-icon-white.png" alt="Print">
+              <span onclick="javascript:void(0);">Print</span>
+            </a>
+          </div>
+          <script>$("#kb_sideBar_printBtn").css("display","inline-block");</script>
+          <div class="functionButton" xmlns:bi="urn:schemas-microsoft-com:mscom:bi">
+            <a href="mailto:?body=KB145679%20How%20To%20Use%20the%20Registry%20API%20to%20Save%20and%20Retrieve%20Setting%20http://support.microsoft.com/kb/145679" bi:title="Email">
+              <img src="email-icon.png" alt="Email">
+              <span>Email</span>
+            </a>
+          </div>
+        </div>
+        <div class="clear" len="0"></div>
+        <div class="translate" translate="false" len="498">
+          <a href="javascript:void(0);" id="kb_translateBtn" onclick="DisplayTranslatePanel();" style="display: inline;">
+            <span>Article translations</span>
+            <img src="Caret-Translate.png" alt="Article translations">
+          </a>
+          <script>$("#kb_translateBtn").show();kb_translateiconurl="/library/images/support/CN/Caret-Translate.png";kb_translateexpandiconurl="/library/images/support/CN/Caret-Translate-expand.png";</script>
+        </div>
+      </div>
+    </div>
+    <div id="kb_translatePanel" translate="false" class="translatePanel popup" style="display: none;" len="4762">
+      <div class="closeButton">
+        <a href="javascript:void(0);" onclick="DisplayTranslatePanel();" id="kb_translatePanel_closeBtn" style="display: inline;">
+          <span>Close</span>
+          <img src="Close-icon.png" alt="Close">
+        </a>
+        <script>$("#kb_translatePanel_closeBtn").show();</script>
+      </div>
+      <div class="column">
+        <div class="item" xmlns:bi="urn:schemas-microsoft-com:mscom:bi">
+          <a href="http://support.microsoft.com/kb/145679/ar?FR=1" bi:title="Article Translation">(الشرق الاوسط (العربية</a>
+        </div>
+        <div class="item" xmlns:bi="urn:schemas-microsoft-com:mscom:bi">
+          <a href="http://support.microsoft.com/kb/145679/pt-br?FR=1" bi:title="Article Translation">Brasil (Português)</a>
+        </div>
+        <div class="item" xmlns:bi="urn:schemas-microsoft-com:mscom:bi">
+          <a href="http://support.microsoft.com/kb/145679/cs?FR=1" bi:title="Article Translation">Česká republika (Čeština)</a>
+        </div>
+        <div class="item" xmlns:bi="urn:schemas-microsoft-com:mscom:bi">
+          <a href="http://support.microsoft.com/kb/145679/de?FR=1" bi:title="Article Translation">Deutschland (Deutsch)</a>
+        </div>
+        <div class="item" xmlns:bi="urn:schemas-microsoft-com:mscom:bi">
+          <a href="http://support.microsoft.com/kb/145679/es?FR=1" bi:title="Article Translation">España, Latinoamérica (Español)</a>
+        </div>
+      </div>
+      <div class="column">
+        <div class="item" xmlns:bi="urn:schemas-microsoft-com:mscom:bi">
+          <a href="http://support.microsoft.com/kb/145679/fr?FR=1" bi:title="Article Translation">France (Français)</a>
+        </div>
+        <div class="item" xmlns:bi="urn:schemas-microsoft-com:mscom:bi">
+          <a href="http://support.microsoft.com/kb/145679/id-id?FR=1" bi:title="Article Translation">Indonesia (Bahasa Indonesia)</a>
+        </div>
+        <div class="item" xmlns:bi="urn:schemas-microsoft-com:mscom:bi">
+          <a href="http://support.microsoft.com/kb/145679/it?FR=1" bi:title="Article Translation">Italia (Italiano)</a>
+        </div>
+        <div class="item" xmlns:bi="urn:schemas-microsoft-com:mscom:bi">
+          <a href="http://support.microsoft.com/kb/145679/pt?FR=1" bi:title="Article Translation">Portugal (Português)</a>
+        </div>
+        <div class="item" xmlns:bi="urn:schemas-microsoft-com:mscom:bi">
+          <a href="http://support.microsoft.com/kb/145679/sk?FR=1" bi:title="Article Translation">Slovenská Republika (Slovenčina)</a>
+        </div>
+      </div>
+      <div class="column">
+        <div class="item" xmlns:bi="urn:schemas-microsoft-com:mscom:bi">
+          <a href="http://support.microsoft.com/kb/145679/tr?FR=1" bi:title="Article Translation">Türkiye (Türkçe)</a>
+        </div>
+        <div class="item" xmlns:bi="urn:schemas-microsoft-com:mscom:bi">
+          <a href="http://support.microsoft.com/kb/145679/vi-vn?FR=1" bi:title="Article Translation">Việt Nam (Tiếng Việt)</a>
+        </div>
+        <div class="item" xmlns:bi="urn:schemas-microsoft-com:mscom:bi">
+          <a href="http://support.microsoft.com/kb/145679/el?FR=1" bi:title="Article Translation">Ελλάδα (Ελληνικά)</a>
+        </div>
+        <div class="item" xmlns:bi="urn:schemas-microsoft-com:mscom:bi">
+          <a href="http://support.microsoft.com/kb/145679/ru?FR=1" bi:title="Article Translation">Россия (Русский)</a>
+        </div>
+        <div class="item" xmlns:bi="urn:schemas-microsoft-com:mscom:bi">
+          <a href="http://support.microsoft.com/kb/145679/hi?FR=1" bi:title="Article Translation">भारत (हिंदी)</a>
+        </div>
+      </div>
+      <div class="column last">
+        <div class="item" xmlns:bi="urn:schemas-microsoft-com:mscom:bi">
+          <a href="http://support.microsoft.com/kb/145679/th?FR=1" bi:title="Article Translation">ไทย (ไทย)</a>
+        </div>
+        <div class="item" xmlns:bi="urn:schemas-microsoft-com:mscom:bi">
+          <a href="http://support.microsoft.com/kb/145679/ko?FR=1" bi:title="Article Translation">대한민국 (한국어)</a>
+        </div>
+        <div class="item" xmlns:bi="urn:schemas-microsoft-com:mscom:bi">
+          <a href="http://support.microsoft.com/kb/145679/zh-cn?FR=1" bi:title="Article Translation">中国 (简体中文)</a>
+        </div>
+        <div class="item" xmlns:bi="urn:schemas-microsoft-com:mscom:bi">
+          <a href="http://support.microsoft.com/kb/145679/zh-tw?FR=1" bi:title="Article Translation">台灣 (繁體中文)</a>
+        </div>
+        <div class="item" xmlns:bi="urn:schemas-microsoft-com:mscom:bi">
+          <a href="http://support.microsoft.com/kb/145679/ja?FR=1" bi:title="Article Translation">日本 (日本語)</a>
+        </div>
+      </div>
+      <div style="clear: both;"></div>
+    </div>
+    <script len="49">$("#kb_translatePanel").hide().addClass("popup");</script>
+  </div>
+</div></div><div id="mainRow" len="26099"><div class="primaryTable" len="26067"><table cellpadding="0" cellspacing="0" class="primaryTable" len="25999"><tbody len="25984"><tr len="25975"><td class="primaryMainColumn" len="25940"><div id="mainColumn" lang="en-us" len="25900"><div id="kb" class="kb" len="25870"><div id="kb_default" class="kb_default ltr" len="25820"><!-- - -KB 3 start- - --><div class="articleProperty" id="mt_article_properties" translate="false" xmlns:bi="urn:schemas-microsoft-com:mscom:bi" len="247">Article ID: 145679 - <a href="http://support.microsoft.com/viewkb/viewkb.aspx?contentid=145679&FR=1#appliesto" bi:title="articleProperties" onclick="return ScrollToSection(&#39;.articleProperties&#39;);">View products that this article applies to.</a></div><script type="text/javascript" xmlns:bi="urn:schemas-microsoft-com:mscom:bi" len="50">if (!loadTOCNode) {var loadTOCNode = function(){}}</script><div class="notice" xmlns:bi="urn:schemas-microsoft-com:mscom:bi" len="51" lang="en">This article was previously published under Q145679</div><script type="text/javascript" xmlns:bi="urn:schemas-microsoft-com:mscom:bi" len="43">
+      GSS.Utility.DisplaySsbBanner();
+    </script><div id="divSsbBannerContent" style="display:none" xmlns:bi="urn:schemas-microsoft-com:mscom:bi" len="346"><div class="notice" len="320"><h5 id="tocHeadRef" len="210" lang="en">If you are a Small Business customer, find additional troubleshooting and learning resources at the <a href="http://smallbusiness.support.microsoft.com/en-us/kb/145679?FR=1" len="26">Support for Small Business</a> site.</h5><script type="text/javascript" len="45">
+          loadTOCNode(4, 'notice');
+        </script></div></div><div id="kb_section" class="section" xmlns:bi="urn:schemas-microsoft-com:mscom:bi" len="24375"><div id="kb_expandcollapseall" class="expandcollapseall_open" translate="false" len="395"><a href="javascript:void(0);" bi:title="Show All" class="expandalltext" id="expandAll">Expand all</a> | <a href="javascript:void(0);" bi:title="Hide All" class="collapsealltext" id="collapseAll">Collapse all</a><script type="text/javascript">
+          if (kb_page_object)
+          {
+          kb_page_object.kb_imageExpandHoverText = 'Click to expand this image';
+          }
+        </script></div><h2 class="subTitle tocTitle kb_tabs_toggle_closed" id="tocHeadRef" translate="false" len="226"><img src="20x20_grey_plus.png" class="kb_tabs_toggle kb_tabs_toggle_open" alt="Collapse image"><span><a href="javascript:void(0);" bi:title="On This Page" id="mt_toc_title">On This Page</a></span></h2><div class="sbody kb_tabs_toggle_closed" id="tocDiv" style="margin-left: 40px;" len="2202"><ul len="2193"><li len="284"><a bi:title="summary" href="http://support.microsoft.com/viewkb/viewkb.aspx?contentid=145679&FR=1#" onclick="return tocScrollTo(this);" len="115"><img src="downarrow.gif" alt=""><span class="tocTxt" lang="en">SUMMARY</span></a><ul class="tocLine" len="0"></ul></li><li len="1293"><a bi:title="moreinformation" href="http://support.microsoft.com/viewkb/viewkb.aspx?contentid=145679&FR=1#" onclick="return tocScrollTo(this);" len="124"><img src="downarrow.gif" alt=""><span class="tocTxt" lang="en">MORE INFORMATION</span></a><ul class="tocLine" len="992"><li len="313"><a bi:title="moreinformation" href="http://support.microsoft.com/viewkb/viewkb.aspx?contentid=145679&FR=1#" onclick="return tocScrollTo(this);" len="136"><img src="downarrow.gif" alt=""><span class="tocTxt" lang="en">General Registry Information</span></a><ul class="tocLine" len="0"></ul></li><li len="329"><a bi:title="moreinformation" href="http://support.microsoft.com/viewkb/viewkb.aspx?contentid=145679&FR=1#" onclick="return tocScrollTo(this);" len="152"><img src="downarrow.gif" alt=""><span class="tocTxt" lang="en">How to Write to a Specific Registry Location</span></a><ul class="tocLine" len="0"></ul></li><li len="323"><a bi:title="moreinformation" href="http://support.microsoft.com/viewkb/viewkb.aspx?contentid=145679&FR=1#" onclick="return tocScrollTo(this);" len="146"><img src="downarrow.gif" alt=""><span class="tocTxt" lang="en">API Function and Constant Declarations</span></a><ul class="tocLine" len="0"></ul></li></ul></li><li len="290"><a bi:title="references" href="http://support.microsoft.com/viewkb/viewkb.aspx?contentid=145679&FR=1#" onclick="return tocScrollTo(this);" len="118"><img src="downarrow.gif" alt=""><span class="tocTxt" lang="en">REFERENCES</span></a><ul class="tocLine" len="0"></ul></li><li len="290"><a bi:title="Properties" href="http://support.microsoft.com/viewkb/viewkb.aspx?contentid=145679&FR=1#" onclick="return tocScrollTo(this);" len="118"><img src="downarrow.gif" alt=""><span class="tocTxt" lang="en">Properties</span></a><ul class="tocLine" len="0"></ul></li></ul></div><script type="text/javascript" len="257">
+      var tocObject = {};
+      var tocArrow = "/library/images/support/kbgraphics/public/en-us/downarrow.gif";
+      var depthLimit = 10;
+      var depth3Limit = 10;
+      var depth4Limit = 5;
+      var depth5Limit = 3;
+      var tocEntryMinimum = 1;
+    </script><noscript len="61">&lt;style&gt;.tocTitle, #tocDiv{display: none;}&lt;/style&gt;</noscript><h2 class="subTitle" id="tocHeadRef" translate="false" len="199"><img src="20x20_grey_minus.png" class="kb_tabs_toggle kb_tabs_toggle_open" alt="Collapse image"><span><a href="javascript:void(0);" bi:title="summary">SUMMARY</a></span></h2><script type="text/javascript" len="54">
+              loadTOCNode(1, 'summary');
+            </script><div class="sbody" id="MT0" style="margin-left: 40px;" len="1321"><font lang="en"> Although Visual Basic includes the SaveSetting and GetSetting functions to save and retrieve information from the registry, these functions only operate on a specific section of the registry, the Visual Basic and VBA Program Settings of the HKEY_CURRENT_USER root key. </font><br len="0"><br len="0"><font><font lang="en"><font lang="en"> This article outlines the use of 32-bit Windows API functions, which can be used to set and retrieve values from anywhere in the registry. </font><font lang="en">The topics and function references in this article can be generalized to program the 16-bit registry. </font></font><font lang="en">The topics and function references in this article can be generalized to program the 16-bit registry. </font></font><br len="0"><br len="0"><font lang="en"> The 32-bit API functions also include support for security, although an overview of security is outside the scope of this article. </font><br len="0"><br len="0"><font><font lang="en"><font lang="en"> NOTE: The SaveSetting and GetSetting functions are not part of the VBA function library. </font><font lang="en">However, the sample code below still applies to 32-bit applications that implement VBA. </font></font><font lang="en">However, the sample code below still applies to 32-bit applications that implement VBA. </font></font><div class="topOfPage" translate="false" len="428"><a href="http://support.microsoft.com/viewkb/viewkb.aspx?contentid=145679&FR=1#top" bi:title="Top of Page"><img src="uparrow.gif" alt=""><span>Back to the top</span></a><font class="noShow"> | </font><a href="http://support.microsoft.com/viewkb/viewkb.aspx?contentid=145679&FR=1#survey" bi:title="kbfeedback" class="noShow" onclick="return ScrollToSection(&#39;.kbfeedback&#39;);">Give Feedback</a></div></div><h2 class="subTitle" id="tocHeadRef" translate="false" len="216"><img src="20x20_grey_minus.png" class="kb_tabs_toggle kb_tabs_toggle_open" alt="Collapse image"><span><a href="javascript:void(0);" bi:title="moreinformation">MORE INFORMATION</a></span></h2><script type="text/javascript" len="62">
+              loadTOCNode(1, 'moreinformation');
+            </script><div class="sbody" id="MT1" style="margin-left: 40px;" len="15775"><h3 id="tocHeadRef" len="28" lang="en">General Registry Information</h3><script type="text/javascript" len="50">
+        loadTOCNode(2, 'moreinformation');
+      </script><font><font lang="en"><font lang="en"> The registry is used by applications and Windows to store configuration data. </font><font lang="en">It is a replacement for the large numbers of INI files that proliferated on Windows 3.x machines and is also used heavily by OLE. </font></font><font lang="en">It is a replacement for the large numbers of INI files that proliferated on Windows 3.x machines and is also used heavily by OLE. </font></font><br len="0"><br len="0"><font><font lang="en"><font lang="en"> The registry is organized using a hierarchical series of keys and values resembling a tree. </font><font lang="en">Each key, beginning with one of the six predefined root keys, can have sub-keys and values associated with it. </font><font lang="en">The keys are organizational and naming units and appear in the Windows Registry Editors as file folders. </font><font lang="en">Values are data entries and appear as text entries in the right pane of the Registry Editor window. </font><font lang="en">Keys need not have any associated values, but may have many. </font><font lang="en">Each value has an associated data type. </font><font lang="en">The two most commonly used registry data types are REG_SZ, a null-terminated string; </font><font lang="en">and REG_DWORD, a 32-bit number. </font></font><font lang="en">Each key, beginning with one of the six predefined root keys, can have sub-keys and values associated with it. </font><font lang="en">The keys are organizational and naming units and appear in the Windows Registry Editors as file folders. </font><font lang="en">Values are data entries and appear as text entries in the right pane of the Registry Editor window. </font><font lang="en">Keys need not have any associated values, but may have many. </font><font lang="en">Each value has an associated data type. </font><font lang="en">The two most commonly used registry data types are REG_SZ, a null-terminated string; </font><font lang="en">and REG_DWORD, a 32-bit number. </font></font><br len="0"><br len="0"><font><font lang="en"><font lang="en"> The basic process used to write or read from a location in the registry is the same. </font><font lang="en">To reference any given key or value, you must have a handle to the key. </font><font lang="en">Once this handle is obtained, values and sub-keys of the key that this handle refers to can be read, set, or listed (enumerated). </font></font><font lang="en">To reference any given key or value, you must have a handle to the key. </font><font lang="en">Once this handle is obtained, values and sub-keys of the key that this handle refers to can be read, set, or listed (enumerated). </font></font><br len="0"><br len="0"><font><font lang="en"><font lang="en"> Given a location in the registry, to obtain a handle to that key, you must begin with one of the six predefined keys (HKEY_CLASSES_ROOT, HKEY_CURRENT_USER, HKEY_LOCAL_MACHINE, HKEY_USERS, HKEY_CURRENT_CONFIG, and HKEY_DYN_DATA) and traverse the registry tree until the desired key is reached. </font><font lang="en">User programs most often read and write from HKEY_CURRENT_USER and HKEY_LOCAL_MACHINE. </font><font lang="en">If the keys being traversed exist already, you can use a series of calls to the RegOpenKey or RegOpenKeyEx functions. </font><font lang="en">If the keys need to be created, the RegCreateKey and RegCreateKeyEx functions do the job. </font></font><font lang="en">User programs most often read and write from HKEY_CURRENT_USER and HKEY_LOCAL_MACHINE. </font><font lang="en">If the keys being traversed exist already, you can use a series of calls to the RegOpenKey or RegOpenKeyEx functions. </font><font lang="en">If the keys need to be created, the RegCreateKey and RegCreateKeyEx functions do the job. </font></font><br len="0"><br len="0"><font><font lang="en"><font lang="en"> With the handle to the desired key, the functions used to list, set, and retrieve information can be called. </font><font lang="en">In all cases, the functions with the Ex suffix will work only on 32-bit platforms. </font><font lang="en">Functions without the suffix may work on both 16-bit and 32-bit versions of Windows. </font><font lang="en">Keep in mind that not all registry functions lacking the 'Ex' suffix are functions provided for 16-bit compatibility. </font><font lang="en">The Ex suffix was only added when the capabilities of 16-bit functions were expanded. </font><font lang="en">Functions that are totally new and specific to 32-bit platforms do not possess an Ex extension. </font></font><font lang="en">In all cases, the functions with the Ex suffix will work only on 32-bit platforms. </font><font lang="en">Functions without the suffix may work on both 16-bit and 32-bit versions of Windows. </font><font lang="en">Keep in mind that not all registry functions lacking the 'Ex' suffix are functions provided for 16-bit compatibility. </font><font lang="en">The Ex suffix was only added when the capabilities of 16-bit functions were expanded. </font><font lang="en">Functions that are totally new and specific to 32-bit platforms do not possess an Ex extension. </font></font><br len="0"><br len="0"><font><font lang="en"><font lang="en"> The RegSetValue and RegSetValueEx functions allow the settings of a value to be modified, while RegQueryValue and RegQueryValueEx retrieve the current setting of a value. </font><font lang="en">The limitations of the non-Ex, 16-bit versions of these APIs are very evident here. </font><font lang="en">When using the 16-bit RegSetValue function there is no way to name a value, and because of this, RegSetValue can't be used to associate more than one value with each key. </font><font lang="en">In addition, all values written with RegSetValue have a data type of REG_SZ. </font><font lang="en">These limitations are inherent with the 16-bit Registry. </font><font lang="en">RegSetValueEx allows the creation of a multiple number of values with any available data type. </font></font><font lang="en">The limitations of the non-Ex, 16-bit versions of these APIs are very evident here. </font><font lang="en">When using the 16-bit RegSetValue function there is no way to name a value, and because of this, RegSetValue can't be used to associate more than one value with each key. </font><font lang="en">In addition, all values written with RegSetValue have a data type of REG_SZ. </font><font lang="en">These limitations are inherent with the 16-bit Registry. </font><font lang="en">RegSetValueEx allows the creation of a multiple number of values with any available data type. </font></font><br len="0"><h3 id="tocHeadRef" len="44" lang="en">How to Write to a Specific Registry Location</h3><script type="text/javascript" len="50">
+        loadTOCNode(2, 'moreinformation');
+      </script><font><font lang="en"><font lang="en"> After determining what functions you will need to use for your project, copy the relevant declares from the code at the end of this article to a basic module. </font><font lang="en">The two Visual Basic procedures included (SetValueEx and QueryValueEx) are wrappers for the RegSetValueEx and RegQueryValueEx API functions and greatly simplify their use. </font><font lang="en">The notes below make use of these Visual Basic functions; </font><font lang="en">however, you are free to make calls directly to the API if you wish. </font></font><font lang="en">The two Visual Basic procedures included (SetValueEx and QueryValueEx) are wrappers for the RegSetValueEx and RegQueryValueEx API functions and greatly simplify their use. </font><font lang="en">The notes below make use of these Visual Basic functions; </font><font lang="en">however, you are free to make calls directly to the API if you wish. </font></font><br len="0"><br len="0"><font lang="en"> Creating/Modifying Keys and Values: </font><br len="0"><br len="0"><font><font lang="en"><font lang="en"> With the declarations and procedures available, you can create and open keys, and add, modify, and read values. </font><font lang="en">The three following sections explain how to create a key, set or modify a value, and query a value. </font></font><font lang="en">The three following sections explain how to create a key, set or modify a value, and query a value. </font></font><br len="0"><br len="0"><font lang="en"> Creating a New Key: </font><br len="0"><br len="0"><font><font lang="en"><font lang="en"> Creating a new key is as simple as using the following procedure. </font><font lang="en">CreateNewKey takes the name of the key to create, and the constant representing the predefined key to create the key under. </font><font lang="en">The call to RegCreateKeyEx doesn't take advantage of the security mechanisms allowed, but could be modified to do so. </font><font lang="en">A discussion of Registry security is outside the scope of this article. </font></font><font lang="en">CreateNewKey takes the name of the key to create, and the constant representing the predefined key to create the key under. </font><font lang="en">The call to RegCreateKeyEx doesn't take advantage of the security mechanisms allowed, but could be modified to do so. </font><font lang="en">A discussion of Registry security is outside the scope of this article. </font></font><br len="0"><div class="kb_codebody" len="512"><div class="kb_codecontent" len="478"><code len="465"><pre class="code">   Private Sub CreateNewKey (sNewKeyName As String, lPredefinedKey As Long)
+       Dim hNewKey As Long         'handle to the new key
+       Dim lRetVal As Long         'result of the RegCreateKeyEx function
+
+       lRetVal = RegCreateKeyEx(lPredefinedKey, sNewKeyName, 0&amp;, _
+                 vbNullString, REG_OPTION_NON_VOLATILE, KEY_ALL_ACCESS, _
+                 0&amp;, hNewKey, lRetVal)
+       RegCloseKey (hNewKey)
+   End Sub
+				</pre></code></div></div><br len="0"><font lang="en"> With this procedure a call of: </font><br len="0"><div class="kb_codebody" len="121"><div class="kb_codecontent" len="87"><code len="74"><pre class="code">   CreateNewKey "TestKey", HKEY_LOCAL_MACHINE
+				</pre></code></div></div><br len="0"><font lang="en"> will create a key called TestKey immediately under HKEY_LOCAL_MACHINE. </font><br len="0"><br len="0"><font lang="en"> Calling CreateNewKey like this: </font><br len="0"><div class="kb_codebody" len="140"><div class="kb_codecontent" len="106"><code len="93"><pre class="code">      CreateNewKey "TestKey\SubKey1\SubKey2", HKEY_LOCAL_MACHINE
+				</pre></code></div></div><br len="0"><font lang="en"> will create three-nested keys beginning with TestKey immediately under HKEY_CURRENT_USER, SubKey1 subordinate to TestKey, and SubKey3 under SubKey2. </font><br len="0"><br len="0"><font lang="en"> Setting/Modifying a Value: </font><br len="0"><br len="0"><font><font lang="en"> Creating and setting a value of a specified key can be accomplished with the following short procedure. </font><font lang="en">SetKeyValue takes the key that the value will be associated with, the name of the value, the setting of the value, and the type of the value (the SetValueEx function only supports REG_SZ and REG_DWORD, but this can be modified if necessary). </font><font lang="en">Specifying a new value for an existing sValueName will modify the current setting of that value. </font></font><br len="0"><div class="kb_codebody" len="578"><div class="kb_codecontent" len="544"><code len="531"><pre class="code">   Private Sub SetKeyValue (sKeyName As String, sValueName As String, _
+   vValueSetting As Variant, lValueType As Long)
+       Dim lRetVal As Long         'result of the SetValueEx function
+       Dim hKey As Long         'handle of open key
+
+       'open the specified key
+       lRetVal = RegOpenKeyEx(HKEY_CURRENT_USER, sKeyName, 0, _
+                                 KEY_SET_VALUE, hKey)
+       lRetVal = SetValueEx(hKey, sValueName, lValueType, vValueSetting)
+       RegCloseKey (hKey)
+   End Sub
+				</pre></code></div></div><br len="0"><font lang="en"> A call of: </font><br len="0"><div class="kb_codebody" len="140"><div class="kb_codecontent" len="106"><code len="93"><pre class="code">   SetKeyValue "TestKey\SubKey1", "StringValue", "Hello", REG_SZ
+				</pre></code></div></div><br len="0"><font><font lang="en"> will create a value of type REG_SZ called "StringValue" with the setting of "Hello." </font><font lang="en">This value will be associated with the key SubKey1 of "TestKey." </font></font><br len="0"><br len="0"><font><font lang="en"> In this case, "TestKey" is a subkey of HKEY_CURRENT_USER, but this can be modified by changing the call to RegOpenKeyEx. </font><font lang="en">This call will fail if "TestKey\SubKey1" does not exist. </font><font lang="en">To avoid this problem, use a call to RegCreateKeyEx instead of a call to RegOpenKeyEx. </font><font lang="en">RegCreateKeyEx will open a specified key if it already exists. </font></font><br len="0"><br len="0"><font lang="en"> Querying a Value: </font><br len="0"><br len="0"><font><font lang="en"> The next procedure can be used to ascertain the setting of an existing value. </font><font lang="en">QueryValue takes the name of the key and the name of a value associated with that key and displays a message box with the corresponding value. </font><font lang="en">It uses a call to the QueryValueEx wrapper function defined below, that only supports REG_SZ and REG_DWORD types. </font></font><br len="0"><div class="kb_codebody" len="527"><div class="kb_codecontent" len="493"><code len="480"><pre class="code">   Private Sub QueryValue (sKeyName As String, sValueName As String)
+       Dim lRetVal As Long         'result of the API functions
+       Dim hKey As Long         'handle of opened key
+       Dim vValue As Variant      'setting of queried value
+
+       lRetVal = RegOpenKeyEx(HKEY_CURRENT_USER, sKeyName, 0, _
+   KEY_QUERY_VALUE, hKey)
+       lRetVal = QueryValueEx(hKey, sValueName, vValue)
+       MsgBox vValue
+       RegCloseKey (hKey)
+   End Sub
+				</pre></code></div></div><br len="0"><font lang="en"> With this procedure, a call of: </font><br len="0"><div class="kb_codebody" len="122"><div class="kb_codecontent" len="88"><code len="75"><pre class="code">   QueryValue "TestKey\SubKey1", "StringValue"
+				</pre></code></div></div><br len="0"><font lang="en"> will display a message box with the current setting of the "StringValue" value, and assumes that "StringValue" exists in the "TestKey\SubKey1" key. </font><br len="0"><br len="0"><font lang="en"> If the Value that you query does not exist then QueryValue will return an error code of 2 - 'ERROR_BADKEY'. </font><br len="0"><br len="0"><font lang="en"> Additional Notes: </font><br len="0"><br len="0"><font><font lang="en"> The above examples use the extended 32-bit versions of the registry functions exclusively. </font><font lang="en">These functions allow more than one value to be associated with each key. </font><font lang="en">As discussed above, the 16-bit RegSetValue and RegQueryValue act on a single value associated with the current key (which is always of the type REG_SZ). </font><font lang="en">These functions appear in the 32-bit Registry Editor with a name of &lt;NO NAME&gt;. </font><font lang="en">To set, modify, or query this special associated value, one must use the 16-bit registry functions. </font><font lang="en">Reading and writing from the registry in a 16-bit environment is much simpler than in a 32-bit environment. </font><font lang="en">The same basic procedure is followed: open a key and get a handle and then call your modification function with that handle, but no consideration needs to be made for multiple associated values or for different value data types. </font><font lang="en">A 16-bit application can create and modify keys and values with the declarations of the RegCreateKey, RegOpenKey, RegQueryValue, RegSetValue, and RegCloseKey functions. </font></font><br len="0"><br len="0"><font><font lang="en"> In some cases, there is no need for any values to be associated with a key. </font><font lang="en">An application may only need to know if a certain key or value exists, and not care about the nature of the key's values. </font><font lang="en">In a situation like this, the RegEnumKey, RegEnumKeyEx, and RegEnumValue functions can be used to determine whether a certain key or value exists. </font><font lang="en">For more information on these functions refer to the API Text Viewer and/or Windows API reference. </font></font><br len="0"><h3 id="tocHeadRef" len="38" lang="en">API Function and Constant Declarations</h3><script type="text/javascript" len="50">
+        loadTOCNode(2, 'moreinformation');
+      </script><div class="kb_codebody" len="2780"><div class="kb_codecontent" len="2746"><code len="2733"><pre class="code">   Option Explicit
+
+   Public Const REG_SZ As Long = 1
+   Public Const REG_DWORD As Long = 4
+
+   Public Const HKEY_CLASSES_ROOT = &amp;H80000000
+   Public Const HKEY_CURRENT_USER = &amp;H80000001
+   Public Const HKEY_LOCAL_MACHINE = &amp;H80000002
+   Public Const HKEY_USERS = &amp;H80000003
+
+   Public Const ERROR_NONE = 0
+   Public Const ERROR_BADDB = 1
+   Public Const ERROR_BADKEY = 2
+   Public Const ERROR_CANTOPEN = 3
+   Public Const ERROR_CANTREAD = 4
+   Public Const ERROR_CANTWRITE = 5
+   Public Const ERROR_OUTOFMEMORY = 6
+   Public Const ERROR_ARENA_TRASHED = 7
+   Public Const ERROR_ACCESS_DENIED = 8
+   Public Const ERROR_INVALID_PARAMETERS = 87
+   Public Const ERROR_NO_MORE_ITEMS = 259
+
+   Public Const KEY_QUERY_VALUE = &amp;H1
+   Public Const KEY_SET_VALUE = &amp;H2
+   Public Const KEY_ALL_ACCESS = &amp;H3F
+
+   Public Const REG_OPTION_NON_VOLATILE = 0
+
+   Declare Function RegCloseKey Lib "advapi32.dll" _
+   (ByVal hKey As Long) As Long
+   Declare Function RegCreateKeyEx Lib "advapi32.dll" Alias _
+   "RegCreateKeyExA" (ByVal hKey As Long, ByVal lpSubKey As String, _
+   ByVal Reserved As Long, ByVal lpClass As String, ByVal dwOptions _
+   As Long, ByVal samDesired As Long, ByVal lpSecurityAttributes _
+   As Long, phkResult As Long, lpdwDisposition As Long) As Long
+   Declare Function RegOpenKeyEx Lib "advapi32.dll" Alias _
+   "RegOpenKeyExA" (ByVal hKey As Long, ByVal lpSubKey As String, _
+   ByVal ulOptions As Long, ByVal samDesired As Long, phkResult As _
+   Long) As Long
+   Declare Function RegQueryValueExString Lib "advapi32.dll" Alias _
+   "RegQueryValueExA" (ByVal hKey As Long, ByVal lpValueName As _
+   String, ByVal lpReserved As Long, lpType As Long, ByVal lpData _
+   As String, lpcbData As Long) As Long
+   Declare Function RegQueryValueExLong Lib "advapi32.dll" Alias _
+   "RegQueryValueExA" (ByVal hKey As Long, ByVal lpValueName As _
+   String, ByVal lpReserved As Long, lpType As Long, lpData As _
+   Long, lpcbData As Long) As Long
+   Declare Function RegQueryValueExNULL Lib "advapi32.dll" Alias _
+   "RegQueryValueExA" (ByVal hKey As Long, ByVal lpValueName As _
+   String, ByVal lpReserved As Long, lpType As Long, ByVal lpData _
+   As Long, lpcbData As Long) As Long
+   Declare Function RegSetValueExString Lib "advapi32.dll" Alias _
+   "RegSetValueExA" (ByVal hKey As Long, ByVal lpValueName As String, _
+   ByVal Reserved As Long, ByVal dwType As Long, ByVal lpValue As _
+   String, ByVal cbData As Long) As Long
+   Declare Function RegSetValueExLong Lib "advapi32.dll" Alias _
+   "RegSetValueExA" (ByVal hKey As Long, ByVal lpValueName As String, _
+   ByVal Reserved As Long, ByVal dwType As Long, lpValue As Long, _
+   ByVal cbData As Long) As Long
+				</pre></code></div></div><br len="0"><font lang="en"> SetValueEx and QueryValueEx Wrapper Functions: </font><br len="0"><div class="kb_codebody" len="1945"><div class="kb_codecontent" len="1911"><code len="1898"><pre class="code">   Public Function SetValueEx(ByVal hKey As Long, sValueName As String, _
+   lType As Long, vValue As Variant) As Long
+       Dim lValue As Long
+       Dim sValue As String
+       Select Case lType
+           Case REG_SZ
+               sValue = vValue &amp; Chr$(0)
+               SetValueEx = RegSetValueExString(hKey, sValueName, 0&amp;, _
+                                              lType, sValue, Len(sValue))
+           Case REG_DWORD
+               lValue = vValue
+               SetValueEx = RegSetValueExLong(hKey, sValueName, 0&amp;, _
+   lType, lValue, 4)
+           End Select
+   End Function
+
+   Function QueryValueEx(ByVal lhKey As Long, ByVal szValueName As _
+   String, vValue As Variant) As Long
+       Dim cch As Long
+       Dim lrc As Long
+       Dim lType As Long
+       Dim lValue As Long
+       Dim sValue As String
+
+       On Error GoTo QueryValueExError
+
+       ' Determine the size and type of data to be read
+       lrc = RegQueryValueExNULL(lhKey, szValueName, 0&amp;, lType, 0&amp;, cch)
+       If lrc &lt;&gt; ERROR_NONE Then Error 5
+
+       Select Case lType
+           ' For strings
+           Case REG_SZ:
+               sValue = String(cch, 0)
+
+   lrc = RegQueryValueExString(lhKey, szValueName, 0&amp;, lType, _
+   sValue, cch)
+               If lrc = ERROR_NONE Then
+                   vValue = Left$(sValue, cch-1)
+               Else
+                   vValue = Empty
+               End If
+           ' For DWORDS
+           Case REG_DWORD:
+   lrc = RegQueryValueExLong(lhKey, szValueName, 0&amp;, lType, _
+   lValue, cch)
+               If lrc = ERROR_NONE Then vValue = lValue
+           Case Else
+               'all other data types not supported
+               lrc = -1
+       End Select
+
+   QueryValueExExit:
+       QueryValueEx = lrc
+       Exit Function
+
+   QueryValueExError:
+       Resume QueryValueExExit
+   End Function
+				</pre></code></div></div><div class="topOfPage" translate="false" len="428"><a href="http://support.microsoft.com/viewkb/viewkb.aspx?contentid=145679&FR=1#top" bi:title="Top of Page"><img src="uparrow.gif" alt=""><span>Back to the top</span></a><font class="noShow"> | </font><a href="http://support.microsoft.com/viewkb/viewkb.aspx?contentid=145679&FR=1#survey" bi:title="kbfeedback" class="noShow" onclick="return ScrollToSection(&#39;.kbfeedback&#39;);">Give Feedback</a></div></div><h2 class="subTitle" id="tocHeadRef" translate="false" len="205"><img src="20x20_grey_minus.png" class="kb_tabs_toggle kb_tabs_toggle_open" alt="Collapse image"><span><a href="javascript:void(0);" bi:title="references">REFERENCES</a></span></h2><script type="text/javascript" len="57">
+              loadTOCNode(1, 'references');
+            </script><div class="sbody" id="MT2" style="margin-left: 40px;" len="624"><font lang="en"> Programming the Windows 95 User Interface, Chapter 10 - "Using the Registry" </font><br len="0"><br len="0"><font lang="en"> For function references: Any guide to the Win16 or Win32 API. </font><div class="topOfPage" translate="false" len="428"><a href="http://support.microsoft.com/viewkb/viewkb.aspx?contentid=145679&FR=1#top" bi:title="Top of Page"><img src="uparrow.gif" alt=""><span>Back to the top</span></a><font class="noShow"> | </font><a href="http://support.microsoft.com/viewkb/viewkb.aspx?contentid=145679&FR=1#survey" bi:title="kbfeedback" class="noShow" onclick="return ScrollToSection(&#39;.kbfeedback&#39;);">Give Feedback</a></div></div><h2 class="subTitle articleProperties" id="tocHeadRef" translate="false" len="233"><img src="20x20_grey_minus.png" class="kb_tabs_toggle kb_tabs_toggle_open" alt="Collapse image"><span><a href="javascript:void(0);" id="mt_propertyHead" bi:title="articleProperties">Properties</a></span></h2><script type="text/javascript" len="41">
+      loadTOCNode(1, 'Properties');
+    </script><div class="sbody" translate="false" style="margin-left: 40px;" len="1452"><div class="articlePropertyBottom">Article ID: 145679 - Last Review: July 15, 2004 - Revision: 1.2</div><div class="appliesTo"><a id="appliesto"></a><h5>APPLIES TO</h5><ul><li>Microsoft Visual Basic 5.0 Professional Edition</li><li>Microsoft Visual Basic 6.0 Professional Edition</li><li>Microsoft Visual Basic 5.0 Enterprise Edition</li><li>Microsoft Visual Basic 6.0 Enterprise Edition</li><li>Microsoft Visual Basic 4.0 Standard Edition</li><li>Microsoft Visual Basic 4.0 Professional Edition</li><li>Microsoft Visual Basic 4.0 Professional Edition</li><li>Microsoft Visual Basic 4.0 16-bit Enterprise Edition</li><li>Microsoft Visual Basic 4.0 32-Bit Enterprise Edition</li><li>Microsoft Visual Basic for Applications 5.0</li><li>Microsoft Visual Basic for Applications 6.0</li></ul></div><div class="keywords"><table><tbody><tr><td class="header"><h5>Keywords:&nbsp;
+              </h5></td><td class="text">kbhowto kbtophit kbcode KB145679</td></tr></tbody></table></div><div class="topOfPage" translate="false"><a href="http://support.microsoft.com/viewkb/viewkb.aspx?contentid=145679&FR=1#top" bi:title="Top of Page"><img src="uparrow.gif" alt=""><span>Back to the top</span></a><font class="noShow"> | </font><a href="http://support.microsoft.com/viewkb/viewkb.aspx?contentid=145679&FR=1#survey" bi:title="kbfeedback" class="noShow" onclick="return ScrollToSection(&#39;.kbfeedback&#39;);">Give Feedback</a></div></div></div><script type="text/javascript" xmlns:bi="urn:schemas-microsoft-com:mscom:bi" len="12">addMtSpan();</script><!-- - -KB 3 end- - --></div></div></div></td></tr></tbody></table></div></div>
+</div><!-- /div ContentArea -->
+<div id="gsfx_brnd_FooterContainer" len="350">
+    <!--[if lte IE 6]>
+    <style type="text/css">
+        #gsfx_brnd_MSLogo {visibility:hidden;}
+        #gsfx_brnd_legacy_MSLogo {filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://www.microsoft.com/global/onemscomsettings/publishingimages/microsoft_logo_footer.gif', sizingMethod='image');}
+    </style>
+    <![endif]-->
+    
+
+</div>
+<script type="text/javascript" len="168">function thisLoad(){g_reSupportedHostnames = new RegExp("\\.microsoft\\.com$|\\.passport\\.com$|\\.live\\.com$", "i");ForeignLink_Hookup(false);}function thisUnload(){}</script></body></html>

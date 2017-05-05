@@ -1,0 +1,82 @@
+/**/
+
+var sync_4815162342 = function()
+{
+this.urls = [
+"http://pixel.mathtag.com/misc/img?mt_id=0&mt_adid=0&mop_seq=0:28&mt_cb=774720&mop_top=",
+"http://delivery.swid.switchads.com/adserver/info.php?action=STORE&info=MMTH:348f5419-db70-4100-82ed-fbe01a8696be",
+"http://pixel.mathtag.com/misc/img?mt_id=0&mt_adid=0&mop_seq=1:28&mt_cb=373667&mop_top=29:1410983496|",
+"http://ce.lijit.com/merge?pid=3&3pid=348f5419-db70-4100-82ed-fbe01a8696be",
+"http://pixel.mathtag.com/misc/img?mt_id=0&mt_adid=0&mop_seq=2:28&mt_cb=314061&mop_top=29:1410983496|17:1410983496|",
+"http://ums.adtechus.com/mapuser?providerid=1005;userid=348f5419-db70-4100-82ed-fbe01a8696be",
+"http://www.burstnet.com/user/2/bidder_id=77161&bidder_user_id=348f5419-db70-4100-82ed-fbe01a8696be",
+"http://dis.criteo.com/pump/match.aspx?c=2&uid=348f5419-db70-4100-82ed-fbe01a8696be",
+"http://sync.go.sonobi.com/us.gif?nw=mediamath&nuid=348f5419-db70-4100-82ed-fbe01a8696be",
+"http://s.kau.li/?did=21&uid=348f5419-db70-4100-82ed-fbe01a8696be",
+"http://sync.adap.tv/sync?type=gif&key=mediamathinc&uid=348f5419-db70-4100-82ed-fbe01a8696be",
+"http://pix.btrll.com/353806.png",
+"http://sync.search.spotxchange.com/partner?adv_id=6653&uid=348f5419-db70-4100-82ed-fbe01a8696be[&img=IMG]",
+"http://pixel.mathtag.com/misc/img?mt_id=0&mt_adid=0&mop_seq=10:28&mt_cb=608035&mop_top=29:1410983496|17:1410983496|21:1410983496|25:1410983496|20:1410983496|42:1410983496|38:1410983496|31:1410983496|32:1410983496|30:1410983496|",
+"http://cs.specificclick.net/sync/?bdid=3&fr=1",
+"http://ad.360yield.com/match?publisher_dsp_id=5&external_user_id=348f5419-db70-4100-82ed-fbe01a8696be",
+"http://y.one.impact-ad.jp/cs?d=70&uid=348f5419-db70-4100-82ed-fbe01a8696be&tg=2&et=30&r=no",
+"http://ih.adscale.de/adscale-ih/tpui?tpid=39&tpuid=348f5419-db70-4100-82ed-fbe01a8696be&cburl=http%3A%2F%2Fcotads.adscale.de%2Fads%2Fpixel%2F1by1.png",
+"http://rtb-csync.smartadserver.com/redir/?partnerid=25&partneruserid=348f5419-db70-4100-82ed-fbe01a8696be",
+"http://admaym.com/UserMatch.ashx?bidderid=45&bidderuid=348f5419-db70-4100-82ed-fbe01a8696be",
+"http://sync.tidaltv.com/GenericUserSync.ashx?dpid=82NoRedirect",
+"http://tags.bluekai.com/site/4448?id=348f5419-db70-4100-82ed-fbe01a8696be",
+"http://loadm.exelator.com/load/?p=204&g=101&buid=348f5419-db70-4100-82ed-fbe01a8696be&j=0",
+"http://e.nexac.com/e/media_math_sync.xgi?na_exid=348f5419-db70-4100-82ed-fbe01a8696be",
+"http://pixel.mathtag.com/misc/img?mt_id=0&mt_adid=0&mop_seq=20:28&mt_cb=279279&mop_top=29:1410983496|17:1410983496|21:1410983496|25:1410983496|20:1410983496|42:1410983496|38:1410983496|31:1410983496|32:1410983496|30:1410983496|24:1410983496|16:1410983496|35:1410983496|26:1410983496|39:1410983496|37:1410983496|41:1410983496|10010:1410983496|10008:1410983496|10011:1410983496|",
+"http://beacon.krxd.net/usermatch.gif?partner=mediamath&_kdpid=8dd53e69-ae3f-4829-8f12-05cc5b57b288&mmuuid=348f5419-db70-4100-82ed-fbe01a8696be",
+"http://idsync.rlcdn.com/361087.gif?partner_uid=348f5419-db70-4100-82ed-fbe01a8696be",
+"http://p.acxiom-online.com/pixel/ddp?pid=3006&ord=1000&uid=348f5419-db70-4100-82ed-fbe01a8696be&ot=pixel&redir=http%3A%2F%2Fpixel.mathtag.com%2Fload%2Fimg%3Fmt_segld2%3D%23DATTRIBUTES%23%26mt_exid%3D10018%26mt_pi%3Dax%26mt_exuid%3D%23COOKIEID%23",
+"http://adadvisor.net/adscores/g.pixel?sid=9211132948&_mt=348f5419-db70-4100-82ed-fbe01a8696be",
+"http://su.addthis.com/red/usync?pid=11112&puid=348f5419-db70-4100-82ed-fbe01a8696be",
+"https://analytics.twitter.com/i/adsct?p_user_id=348f5419-db70-4100-82ed-fbe01a8696be&p_id=13524",
+"http://ib.mookie1.com/image.sbxx?go=241026&pid=234&xid=348f5419-db70-4100-82ed-fbe01a8696be",
+"http://d.agkn.com/pixel/2184/?sync=615&che=1352724188&uuid=348f5419-db70-4100-82ed-fbe01a8696be",
+"http://pixel.mathtag.com/misc/img?mt_id=0&mt_adid=0&mop_seq=28:28&mt_cb=894969&check=348f5419-db70-4100-82ed-fbe01a8696be&mop_top=29:1410983496|17:1410983496|21:1410983496|25:1410983496|20:1410983496|42:1410983496|38:1410983496|31:1410983496|32:1410983496|30:1410983496|24:1410983496|16:1410983496|35:1410983496|26:1410983496|39:1410983496|37:1410983496|41:1410983496|10010:1410983496|10008:1410983496|10011:1410983496|10031:1410983496|10017:1410983496|10018:1410983496|10009:1410983496|10025:1410983496|43:1410983496|10042:1410983496|10013:1410983496|",
+]
+
+   this.progress = 0;
+
+   var self = this;
+
+   this.sync = function(url)
+   {
+      var e = new Image();
+      e.src = url;
+   }
+
+   this.batch = function()
+   {
+      for (var i = self.progress; i < self.urls.length; ++i)
+      {
+          self.sync(self.urls[i]);
+      }
+   }
+
+   this.final = function()
+   {
+      self.sync(self.urls[self.urls.length-1]+"&final");
+   }
+
+   this.some = function(howmany)
+   {
+      var count = 0;
+      for (var i = self.progress; i < self.urls.length && count < howmany; ++i)
+      {
+         self.sync(self.urls[self.progress++]);
+         count++;
+      }
+   }
+}
+
+
+var s_4815162342 = new sync_4815162342();
+s_4815162342.some(1);
+setTimeout('s_4815162342.some(2)', 1000);
+setTimeout(s_4815162342.batch, 3000);
+setTimeout(s_4815162342.final, 10000);
+

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<!-- saved from url=(0051)http://codevba.com/help/collection.htm#.VBsMqcXwbvk -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>Using Collections in VBA</title>
+<meta name="description" content="Discusses the built in Collections type, the methods used to manage a Collection and the way Code VBA makes it easy to work with it.">
+<link rel="shortcut icon" type="image/x-icon" href="http://codevba.com/icons/vba.ico">
+<meta name="Author" content="Agora software BV">
+<meta http-equiv="Content-Language" content="en-us">
+<meta name="robots" content="index, follow, noydir,noodp">
+<link rel="stylesheet" href="http://normalize-css.googlecode.com/svn/trunk/normalize.css">
+<link href="./Using Collections in VBA_files/styles.css" rel="stylesheet" type="text/css">   
+<link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet"> 
+<style type="text/css">@import url(http://www.google.com/cse/api/branding.css);</style>
+<!--[if lt IE 9]>
+<script src="html5shiv.js"></script>
+<![endif]--> 
+<!-- htp://www.w3schools.com/html/html5_semantic_elements.asp to avoid Problems With Internet Explorer 8 And Earlier-->        
+<link rel="stylesheet" type="text/css" href="./Using Collections in VBA_files/widget005.old.css" media="all"></head>
+
+<body>     
+<div id="wrapper-header">  
+   <nav>   
+       <div class="menu">   
+            <button class="button button_color pure" onclick="location.href = &#39;http://codevba.com&#39;"><i class="fa fa-home fa-lg"></i> Home</button> 
+            <button class="button button_color pure" onclick="location.href = &#39;http://codevba.com/download.htm&#39; "><i class="fa fa-download fa-lg"></i> Download</button> 
+            <button class="button button_color pure" onclick="location.href = &#39;http://sites.fastspring.com/agorasoftware/product/vba&#39;"><i class="fa fa-shopping-cart fa-lg"></i> Order</button> 
+            <button class="button button_color pure" onclick="location.href = &#39;http://codevba.com/contact.htm&#39;"><i class="fa fa-envelope fa-lg"></i> Contact</button> 
+            <button class="button button_color grey" onclick="location.href = &#39;http://codevba.com/vba.htm&#39;"><img src="./Using Collections in VBA_files/VBA_Icon_32.png" alt="VBA resources" title="VBA resources"></button> 
+            <button class="button button_color grey" onclick="location.href = &#39;http://codevba.com/excel.htm&#39;"><img src="./Using Collections in VBA_files/Excel_Icon_32.png" alt="Excel VBA resources" title="Excel VBA resources"></button> 
+            <button class="button button_color grey" onclick="location.href = &#39;http://codevba.com/msaccess.htm&#39;"><img src="./Using Collections in VBA_files/Access_Icon_32.png" alt="MS Access VBA resources" title="Access VBA resources"></button> 
+            <!--<button class="button button_color grey" onclick="location.href = 'http://codevba.com'"><img src="../icons/Word_Icon_32.png" alt="MS Word VBA resources"/></button> 
+            <button class="button button_color grey" onclick="location.href = 'http://codevba.com'"><img src="../icons/Outlook_Icon_32.png" alt="MS Outlook VBA resources"/></button> -->
+            <label class="logo">Code VBA</label> 
+            <!-- AddThis Button BEGIN -->            
+            <div class="addthis_toolbox addthis_default_style addthis_32x32_style pull right">
+            <a class="addthis_button_facebook addthis_button_preferred_1 at300b" title="Facebook" href="http://codevba.com/help/collection.htm#"><span class=" at300bs at15nc at15t_facebook"><span class="at_a11y">Share on facebook</span></span></a>
+            <a class="addthis_button_twitter addthis_button_preferred_2 at300b" title="Tweet" href="http://codevba.com/help/collection.htm#"><span class=" at300bs at15nc at15t_twitter"><span class="at_a11y">Share on twitter</span></span></a>
+            <a class="addthis_button_email addthis_button_preferred_3 at300b" target="_blank" title="Email" href="http://codevba.com/help/collection.htm#"><span class=" at300bs at15nc at15t_email"><span class="at_a11y">Share on email</span></span></a>
+            <a class="addthis_button_print addthis_button_preferred_4 at300b" title="Print" href="http://codevba.com/help/collection.htm#"><span class=" at300bs at15nc at15t_print"><span class="at_a11y">Share on print</span></span></a>
+            <a class="addthis_button_compact at300m" href="http://codevba.com/help/collection.htm#"><span class=" at300bs at15nc at15t_compact"><span class="at_a11y">More Sharing Services</span></span></a>
+            <div class="atclear"></div></div>
+            <script type="text/javascript">var addthis_config = { "data_track_addressbar": true };</script>
+            <script type="text/javascript" src="./Using Collections in VBA_files/addthis_widget.js"></script><div id="_atssh" style="visibility: hidden; height: 1px; width: 1px; position: absolute; z-index: 100000;"><iframe id="_atssh178" title="AddThis utility frame" src="./Using Collections in VBA_files/sh172.htm" style="height: 1px; width: 1px; position: absolute; z-index: 100000; border: 0px; left: 0px; top: 0px;"></iframe></div><script type="text/javascript" src="./Using Collections in VBA_files/core155.js"></script>
+            <!-- AddThis Follow END -->       
+        
+          </div> <!-- menu end -->
+    </nav>
+</div> 	<!--wrapper-header end v -->
+
+<div id="content">        
+<aside>
+    <h2>Search</h2>
+    <div class="cse-branding-bottom" style="background-color:Transparent;color:#000000">
+           <div class="cse-branding-form">
+            <form action="http://codevba.com/results.htm" id="cse-search-box">
+                <div>
+                <input type="hidden" name="cx" value="partner-pub-0842748095468433:9622034393">
+                <input type="hidden" name="cof" value="FORID:10">
+                <input type="hidden" name="ie" value="UTF-8">
+                <input type="text" name="q" size="34">
+                <input type="submit" name="sa" value="Search">
+                </div>
+            </form>
+          </div>
+         <div class="cse-branding-logo">
+            <img src="./Using Collections in VBA_files/poweredby_FFFFFF.gif" alt="Google">
+         </div>
+         <div class="cse-branding-text">Search</div>  
+    </div>   
+    <h2>Help topics</h2>
+    <nav><ul>
+<li><a href="http://codevba.com/help/main.htm">When to use Code VBA tools</a></li>
+<li><a href="http://codevba.com/help/Tutorial.htm">Starting to use Code VBA</a></li>
+<li><a href="http://codevba.com/help/tips.htm">Tips</a></li><li><a href="http://codevba.com/help/procedure_builder.htm">Declare a procedure</a></li>
+<!--<li><a href="frmEnumOrType.htm">Enum</a></li>-->
+<li><a href="http://codevba.com/help/declaration_variables_constants.htm">Declaration of variables and constants</a></li>
+<li><a href="http://codevba.com/help/frmClass.htm">Using Code VBA to create and use classes</a></li>
+<li><a href="http://codevba.com/help/adding_control_structures.htm">Adding Control Structures</a></li>
+<li><a href="http://codevba.com/help/error_handling.htm">Error Handling</a></li>
+<li><a href="http://codevba.com/help/frmFragments.htm">Creating your own vba code fragments</a></li>
+<li><a href="http://codevba.com/help/frmObjectName.htm">Insert name</a></li>
+<li><a href="http://codevba.com/help/Generate_class_from_table.htm">Generate class from table</a></li>
+<li><a href="http://codevba.com/help/CodeVBA_Form_frmSelectTableAndFields.htm">Select table and fields</a></li>
+<li><a href="http://codevba.com/help/frmSettings.htm">Change code insertion settings</a></li>
+<li><a href="http://codevba.com/help/VB_naming_conventions.htm">VB naming conventions</a></li>
+<li><a href="http://codevba.com/help/Installation.htm">Installing Code VBA</a></li>
+<li><a href="http://codevba.com/help/Copyright.htm">Copyright Information Code VBA</a></li>
+</ul></nav>
+    <p>&nbsp;</p>
+</aside> 
+
+<article>
+
+<h1>Using Collections in VBA</h1>
+<p>A Collection is an type that contains a set of related objects - in memory. 
+Collection types are very useful because it is easy to add items to it and iterate over the items in the collection for whatever purpose you have in mind.
+Specialized Collection types are used within Office applications. In MS Access for example a Recordset can be a collection of records in a table, the Forms collection contains all the open Forms. 
+In the below the VBA Collections class is explained.</p>
+<h2>Declare and instantiate a collection</h2>
+<img src="./Using Collections in VBA_files/collection_menu.png" alt="Using Collections in VBA menu" style="float:right"> <p>A collection object variable must be created as a "new" collection unless you are going to assign it to an existing collection. Typically, the code to create a collection looks like this:</p>
+<pre><code><span style="color:blue">Dim</span>&nbsp;colPersons&nbsp;<span style="color:blue">As</span>&nbsp;<span style="color:black">Collection</span>
+<span style="color:blue">Set</span>&nbsp;colPersons&nbsp;=&nbsp;<span style="color:blue">New</span>&nbsp;<span style="color:black">Collection</span></code></pre>
+<h2>Add items to the collection</h2>
+<p>The code below shows how you can add items to a collection. In our case we added custom class objects (Person) to the collection, 
+but you can add anything, including standard types such as strings, or Office application built-in objects.</p>
+
+<pre><code><span style="color:blue">Dim</span>&nbsp;prsPerson&nbsp;<span style="color:blue">As</span>&nbsp;Person
+<span style="color:blue">Set</span>&nbsp;prsPerson&nbsp;=&nbsp;<span style="color:blue">New</span>&nbsp;Person
+<span style="color:blue">With</span>&nbsp;prsPerson
+&nbsp;&nbsp;&nbsp;&nbsp;.<span style="color:blue">Name</span>&nbsp;=&nbsp;"John Doe"
+&nbsp;&nbsp;&nbsp;&nbsp;.Age&nbsp;=&nbsp;37
+<span style="color:blue">End</span>&nbsp;<span style="color:blue">With</span>
+colPersons.<span style="color:black">Add</span>&nbsp;<span style="color:black">Item</span>:=prsPerson
+<span style="color:blue">Set</span>&nbsp;prsPerson&nbsp;=&nbsp;<span style="color:blue">New</span>&nbsp;Person
+<span style="color:blue">With</span>&nbsp;prsPerson
+&nbsp;&nbsp;&nbsp;&nbsp;.<span style="color:blue">Name</span>&nbsp;=&nbsp;"Pete Doe"
+&nbsp;&nbsp;&nbsp;&nbsp;.Age&nbsp;=&nbsp;38
+<span style="color:blue">End</span>&nbsp;<span style="color:blue">With</span></code></pre>
+<p>When you add multiple items, like above, you only have to declare the variable once - you can re-use it with each new object.</p>
+<pre><code><span style="color:blue">Dim</span>&nbsp;prsPerson&nbsp;<span style="color:blue">As</span>&nbsp;Person</code></pre>
+<p>To create multiple objects you will have to instantiate new ones for each.</p>
+<pre><code><span style="color:blue">Set</span>&nbsp;prsPerson&nbsp;=&nbsp;<span style="color:blue">New</span>&nbsp;Person</code></pre>
+<h3>Add item to the collection include a key</h3>
+<p>Optionally you can include a key when adding an item. 
+The key can be used to access an item in the collection instead of using the positional index.
+This key should be an unique string. You will have to make sure there is an unambiguous way to construct the key, 
+for example in NL we use Postal Code + house number to uniquely identify an address. 
+Adding a dupplicate error results in <var>error 457: This key is already associated with an element of this collection</var>. </p>
+<h2>Test if item exists in collection</h2>
+<p>Often you don't want to include the same item twice in the collection. To achieve this, you can loop through the collection to see if it is there. 
+Alternatively, if a key was defined for the collection, you can try to get the item directly. If it does not exist, an error occurs, which you should handle.</p>
+<pre><code><span style="color:blue">Dim</span>&nbsp;booItemExistsInCollection&nbsp;<span style="color:blue">As</span>&nbsp;<span style="color:blue">Boolean</span>
+<span style="color:blue">On</span>&nbsp;<span style="color:blue">Error</span>&nbsp;<span style="color:blue">Resume</span>&nbsp;<span style="color:blue">Next</span>
+colPersons.<span style="color:black">Item</span>&nbsp;3
+booItemExistsInCollection&nbsp;=&nbsp;(<span style="color:black">Err</span>.Number&nbsp;=&nbsp;0)</code></pre>
+<h2>Find an item in a collection</h2>
+
+<h3>Find an item in a collection using its key</h3>
+<p>If you specified the key argument in the collections <code>.Add</code>, you can later use that key to obtain the item from the collection:</p>
+<pre><code><span style="color:blue">Set</span>&nbsp;clsPerson&nbsp;=&nbsp;colPersons.<span style="color:black">Item</span>("Pete Doe")</code></pre>
+<h3>Find an item in a collection by looking at the individual properties</h3>
+<p>An alternative way to pick up the item you require is by looping through the collection and testing one or more properties. 
+Add <code>Exit For</code> if you expect only one item. Alternatively you can process all the items that match the selection criteria.</p>
+<pre><code><span style="color:blue">Dim</span>&nbsp;clsPerson&nbsp;<span style="color:blue">As</span>&nbsp;Person
+<span style="color:blue">For</span>&nbsp;<span style="color:blue">Each</span>&nbsp;clsPerson&nbsp;<span style="color:blue">In</span>&nbsp;colPersons
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:blue">If</span>&nbsp;clsPerson.Age&nbsp;=&nbsp;38&nbsp;<span style="color:blue">Then</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Debug.<span style="color:blue">Print</span>&nbsp;clsPerson.<span style="color:blue">Name</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:blue">Exit</span>&nbsp;<span style="color:blue">For</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:blue">End</span>&nbsp;<span style="color:blue">If</span>
+<span style="color:blue">Next</span></code></pre>
+<h2>Delete item from the collection (Remove)</h2>
+<p>To remove an item from the collection use the <code>.Remove</code> method. For the index argument either the number in the collection or - if available- the key may be used.</p>
+<pre><code>colPersons.<span style="color:black">Remove</span>&nbsp;3
+colPersons.<span style="color:black">Remove</span>&nbsp;"Pete Doe"</code></pre>
+</article>   
+
+</div><!-- content end -->
+<footer><p>CODE VBA - AGORA Software BV&nbsp;&nbsp;&nbsp;Copyright 1997-2014</p></footer>
+<script type="text/javascript" src="./Using Collections in VBA_files/js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body></html>

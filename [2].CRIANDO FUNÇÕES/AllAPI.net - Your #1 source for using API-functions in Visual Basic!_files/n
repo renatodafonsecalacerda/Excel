@@ -1,0 +1,133 @@
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<HTML><HEAD><TITLE>Endian Firewall -  The requested URL could not be retrieved</TITLE>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<style type="text/css" media="screen">
+/* Stylesheet for endian firewall */
+/* Author: Raphael Vallazza */
+
+/* body */
+
+body {
+	margin: 0;
+	padding: 0;
+	padding-top: 3px;
+	background-color: #FFFFFF;
+	font-family: tahoma,verdana,arial,sans-serif;
+	background-repeat: repeat-x;
+	font-size: 11px;
+	color: #444;
+	min-width: 760px;
+}
+
+td {
+	font-family: tahoma,verdana,arial,sans-serif;
+	background-repeat: repeat-x;
+	font-size: 11px;
+	color: #444;
+	min-width: 760px;
+}
+
+h1, h2 {
+	font-size: 16px;
+	font-weight: bold;
+	color: #ca232a;
+	padding: 0;
+	margin: 0;
+	margin-bottom: 10px;
+}
+
+h3 {
+	width: inherit;
+	background-repeat: no-repeat;
+	border-right: 1px solid #ccc;
+	font-size: 10px;
+	font-weight: bold;
+	color: #656565;
+	margin: 0;
+	padding-left: 30px;
+	line-height: 20px;
+	display: block;
+}
+
+h4, h5 {
+	font-size: 12px;
+	font-weight: bold;
+	color: #ca232a;
+}
+
+a {
+    text-decoration: underline;
+    color: #ca232b;
+}
+
+a:hover {
+	text-decoration: underline;
+	color: #000000;
+}
+	    					
+table {
+	border: 1px solid #ccc;
+}
+
+</style>
+
+
+</HEAD>
+<BODY>
+
+<br>
+<br>
+<CENTER>
+
+<table cellpadding="20" bgcolor="#efefef">
+<tr>
+<td align="center">
+<H1>ERROR</H1>
+
+<HR noshade size="1px">
+<P>
+<br>
+<STRONG>
+The requested URL could not be retrieved
+</STRONG><br>
+While trying to retrieve the URL:
+<A HREF="http://m1.nedstatbasic.net/n?id=AAQ50gKe9iyFMFUwTmecKzzVt+Yg"><strong><font color="#000000">http://m1.nedstatbasic.net/n?id=AAQ50gKe9iyFMFUwTmecKzzVt+Yg</font></strong></A>
+</p>
+<br>
+<P>
+The following error was encountered:<br><br>
+Unable to determine IP address from host name for  m1.nedstatbasic.net
+</p>
+
+<P>The dnsserver returned:<br>
+<strong><font color="#000000">Name Error: The domain name does not exist.</font></strong>
+</P>
+
+<P>
+This means that:<br>
+<STRONg><font color="#000000">
+
+ The cache was not able to resolve the hostname presented in the URL. 
+ Check if the address is correct. 
+</STRONG></font>
+</p>
+<P>Your cache administrator is <A HREF="mailto:webmaster">webmaster</A>. </p>
+</td>
+</tr>
+</table>
+
+
+<P><font size=-3><a href="http://www.endian.it/">Endian Firewall</a> - Powered by <a href="http://www.squid-cache.org/" target="_blank">Squid</a></font>
+</center>
+</BODY>
+</HTML>
+
+<BR clear="all">
+<HR noshade size="1px">
+<ADDRESS>
+Generated Fri, 05 Sep 2014 19:50:16 GMT by Firewall-Olimpo (squid/2.6.STABLE22)
+</ADDRESS>
+</BODY></HTML>

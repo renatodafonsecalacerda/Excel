@@ -1,0 +1,668 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0092)http://www.linhadecodigo.com.br/artigo/565/adicionando-referencias-dinamicamente-no-vba.aspx -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>
+	Adicionando referências dinamicamente no VBA
+</title><meta id="PageDescription" name="Description" content="Em muitos projetos VBA, existe a necessidade de adicionar referências para habilitar alguns recursos, por exemplo, manipular um documento do Word ou outro aplicativo do Office, a inserção de um novo controle ou mesmo acessar um Banco de dados via ADO, o que exigiria a referência a uma biblioteca do Microsoft Active Data Objects."><meta id="PageKeywords" name="Keywords" content="Adicionando referências dinamicamente no VBA"><meta name="language" content="pt-br"><link href="https://plus.google.com/100240100485097203227" rel="publisher"><link id="PageCanonical" rel="canonical" href="./Adicionando referências dinamicamente no VBA_files/Adicionando referências dinamicamente no VBA.htm"><link href="http://www.linhadecodigo.com.br/img/favicon.ico" rel="shortcut icon" type="image/x-icon"><link href="./Adicionando referências dinamicamente no VBA_files/master.css" rel="stylesheet" type="text/css"><link href="./Adicionando referências dinamicamente no VBA_files/content.css" rel="stylesheet" type="text/css">
+    <!--[if lte IE 9]> <style>#secondary-nav{width:304px;}</style> <![endif]-->
+    <script async="" src="./Adicionando referências dinamicamente no VBA_files/v2"></script><script id="facebook-jssdk" src="./Adicionando referências dinamicamente no VBA_files/sdk.js"></script><script src="./Adicionando referências dinamicamente no VBA_files/cb=gapi.loaded_1" async=""></script><script src="./Adicionando referências dinamicamente no VBA_files/cb=gapi.loaded_0" async=""></script><script async="" src="./Adicionando referências dinamicamente no VBA_files/d6atTCQpKr4BnYacwqm_6l.js"></script><script id="LR1" type="text/javascript" async="" src="./Adicionando referências dinamicamente no VBA_files/client.js"></script><script type="text/javascript" async="" src="./Adicionando referências dinamicamente no VBA_files/ga.js"></script><script async="" type="text/javascript" src="./Adicionando referências dinamicamente no VBA_files/ti.js"></script><script type="text/javascript" async="" src="./Adicionando referências dinamicamente no VBA_files/plusone.js" gapi_processed="true"></script><script src="./Adicionando referências dinamicamente no VBA_files/jquery.min.js"></script>
+    <script src="./Adicionando referências dinamicamente no VBA_files/widget.js"></script>
+    <script src="./Adicionando referências dinamicamente no VBA_files/widgets.js" type="text/javascript"></script>
+    <script src="./Adicionando referências dinamicamente no VBA_files/jquery.infieldlabel.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        window.___gcfg = { lang: 'pt-BR' };
+        (function() {
+            var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+            po.src = 'https://apis.google.com/js/plusone.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+        })();
+        function showhideLogin(a) {
+            if (a == 1) {
+                document.getElementById("boxloginall").style.display = "none";
+                document.getElementById("bglogin").style.display = "none";
+            } else {
+                document.getElementById("boxloginall").style.display = "block";
+                document.getElementById("bglogin").style.display = "block";
+                document.getElementById("userlogin").focus();
+            }
+        }
+        
+        function loadpromocao() {
+            //alert("teste");
+            $.ajax({
+                type: "GET",
+                url: "/promocao/loadpromo.asp",
+                dataType: "text",
+                success: function(responseText) {
+                    //alert(responseText);
+                    $("#promoview").html(responseText);
+                    setTimeout(function() { loadpromocao() }, 1000);
+                },
+                error: function() {
+                    //alert("Ocorreu um erro, você será redirecionado para a página da promoção");
+                    setTimeout(function() { loadpromocao() }, 1000);
+                }
+            });
+            
+        }
+        function hidepromo(a) {
+            if (a == 0) {
+                document.getElementById("bgplusone").style.display = "none";
+                document.getElementById("boxplusoneall").style.display = "none";
+            } else {
+                $("#promocaobtn").show();
+                document.getElementById("bgplusone").style.display = "block";
+                document.getElementById("boxplusoneall").style.display = "block";
+                document.getElementById("promocaotext").focus();
+            }
+        }
+        $(document).ready(function() {
+            //if (plusone != null && plusone != "") { showhidePlusOne(0); }
+            $(".labelInfield").inFieldLabels();
+
+            $('#top10-widget h3').click(function() {
+                var id = $(this).attr('id');
+                if (id == 'title-articles-widget') {
+                    $('#title-author-widget').addClass('inactive-tab');
+                    $('#title-articles-widget').removeClass('inactive-tab');
+                    $('#author-list').fadeOut(function() {
+                        $('#articles-list').fadeIn();
+                    });
+
+                } else {
+                    $('#title-articles-widget').addClass('inactive-tab');
+                    $('#title-author-widget').removeClass('inactive-tab');
+                    $('#articles-list').fadeOut(function() {
+                        $('#author-list').fadeIn();
+                    });
+                };
+
+            });
+        });
+    </script>
+    <!-- BEGIN Tynt Script -->
+        <script type="text/javascript">
+        if(document.location.protocol=='http:'){
+         var Tynt=Tynt||[];Tynt.push('d6atTCQpKr4BnYacwqm_6l');Tynt.i={"ap":"Read more:"};
+         (function(){var s=document.createElement('script');s.async="async";s.type="text/javascript";s.src='http://tcr.tynt.com/ti.js';var h=document.getElementsByTagName('script')[0];h.parentNode.insertBefore(s,h);})();
+        }
+        </script>
+    <!-- END Tynt Script -->
+    
+<meta property="og:image" content="http://www.linhadecodigo.com.br/img/logoLc.png">
+<link href="./Adicionando referências dinamicamente no VBA_files/shCore.css" rel="stylesheet" type="text/css">
+<link href="./Adicionando referências dinamicamente no VBA_files/shThemeDefault.css" rel="stylesheet" type="text/css">
+<link href="./Adicionando referências dinamicamente no VBA_files/uniform.default.min.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="./Adicionando referências dinamicamente no VBA_files/jquery.uniform.min.js"></script>
+<script type="text/javascript" src="./Adicionando referências dinamicamente no VBA_files/querystring.js"></script>
+<script type="text/javascript" src="./Adicionando referências dinamicamente no VBA_files/jquery.cookie.js"></script>
+<script type="text/javascript" src="./Adicionando referências dinamicamente no VBA_files/shCore.js"></script>
+<script type="text/javascript" src="./Adicionando referências dinamicamente no VBA_files/shBrushJScript.js"></script>
+<script type="text/javascript">var switchTo5x = true;</script><script type="text/javascript" src="./Adicionando referências dinamicamente no VBA_files/buttons.js"></script><script type="text/javascript">stLight.options({ publisher: '7fba8974-a42c-4d1b-96a9-4249a82ce8c0', onhover: false });</script>
+<script type="text/javascript">SyntaxHighlighter.all();</script>	
+<style type="text/css">
+.labelstyle
+{
+	width:368px !important;
+	word-wrap:break-word !important;
+	
+}
+</style>
+<script type="text/javascript">
+    $(function() {
+        $(".formcontent input,.formcontent textarea").uniform();
+    });
+</script>
+
+<script language="JavaScript"> 
+function checkRefresh()
+{
+	
+} 
+</script>
+
+<script language="javascript" type="text/javascript">
+function carrega_sempre(){
+if (document.getElementById("ContentPlaceHolder1_txtComent").value != ""){
+		ContentPlaceHolder1_campoComentario.style.display = "inline";
+        comentar1.style.display = "none";
+        comentar2.style.display = "inline";
+	}
+}
+</script>
+<script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-15063568-1']);
+    _gaq.push(['_setDomainName', '.linhadecodigo.com.br']);
+    _gaq.push(['_trackPageview']);
+	_gaq.push(['_trackPageLoadTime']);
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+</script><script type="text/javascript" src="./Adicionando referências dinamicamente no VBA_files/getAllAppDefault.esi"></script><script type="text/javascript" src="./Adicionando referências dinamicamente no VBA_files/checkOAuth.esi"></script><link rel="stylesheet" type="text/css" href="./Adicionando referências dinamicamente no VBA_files/buttons.87ccd3b7cff586d3f8cd8ce62998d290.css"><script type="text/javascript" src="./Adicionando referências dinamicamente no VBA_files/getCount2.php"></script><script type="text/javascript" src="./Adicionando referências dinamicamente no VBA_files/plusone.js" gapi_processed="true"></script><style type="text/css">.fb_hidden{position:absolute;top:-10000px;z-index:10001}.fb_invisible{display:none}.fb_reset{background:none;border:0;border-spacing:0;color:#000;cursor:auto;direction:ltr;font-family:"lucida grande", tahoma, verdana, arial, sans-serif;font-size:11px;font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}.fb_reset>div{overflow:hidden}.fb_link img{border:none}
+.fb_dialog{background:rgba(82, 82, 82, .7);position:absolute;top:-10000px;z-index:10001}.fb_reset .fb_dialog_legacy{overflow:visible}.fb_dialog_advanced{padding:10px;-moz-border-radius:8px;-webkit-border-radius:8px;border-radius:8px}.fb_dialog_content{background:#fff;color:#333}.fb_dialog_close_icon{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;_background-image:url(http://static.ak.fbcdn.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif);cursor:pointer;display:block;height:15px;position:absolute;right:18px;top:17px;width:15px}.fb_dialog_mobile .fb_dialog_close_icon{top:5px;left:5px;right:auto}.fb_dialog_padding{background-color:transparent;position:absolute;width:1px;z-index:-1}.fb_dialog_close_icon:hover{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent;_background-image:url(http://static.ak.fbcdn.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif)}.fb_dialog_close_icon:active{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent;_background-image:url(http://static.ak.fbcdn.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif)}.fb_dialog_loader{background-color:#f2f2f2;border:1px solid #606060;font-size:24px;padding:20px}.fb_dialog_top_left,.fb_dialog_top_right,.fb_dialog_bottom_left,.fb_dialog_bottom_right{height:10px;width:10px;overflow:hidden;position:absolute}.fb_dialog_top_left{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 0;left:-10px;top:-10px}.fb_dialog_top_right{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -10px;right:-10px;top:-10px}.fb_dialog_bottom_left{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -20px;bottom:-10px;left:-10px}.fb_dialog_bottom_right{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -30px;right:-10px;bottom:-10px}.fb_dialog_vert_left,.fb_dialog_vert_right,.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{position:absolute;background:#525252;filter:alpha(opacity=70);opacity:.7}.fb_dialog_vert_left,.fb_dialog_vert_right{width:10px;height:100%}.fb_dialog_vert_left{margin-left:-10px}.fb_dialog_vert_right{right:0;margin-right:-10px}.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{width:100%;height:10px}.fb_dialog_horiz_top{margin-top:-10px}.fb_dialog_horiz_bottom{bottom:0;margin-bottom:-10px}.fb_dialog_iframe{line-height:0}.fb_dialog_content .dialog_title{background:#6d84b4;border:1px solid #3b5998;color:#fff;font-size:14px;font-weight:bold;margin:0}.fb_dialog_content .dialog_title>span{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yd/r/Cou7n-nqK52.gif) no-repeat 5px 50%;float:left;padding:5px 0 7px 26px}body.fb_hidden{-webkit-transform:none;height:100%;margin:0;overflow:visible;position:absolute;top:-10000px;left:0;width:100%}.fb_dialog.fb_dialog_mobile.loading{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ya/r/3rhSv5V8j3o.gif) white no-repeat 50% 50%;min-height:100%;min-width:100%;overflow:hidden;position:absolute;top:0;z-index:10001}.fb_dialog.fb_dialog_mobile.loading.centered{max-height:590px;min-height:590px;max-width:500px;min-width:500px}#fb-root #fb_dialog_ipad_overlay{background:rgba(0, 0, 0, .45);position:absolute;left:0;top:0;width:100%;min-height:100%;z-index:10000}#fb-root #fb_dialog_ipad_overlay.hidden{display:none}.fb_dialog.fb_dialog_mobile.loading iframe{visibility:hidden}.fb_dialog_content .dialog_header{-webkit-box-shadow:white 0 1px 1px -1px inset;background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#738ABA), to(#2C4987));border-bottom:1px solid;border-color:#1d4088;color:#fff;font:14px Helvetica, sans-serif;font-weight:bold;text-overflow:ellipsis;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0;vertical-align:middle;white-space:nowrap}.fb_dialog_content .dialog_header table{-webkit-font-smoothing:subpixel-antialiased;height:43px;width:100%}.fb_dialog_content .dialog_header td.header_left{font-size:12px;padding-left:5px;vertical-align:middle;width:60px}.fb_dialog_content .dialog_header td.header_right{font-size:12px;padding-right:5px;vertical-align:middle;width:60px}.fb_dialog_content .touchable_button{background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#4966A6), color-stop(.5, #355492), to(#2A4887));border:1px solid #29447e;-webkit-background-clip:padding-box;-webkit-border-radius:3px;-webkit-box-shadow:rgba(0, 0, 0, .117188) 0 1px 1px inset, rgba(255, 255, 255, .167969) 0 1px 0;display:inline-block;margin-top:3px;max-width:85px;line-height:18px;padding:4px 12px;position:relative}.fb_dialog_content .dialog_header .touchable_button input{border:none;background:none;color:#fff;font:12px Helvetica, sans-serif;font-weight:bold;margin:2px -12px;padding:2px 6px 3px 6px;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog_content .dialog_header .header_center{color:#fff;font-size:16px;font-weight:bold;line-height:18px;text-align:center;vertical-align:middle}.fb_dialog_content .dialog_content{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/y9/r/jKEcVPZFk-2.gif) no-repeat 50% 50%;border:1px solid #555;border-bottom:0;border-top:0;height:150px}.fb_dialog_content .dialog_footer{background:#f2f2f2;border:1px solid #555;border-top-color:#ccc;height:40px}#fb_dialog_loader_close{float:left}.fb_dialog.fb_dialog_mobile .fb_dialog_close_button{text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog.fb_dialog_mobile .fb_dialog_close_icon{visibility:hidden}
+.fb_iframe_widget{display:inline-block;position:relative}.fb_iframe_widget span{display:inline-block;position:relative;text-align:justify}.fb_iframe_widget iframe{position:absolute}.fb_iframe_widget_lift{z-index:1}.fb_hide_iframes iframe{position:relative;left:-10000px}.fb_iframe_widget_loader{position:relative;display:inline-block}.fb_iframe_widget_fluid{display:inline}.fb_iframe_widget_fluid span{width:100%}.fb_iframe_widget_loader iframe{min-height:32px;z-index:2;zoom:1}.fb_iframe_widget_loader .FB_Loader{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/y9/r/jKEcVPZFk-2.gif) no-repeat;height:32px;width:32px;margin-left:-16px;position:absolute;left:50%;z-index:4}
+.fbpluginrecommendationsbarleft,.fbpluginrecommendationsbarright{position:fixed !important;bottom:0;z-index:999}.fbpluginrecommendationsbarleft{left:10px}.fbpluginrecommendationsbarright{right:10px}</style></head>
+<body onload="ErrorCaptcha(); carrega_sempre(); cookie_Onload();" data-twttr-rendered="true"><iframe id="twttrHubFrameSecure" allowtransparency="true" frameborder="0" scrolling="no" tabindex="0" name="twttrHubFrameSecure" src="./Adicionando referências dinamicamente no VBA_files/hub(1).htm" style="position: absolute; top: -9999em; width: 10px; height: 10px;"></iframe><iframe id="twttrHubFrame" allowtransparency="true" frameborder="0" scrolling="no" tabindex="0" name="twttrHubFrame" src="./Adicionando referências dinamicamente no VBA_files/hub.htm" style="position: absolute; top: -9999em; width: 10px; height: 10px;"></iframe>
+
+<div id="bglogin" onclick="showhideLogin(1)"></div>
+<div id="boxloginall"><div id="boxlogin1"></div><div id="boxlogin2">
+<form method="post">
+<a href="javascript:;" onclick="showhideLogin(1)" class="close fr">fechar(x)</a><h3>FAÇA LOGIN</h3>
+<label><span>Login</span>
+<input type="text" id="userlogin" name="userlogin" maxlength="50" value=""></label><br><br>
+<label><span>Senha</span><span><a href="http://www.linhadecodigo.com.br/lembrarcadastro.aspx" class="close remember fr">Esqueceu sua senha</a></span>
+<input type="password" name="usersenha" maxlength="100" value=""></label>
+<span id="WUC_Topo1_msgLoginFail" class="aspNetDisabled fl"></span>
+<input type="submit" name="login" value="Login" class="btn2 fr mg-t"><br><br><br>
+<hr class="content-spacer">
+<label><span>Ainda não tem conta no Linha de Código?</span><br>
+<a href="http://www.linhadecodigo.com.br/cadastro.aspx" class="btn2 fl mg-t">Cadastre-se</a></label>
+</form>
+</div></div>
+
+
+
+<div>
+  <div id="top-bar">
+    <div class="limit social-top"> <iframe id="twitter-widget-0" scrolling="no" frameborder="0" allowtransparency="true" src="./Adicionando referências dinamicamente no VBA_files/follow_button.1407888064.htm" class="twitter-follow-button twitter-follow-button" title="Twitter Follow Button" data-twttr-rendered="true" style="width: 259px; height: 20px;"></iframe> 
+      <!--<iframe src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.linhadecodigo.com.br&amp;layout=button_count&amp;show_faces=false&amp; width=95;action=like&amp;font=verdana&amp;colorscheme=light&amp;" height="21" width="95" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width=95px; height:21px;" allowTransparency="true"></iframe>-->
+      <div id="___plusone_0" style="text-indent: 0px; margin: 0px; padding: 0px; border-style: none; float: none; line-height: normal; font-size: 1px; vertical-align: baseline; display: inline-block; width: 90px; height: 20px; background: transparent;"><iframe frameborder="0" hspace="0" marginheight="0" marginwidth="0" scrolling="no" style="position: static; top: 0px; width: 90px; margin: 0px; border-style: none; left: 0px; visibility: visible; height: 20px;" tabindex="0" vspace="0" width="100%" id="I0_1408374014514" name="I0_1408374014514" src="./Adicionando referências dinamicamente no VBA_files/fastbutton(2).htm" data-gapiattached="true" title="+1"></iframe></div>
+      <a href="http://www.linhadecodigo.com.br/feed/" rel="nofollow"><img src="./Adicionando referências dinamicamente no VBA_files/rss.gif" alt="Rss Geral"></a> </div>
+    <!--social-top--> 
+  </div>
+  <!--top-bar-->
+  <div id="header-content" class="clearfix">
+    <div class="limit">
+      
+      <a href="http://www.linhadecodigo.com.br/"><img src="./Adicionando referências dinamicamente no VBA_files/logolc.png" border="0" alt="Linha de Código" title="Linha de Código"></a>
+      <div id="login-search">
+        <form id="search-form" class="clearfix" action="http://www.linhadecodigo.com.br/busca.aspx">
+          <p>
+            <label class="labelInfield" for="pesquisar">Pesquisar</label>
+            <input type="text" id="pesquisar" name="w">
+          </p>
+          <input type="submit">
+        </form>
+        <div id="login-link"> <span id="WUC_Topo1_lblLogin"><a href="javascript:;" onclick="showhideLogin(0);">Log In / Cadastre-se</a></span> </div>
+        <!--login-link--> 
+      </div>
+      
+      <!--login-search--> 
+    </div>
+    <!--limit--> 
+  </div>
+  <!--header-content-->
+  <div id="nav-top" class="clearfix">
+    <div class="limit">
+      <ul id="main-nav" class="nav-container">
+        <li class="top-lvl"><a href="http://www.linhadecodigo.com.br/" class="link-top-lvl">Home</a></li>
+        <li class="top-lvl"><a href="javascript:;" class="link-top-lvl">Desenvolvimento</a>
+            <div class="sub-nav single-collum">
+            <ul>
+				<li><a href="http://www.linhadecodigo.com.br/php.aspx">PHP</a></li>
+				<li><a href="http://www.linhadecodigo.com.br/cms.aspx">CMS</a></li>
+				<li><a href="http://www.linhadecodigo.com.br/python.aspx">Python</a></li>
+				<li><a href="http://www.linhadecodigo.com.br/java.aspx">Java</a></li>
+				<li><a href="http://www.linhadecodigo.com.br/aspnet.aspx">.NET</a></li>
+            </ul></div>
+        </li>
+        <li class="top-lvl"><a href="javascript:;" class="link-top-lvl">Front-End</a>
+          <div class="sub-nav single-collum">
+            <ul>
+			  <li><a href="http://www.linhadecodigo.com.br/html.aspx">HTML</a></li>
+			  <li><a href="http://www.linhadecodigo.com.br/css.aspx">CSS</a></li>
+			  <li><a href="http://www.linhadecodigo.com.br/javascript.aspx">Javascript</a></li>
+              </ul>
+          </div>
+        </li>
+		
+		<li class="top-lvl"><a href="http://www.linhadecodigo.com.br/bancodedados.aspx" class="link-top-lvl">Banco de Dados</a></li>
+		
+			<div class="sub-nav single-collum">
+				<ul>
+				<li><a href="http://www.linhadecodigo.com.br/artigo/3594/apostila-html-guia-para-iniciantes.aspx"><pre>Apostila HTML<br>Guia para Iniciantes</pre></a></li> 
+				</ul>
+			</div>
+		 
+		<li class="top-lvl"><a href="javascript:;" class="link-top-lvl">Em Destaque</a>
+        <div class="sub-nav single-collum">
+			<ul>
+			<li><a href="http://www.linhadecodigo.com.br/artigo/3593/alert-em-javascript.aspx">Alert em JavaScript</a></li> 
+			<li><a href="http://www.linhadecodigo.com.br/artigo/3604/calendario-em-jquery-criando-calendarios-com-datepicker.aspx">Crie calendários usando o DatePicker do jQuery</a></li>
+			<li><a href="http://www.linhadecodigo.com.br/artigo/3474/menu-em-css-menu-dropdown-horizontal-com-html5-e-css3.aspx">Como criar um menu em CSS</a></li>
+			<li><a href="http://www.linhadecodigo.com.br/artigo/3602/crop-jquery-recortando-imagens-com-jcrop.aspx">Faça crop em imagens com jQuery</a></li>
+			<li><a href="http://www.linhadecodigo.com.br/artigo/3600/botao-com-css-3-como-criar-um-botao-sem-imagens.aspx">Como criar botões com CSS3</a></li>
+			</ul>
+		</div>
+		</li> 
+       	<li class="top-lvl"><a href="http://www.linhadecodigo.com.br/todosartigos.aspx" class="link-top-lvl">Todos</a>
+       </li> 
+       <!--main-nav-->
+      <ul id="secondary-nav" class="nav-container">
+        
+        <li class="top-lvl"><a href="http://www.linhadecodigo.com.br/publique.aspx" class="link-top-lvl">Publique</a></li>
+      </ul>
+    </ul></div>
+  </div>
+  <!--nav-top--> 
+  
+</div>
+    <span id="form1">
+    <div class="limit">
+        
+
+<div class="main-content">
+    <span id="ContentPlaceHolder1_lblNomeCanal" class="title-page"><h3>Desenvolvimento<span> - <a href="http://www.linhadecodigo.com.br/vba.aspx" style="font-size: 20px;">Office</a></span><a href="http://www.linhadecodigo.com.br/rssartigosautor.aspx?autor=126" target="_blank" class="fr"><img src="./Adicionando referências dinamicamente no VBA_files/rss.gif" width="20" height="20" border="0" title="Feed de artigos deste autor" alt="Feed de artigos deste autor"></a></h3></span>
+    <div style="width:658px;word-wrap:break-word;">
+    <span id="ContentPlaceHolder1_lblTitulo"><h1>Adicionando referências dinamicamente no VBA<br><p>Em muitos projetos VBA, existe a necessidade de adicionar referências para habilitar alguns recursos, por exemplo, manipular um documento do Word ou outro aplicativo do Office, a inserção de um novo controle ou mesmo acessar um Banco de dados via ADO, o que exigiria a referência a uma biblioteca do Microsoft Active Data Objects.</p><span>por <a href="http://www.linhadecodigo.com.br/colaborador.aspx?id=126">Tomás Vásquez</a></span></h1></span>
+    <span id="ContentPlaceHolder1_lblSocialShareArticle"><div id="social-share-article"><span class="st_facebook_hcount" displaytext="Facebook" st_image="http://www.linhadecodigo.com.br/img/logoLc.png" st_processed="yes"><span style="text-decoration:none;color:#000000;display:inline-block;cursor:pointer;" class="stButton"><span><span class="stMainServices st-facebook-counter" style="background-image: url(http://w.sharethis.com/images/facebook_counter.png);">&nbsp;<img src="./Adicionando referências dinamicamente no VBA_files/check-big.png" style="position: absolute; top: -7px; right: -7px; width: 19px; height: 19px; max-width: 19px; max-height: 19px; display: none;"></span><span class="stArrow"><span class="stButton_gradient stHBubble" style="display: inline-block;"><span class="stBubble_hcount">71</span></span></span></span></span></span><span class="st_twitter_hcount" displaytext="Tweet" st_image="http://www.linhadecodigo.com.br/img/logoLc.png" st_processed="yes"><span style="text-decoration:none;color:#000000;display:inline-block;cursor:pointer;" class="stButton"><span><span class="stMainServices st-twitter-counter" style="background-image: url(http://w.sharethis.com/images/twitter_counter.png);">&nbsp;<img src="./Adicionando referências dinamicamente no VBA_files/check-big.png" style="position: absolute; top: -7px; right: -7px; width: 19px; height: 19px; max-width: 19px; max-height: 19px; display: none;"></span><span class="stArrow"><span class="stButton_gradient stHBubble" style="display: inline-block;"><span class="stBubble_hcount">20</span></span></span></span></span></span><span class="st_linkedin_hcount" displaytext="LinkedIn" st_image="http://www.linhadecodigo.com.br/img/logoLc.png" st_processed="yes"><span style="text-decoration:none;color:#000000;display:inline-block;cursor:pointer;" class="stButton"><span><span class="stMainServices st-linkedin-counter" style="background-image: url(http://w.sharethis.com/images/linkedin_counter.png);">&nbsp;<img src="./Adicionando referências dinamicamente no VBA_files/check-big.png" style="position: absolute; top: -7px; right: -7px; width: 19px; height: 19px; max-width: 19px; max-height: 19px; display: none;"></span><span class="stArrow"><span class="stButton_gradient stHBubble" style="display: inline-block;"><span class="stBubble_hcount">2</span></span></span></span></span></span><span class="st_email_hcount" displaytext="Email" st_image="http://www.linhadecodigo.com.br/img/logoLc.png" st_processed="yes"><span style="text-decoration:none;color:#000000;display:inline-block;cursor:pointer;" class="stButton"><span><span class="stMainServices st-email-counter" style="background-image: url(http://w.sharethis.com/images/email_counter.png);">&nbsp;<img src="./Adicionando referências dinamicamente no VBA_files/check-big.png" style="position: absolute; top: -7px; right: -7px; width: 19px; height: 19px; max-width: 19px; max-height: 19px; display: none;"></span><span class="stArrow"><span class="stButton_gradient stHBubble" style="display: inline-block;"><span class="stBubble_hcount">4</span></span></span></span></span></span><span class="st_plusone_hcount" st_image="http://www.linhadecodigo.com.br/img/logoLc.png" style="margin-left:5px;" st_processed="yes"><div style="display:inline-block;overflow:hidden;line-height:0px;position:relative;vertical-align:middle;bottom:0px;width:75px; height:21px;">&nbsp;<div id="___plusone_1" style="text-indent: 0px; margin: 0px; padding: 0px; border-style: none; float: none; line-height: normal; font-size: 1px; vertical-align: baseline; display: inline-block; width: 90px; height: 20px; background: transparent;"><iframe frameborder="0" hspace="0" marginheight="0" marginwidth="0" scrolling="no" style="position: static; top: 0px; width: 90px; margin: 0px; border-style: none; left: 0px; visibility: visible; height: 20px;" tabindex="0" vspace="0" width="100%" id="I0_1408374018543" name="I0_1408374018543" src="./Adicionando referências dinamicamente no VBA_files/fastbutton.htm" data-gapiattached="true" title="+1"></iframe></div></div></span><span class="st_fblike_hcount" st_image="http://www.linhadecodigo.com.br/img/logoLc.png" style="margin-left:-5px;" st_processed="yes"><span style="text-decoration:none;color:#000000;display:inline-block;cursor:pointer;position:relative;margin:3px 3px 0;padding:0px;font-size:11px;line-height:0px;vertical-align:bottom;overflow:visible;"><div data-action="" data-send="false" data-layout="button_count" data-show-faces="false" class="fb-like fb_iframe_widget" data-href="http://www.linhadecodigo.com.br/artigo/565/adicionando-referencias-dinamicamente-no-vba.aspx" fb-xfbml-state="rendered" fb-iframe-plugin-query="app_id=&amp;href=http%3A%2F%2Fwww.linhadecodigo.com.br%2Fartigo%2F565%2Fadicionando-referencias-dinamicamente-no-vba.aspx&amp;layout=button_count&amp;locale=en_US&amp;sdk=joey&amp;send=false&amp;show_faces=false"><span style="vertical-align: bottom; width: 76px; height: 20px;"><iframe name="f395bdbcec" width="1000px" height="1000px" frameborder="0" allowtransparency="true" scrolling="no" title="fb:like Facebook Social Plugin" src="./Adicionando referências dinamicamente no VBA_files/like.htm" style="border: none; visibility: visible; width: 76px; height: 20px;" class=""></iframe></span></div></span></span></div><br><br></span>
+    <span id="ContentPlaceHolder1_lblTexto" class="artigo"><div class="article"><b>Requisitos do sistema</b>
+<p>
+</p><ul>
+<li>Microsoft Office (uma versão disponível que suporte o Visual Basic for Applications)
+</li></ul>
+<p>
+<b>Introdução</b>
+</p><p>
+Em muitos projetos VBA, existe a necessidade de adicionar referências para habilitar alguns recursos, por exemplo, manipular um documento do Word ou outro aplicativo do Office, a inserção de um novo controle ou mesmo acessar um Banco de dados via ADO, o que exigiria a referência a uma biblioteca do Microsoft Active Data Objects.
+</p><p>
+Quando há alguma incompatibilidade de versões ou mesmo a ausência dessas referências que geralmente são componentes .DLL ou .OCX, o aplicativo não funcionará e resultará em erro acusando que a biblioteca está ausente. Porém, é possível adicionar, retirar ou mesmo verificar essas referências via código VBA. Isso possibilita contornar uma série de problemas, desde a ausência de um software na máquina cliente até mesmo uma adaptação à versão de um aplicativo.
+</p><p>
+Para que este recurso funcione, é necessário entender alguns conceitos que serão explicados a seguir.
+</p><p>
+<b>Confiança sobre a manipulação</b>
+</p><p>
+É preciso permitir que esse tipo de manipulação seja feita. Isso ocorre porque o VBA é concebido para manipular objetos dos aplicativos em que ele está hospedado, por exemplo, o Excel, Word ou o Corel Draw. No nível padrão de segurança, a manipulações convencionais são permitidas, mas é possível manipular o VBA através do próprio VBA para permitir ações como criação de formulários (UserForms), módulos, controles entre outras rotinas que normalmente fazemos, até mesmo cria referências que é o assunto deste artigo.
+</p><p>
+<b>Delegando confiança</b>
+
+Por padrão esse tipo de manipulação não é permitido. Para acioná-la, é preciso ir à opções de segurança de Macro no aplicativos que encontra-se geralmente no menu Ferramentas-&gt;Macro-&gt;Segurança. Ao acionar esta opção, surgirá a seguinte caixa de diálogo:
+</p><p>
+<img src="./Adicionando referências dinamicamente no VBA_files/refDinVBA_1.jpg" width="326" height="321" alt="" border="0">
+<br>
+<font size="1">Figura 1: Opções de Segurança de Macro</font>
+</p><p>
+Acione a aba <b>Fontes confiáveis</b> e veja logo abaixo a opção <b>Confiar no acesso ao projeto do Visual Basic</b>. Por padrão está desabilitada. Habilite-a para poder prosseguir com os exemplos e clique em OK.
+</p><p>
+<b>Testando o aplicativo</b>
+</p><p>
+Para tornar o teste idôneo, é interessante ter disponível mais de uma versão do Office. Para este exemplo, vamos construir o aplicativo em Excel-VBA em que criaremos um novo arquivo do Word.
+</p><p>
+Abra o Excel e acione o editor do VBA pelo menu Ferramentas-&gt;Macros-&gt;Editor do Visual Basic  ou com o atalho Alt+F11. No VBA, acione ao menu Ferramentas-&gt;Referências para visualizar as referências existentes e disponíveis. Procure pela referência <b>Microsoft Word XX.0 Object Library</b> onde XX é o numero da versão do Office instalada em seu computador:
+</p><p>
+</p><table border="1" cellspacing="0" cellpadding="5" bordercolor="#000000" class="link_12">
+<tbody><tr bgcolor="#C0C0C0">
+	<td valign="top"><b>Office</b></td>
+	<td valign="top"><b>Nº Versão</b></td>
+</tr>
+<tr>
+	<td valign="top">Microsoft Office 97 </td>
+	<td valign="top">8.0</td>
+</tr>
+<tr>
+	<td valign="top">Microsoft Office 2000</td>
+	<td valign="top">9.0</td>
+</tr>
+<tr>
+	<td valign="top">Microsoft Office XP</td>
+	<td valign="top">10.0</td>
+</tr>
+<tr>
+	<td valign="top">Microsoft Office 2003</td>
+	<td valign="top">11.0</td>
+</tr>
+</tbody></table>
+<p>
+Como estou fazendo este aplicativo na versão 2003, a biblioteca referenciada será a <b>Microsoft Word 11.0 Object Library</b> conforme mostra a figura:
+</p><p>
+<img src="./Adicionando referências dinamicamente no VBA_files/refDinVBA_2.jpg" width="374" height="302" alt="" border="0">
+<br>
+<font size="1">Figura 2: Referências do aplicativo</font>
+</p><p>
+Agora, insira um módulo convencional indo ao menu Inserir-&gt;Módulo. Nesse módulo, coloque o seguinte código:
+</p><pre>Public Sub AbreWord()
+
+   Dim versao As String
+   "Declara uma variável do tipo Word.Application (aplicativo)
+   Dim arqWord As Word.Application
+   "Declara uma variável do tipo Word.Document (documento)
+   Dim docWord As Word.Document
+   "Cria uma nova instância do Word
+   arqWord = CreateObject("Word.Application")
+   "Esta linha serve para criar um documento em branco
+   docWord = arqWord.Documents.Add
+   "Torna o Word Visível
+   arqWord.Visible = True
+   "Captura a versão do Word
+   Versao = arqWord.Version
+   "Escreve texto no arquivo
+   arqWord.Selection.TypeText("Olá Word " &amp; versao &amp; "!")
+End Sub
+</pre>
+Se a referência estiver sido feita corretamente. será possível usufruir dos recursos do Intellisense para escrever o código. No Word 2003, o resultado da execução do código é uma nova instância e um novo documento do Word com o seguinte texto:
+<p>
+<img src="./Adicionando referências dinamicamente no VBA_files/refDinVBA_3.jpg" width="570" height="364" alt="" border="0">
+<br>
+<font size="1">Figura 3: Arquivo de Word gerado pela Macro "AbreWord" no Word 2003</font>
+</p><p>
+A Macro pegou a versão do Word referenciada, criou um novo documento colocando o texto que foi composto com o número da versão do Word, neste caso, 11.0.
+</p><p>
+Com a Macro funcionando, vamos agora testá-la em outra versão do Office. Neste caso, utilizarei a versão 2000. Abra a planilha no Excel 2000 e tente executar a Macro. Facilite o acesso com o atalho Alt+F8 para mostrar a Macro e clique em executar:
+</p><p>
+<img src="./Adicionando referências dinamicamente no VBA_files/refDinVBA_4.jpg" width="402" height="312" alt="" border="0">
+<br> 
+<font size="1">Figura 4: Executando a Macro</font>
+</p><p>
+Se tudo der certo (ou errado), surgirá a seguinte mensagem:
+</p><p>
+<img src="./Adicionando referências dinamicamente no VBA_files/refDinVBA_5.jpg" width="294" height="126" alt="" border="0">
+<br> 
+<font size="1">Figura 5: Erro gerado pela Macro executada no Excel 2000</font>
+</p><p>
+Clique em OK e veja que o editor parou a execução do código na linha em declaramos o Objeto Word.Application.
+</p><p>
+<img src="./Adicionando referências dinamicamente no VBA_files/refDinVBA_6.jpg" width="459" height="178" alt="" border="0">
+<br> 
+<font size="1">Figura 6: Vericando a linha de erro da Macro</font>
+</p><p>
+Verifique as referências feitas inda à caixa de diálogo de referências (Ferramentas-&gt;Referências o VBA) e veja que a biblioteca <b>Microsoft Word 11.0 Object Library</b> está marcada como AUSENTE:
+</p><p>
+<img src="./Adicionando referências dinamicamente no VBA_files/refDinVBA_7.jpg" width="295" height="237" alt="" border="0">
+<br>
+<font size="1">Figura 7: Vericando a ausência da referência</font>
+</p><p>
+Para resolver o problema de funcionamento da Macro, bastaria desfazer essa referência e procurar a <b>Microsoft Word 9.0 Object Library</b> que é correspondente ao Office instalado. Após isso, tente executar novamente a Macro. O resultado deverá ser este:
+</p><p>
+<img src="./Adicionando referências dinamicamente no VBA_files/refDinVBA_8.jpg" width="570" height="354" alt="" border="0">
+<br>
+<font size="1">Figura 8: Arquivo de Word gerado pela Macro AbreWord no Word 2000</font>
+Veja que o texto gerado dinamicamente pela Macro obedeceu ao critério de versão e alterou o número colocado no texto (Se executar a Macro no Office XP, a versão apresentada será 10.0). Feche o arquivo do Word, <b>salve</b> a planilha no Excel 2000 e abra-a no Excel 2003 novamente. Ao executar a Macro, ela funcionará normalmente. Porque? Abra o VBA, acione o menu Ferramentas-&gt;Referências e veja que a referência foi atualizada para o <b>Microsoft Word 11.0 Object Library</b>.
+</p><p>
+Neste ponto, chegamos a algumas conclusões e soluções para o problema:
+</p><p>
+<b><i>Desenvolver sempre numa versão mais antiga para garantir o funcionamento em qualquer versão do Office?</i></b>
+<br>
+O problema é que limitaríamos aos recursos de uma versão mais antiga além do fato de se a o aplicativo for aberto em alguma versão superior e for salvo, ele manterá a referência da última versão do aplicativo em que foi aberto provocando novamente o problema de versionamento.
+</p><p>
+<b><i>Ter instalada todas as versões do Office para incluir todas as referências?</i></b>
+<br>
+Talvez desse certo, mas quem se disponibiliza tanto financeiramente como em recursos de máquina e conflitos gerados a ter instalada todas as versões do aplicativo?
+</p><p>
+<b><i>Criar e manter a referências dinamicamente?</i></b>
+<br>
+Essa creio eu ser a melhor saída. Não é completamente infalível, mas já testei em vários ambientes e se comportou muito bem.
+</p><p>
+<b>Como adicionar as referências via código</b>
+</p><p>
+Além dos conceitos de segurança e permissões discutidos no começo do artigo, é preciso se acostumar um pouco com os elementos das referências. Para que a manipulação funcione, é preciso fazer referência à bilbioteca <b>Microsoft Visual Basic for Applications Extensibility 5.3</b>. Essa é a biblioteca que permite manipular objetos do VBA, tanto do VBA como desde outras ferramentas como Visual Basic 6 ou Visual Basic .NET. Essa bilbioteca é instalada juntamente com o VBA e a garantia que ela esteja presente na máquina cliente é de quase 100%, já que na instalação padrão do Office o VBA é também instalado.
+</p><p>
+Vamos fazer um exemplo que use objetos dessa biblioteca. Insira um módulo convencional na mesma planilha que fizemos anteriormente no Excel 2003 e coloque o seguinte código:
+</p><pre>Public Sub ChecaReferencias()
+
+   Dim mensagem As String
+   "Faz a referência ao projeto VBA
+   Dim vbProj As VBProject
+   "A referencia em si
+   Dim chkRef As Reference
+
+   "Seta a variável para o projeto da pasta de trabalho ativa.
+   vbProj = ActiveWorkbook.VBProject
+
+   "Checa as referências selecionadas (veja na caixa de diálogo Referências)
+   For Each chkRef In vbProj.References
+      "monta a string que conterá o nome de todas as referências
+      mensagem = mensagem &amp; " " &amp; chkRef.Name &amp; Chr(13)
+   Next
+   "Mostra a mensagem com o nome das referência selecionadas
+   MsgBox(mensagem)
+End Sub
+</pre>
+<p>
+Execute a Macro. Não se esqueça de adicionar a referência à biblioteca de manipulação, como dito anteriormente. O resultado deverá ser algo parecido com este:
+</p><p>
+<img src="./Adicionando referências dinamicamente no VBA_files/refDinVBA_9.jpg" width="135" height="172" alt="" border="0">
+<br>
+<font size="1">Figura 9: Resultado gerado pela Macro ChecaReferencias</font>
+</p><p>
+Você pode fazer uma equivalência do resultado desta Macro abrindo a caixa de diálogo Referências do VBA:
+</p><p>
+<img src="./Adicionando referências dinamicamente no VBA_files/refDinVBA_10.jpg" width="295" height="237" alt="" border="0">
+<br>
+<font size="1">Figura 10: Verificando as referências</font>
+</p><p>
+Teoricamente está tudo OK. Com esse código, podemos saber e aprender mais sobre as referências e seus atributos. Modifique a linha de código que monta a mensagem para o seguinte:
+</p><p>
+mensagem = mensagem &amp; "Nome: " &amp; chkRef.Name &amp; " - Caminho: " &amp; chkRef.FullPath &amp; " - Descrição: " &amp; chkRef.Description &amp; Chr(13)
+</p><p>
+Execute a Macro desta vez. O resultado deve ser o seguinte:
+</p><p>
+<img src="./Adicionando referências dinamicamente no VBA_files/refDinVBA_11.jpg" width="570" height="135" alt="" border="0">
+<br> 
+<font size="1">Figura 11: Resultado gerado pela Macro ChecaReferencias com a mensagem alterada</font>
+</p><p>
+Agora temos uma forma simples de obter mais informações sobre as referências com que trabalhamos no VBA. Os atributos mais importantes a serem trabalhados para este artigo são o <b>IsBroken, GUID, Major e Minor</b>.A propriedade IsBroken retorna <b>False</b> se a referência estiver OK e <b>True</b> se estiver quebrada, por exemplo, quando a caixa de diálogo acusa que a referência está AUSENTE, é um caso em que o IsBroken retornará True. Isso nos ajuda a verificar a existência de uma referência que nos disponibiliza determinada funcionalidade, por exemplo, uma .OCX que contenha um controle ActiveX como o <b>Calendar Control</b>. Dependendo do resultado, você pode optar por rodar ou não o projeto.
+</p><p>
+A propriedade GUID retorna o identificador único para a referência. Para ver esta identificação, modifique a linha de código que monta a mensagem para o seguinte:
+</p><p>
+mensagem = mensagem &amp; "Nome: " &amp; chkRef.Name &amp; " - GUID: " &amp; chkRef.GUID &amp; " - Major: " &amp; chkRef.Major &amp; " - Minor: " &amp; chkRef.Minor &amp; Chr(13)
+</p><p>
+Veja o resultado:
+</p><p>
+<img src="./Adicionando referências dinamicamente no VBA_files/refDinVBA_12.jpg" width="458" height="172" alt="" border="0">
+<br> 
+<font size="1">Figura 12: Resultado gerado pela Macro ChecaReferencias com a mensagem alterada</font>
+</p><p>
+Com alguma pesquisa, pude confirmar que esse identificador é o mesmo independente de versão. Se você testar em qualquer outra versão o mesmo código, verá que os GUIDs não serão alterados. É essa propriedade que usaremos para adicionar e remover as referências em nossos aplicativos. As propriedades Major e Minor não requerem maiores estudos e serão usadas somente para a execução do método que adiciona a referência, conforme veremos a seguir.
+</p><p>
+Os métodos utilizados para adicionar e remover referências são o <b>AddFromGUID, AddFromFile e Remove</b>.
+</p><p>
+O método AddFromFile adiciona a referência com base no caminho do arquivo. É uma opção, mas pode ser problemática, pois precisaríamos saber qual o diretório em que foi instalado o aplicativo, o que à vezes pode ser um mistério. Para contornar a situação, podemos usar o método <b>Application.Path</b> que retorna o diretório em que foi instalado o Office para adicionar a referência.
+</p><p>
+O método AddFromGUID adiciona a referência com três parâmetros: GUID, Major e Minor, que são as propriedades discutidas anteriormente. O GUID pode ser passado como <b>String</b> e as variáveis Major e Minor devem ser passadas como <b>Long</b>.
+</p><p>
+Pegar os dados requer código como fizemos anteriormente. Com isso, temos para a biblioteca Microsoft Word os seguintes valores:
+</p><p>
+<b>GUID:</b> {00020905-0000-0000-C000-000000000046}<br>
+<b>Major:</b> 8<br>
+<b>Minor:</b> Depende da versão.
+</p><p>
+A variável Minor possui um valor que varia conforme a versão do aplicativo. Para regularizar esse valor, a melhor maneira que encontrei foi pegando o valor do <b>Application.Version</b>. A diferença entre os dois valores é sempre de 8 unidades, portanto podemos fazer uma analogia para determinar o valor do parâmetro. Veja a diferença do resultado da Macro <b>ChecaReferencias</b> executada no Excel 2000 e no Excel 2003:
+</p><p>
+<img src="./Adicionando referências dinamicamente no VBA_files/refDinVBA_13.jpg" width="304" height="112" alt="" border="0">
+<br>
+<font size="1">Figura 13: Resultado gerado pela Macro ChecaReferencias no Excel 2000</font>
+</p><p>
+<img src="./Adicionando referências dinamicamente no VBA_files/refDinVBA_14.jpg" width="298" height="116" alt="" border="0">
+<br>
+<font size="1">Figura 14: Resultado gerado pela Macro ChecaReferencias no Excel 2003</font>
+</p><p>
+
+O método <b>Remove</b> remove a referência em si. É preciso passar uma variável do tipo <b>Reference</b> para que funcione.
+Tendo visto todas estas opções, consegui chegar à seguintes soluções para nosso problema. Abaixo proponho um modelo de código que pode tornar o aplicativo VBA praticamente universal para todas as versões do Office:
+</p><pre>Public Sub AdicionaReferenciaWord()
+
+   "Faz a referência ao projeto VBA
+   Dim vbProj As VBProject
+   "A referencia em si
+   Dim versao As Long
+
+   "Seta a variável para o projeto da pasta de trabalho ativa.
+   vbProj = ActiveWorkbook.VBProject
+
+   "Pega a versão atual do Office e corrige a variável
+   versao = CLng(Application.Version) / 10
+
+   "Adiciona a referência do Word via GUID:
+   vbProj.References.AddFromGuid("{00020905-0000-0000-C000-000000000046}", 8, versao - 8)
+
+End Sub
+
+Public Sub RemoveReferenciaWord()
+
+   "Faz a referência ao projeto VBA
+   Dim vbProj As VBProject
+   "A referencia em si
+   Dim chkRef As Reference
+
+   "Seta a variável para o projeto da pasta de trabalho ativa.
+   vbProj = ActiveWorkbook.VBProject
+
+   For Each chkRef In vbProj.References
+      "Verifica se a referência é do Word:
+      If chkRef.GUID = "{00020905-0000-0000-C000-000000000046}" Then
+         "Se for, remove
+         vbProj.References.Remove(chkRef)
+      End If
+   Next
+
+End Sub
+</pre>
+<p>
+Insira esse código em um módulo vazio de uma na planilha em que estamos trabalhando adicionando a referência ao <b>Microsoft Visual Basic for Applications Extensibility 5.3</b>. Insira também o código para gerar o novo arquivo no Word conforme no começo do artigo. Agora, basta colocar a chamado da Macro <b>AdicionaReferenciaWord</b> no evento Workbook_Open e a Macro <b>RemoveReferenciaWord</b> no Workbook_BeforeClose. O código em <b>Estapasta_de_trabalho</b> fica assim:
+</p><pre>Private Sub Workbook_BeforeClose(ByVal Cancel As Boolean)
+   Call RemoveReferenciaWord()
+End Sub
+
+Private Sub Workbook_Open()
+   Call AdicionaReferenciaWord()
+End Sub
+</pre>
+<p>
+Agora, feche a planilha e salve no Excel 2003. Em seguida, abra no Excel 2000 ou XP (ativando as Macros) e sem mexer em nada, execute a Macro <b>AbreWord</b>. Veja que o Word é aberto corretamente não gerando mais o erro de versionamento. As Macros trataram de adicionar a referência para a versão correta do aplicativo sem intervenção do usuário. Faça isso várias vezes em diversas versões do aplicativo para testar sua eficácia.
+</p><p>
+Você pode também fazer implementações com o método AddFromFile, embora em testes eu tenha concluído que o AddFromGUID é mais eficiente e menos sujeito e erros.
+</p><p>
+As funções e recursos oferecidos pela biblioteca <b>Microsoft Visual Basic for Applications Extensibility 5.3</b> permite ir mais além do que mostrei neste artigo. É possível estender a funcionalidade a outras bibliotecas mais comuns como o ADO e o Microsoft Outlook. A partir da versão 97, o Office teve suas versões regularizadas para todos os aplicativos e isso nos auxilia a trabalhar com as opções de versões como fizemos nos códigos de exemplo.
+</p><p>
+<b>Conclusão</b>
+</p><p>
+Procurei explanar de maneira enxuta um meio para resolver o problema de versionamento e ausência de componentes que em muito nos auxiliam e azucrinam no desenvolvimento de nossas soluções.
+</p><p>
+<a href="http://www.linhadecodigo.com.br/artigos/downloads/tomas_vasquez/Adicionando_Referencias.zip">Faça o download da planilha com os códigos de exemplo, clique aqui.</a>
+</p><p>
+<b>Referências</b>
+</p><p>
+<a href="http://msdn.microsoft.com/library/default.asp?url=/library/en-us/modcore/html/deconAutomatingVisualBasicEditor.asp" target="_blank">http://msdn.microsoft.com/library/default.asp?url=/library/en-us/modcore/html/deconAutomatingVisualBasicEditor.asp</a>
+</p><p>
+<a href="http://msdn.microsoft.com/library/default.asp?url=/library/en-us/vbaac11/html/acprominor.asp" target="_blank">http://msdn.microsoft.com/library/default.asp?url=/library/en-us/vbaac11/html/acprominor.asp</a>
+</p><p>
+<a href="http://msdn.microsoft.com/library/default.asp?url=/library/en-us/vbaac11/html/acproMajor.asp" target="_blank">http://msdn.microsoft.com/library/default.asp?url=/library/en-us/vbaac11/html/acproMajor.asp</a>
+</p><p>
+<a href="http://msdn.microsoft.com/library/default.asp?url=/library/en-us/vbext98/html/vamthaddfromguid.asp" target="_blank">http://msdn.microsoft.com/library/default.asp?url=/library/en-us/vbext98/html/vamthaddfromguid.asp</a>
+</p><p>
+<a href="http://msdn.microsoft.com/library/default.asp?url=/library/en-us/vbext98/html/vamthaddfromguid.asp" target="_blank">http://msdn.microsoft.com/library/default.asp?url=/library/en-us/vbext98/html/vamthaddfromguid.asp</a></p></div></span>
+    </div>
+    <div class="author-box-article">
+        <span id="ContentPlaceHolder1_lblImgColunista"></span>
+        <span id="ContentPlaceHolder1_lblAutorDescricao"><a href="http://www.linhadecodigo.com.br/colaborador.aspx?id=126"><img src="./Adicionando referências dinamicamente no VBA_files/semfoto.jpg" border="=&quot;0&quot;" alt="Tomás Vásquez" title="Tomás Vásquez"></a><p><a href="http://www.linhadecodigo.com.br/colaborador.aspx?id=126">Tomás Vásquez - Graduado em Ciências da Computação pela Universidade IMES de São Caetano do Sul. Passou por diversas áreas de tecnologia, desde gerenciamento de redes com Windows Server até chegar ao desenvolvimento de software passando por projetos em Microsoft Office, Portais Coorporativos em ASP.NET, aplicativos comerciais e soluções para Dispositivos Móveis em J2ME e WAP.<br>
+Criador e mantenedor do site </a><a rel="nofollow" target="_blank" href="http://www.tomasvasquez.com.br/">www.tomasvasquez.com.br</a>, dedica seu tempo a pesquisar o que há de novo no mundo da tecnologia, mesmo sabendo que é uma missão quase impossível.
+<br><br>
+Site: <a rel="nofollow" target="_blank" href="http://www.tomasvasquez.com.br/">http://www.tomasvasquez.com.br</a><br>
+Blog: <a rel="nofollow" target="_blank" href="http://tomas.vasquez.blog.uol.com.br/">http://tomas.vasquez.blog.uol.com.br</a>
+   </p></span>
+    </div>
+    <span id="ContentPlaceHolder1_lblSocialShareArticle2"><div id="social-share-article"><span class="st_facebook_hcount" displaytext="Facebook" st_image="http://www.linhadecodigo.com.br/img/logoLc.png" st_processed="yes"><span style="text-decoration:none;color:#000000;display:inline-block;cursor:pointer;" class="stButton"><span><span class="stMainServices st-facebook-counter" style="background-image: url(http://w.sharethis.com/images/facebook_counter.png);">&nbsp;<img src="./Adicionando referências dinamicamente no VBA_files/check-big.png" style="position: absolute; top: -7px; right: -7px; width: 19px; height: 19px; max-width: 19px; max-height: 19px; display: none;"></span><span class="stArrow"><span class="stButton_gradient stHBubble" style="display: inline-block;"><span class="stBubble_hcount">71</span></span></span></span></span></span><span class="st_twitter_hcount" displaytext="Tweet" st_image="http://www.linhadecodigo.com.br/img/logoLc.png" st_processed="yes"><span style="text-decoration:none;color:#000000;display:inline-block;cursor:pointer;" class="stButton"><span><span class="stMainServices st-twitter-counter" style="background-image: url(http://w.sharethis.com/images/twitter_counter.png);">&nbsp;<img src="./Adicionando referências dinamicamente no VBA_files/check-big.png" style="position: absolute; top: -7px; right: -7px; width: 19px; height: 19px; max-width: 19px; max-height: 19px; display: none;"></span><span class="stArrow"><span class="stButton_gradient stHBubble" style="display: inline-block;"><span class="stBubble_hcount">20</span></span></span></span></span></span><span class="st_linkedin_hcount" displaytext="LinkedIn" st_image="http://www.linhadecodigo.com.br/img/logoLc.png" st_processed="yes"><span style="text-decoration:none;color:#000000;display:inline-block;cursor:pointer;" class="stButton"><span><span class="stMainServices st-linkedin-counter" style="background-image: url(http://w.sharethis.com/images/linkedin_counter.png);">&nbsp;<img src="./Adicionando referências dinamicamente no VBA_files/check-big.png" style="position: absolute; top: -7px; right: -7px; width: 19px; height: 19px; max-width: 19px; max-height: 19px; display: none;"></span><span class="stArrow"><span class="stButton_gradient stHBubble" style="display: inline-block;"><span class="stBubble_hcount">2</span></span></span></span></span></span><span class="st_email_hcount" displaytext="Email" st_image="http://www.linhadecodigo.com.br/img/logoLc.png" st_processed="yes"><span style="text-decoration:none;color:#000000;display:inline-block;cursor:pointer;" class="stButton"><span><span class="stMainServices st-email-counter" style="background-image: url(http://w.sharethis.com/images/email_counter.png);">&nbsp;<img src="./Adicionando referências dinamicamente no VBA_files/check-big.png" style="position: absolute; top: -7px; right: -7px; width: 19px; height: 19px; max-width: 19px; max-height: 19px; display: none;"></span><span class="stArrow"><span class="stButton_gradient stHBubble" style="display: inline-block;"><span class="stBubble_hcount">4</span></span></span></span></span></span><span class="st_plusone_hcount" st_image="http://www.linhadecodigo.com.br/img/logoLc.png" style="margin-left:5px;" st_processed="yes"><div style="display:inline-block;overflow:hidden;line-height:0px;position:relative;vertical-align:middle;bottom:0px;width:75px; height:21px;">&nbsp;<div id="___plusone_2" style="text-indent: 0px; margin: 0px; padding: 0px; border-style: none; float: none; line-height: normal; font-size: 1px; vertical-align: baseline; display: inline-block; width: 90px; height: 20px; background: transparent;"><iframe frameborder="0" hspace="0" marginheight="0" marginwidth="0" scrolling="no" style="position: static; top: 0px; width: 90px; margin: 0px; border-style: none; left: 0px; visibility: visible; height: 20px;" tabindex="0" vspace="0" width="100%" id="I1_1408374018568" name="I1_1408374018568" src="./Adicionando referências dinamicamente no VBA_files/fastbutton(1).htm" data-gapiattached="true" title="+1"></iframe></div></div></span><span class="st_fblike_hcount" st_image="http://www.linhadecodigo.com.br/img/logoLc.png" style="margin-left:-5px;" st_processed="yes"><span style="text-decoration:none;color:#000000;display:inline-block;cursor:pointer;position:relative;margin:3px 3px 0;padding:0px;font-size:11px;line-height:0px;vertical-align:bottom;overflow:visible;"><div data-action="" data-send="false" data-layout="button_count" data-show-faces="false" class="fb-like fb_iframe_widget" data-href="http://www.linhadecodigo.com.br/artigo/565/adicionando-referencias-dinamicamente-no-vba.aspx" fb-xfbml-state="rendered" fb-iframe-plugin-query="app_id=&amp;href=http%3A%2F%2Fwww.linhadecodigo.com.br%2Fartigo%2F565%2Fadicionando-referencias-dinamicamente-no-vba.aspx&amp;layout=button_count&amp;locale=en_US&amp;sdk=joey&amp;send=false&amp;show_faces=false"><span style="vertical-align: bottom; width: 76px; height: 20px;"><iframe name="f15c07a63" width="1000px" height="1000px" frameborder="0" allowtransparency="true" scrolling="no" title="fb:like Facebook Social Plugin" src="./Adicionando referências dinamicamente no VBA_files/like(1).htm" style="border: none; visibility: visible; width: 76px; height: 20px;" class=""></iframe></span></div></span></span></div></span>
+
+<div style="margin-left:10px; width:638px;">
+<form method="post" action="./Adicionando referências dinamicamente no VBA_files/Adicionando referências dinamicamente no VBA.htm" id="myForm" class="formcontent">
+<div class="aspNetHidden">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKMTMxMjgyMzgwOQ9kFgJmD2QWBgIBD2QWBgIBDxYCHgdjb250ZW50Bc4CRW0gbXVpdG9zIHByb2pldG9zIFZCQSwgZXhpc3RlIGEgbmVjZXNzaWRhZGUgZGUgYWRpY2lvbmFyIHJlZmVyw6puY2lhcyBwYXJhIGhhYmlsaXRhciBhbGd1bnMgcmVjdXJzb3MsIHBvciBleGVtcGxvLCBtYW5pcHVsYXIgdW0gZG9jdW1lbnRvIGRvIFdvcmQgb3Ugb3V0cm8gYXBsaWNhdGl2byBkbyBPZmZpY2UsIGEgaW5zZXLDp8OjbyBkZSB1bSBub3ZvIGNvbnRyb2xlIG91IG1lc21vIGFjZXNzYXIgdW0gQmFuY28gZGUgZGFkb3MgdmlhIEFETywgbyBxdWUgZXhpZ2lyaWEgYSByZWZlcsOqbmNpYSBhIHVtYSBiaWJsaW90ZWNhIGRvIE1pY3Jvc29mdCBBY3RpdmUgRGF0YSBPYmplY3RzLmQCAg8WAh8ABS1BZGljaW9uYW5kbyByZWZlcsOqbmNpYXMgZGluYW1pY2FtZW50ZSBubyBWQkFkAgYPFgQeBGhyZWYFXGh0dHA6Ly93d3cubGluaGFkZWNvZGlnby5jb20uYnIvYXJ0aWdvLzU2NS9hZGljaW9uYW5kby1yZWZlcmVuY2lhcy1kaW5hbWljYW1lbnRlLW5vLXZiYS5hc3B4HgdWaXNpYmxlZ2QCAw9kFgICAQ8PFgIeBFRleHQFSzxhIGhyZWY9ImphdmFzY3JpcHQ6OyIgb25jbGljaz0ic2hvd2hpZGVMb2dpbigwKTsiPkxvZyBJbiAvIENhZGFzdHJlLXNlPC9hPmRkAgUPZBYGZg9kFg4CAQ8PFgIfAwXJAjxoMz5EZXNlbnZvbHZpbWVudG88c3Bhbj4gLSA8YSBocmVmPSIvdmJhLmFzcHgiIHN0eWxlPSJmb250LXNpemU6IDIwcHg7Ij5PZmZpY2U8L2E+PC9zcGFuPjxhIGhyZWY9Imh0dHA6Ly93d3cubGluaGFkZWNvZGlnby5jb20uYnIvcnNzYXJ0aWdvc2F1dG9yLmFzcHg/YXV0b3I9MTI2IiB0YXJnZXQ9Il9ibGFuayIgY2xhc3M9ImZyIj48aW1nIHNyYz0iL2ltZy9yc3MuZ2lmIiB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIGJvcmRlcj0iMCIgdGl0bGU9IkZlZWQgZGUgYXJ0aWdvcyBkZXN0ZSBhdXRvciIgYWx0PSJGZWVkIGRlIGFydGlnb3MgZGVzdGUgYXV0b3IiIC8+PC9hPjwvaDM+ZGQCAw8PFgIfAwX3AzxoMT5BZGljaW9uYW5kbyByZWZlcsOqbmNpYXMgZGluYW1pY2FtZW50ZSBubyBWQkE8YnIgLz48cD5FbSBtdWl0b3MgcHJvamV0b3MgVkJBLCBleGlzdGUgYSBuZWNlc3NpZGFkZSBkZSBhZGljaW9uYXIgcmVmZXLDqm5jaWFzIHBhcmEgaGFiaWxpdGFyIGFsZ3VucyByZWN1cnNvcywgcG9yIGV4ZW1wbG8sIG1hbmlwdWxhciB1bSBkb2N1bWVudG8gZG8gV29yZCBvdSBvdXRybyBhcGxpY2F0aXZvIGRvIE9mZmljZSwgYSBpbnNlcsOnw6NvIGRlIHVtIG5vdm8gY29udHJvbGUgb3UgbWVzbW8gYWNlc3NhciB1bSBCYW5jbyBkZSBkYWRvcyB2aWEgQURPLCBvIHF1ZSBleGlnaXJpYSBhIHJlZmVyw6puY2lhIGEgdW1hIGJpYmxpb3RlY2EgZG8gTWljcm9zb2Z0IEFjdGl2ZSBEYXRhIE9iamVjdHMuPC9wPjxzcGFuPnBvciA8YSBocmVmPSJodHRwOi8vd3d3LmxpbmhhZGVjb2RpZ28uY29tLmJyL2NvbGFib3JhZG9yLmFzcHg/aWQ9MTI2Ij5Ub23DoXMgVsOhc3F1ZXo8L2E+PC9zcGFuPjwvaDE+ZGQCBQ8PFgIfAwWHBjxkaXYgaWQ9InNvY2lhbC1zaGFyZS1hcnRpY2xlIj48c3BhbiAgY2xhc3M9InN0X2ZhY2Vib29rX2hjb3VudCIgZGlzcGxheVRleHQ9IkZhY2Vib29rIiBzdF9pbWFnZT0iaHR0cDovL3d3dy5saW5oYWRlY29kaWdvLmNvbS5ici9pbWcvbG9nb0xjLnBuZyI+PC9zcGFuPjxzcGFuICBjbGFzcz0ic3RfdHdpdHRlcl9oY291bnQiIGRpc3BsYXlUZXh0PSJUd2VldCIgc3RfaW1hZ2U9Imh0dHA6Ly93d3cubGluaGFkZWNvZGlnby5jb20uYnIvaW1nL2xvZ29MYy5wbmciPjwvc3Bhbj48c3BhbiAgY2xhc3M9InN0X2xpbmtlZGluX2hjb3VudCIgZGlzcGxheVRleHQ9IkxpbmtlZEluIiBzdF9pbWFnZT0iaHR0cDovL3d3dy5saW5oYWRlY29kaWdvLmNvbS5ici9pbWcvbG9nb0xjLnBuZyI+PC9zcGFuPjxzcGFuICBjbGFzcz0ic3RfZW1haWxfaGNvdW50IiBkaXNwbGF5VGV4dD0iRW1haWwiIHN0X2ltYWdlPSJodHRwOi8vd3d3LmxpbmhhZGVjb2RpZ28uY29tLmJyL2ltZy9sb2dvTGMucG5nIj48L3NwYW4+PHNwYW4gIGNsYXNzPSJzdF9wbHVzb25lX2hjb3VudCIgc3RfaW1hZ2U9Imh0dHA6Ly93d3cubGluaGFkZWNvZGlnby5jb20uYnIvaW1nL2xvZ29MYy5wbmciIHN0eWxlPSJtYXJnaW4tbGVmdDo1cHg7IiA+PC9zcGFuPjxzcGFuICBjbGFzcz0ic3RfZmJsaWtlX2hjb3VudCIgc3RfaW1hZ2U9Imh0dHA6Ly93d3cubGluaGFkZWNvZGlnby5jb20uYnIvaW1nL2xvZ29MYy5wbmciIHN0eWxlPSJtYXJnaW4tbGVmdDotNXB4OyIgPjwvc3Bhbj48L2Rpdj48YnIgLz48YnIgLz5kZAIHDw8WAh8DBcibATxkaXYgY2xhc3M9ImFydGljbGUiPjxiPlJlcXVpc2l0b3MgZG8gc2lzdGVtYTwvYj4NCjxwPg0KPHVsPg0KPGxpPk1pY3Jvc29mdCBPZmZpY2UgKHVtYSB2ZXJzw6NvIGRpc3BvbsOtdmVsIHF1ZSBzdXBvcnRlIG8gVmlzdWFsIEJhc2ljIGZvciBBcHBsaWNhdGlvbnMpDQo8L3VsPg0KPHA+DQo8Yj5JbnRyb2R1w6fDo288L2I+DQo8cD4NCkVtIG11aXRvcyBwcm9qZXRvcyBWQkEsIGV4aXN0ZSBhIG5lY2Vzc2lkYWRlIGRlIGFkaWNpb25hciByZWZlcsOqbmNpYXMgcGFyYSBoYWJpbGl0YXIgYWxndW5zIHJlY3Vyc29zLCBwb3IgZXhlbXBsbywgbWFuaXB1bGFyIHVtIGRvY3VtZW50byBkbyBXb3JkIG91IG91dHJvIGFwbGljYXRpdm8gZG8gT2ZmaWNlLCBhIGluc2Vyw6fDo28gZGUgdW0gbm92byBjb250cm9sZSBvdSBtZXNtbyBhY2Vzc2FyIHVtIEJhbmNvIGRlIGRhZG9zIHZpYSBBRE8sIG8gcXVlIGV4aWdpcmlhIGEgcmVmZXLDqm5jaWEgYSB1bWEgYmlibGlvdGVjYSBkbyBNaWNyb3NvZnQgQWN0aXZlIERhdGEgT2JqZWN0cy4NCjxwPg0KUXVhbmRvIGjDoSBhbGd1bWEgaW5jb21wYXRpYmlsaWRhZGUgZGUgdmVyc8O1ZXMgb3UgbWVzbW8gYSBhdXPDqm5jaWEgZGVzc2FzIHJlZmVyw6puY2lhcyBxdWUgZ2VyYWxtZW50ZSBzw6NvIGNvbXBvbmVudGVzIC5ETEwgb3UgLk9DWCwgbyBhcGxpY2F0aXZvIG7Do28gZnVuY2lvbmFyw6EgZSByZXN1bHRhcsOhIGVtIGVycm8gYWN1c2FuZG8gcXVlIGEgYmlibGlvdGVjYSBlc3TDoSBhdXNlbnRlLiBQb3LDqW0sIMOpIHBvc3PDrXZlbCBhZGljaW9uYXIsIHJldGlyYXIgb3UgbWVzbW8gdmVyaWZpY2FyIGVzc2FzIHJlZmVyw6puY2lhcyB2aWEgY8OzZGlnbyBWQkEuIElzc28gcG9zc2liaWxpdGEgY29udG9ybmFyIHVtYSBzw6lyaWUgZGUgcHJvYmxlbWFzLCBkZXNkZSBhIGF1c8OqbmNpYSBkZSB1bSBzb2Z0d2FyZSBuYSBtw6FxdWluYSBjbGllbnRlIGF0w6kgbWVzbW8gdW1hIGFkYXB0YcOnw6NvIMOgIHZlcnPDo28gZGUgdW0gYXBsaWNhdGl2by4NCjxwPg0KUGFyYSBxdWUgZXN0ZSByZWN1cnNvIGZ1bmNpb25lLCDDqSBuZWNlc3PDoXJpbyBlbnRlbmRlciBhbGd1bnMgY29uY2VpdG9zIHF1ZSBzZXLDo28gZXhwbGljYWRvcyBhIHNlZ3Vpci4NCjxwPg0KPGI+Q29uZmlhbsOnYSBzb2JyZSBhIG1hbmlwdWxhw6fDo288L2I+DQo8cD4NCsOJIHByZWNpc28gcGVybWl0aXIgcXVlIGVzc2UgdGlwbyBkZSBtYW5pcHVsYcOnw6NvIHNlamEgZmVpdGEuIElzc28gb2NvcnJlIHBvcnF1ZSBvIFZCQSDDqSBjb25jZWJpZG8gcGFyYSBtYW5pcHVsYXIgb2JqZXRvcyBkb3MgYXBsaWNhdGl2b3MgZW0gcXVlIGVsZSBlc3TDoSBob3NwZWRhZG8sIHBvciBleGVtcGxvLCBvIEV4Y2VsLCBXb3JkIG91IG8gQ29yZWwgRHJhdy4gTm8gbsOtdmVsIHBhZHLDo28gZGUgc2VndXJhbsOnYSwgYSBtYW5pcHVsYcOnw7VlcyBjb252ZW5jaW9uYWlzIHPDo28gcGVybWl0aWRhcywgbWFzIMOpIHBvc3PDrXZlbCBtYW5pcHVsYXIgbyBWQkEgYXRyYXbDqXMgZG8gcHLDs3ByaW8gVkJBIHBhcmEgcGVybWl0aXIgYcOnw7VlcyBjb21vIGNyaWHDp8OjbyBkZSBmb3JtdWzDoXJpb3MgKFVzZXJGb3JtcyksIG3Ds2R1bG9zLCBjb250cm9sZXMgZW50cmUgb3V0cmFzIHJvdGluYXMgcXVlIG5vcm1hbG1lbnRlIGZhemVtb3MsIGF0w6kgbWVzbW8gY3JpYSByZWZlcsOqbmNpYXMgcXVlIMOpIG8gYXNzdW50byBkZXN0ZSBhcnRpZ28uDQo8cD4NCjxiPkRlbGVnYW5kbyBjb25maWFuw6dhPC9iPg0KDQpQb3IgcGFkcsOjbyBlc3NlIHRpcG8gZGUgbWFuaXB1bGHDp8OjbyBuw6NvIMOpIHBlcm1pdGlkby4gUGFyYSBhY2lvbsOhLWxhLCDDqSBwcmVjaXNvIGlyIMOgIG9ww6fDtWVzIGRlIHNlZ3VyYW7Dp2EgZGUgTWFjcm8gbm8gYXBsaWNhdGl2b3MgcXVlIGVuY29udHJhLXNlIGdlcmFsbWVudGUgbm8gbWVudSBGZXJyYW1lbnRhcy0mZ3Q7TWFjcm8tJmd0O1NlZ3VyYW7Dp2EuIEFvIGFjaW9uYXIgZXN0YSBvcMOnw6NvLCBzdXJnaXLDoSBhIHNlZ3VpbnRlIGNhaXhhIGRlIGRpw6Fsb2dvOg0KPHA+DQo8aW1nIHNyYz0iL2FydGlnb3MvaW1nX2FydGlnb3MvdG9tYXNfdmFzcXVlei9yZWZEaW5WQkFfMS5qcGciIHdpZHRoPSIzMjYiIGhlaWdodD0iMzIxIiBhbHQ9IiIgYm9yZGVyPSIwIj4NCjxicj4NCjxmb250IHNpemU9IjEiPkZpZ3VyYSAxOiBPcMOnw7VlcyBkZSBTZWd1cmFuw6dhIGRlIE1hY3JvPC9mb250Pg0KPHA+DQpBY2lvbmUgYSBhYmEgPGI+Rm9udGVzIGNvbmZpw6F2ZWlzPC9iPiBlIHZlamEgbG9nbyBhYmFpeG8gYSBvcMOnw6NvIDxiPkNvbmZpYXIgbm8gYWNlc3NvIGFvIHByb2pldG8gZG8gVmlzdWFsIEJhc2ljPC9iPi4gUG9yIHBhZHLDo28gZXN0w6EgZGVzYWJpbGl0YWRhLiBIYWJpbGl0ZS1hIHBhcmEgcG9kZXIgcHJvc3NlZ3VpciBjb20gb3MgZXhlbXBsb3MgZSBjbGlxdWUgZW0gT0suDQo8cD4NCjxiPlRlc3RhbmRvIG8gYXBsaWNhdGl2bzwvYj4NCjxwPg0KUGFyYSB0b3JuYXIgbyB0ZXN0ZSBpZMO0bmVvLCDDqSBpbnRlcmVzc2FudGUgdGVyIGRpc3BvbsOtdmVsIG1haXMgZGUgdW1hIHZlcnPDo28gZG8gT2ZmaWNlLiBQYXJhIGVzdGUgZXhlbXBsbywgdmFtb3MgY29uc3RydWlyIG8gYXBsaWNhdGl2byBlbSBFeGNlbC1WQkEgZW0gcXVlIGNyaWFyZW1vcyB1bSBub3ZvIGFycXVpdm8gZG8gV29yZC4NCjxwPg0KQWJyYSBvIEV4Y2VsIGUgYWNpb25lIG8gZWRpdG9yIGRvIFZCQSBwZWxvIG1lbnUgRmVycmFtZW50YXMtJmd0O01hY3Jvcy0mZ3Q7RWRpdG9yIGRvIFZpc3VhbCBCYXNpYyAgb3UgY29tIG8gYXRhbGhvIEFsdCtGMTEuIE5vIFZCQSwgYWNpb25lIGFvIG1lbnUgRmVycmFtZW50YXMtJmd0O1JlZmVyw6puY2lhcyBwYXJhIHZpc3VhbGl6YXIgYXMgcmVmZXLDqm5jaWFzIGV4aXN0ZW50ZXMgZSBkaXNwb27DrXZlaXMuIFByb2N1cmUgcGVsYSByZWZlcsOqbmNpYSA8Yj5NaWNyb3NvZnQgV29yZCBYWC4wIE9iamVjdCBMaWJyYXJ5PC9iPiBvbmRlIFhYIMOpIG8gbnVtZXJvIGRhIHZlcnPDo28gZG8gT2ZmaWNlIGluc3RhbGFkYSBlbSBzZXUgY29tcHV0YWRvcjoNCjxwPg0KPHRhYmxlIGJvcmRlcj0iMSIgY2VsbHNwYWNpbmc9IjAiIGNlbGxwYWRkaW5nPSI1IiBib3JkZXJjb2xvcj0iIzAwMDAwMCIgY2xhc3M9ImxpbmtfMTIiPg0KPHRyIGJnY29sb3I9IiNDMEMwQzAiPg0KCTx0ZCB2YWxpZ249InRvcCI+PGI+T2ZmaWNlPC9iPjwvdGQ+DQoJPHRkIHZhbGlnbj0idG9wIj48Yj5OwrogVmVyc8OjbzwvYj48L3RkPg0KPC90cj4NCjx0cj4NCgk8dGQgdmFsaWduPSJ0b3AiPk1pY3Jvc29mdCBPZmZpY2UgOTcgPC90ZD4NCgk8dGQgdmFsaWduPSJ0b3AiPjguMDwvdGQ+DQo8L3RyPg0KPHRyPg0KCTx0ZCB2YWxpZ249InRvcCI+TWljcm9zb2Z0IE9mZmljZSAyMDAwPC90ZD4NCgk8dGQgdmFsaWduPSJ0b3AiPjkuMDwvdGQ+DQo8L3RyPg0KPHRyPg0KCTx0ZCB2YWxpZ249InRvcCI+TWljcm9zb2Z0IE9mZmljZSBYUDwvdGQ+DQoJPHRkIHZhbGlnbj0idG9wIj4xMC4wPC90ZD4NCjwvdHI+DQo8dHI+DQoJPHRkIHZhbGlnbj0idG9wIj5NaWNyb3NvZnQgT2ZmaWNlIDIwMDM8L3RkPg0KCTx0ZCB2YWxpZ249InRvcCI+MTEuMDwvdGQ+DQo8L3RyPg0KPC90YWJsZT4NCjxwPg0KQ29tbyBlc3RvdSBmYXplbmRvIGVzdGUgYXBsaWNhdGl2byBuYSB2ZXJzw6NvIDIwMDMsIGEgYmlibGlvdGVjYSByZWZlcmVuY2lhZGEgc2Vyw6EgYSA8Yj5NaWNyb3NvZnQgV29yZCAxMS4wIE9iamVjdCBMaWJyYXJ5PC9iPiBjb25mb3JtZSBtb3N0cmEgYSBmaWd1cmE6DQo8cD4NCjxpbWcgc3JjPSIvYXJ0aWdvcy9pbWdfYXJ0aWdvcy90b21hc192YXNxdWV6L3JlZkRpblZCQV8yLmpwZyIgd2lkdGg9IjM3NCIgaGVpZ2h0PSIzMDIiIGFsdD0iIiBib3JkZXI9IjAiPg0KPGJyPg0KPGZvbnQgc2l6ZT0iMSI+RmlndXJhIDI6IFJlZmVyw6puY2lhcyBkbyBhcGxpY2F0aXZvPC9mb250Pg0KPHA+DQpBZ29yYSwgaW5zaXJhIHVtIG3Ds2R1bG8gY29udmVuY2lvbmFsIGluZG8gYW8gbWVudSBJbnNlcmlyLSZndDtNw7NkdWxvLiBOZXNzZSBtw7NkdWxvLCBjb2xvcXVlIG8gc2VndWludGUgY8OzZGlnbzoNCjxwcmU+DQpQdWJsaWMgU3ViIEFicmVXb3JkKCkNCg0KICAgRGltIHZlcnNhbyBBcyBTdHJpbmcNCiAgICJEZWNsYXJhIHVtYSB2YXJpw6F2ZWwgZG8gdGlwbyBXb3JkLkFwcGxpY2F0aW9uIChhcGxpY2F0aXZvKQ0KICAgRGltIGFycVdvcmQgQXMgV29yZC5BcHBsaWNhdGlvbg0KICAgIkRlY2xhcmEgdW1hIHZhcmnDoXZlbCBkbyB0aXBvIFdvcmQuRG9jdW1lbnQgKGRvY3VtZW50bykNCiAgIERpbSBkb2NXb3JkIEFzIFdvcmQuRG9jdW1lbnQNCiAgICJDcmlhIHVtYSBub3ZhIGluc3TDom5jaWEgZG8gV29yZA0KICAgYXJxV29yZCA9IENyZWF0ZU9iamVjdCgiV29yZC5BcHBsaWNhdGlvbiIpDQogICAiRXN0YSBsaW5oYSBzZXJ2ZSBwYXJhIGNyaWFyIHVtIGRvY3VtZW50byBlbSBicmFuY28NCiAgIGRvY1dvcmQgPSBhcnFXb3JkLkRvY3VtZW50cy5BZGQNCiAgICJUb3JuYSBvIFdvcmQgVmlzw612ZWwNCiAgIGFycVdvcmQuVmlzaWJsZSA9IFRydWUNCiAgICJDYXB0dXJhIGEgdmVyc8OjbyBkbyBXb3JkDQogICBWZXJzYW8gPSBhcnFXb3JkLlZlcnNpb24NCiAgICJFc2NyZXZlIHRleHRvIG5vIGFycXVpdm8NCiAgIGFycVdvcmQuU2VsZWN0aW9uLlR5cGVUZXh0KCJPbMOhIFdvcmQgIiAmIHZlcnNhbyAmICIhIikNCkVuZCBTdWINCjwvcHJlPg0KU2UgYSByZWZlcsOqbmNpYSBlc3RpdmVyIHNpZG8gZmVpdGEgY29ycmV0YW1lbnRlLiBzZXLDoSBwb3Nzw612ZWwgdXN1ZnJ1aXIgZG9zIHJlY3Vyc29zIGRvIEludGVsbGlzZW5zZSBwYXJhIGVzY3JldmVyIG8gY8OzZGlnby4gTm8gV29yZCAyMDAzLCBvIHJlc3VsdGFkbyBkYSBleGVjdcOnw6NvIGRvIGPDs2RpZ28gw6kgdW1hIG5vdmEgaW5zdMOibmNpYSBlIHVtIG5vdm8gZG9jdW1lbnRvIGRvIFdvcmQgY29tIG8gc2VndWludGUgdGV4dG86DQo8cD4NCjxpbWcgc3JjPSIvYXJ0aWdvcy9pbWdfYXJ0aWdvcy90b21hc192YXNxdWV6L3JlZkRpblZCQV8zLmpwZyIgd2lkdGg9IjU3MCIgaGVpZ2h0PSIzNjQiIGFsdD0iIiBib3JkZXI9IjAiPg0KPGJyPg0KPGZvbnQgc2l6ZT0iMSI+RmlndXJhIDM6IEFycXVpdm8gZGUgV29yZCBnZXJhZG8gcGVsYSBNYWNybyAiQWJyZVdvcmQiIG5vIFdvcmQgMjAwMzwvZm9udD4NCjxwPg0KQSBNYWNybyBwZWdvdSBhIHZlcnPDo28gZG8gV29yZCByZWZlcmVuY2lhZGEsIGNyaW91IHVtIG5vdm8gZG9jdW1lbnRvIGNvbG9jYW5kbyBvIHRleHRvIHF1ZSBmb2kgY29tcG9zdG8gY29tIG8gbsO6bWVybyBkYSB2ZXJzw6NvIGRvIFdvcmQsIG5lc3RlIGNhc28sIDExLjAuDQo8cD4NCkNvbSBhIE1hY3JvIGZ1bmNpb25hbmRvLCB2YW1vcyBhZ29yYSB0ZXN0w6EtbGEgZW0gb3V0cmEgdmVyc8OjbyBkbyBPZmZpY2UuIE5lc3RlIGNhc28sIHV0aWxpemFyZWkgYSB2ZXJzw6NvIDIwMDAuIEFicmEgYSBwbGFuaWxoYSBubyBFeGNlbCAyMDAwIGUgdGVudGUgZXhlY3V0YXIgYSBNYWNyby4gRmFjaWxpdGUgbyBhY2Vzc28gY29tIG8gYXRhbGhvIEFsdCtGOCBwYXJhIG1vc3RyYXIgYSBNYWNybyBlIGNsaXF1ZSBlbSBleGVjdXRhcjoNCjxwPg0KPGltZyBzcmM9Ii9hcnRpZ29zL2ltZ19hcnRpZ29zL3RvbWFzX3Zhc3F1ZXovcmVmRGluVkJBXzQuanBnIiB3aWR0aD0iNDAyIiBoZWlnaHQ9IjMxMiIgYWx0PSIiIGJvcmRlcj0iMCI+DQo8YnI+IA0KPGZvbnQgc2l6ZT0iMSI+RmlndXJhIDQ6IEV4ZWN1dGFuZG8gYSBNYWNybzwvZm9udD4NCjxwPg0KU2UgdHVkbyBkZXIgY2VydG8gKG91IGVycmFkbyksIHN1cmdpcsOhIGEgc2VndWludGUgbWVuc2FnZW06DQo8cD4NCjxpbWcgc3JjPSIvYXJ0aWdvcy9pbWdfYXJ0aWdvcy90b21hc192YXNxdWV6L3JlZkRpblZCQV81LmpwZyIgd2lkdGg9IjI5NCIgaGVpZ2h0PSIxMjYiIGFsdD0iIiBib3JkZXI9IjAiPg0KPGJyPiANCjxmb250IHNpemU9IjEiPkZpZ3VyYSA1OiBFcnJvIGdlcmFkbyBwZWxhIE1hY3JvIGV4ZWN1dGFkYSBubyBFeGNlbCAyMDAwPC9mb250Pg0KPHA+DQpDbGlxdWUgZW0gT0sgZSB2ZWphIHF1ZSBvIGVkaXRvciBwYXJvdSBhIGV4ZWN1w6fDo28gZG8gY8OzZGlnbyBuYSBsaW5oYSBlbSBkZWNsYXJhbW9zIG8gT2JqZXRvIFdvcmQuQXBwbGljYXRpb24uDQo8cD4NCjxpbWcgc3JjPSIvYXJ0aWdvcy9pbWdfYXJ0aWdvcy90b21hc192YXNxdWV6L3JlZkRpblZCQV82LmpwZyIgd2lkdGg9IjQ1OSIgaGVpZ2h0PSIxNzgiIGFsdD0iIiBib3JkZXI9IjAiPg0KPGJyPiANCjxmb250IHNpemU9IjEiPkZpZ3VyYSA2OiBWZXJpY2FuZG8gYSBsaW5oYSBkZSBlcnJvIGRhIE1hY3JvPC9mb250Pg0KPHA+DQpWZXJpZmlxdWUgYXMgcmVmZXLDqm5jaWFzIGZlaXRhcyBpbmRhIMOgIGNhaXhhIGRlIGRpw6Fsb2dvIGRlIHJlZmVyw6puY2lhcyAoRmVycmFtZW50YXMtJmd0O1JlZmVyw6puY2lhcyBvIFZCQSkgZSB2ZWphIHF1ZSBhIGJpYmxpb3RlY2EgPGI+TWljcm9zb2Z0IFdvcmQgMTEuMCBPYmplY3QgTGlicmFyeTwvYj4gZXN0w6EgbWFyY2FkYSBjb21vIEFVU0VOVEU6DQo8cD4NCjxpbWcgc3JjPSIvYXJ0aWdvcy9pbWdfYXJ0aWdvcy90b21hc192YXNxdWV6L3JlZkRpblZCQV83LmpwZyIgd2lkdGg9IjI5NSIgaGVpZ2h0PSIyMzciIGFsdD0iIiBib3JkZXI9IjAiPg0KPGJyPg0KPGZvbnQgc2l6ZT0iMSI+RmlndXJhIDc6IFZlcmljYW5kbyBhIGF1c8OqbmNpYSBkYSByZWZlcsOqbmNpYTwvZm9udD4NCjxwPg0KUGFyYSByZXNvbHZlciBvIHByb2JsZW1hIGRlIGZ1bmNpb25hbWVudG8gZGEgTWFjcm8sIGJhc3RhcmlhIGRlc2ZhemVyIGVzc2EgcmVmZXLDqm5jaWEgZSBwcm9jdXJhciBhIDxiPk1pY3Jvc29mdCBXb3JkIDkuMCBPYmplY3QgTGlicmFyeTwvYj4gcXVlIMOpIGNvcnJlc3BvbmRlbnRlIGFvIE9mZmljZSBpbnN0YWxhZG8uIEFww7NzIGlzc28sIHRlbnRlIGV4ZWN1dGFyIG5vdmFtZW50ZSBhIE1hY3JvLiBPIHJlc3VsdGFkbyBkZXZlcsOhIHNlciBlc3RlOg0KPHA+DQo8aW1nIHNyYz0iL2FydGlnb3MvaW1nX2FydGlnb3MvdG9tYXNfdmFzcXVlei9yZWZEaW5WQkFfOC5qcGciIHdpZHRoPSI1NzAiIGhlaWdodD0iMzU0IiBhbHQ9IiIgYm9yZGVyPSIwIj4NCjxicj4NCjxmb250IHNpemU9IjEiPkZpZ3VyYSA4OiBBcnF1aXZvIGRlIFdvcmQgZ2VyYWRvIHBlbGEgTWFjcm8gQWJyZVdvcmQgbm8gV29yZCAyMDAwPC9mb250Pg0KVmVqYSBxdWUgbyB0ZXh0byBnZXJhZG8gZGluYW1pY2FtZW50ZSBwZWxhIE1hY3JvIG9iZWRlY2V1IGFvIGNyaXTDqXJpbyBkZSB2ZXJzw6NvIGUgYWx0ZXJvdSBvIG7Dum1lcm8gY29sb2NhZG8gbm8gdGV4dG8gKFNlIGV4ZWN1dGFyIGEgTWFjcm8gbm8gT2ZmaWNlIFhQLCBhIHZlcnPDo28gYXByZXNlbnRhZGEgc2Vyw6EgMTAuMCkuIEZlY2hlIG8gYXJxdWl2byBkbyBXb3JkLCA8Yj5zYWx2ZTwvYj4gYSBwbGFuaWxoYSBubyBFeGNlbCAyMDAwIGUgYWJyYS1hIG5vIEV4Y2VsIDIwMDMgbm92YW1lbnRlLiBBbyBleGVjdXRhciBhIE1hY3JvLCBlbGEgZnVuY2lvbmFyw6Egbm9ybWFsbWVudGUuIFBvcnF1ZT8gQWJyYSBvIFZCQSwgYWNpb25lIG8gbWVudSBGZXJyYW1lbnRhcy0mZ3Q7UmVmZXLDqm5jaWFzIGUgdmVqYSBxdWUgYSByZWZlcsOqbmNpYSBmb2kgYXR1YWxpemFkYSBwYXJhIG8gPGI+TWljcm9zb2Z0IFdvcmQgMTEuMCBPYmplY3QgTGlicmFyeTwvYj4uDQo8cD4NCk5lc3RlIHBvbnRvLCBjaGVnYW1vcyBhIGFsZ3VtYXMgY29uY2x1c8O1ZXMgZSBzb2x1w6fDtWVzIHBhcmEgbyBwcm9ibGVtYToNCjxwPg0KPGI+PGk+RGVzZW52b2x2ZXIgc2VtcHJlIG51bWEgdmVyc8OjbyBtYWlzIGFudGlnYSBwYXJhIGdhcmFudGlyIG8gZnVuY2lvbmFtZW50byBlbSBxdWFscXVlciB2ZXJzw6NvIGRvIE9mZmljZT88L2k+PC9iPg0KPGJyPg0KTyBwcm9ibGVtYSDDqSBxdWUgbGltaXRhcsOtYW1vcyBhb3MgcmVjdXJzb3MgZGUgdW1hIHZlcnPDo28gbWFpcyBhbnRpZ2EgYWzDqW0gZG8gZmF0byBkZSBzZSBhIG8gYXBsaWNhdGl2byBmb3IgYWJlcnRvIGVtIGFsZ3VtYSB2ZXJzw6NvIHN1cGVyaW9yIGUgZm9yIHNhbHZvLCBlbGUgbWFudGVyw6EgYSByZWZlcsOqbmNpYSBkYSDDumx0aW1hIHZlcnPDo28gZG8gYXBsaWNhdGl2byBlbSBxdWUgZm9pIGFiZXJ0byBwcm92b2NhbmRvIG5vdmFtZW50ZSBvIHByb2JsZW1hIGRlIHZlcnNpb25hbWVudG8uDQo8cD4NCjxiPjxpPlRlciBpbnN0YWxhZGEgdG9kYXMgYXMgdmVyc8O1ZXMgZG8gT2ZmaWNlIHBhcmEgaW5jbHVpciB0b2RhcyBhcyByZWZlcsOqbmNpYXM/PC9pPjwvYj4NCjxicj4NClRhbHZleiBkZXNzZSBjZXJ0bywgbWFzIHF1ZW0gc2UgZGlzcG9uaWJpbGl6YSB0YW50byBmaW5hbmNlaXJhbWVudGUgY29tbyBlbSByZWN1cnNvcyBkZSBtw6FxdWluYSBlIGNvbmZsaXRvcyBnZXJhZG9zIGEgdGVyIGluc3RhbGFkYSB0b2RhcyBhcyB2ZXJzw7VlcyBkbyBhcGxpY2F0aXZvPw0KPHA+DQo8Yj48aT5DcmlhciBlIG1hbnRlciBhIHJlZmVyw6puY2lhcyBkaW5hbWljYW1lbnRlPzwvaT48L2I+DQo8YnI+DQpFc3NhIGNyZWlvIGV1IHNlciBhIG1lbGhvciBzYcOtZGEuIE7Do28gw6kgY29tcGxldGFtZW50ZSBpbmZhbMOtdmVsLCBtYXMgasOhIHRlc3RlaSBlbSB2w6FyaW9zIGFtYmllbnRlcyBlIHNlIGNvbXBvcnRvdSBtdWl0byBiZW0uDQo8cD4NCjxiPkNvbW8gYWRpY2lvbmFyIGFzIHJlZmVyw6puY2lhcyB2aWEgY8OzZGlnbzwvYj4NCjxwPg0KQWzDqW0gZG9zIGNvbmNlaXRvcyBkZSBzZWd1cmFuw6dhIGUgcGVybWlzc8O1ZXMgZGlzY3V0aWRvcyBubyBjb21lw6dvIGRvIGFydGlnbywgw6kgcHJlY2lzbyBzZSBhY29zdHVtYXIgdW0gcG91Y28gY29tIG9zIGVsZW1lbnRvcyBkYXMgcmVmZXLDqm5jaWFzLiBQYXJhIHF1ZSBhIG1hbmlwdWxhw6fDo28gZnVuY2lvbmUsIMOpIHByZWNpc28gZmF6ZXIgcmVmZXLDqm5jaWEgw6AgYmlsYmlvdGVjYSA8Yj5NaWNyb3NvZnQgVmlzdWFsIEJhc2ljIGZvciBBcHBsaWNhdGlvbnMgRXh0ZW5zaWJpbGl0eSA1LjM8L2I+LiBFc3NhIMOpIGEgYmlibGlvdGVjYSBxdWUgcGVybWl0ZSBtYW5pcHVsYXIgb2JqZXRvcyBkbyBWQkEsIHRhbnRvIGRvIFZCQSBjb21vIGRlc2RlIG91dHJhcyBmZXJyYW1lbnRhcyBjb21vIFZpc3VhbCBCYXNpYyA2IG91IFZpc3VhbCBCYXNpYyAuTkVULiBFc3NhIGJpbGJpb3RlY2Egw6kgaW5zdGFsYWRhIGp1bnRhbWVudGUgY29tIG8gVkJBIGUgYSBnYXJhbnRpYSBxdWUgZWxhIGVzdGVqYSBwcmVzZW50ZSBuYSBtw6FxdWluYSBjbGllbnRlIMOpIGRlIHF1YXNlIDEwMCUsIGrDoSBxdWUgbmEgaW5zdGFsYcOnw6NvIHBhZHLDo28gZG8gT2ZmaWNlIG8gVkJBIMOpIHRhbWLDqW0gaW5zdGFsYWRvLg0KPHA+DQpWYW1vcyBmYXplciB1bSBleGVtcGxvIHF1ZSB1c2Ugb2JqZXRvcyBkZXNzYSBiaWJsaW90ZWNhLiBJbnNpcmEgdW0gbcOzZHVsbyBjb252ZW5jaW9uYWwgbmEgbWVzbWEgcGxhbmlsaGEgcXVlIGZpemVtb3MgYW50ZXJpb3JtZW50ZSBubyBFeGNlbCAyMDAzIGUgY29sb3F1ZSBvIHNlZ3VpbnRlIGPDs2RpZ286DQo8cHJlPg0KUHVibGljIFN1YiBDaGVjYVJlZmVyZW5jaWFzKCkNCg0KICAgRGltIG1lbnNhZ2VtIEFzIFN0cmluZw0KICAgIkZheiBhIHJlZmVyw6puY2lhIGFvIHByb2pldG8gVkJBDQogICBEaW0gdmJQcm9qIEFzIFZCUHJvamVjdA0KICAgIkEgcmVmZXJlbmNpYSBlbSBzaQ0KICAgRGltIGNoa1JlZiBBcyBSZWZlcmVuY2UNCg0KICAgIlNldGEgYSB2YXJpw6F2ZWwgcGFyYSBvIHByb2pldG8gZGEgcGFzdGEgZGUgdHJhYmFsaG8gYXRpdmEuDQogICB2YlByb2ogPSBBY3RpdmVXb3JrYm9vay5WQlByb2plY3QNCg0KICAgIkNoZWNhIGFzIHJlZmVyw6puY2lhcyBzZWxlY2lvbmFkYXMgKHZlamEgbmEgY2FpeGEgZGUgZGnDoWxvZ28gUmVmZXLDqm5jaWFzKQ0KICAgRm9yIEVhY2ggY2hrUmVmIEluIHZiUHJvai5SZWZlcmVuY2VzDQogICAgICAibW9udGEgYSBzdHJpbmcgcXVlIGNvbnRlcsOhIG8gbm9tZSBkZSB0b2RhcyBhcyByZWZlcsOqbmNpYXMNCiAgICAgIG1lbnNhZ2VtID0gbWVuc2FnZW0gJiAiICIgJiBjaGtSZWYuTmFtZSAmIENocigxMykNCiAgIE5leHQNCiAgICJNb3N0cmEgYSBtZW5zYWdlbSBjb20gbyBub21lIGRhcyByZWZlcsOqbmNpYSBzZWxlY2lvbmFkYXMNCiAgIE1zZ0JveChtZW5zYWdlbSkNCkVuZCBTdWINCjwvcHJlPg0KPHA+DQpFeGVjdXRlIGEgTWFjcm8uIE7Do28gc2UgZXNxdWXDp2EgZGUgYWRpY2lvbmFyIGEgcmVmZXLDqm5jaWEgw6AgYmlibGlvdGVjYSBkZSBtYW5pcHVsYcOnw6NvLCBjb21vIGRpdG8gYW50ZXJpb3JtZW50ZS4gTyByZXN1bHRhZG8gZGV2ZXLDoSBzZXIgYWxnbyBwYXJlY2lkbyBjb20gZXN0ZToNCjxwPg0KPGltZyBzcmM9Ii9hcnRpZ29zL2ltZ19hcnRpZ29zL3RvbWFzX3Zhc3F1ZXovcmVmRGluVkJBXzkuanBnIiB3aWR0aD0iMTM1IiBoZWlnaHQ9IjE3MiIgYWx0PSIiIGJvcmRlcj0iMCI+DQo8YnI+DQo8Zm9udCBzaXplPSIxIj5GaWd1cmEgOTogUmVzdWx0YWRvIGdlcmFkbyBwZWxhIE1hY3JvIENoZWNhUmVmZXJlbmNpYXM8L2ZvbnQ+DQo8cD4NClZvY8OqIHBvZGUgZmF6ZXIgdW1hIGVxdWl2YWzDqm5jaWEgZG8gcmVzdWx0YWRvIGRlc3RhIE1hY3JvIGFicmluZG8gYSBjYWl4YSBkZSBkacOhbG9nbyBSZWZlcsOqbmNpYXMgZG8gVkJBOg0KPHA+DQo8aW1nIHNyYz0iL2FydGlnb3MvaW1nX2FydGlnb3MvdG9tYXNfdmFzcXVlei9yZWZEaW5WQkFfMTAuanBnIiB3aWR0aD0iMjk1IiBoZWlnaHQ9IjIzNyIgYWx0PSIiIGJvcmRlcj0iMCI+DQo8YnI+DQo8Zm9udCBzaXplPSIxIj5GaWd1cmEgMTA6IFZlcmlmaWNhbmRvIGFzIHJlZmVyw6puY2lhczwvZm9udD4NCjxwPg0KVGVvcmljYW1lbnRlIGVzdMOhIHR1ZG8gT0suIENvbSBlc3NlIGPDs2RpZ28sIHBvZGVtb3Mgc2FiZXIgZSBhcHJlbmRlciBtYWlzIHNvYnJlIGFzIHJlZmVyw6puY2lhcyBlIHNldXMgYXRyaWJ1dG9zLiBNb2RpZmlxdWUgYSBsaW5oYSBkZSBjw7NkaWdvIHF1ZSBtb250YSBhIG1lbnNhZ2VtIHBhcmEgbyBzZWd1aW50ZToNCjxwPg0KbWVuc2FnZW0gPSBtZW5zYWdlbSAmICJOb21lOiAiICYgY2hrUmVmLk5hbWUgJiAiIC0gQ2FtaW5obzogIiAmIGNoa1JlZi5GdWxsUGF0aCAmICIgLSBEZXNjcmnDp8OjbzogIiAmIGNoa1JlZi5EZXNjcmlwdGlvbiAmIENocigxMykNCjxwPg0KRXhlY3V0ZSBhIE1hY3JvIGRlc3RhIHZlei4gTyByZXN1bHRhZG8gZGV2ZSBzZXIgbyBzZWd1aW50ZToNCjxwPg0KPGltZyBzcmM9Ii9hcnRpZ29zL2ltZ19hcnRpZ29zL3RvbWFzX3Zhc3F1ZXovcmVmRGluVkJBXzExLmpwZyIgd2lkdGg9IjU3MCIgaGVpZ2h0PSIxMzUiIGFsdD0iIiBib3JkZXI9IjAiPg0KPGJyPiANCjxmb250IHNpemU9IjEiPkZpZ3VyYSAxMTogUmVzdWx0YWRvIGdlcmFkbyBwZWxhIE1hY3JvIENoZWNhUmVmZXJlbmNpYXMgY29tIGEgbWVuc2FnZW0gYWx0ZXJhZGE8L2ZvbnQ+DQo8cD4NCkFnb3JhIHRlbW9zIHVtYSBmb3JtYSBzaW1wbGVzIGRlIG9idGVyIG1haXMgaW5mb3JtYcOnw7VlcyBzb2JyZSBhcyByZWZlcsOqbmNpYXMgY29tIHF1ZSB0cmFiYWxoYW1vcyBubyBWQkEuIE9zIGF0cmlidXRvcyBtYWlzIGltcG9ydGFudGVzIGEgc2VyZW0gdHJhYmFsaGFkb3MgcGFyYSBlc3RlIGFydGlnbyBzw6NvIG8gPGI+SXNCcm9rZW4sIEdVSUQsIE1ham9yIGUgTWlub3I8L2I+LkEgcHJvcHJpZWRhZGUgSXNCcm9rZW4gcmV0b3JuYSA8Yj5GYWxzZTwvYj4gc2UgYSByZWZlcsOqbmNpYSBlc3RpdmVyIE9LIGUgPGI+VHJ1ZTwvYj4gc2UgZXN0aXZlciBxdWVicmFkYSwgcG9yIGV4ZW1wbG8sIHF1YW5kbyBhIGNhaXhhIGRlIGRpw6Fsb2dvIGFjdXNhIHF1ZSBhIHJlZmVyw6puY2lhIGVzdMOhIEFVU0VOVEUsIMOpIHVtIGNhc28gZW0gcXVlIG8gSXNCcm9rZW4gcmV0b3JuYXLDoSBUcnVlLiBJc3NvIG5vcyBhanVkYSBhIHZlcmlmaWNhciBhIGV4aXN0w6puY2lhIGRlIHVtYSByZWZlcsOqbmNpYSBxdWUgbm9zIGRpc3BvbmliaWxpemEgZGV0ZXJtaW5hZGEgZnVuY2lvbmFsaWRhZGUsIHBvciBleGVtcGxvLCB1bWEgLk9DWCBxdWUgY29udGVuaGEgdW0gY29udHJvbGUgQWN0aXZlWCBjb21vIG8gPGI+Q2FsZW5kYXIgQ29udHJvbDwvYj4uIERlcGVuZGVuZG8gZG8gcmVzdWx0YWRvLCB2b2PDqiBwb2RlIG9wdGFyIHBvciByb2RhciBvdSBuw6NvIG8gcHJvamV0by4NCjxwPg0KQSBwcm9wcmllZGFkZSBHVUlEIHJldG9ybmEgbyBpZGVudGlmaWNhZG9yIMO6bmljbyBwYXJhIGEgcmVmZXLDqm5jaWEuIFBhcmEgdmVyIGVzdGEgaWRlbnRpZmljYcOnw6NvLCBtb2RpZmlxdWUgYSBsaW5oYSBkZSBjw7NkaWdvIHF1ZSBtb250YSBhIG1lbnNhZ2VtIHBhcmEgbyBzZWd1aW50ZToNCjxwPg0KbWVuc2FnZW0gPSBtZW5zYWdlbSAmICJOb21lOiAiICYgY2hrUmVmLk5hbWUgJiAiIC0gR1VJRDogIiAmIGNoa1JlZi5HVUlEICYgIiAtIE1ham9yOiAiICYgY2hrUmVmLk1ham9yICYgIiAtIE1pbm9yOiAiICYgY2hrUmVmLk1pbm9yICYgQ2hyKDEzKQ0KPHA+DQpWZWphIG8gcmVzdWx0YWRvOg0KPHA+DQo8aW1nIHNyYz0iL2FydGlnb3MvaW1nX2FydGlnb3MvdG9tYXNfdmFzcXVlei9yZWZEaW5WQkFfMTIuanBnIiB3aWR0aD0iNDU4IiBoZWlnaHQ9IjE3MiIgYWx0PSIiIGJvcmRlcj0iMCI+DQo8YnI+IA0KPGZvbnQgc2l6ZT0iMSI+RmlndXJhIDEyOiBSZXN1bHRhZG8gZ2VyYWRvIHBlbGEgTWFjcm8gQ2hlY2FSZWZlcmVuY2lhcyBjb20gYSBtZW5zYWdlbSBhbHRlcmFkYTwvZm9udD4NCjxwPg0KQ29tIGFsZ3VtYSBwZXNxdWlzYSwgcHVkZSBjb25maXJtYXIgcXVlIGVzc2UgaWRlbnRpZmljYWRvciDDqSBvIG1lc21vIGluZGVwZW5kZW50ZSBkZSB2ZXJzw6NvLiBTZSB2b2PDqiB0ZXN0YXIgZW0gcXVhbHF1ZXIgb3V0cmEgdmVyc8OjbyBvIG1lc21vIGPDs2RpZ28sIHZlcsOhIHF1ZSBvcyBHVUlEcyBuw6NvIHNlcsOjbyBhbHRlcmFkb3MuIMOJIGVzc2EgcHJvcHJpZWRhZGUgcXVlIHVzYXJlbW9zIHBhcmEgYWRpY2lvbmFyIGUgcmVtb3ZlciBhcyByZWZlcsOqbmNpYXMgZW0gbm9zc29zIGFwbGljYXRpdm9zLiBBcyBwcm9wcmllZGFkZXMgTWFqb3IgZSBNaW5vciBuw6NvIHJlcXVlcmVtIG1haW9yZXMgZXN0dWRvcyBlIHNlcsOjbyB1c2FkYXMgc29tZW50ZSBwYXJhIGEgZXhlY3XDp8OjbyBkbyBtw6l0b2RvIHF1ZSBhZGljaW9uYSBhIHJlZmVyw6puY2lhLCBjb25mb3JtZSB2ZXJlbW9zIGEgc2VndWlyLg0KPHA+DQpPcyBtw6l0b2RvcyB1dGlsaXphZG9zIHBhcmEgYWRpY2lvbmFyIGUgcmVtb3ZlciByZWZlcsOqbmNpYXMgc8OjbyBvIDxiPkFkZEZyb21HVUlELCBBZGRGcm9tRmlsZSBlIFJlbW92ZTwvYj4uDQo8cD4NCk8gbcOpdG9kbyBBZGRGcm9tRmlsZSBhZGljaW9uYSBhIHJlZmVyw6puY2lhIGNvbSBiYXNlIG5vIGNhbWluaG8gZG8gYXJxdWl2by4gw4kgdW1hIG9ww6fDo28sIG1hcyBwb2RlIHNlciBwcm9ibGVtw6F0aWNhLCBwb2lzIHByZWNpc2Fyw61hbW9zIHNhYmVyIHF1YWwgbyBkaXJldMOzcmlvIGVtIHF1ZSBmb2kgaW5zdGFsYWRvIG8gYXBsaWNhdGl2bywgbyBxdWUgw6AgdmV6ZXMgcG9kZSBzZXIgdW0gbWlzdMOpcmlvLiBQYXJhIGNvbnRvcm5hciBhIHNpdHVhw6fDo28sIHBvZGVtb3MgdXNhciBvIG3DqXRvZG8gPGI+QXBwbGljYXRpb24uUGF0aDwvYj4gcXVlIHJldG9ybmEgbyBkaXJldMOzcmlvIGVtIHF1ZSBmb2kgaW5zdGFsYWRvIG8gT2ZmaWNlIHBhcmEgYWRpY2lvbmFyIGEgcmVmZXLDqm5jaWEuDQo8cD4NCk8gbcOpdG9kbyBBZGRGcm9tR1VJRCBhZGljaW9uYSBhIHJlZmVyw6puY2lhIGNvbSB0csOqcyBwYXLDom1ldHJvczogR1VJRCwgTWFqb3IgZSBNaW5vciwgcXVlIHPDo28gYXMgcHJvcHJpZWRhZGVzIGRpc2N1dGlkYXMgYW50ZXJpb3JtZW50ZS4gTyBHVUlEIHBvZGUgc2VyIHBhc3NhZG8gY29tbyA8Yj5TdHJpbmc8L2I+IGUgYXMgdmFyacOhdmVpcyBNYWpvciBlIE1pbm9yIGRldmVtIHNlciBwYXNzYWRhcyBjb21vIDxiPkxvbmc8L2I+Lg0KPHA+DQpQZWdhciBvcyBkYWRvcyByZXF1ZXIgY8OzZGlnbyBjb21vIGZpemVtb3MgYW50ZXJpb3JtZW50ZS4gQ29tIGlzc28sIHRlbW9zIHBhcmEgYSBiaWJsaW90ZWNhIE1pY3Jvc29mdCBXb3JkIG9zIHNlZ3VpbnRlcyB2YWxvcmVzOg0KPHA+DQo8Yj5HVUlEOjwvYj4gezAwMDIwOTA1LTAwMDAtMDAwMC1DMDAwLTAwMDAwMDAwMDA0Nn08YnI+DQo8Yj5NYWpvcjo8L2I+IDg8YnI+DQo8Yj5NaW5vcjo8L2I+IERlcGVuZGUgZGEgdmVyc8Ojby4NCjxwPg0KQSB2YXJpw6F2ZWwgTWlub3IgcG9zc3VpIHVtIHZhbG9yIHF1ZSB2YXJpYSBjb25mb3JtZSBhIHZlcnPDo28gZG8gYXBsaWNhdGl2by4gUGFyYSByZWd1bGFyaXphciBlc3NlIHZhbG9yLCBhIG1lbGhvciBtYW5laXJhIHF1ZSBlbmNvbnRyZWkgZm9pIHBlZ2FuZG8gbyB2YWxvciBkbyA8Yj5BcHBsaWNhdGlvbi5WZXJzaW9uPC9iPi4gQSBkaWZlcmVuw6dhIGVudHJlIG9zIGRvaXMgdmFsb3JlcyDDqSBzZW1wcmUgZGUgOCB1bmlkYWRlcywgcG9ydGFudG8gcG9kZW1vcyBmYXplciB1bWEgYW5hbG9naWEgcGFyYSBkZXRlcm1pbmFyIG8gdmFsb3IgZG8gcGFyw6JtZXRyby4gVmVqYSBhIGRpZmVyZW7Dp2EgZG8gcmVzdWx0YWRvIGRhIE1hY3JvIDxiPkNoZWNhUmVmZXJlbmNpYXM8L2I+IGV4ZWN1dGFkYSBubyBFeGNlbCAyMDAwIGUgbm8gRXhjZWwgMjAwMzoNCjxwPg0KPGltZyBzcmM9Ii9hcnRpZ29zL2ltZ19hcnRpZ29zL3RvbWFzX3Zhc3F1ZXovcmVmRGluVkJBXzEzLmpwZyIgd2lkdGg9IjMwNCIgaGVpZ2h0PSIxMTIiIGFsdD0iIiBib3JkZXI9IjAiPg0KPGJyPg0KPGZvbnQgc2l6ZT0iMSI+RmlndXJhIDEzOiBSZXN1bHRhZG8gZ2VyYWRvIHBlbGEgTWFjcm8gQ2hlY2FSZWZlcmVuY2lhcyBubyBFeGNlbCAyMDAwPC9mb250Pg0KPHA+DQo8aW1nIHNyYz0iL2FydGlnb3MvaW1nX2FydGlnb3MvdG9tYXNfdmFzcXVlei9yZWZEaW5WQkFfMTQuanBnIiB3aWR0aD0iMjk4IiBoZWlnaHQ9IjExNiIgYWx0PSIiIGJvcmRlcj0iMCI+DQo8YnI+DQo8Zm9udCBzaXplPSIxIj5GaWd1cmEgMTQ6IFJlc3VsdGFkbyBnZXJhZG8gcGVsYSBNYWNybyBDaGVjYVJlZmVyZW5jaWFzIG5vIEV4Y2VsIDIwMDM8L2ZvbnQ+DQo8cD4NCg0KTyBtw6l0b2RvIDxiPlJlbW92ZTwvYj4gcmVtb3ZlIGEgcmVmZXLDqm5jaWEgZW0gc2kuIMOJIHByZWNpc28gcGFzc2FyIHVtYSB2YXJpw6F2ZWwgZG8gdGlwbyA8Yj5SZWZlcmVuY2U8L2I+IHBhcmEgcXVlIGZ1bmNpb25lLg0KVGVuZG8gdmlzdG8gdG9kYXMgZXN0YXMgb3DDp8O1ZXMsIGNvbnNlZ3VpIGNoZWdhciDDoCBzZWd1aW50ZXMgc29sdcOnw7VlcyBwYXJhIG5vc3NvIHByb2JsZW1hLiBBYmFpeG8gcHJvcG9uaG8gdW0gbW9kZWxvIGRlIGPDs2RpZ28gcXVlIHBvZGUgdG9ybmFyIG8gYXBsaWNhdGl2byBWQkEgcHJhdGljYW1lbnRlIHVuaXZlcnNhbCBwYXJhIHRvZGFzIGFzIHZlcnPDtWVzIGRvIE9mZmljZToNCjxwcmU+DQpQdWJsaWMgU3ViIEFkaWNpb25hUmVmZXJlbmNpYVdvcmQoKQ0KDQogICAiRmF6IGEgcmVmZXLDqm5jaWEgYW8gcHJvamV0byBWQkENCiAgIERpbSB2YlByb2ogQXMgVkJQcm9qZWN0DQogICAiQSByZWZlcmVuY2lhIGVtIHNpDQogICBEaW0gdmVyc2FvIEFzIExvbmcNCg0KICAgIlNldGEgYSB2YXJpw6F2ZWwgcGFyYSBvIHByb2pldG8gZGEgcGFzdGEgZGUgdHJhYmFsaG8gYXRpdmEuDQogICB2YlByb2ogPSBBY3RpdmVXb3JrYm9vay5WQlByb2plY3QNCg0KICAgIlBlZ2EgYSB2ZXJzw6NvIGF0dWFsIGRvIE9mZmljZSBlIGNvcnJpZ2UgYSB2YXJpw6F2ZWwNCiAgIHZlcnNhbyA9IENMbmcoQXBwbGljYXRpb24uVmVyc2lvbikgLyAxMA0KDQogICAiQWRpY2lvbmEgYSByZWZlcsOqbmNpYSBkbyBXb3JkIHZpYSBHVUlEOg0KICAgdmJQcm9qLlJlZmVyZW5jZXMuQWRkRnJvbUd1aWQoInswMDAyMDkwNS0wMDAwLTAwMDAtQzAwMC0wMDAwMDAwMDAwNDZ9IiwgOCwgdmVyc2FvIC0gOCkNCg0KRW5kIFN1Yg0KDQpQdWJsaWMgU3ViIFJlbW92ZVJlZmVyZW5jaWFXb3JkKCkNCg0KICAgIkZheiBhIHJlZmVyw6puY2lhIGFvIHByb2pldG8gVkJBDQogICBEaW0gdmJQcm9qIEFzIFZCUHJvamVjdA0KICAgIkEgcmVmZXJlbmNpYSBlbSBzaQ0KICAgRGltIGNoa1JlZiBBcyBSZWZlcmVuY2UNCg0KICAgIlNldGEgYSB2YXJpw6F2ZWwgcGFyYSBvIHByb2pldG8gZGEgcGFzdGEgZGUgdHJhYmFsaG8gYXRpdmEuDQogICB2YlByb2ogPSBBY3RpdmVXb3JrYm9vay5WQlByb2plY3QNCg0KICAgRm9yIEVhY2ggY2hrUmVmIEluIHZiUHJvai5SZWZlcmVuY2VzDQogICAgICAiVmVyaWZpY2Egc2UgYSByZWZlcsOqbmNpYSDDqSBkbyBXb3JkOg0KICAgICAgSWYgY2hrUmVmLkdVSUQgPSAiezAwMDIwOTA1LTAwMDAtMDAwMC1DMDAwLTAwMDAwMDAwMDA0Nn0iIFRoZW4NCiAgICAgICAgICJTZSBmb3IsIHJlbW92ZQ0KICAgICAgICAgdmJQcm9qLlJlZmVyZW5jZXMuUmVtb3ZlKGNoa1JlZikNCiAgICAgIEVuZCBJZg0KICAgTmV4dA0KDQpFbmQgU3ViDQo8L3ByZT4NCjxwPg0KSW5zaXJhIGVzc2UgY8OzZGlnbyBlbSB1bSBtw7NkdWxvIHZhemlvIGRlIHVtYSBuYSBwbGFuaWxoYSBlbSBxdWUgZXN0YW1vcyB0cmFiYWxoYW5kbyBhZGljaW9uYW5kbyBhIHJlZmVyw6puY2lhIGFvIDxiPk1pY3Jvc29mdCBWaXN1YWwgQmFzaWMgZm9yIEFwcGxpY2F0aW9ucyBFeHRlbnNpYmlsaXR5IDUuMzwvYj4uIEluc2lyYSB0YW1iw6ltIG8gY8OzZGlnbyBwYXJhIGdlcmFyIG8gbm92byBhcnF1aXZvIG5vIFdvcmQgY29uZm9ybWUgbm8gY29tZcOnbyBkbyBhcnRpZ28uIEFnb3JhLCBiYXN0YSBjb2xvY2FyIGEgY2hhbWFkbyBkYSBNYWNybyA8Yj5BZGljaW9uYVJlZmVyZW5jaWFXb3JkPC9iPiBubyBldmVudG8gV29ya2Jvb2tfT3BlbiBlIGEgTWFjcm8gPGI+UmVtb3ZlUmVmZXJlbmNpYVdvcmQ8L2I+IG5vIFdvcmtib29rX0JlZm9yZUNsb3NlLiBPIGPDs2RpZ28gZW0gPGI+RXN0YXBhc3RhX2RlX3RyYWJhbGhvPC9iPiBmaWNhIGFzc2ltOg0KPHByZT4NClByaXZhdGUgU3ViIFdvcmtib29rX0JlZm9yZUNsb3NlKEJ5VmFsIENhbmNlbCBBcyBCb29sZWFuKQ0KICAgQ2FsbCBSZW1vdmVSZWZlcmVuY2lhV29yZCgpDQpFbmQgU3ViDQoNClByaXZhdGUgU3ViIFdvcmtib29rX09wZW4oKQ0KICAgQ2FsbCBBZGljaW9uYVJlZmVyZW5jaWFXb3JkKCkNCkVuZCBTdWINCjwvcHJlPg0KPHA+DQpBZ29yYSwgZmVjaGUgYSBwbGFuaWxoYSBlIHNhbHZlIG5vIEV4Y2VsIDIwMDMuIEVtIHNlZ3VpZGEsIGFicmEgbm8gRXhjZWwgMjAwMCBvdSBYUCAoYXRpdmFuZG8gYXMgTWFjcm9zKSBlIHNlbSBtZXhlciBlbSBuYWRhLCBleGVjdXRlIGEgTWFjcm8gPGI+QWJyZVdvcmQ8L2I+LiBWZWphIHF1ZSBvIFdvcmQgw6kgYWJlcnRvIGNvcnJldGFtZW50ZSBuw6NvIGdlcmFuZG8gbWFpcyBvIGVycm8gZGUgdmVyc2lvbmFtZW50by4gQXMgTWFjcm9zIHRyYXRhcmFtIGRlIGFkaWNpb25hciBhIHJlZmVyw6puY2lhIHBhcmEgYSB2ZXJzw6NvIGNvcnJldGEgZG8gYXBsaWNhdGl2byBzZW0gaW50ZXJ2ZW7Dp8OjbyBkbyB1c3XDoXJpby4gRmHDp2EgaXNzbyB2w6FyaWFzIHZlemVzIGVtIGRpdmVyc2FzIHZlcnPDtWVzIGRvIGFwbGljYXRpdm8gcGFyYSB0ZXN0YXIgc3VhIGVmaWPDoWNpYS4NCjxwPg0KVm9jw6ogcG9kZSB0YW1iw6ltIGZhemVyIGltcGxlbWVudGHDp8O1ZXMgY29tIG8gbcOpdG9kbyBBZGRGcm9tRmlsZSwgZW1ib3JhIGVtIHRlc3RlcyBldSB0ZW5oYSBjb25jbHXDrWRvIHF1ZSBvIEFkZEZyb21HVUlEIMOpIG1haXMgZWZpY2llbnRlIGUgbWVub3Mgc3VqZWl0byBlIGVycm9zLg0KPHA+DQpBcyBmdW7Dp8O1ZXMgZSByZWN1cnNvcyBvZmVyZWNpZG9zIHBlbGEgYmlibGlvdGVjYSA8Yj5NaWNyb3NvZnQgVmlzdWFsIEJhc2ljIGZvciBBcHBsaWNhdGlvbnMgRXh0ZW5zaWJpbGl0eSA1LjM8L2I+IHBlcm1pdGUgaXIgbWFpcyBhbMOpbSBkbyBxdWUgbW9zdHJlaSBuZXN0ZSBhcnRpZ28uIMOJIHBvc3PDrXZlbCBlc3RlbmRlciBhIGZ1bmNpb25hbGlkYWRlIGEgb3V0cmFzIGJpYmxpb3RlY2FzIG1haXMgY29tdW5zIGNvbW8gbyBBRE8gZSBvIE1pY3Jvc29mdCBPdXRsb29rLiBBIHBhcnRpciBkYSB2ZXJzw6NvIDk3LCBvIE9mZmljZSB0ZXZlIHN1YXMgdmVyc8O1ZXMgcmVndWxhcml6YWRhcyBwYXJhIHRvZG9zIG9zIGFwbGljYXRpdm9zIGUgaXNzbyBub3MgYXV4aWxpYSBhIHRyYWJhbGhhciBjb20gYXMgb3DDp8O1ZXMgZGUgdmVyc8O1ZXMgY29tbyBmaXplbW9zIG5vcyBjw7NkaWdvcyBkZSBleGVtcGxvLg0KPHA+DQo8Yj5Db25jbHVzw6NvPC9iPg0KPHA+DQpQcm9jdXJlaSBleHBsYW5hciBkZSBtYW5laXJhIGVueHV0YSB1bSBtZWlvIHBhcmEgcmVzb2x2ZXIgbyBwcm9ibGVtYSBkZSB2ZXJzaW9uYW1lbnRvIGUgYXVzw6puY2lhIGRlIGNvbXBvbmVudGVzIHF1ZSBlbSBtdWl0byBub3MgYXV4aWxpYW0gZSBhenVjcmluYW0gbm8gZGVzZW52b2x2aW1lbnRvIGRlIG5vc3NhcyBzb2x1w6fDtWVzLg0KPHA+DQo8YSBocmVmPSIvYXJ0aWdvcy9kb3dubG9hZHMvdG9tYXNfdmFzcXVlei9BZGljaW9uYW5kb19SZWZlcmVuY2lhcy56aXAiPkZhw6dhIG8gZG93bmxvYWQgZGEgcGxhbmlsaGEgY29tIG9zIGPDs2RpZ29zIGRlIGV4ZW1wbG8sIGNsaXF1ZSBhcXVpLjwvYT4NCjxwPg0KPGI+UmVmZXLDqm5jaWFzPC9iPg0KPHA+DQo8YSBocmVmPSJodHRwOi8vbXNkbi5taWNyb3NvZnQuY29tL2xpYnJhcnkvZGVmYXVsdC5hc3A/dXJsPS9saWJyYXJ5L2VuLXVzL21vZGNvcmUvaHRtbC9kZWNvbkF1dG9tYXRpbmdWaXN1YWxCYXNpY0VkaXRvci5hc3AiIHRhcmdldD0iX2JsYW5rIj5odHRwOi8vbXNkbi5taWNyb3NvZnQuY29tL2xpYnJhcnkvZGVmYXVsdC5hc3A/dXJsPS9saWJyYXJ5L2VuLXVzL21vZGNvcmUvaHRtbC9kZWNvbkF1dG9tYXRpbmdWaXN1YWxCYXNpY0VkaXRvci5hc3A8L2E+DQo8cD4NCjxhIGhyZWY9Imh0dHA6Ly9tc2RuLm1pY3Jvc29mdC5jb20vbGlicmFyeS9kZWZhdWx0LmFzcD91cmw9L2xpYnJhcnkvZW4tdXMvdmJhYWMxMS9odG1sL2FjcHJvbWlub3IuYXNwIiB0YXJnZXQ9Il9ibGFuayI+aHR0cDovL21zZG4ubWljcm9zb2Z0LmNvbS9saWJyYXJ5L2RlZmF1bHQuYXNwP3VybD0vbGlicmFyeS9lbi11cy92YmFhYzExL2h0bWwvYWNwcm9taW5vci5hc3A8L2E+DQo8cD4NCjxhIGhyZWY9Imh0dHA6Ly9tc2RuLm1pY3Jvc29mdC5jb20vbGlicmFyeS9kZWZhdWx0LmFzcD91cmw9L2xpYnJhcnkvZW4tdXMvdmJhYWMxMS9odG1sL2FjcHJvTWFqb3IuYXNwIiB0YXJnZXQ9Il9ibGFuayI+aHR0cDovL21zZG4ubWljcm9zb2Z0LmNvbS9saWJyYXJ5L2RlZmF1bHQuYXNwP3VybD0vbGlicmFyeS9lbi11cy92YmFhYzExL2h0bWwvYWNwcm9NYWpvci5hc3A8L2E+DQo8cD4NCjxhIGhyZWY9Imh0dHA6Ly9tc2RuLm1pY3Jvc29mdC5jb20vbGlicmFyeS9kZWZhdWx0LmFzcD91cmw9L2xpYnJhcnkvZW4tdXMvdmJleHQ5OC9odG1sL3ZhbXRoYWRkZnJvbWd1aWQuYXNwIiB0YXJnZXQ9Il9ibGFuayI+aHR0cDovL21zZG4ubWljcm9zb2Z0LmNvbS9saWJyYXJ5L2RlZmF1bHQuYXNwP3VybD0vbGlicmFyeS9lbi11cy92YmV4dDk4L2h0bWwvdmFtdGhhZGRmcm9tZ3VpZC5hc3A8L2E+DQo8cD4NCjxhIGhyZWY9Imh0dHA6Ly9tc2RuLm1pY3Jvc29mdC5jb20vbGlicmFyeS9kZWZhdWx0LmFzcD91cmw9L2xpYnJhcnkvZW4tdXMvdmJleHQ5OC9odG1sL3ZhbXRoYWRkZnJvbWd1aWQuYXNwIiB0YXJnZXQ9Il9ibGFuayI+aHR0cDovL21zZG4ubWljcm9zb2Z0LmNvbS9saWJyYXJ5L2RlZmF1bHQuYXNwP3VybD0vbGlicmFyeS9lbi11cy92YmV4dDk4L2h0bWwvdmFtdGhhZGRmcm9tZ3VpZC5hc3A8L2E+PC9iPjwvaT48L2Rpdj5kZAILDw8WAh8DBYQJPGEgaHJlZj0iaHR0cDovL3d3dy5saW5oYWRlY29kaWdvLmNvbS5ici9jb2xhYm9yYWRvci5hc3B4P2lkPTEyNiI+PGltZyBzcmM9Ii9pbWFnZW5zL2FydGlnb3MvQ29sdW5pc3Rhc0dyYW5kZS9zZW1mb3RvLmpwZyIgYm9yZGVyPT0iMCIgYWx0PSJUb23DoXMgVsOhc3F1ZXoiIHRpdGxlPSJUb23DoXMgVsOhc3F1ZXoiIC8+PHA+VG9tw6FzIFbDoXNxdWV6IC0gR3JhZHVhZG8gZW0gQ2nDqm5jaWFzIGRhIENvbXB1dGHDp8OjbyBwZWxhIFVuaXZlcnNpZGFkZSBJTUVTIGRlIFPDo28gQ2FldGFubyBkbyBTdWwuIFBhc3NvdSBwb3IgZGl2ZXJzYXMgw6FyZWFzIGRlIHRlY25vbG9naWEsIGRlc2RlIGdlcmVuY2lhbWVudG8gZGUgcmVkZXMgY29tIFdpbmRvd3MgU2VydmVyIGF0w6kgY2hlZ2FyIGFvIGRlc2Vudm9sdmltZW50byBkZSBzb2Z0d2FyZSBwYXNzYW5kbyBwb3IgcHJvamV0b3MgZW0gTWljcm9zb2Z0IE9mZmljZSwgUG9ydGFpcyBDb29ycG9yYXRpdm9zIGVtIEFTUC5ORVQsIGFwbGljYXRpdm9zIGNvbWVyY2lhaXMgZSBzb2x1w6fDtWVzIHBhcmEgRGlzcG9zaXRpdm9zIE3Ds3ZlaXMgZW0gSjJNRSBlIFdBUC48YnIgLz4NCkNyaWFkb3IgZSBtYW50ZW5lZG9yIGRvIHNpdGUgPGEgcmVsPSdub2ZvbGxvdycgdGFyZ2V0PSdfYmxhbmsnIGhyZWY9Imh0dHA6Ly93d3cudG9tYXN2YXNxdWV6LmNvbS5iciIgdGFyZ2V0PSJfYmxhbmsiPnd3dy50b21hc3Zhc3F1ZXouY29tLmJyPC9hPiwgZGVkaWNhIHNldSB0ZW1wbyBhIHBlc3F1aXNhciBvIHF1ZSBow6EgZGUgbm92byBubyBtdW5kbyBkYSB0ZWNub2xvZ2lhLCBtZXNtbyBzYWJlbmRvIHF1ZSDDqSB1bWEgbWlzc8OjbyBxdWFzZSBpbXBvc3PDrXZlbC4NCjxiciAvPjxiciAvPg0KU2l0ZTogPGEgcmVsPSdub2ZvbGxvdycgdGFyZ2V0PSdfYmxhbmsnIGhyZWY9Imh0dHA6Ly93d3cudG9tYXN2YXNxdWV6LmNvbS5iciIgdGFyZ2V0PSJfYmxhbmsiPmh0dHA6Ly93d3cudG9tYXN2YXNxdWV6LmNvbS5icjwvYT48YnIgLz4NCkJsb2c6IDxhIHJlbD0nbm9mb2xsb3cnIHRhcmdldD0nX2JsYW5rJyBocmVmPSJodHRwOi8vdG9tYXMudmFzcXVlei5ibG9nLnVvbC5jb20uYnIiIHRhcmdldD0iX2JsYW5rIj5odHRwOi8vdG9tYXMudmFzcXVlei5ibG9nLnVvbC5jb20uYnI8L2E+DQogICA8L3A+PC9hPmRkAg0PDxYCHwMF+wU8ZGl2IGlkPSJzb2NpYWwtc2hhcmUtYXJ0aWNsZSI+PHNwYW4gIGNsYXNzPSJzdF9mYWNlYm9va19oY291bnQiIGRpc3BsYXlUZXh0PSJGYWNlYm9vayIgc3RfaW1hZ2U9Imh0dHA6Ly93d3cubGluaGFkZWNvZGlnby5jb20uYnIvaW1nL2xvZ29MYy5wbmciPjwvc3Bhbj48c3BhbiAgY2xhc3M9InN0X3R3aXR0ZXJfaGNvdW50IiBkaXNwbGF5VGV4dD0iVHdlZXQiIHN0X2ltYWdlPSJodHRwOi8vd3d3LmxpbmhhZGVjb2RpZ28uY29tLmJyL2ltZy9sb2dvTGMucG5nIj48L3NwYW4+PHNwYW4gIGNsYXNzPSJzdF9saW5rZWRpbl9oY291bnQiIGRpc3BsYXlUZXh0PSJMaW5rZWRJbiIgc3RfaW1hZ2U9Imh0dHA6Ly93d3cubGluaGFkZWNvZGlnby5jb20uYnIvaW1nL2xvZ29MYy5wbmciPjwvc3Bhbj48c3BhbiAgY2xhc3M9InN0X2VtYWlsX2hjb3VudCIgZGlzcGxheVRleHQ9IkVtYWlsIiBzdF9pbWFnZT0iaHR0cDovL3d3dy5saW5oYWRlY29kaWdvLmNvbS5ici9pbWcvbG9nb0xjLnBuZyI+PC9zcGFuPjxzcGFuICBjbGFzcz0ic3RfcGx1c29uZV9oY291bnQiIHN0X2ltYWdlPSJodHRwOi8vd3d3LmxpbmhhZGVjb2RpZ28uY29tLmJyL2ltZy9sb2dvTGMucG5nIiBzdHlsZT0ibWFyZ2luLWxlZnQ6NXB4OyIgPjwvc3Bhbj48c3BhbiAgY2xhc3M9InN0X2ZibGlrZV9oY291bnQiIHN0X2ltYWdlPSJodHRwOi8vd3d3LmxpbmhhZGVjb2RpZ28uY29tLmJyL2ltZy9sb2dvTGMucG5nIiBzdHlsZT0ibWFyZ2luLWxlZnQ6LTVweDsiID48L3NwYW4+PC9kaXY+ZGQCDw8WAh4GYWN0aW9uBT0vYXJ0aWdvLzU2NS9hZGljaW9uYW5kby1yZWZlcmVuY2lhcy1kaW5hbWljYW1lbnRlLW5vLXZiYS5hc3B4ZAIBD2QWAmYPDxYCHwMF3wI8YSB0YXJnZXQ9Il9ibGFuayIgaHJlZj0iaHR0cDovL3d3dy5jb21wdXdhcmUuY29tL2VuX3VzL2FwcGxpY2F0aW9uLXBlcmZvcm1hbmNlLW1hbmFnZW1lbnQvcHJvZHVjdHMvZHluYXRyYWNlLWZyZWUtdHJpYWwuaHRtbD91dG1fc291cmNlPWFkJnV0bV9tZWRpdW09YW51bmNpb19saW5oYWRlY29kaWdvJnV0bV9jYW1wYWlnbj1hcG1fZHluYXRyYWNlX2ZyZWVfdHJpYWxfd3ciPjxpbWcgYm9yZGVyPSIwIiBzcmM9Imh0dHA6Ly93d3cubGluaGFkZWNvZGlnby5jb20uYnIvYmFubmVycy8zMDB4MjUwL2R5bmF0cmFjZV9jb21wdXdhcmVfMzAwXzI1MF8wMi5naWYiIHdpZHRoPSIzMDAiIGhlaWdodD0iMjUwIiAvPjwvYT5kZAIDD2QWAgIBDw8WAh8DBZkJPHVsIGNsYXNzPSJuZXdzLWNvdXJzZXMtdmlkZW9zLWxpc3QiIHN0eWxlPSJ3aWR0aDoxMDAlO21hcmdpbi1ib3R0b206MHB4OyI+PGxpPjxhIGhyZWY9Imh0dHA6Ly93d3cuZGV2bWVkaWEuY29tLmJyL2N1cnNvL2N1cnNvLWRlLWNvZGVpZ25pdGVyLWNvbS1waHAtY3JpYW5kby11bWEtbG9qYS12aXJ0dWFsLzM4OSIgIHJlbD0ibm9mb2xsb3ciIHRhcmdldD0iX2JsYW5rIj5DdXJzbyBDb2RlSWduaXRlciBjb20gUEhQOiBDcmlhbmRvIHVtYSBMb2phIFZpcnR1YWw8L2E+PC9saT48bGk+PGEgaHJlZj0iaHR0cDovL3d3dy5kZXZtZWRpYS5jb20uYnIvY3Vyc28vY3Vyc28tZGUtamF2YXNjcmlwdC1jb21wbGV0by8zODgiICByZWw9Im5vZm9sbG93IiB0YXJnZXQ9Il9ibGFuayI+Q3Vyc28gSmF2YVNjcmlwdCBDb21wbGV0bzwvYT48L2xpPjxsaT48YSBocmVmPSJodHRwOi8vd3d3LmRldm1lZGlhLmNvbS5ici9jdXJzby9jdXJzby1kZS1pcmVwb3J0LWRlc2Vudm9sdmVuZG8tcmVsYXRvcmlvcy1jb20tamF2YS8zODciICByZWw9Im5vZm9sbG93IiB0YXJnZXQ9Il9ibGFuayI+Q3Vyc28gaVJlcG9ydCAtIERlc2Vudm9sdmVuZG8gUmVsYXTDs3Jpb3MgY29tIEphdmE8L2E+PC9saT48bGk+PGEgaHJlZj0iaHR0cDovL3d3dy5kZXZtZWRpYS5jb20uYnIvY3Vyc28vY3Vyc28tZGUtanF1ZXJ5LWJhc2ljby8zODYiICByZWw9Im5vZm9sbG93IiB0YXJnZXQ9Il9ibGFuayI+Q3Vyc28galF1ZXJ5IELDoXNpY288L2E+PC9saT48bGk+PGEgaHJlZj0iaHR0cDovL3d3dy5kZXZtZWRpYS5jb20uYnIvY3Vyc28vY3Vyc28tZGUtaW50cm9kdWNhby1hby1jc3MvMzg1IiAgcmVsPSJub2ZvbGxvdyIgdGFyZ2V0PSJfYmxhbmsiPkN1cnNvIEludHJvZHXDp8OjbyBhbyBDU1M8L2E+PC9saT48bGk+PGEgaHJlZj0iaHR0cDovL3d3dy5kZXZtZWRpYS5jb20uYnIvY3Vyc28vY3Vyc28tZGUtYW5kcm9pZC1jcmlhbmRvLXVtYS1sb2phLXZpcnR1YWwvMzg0IiAgcmVsPSJub2ZvbGxvdyIgdGFyZ2V0PSJfYmxhbmsiPkN1cnNvIEFuZHJvaWQ6IENyaWFuZG8gdW1hIGxvamEgdmlydHVhbDwvYT48L2xpPjxhIGhyZWY9Imh0dHA6Ly93d3cuZGV2bWVkaWEuY29tLmJyL2N1cnNvcy8iIHJlbD0ibm9mb2xsb3ciIGNsYXNzPSJidG4gZnIgbWctdCIgdGFyZ2V0PSJfYmxhbmsiPlZFUiBUT0RPUzwvYT48L3VsPmRkZC/H/VsSx5nfJ4HDRkcdwm9hkqHCVCD63ScBP8ttKGE3">
+</div>
+
+    </form>
+</div>
+
+    <hr class="content-spacer">    
+    <span id="ContentPlaceHolder1_lblArtigosRelacionados"><ul class="news-courses-videos-list" style="width:auto;"><h3>Leia também</h3><li><a href="http://www.linhadecodigo.com.br/artigo/2972/data-bars-para-ms-access.aspx" rel="nofollow">Data Bars para MS-Access</a><span>Access</span></li><li><a href="http://www.linhadecodigo.com.br/artigo/2951/funcionalidades-do-office-usando-visual-studio-for-office-parte-3.aspx" rel="nofollow">Funcionalidades do Office usando Visual Studio for Office – Parte 3</a><span>C#</span></li><li><a href="http://www.linhadecodigo.com.br/artigo/2942/funcionalidades-do-office-usando-visual-studio-for-office-parte-2.aspx" rel="nofollow">Funcionalidades do Office usando Visual Studio for Office - Parte 2</a><span>C#</span></li><li><a href="http://www.linhadecodigo.com.br/artigo/2938/estenda-as-funcionalidades-do-office-com-o-visual-studio-for-office.aspx" rel="nofollow">Estenda as funcionalidades do Office com o Visual Studio for Office</a><span>C#</span></li><li><a href="http://www.linhadecodigo.com.br/artigo/2893/como-evitar-processos-pendurados-na-automacao-do-excel.aspx" rel="nofollow">Como evitar processos pendurados na automação do Excel</a><span>Office</span></li></ul></span>
+ <!--    <h3>Comentários</h3>
+     <div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'linhadecodigo'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>-->
+</div>
+
+        <div class="aside">
+            
+<span style="font-size:10px; font-family:Arial, Verdana; color:#999999;">Publicidade</span><br><div class="sidebar-ads"><span id="WUC_banner_lblBanner"><a target="_blank" href="http://www.compuware.com/en_us/application-performance-management/products/dynatrace-free-trial.html?utm_source=ad&utm_medium=anuncio_linhadecodigo&utm_campaign=apm_dynatrace_free_trial_ww"><img border="0" src="./Adicionando referências dinamicamente no VBA_files/dynatrace_compuware_300_250_02.gif" width="300" height="250"></a></span></div>
+            <hr class="aside-spacer">
+            
+
+<div class="box-sidebar clearfix" id="magazines-links">
+  <h3>Revistas Devmedia</h3>
+  <ul>
+    <li> <a href="http://www.devmedia.com.br/revista-net-magazine-116/31140?tc=lc" target="_blank" rel="nofollow"> <img border="0" width="125" height="170" src="./Adicionando referências dinamicamente no VBA_files/capa-revista-net-magazine-116-m.png" alt="Revista .net Magazine Edição 116" title="Revista .net Magazine Edição 116"> <span>.net Mag 116</span> </a> </li>
+    <li> <a href="http://www.devmedia.com.br/revista-easy-net-magazine-37/31020?tc=lc" target="_blank" rel="nofollow"> <img border="0" width="125" height="170" src="./Adicionando referências dinamicamente no VBA_files/capa-revista-easy-net-magazine-37-m.png" alt="Revista Easy .net magazine Edição 37" title="Revista Easy .net magazine Edição 37"> <span>Easy .net mag 37</span> </a> </li>
+  </ul>
+  <div class="clear padding"></div>
+  <a class="btn fr mg-l" href="http://www.devmedia.com.br/assine/" target="_blank">Assine</a> <a class="btn fr" href="http://www.devmedia.com.br/revistas/" target="_blank">Ver todas</a>
+</div> 
+            
+            <hr class="aside-spacer">
+            
+            <hr class="aside-spacer">
+            <div class="box-sidebar clearfix" id="top10-widget">
+                <h3 id="title-articles-widget">Top 10 - Artigos</h3>
+                <h3 id="title-author-widget" class="inactive-tab">Top 10 - Autores</h3>
+                <span id="WUC_DezMaisArtigos1_lblDezMaisArtigos"><ul class="top10-list" id="articles-list"><li><a href="http://www.linhadecodigo.com.br/artigo/2975/comandos-basicos-em-sql-insert-update-delete-e-select.aspx"><span>1</span><p>Comandos básicos em SQL - insert, update, delete e select</p></a></li><li><a href="http://www.linhadecodigo.com.br/artigo/81/html-basico.aspx"><span>2</span><p>HTML Básico</p></a></li><li><a href="http://www.linhadecodigo.com.br/artigo/3474/menu-em-css-menu-dropdown-horizontal-com-html5-e-css3.aspx"><span>3</span><p>Menu em CSS - Menu dropdown horizontal com HTML5 e CSS3</p></a></li><li><a href="http://www.linhadecodigo.com.br/artigo/3561/criando-um-sistema-de-cadastro-e-login-com-php-e-mysql.aspx"><span>4</span><p>Criando um sistema de cadastro e login com PHP e MySql </p></a></li><li><a href="http://www.linhadecodigo.com.br/artigo/1884/formato-dos-registros-do-sintegra.aspx"><span>5</span><p>Formato dos registros do Sintegra</p></a></li><li><a href="http://www.linhadecodigo.com.br/artigo/1242/excel-como-verificar-se-existe-valores-duplicados.aspx"><span>6</span><p>Excel: Como verificar se existe valores duplicados</p></a></li><li><a href="http://www.linhadecodigo.com.br/artigo/3597/codigo-para-background-html-e-css.aspx"><span>7</span><p>Código para background HTML e CSS</p></a></li><li><a href="http://www.linhadecodigo.com.br/artigo/2501/diferencas-entre-documentacao-de-projeto-de-sistema-e-de-usuario.aspx"><span>8</span><p>Diferenças entre documentação de Projeto, de Sistema e de Usuário</p></a></li><li><a href="http://www.linhadecodigo.com.br/artigo/288/quanto-vale-o-seu-servico-aprenda-a-cobrar-pelo-seu-trabalho.aspx"><span>9</span><p>Quanto vale o seu serviço? Aprenda a cobrar pelo seu trabalho.</p></a></li><li><a href="http://www.linhadecodigo.com.br/artigo/1342/copiando-dados-com-o-robocopy.aspx"><span>10</span><p>Copiando dados com o Robocopy</p></a></li><a href="http://www.linhadecodigo.com.br/todosartigos.aspx" class="btn fr mg-t">Ver Todos</a></ul></span>
+                <span id="WUC_DezMaisAutores1_lblDezMaisAutores"><ul class="top10-list" id="author-list"><li><a href="http://www.linhadecodigo.com.br/colaborador.aspx?id=677"><span>1</span><p>Ricardo Arrigoni</p></a></li><li><a href="http://www.linhadecodigo.com.br/colaborador.aspx?id=518"><span>2</span><p>Helbert Carvalho Tiago</p></a></li><li><a href="http://www.linhadecodigo.com.br/colaborador.aspx?id=676"><span>3</span><p>Joel Rodrigues</p></a></li><li><a href="http://www.linhadecodigo.com.br/colaborador.aspx?id=176"><span>4</span><p>Mauricio Junior</p></a></li><li><a href="http://www.linhadecodigo.com.br/colaborador.aspx?id=55"><span>5</span><p>Israel Aéce</p></a></li><li><a href="http://www.linhadecodigo.com.br/colaborador.aspx?id=709"><span>6</span><p>Leandro Oriente</p></a></li><li><a href="http://www.linhadecodigo.com.br/colaborador.aspx?id=69"><span>7</span><p>Alfred Reinold Baudisch</p></a></li><li><a href="http://www.linhadecodigo.com.br/colaborador.aspx?id=41"><span>8</span><p>Júlio Cesar Fabris Battisti</p></a></li><li><a href="http://www.linhadecodigo.com.br/colaborador.aspx?id=208"><span>9</span><p>Anderson Patricio</p></a></li><li><a href="http://www.linhadecodigo.com.br/colaborador.aspx?id=50"><span>10</span><p>José Carlos Macoratti</p></a></li>
+            </ul></span></div>
+            
+			<hr class="aside-spacer">
+			
+        </div>
+    </div>
+    </span>
+
+<div class="clear"></div>
+<div class="footer">
+	<div class="limit clearfix">
+		<div id="social-links-footer"> Estamos aqui: 
+			<a href="http://www.facebook.com/linhadecodigo" target="_blank"><img src="./Adicionando referências dinamicamente no VBA_files/facebook-ico.gif" alt="Facebook do Linha de Código facebook.com/linhadecodigo"></a>
+			<a href="http://www.linhadecodigo.com.br/feed/"><img src="./Adicionando referências dinamicamente no VBA_files/rss-ico.gif" alt="Twitter do Linha de Código @linhadecodigo"></a>
+			<a href="https://twitter.com/linhadecodigo" target="_blank"><img src="./Adicionando referências dinamicamente no VBA_files/twitter-ico.gif" alt="Feed do Linha de Código"></a>
+			<a href="https://plus.google.com/100240100485097203227?prsrc=3" target="_blank" rel="publisher" style="text-decoration:none;"><img src="./Adicionando referências dinamicamente no VBA_files/gplus-16.png" alt="" style="margin-bottom:2px;border:0;width:16px;height:16px;"></a>
+		</div>
+		
+		<div id="links-footer">
+		  <p><b>Linha de Código faz parte do grupo Web-03</b></p>
+		  
+		</div>
+		
+		<div id="info-footer">
+			<p>
+				<a href="http://www.linhadecodigo.com.br/PrivacidadeUso.aspx" rel="nofollow">Política de privacidade e de uso</a>
+				| <a href="http://www.web-03.net/linhadecodigo.asp" rel="nofollow" target="_blank">Anuncie</a>
+				| <a href="http://www.linhadecodigo.com.br/cadastro.aspx" rel="nofollow">Cadastre-se</a>
+				| <a href="mailto:colabore@linhadecodigo.com.br" rel="nofollow">Fale conosco</a>
+			</p>
+			
+			<br><br>
+			
+			
+<div id="facebook-likebox">
+  <iframe src="./Adicionando referências dinamicamente no VBA_files/likebox.htm" scrolling="no" frameborder="0" style="background:white; border:none; overflow:hidden; width:560px; height:190px; border-bottom: 1px solid #aaa" allowtransparency="true"></iframe>
+</div>
+			
+		</div>
+		
+		<p id="copyright">© 2014 Linha de Código. Todos os direitos reservados</p>
+	</div>
+</div>
+
+
+<iframe name="oauth2relay441490827" id="oauth2relay441490827" src="./Adicionando referências dinamicamente no VBA_files/postmessageRelay.htm" tabindex="-1" style="width: 1px; height: 1px; position: absolute; top: -100px;"></iframe><iframe id="stSegmentFrame" name="stSegmentFrame" src="./Adicionando referências dinamicamente no VBA_files/getSegment.htm" frameborder="0" scrolling="no" width="0px" height="0px" style="display:none;"></iframe><div id="stwrapper" class="stwrapper stwrapper5x" style="display: none; z-index: 89999999;"><iframe allowtransparency="true" id="stLframe" class="stLframe stframe5x" name="stLframe" frameborder="0" scrolling="no" width="514px" height="419px" src="./Adicionando referências dinamicamente no VBA_files/index.ee0554e2355812006905568c382e5975.htm" style="top: 0px; left: 0px;"></iframe></div><div id="stOverlay" onclick="javascript:stWidget.closeWidget();" style="height: 100%; width: 100%; opacity: 0.6; position: fixed; display: none; left: 0px; top: 0px; z-index: 89999990; background-color: rgb(0, 0, 0);"></div><div id="fb-root" class=" fb_reset"><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div><iframe name="fb_xdm_frame_http" frameborder="0" allowtransparency="true" scrolling="no" id="fb_xdm_frame_http" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tabindex="-1" src="./Adicionando referências dinamicamente no VBA_files/FX-Xf5fQjUk.htm" style="border: none;"></iframe><iframe name="fb_xdm_frame_https" frameborder="0" allowtransparency="true" scrolling="no" id="fb_xdm_frame_https" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tabindex="-1" src="./Adicionando referências dinamicamente no VBA_files/FX-Xf5fQjUk(1).htm" style="border: none;"></iframe></div></div><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div></div></div></div></body></html>

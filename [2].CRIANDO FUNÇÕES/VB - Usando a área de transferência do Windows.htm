@@ -1,0 +1,426 @@
+
+<!-- saved from url=(0036)http://www.macoratti.net/d250902.htm -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+
+<meta name="GENERATOR" content="Microsoft FrontPage Express 2.0">
+<title>VB - Usando a área de transferência do Windows</title>
+<script>window["_GOOG_TRANS_EXT_VER"] = "1";</script><script>window["_GOOG_TRANS_EXT_VER"] = "1";</script></head>
+
+<body bgcolor="#FFFFFF" style="">
+<div align="center"><center>
+
+<pre><font color="#004080" size="4" face="Verdana"><strong>VB - Usando a área de transferência</strong></font></pre>
+</center></div>
+
+<hr>
+
+<p><font size="2" face="Verdana">A área de transferência do
+Windows permite que você troque informações ( textos ,
+gráficos, etc...) entre aplicativos Windows ( vide operação :
+recortar/copiar/colar e arrastar e soltar). O VB possui métodos
+que permitem a você trabalhar com a área de transferência do
+Windows em sua aplicação VB.</font></p>
+
+<p><font size="2" face="Verdana">Os métodos mais usados para
+trabalhar com o <strong>ClipBoard</strong> (área de
+transferência) são : </font><font color="#0000FF" size="2" face="Verdana"><strong>SetText e GetText</strong></font><font size="2" face="Verdana">. Estes dois métodos transferem dados no
+formato string para o clipboard.</font></p>
+
+<p align="center"><img src="./VB - Usando a área de transferência do Windows_files/d250902.gif" width="327" height="145"></p>
+
+<table border="1" bgcolor="#C0C0C0">
+    <tbody><tr>
+        <td bgcolor="#C0C0C0">-<font size="2" face="Verdana"> <strong>SetText</strong>
+        : copia o texto para o ClipBoard (substitui o texto
+        existente). A sintaxe é :</font><p><font color="#0000FF" size="4"><b>Clipboard.SetText</b> <i>data</i>[, <i>format</i>]</font></p>
+        <table border="1" cellpadding="5" bgcolor="#00FFFF" cols="2" rules="rows" frame="below">
+            <tbody><tr>
+                <td valign="top" width="29%" bgcolor="#FFFF00" class="label"><font size="1" face="Verdana"><b>Parte</b></font></td>
+                <td valign="top" width="71%" bgcolor="#FFFF00" class="label"><font size="1" face="Verdana"><b>Descrição</b></font></td>
+            </tr>
+            <tr>
+                <td valign="top" colspan="2" width="100%">&nbsp;</td>
+            </tr>
+            <tr>
+                <td valign="top" width="29%"><font size="1" face="Verdana"><i>data</i></font></td>
+                <td valign="top" width="71%"><font size="1" face="Verdana">Os dados que serão transferidos
+                para o ClipBoard.</font></td>
+            </tr>
+            <tr>
+                <td valign="top" width="29%"><font size="1" face="Verdana"><i>Format</i></font></td>
+                <td valign="top" width="71%"><font size="1" face="Verdana">Uma constante que define um dos
+                formatos reconhecidos pelo VB.</font></td>
+            </tr>
+        </tbody></table>
+        <p>-<font size="2" face="Verdana"> <strong>GetText</strong>
+        : Retorna o texto armazenado no ClipBoard.(O texto ainda
+        continua no ClibBoard). A sintaxe é :</font></p>
+        <p><font color="#0000FF" size="4"><i>destino</i> = <b>Clipboard.GetText</b>()</font></p>
+        </td>
+    </tr>
+    <tr>
+        <td><font size="2" face="Verdana">As definições para a
+        constante <em><strong>Format</strong></em> são : ( valem
+        para<strong> SetText e GetText</strong>)</font><table border="1" cellspacing="1" bgcolor="#00FFFF" cols="3" rules="rows" frame="below">
+            <tbody><tr>
+                <td valign="top" width="29%" bgcolor="#FFFF00" class="label"><font size="2" face="Verdana"><b>Constante</b></font></td>
+                <td valign="top" width="26%" bgcolor="#FFFF00" class="label"><font size="2" face="Verdana"><b>Valor</b></font></td>
+                <td valign="top" width="45%" bgcolor="#FFFF00" class="label"><font size="2" face="Verdana"><b>Descrição</b></font></td>
+            </tr>
+            <tr>
+                <td valign="top" width="29%"><font size="2" face="Verdana"><b>vbCFLink</b></font></td>
+                <td valign="top" width="26%"><font size="2" face="Verdana">&amp;HBF00</font></td>
+                <td valign="top" width="45%"><font size="2" face="Verdana">usado com DDE </font></td>
+            </tr>
+            <tr>
+                <td valign="top" width="29%"><font size="2" face="Verdana"><b>vbCFText</b></font></td>
+                <td valign="top" width="26%"><font size="2" face="Verdana">1</font></td>
+                <td valign="top" width="45%" bgcolor="#00FFFF"><font size="2" face="Verdana">(Padrão) Texto</font></td>
+            </tr>
+            <tr>
+                <td valign="top" width="29%"><font size="2" face="Verdana"><b>vbCFRTF</b></font></td>
+                <td valign="top" width="26%"><font size="2" face="Verdana">&amp;HBF01</font></td>
+                <td valign="top" width="45%"><font size="2" face="Verdana">(arquivo .rtf )Rich Text Format </font></td>
+            </tr>
+        </tbody></table>
+        </td>
+    </tr>
+</tbody></table>
+
+<p><font size="2" face="Verdana"><strong>Obs</strong>: Para
+limpar a área de transferência usamos o método <strong>Clear</strong>
+: Ex - </font><font color="#0000FF" size="2" face="Verdana"><strong>ClipBoard.Clear.</strong></font></p>
+
+<p><font size="2" face="Verdana">Outro método que pode ser usado
+em conjunto com os métodos acima descritos é <strong>GetFormat</strong>.
+Este método retorna um inteiro que indica se um item presente no
+ClipBoard coincide com um formato especificado. A sintaxe usada
+é :</font></p>
+
+<p><font color="#0000FF" size="3" face="Verdana"><i>object</i>.<b>GetFormat</b>
+<b>(</b><i>format</i><b>) </b></font></p>
+
+<p><font size="2" face="Verdana">Onde temos:</font></p>
+
+<table border="1" cellspacing="0" bgcolor="#C0C0C0" cols="2" rules="rows" frame="below">
+    <tbody><tr>
+        <td valign="top" width="29%" bgcolor="#FFFF00" class="label"><font size="2" face="Verdana"><b>Parte</b></font></td>
+        <td valign="top" width="71%" bgcolor="#FFFF00" class="label"><font size="2" face="Verdana"><b>Descrição</b></font></td>
+    </tr>
+    <tr>
+        <td valign="top" width="29%"><font size="2" face="Verdana"><i>object</i></font></td>
+        <td valign="top" width="71%"><font size="2" face="Verdana">O objeto a que o formato se refere.</font></td>
+    </tr>
+    <tr>
+        <td valign="top" width="29%"><font size="2" face="Verdana"><i>format</i></font></td>
+        <td valign="top" width="71%"><font size="2" face="Verdana">Um valor ou constante que especifica o
+        formato do objeto no ClipBoard. (Veja a seguir so valores
+        possiveis).</font></td>
+    </tr>
+</tbody></table>
+
+<p><font size="2" face="Verdana">Os valores possiveis para </font><font color="#0000FF" size="2" face="Verdana"><i>format</i> </font><font size="2" face="Verdana">são :</font></p>
+
+<table border="1" cellspacing="0" bgcolor="#C0C0C0" cols="3" rules="rows" frame="below">
+    <tbody><tr>
+        <td valign="top" width="33%" bgcolor="#FFFF00" class="label"><font size="2" face="Verdana"><b>Constante</b></font></td>
+        <td valign="top" width="18%" bgcolor="#FFFF00" class="label"><font size="2" face="Verdana"><b>Valor</b></font></td>
+        <td valign="top" width="49%" bgcolor="#FFFF00" class="label"><font size="2" face="Verdana"><b>Descrição</b></font></td>
+    </tr>
+    <tr>
+        <td valign="top" width="33%"><font size="2" face="Verdana"><b>vbCFLink</b></font></td>
+        <td valign="top" width="18%"><font size="2" face="Verdana">&amp;HBF00</font></td>
+        <td valign="top" width="49%"><font size="2" face="Verdana">DDE (informação de conexão)</font></td>
+    </tr>
+    <tr>
+        <td valign="top" width="33%"><font size="2" face="Verdana"><b>vbCFText</b></font></td>
+        <td valign="top" width="18%"><font size="2" face="Verdana">1</font></td>
+        <td valign="top" width="49%"><font size="2" face="Verdana">Texto</font></td>
+    </tr>
+    <tr>
+        <td valign="top" width="33%"><font size="2" face="Verdana"><b>vbCFBitmap</b></font></td>
+        <td valign="top" width="18%"><font size="2" face="Verdana">2</font></td>
+        <td valign="top" width="49%"><a href="JavaScript:alink_6.Click()"><font size="2" face="Verdana">Bitmap</font></a><font size="2" face="Verdana"> (.bmp files)</font></td>
+    </tr>
+    <tr>
+        <td valign="top" width="33%"><font size="2" face="Verdana"><b>vbCFMetafile</b></font></td>
+        <td valign="top" width="18%"><font size="2" face="Verdana">3</font></td>
+        <td valign="top" width="49%"><a href="JavaScript:alink_7.Click()"><font size="2" face="Verdana">Metafile</font></a><font size="2" face="Verdana"> (.wmf files)</font></td>
+    </tr>
+    <tr>
+        <td valign="top" width="33%"><font size="2" face="Verdana"><b>vbCFDIB</b></font></td>
+        <td valign="top" width="18%"><font size="2" face="Verdana">8</font></td>
+        <td valign="top" width="49%"><font size="2" face="Verdana">Device-independent bitmap (DIB)</font></td>
+    </tr>
+    <tr>
+        <td valign="top" width="33%"><font size="2" face="Verdana"><b>vbCFPalette</b></font></td>
+        <td valign="top" width="18%"><font size="2" face="Verdana">9</font></td>
+        <td valign="top" width="49%"><font size="2" face="Verdana">Color palette</font></td>
+    </tr>
+</tbody></table>
+
+<p><font size="2" face="Verdana">O método <strong>GetFormat </strong>retorna
+<strong>True</strong> se o item no ClipBoard coincidir com um dos
+valores definidos em </font><font color="#0000FF" size="2" face="Verdana">format, </font><font size="2" face="Verdana">caso
+contrário ele retorna <strong>False.</strong></font></p>
+
+<p><font size="2" face="Verdana">Combinando os dois métodos com
+as propriedades para selecionar textos podemos facilmente <em>Copiar
+, Recortar e Colar</em>. Vejamos </font><font size="1" face="Verdana">:</font></p>
+
+<p><font size="2" face="Verdana">1 - Inicie um novo projeto no VB
+e no formulário padrão insira um botão de comando e uma caixa
+de texto , conforme o layout abaixo:</font></p>
+
+<p><font size="2" face="Verdana">2- Insira o código abaixo no
+evento Click do botão de comando - command1 :</font></p>
+
+<table border="1" cellspacing="1" bgcolor="#C0C0C0">
+    <tbody><tr>
+        <td><pre>Private Sub Command1_Click()
+
+Dim I As Integer
+Dim Msg As String, temp As String
+
+On Error Resume Next 
+
+Msg = "Digite qualquer texto ...."
+
+Text1.Text = InputBox(Msg)  <font color="#808000"> ' o texto informado</font>
+
+Msg = "Escolha OK para copiar o conteúdo da Caixa de Texto " &amp; vbCrLf &amp; vbCrLf
+Msg = Msg &amp; "para a Área de Transferência."
+
+MsgBox Msg <font color="#FF8000">' mostra mensagem</font>
+
+<font color="#0000FF">Clipboard.Clear</font> <font color="#808040">' limpa o ClibBoard</font>
+<font color="#0000FF">Clipboard.SetText</font> Text1.Text <font color="#808000">' Poe o texto no ClipBoard</font>
+
+I<font color="#0000FF">f Clipboard.GetFormat(vbCFText)</font> Then
+
+   Text1.Text = "" <font color="#808000">' limpa a caixa de texto</font>
+
+   Msg = "O texto agora esta no Clipboard. Clique em OK " &amp; vbCrLf &amp; vbCrLf
+   Msg = Msg &amp; "para copiar o texto do ClipBoard " &amp; vbCrLf
+   Msg = Msg &amp; "para a Caixa de Texto " &amp; vbCrLf &amp; vbCrLf
+   Msg = Msg &amp; "Obs: O texto será invertido !"
+   MsgBox Msg <font color="#808000">' exibe a mensagem</font>
+
+   <font color="#0000FF">temp = Clipboard.GetText(vbCFText)</font> <font color="#808000">' pega o texto do clipboard</font>
+ 
+   For I = Len(temp) To 1 Step -1 ' <font color="#808040">inverte o texto</font>
+     Text1.Text = Text1.Text &amp; Mid(temp, I, 1)
+   Next I
+
+Else
+
+  Msg = "Não há nenhum texto na área de transferência."
+  MsgBox Msg 'exibe a mensagem de erro
+
+End If
+End Sub</pre>
+        </td>
+    </tr>
+</tbody></table>
+
+<p><font size="2" face="Verdana">Ao executar o projeto teremos a
+sequencia de telas conforme abaixo:</font></p>
+
+<table border="1" cellspacing="1">
+    <tbody><tr>
+        <td><font size="1" face="Verdana"><img src="./VB - Usando a área de transferência do Windows_files/d2509021.gif" width="301" height="124"></font></td>
+        <td><font size="1" face="Verdana"><img src="./VB - Usando a área de transferência do Windows_files/d250922.gif" width="360" height="143"></font></td>
+    </tr>
+    <tr>
+        <td><font size="1" face="Verdana">Tela inicial do exemplo</font></td>
+        <td><font size="1" face="Verdana">O usuário informa o
+        texto</font></td>
+    </tr>
+    <tr>
+        <td><font size="1" face="Verdana"><img src="./VB - Usando a área de transferência do Windows_files/d250903.gif" width="302" height="195"></font></td>
+        <td><font size="1" face="Verdana"><img src="./VB - Usando a área de transferência do Windows_files/d2509024.gif" width="304" height="233"></font></td>
+    </tr>
+    <tr>
+        <td><font size="1" face="Verdana">O texto é copiado para
+        a caixa de texto</font></td>
+        <td><font size="1" face="Verdana">O texto é copiado para
+        a área de transferência</font></td>
+    </tr>
+    <tr>
+        <td align="center" colspan="2"><font size="1" face="Verdana"><img src="./VB - Usando a área de transferência do Windows_files/d2509025.gif" width="301" height="126"></font></td>
+    </tr>
+</tbody></table>
+
+<p><font size="2" face="Verdana">Até agora trabalhamos com texto
+no ClipBoard . E se quisermos trabalhar com imagens gráficas ?</font></p>
+
+<p><font size="2" face="Verdana">O método <strong>GetData</strong>
+retorna um gráfico do objeto ClipBoard. A sintaxe é :</font></p>
+
+<p><font color="#0000FF" size="3" face="Verdana"><i>object</i><b><i>.GetData</i></b><i>
+</i><b><i>(</i></b><i>format</i><b><i>)</i></b></font></p>
+
+<p><font size="2" face="Verdana">Onde temos:</font></p>
+
+<table border="1" cellspacing="1" bgcolor="#C0C0C0" cols="2" rules="rows" frame="below">
+    <tbody><tr>
+        <td valign="top" width="29%" bgcolor="#FFFF00" class="label"><font size="2" face="Verdana"><b>Parte</b></font></td>
+        <td valign="top" width="71%" bgcolor="#FFFF00" class="label"><font size="2" face="Verdana"><b>Descrição</b></font></td>
+    </tr>
+    <tr>
+        <td valign="top" width="29%"><font size="2" face="Verdana"><i>object</i></font></td>
+        <td valign="top" width="71%"><font size="1" face="Verdana">O objeto a que o formato se refere.</font></td>
+    </tr>
+    <tr>
+        <td valign="top" width="29%"><font size="2" face="Verdana"><i>format</i> </font></td>
+        <td valign="top" width="71%"><font size="2" face="Verdana">Uma constante ou valor que define o
+        formato gráfico do item no <b>Clipboard</b> . Se o o
+        valor de <i>format</i> for igual a 0 ou omitido , <b>GetData</b>
+        usa o formato apropriado.</font></td>
+    </tr>
+</tbody></table>
+
+<p><font size="2" face="Verdana">Os valores para </font><font color="#0000FF" size="2" face="Verdana"><i>format</i></font><font size="2" face="Verdana"> são:</font></p>
+
+<table border="1" cellspacing="1" bgcolor="#C0C0C0" cols="3" rules="rows" frame="below">
+    <tbody><tr>
+        <td valign="top" width="33%" bgcolor="#FFFF00" class="label"><font size="2" face="Verdana"><b>Constante</b></font></td>
+        <td valign="top" width="18%" bgcolor="#FFFF00" class="label"><font size="2" face="Verdana"><b>Valor</b></font></td>
+        <td valign="top" width="49%" bgcolor="#FFFF00" class="label"><font size="2" face="Verdana"><b>Descrição</b></font></td>
+    </tr>
+    <tr>
+        <td valign="top" width="33%"><font size="2" face="Verdana"><b>vbCFBitmap</b></font></td>
+        <td valign="top" width="18%"><font size="2" face="Verdana">2</font></td>
+        <td valign="top" width="49%"><a href="JavaScript:alink_6.Click()"><font size="2" face="Verdana">Bitmap</font></a><font size="2" face="Verdana"> (.bmp files)</font></td>
+    </tr>
+    <tr>
+        <td valign="top" width="33%"><font size="2" face="Verdana"><b>vbCFMetafile</b></font></td>
+        <td valign="top" width="18%"><font size="2" face="Verdana">3</font></td>
+        <td valign="top" width="49%"><a href="JavaScript:alink_7.Click()"><font size="2" face="Verdana">Metafile</font></a><font size="2" face="Verdana"> (.wmf files)</font></td>
+    </tr>
+    <tr>
+        <td valign="top" width="33%"><font size="2" face="Verdana"><b>vbCFDIB</b></font></td>
+        <td valign="top" width="18%"><font size="2" face="Verdana">8</font></td>
+        <td valign="top" width="49%"><font size="2" face="Verdana">Device-independent bitmap (DIB)</font></td>
+    </tr>
+    <tr>
+        <td valign="top" width="33%"><font size="2" face="Verdana"><b>vbCFPalette</b></font></td>
+        <td valign="top" width="18%"><font size="2" face="Verdana">9</font></td>
+        <td valign="top" width="49%"><font size="2" face="Verdana">Color palette</font></td>
+    </tr>
+</tbody></table>
+
+<p><font size="2" face="Verdana">Se nenhum gráfico no ClipBoard
+coincidir com um dos formatos especificados , o retorno será
+nada.</font></p>
+
+<p><font size="2" face="Verdana">Para por um gráfico no
+ClipBoard usamos o método<strong> SetData. </strong>A sintaxe é
+:</font></p>
+
+<p><font color="#0000FF" size="4"><i>object</i><b>.SetData</b> <i>data</i>,
+<i>format</i></font></p>
+
+<p><font size="2" face="Verdana">onde data é o objeto gráfico e
+</font><font color="#0000FF" size="2" face="Verdana">format</font><font size="2" face="Verdana"> um valor que indica o formato da imagem
+gráfica. Os valores possíveis são:</font></p>
+
+<table border="1" cellspacing="1" bgcolor="#C0C0C0" cols="3" rules="rows" frame="below">
+    <tbody><tr>
+        <td valign="top" width="33%" bgcolor="#FFFF00" class="label"><font size="2" face="Verdana"><b>Constante</b></font></td>
+        <td valign="top" width="18%" bgcolor="#FFFF00" class="label"><font size="2" face="Verdana"><b>Valor</b></font></td>
+        <td valign="top" width="49%" bgcolor="#FFFF00" class="label"><font size="2" face="Verdana"><b>Descrição</b></font></td>
+    </tr>
+    <tr>
+        <td valign="top" width="33%"><font size="2" face="Verdana"><b>vbCFBitmap</b></font></td>
+        <td valign="top" width="18%"><font size="2" face="Verdana">2</font></td>
+        <td valign="top" width="49%"><a href="JavaScript:alink_6.Click()"><font size="2" face="Verdana">Bitmap</font></a><font size="2" face="Verdana"> (.bmp files)</font></td>
+    </tr>
+    <tr>
+        <td valign="top" width="33%"><font size="2" face="Verdana"><b>vbCFMetafile</b></font></td>
+        <td valign="top" width="18%"><font size="2" face="Verdana">3</font></td>
+        <td valign="top" width="49%"><a href="JavaScript:alink_7.Click()"><font size="2" face="Verdana">Metafile</font></a><font size="2" face="Verdana"> (.wmf files)</font></td>
+    </tr>
+    <tr>
+        <td valign="top" width="33%"><font size="2" face="Verdana"><b>vbCFDIB</b></font></td>
+        <td valign="top" width="18%"><font size="2" face="Verdana">8</font></td>
+        <td valign="top" width="49%"><font size="2" face="Verdana">Device-independent bitmap (DIB)</font></td>
+    </tr>
+    <tr>
+        <td valign="top" width="33%"><font size="2" face="Verdana"><b>vbCFPalette</b></font></td>
+        <td valign="top" width="18%"><font size="2" face="Verdana">9</font></td>
+        <td valign="top" width="49%"><font size="2" face="Verdana">Color palette</font></td>
+    </tr>
+</tbody></table>
+
+<p><font size="1" face="Verdana">Vamos mostrar um exemplo que
+trabalhe com gráficos no ClipBoard:</font></p>
+
+<p><font size="2" face="Verdana">1 - Inicie um novo projeto no VB
+e no formulário padrão insira um botão de comando , conforme o
+layout abaixo:</font></p>
+
+<p><font size="2" face="Verdana">2- Insira o código abaixo no
+evento Click do botão de comando - command1 :</font></p>
+
+<table border="1" cellspacing="1" bgcolor="#C0C0C0">
+    <tbody><tr>
+        <td><pre>Private Sub Command2_Click()
+
+Const CF_BITMAP = 2  <font color="#808040">' Define o formato bitmap</font>
+Dim Msg As String    <font color="#808040">' Declara a variavel</font>
+On Error Resume Next <font color="#808000">' trata os erros continuando a execução</font>
+
+Msg = "Clique em Ok para carregar um bitmap para o Clipboard."
+MsgBox Msg         <font color="#808000">  ' Exibe a mensagem
+</font>
+<font color="#0000FF">Clipboard.Clear</font>      <font color="#808040">' Limpa o Clipboard.</font>
+<font color="#0000FF">Clipboard.SetData LoadPicture("c:\teste\teste.bmp")</font> <font color="#808000">' Obtem o bitmap.</font>
+
+If Err Then
+   Msg = "Não achei o arquivo .bmp ."
+   MsgBox Msg             <font color="#808000">' exibe mensagem de erro</font>
+   Exit Sub
+End If
+
+Msg = "Um bitmap esta agora no Clipboard. Escolha OK para copiar "
+Msg = Msg &amp; "o bitmap do Clipboard para o formulário"
+MsgBox Msg           <font color="#808040">' exibe mensagem de erro</font>
+
+<font color="#0000FF">Picture = Clipboard.GetData()</font> <font color="#808000">' Copia a partir do Clipboard.</font>
+
+Msg = "Clique em OK para limpar o formulário."
+MsgBox Msg
+
+Picture = LoadPicture() <font color="#808000">' limpa o formulario</font>
+
+End Sub
+</pre>
+        </td>
+    </tr>
+</tbody></table>
+
+<p><font size="2" face="Verdana">Ao executar o projeto a
+sequência de telas obtidas é a seguinte:</font></p>
+
+<table border="0">
+    <tbody><tr>
+        <td align="center"><img src="./VB - Usando a área de transferência do Windows_files/d2509026.gif" width="304" height="197"></td>
+    </tr>
+    <tr>
+        <td align="center"><img src="./VB - Usando a área de transferência do Windows_files/d2509027.gif" width="503" height="198"></td>
+    </tr>
+    <tr>
+        <td align="center"><img src="./VB - Usando a área de transferência do Windows_files/d2509028.gif" width="301" height="197"></td>
+    </tr>
+</tbody></table>
+
+<p><font size="1" face="Verdana">Só isto... Até mais... <img src="./VB - Usando a área de transferência do Windows_files/1_chapeu.gif" width="22" height="23"></font></p>
+
+<hr>
+
+<p align="center"><font size="1" face="Verdana">José Carlos
+Macoratti</font></p>
+
+
+</body></html>

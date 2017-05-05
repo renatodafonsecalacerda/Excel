@@ -1,0 +1,25 @@
+/*
+---------------------------------------
+CIMAWARE
+Plantilla para dispositivo HANDHELD
+Versión: 14-11-2006
+--------------------------------------
+*/
+
+body {font-family:"Trebuchet MS",Verdana,Arial,Sans-serif;}
+
+a {color:#2188cb;background:#fff;}
+a:active {color:#2188cb;background:#fff;}
+a:link {color:#2188cb;background:#fff;}
+a:hover {text-decoration:none;}
+
+ul {
+position:relative;
+left:-15px;}
+	
+ol {
+position:relative;
+left:-10px;}
+	
+
+h1 a, h1 span {background:transparent;} 

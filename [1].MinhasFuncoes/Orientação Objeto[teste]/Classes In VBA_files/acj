@@ -1,0 +1,25 @@
+OX_1691207785({
+  "ads":{
+    "medium":"w",
+    "record_tmpl":"http://us-ads.openx.net/{medium}/1.0/{rtype}?ts={txn_state}",
+    "pixels":"http://us-u.openx.net/w/1.0/pd?plm=5&ph=94ef58655625200a8cfc5b15afcd0b94ad52d590",
+    "adunits" : [
+      {
+        "auid":"327302",
+        "chain":[
+          {
+            "is_fallback":1,
+            "ad_id":"0",
+            "width":"160",
+            "height":"600",
+            "html":"<script> if (typeof LJT_executeCB == 'function') { LJT_executeCB(lwp_ad_zoneid); } else { var ljt_ad_tag_buf = ''; var m3_u = LJT_AP_ADDRESS +'ajs.php'; var m3_r = Math.floor(Math.random()*99999999999); ljt_ad_tag_buf += \"<scr\"+\"ipt type='text/javascript' src='\"+m3_u; ljt_ad_tag_buf += \"?zoneid=\"+lwp_ad_zoneid; ljt_ad_tag_buf += \"&amp;username=\"+lwp_ad_username; ljt_ad_tag_buf += \"&amp;parent=\"+lwp_parent_ad_id; ljt_ad_tag_buf += \"&amp;numAds=\"+lwp_ad_numads; ljt_ad_tag_buf += \"&amp;numAds=\"+lwp_ad_numads; ljt_ad_tag_buf += \"&amp;premium=\"+lwp_ad_premium; ljt_ad_tag_buf += \"&amp;passthru=OpenX_US_RON_T2\"; ljt_ad_tag_buf += \"&amp;abf=\"+ abf(\"lwp_abf_\" + lwp_ad_zoneid); ljt_ad_tag_buf += \"&amp;time=\"+ ljt_getTimeStr(); ljt_ad_tag_buf += \"&amp;eleid=\"+lwp_ad_eleid; ljt_ad_tag_buf += '&amp;cb=' + m3_r; ljt_ad_tag_buf += \"&amp;loc=\" + escape(window.location); if (document.referrer) ljt_ad_tag_buf += \"&amp;referer=\" + escape(document.referrer); if (document.context)  ljt_ad_tag_buf += \"&context=\" + escape(document.context); if (document.mmm_fo)   ljt_ad_tag_buf += \"&amp;mmm_fo=1\"; ljt_ad_tag_buf += \"'><\\/scr\"+\"ipt>\"; document.write(ljt_ad_tag_buf); } </script>",
+            "target":"_blank",
+            "ts":"1fHJpZD05MDE3ODhjZi1jNjljLTRiNTAtOTc0Zi01NjdhODkxNWYwNjJ8cnQ9MTQxMDk4NDExMXxhdWlkPTMyNzMwMnxhdW09RE1JRC5XRUJ8c2lkPTY5MzAzfHB1Yj04MzQ5OXxwYz1VU0R8cmFpZD02NDQxY2I1Ni02MzM3LTQ4MjctOTgyOS02ZmVhOWZiNDQ1ZTF8dXI9VHNmZHdtVXpsVg",
+            "type":"html",
+            "ad_url":"<script> if (typeof LJT_executeCB == 'function') { LJT_executeCB(lwp_ad_zoneid); } else { var ljt_ad_tag_buf = ''; var m3_u = LJT_AP_ADDRESS +'ajs.php'; var m3_r = Math.floor(Math.random()*99999999999); ljt_ad_tag_buf += \"<scr\"+\"ipt type='text/javascript' src='\"+m3_u; ljt_ad_tag_buf += \"?zoneid=\"+lwp_ad_zoneid; ljt_ad_tag_buf += \"&amp;username=\"+lwp_ad_username; ljt_ad_tag_buf += \"&amp;parent=\"+lwp_parent_ad_id; ljt_ad_tag_buf += \"&amp;numAds=\"+lwp_ad_numads; ljt_ad_tag_buf += \"&amp;numAds=\"+lwp_ad_numads; ljt_ad_tag_buf += \"&amp;premium=\"+lwp_ad_premium; ljt_ad_tag_buf += \"&amp;passthru=OpenX_US_RON_T2\"; ljt_ad_tag_buf += \"&amp;abf=\"+ abf(\"lwp_abf_\" + lwp_ad_zoneid); ljt_ad_tag_buf += \"&amp;time=\"+ ljt_getTimeStr(); ljt_ad_tag_buf += \"&amp;eleid=\"+lwp_ad_eleid; ljt_ad_tag_buf += '&amp;cb=' + m3_r; ljt_ad_tag_buf += \"&amp;loc=\" + escape(window.location); if (document.referrer) ljt_ad_tag_buf += \"&amp;referer=\" + escape(document.referrer); if (document.context)  ljt_ad_tag_buf += \"&context=\" + escape(document.context); if (document.mmm_fo)   ljt_ad_tag_buf += \"&amp;mmm_fo=1\"; ljt_ad_tag_buf += \"'><\\/scr\"+\"ipt>\"; document.write(ljt_ad_tag_buf); } </script>"
+          }
+        ]
+      }
+    ]
+  }
+});

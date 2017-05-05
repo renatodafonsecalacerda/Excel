@@ -1,0 +1,889 @@
+
+<!-- saved from url=(0035)http://www.macoratti.net/vb_api.htm -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta http-equiv="Content-Language" content="pt-br">
+
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>Usando API no Visual Basic</title>
+<script>window["_GOOG_TRANS_EXT_VER"] = "1";</script><script>window["_GOOG_TRANS_EXT_VER"] = "1";</script></head>
+
+<body bgcolor="#00FFFF" style="">
+
+<p align="left"><font size="4" color="#000080" face="Trebuchet MS">&nbsp;<img border="0" src="./Usando API no Visual Basic_files/maco10.gif" width="233" height="32"> </font>
+<font size="5" color="#000080" face="Trebuchet MS">Usando funções das APIs no Visual
+Basic</font></p>
+<hr>
+<p><i><font size="2">"<b>API</b> - <b><font color="#000080">Application
+Program Interface</font></b> - é um conjunto de funções predefinidas
+utilizadas para controlar a aparência e o comportamento de cada elemento do
+Windows."&nbsp; Gostaram do começo ? <img border="0" src="./Usando API no Visual Basic_files/smile.gif" width="15" height="15"></font></i></p>
+<p><font size="2"><span class="goog_qs-tidbit goog_qs-tidbit-0">O VB foi um divisor de águas que permitiu a criação de
+programas para o ambiente Windows a um grande</span> número de usuários . Antes isto
+estava restrito aos programadores C , C++ e de outras linguagens não tão
+amigáveis.</font></p>
+<p><font size="2">Mas por trás da aparente simplicidade de um formulário , de
+um click de mouse , de uma chamada a uma função ou de uma simples linha de
+código , muitas coisas ocorrem nos bastidores para que tudo possa estar
+funcionando...</font></p>
+<p><font size="2">Na verdade cada linha de código escrita em um projeto esta
+sendo traduzida pelo VB em uma função API e enviada ao Windows que processa a
+mensagem e retorna o resultado. Assim quando você escreve algo como<i> Form1.Print</i>&nbsp;
+o VB chama a função API <i><u>TextOut</u></i> com os respectivos parâmetros.</font></p>
+<p><font size="2" color="#000080"><b>Mas onde estão estas funções ?&nbsp; E
+como elas se comportam e funcionam ?</b></font></p>
+<p><font size="2">As funções API residem em arquivos <b>DLL</b> - <b>Dinamic
+Link Library </b>- que são bibliotecas de rotinas utilizadas pelo sistema
+Windows e podem ser encontradas na pasta Windows/System. As DLLs podem ser
+utilizadas por quaisquer aplicativos externos ao Windows e o VB usa e abusa das
+DLLs e das APIs.</font></p>
+<p><font size="2">As DLL´s permitiram que o Windows apresentasse uma interface
+padrão ao usuário. O exemplo mais conhecido é a <font color="#000080">Commom
+Dialog </font>- <b>Commdlg32.dll</b>. Este arquivo contém todo o código
+necessário para criar diversas janelas de diálogos padrões do Windows - A
+janela <i> Abrir , Salvar , Imprimir,</i> etc...&nbsp;</font></p>
+<p><font size="2">Então as DLLs são <u> arquivos externos</u> que podem ser usados por
+sua aplicação VB . Assim se a DLL que você for usar estiver presente no
+Windows basta você criar um <u> link</u> para ela no seu projeto (</font><font size="1"><i>você
+faz isto declarando a API</i></font><font size="2">) e indicar qual
+função deseja usar ; seu programa vai ficar menor pois você não vai precisar
+distribuir este arquivo. Se a DLL não estiver presente no Windows você usa o
+mesmo procedimento só que vai ter que incluir a DLL no seu <u> KIT de
+distribuição.</u> (</font><i><font size="1">lembrete: você pode criar a sua própria DLL e usá-la
+no VB</font></i><font size="2">). Abaixo temos uma esquematização deste
+processo:</font></p>
+<p><img border="0" src="./Usando API no Visual Basic_files/vbapia.gif" width="312" height="148"></p>
+<p><font size="2">Os principais arquivos DLLs do Windows são:</font></p>
+<table border="1" width="100%" bgcolor="#FFFFFF">
+  <tbody><tr>
+    <td width="23%" bgcolor="#FFFF00"><font size="2"><b>Arquivo DLL</b></font></td>
+    <td width="77%" bgcolor="#FFFF00"><font size="2"><b>Descrição</b></font></td>
+  </tr>
+  <tr>
+    <td width="23%"><font size="1">KERNEL32</font></td>
+    <td width="77%"><font size="1">Gerencia a memória ; multitarefa...&nbsp;</font></td>
+  </tr>
+  <tr>
+    <td width="23%"><font size="1">USER32</font></td>
+    <td width="77%"><font size="1">Gerencia mensagens , menus, cursores,
+      comunicações, etc...</font></td>
+  </tr>
+  <tr>
+    <td width="23%"><font size="1">GID32</font></td>
+    <td width="77%"><font size="1">Graphics Device Interface - Recursos de
+      desenho , telas e objetos , redimensionamentos...</font></td>
+  </tr>
+  <tr>
+    <td width="23%"><font size="1"><span class="goog_qs-tidbit goog_qs-tidbit-1">COMDL32</span></font></td>
+    <td width="77%"><font size="1"><span class="goog_qs-tidbit goog_qs-tidbit-1">Janelas comuns : impressão , salvar , abrir,
+      .</span>..</font></td>
+  </tr>
+  <tr>
+    <td width="23%"><font size="1">WINMM</font></td>
+    <td width="77%"><font size="1">Recursos multimídia, som , video, ...</font></td>
+  </tr>
+  <tr>
+    <td width="23%"><font size="1">Lz32</font></td>
+    <td width="77%"><font size="1">Rotinas de compressão e compactação</font></td>
+  </tr>
+</tbody></table>
+<p><b><font color="#000080" size="3">Como usar uma API ?</font></b></p>
+<p><font size="2">Tudo bem, eu já sei onde estão as funções API , mas , como
+posso usá-las no Visual Basic ? </font><font size="1"><i>Boa pergunta!</i></font><font size="2">
+Você usa uma função API como usa qualquer função : fazendo a declaração
+da função e dos parâmetros que ela vai usar e depois fazendo a chamada a
+função que você declarou. (</font><font size="1"><i>acho que a resposta não
+foi muito boa ..</i></font><font size="2">.). Então:</font></p>
+<p><font size="2">A declaração de uma API possui a seguinte estrutura básica:</font></p>
+<p><font size="1" color="#0000FF"><span class="goog_qs-tidbit goog_qs-tidbit-2">Private/Public </span><b><span class="goog_qs-tidbit goog_qs-tidbit-2">Declare</span></b><span class="goog_qs-tidbit goog_qs-tidbit-2"> Function/Sub
+NomedaFunção </span><b><span class="goog_qs-tidbit goog_qs-tidbit-2">Lib</span></b><span class="goog_qs-tidbit goog_qs-tidbit-2"> NomedaDLL </span><b><span class="goog_qs-tidbit goog_qs-tidbit-2">Alias</span></b> "NomeFunçãoAPI(Argumentos)"
+<b>As</b> TipodeDados&nbsp;</font></p>
+<ol>
+  <li><font size="2"><b><font color="#0000FF">Public/Private</font></b>&nbsp; -
+    Determina se o procedimento estará disponível para toda aplicação ou
+    somente pelo módulo na qual foi declarado. (<i>As declarações em
+    formulários ou módulos de classes não podem ser Publicas)</i></font></li>
+  <li><font size="2"><b><font color="#0000FF">Declare Function / Declare Sub</font></b>
+    - Indica se o procedimento retorna ou não um valor.</font></li>
+  <li><font size="2"><font color="#0000FF"><b>NomedaFunção </b></font>- É o
+    nome da função como será usado no seu projeto VB.</font></li>
+  <li><font size="2"><font color="#0000FF"><b>Lib NomedaDLL</b></font> - É o
+    nome da livraria DLL onde a função esta localizada.</font></li>
+  <li><font size="2"><font color="#0000FF"><b>Alias "NomedaFunçãoAPI"</b></font>
+    - É o nome da função API como disponibilizada pela DLL onde ela reside.</font></li>
+  <li><font size="2"><font color="#0000FF"><b>(Argumentos)</b></font> - Indica
+    quais parâmetros serão esperados pelo procedimento , o tipo de dados dos
+    parâmetros e se eles serão passados por valor ( ByVal ) ou por referência
+    ( ByRef ).</font></li>
+  <li><font size="2"><font color="#0000FF"><b>As TipodeDados</b></font> - Indica
+    o tipo de dados que sera retornado. Usado somente por funções.&nbsp;</font></li>
+</ol>
+<p><font size="2">Vejamos como exemplo a declaração da API <b>FindWindow:</b></font></p>
+<p><font size="2" color="#0000FF"><b>Private Declare Function FindWindow Lib
+"User32" Alias "FindWindowA" (ByVal lpClassName as String ,
+ByVal lpWindowName as String) As Long</b></font></p>
+<ol>
+  <li><font size="2" color="#000000">A função é declarada como -</font><font size="2" color="#0000FF">
+    Private</font></li>
+  <li><font size="2" color="#000000">O procedimento irá retornar um valor - </font><font size="2" color="#0000FF">Function
+    FindWindow&nbsp;</font></li>
+  <li><font size="2" color="#0000FF">Lib "User32" Alias "FindWindowA"</font><font size="2" color="#000000">
+    - A função será exportada do arquivo User32.dll , onde será localizada
+    como "FindWindowA"&nbsp; (a letra A indica que estamos usando a
+    versão ANSI da função pois temos também a versão UNICODE)</font></li>
+  <li><font size="2" color="#0000FF">ByVal lpClassName As String e ByVal
+    lpWindowsName As String </font><font size="2" color="#000000">- A função
+    usa dois parâmetros do tipo String passados por Valor</font></li>
+  <li><font size="2" color="#0000FF">AS Long </font><font size="2" color="#000000">-
+    A função retornará um valor Inteiro Longo</font></li>
+</ol>
+<p><font size="2"><b>Nota:</b></font></p>
+<table border="0" width="100%" bgcolor="#FFFFFF">
+  <tbody><tr>
+    <td width="100%"><font size="1">O parâmetro <b>Alias</b> indica o
+      verdadeiro nome da uma função API como ela é encontrada no arquivo DLL
+      . Este&nbsp; nome pode ser diferente do nome da função que você irá
+      usar no seu Programa VB.</font>
+      <p><font size="1">Como exemplo desta diferença podemos citar a função<font color="#0000FF">
+      _lopen</font> que esta presente na DLL<font color="#0000FF"> Kernel32</font>.
+      O nome _lopen não é um nome válido que possa ser usado como nome de uma
+      função no Visual Basic . Neste caso a declaração fica assim:</font></p>
+      <blockquote>
+        <pre><font size="1">Declare Function <font color="#0000FF">lopen</font> Lib "kernel32" Alias <font color="#0000FF">"_lopen"</font>  (ByVal lpPathName As String, ByVal iReadWrite As Long) As Long.</font></pre>
+      </blockquote>
+      <p><font size="1">O VB enxerga a função com o nome lopen&nbsp; mas sabe
+      , através do parâmetro <b>Alias</b> na declaração da API&nbsp; que
+      deve passar a chamada para a função _lopen presente na Kernel32.</font></p></td>
+  </tr>
+</tbody></table>
+<p><font size="2" color="#000000">Antes que você fique assustado com a aparente
+complexidade do código envolvido e isto o desanime a utilizar as API´s , fique
+sabendo que tudo é uma questão de seguir determinadas regras , logo você
+estará acostumado com a estrutura de uma declaração e terá um verdadeiro
+arsenal a sua disposição.</font></p>
+<p><font size="2">Existem mais ou menos umas 1000 funções API !!! Cada uma com
+sua declaração e parâmetros. Sentiu o drama ? Mesmo se você for separar as
+mais usadas ainda terá que ter uma boa memória para se recordar da
+declaração de cada uma . Ainda bem que existem ferramentas para facilitar este
+trabalho , uma dessas ferramentas você encontra no Visual Basic&nbsp; e o&nbsp;
+API Viewer . Vamos ver como usá-la...</font></p>
+<p><font size="2">Inicie o Visual Basic e no menu <b>Add-Ins</b> selecione <b>API
+Viewer</b> ( <i> se não a opção não estiver no menu <b> Add-Ins</b> você deverá
+incluí-la</i>).&nbsp;</font></p>
+<p><font size="2">Após executar o <b> API Viewer</b> selecione na opção <b> File</b> do menu
+o item - <b>Load Text File</b> - ou <b>Load Database File</b> se você converteu
+o arquivo texto para mdb .</font> <font size="2">A seguir selecione o arquivo - <b>Win32Api.txt ou Win32Api.mdb</b>
+-</font><font size="2">  </font><font size="2">desta forma serão carregadas
+todas as declarações disponíveis para as funções API. </font><font size="2">Veja abaixo a janela API
+Viewer exibindo o resultado :</font></p>
+<table border="0" width="100%">
+  <tbody><tr>
+    <td width="100%"><img border="0" src="./Usando API no Visual Basic_files/vbapi1.gif" width="466" height="428"></td>
+  </tr>
+</tbody></table>
+<p><font size="2">Na combo <b>Api Type</b> você pode escolher o que quer
+pesquisar:</font></p>
+<ol>
+  <li><font size="2" color="#0000FF">Constants</font></li>
+  <li><font size="2" color="#0000FF">Declares</font></li>
+  <li><font size="2" color="#0000FF">Types</font></li>
+</ol>
+<p><font size="2">Na combo seguinte você digita as primeiras palavras da sua
+pesquisa.</font></p>
+<p><font size="2">Ao clicar&nbsp; no botão <b>Add </b>a declaração irá ser
+exibida na caixa - <b>Selected Items</b>. <span class="goog_qs-tidbit goog_qs-tidbit-3">Dai se você clicar no botão </span><b><span class="goog_qs-tidbit goog_qs-tidbit-3">Copy</span></b><span class="goog_qs-tidbit goog_qs-tidbit-3">
+irá copiar a declaração para a área de</span> transferência e depois poderá colar
+a declaração no seu projeto. As opções <b>Public</b> e <b>Private</b>
+alteram o escopo da declaração.</font></p>
+<p><font size="2">O botão <b>Insert</b> irá inserir a declaração no
+formulário atual. O botão</font>  <font size="2"><b>Clear</b> irá limpar a
+caixa <b>Selected Items</b> e o botão <b>Remove</b> irá remover a declaração
+que você selecionou.</font></p>
+<p><font size="2">Percebeu que com o API Viewer fica mais fácil declarar uma
+API&nbsp; , mas ele não é a única ferramenta que você pode usar </font>, <font size="2">a</font><font size="2">
+<b>Win32 SDK</b> - (<u><i>Software Development Kit</i></u>) - é uma
+    referência compreensiva das funções API disponíveis além da MSDN que
+você pode encontrar em&nbsp; http://msdn.microsoft.com.</font></p>
+<p><b><font color="#000080" size="3">E Agora qual o próximo passo ???</font></b></p>
+<p><font size="2">Declarar uma API é apenas o primeiro passo , para
+efetivamente você obter resultados você deve chamar a função declarada e
+para isto vai precisar passar os parâmetros corretos e tratar o resultado da
+função , o retorno da função. Vamos dar um exemplo prático...</font></p>
+<p><font size="2">Vamos usar a função API <b><i>GetDiskFreeSpace</i> </b>que
+nos dá o espaço disponível na unidade de disco indicada.&nbsp;</font></p>
+<ol type="a">
+  <li><font size="2">Inicie um novo projeto no VB&nbsp;</font></li>
+  <li><font size="2">Ative o API Viewer e digite os primeiros caracteres da
+    função desejada , quando a função surgir na janela <b>Available Items</b>
+    clique no botão <b>Add </b>. Veja abaixo</font></li>
+</ol>
+<p><img border="0" src="./Usando API no Visual Basic_files/vbapi2.gif" width="466" height="430"></p>
+<ol type="a" start="3">
+  <li><font size="2">Como vamos inserir a declaração no formulário padrão ,
+    deveremos alterar o escopo da declaração para <b>Private</b> e a seguir
+    clicar no botão <b>Insert</b> para inserir a declaração no formulário do
+    projeto.&nbsp;</font></li>
+</ol>
+<p><img border="0" src="./Usando API no Visual Basic_files/vbapi3.gif" width="335" height="116"></p>
+<p><font size="2">Abaixo a declaração no formulário:</font></p>
+<table border="0" width="100%" bgcolor="#FFFFFF">
+  <tbody><tr>
+    <td width="100%"><font size="2">Private Declare Function GetDiskFreeSpace
+      Lib "kernel32" Alias "GetDiskFreeSpaceA"&nbsp; (ByVal
+      _ lpRootPathName As String, lpSectorsPerCluster As Long, lpBytesPerSector
+      As Long, _ lpNumberOfFreeClusters As Long, lpTtoalNumberOfClusters As Long)
+      As Long</font></td>
+  </tr>
+</tbody></table>
+<p><font size="2">Já temos a declaração disponível no formulário , agora
+podemos escrever o código que chama a função API . Insira um botão de
+comando no formulário e digite o código abaixo no evento Click do botão :</font></p>
+<table border="0" width="100%" bgcolor="#FFFFFF">
+  <tbody><tr>
+    <td width="100%"><font size="2"><b>Private Sub Command1_Click()</b><br>
+   Dim lSecPerClust As Long<br>
+   Dim lBytesPerSec As Long<br>
+   Dim lFreeClust As Long<br>
+   Dim lTotalClust As Long<br>
+   Dim lRetorno As Long<br>
+      <br>
+      lRetorno = <font color="#0000FF"> GetDiskFreeSpace("C:\", lSecPerClust, lBytesPerSec, lFreeClust, lTotalClust)</font><br>
+      <br>
+   MsgBox "Espaço livre no drive C em Clusters = " &amp; lFreeClust &amp; vbCrLf &amp; "Total de Clusters " &amp; lTotalClust<br>
+      <br>
+      <b>End Sub</b></font></td>
+  </tr>
+</tbody></table>
+<p><font size="2">Você deve passar cinco parâmetros para a função&nbsp; <i>GetDiskFreeSpace</i>
+:&nbsp;</font></p>
+<ol>
+  <li><font size="2"><font color="#0000FF">lpRootPathName</font> <font color="#0000FF"> As String</font>&nbsp; - o nome da unidade a qual
+    desejamos conhecer o espaço</font></li>
+  <li><font size="2"><font color="#0000FF">lpSectorsPerCluster</font> <font color="#0000FF"> As Long</font> - o número de setores por
+    clusters</font></li>
+  <li><font size="2"><font color="#0000FF">lpBytesPerSector As Long</font> - o número de bytes por setor</font></li>
+  <li><font size="2"><font color="#0000FF">pNumberOfFreeClusters As Long</font> - o número livre de clusters</font></li>
+  <li><font size="2"><font color="#0000FF">lpTtoalNumberOfClusters As Long</font> - o número total de
+    clusters</font></li>
+</ol>
+<p><font size="2">Para isto deverá declarar 5 variáveis do tipo Long e fazer a
+chamada da função . O retorno da função é armazenado na variável lRetorno
+(</font><i><font size="1">perceba que não fazemos nada com essa variável</font></i><font size="2">)
+; além disto a função devolve quatro tipos diferentes de informação
+, mas não exatamente o tipo de informação que você precisa.&nbsp; Afinal você
+quer saber o espaço em bytes livres da unidade e não em clusters.&nbsp;</font></p>
+<p><font size="2"> Para
+contornar este problema você deve criar uma função que trate as informações
+e as exiba no formato adequado. Abaixo temos uma possível solução para o
+problema:</font></p>
+<table border="0" width="100%" bgcolor="#FFFFFF">
+  <tbody><tr>
+    <td width="100%"><font size="1"><b>Function EspacoLivre(sPath As String) As Double<br>
+      </b>
+      <br>
+      Dim sDrive As String<br>
+      Dim lRetorno As Long<br>
+      Dim lsetoresporcluster As Long<br>
+      Dim lbytesporsetor As Long<br>
+      Dim lclusterlivres As Long<br>
+      Dim ltotaldeclusters As Long<br>
+      <br>
+      sDrive = Left$(sPath, 1) &amp; ":\"<br>
+      lRetorno = GetDiskFreeSpace(sDrive, lsetoresporcluster, lbytesporsetor,lclusterlivres,
+      ltotaldeclusters)<br>
+      <br>
+      <font color="#0000FF">
+      EspacoLivre</font> = (lsetoresporcluster * lbytesporsetor * lclusterlivres)<br>
+      <br>
+      <b>
+      End Function</b></font></td>
+  </tr>
+</tbody></table>
+<p><font size="2">Agora para chamar a função basta informar o drive desejado
+:&nbsp;</font></p>
+<p><font size="2" color="#0000FF"><b>MsgBox " Espaco livre " &amp; Format(EspacoLivre("c:\"), "###,###,###,###") &amp; " bytes "</b></font></p>
+<p><font size="2">Simples , não ? Acho que até agora não deve ter havido
+nenhum problema quanto ao entendimento em como declarar e usar uma função API.</font>
+<font size="2">Vamos mostrar outro exemplo onde as coisas não serão tão
+óbvias.&nbsp;</font></p>
+<p><font size="2">Quando usamos parâmetros que retornam dados do tipo String
+devemos ter mente que uma API esta tratando com strings C (</font><font size="1"><i>linguagem C</i></font><font size="2">) (<i>basicamente
+ponteiros de bytes</i>). Neste caso a API irá requerer que você prepare melhor
+as variáveis de retorno antes de fazer a chamada a API.</font></p>
+<p><font size="2">As funções API nunca retornam os valores strings diretamente
+, e ,&nbsp; se um procedimento precisa retornar um valor string ele irá esperar
+que você forneça uma string na lista de parâmetros e que você obtenha o
+resultado da variável string que você forneceu. Vejamos como exemplo a API <b>GetComputerName</b>
+que retorna o nome dado ao computador.</font></p>
+<p><font size="2">A declaração obtida na API Viewer&nbsp; é&nbsp; a seguinte:</font></p>
+<table border="0" width="100%" bgcolor="#FFFFFF">
+  <tbody><tr>
+    <td width="100%"><font size="1" color="#0000FF">Public Declare Function GetComputerName Lib "kernel32" Alias "GetComputerNameA" (ByVal lpBuffer As String, nSize As Long) As Long</font></td>
+  </tr>
+</tbody></table>
+<p><font size="2">A função toma dois parâmetros :</font></p>
+<ol>
+  <li><font size="2"><b>lpBuffer</b> - uma string passada por valor (<i> ByVal </i>)
+    que irá receber o nome do computador da API</font></li>
+  <li><font size="2"><b>nSize </b>- usado para fornecer para a API o tamanho da
+    string lpBuffer quando a função for chamada e também receber o tamanho da
+    string retornada em lpBuffer pela função.&nbsp;</font></li>
+</ol>
+<p><font size="2">Ambos os parâmetros estão sendo passados como ponteiros.</font></p>
+<p><font size="2">Vejamos o código usado para chamar a função:</font></p>
+<table border="0" width="100%" bgcolor="#FFFFFF">
+  <tbody><tr>
+    <td width="100%">
+      <p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font size="2">Private Sub Form_Load()<br>
+      &nbsp;&nbsp; Dim strNome As String</font></p>
+      <p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font size="2">&nbsp;&nbsp;
+      Dim lretorno as Long</font></p>
+      <p><font size="2">&nbsp;&nbsp;<font color="#008000"> 'Cria a variavel strstring</font><br>
+      &nbsp;&nbsp; strNome = String(255, Chr$(0))</font></p>
+      <p><font size="2">&nbsp;&nbsp; <font color="#008000">'Obtem o nome do computador</font><br>
+      &nbsp;&nbsp; lretorno= GetComputerName(strNome, 255)</font></p>
+      <p><font size="2">&nbsp;&nbsp;<font color="#008000"> 'remove nulos  chr$(0)</font><br>
+      &nbsp;&nbsp; strNome = Left$(strNome, InStr(1, strNome, Chr$(0)) - 1)</font></p>
+      <p><font size="2">&nbsp;&nbsp;<font color="#008000"> 'exibe o nome do computador</font><br>
+      &nbsp;&nbsp; MsgBox strNome<br>
+      End Sub</font></p></td>
+  </tr>
+</tbody></table>
+<p><font size="2">Observe que declaramos uma variável string <b> strNome</b> para
+receber o nome do computador retornado pela função . A seguir :</font></p>
+<ol>
+  <li><font size="2">Inicializamos a varíavel&nbsp; -&nbsp; <font color="#0000FF">strNome
+    = String(255, Chr$(0))&nbsp;</font></font></li>
+  <li><font size="2">e após receber a o retorno da função&nbsp; -&nbsp; <font color="#0000FF">lretorno=    GetComputerName(strNome, 255)</font></font></li>
+  <li><font size="2">precisamos extrair da variável - <font color="#0000FF">strNome =
+    Left$(strNome, InStr(1, strNome, Chr$(0)) - 1)&nbsp;</font><font color="#000000">
+    o nome do computador.&nbsp;</font></font></li>
+</ol>
+<p><font size="2">A variável <font color="#0000FF">lretorno</font> pode assumir
+dois valores : 0 se houve algum erro e 1 se tudo deu certo.</font></p>
+<p><font size="2">Sem estes procedimentos , ao executar a chamada da função
+teríamos um erro em tempo de execução.</font></p>
+<p><font color="#000080"><b>Os tipos de dados dos parâmetros das API</b></font></p>
+<p><font size="2">Os tipos de dados dos parâmetros retornados por uma função
+API podem ser de diversos tipos , e , se você conhecer a linguagem C , vai
+estar familiarizado com esses tipos. Abaixo damos como converter os tipos de
+dados para o Visual Basic:</font></p>
+<table width="717" bgcolor="#FFFFFF" bordercolor="#FF00FF" border="1">
+  <tbody><tr>
+    <td align="middle" width="196" bgcolor="#FFFF00"><span lang="EN-US"><font face="Verdana" size="1"><b style="mso-bidi-font-weight: normal">Tipos
+      de dados em </b></font></span><b style="mso-bidi-font-weight: normal"><a name="C language data type"><span lang="EN-US"><font face="Verdana" size="1">C&nbsp;</font></span></a></b></td>
+    <td align="middle" width="202" bgcolor="#FFFF00"><span lang="EN-US"><font face="Verdana" size="1"><b style="mso-bidi-font-weight: normal">Declarar
+      no VB como</b></font></span></td>
+    <td align="middle" width="299" bgcolor="#FFFF00"><span lang="EN-US"><font face="Verdana" size="1"><b style="mso-bidi-font-weight: normal">Chamar
+      como</b></font></span></td>
+  </tr>
+  <tr>
+    <td width="196"><span lang="EN-US"><font face="Verdana" size="1">ATOM</font></span></td>
+    <td width="202"><span lang="EN-US"><font face="Verdana" size="1">ByVal <i style="mso-bidi-font-style: normal">variable</i>
+      As Integer</font></span></td>
+    <td width="299"><span lang="EN-US"><font face="Verdana" size="1">Uma expressão que  define um valor&nbsp;
+      n Int.</font></span></td>
+  </tr>
+  <tr>
+    <td width="196"><span lang="EN-US"><font face="Verdana" size="1">BOOL</font></span></td>
+    <td width="202"><span lang="EN-US"><font face="Verdana" size="1">ByVal <i style="mso-bidi-font-style: normal">variable</i><b style="mso-bidi-font-weight: normal">
+      </b>As Long</font></span></td>
+    <td width="299"><span lang="EN-US"><font face="Verdana" size="1">Uma expressão que  define um valor&nbsp;&nbsp;
+      Long</font></span></td>
+  </tr>
+  <tr>
+    <td width="196"><span lang="EN-US"><font face="Verdana" size="1">BYTE</font></span></td>
+    <td width="202"><span lang="EN-US"><font face="Verdana" size="1">ByVal <i style="mso-bidi-font-style: normal">variable</i>
+      As Byte</font></span></td>
+    <td width="299"><span lang="EN-US"><font face="Verdana" size="1">Uma expressão que  define um valor&nbsp;&nbsp;
+      Byte</font></span></td>
+  </tr>
+  <tr>
+    <td width="196"><span lang="EN-US"><font face="Verdana" size="1">CHAR</font></span></td>
+    <td width="202"><span lang="EN-US"><font face="Verdana" size="1">ByVal <i style="mso-bidi-font-style: normal">variable</i>
+      As Byte</font></span></td>
+    <td width="299"><span lang="EN-US"><font face="Verdana" size="1">Uma expressão que  define um valor&nbsp;&nbsp;
+      Byte</font></span></td>
+  </tr>
+  <tr>
+    <td width="196"><span lang="EN-US"><font face="Verdana" size="1">COLORREF</font></span></td>
+    <td width="202"><span lang="EN-US"><font face="Verdana" size="1">ByVal <i style="mso-bidi-font-style: normal">variable</i><b style="mso-bidi-font-weight: normal">
+      </b>As Long</font></span></td>
+    <td width="299"><span lang="EN-US"><font face="Verdana" size="1">Uma expressão que  define um valor&nbsp;&nbsp;
+      Long</font></span></td>
+  </tr>
+  <tr>
+    <td width="196"><span lang="EN-US"><font face="Verdana" size="1">DWORD</font></span></td>
+    <td width="202"><span lang="EN-US"><font face="Verdana" size="1">ByVal <i style="mso-bidi-font-style: normal">variable</i><b style="mso-bidi-font-weight: normal">
+      </b>As Long</font></span></td>
+    <td width="299"><span lang="EN-US"><font face="Verdana" size="1">Uma expressão que  define um valor&nbsp;&nbsp;
+      Long</font></span></td>
+  </tr>
+  <tr>
+    <td width="196"><span lang="EN-US"><font face="Verdana" size="1">HWND, HDC,
+      HMENU, etc.</font></span></td>
+    <td width="202"><span lang="EN-US"><font face="Verdana" size="1">ByVal <i style="mso-bidi-font-style: normal">variable</i><b style="mso-bidi-font-weight: normal">
+      </b>As Long</font></span></td>
+    <td width="299"><span lang="EN-US"><font face="Verdana" size="1">Uma expressão que  define um valor&nbsp;&nbsp;
+      Long</font></span></td>
+  </tr>
+  <tr>
+    <td width="196"><span lang="EN-US"><font face="Verdana" size="1">INT, UINT</font></span></td>
+    <td width="202"><span lang="EN-US"><font face="Verdana" size="1">ByVal <i style="mso-bidi-font-style: normal">variable</i><b style="mso-bidi-font-weight: normal">
+      </b>As Long</font></span></td>
+    <td width="299"><span lang="EN-US"><font face="Verdana" size="1">Uma expressão que  define um valor&nbsp;&nbsp;
+      Long</font></span></td>
+  </tr>
+  <tr>
+    <td width="196"><span lang="EN-US"><font face="Verdana" size="1">LONG</font></span></td>
+    <td width="202"><span lang="EN-US"><font face="Verdana" size="1">ByVal <i style="mso-bidi-font-style: normal">variable</i><b style="mso-bidi-font-weight: normal">
+      </b>As Long</font></span></td>
+    <td width="299"><span lang="EN-US"><font face="Verdana" size="1">Uma expressão que  define um valor&nbsp;&nbsp;
+      Long</font></span></td>
+  </tr>
+  <tr>
+    <td width="196"><span lang="EN-US"><font face="Verdana" size="1">LPARAM</font></span></td>
+    <td width="202"><span lang="EN-US"><font face="Verdana" size="1">ByVal <i style="mso-bidi-font-style: normal">variable</i>
+      As Long</font></span></td>
+    <td width="299"><span lang="EN-US"><font face="Verdana" size="1">Uma expressão que  define um valor&nbsp;&nbsp;
+      Long</font></span></td>
+  </tr>
+  <tr>
+    <td width="196"><span lang="EN-US"><font face="Verdana" size="1">LPDWORD</font></span></td>
+    <td width="202"><font face="Verdana" size="1"><span lang="EN-US"><i style="mso-bidi-font-style: normal">variable</i><b style="mso-bidi-font-weight: normal">
+      </b>As Long</span></font></td>
+    <td width="299"><span lang="EN-US"><font face="Verdana" size="1">Uma expressão que  define um valor&nbsp;&nbsp;
+      Long</font></span></td>
+  </tr>
+  <tr>
+    <td width="196"><span lang="EN-US"><font face="Verdana" size="1">LPINT,
+      LPUINT</font></span></td>
+    <td width="202"><font face="Verdana" size="1"><span lang="EN-US"><i style="mso-bidi-font-style: normal">variable</i><b style="mso-bidi-font-weight: normal">
+      </b>As Long</span></font></td>
+    <td width="299"><span lang="EN-US"><font face="Verdana" size="1">Uma expressão que  define um valor&nbsp;&nbsp;
+      Long</font></span></td>
+  </tr>
+  <tr>
+    <td width="196"><span lang="EN-US"><font face="Verdana" size="1">LPRECT</font></span></td>
+    <td width="202"><font face="Verdana" size="1"><span lang="EN-US"><i style="mso-bidi-font-style: normal">variable</i><b style="mso-bidi-font-weight: normal">
+      </b>As<b style="mso-bidi-font-weight: normal"> </b><i style="mso-bidi-font-style: normal">type</i></span></font></td>
+    <td width="299"><span lang="EN-US"><font face="Verdana" size="1">Qualquer
+      variável do tipo definido pelo usuário</font></span></td>
+  </tr>
+  <tr>
+    <td width="196"><span lang="EN-US"><font face="Verdana" size="1">LPSTR,
+      LPCSTR</font></span></td>
+    <td width="202"><span lang="EN-US"><font face="Verdana" size="1">ByVal <i style="mso-bidi-font-style: normal">variable</i><b style="mso-bidi-font-weight: normal">
+      </b>As String</font></span></td>
+    <td width="299"><span lang="EN-US"><font face="Verdana" size="1">Uma expressão que  define um valor de&nbsp;
+      String</font></span></td>
+  </tr>
+  <tr>
+    <td width="196"><span lang="EN-US"><font face="Verdana" size="1">LPVOID</font></span></td>
+    <td width="202"><font face="Verdana" size="1"><span lang="EN-US"><i style="mso-bidi-font-style: normal">variable</i><b style="mso-bidi-font-weight: normal">
+      </b>As Any</span></font></td>
+    <td width="299"><span lang="EN-US"><font face="Verdana" size="1">Qualquer
+      (use ByVal quando passar uma string)</font></span></td>
+  </tr>
+  <tr>
+    <td width="196"><span lang="EN-US"><font face="Verdana" size="1">LPWORD</font></span></td>
+    <td width="202"><font face="Verdana" size="1"><span lang="EN-US"><i style="mso-bidi-font-style: normal">variable</i><b style="mso-bidi-font-weight: normal">
+      </b>As Integer</span></font></td>
+    <td width="299"><span lang="EN-US"><font face="Verdana" size="1">Uma expressão que  define um valor&nbsp;
+      n Int.</font></span></td>
+  </tr>
+  <tr>
+    <td width="196"><span lang="EN-US"><font face="Verdana" size="1">LRESULT</font></span></td>
+    <td width="202"><span lang="EN-US"><font face="Verdana" size="1">ByVal <i style="mso-bidi-font-style: normal">variable</i><b style="mso-bidi-font-weight: normal">
+      </b>As Long</font></span></td>
+    <td width="299"><span lang="EN-US"><font face="Verdana" size="1">Uma expressão que  define um valor&nbsp;&nbsp;
+      Long</font></span></td>
+  </tr>
+  <tr>
+    <td width="196"><span lang="EN-US"><font face="Verdana" size="1">NULL</font></span></td>
+    <td width="202"><span lang="EN-US"><font face="Verdana" size="1">As Any or<o:p>
+      </o:p>
+      ByVal <i style="mso-bidi-font-style: normal">variable</i><b style="mso-bidi-font-weight: normal">
+      </b>As Long</font></span></td>
+    <td width="299"><span lang="EN-US"><font face="Verdana" size="1">ByVal
+      Nothing ou<b style="mso-bidi-font-weight: normal"> </b>ByVal 0&amp;<b style="mso-bidi-font-weight: normal">
+      </b>ou<b style="mso-bidi-font-weight: normal"> </b>vbNullString</font></span></td>
+  </tr>
+  <tr>
+    <td width="196"><span lang="EN-US"><font face="Verdana" size="1">SHORT</font></span></td>
+    <td width="202"><span lang="EN-US"><font face="Verdana" size="1">ByVal <i style="mso-bidi-font-style: normal">variable</i><b style="mso-bidi-font-weight: normal">
+      </b>As Integer</font></span></td>
+    <td width="299"><span lang="EN-US"><font face="Verdana" size="1">Uma expressão que  define um valor&nbsp;
+      n Int.</font></span></td>
+  </tr>
+  <tr>
+    <td width="196"><span lang="EN-US"><font face="Verdana" size="1">VOID</font></span></td>
+    <td width="202"><span lang="EN-US"><font face="Verdana" size="1">Sub<b style="mso-bidi-font-weight: normal">
+      </b><i style="mso-bidi-font-style: normal">procedure</i></font></span></td>
+    <td width="299"><span lang="EN-US"><font face="Verdana" size="1">Não
+      aplicável</font></span></td>
+  </tr>
+  <tr>
+    <td width="196"><span lang="EN-US"><font face="Verdana" size="1">WORD</font></span></td>
+    <td width="202"><span lang="EN-US"><font face="Verdana" size="1">ByVal <i style="mso-bidi-font-style: normal">variable</i><b style="mso-bidi-font-weight: normal">
+      </b>As Integer</font></span></td>
+    <td width="299"><span lang="EN-US"><font face="Verdana" size="1">Uma expressão que  define um valor de
+      n Int.</font></span></td>
+  </tr>
+  <tr>
+    <td width="196"><span lang="EN-US"><font face="Verdana" size="1">WPARAM</font></span></td>
+    <td width="202"><span lang="EN-US"><font face="Verdana" size="1">ByVal <i style="mso-bidi-font-style: normal">variable</i><b style="mso-bidi-font-weight: normal">
+      </b>As Long</font></span></td>
+    <td width="299"><span lang="EN-US"><font face="Verdana" size="1">Uma expressão que  define um valor&nbsp;
+      Long</font></span></td>
+  </tr>
+</tbody></table>
+<p><font size="2">Observe que o tipo Boleano é avaliando como um Long e pode
+assumir os valores 0 para falso e 1 para verdadeiro e que o tipo NULL pode ser
+passado por valor ( ByVal) como 0&amp; ou como <i>vbNullString.</i></font></p>
+<p><font size="2">Percebeu que ao declarar uma função API usamos , no Visual
+Basic , basicamente os seguintes tipos de dados&nbsp;</font></p>
+<ul>
+  <li><font size="2"><font color="#0000FF">Byte</font> - um inteiro de 8 bits</font></li>
+  <li><font size="2">I<font color="#0000FF">nteger</font> - um inteiro de 16
+    bits</font></li>
+  <li><font size="2"><font color="#0000FF">Long</font> - um inteiro de 32 bits</font></li>
+  <li><font size="2"><font color="#0000FF">String</font> - uma variável string
+    de comprimento variável</font></li>
+  <li><font size="2"><font color="#0000FF">Any</font> - suporta qualquer um dos
+    outros tipos</font></li>
+</ul>
+<p><font color="#000080"><b>Passando os parâmetros por Valor ou por Referência</b></font></p>
+<p><font size="2">O padrão é o Visual Basic passar todos os parâmetros por
+referência ( <b>ByRef </b>), ou seja, ao invés de passar o valor atual do
+argumento ele passa um endereço de 32 bits onde o valor esta armazenado. Desta
+forma se ocorrer qualquer alteração no valor do parâmetro isto será
+refletido no valor original do mesmo. Se você passar uma variável chamada <i>minhavar
+</i>por referência para uma função API ela poderá alterar o conteúdo da
+variável <i>minhavar.</i>&nbsp;</font></p>
+<p><font size="2">Para passar um parâmetro por valor usamos a palavra <b>ByVa</b>l
+precedendo o parâmetro , com isto estamos passando uma cópia do valor do
+parâmetro e não o seu endereço de localização. Assim , se voce passar uma
+variável chamada <i>minhavar</i> por valor para uma função API , a função
+não tem a possibilidade de editar o conteúdo da variável <i>minhavar.</i></font></p>
+<p><font size="2">Algumas funções esperam que o valor seja passado por valor ,
+ou seja , elas esperam o valor atual e não uma endereço de localização do
+parâmetro . Não preciso nem dizer que se você passar um valor por referência
+isto pode acarretar resultados imprevisíveis como por exemplo o travamento do
+seu computador.</font></p>
+<p><font size="2">Ao passar uma string por valor você esta passando o endereço
+do primeiro byte de dados da string . Se passar uma string por referência você
+estará passando o endereço de memória onde outro endereço esta armazenado ,
+neste caso o primeiro byte de dados da string.</font></p>
+<p><font size="2">Alguns conceitos adicionais sobre a passagem de parâmetros <b>ByVal
+ou ByRef&nbsp;</b></font></p>
+<ol>
+  <li><font size="2">As <i><font color="#0000FF">strings</font></i> sempre são passadas por Valor ( ByVal ).
+    Porém a função API poderá alterar o conteúdo da variável string.</font></li>
+  <li><font size="2">As <i>estruturas definidas pelo usuário</i> são sempre
+    passadas por referência ( ByRef )</font></li>
+  <li><font size="2">Os Vetores ( <font color="#0000FF"> Arrays ) </font> sempre são passados <u>ByRef</u>
+    quando passados por inteiro para a função API.</font></li>
+  <li><font size="2">Os <i>valores numéricos</i> podem ser passados por Valor
+    ou por Referência dependendo da função</font></li>
+</ol>
+<p><font color="#000080"><b>Qual o número da sua janela ? Enviando e recebendo
+mensagens..</b></font>.</p>
+<p><font size="2">Vamos abordar agora alguns conceitos muito importantes
+envolvendo as API´s , o Windows e o VB. Quando você executa um projeto , por
+mais simples que seja , ele geralmente é composto basicamente por formulários
+, controles e o código associado. O Windows identifica cada formulário e
+controle atribuindo a cada objeto um número que o identifica. Assim cada janela
+possui um <b><i>Handle</i>&nbsp;</b> , ou um número identificador que a
+identifica de forma única. O VB dispõe de uma propriedade <font color="#0000FF"><b>Hwnd
+</b></font>para todos os controles que necessitam de um <i> Handle</i> identificador
+assim você pode usar esta propriedade para identificar cada objeto do seu
+projeto.</font></p>
+<p><font size="2">Vamos usar uma API muito simples que ilustra o uso de um <i>
+Handle</i> (identificador); a função API - <b>FlashWindow.</b> Talvez ela não
+seja muito útil , mas servirá para os nosso propósitos . Vamos fazer um raio
+X da função <b>FlashWindow</b>.</font></p>
+<p><font size="2">- A função inverte as cores do título de uma janela.</font></p>
+<p><font size="2">- Declarando a função - Para declarar abra o API Viewer ou
+outro utilitário ( <i><font color="#0000FF">no Super CD VB temos um utilitário
+com mais de 900 funções API´s com suas declarações , constantes e exemplos</font></i>
+) e selecione a função <b>FlashWindow</b>:</font></p>
+<table border="1" width="100%" bgcolor="#FFFFFF">
+  <tbody><tr>
+    <td width="100%"><font size="2">Private Declare Function FlashWindow Lib "user32" Alias "FlashWindow" (ByVal hwnd As Long, ByVal bInvert As Long) As Long</font></td>
+  </tr>
+</tbody></table>
+<ol>
+  <li><font size="2">O procedimento será visível somente no formulário - <font color="#0000FF">Private</font></font></li>
+  <li><font size="2">O procedimento irá retornar um Valor - <font color="#0000FF">Function&nbsp;</font></font></li>
+  <li><font size="2">O nome da função usado no VB será - <font color="#0000FF">FlashWindow</font></font></li>
+  <li><font size="2">Estamos usando a DLL - <font color="#0000FF">User32</font></font></li>
+  <li><font size="2">O nome da função API na DLL é - <font color="#0000FF">FlashWindow</font></font></li>
+  <li><font size="2">A função solicita dois argumentos :</font></li>
+</ol>
+<ul>
+  <li><font size="2"><b>Hwnd </b>- o Handle , um número que identifica a
+    janela.</font></li>
+  <li><font size="2"><b>bInvert</b> - Informa se o título da janela será
+    invertido ou não. True inverte a cor do título e False volta ao estado
+    original</font></li>
+</ul>
+<ol start="7">
+  <li><font size="2">O tipo de dados retornado será do tipo <font color="#0000FF">Long</font>
+    : <font color="#0000FF">Verdadeiro( 1 ) ou Falso ( 0 )</font></font></li>
+</ol>
+<p>-<font size="2">Agora inicie um novo projeto no VB e no formulário padrão
+insira dois botões de comando e um controle Timer definindo a propriedade
+Interval do Timer para um valor em torno de 500.</font></p>
+<p><font size="2">Veja abaixo o jeitão do formulário:</font></p>
+<p><img border="0" src="./Usando API no Visual Basic_files/vbapi4.gif" width="318" height="107"></p>
+<p>- <font size="2">Finalmente inclua o código abaixo no formulário:</font></p>
+<table border="0" width="100%" bgcolor="#FFFFFF">
+  <tbody><tr>
+    <td width="100%"><font size="1" color="#0000FF">Private Declare Function FlashWindow Lib "user32" (ByVal hwnd As Long, ByVal bInvert As Long) As Long<br>
+      Dim lngRet  As Long<br>
+      Dim SimNao As Boolean</font>
+      <hr>
+      <p><font size="1"><b>Private Sub Command1_Click()</b><br>
+      &nbsp; Me.Caption = "Olá , Estou piscando para você.."<br>
+      &nbsp; SimNao = True&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color="#008000">'piscar</font><br>
+      <b>End Sub</b></font></p>
+      <hr>
+      <p><font size="1"><b>Private Sub Command2_Click()<br>
+      </b>&nbsp;&nbsp; Me.Caption = "Olá, cansei de piscar..."<br>
+      &nbsp;&nbsp; SimNao = False&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color="#008000">' parar de piscar</font><br>
+      <b>End Sub</b></font></p>
+      <hr>
+      <p><font size="1"><b>Private Sub Timer1_Timer()</b><br>
+      &nbsp;&nbsp;<font color="#0000FF"><b> lngRet = FlashWindow(Me.hwnd, SimNao)</b></font><br>
+      <b>End Sub</b></font></p></td>
+  </tr>
+</tbody></table>
+<p>-<font size="2"> Observe a chamada da função : Você passa o identificador
+da janela atual ( <b>Me.hwnd )</b> e diz se é para piscar (True) ou não (False)
+através da variável boolena <b>SimNao. </b>O retorno será <b>True (1)&nbsp;</b>
+ou <b>False (0). </b>Você pode observar o valor da variável de retorno <font color="#0000FF">lngRet.</font></font></p>
+<p><font size="2">Você ja ouviu falar nas mensagens do Windows. Não ?? Pois
+vai ouvir agora...&nbsp;</font></p>
+<p><font size="2">Para se comunicar com o seu programa e saber qual o tipo de
+informação foi recebida e qual deve ser processada , o Windows envia mensagens
+ao seu programa. Uma mensagem é enviada para o seu formulário quando o
+usuário clica um botão ou movimenta&nbsp; mouse, etc.. (</font><font size="1">O
+retorno da mensagem é capturada pelo seu programa VB e processado de maneira
+transparente</font><font size="2">). No exemplo acima quando o usuário clica no
+botão <b>Piscar,&nbsp; </b>o windows envia uma mensagem para processar esta
+informação.</font></p>
+<p><font size="2">Todas as mensagens são enviadas usando quatro
+parâmetros:&nbsp;</font></p>
+<ol>
+  <li><font size="2">O identificador do objeto ( janela, formulário, controle)
+    para onde a mensagem será enviada.</font></li>
+  <li><font size="2">O identificador da mensagem&nbsp;</font></li>
+  <li><font size="2">Dois parâmetros que vão depender da mensagem.</font></li>
+</ol>
+<p><font size="2">Vamos apresentar agora a função API que faz este serviço: <b>SendMessage
+</b>(</font><i><font size="1">nome sugestivo não ?</font></i><font size="2"><i>
+</i>)</font></p>
+<p><font size="2"><b>SendMessage</b> envia uma mensagem chamando a função do
+Windows para a janela indicada. O controle não retorna ao programa que a chamou
+enquanto sua execução não estiver finalizada. Sua declaração é a seguinte:</font></p>
+<table border="1" width="100%" bgcolor="#FFFFFF">
+  <tbody><tr>
+    <td width="100%"><font size="2">Public Declare Function SendMessage Lib "user32" Alias "SendMessageA" (ByVal hwnd As Long, ByVal wMsg As Long, ByVal wParam As Long, lParam As Any) As Long</font></td>
+  </tr>
+</tbody></table>
+<p><font size="2">Vamos ver uma aplicação prática usando a função <b>SendMessage</b>.
+Essa você vai gostar...&nbsp;</font></p>
+<p><font size="2">- Vamos usar a função <b>SendMessagem </b>para enviar uma
+mensagem ao controle ListBox. Quando você digitar algo no controle TextBox o
+evento Change do controle irá enviar uma mensagem ao Controle ListBox
+selecionado o item da Lista .&nbsp;</font></p>
+<p><font size="2">- Inicie um novo projeto no Visual Basic e no formulário
+padrão insira um co<i>ntrole label, um controle ListBox e um controle TextBox</i>
+, como a figura abaixo:</font></p>
+<table border="0" width="100%">
+  <tbody><tr>
+    <td width="50%">
+      <p align="center"><img border="0" src="./Usando API no Visual Basic_files/vbapi5.gif" width="210" height="257"></p></td>
+    <td width="50%">
+      <p align="center"><img border="0" src="./Usando API no Visual Basic_files/vbapi6.gif" width="210" height="256"></p></td>
+  </tr>
+  <tr>
+    <td width="50%" bgcolor="#FFFF00"><font size="1">O formulário com os
+      controles</font></td>
+    <td width="50%" bgcolor="#FFFF00"><font size="1">Ao pressionar uma tecla a
+      seleção ocorre na lista</font></td>
+  </tr>
+</tbody></table>
+<p><font size="2">- Para declarar a função <font color="#0000FF">SendMessage</font>
+use o API Viewer conforme já ensinado. Vamos declarar a função na seção <u>General
+Declarations</u> do formulário , assim:</font></p>
+<table border="0" width="100%" bgcolor="#FFFFFF">
+  <tbody><tr>
+    <td width="100%"><font size="1">Private Declare Function SendMessage Lib "user32" Alias "SendMessageA" (ByVal hwnd As Long, ByVal wMsg As Long, ByVal wParam As Integer, ByVal lParam As Any) As Long<br>
+      <font color="#0000FF">Const LB_FINDSTRING = &amp;H18F</font></font></td>
+  </tr>
+</tbody></table>
+<p><font size="2">Notou que declaramos uma constante : </font><font color="#0000FF" size="1">Const LB_FINDSTRING = &amp;H18F&nbsp;
+</font><font size="2" color="#000000">Fazemos isto usando o API Viewer , assim:</font></p>
+<ul>
+  <li><font size="2" color="#000000">Inicie o API Viewer e selecione na opção
+    File do Menu o item - <b>Load Text File</b></font></li>
+  <li><font size="2" color="#000000">A seguir selecione o arquivo - </font><font size="2"><b>Win32Api.txt</b>
+    </font></li>
+  <li><font size="2">Na <b>Combo - API Type</b> - Selecione <b>Constants</b></font></li>
+  <li><font size="2">Na caixa de texto a seguir digite as letras <b>lb_f</b></font></li>
+  <li><font size="2">Em <b>Available Items</b> , selecione <b>LB_FINDSTRING=&amp;H18F</b></font></li>
+  <li><font size="2">Clique&nbsp; no botão <b>Add</b> e a seguir no botão <b>Copy</b><b>&nbsp;</b></font></li>
+</ul>
+<p><font size="2">Veja abaixo a figura exibindo a seleção:</font></p>
+<p>
+<img border="0" src="./Usando API no Visual Basic_files/vbapi7.gif" width="463" height="412"></p>
+<p>
+<font size="2">O código do formulário é dado a seguir:</font></p>
+<table border="0" width="100%" bgcolor="#FFFFFF">
+  <tbody><tr>
+    <td width="100%"><font size="1">P<font color="#0000FF">rivate Declare Function SendMessage Lib "user32" Alias "SendMessageA" (ByVal hwnd As Long, ByVal wMsg As Long, ByVal wParam As Integer, ByVal lParam As Any) As Long</font><br>
+      <font color="#FF0000">Const LB_FINDSTRING = &amp;H18F</font></font>
+      <hr>
+      <p><font size="1"><b>Private Sub Form_Load()</b><br>
+      &nbsp;&nbsp; With List1<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .AddItem "Computador"<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .AddItem "Monitor"<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .AddItem "Modem"<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .AddItem "Impressora"<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .AddItem "Scanner"<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .AddItem "Placa de Som"<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .AddItem "Teclado"<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .AddItem "CD-Rom"<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .AddItem "Mouse"<br>
+      &nbsp; End With<br>
+      <b>End Sub</b></font></p>
+      <hr>
+      <p><font size="1"><b>Private Sub Text1_Change()</b><br>
+      &nbsp; <font color="#808000">'Retorna o item de listindex<br>
+      </font>&nbsp; List1.ListIndex = </font><font color="#0000FF" size="2"> SendMessage(List1.hwnd, LB_FINDSTRING, -1, ByVal
+      CStr(Text1.Text))</font><font size="1"><br>
+      End Sub<br>
+      </font></p></td>
+  </tr>
+</tbody></table>
+<p>-<font size="2">Como funciona:</font></p>
+<p><font size="2">- Quando você digitar algo na caixa de texto o evento <i>text1_Change</i>
+ira invocar a função SendMessage, assim:</font></p>
+<ul>
+  <li><font size="2">SendMessage enviará uma mensagem para o controle List1. O
+    controle é identificado pelo seu Handle. <font color="#0000FF">List1.hwnd</font></font></li>
+  <li><font size="2">O outro parâmetro -<font color="#0000FF"> LB_FINDSTRING </font>-
+    indica que o caractere será procurado no controle List1.</font></li>
+  <li><font size="2"><font color="#0000FF">Cstr(Text1.text)</font> é a string
+    que será procurada.</font></li>
+</ul>
+<p><font size="2">O retorno será a posição <i>list1.Listindex</i> na lista de
+opções do controle <i> ListBox.</i></font></p>
+<p><font size="2">Pronto !!!&nbsp; com isso resolvemos um problema com poucas
+linhas de código usando uma chamada a uma função API .</font></p>
+<p><font size="2">Além da função <b> SendMessage </b> o temos a função API <b>PostMessage
+</b>que atua de um modo um pouco diferente.</font> <font size="2"><b>PostMessage</b> 
+<font color="#0000FF"> envia uma mensagem postando a mensagem na
+lista de tarefas do Windows , sendo&nbsp; assim , ela somente será processada
+depois que as outras tarefas forem finalizadas.&nbsp;</font></font></p>
+<p><font size="2">A função <b>PostMessage</b> retorna o controle para o
+programa que a invocou de imediato não retornando nenhum valor. Este valor
+somente será retornado quando a mensagem for processada pelo Windows. A
+declaração de <b> PostMessage</b> é:</font></p>
+<table border="1" width="100%" bgcolor="#FFFFFF">
+  <tbody><tr>
+    <td width="100%"><font size="2">Private Declare Function PostMessage Lib "user32" Alias "PostMessageA" (ByVal hwnd As Long, ByVal wMsg As Long, ByVal wParam As Long, ByVal lParam As Long) As Long</font></td>
+  </tr>
+</tbody></table>
+<ol type="a">
+  <li><font size="2"><font color="#0000FF">hwnd</font> é o número que
+    identifica o objeto para o qual a mensagem é enviada</font></li>
+  <li><font size="2"><font color="#0000FF">wMsg</font> é a mensagem a ser
+    enviada</font></li>
+  <li><font size="2"><font color="#0000FF">wParam e lParam</font> vão depender
+    da mensagem</font></li>
+</ol>
+<p><font size="2">A seguir vamos mostrar um exemplo usando a função <b>PostMessage</b>.
+A função é usada para enviar uma mensagem a uma janela ativa . No caso a
+mensagem será para que a janela seja fechada. Abaixo o formulário padrão com
+os controles:</font></p>
+<p><img border="0" src="./Usando API no Visual Basic_files/vbapi8.gif" width="319" height="146"></p>
+<p><font size="2">Estaremos usando também a função API <b>FindWindow </b>que
+irá localizar a janela ativa (i</font><i><font size="1">nformada pelo usuário
+na caixa de texto)</font></i><font size="2"> , a seguir invocamos a função <b>PostMessage</b>
+que irá enviar a mensagem para a janela encontrada com o parâmetro para fechar
+a janela.(<i>WM_CLOSE=&amp;H10</i>).</font></p>
+<p><font size="2">As declarações serão usadas no formulário padrão do
+projeto VB e por isso serão declaradas como <b>Private.</b> Abaixo as
+declarações e a constante usada.</font></p>
+<table border="1" width="100%" bgcolor="#FFFFFF">
+  <tbody><tr>
+    <td width="100%"><font size="1">Private Declare Function FindWindow Lib "user32" Alias
+      "FindWindowA" (ByVal lpClassName As String, _<br>
+      ByVal lpWindowName As String) As Long<br>
+      <br>
+      Private Declare Function PostMessage Lib "user32" Alias "PostMessageA"
+      (ByVal hWnd As Long, ByVal wMsg As Long, _<br>
+      ByVal wParam As Long, lParam As Any) As Long<br>
+      <br>
+      Const WM_CLOSE = &amp;H10</font></td>
+  </tr>
+</tbody></table>
+<p><font size="2">&nbsp;A constante foi obtida usando o <u>API Viewer </u>como
+no exemplo anterior.</font></p>
+<p><font size="2">No botão de comando(<i>cmdFechar</i>)&nbsp; usado no
+formulário insira o código a seguir:</font></p>
+<table border="0" width="100%" bgcolor="#FFFFFF">
+  <tbody><tr>
+    <td width="100%"><font size="1"><b>Private Sub cmdFechar_Click()</b><br>
+      <br>
+      Dim winHwnd As Long<br>
+      Dim RetVal As Long<br>
+      <br>
+      winHwnd = FindWindow(vbNullString, Text1.Text)<br>
+      <br>
+      Debug.Print winHwnd<br>
+      <br>
+      If winHwnd &lt;&gt; 0 Then<br>
+      &nbsp;&nbsp; </font><font color="#0000FF" size="2">RetVal = PostMessage(winHwnd, WM_CLOSE, 0&amp;, 0&amp;)</font><font size="1"><br>
+      &nbsp;&nbsp; If RetVal = 0 Then<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MsgBox "Erro ao postar mensagem.", vbCritical, "Usando PostMessage"<br>
+      &nbsp;&nbsp; End If<br>
+      Else<br>
+      &nbsp;&nbsp; MsgBox Text1.Text + " não esta aberto.", vbInformation, "Usando PostMessage"<br>
+      End If<br>
+      <br>
+      <b>End Sub</b></font></td>
+  </tr>
+</tbody></table>
+<p><font size="2">Como Funciona:</font></p>
+<p><font size="2">- O usuário deverá informar o nome do <font color="#0000FF">Título
+da Janela Ativa</font> ( <i>tem que ser exatamente igual ao nome do título da
+janela.</i> Ex: <u>Controle de Volume , Sem Título - Bloco de Notas </u>,
+etc... )</font></p>
+<p><font size="2">- A função <b>FindWindow</b> irá localizar a janela e
+retornará o <font color="#0000FF">Handle</font> da mesma</font></p>
+<p><font size="2">- O <i>Handle</i> ou identificador da janela será usado na
+função <b>PostMessage </b>para que a mensagem seja direcionada para a janela
+identificada pelo <i>Handle</i> . O Parâmetro <b>WM_CLOSE</b> informa que&nbsp;
+a janela deverá ser fechada. <i>Obs: Os parâmetros : <b>0&amp; e 0&amp;</b>
+são equivalentes a NULL.</i></font></p>
+<p><font size="2">Gostou ????&nbsp; O assunto é vastíssimo e por isso vamos
+ficando por aqui , esperando retornar em breve&nbsp; abordando outros aspectos
+das API´s. Abaixo alguns endereços relacionados a funções API´s. Tchau... <img border="0" src="file:///C:/Meus%20documentos/Minhas%20Webs/smile.gif" width="15" height="15"></font></p>
+<ul>
+  <li><a target="_blank" href="http://msdn.microsoft.com/library/default.asp"><font size="2">http://msdn.microsoft.com/library/default.asp</font></a></li>
+  <li><font size="2"><a href="http://www.allapi.net/">www.allapi.net</a></font></li>
+  <li><a href="http://www.vbapi.com/ref/"><font face="verdana, arial, helvetica" size="2">
+www.vbapi.com/ref/</font></a></li>
+</ul>
+<hr>
+
+<p align="center"><font size="1"><strong>Copyright (c) 2001 -
+José Carlos Macoratti e amigos da WEB</strong></font></p>
+
+
+
+<div id="goog_qs_tidbit_box" class="notranslate goog_qs-slideup"><div id="goog_qs-wrapper"><div id="goog_qs-box-toggle" title="Minimizar" style="background-image: url(chrome-extension://okanipcmceoeemlbjnmnbdibhgpbllgc/images/minimize.png);"></div><div id="goog_qs-box-help" title="Abrir a página de opções e a ajuda" style="background-image: url(chrome-extension://okanipcmceoeemlbjnmnbdibhgpbllgc/images/help.png);"></div><div id="goog_qs-box-info" style="background-image: url(chrome-extension://okanipcmceoeemlbjnmnbdibhgpbllgc/images/icon16x16.png);"><span class="goog_qs-nowrap">C<img>orrespondências</span> <span class="goog_qs-nowrap">n<img>a</span> <span class="goog_qs-nowrap">p<img>ágina</span> <span class="goog_qs-nowrap">p<img>ara</span> <span class="goog_qs-query"><span class="goog_qs-nowrap">F<img>UNCTION</span> <span class="goog_qs-nowrap">A<img>REA</span> <span class="goog_qs-nowrap">D<img>E</span> <span class="goog_qs-nowrap">I<img>MPRESSAO</span> <span class="goog_qs-nowrap">V<img>BA</span></span></div><div id="goog_qs-box-tidbits"><div class="goog_qs-box-tidbit" title="Clique para ver este texto na página">O <em><span class="goog_qs-nowrap">V<img>B</span></em> <span class="goog_qs-nowrap">f<img>oi</span> <span class="goog_qs-nowrap">u<img>m</span> <span class="goog_qs-nowrap">d<img>ivisor</span> <em><span class="goog_qs-nowrap">d<img>e</span></em> <span class="goog_qs-nowrap">á<img>guas</span> <span class="goog_qs-nowrap">q<img>ue</span> <span class="goog_qs-nowrap">p<img>ermitiu</span> a <span class="goog_qs-nowrap">c<img>riação</span> <em><span class="goog_qs-nowrap">d<img>e</span></em> <span class="goog_qs-nowrap">p<img>rogramas</span> <span class="goog_qs-nowrap">p<img>ara</span> o <span class="goog_qs-nowrap">a<img>mbiente</span> <span class="goog_qs-nowrap">W<img>indows</span> a <span class="goog_qs-nowrap">u<img>m</span> <span class="goog_qs-nowrap">g<img>rande...</span> <span class="goog_qs-go">»</span></div><div class="goog_qs-box-tidbit" title="Clique para ver este texto na página"><span class="goog_qs-nowrap">C<img>OMDL32,</span> <span class="goog_qs-nowrap">J<img>anelas</span> <span class="goog_qs-nowrap">c<img>omuns</span> : <em><span class="goog_qs-nowrap">i<img>mpressão</span></em> , <span class="goog_qs-nowrap">s<img>alvar</span> , <span class="goog_qs-nowrap">a<img>brir,</span> . <span class="goog_qs-go">»</span></div><div class="goog_qs-box-tidbit" title="Clique para ver este texto na página"><span class="goog_qs-nowrap">P<img>rivate/Public</span> <span class="goog_qs-nowrap">D<img>eclare</span> <em><span class="goog_qs-nowrap">F<img>unction</span></em>/Sub <span class="goog_qs-nowrap">N<img>omedaFunção</span> <span class="goog_qs-nowrap">L<img>ib</span> <span class="goog_qs-nowrap">N<img>omedaDLL</span> <span class="goog_qs-nowrap">A<img>lias...</span> <span class="goog_qs-go">»</span></div><div class="goog_qs-box-tidbit" title="Clique para ver este texto na página"><span class="goog_qs-nowrap">D<img>ai</span> <span class="goog_qs-nowrap">s<img>e</span> <span class="goog_qs-nowrap">v<img>ocê</span> <span class="goog_qs-nowrap">c<img>licar</span> <span class="goog_qs-nowrap">n<img>o</span> <span class="goog_qs-nowrap">b<img>otão</span> <span class="goog_qs-nowrap">C<img>opy</span> <span class="goog_qs-nowrap">i<img>rá</span> <span class="goog_qs-nowrap">c<img>opiar</span> a <span class="goog_qs-nowrap">d<img>eclaração</span> <span class="goog_qs-nowrap">p<img>ara</span> a <em><span class="goog_qs-nowrap">á<img>rea</span> <span class="goog_qs-nowrap">d<img>e</span></em>... <span class="goog_qs-go">»</span></div></div><div id="goog_qs-box-bottom"><div class="goog_qs-more-matches" id="goog_qs-box-more-tidbits"><span class="goog_qs-nowrap">M<img>ais</span> <span class="goog_qs-nowrap">c<img>orrespondências</span> <span class="goog_qs-go">»</span></div><div class="goog_qs-more-matches" id="goog_qs-box-fewer-tidbits" style="display:none"><span class="goog_qs-go">«</span>  <span class="goog_qs-nowrap">M<img>enos</span> <span class="goog_qs-nowrap">c<img>orrespondências</span></div><div id="goog_qs-box-feedback-link"><span class="goog_qs-nowrap">F<img>eedback</span></div> <div id="goog_qs-box-new-bug"><span class="goog_qs-nowrap">B<img>ug</span></div></div><div style="clear:both"></div></div></div></body></html>

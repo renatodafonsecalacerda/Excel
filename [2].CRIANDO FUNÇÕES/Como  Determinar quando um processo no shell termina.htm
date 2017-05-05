@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<!-- saved from url=(0073)http://msdn.microsoft.com/pt-br/library/office/ff845544(v=office.15).aspx -->
+<html dir="ltr" xmlns="http://www.w3.org/1999/xhtml" lang="pt"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><link rel="canonical" href="./Como  Determinar quando um processo no shell termina_files/Como  Determinar quando um processo no shell termina.htm">
+        <title>Como: Determinar quando um processo no shell termina</title>
+
+
+
+
+<meta name="DCS.dcsuri" content="/pt-br/library/office/ff845544(d=default,l=pt-br,v=office.15).aspx">
+
+<meta name="NormalizedUrl" content="http://msdn.microsoft.com/pt-br/library/office/ff845544(d=default,l=pt-br,v=office.15).aspx">
+
+<meta name="ms.normalizedurl" content="http://msdn.microsoft.com/pt-br/library/office/ff845544(d=default,l=pt-br,v=office.15).aspx">
+
+<meta name="DCSext.Title" content="Como: Determinar quando um processo no shell termina">
+
+<meta name="DCSext.Audience" content="Developer">
+
+<meta name="DCSext.ContentType" content="article (how-tos)">
+
+<meta name="DCSext.DeliveryChannel" content="MSDN Library">
+
+<meta name="DCSext.LifeCycle" content="develop">
+
+<meta name="DCSext.Product" content="ACCESS">
+
+<meta name="DCSext.ProficiencyLevel" content="Proficient (200)">
+
+<meta name="DCSext.RelatedProducts" content="Office 2013">
+
+<meta name="DCSext.Role" content="web developers">
+
+<meta name="DCSext.Subject" content="template">
+
+<meta name="DCSext.ProductFamily" content="MSDN_OFFICE">
+
+<meta name="ms.prodfamily" content="OFFICE">
+
+<meta name="ms.prod" content="ACCESS">
+
+<meta name="VotingContextUrl" content="http://msdn.microsoft.com/pt-br/library/office/ff845544(d=default,l=pt-br,v=office.15).aspx">
+
+<meta name="MN" content="9DDD8832-1:44:33 PM">
+
+<meta name="Search.ShortId" content="ff845544">
+
+<meta name="ms.shortidmsdn" content="ff845544">
+
+<meta name="Ms.Locale" content="pt-br">
+
+<meta name="ms.prodver" content="office.15">
+
+<meta name="ms.contentlang" content="PT">
+
+<meta name="ms.lang" content="PT">
+
+<meta name="ms.loc" content="BR">
+
+<meta name="ms.sitever" content="2014.08.22.0003">
+
+<meta name="ms.assetid" content="16a6fb03-0ff5-76a9-8efb-9348d5a6beef">
+
+<meta name="ms.auth" content="0">
+
+
+
+
+
+
+
+
+        
+    <link rel="stylesheet" type="text/css" href="./Como  Determinar quando um processo no shell termina_files/Combined.css"><script type="text/javascript" async="" src="./Como  Determinar quando um processo no shell termina_files/ms2.js"></script><script type="text/javascript" src="./Como  Determinar quando um processo no shell termina_files/ai.js" async=""></script><script class="mtps-injected">try {
+/**/
+(window.MTPS || (window.MTPS = {})).cdnDomains || (window.MTPS.cdnDomains = { 
+	"image": "http://i.msdn.microsoft.com", 
+	"js": "http://i2.msdn.microsoft.com", 
+	"css": "http://i3.msdn.microsoft.com", 
+	"xap": "http://msdn.microsoft.com"
+});
+/**/
+} finally { MTPS._injectNextScript_0 && MTPS._injectNextScript_0(); }</script><script class="mtps-injected" src="./Como  Determinar quando um processo no shell termina_files/jquery-1.8.2.min.js"></script><script class="mtps-injected">try {
+//
+  var literalNormalizedUrl = '/pt-br/library/office/ff845544(l=pt-br,v=office.15).aspx';
+  var wt_nvr_ru = 'WT_NVR_RU';
+  var wt_fpcdom = '.microsoft.com';
+  var wt_domlist = 'msdn.microsoft.com';
+  var wt_pathlist = '';
+  var wt_paramlist = 'DCSext.mtps_devcenter';
+  var wt_siteid = 'MSDN';
+  var gDomain = 'm.webtrends.com';
+  var gDcsId = 'dcsmgru7m99k7mqmgrhudo0k8_8c6m';
+  var gFpc = 'WT_FPC';
+
+
+
+  if (document.cookie.indexOf(gFpc + "=") == -1) {
+    var wtidJs = document.createElement("script");
+    wtidJs.src = "//" + gDomain + "/" + gDcsId + "/wtid.js";
+    document.getElementsByTagName("head")[0].appendChild(wtidJs);
+  }
+
+
+
+  var detectedLocale = 'pt-br';
+  var wtsp = '_msdn_';
+  var gTrackEvents = '0';
+/**/
+} finally { MTPS._injectNextScript_2 && MTPS._injectNextScript_2(); }</script><script class="mtps-injected">try {
+/**/
+  var omni_guid = "b6688929-a2cc-4d3f-8786-824b636fe261";
+/**/
+} finally { MTPS._injectNextScript_3 && MTPS._injectNextScript_3(); }</script><script class="mtps-injected">try {
+//
+
+            window.appInsightsId = '60854590-027a-4ae4-98be-2741a40f355f';
+            //
+} finally { MTPS._injectNextScript_4 && MTPS._injectNextScript_4(); }</script><script class="mtps-injected" src="./Como  Determinar quando um processo no shell termina_files/Combined.js"></script><script class="mtps-injected" src="./Como  Determinar quando um processo no shell termina_files/SearchBox.jss"></script><script class="mtps-injected" src="./Como  Determinar quando um processo no shell termina_files/Combined(1).js"></script><script class="mtps-injected">try {
+MTPS = window.MTPS || {}; MTPS.LocalizedStrings = window.MTPS.LocalizedStrings || {}; MTPS.LocalizedStrings.ExpandButtonTooltip = 'Expandir'; MTPS.LocalizedStrings.CollapseButtonTooltip = 'Recolher'; MTPS.LocalizedStrings.EnhancedExpandTooltip = 'Clique para expandir. Clique duas vezes para expandir tudo.'; MTPS.LocalizedStrings.EnhancedCollapseTooltip = 'Clique para recolher. Clique duas vezes para recolher tudo.'; MTPS.LocalizedStrings.ExpandAllButtonTooltip = 'Expandir Tudo'; MTPS.LocalizedStrings.CollapseAllButtonTooltip = 'Recolher Tudo';
+} finally { MTPS._injectNextScript_8 && MTPS._injectNextScript_8(); }</script><script class="mtps-injected" src="./Como  Determinar quando um processo no shell termina_files/Combined(2).js"></script><script src="./Como  Determinar quando um processo no shell termina_files/broker.js"></script><script class="mtps-injected">try {
+$(document).ready(function() {
+        try {
+            var token = $("#globalRequestVerification input[name='__RequestVerificationToken']").clone();
+            $("#siteFeedbackForm").append(token);
+        } catch(err) {
+            
+        }
+    });
+} finally { MTPS._injectNextScript_10 && MTPS._injectNextScript_10(); }</script><link href="./Como  Determinar quando um processo no shell termina_files/PrintView.css" rel="stylesheet" type="text/css" media="print"><script>window["_GOOG_TRANS_EXT_VER"] = "1";</script></head>
+    <body class="library Chrome" style="">
+        <div id="page">
+            
+            
+  
+            
+    
+
+    <div id="ux-header" class="ltr">
+        
+            <div class="upperBand">
+                <div data-fragmentname="SiteLogo" id="Fragment_SiteLogo" xmlns="http://www.w3.org/1999/xhtml">
+  <a href="http://msdn.microsoft.com/office" title="Página inicial do Office" id="SiteLogo_41252_1" xmlns="http://www.w3.org/1999/xhtml">Centro de Desenvolvimento</a>
+</div>     
+                <div data-fragmentname="SearchBox" id="Fragment_SearchBox" xmlns="http://www.w3.org/1999/xhtml">
+  <div class="SearchBox">
+    <form id="HeaderSearchForm" name="HeaderSearchForm" method="get" onsubmit="return Epx.Controls.SearchBox.searchBoxOnSubmit(this);">
+      <input id="HeaderSearchTextBox" name="query" type="text" maxlength="200" onfocus="Epx.Controls.SearchBox.watermarkFocus(event, this.title)" onblur="Epx.Controls.SearchBox.watermarkBlur(event, this.title)" autocomplete="off">
+      <button id="HeaderSearchButton" value="" type="submit" class="header-search-button" title="Pesquisar aqui"></button>
+    <div id="SearchFlyoutContainer" style="display: none; text-align: left; border: 1px solid buttonshadow; position: absolute; z-index: 1000; padding: 2px; color: rgb(255, 255, 255); font-family: &#39;Segoe UI&#39;, &#39;Lucida Grande&#39;, Verdana, Arial, Helvetica, sans-serif; font-size: 14px; background-color: rgb(255, 255, 255);"><div id="SuggestionContainer"><ul style="list-style: none; padding: 4px 2px 0px 1px; cursor: pointer; margin: 1px; white-space: nowrap;"></ul></div></div></form>
+    
+    
+  </div>
+</div>     
+            </div>
+            <div class="middleBand">
+                <div class="TocNavigation">
+   
+   <div class="toclevel1">
+          <a class="normal" href="http://msdn.microsoft.com/office/aa905340" title="Página inicial">Página inicial</a>
+          <a class="normal" href="http://msdn.microsoft.com/office/dn775160" title="Produtos">Produtos</a>
+          <a class="normal" href="http://msdn.microsoft.com/office/dn775161" title="Documentação">Documentação</a>
+          <a class="normal" href="http://msdn.microsoft.com/office/dn775162" title="Downloads">Downloads</a>
+          <a class="normal" href="http://msdn.microsoft.com/office/dn775163" title="Ferramentas">Ferramentas</a>
+          <a class="normal" href="http://msdn.microsoft.com/office/dn792892" title="Suporte">Suporte</a>
+          <a class="normal" href="http://msdn.microsoft.com/office/dn775164" title="Perguntas Frequentes">Perguntas Frequentes</a>
+          <a class="normal" href="http://dev.office.com/opportunity" title="Oportunidade">Oportunidade</a>
+
+    </div>
+  
+</div>   
+                <div id="signIn">
+
+<a class="scarabLink" href="https://login.live.com/login.srf?wa=wsignin1.0&rpsnv=12&ct=1409258673&rver=6.0.5276.0&wp=MCLBI&wlcxt=MSDN%24MSDN%24MSDN&wreply=http%3a%2f%2fmsdn.microsoft.com%2fpt-br%2flibrary%2foffice%2fff845544%2528v%3doffice.15%2529.aspx&lc=1046&id=254354&mkt=pt-BR" title=" Entrar  "> Entrar  </a></div>
+
+    
+    
+            </div>   
+            <div class="lowerBand"></div>
+                     
+    </div>
+
+
+
+
+
+    <div class="breadCrumb">
+<a href="http://msdn.microsoft.com/pt-br/library/office/dn467914(v=office.15).aspx" title="Office development">Office development</a>            <span>&gt;</span>
+<a href="http://msdn.microsoft.com/pt-br/library/office/bb726434(v=office.12).aspx" title="Desenvolvimento de cliente Office">Desenvolvimento de cliente Office</a>            <span>&gt;</span>
+<a href="http://msdn.microsoft.com/pt-br/library/office/jj162978(v=office.15).aspx" title="Office 2013">Office 2013</a>            <span>&gt;</span>
+<a href="http://msdn.microsoft.com/pt-br/library/office/fp179695(v=office.15).aspx" title="Access 2013">Access 2013</a>            <span>&gt;</span>
+<a href="http://msdn.microsoft.com/pt-br/library/office/ee861519(v=office.15).aspx" title="Bem-vindo à referência do desenvolvedor da Access 2013">Bem-vindo à referência do desenvolvedor da Access 2013</a>            <span>&gt;</span>
+<a href="http://msdn.microsoft.com/pt-br/library/office/dn142571(v=office.15).aspx" title="Referência de área de trabalho do banco de dados Access 2013">Referência de área de trabalho do banco de dados Access 2013</a>            <span>&gt;</span>
+<a href="http://msdn.microsoft.com/pt-br/library/office/ff193161(v=office.15).aspx" title="How do I....(Referência do desenvolvedor do access 2013)">How do I....(Referência do desenvolvedor do access 2013)</a>            <span>&gt;</span>
+<a href="http://msdn.microsoft.com/pt-br/library/office/dn124785(v=office.15).aspx" title="Diversos (Access)">Diversos (Access)</a>            <span>&gt;</span>
+<a href="http://msdn.microsoft.com/pt-br/library/office/dn124100(v=office.15).aspx" title="API do Windows">API do Windows</a>            <span>&gt;</span>
+
+        <a href="./Como  Determinar quando um processo no shell termina_files/Como  Determinar quando um processo no shell termina.htm" title="Como: Determinar quando um processo no shell termina">Como: Determinar quando um processo no shell termina</a>
+    </div>
+
+        
+            <div id="body">
+                
+
+
+
+
+
+
+    <div id="leftNav" style="width: 280px; max-width: 480px; min-height: 2498px; height: 470px;">
+
+
+
+<div id="tocnav" style="width: 280px; position: fixed; top: 60px;">
+
+            <div class="toclevel0" data-toclevel="0" style="padding-left: 0px;">
+<a class="toc_collapsed" href="http://msdn.microsoft.com/pt-br/library/office/ff845544(v=office.15).aspx#"></a><a data-tochassubtree="true" href="http://msdn.microsoft.com/pt-br/library/office/dn467914(v=office.15).aspx" id="dn468026_office.15_pt-br" mtpsaliasid="" mtpsassetid="e2bea160-2979-4b76-8f45-8a1461ea8be1_office.15_pt-br" mtpsshortid="dn467914_office.15_pt-br" title="Office development">Office development</a>            </div>
+            <div class="toclevel0" data-toclevel="0" style="padding-left: 0px;">
+<a class="toc_collapsed" href="http://msdn.microsoft.com/pt-br/library/office/ff845544(v=office.15).aspx#"></a><a data-tochassubtree="true" href="http://msdn.microsoft.com/pt-br/library/office/bb726434(v=office.12).aspx" id="jj189878_office.15_pt-br" mtpsaliasid="" mtpsassetid="bbb46130-71cc-4242-bca9-bf40483d4baa_office.15_pt-br" mtpsshortid="bb726434_office.12_pt-br" title="Desenvolvimento de cliente Office">Desenvolvimento de cliente Office</a>            </div>
+            <div class="toclevel0" data-toclevel="0" style="padding-left: 0px;">
+<a class="toc_collapsed" href="http://msdn.microsoft.com/pt-br/library/office/ff845544(v=office.15).aspx#"></a><a data-tochassubtree="true" href="http://msdn.microsoft.com/pt-br/library/office/jj162978(v=office.15).aspx" id="jj190020_office.15_pt-br" mtpsaliasid="" mtpsassetid="74a80e0a-fe60-4356-b238-13de4c2822d9_office.15_pt-br" mtpsshortid="jj162978_office.15_pt-br" title="Office 2013">Office 2013</a>            </div>
+            <div class="toclevel0" data-toclevel="0" style="padding-left: 0px;">
+<a class="toc_collapsed" href="http://msdn.microsoft.com/pt-br/library/office/ff845544(v=office.15).aspx#"></a><a data-tochassubtree="true" href="http://msdn.microsoft.com/pt-br/library/office/fp179695(v=office.15).aspx" id="jj250317_office.15_pt-br" mtpsaliasid="" mtpsassetid="9858d097-d1d1-48df-8344-e7b46afbe0d1_office.15_pt-br" mtpsshortid="fp179695_office.15_pt-br" title="Access 2013">Access 2013</a>            </div>
+            <div class="toclevel0" data-toclevel="0" style="padding-left: 0px;">
+<a class="toc_collapsed" href="http://msdn.microsoft.com/pt-br/library/office/ff845544(v=office.15).aspx#"></a><a data-tochassubtree="true" href="http://msdn.microsoft.com/pt-br/library/office/ee861519(v=office.15).aspx" id="jj569057_office.15_pt-br" mtpsaliasid="" mtpsassetid="1dc7ecfb-263b-4bc9-9fbd-ba922aee8792_office.15_pt-br" mtpsshortid="ee861519_office.15_pt-br" title="Bem-vindo à referência do desenvolvedor da Access 2013">Bem-vindo à referência do desenvolvedor da Access 2013</a>            </div>
+            <div class="toclevel0" data-toclevel="0" style="padding-left: 0px;">
+<a class="toc_collapsed" href="http://msdn.microsoft.com/pt-br/library/office/ff845544(v=office.15).aspx#"></a><a data-tochassubtree="true" href="http://msdn.microsoft.com/pt-br/library/office/dn142571(v=office.15).aspx" id="jj569058_office.15_pt-br" mtpsaliasid="" mtpsassetid="a78bbd98-4c73-4945-b334-0de891563305_office.15_pt-br" mtpsshortid="dn142571_office.15_pt-br" title="Referência de área de trabalho do banco de dados Access 2013">Referência de área de trabalho do banco de dados Access 2013</a>            </div>
+            <div class="toclevel0" data-toclevel="0" style="padding-left: 0px;">
+<a class="toc_collapsed" href="http://msdn.microsoft.com/pt-br/library/office/ff845544(v=office.15).aspx#"></a><a data-tochassubtree="true" href="http://msdn.microsoft.com/pt-br/library/office/ff193161(v=office.15).aspx" id="jj569069_office.15_pt-br" mtpsaliasid="" mtpsassetid="44a3e88e-df6d-9a2e-2241-262156469df8_office.15_pt-br" mtpsshortid="ff193161_office.15_pt-br" title="How do I....(Referência do desenvolvedor do access 2013)">How do I....(Referência do desenvolvedor do access 2013)</a>            </div>
+            <div class="toclevel0" data-toclevel="0" style="padding-left: 0px;">
+<a class="toc_collapsed" href="http://msdn.microsoft.com/pt-br/library/office/ff845544(v=office.15).aspx#"></a><a data-tochassubtree="true" href="http://msdn.microsoft.com/pt-br/library/office/dn124785(v=office.15).aspx" id="jj569086_office.15_pt-br" mtpsaliasid="" mtpsassetid="517556ee-6f2c-4343-bde2-ca187590e628_office.15_pt-br" mtpsshortid="dn124785_office.15_pt-br" title="Diversos (Access)">Diversos (Access)</a>            </div>
+            <div class="toclevel1" data-toclevel="1" data-childrenloaded="true" style="padding-left: 17px;">
+<a class="toc_expanded" href="http://msdn.microsoft.com/pt-br/library/office/ff845544(v=office.15).aspx#"></a><a data-tochassubtree="true" href="http://msdn.microsoft.com/pt-br/library/office/dn124100(v=office.15).aspx" id="jj714828_office.15_pt-br" mtpsaliasid="" mtpsassetid="27537939-55e7-4c5c-a3b3-f68263be0e6c_office.15_pt-br" mtpsshortid="dn124100_office.15_pt-br" title="API do Windows">API do Windows</a>            </div>
+            <div class="toclevel2 current" data-toclevel="2" style="padding-left: 34px;">
+<span class="toc_empty"></span><a href="./Como  Determinar quando um processo no shell termina_files/Como  Determinar quando um processo no shell termina.htm" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="Como: Determinar quando um processo no shell termina">Como: Determinar quando um processo no shell termina</a>            </div>
+            <div class="toclevel2" data-toclevel="2" style="padding-left: 34px;">
+<span class="toc_empty"></span><a href="http://msdn.microsoft.com/pt-br/library/office/ff194373(v=office.15).aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="Como: Recuperar informações da Área de Transferência">Como: Recuperar informações da Área de Transferência</a>            </div>
+            <div class="toclevel2" data-toclevel="2" style="padding-left: 34px;">
+<span class="toc_empty"></span><a href="http://msdn.microsoft.com/pt-br/library/office/ff192913(v=office.15).aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="Como: Enviar informações para a Área de Transferência">Como: Enviar informações para a Área de Transferência</a>            </div>
+            <div class="toclevel2" data-toclevel="2" style="padding-left: 34px;">
+<span class="toc_empty"></span><a href="http://msdn.microsoft.com/pt-br/library/office/ff192673(v=office.15).aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="Como: Recuperar o nome do usuário conectado à rede">Como: Recuperar o nome do usuário conectado à rede</a>            </div>
+</div>
+        
+
+        
+
+        
+        
+        <div id="toc-resizable-ew" class="toc-resizable-ew"></div>
+        
+
+<a id="NavigationResize" href="javascript:void(0)" style="left: 280px; display: inline-block;">
+    <img class="cl_nav_resize_open" src="./Como  Determinar quando um processo no shell termina_files/ImageSprite.png" title="Expandir" alt="Expandir" style="">
+    <img class="cl_nav_resize_close" src="./Como  Determinar quando um processo no shell termina_files/ImageSprite.png" title="Minimizar" alt="Minimizar" style="display: none;">
+</a>
+
+
+
+    </div>
+<div id="content" class="content" style="margin-left: 280px; width: auto;">
+
+
+
+
+
+    
+    <div id="FeedbackCounterUrl" data-url="/pt-br/library/office/feedbackcounterasync/ff845544(v=office.15).aspx"></div>
+    <div id="FeedbackCounterPlaceHolder"><link rel="stylesheet" type="text/css" href="./Como  Determinar quando um processo no shell termina_files/FeedbackCounter.css" xmlns="http://www.w3.org/1999/xhtml">
+    
+    
+
+    
+
+    
+</div>
+
+
+        
+
+<div class="topic" xmlns="http://www.w3.org/1999/xhtml">
+  <h1 class="title">Como: Determinar quando um processo no shell termina</h1>
+  
+  <div class="lw_vs">
+    <div id="curversion">
+      <strong>
+            Office 2013
+        </strong>
+    </div>
+  <div id="ratingCounterSeperator" class="cl_lw_vs_seperator" style="display: block;" xmlns="http://www.w3.org/1999/xhtml"></div><div id="ratingCounter" xmlns="http://www.w3.org/1999/xhtml" style="margin: 0px 0px 0px 13px; display: block;">
+        <span id="rcA" class="ratingText">
+            Este tópico ainda não foi avaliado como <span id="rateThisPrefix">- </span><a id="rateThisTopic" href="http://msdn.microsoft.com/pt-br/library/office/ff845544(v=office.15).aspx#feedback" title="Avalie este tópico">Avalie este tópico</a>
+            
+        </span>
+    </div></div>
+  <div style="clear:both;"></div>
+  
+  <div id="mainSection">
+    <div id="mainBody">
+      <div class="introduction">
+        <p>
+          <strong>Última alteração:  </strong>quarta-feira, 29 de junho de 2011</p>
+        <p>
+          <em>
+            <strong>É aplicável ao:  </strong>Access 2013&nbsp;| Office 2013</em>
+        </p>
+        <p>
+          <span id="mt1" class="sentence" data-guid="9bdf59ecd9fb60e0403c1ef797ec4739" data-source="When you run the &lt;strong&gt;&lt;span class=&quot;mtpsTagOuterHtml&quot; &gt;&lt;span&gt;Shell&lt;/span&gt;&lt;/span&gt;&lt;/strong&gt; function in a Microsoft Visual Basic for Applications (VBA) procedure, it starts an executable program asynchronously and returns control to the procedure.This shelled program continues to run independently of your procedure until you close it." xml:space="preserve">
+            <sentencetext xmlns="http://www.w3.org/1999/xhtml">Quando você executa a função <strong xmlns="http://www.w3.org/1999/xhtml"><a href="http://msdn.microsoft.com/pt-br/library/office/gg278437(v=office.15).aspx">Shell</a></strong> em um procedimento do VBA (Microsoft Visual Basic for Applications), ele inicia um programa executável de maneira assíncrona e retorna o controle ao procedimento. Esse programa em shell continua a ser executado independentemente do procedimento até ser fechado. 
+</sentencetext>
+          </span>
+        </p>
+        <p>
+          <span id="mt2" class="sentence" data-guid="ee7f67468e30505772e1bf5e87ccc405" data-source="If your procedure needs to wait for the shelled process to end, you can use the Windows API to poll the status of the application, but this is not very efficient.This topic explains a more efficient method." xml:space="preserve">
+            <sentencetext xmlns="http://www.w3.org/1999/xhtml">Se o procedimento precisa aguardar o término do processo em shell, você pode usar a API do Windows para consultar o estado do aplicativo, mas isso não é muito eficiente.Este tópico explica um método mais eficiente.</sentencetext>
+          </span>
+        </p>
+        <p>
+          <span id="mt3" class="sentence" data-guid="1bdff13fb0861fbd17ba88f58566e218" data-source="The Windows API has integrated functionality that enables your application to wait until a shelled process has completed.To use these functions, you need to have a handle to the shelled process.To accomplish this, use the &lt;strong&gt;CreateProcess&lt;/strong&gt; function instead of the &lt;strong&gt;Shell&lt;/strong&gt; function to begin your shelled program." xml:space="preserve">
+            <sentencetext xmlns="http://www.w3.org/1999/xhtml">A API do Windows integrou funcionalidade que permite ao aplicativo aguardar a conclusão de um processo em shell. Para usar essas funções, você precisa ter uma identificador do processo em shell. Para isso, use a função <strong xmlns="http://www.w3.org/1999/xhtml">CreateProcess</strong> no lugar da função <strong xmlns="http://www.w3.org/1999/xhtml">Shell</strong> para iniciar seu programa em shell.</sentencetext>
+          </span>
+        </p>
+      </div>
+      <div>
+        
+        <h2 class="LW_CollapsibleArea_TitleDiv">
+          <div>
+            <a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Recolher" role="button">
+              <span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span>
+              <span class="LW_CollapsibleArea_Title">Criando o processo em shell</span>
+            </a>
+            <div class="LW_CollapsibleArea_HrDiv">
+              <hr class="LW_CollapsibleArea_Hr">
+            </div>
+          </div>
+        </h2>
+        <div class="sectionblock">
+          <a id="sectionToggle0">
+            
+          </a>
+          <p>
+            <span id="mt4" class="sentence" data-guid="f6097ff7de3ad836c789b98edeab5608" data-source="To create an addressable process, use the &lt;strong&gt;CreateProcess&lt;/strong&gt; function to start your shelled application.The &lt;strong&gt;CreateProcess&lt;/strong&gt; function gives your program the process handle of the shelled process via one of its passed parameters." xml:space="preserve">
+              <sentencetext xmlns="http://www.w3.org/1999/xhtml">Para criar um processo endereçável, use a função <strong xmlns="http://www.w3.org/1999/xhtml">CreateProcess</strong> para iniciar o aplicativo em shell. A função <strong xmlns="http://www.w3.org/1999/xhtml">CreateProcess</strong> fornece ao programa o identificador do processo em shell por meio de um de seus parâmetros transmitidos.</sentencetext>
+            </span>
+          </p>
+        </div>
+      </div>
+      <div>
+        <h2 class="LW_CollapsibleArea_TitleDiv">
+          <div>
+            <a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Recolher" role="button">
+              <span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span>
+              <span class="LW_CollapsibleArea_Title">Aguardando a conclusão do processo em shell</span>
+            </a>
+            <div class="LW_CollapsibleArea_HrDiv">
+              <hr class="LW_CollapsibleArea_Hr">
+            </div>
+          </div>
+        </h2>
+        <div class="sectionblock">
+          <a id="sectionToggle1">
+            
+          </a>
+          <p>
+            <span id="mt5" class="sentence" data-guid="a8eecf6dabe052a461ca96920d7721a2" data-source="After you use the &lt;strong&gt;CreateProcess&lt;/strong&gt; function to get a process handle, you can pass that handle to the &lt;strong&gt;WaitForSingleObject&lt;/strong&gt; function.This causes your VBA  procedure to suspend execution until the shelled process ends." xml:space="preserve">
+              <sentencetext xmlns="http://www.w3.org/1999/xhtml">Depois de usar a função <strong xmlns="http://www.w3.org/1999/xhtml">CreateProcess</strong> para obter um identificador do processo, você pode passar esse identificador para a função <strong xmlns="http://www.w3.org/1999/xhtml">WaitForSingleObject</strong>. Isso fará com que o procedimento do VBA suspenda a execução até a conclusão do processo em shell.</sentencetext>
+            </span>
+          </p>
+          <p>
+            <span id="mt6" class="sentence" data-guid="52c0f427c3be24df698a22e2601f51cc" data-source="The following steps are necessary to build a VBA procedure that uses the &lt;strong&gt;CreateProcess&lt;/strong&gt; function to run the Windows Notepad  application.This code shows how to use the Windows API &lt;strong&gt;CreateProcess&lt;/strong&gt; and &lt;strong&gt;WaitForSingleObject&lt;/strong&gt; functions to wait until a shelled process ends before resuming execution." xml:space="preserve">
+              <sentencetext xmlns="http://www.w3.org/1999/xhtml">As etapas a seguir são necessárias para criar um procedimento do VBA que use a função <strong xmlns="http://www.w3.org/1999/xhtml">CreateProcess</strong> para executar o aplicativo Bloco de Notas do Windows. Este código mostra como usar as funções <strong xmlns="http://www.w3.org/1999/xhtml">CreateProcess</strong> e <strong xmlns="http://www.w3.org/1999/xhtml">WaitForSingleObject</strong> da API do Windows para aguardar a conclusão de um processo em shell antes de continuar a execução.</sentencetext>
+            </span>
+          </p>
+          <p>
+            <span id="mt7" class="sentence" data-guid="3839d6f7aadf3e4cc837a1421a22a61f" data-source="The syntax of the &lt;strong&gt;CreateProcess&lt;/strong&gt; function is complex, so in the example code, it is encapsulated into a function called &lt;strong&gt;ExecCmd&lt;/strong&gt;.&lt;strong&gt;ExecCmd&lt;/strong&gt; takes one parameter, the command line of the application to execute." xml:space="preserve">
+              <sentencetext xmlns="http://www.w3.org/1999/xhtml">A sintaxe da função <strong xmlns="http://www.w3.org/1999/xhtml">CreateProcess</strong> é complexa; portanto, no código de exemplo ela está encapsulada em uma função chamada <strong xmlns="http://www.w3.org/1999/xhtml">ExecCmd</strong>. <strong xmlns="http://www.w3.org/1999/xhtml">ExecCmd</strong> utiliza um parâmetro, a linha de comando do aplicativo a ser executado.</sentencetext>
+            </span>
+          </p>
+          <p>
+            <span id="mt8" class="sentence" data-guid="e7f34542e79e04cbb6da18c0612a7f00" data-source="Create a standard module and paste the following lines in the Declarations section: " xml:space="preserve">
+              <sentencetext xmlns="http://www.w3.org/1999/xhtml">Crie um módulo padrão e cole as seguintes linhas na seção Declarações:</sentencetext>
+            </span>
+          </p>
+<div id="code-snippet-1" class="codeSnippetContainer" xmlns="">
+    <div class="codeSnippetContainerTabs">
+        <div class="codeSnippetContainerTabSingle" dir="ltr"><a>VBA</a></div>
+    </div>
+    <div class="codeSnippetContainerCodeContainer">
+        <div class="codeSnippetToolBar">
+            <div class="codeSnippetToolBarText">
+                <a name="CodeSnippetCopyLink" style="display: none;" title="Copiar para a área de transferência." href="javascript:if (window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_0dcb60fa-acbf-4006-9aba-c7a349a7f080');">Copiar</a>
+            </div>
+        </div>
+        <div id="CodeSnippetContainerCode_0dcb60fa-acbf-4006-9aba-c7a349a7f080" class="codeSnippetContainerCode" dir="ltr">
+            <div style="color:Black;"><pre>Option Explicit 
+ 
+Private Type STARTUPINFO 
+ cb As Long 
+ lpReserved As String 
+ lpDesktop As String 
+ lpTitle As String 
+ dwX As Long 
+ dwY As Long 
+ dwXSize As Long 
+ dwYSize As Long 
+ dwXCountChars As Long 
+ dwYCountChars As Long 
+ dwFillAttribute As Long 
+ dwFlags As Long 
+ wShowWindow As Integer 
+ cbReserved2 As Integer 
+ lpReserved2 As Long 
+ hStdInput As Long 
+ hStdOutput As Long 
+ hStdError As Long 
+End Type 
+ 
+Private Type PROCESS_INFORMATION 
+ hProcess As Long 
+ hThread As Long 
+ dwProcessID As Long 
+ dwThreadID As Long 
+End Type 
+ 
+Private Declare Function WaitForSingleObject Lib "kernel32" (ByVal _ 
+ hHandle As Long, ByVal dwMilliseconds As Long) As Long 
+ 
+Private Declare Function CreateProcessA Lib "kernel32" (ByVal _ 
+ lpApplicationName As Long, ByVal lpCommandLine As String, ByVal _ 
+ lpProcessAttributes As Long, ByVal lpThreadAttributes As Long, _ 
+ ByVal bInheritHandles As Long, ByVal dwCreationFlags As Long, _ 
+ ByVal lpEnvironment As Long, ByVal lpCurrentDirectory As Long, _ 
+ lpStartupInfo As STARTUPINFO, lpProcessInformation As _ 
+ PROCESS_INFORMATION) As Long 
+ 
+Private Declare Function CloseHandle Lib "kernel32" (ByVal _ 
+ hObject As Long) As Long 
+ 
+Private Const NORMAL_PRIORITY_CLASS = &amp;H20&amp; 
+Private Const INFINITE = -1&amp; 
+
+</pre></div>
+            
+        </div>
+    </div>
+</div>
+<p><span id="mt9" class="sentence" data-guid="557781a47e32d47f7301395945cbf784" data-source="Paste the following code into the module:" xml:space="preserve"><sentencetext xmlns="http://www.w3.org/1999/xhtml">Cole o seguinte código no módulo:</sentencetext></span></p>
+<div id="code-snippet-2" class="codeSnippetContainer" xmlns="">
+    <div class="codeSnippetContainerTabs">
+        <div class="codeSnippetContainerTabSingle" dir="ltr"><a>VBA</a></div>
+    </div>
+    <div class="codeSnippetContainerCodeContainer">
+        <div class="codeSnippetToolBar">
+            <div class="codeSnippetToolBarText">
+                <a name="CodeSnippetCopyLink" style="display: none;" title="Copiar para a área de transferência." href="javascript:if (window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_c099db93-ad5e-404d-8ca9-3b858505044f');">Copiar</a>
+            </div>
+        </div>
+        <div id="CodeSnippetContainerCode_c099db93-ad5e-404d-8ca9-3b858505044f" class="codeSnippetContainerCode" dir="ltr">
+            <div style="color:Black;"><pre>Public Sub ExecCmd(cmdline As String) 
+ Dim proc As PROCESS_INFORMATION 
+ Dim start As STARTUPINFO 
+ Dim ReturnValue As Integer 
+ 
+ ' Initialize the STARTUPINFO structure: 
+ start.cb = Len(start) 
+ 
+ ' Start the shelled application: 
+ ReturnValue = CreateProcessA(0&amp;, cmdline$, 0&amp;, 0&amp;, 1&amp;, _ 
+ NORMAL_PRIORITY_CLASS, 0&amp;, 0&amp;, start, proc) 
+ 
+ ' Wait for the shelled application to finish: 
+ Do 
+ ReturnValue = WaitForSingleObject(proc.hProcess, 0) 
+ DoEvents 
+ Loop Until ReturnValue &lt;&gt; 258 
+ 
+ ReturnValue = CloseHandle(proc.hProcess) 
+End Sub 
+ 
+Sub Testing() 
+ ExecCmd "NOTEPAD.EXE" 
+ MsgBox "Process Finished" 
+End Sub
+</pre></div>
+            
+        </div>
+    </div>
+</div>
+<p><span id="mt10" class="sentence" data-guid="3fdb14def33948369bf8462bfaae2c3a" data-source="Type &lt;strong&gt;Testing&lt;/strong&gt; in the &lt;span class=&quot;label&quot;&gt;Immediate&lt;/span&gt; window.Notepad will start.After you close Notepad, a message box will notify you that the process has completed." xml:space="preserve"><sentencetext xmlns="http://www.w3.org/1999/xhtml">Digite <strong xmlns="http://www.w3.org/1999/xhtml">Testing</strong> na janela <span class="label" xmlns="http://www.w3.org/1999/xhtml">Imediata</span>. O Bloco de Notas será iniciado. Quando você fechá-lo, uma caixa de mensagem o notificará de que o processo foi concluído.</sentencetext></span></p></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+
+
+
+<div class="libraryMemberFilter">
+    <div class="filterContainer">
+        <span>Mostrar:</span>
+        <label>
+            <input type="checkbox" class="libraryFilterInherited" checked="checked" value="Inherit">Herdado
+        </label>
+        <label>
+            <input type="checkbox" class="libraryFilterProtected" checked="checked" value="Protected">Protegido
+        </label>
+    </div>
+</div>
+    
+<input type="hidden" id="libraryMemberFilterEmptyWarning" value="Não há membros disponíveis com suas configurações de filtro atuais.">
+
+
+ 
+</div>
+
+
+            </div>
+            <div class="clear"></div>
+        
+            
+    
+<input name="__RequestVerificationToken" type="hidden" value="GlEDRV_2we5oW5SbAB3BPsVLMaPlPDnNE4-N9hSxZ4D_VEKSpEnOUJZk72iQVH2xeIM4KKdof66OKlS1Sm5O5Z41WSM1">
+<input id="ratingSubmitUrl" type="hidden" value="http://msdn.microsoft.com/pt-br/library/feedback/add/ff845544(v=office.15).aspx">
+<input id="isTopicRated" type="hidden" value="false">
+
+
+
+
+    
+
+
+    <div id="ux-footer" class="ltr">
+        
+            <div id="footerSock">
+                <div id="footerSockInner">
+                    <a name="feedback"></a>
+                    <div data-fragmentname="Survey" id="Fragment_Survey" xmlns="http://www.w3.org/1999/xhtml">
+  <div class="DetailedLink">
+    
+    <div class="Content">
+      <div class="title"></div>
+    </div>
+  </div>
+</div>
+
+<div class="rating" style="display: block;">
+    <div id="ratingSection1">
+        <div class="title">
+            Esta página foi útil?
+        </div>
+        <div class="description">
+            Seus comentários sobre este conteúdo são importantes.<br>Queremos saber sua opinião.
+        </div>
+        <div class="buttons">
+            <button class="button" id="ratingYes">Sim</button>
+            <button class="button" id="ratingNo">Não</button>
+        </div>
+        <input id="ratingValue" type="hidden" value="">
+    </div>
+    <div id="ratingSection2">
+        <div class="title">
+            Comentários adicionais?
+        </div>
+        <textarea id="ratingText" rows="6" cols="" maxlength="1500"></textarea>
+        <div class="counter right">
+            <span id="feedbackTextCounter">1500</span> caracteres restantes
+        </div>
+        <div class="buttons left">
+            <button class="button" id="ratingSubmit">Enviar</button>
+            <button class="button" id="ratingSkipThis">Ignorar</button>
+        </div>
+    </div>
+    <div id="ratingSection3">
+        <div class="title">
+            Obrigado!
+        </div>
+        <div class="description">
+            Agradecemos seus comentários.
+        </div>
+    </div>
+    
+    
+    <div id="contentFeedbackQAContainer" style="display: none;"></div>
+</div>
+    
+
+                    <div data-fragmentname="SockLinks" id="Fragment_SockLinks" xmlns="http://www.w3.org/1999/xhtml">
+  
+  <div class="linkList">
+    <div class="linkListTitle">Siga-nos</div>
+    <ul class="links">
+      <li>
+        <a href="https://www.facebook.com/OfficeDev" title="Office Developer no Facebook" id="SockLinks_41253_3" class="facebook" xmlns="http://www.w3.org/1999/xhtml">Facebook</a>
+      </li>
+      <li>
+        <a href="https://twitter.com/OfficeDev" title="Office Developer no Twitter" id="SockLinks_41253_4" class="twitter" xmlns="http://www.w3.org/1999/xhtml">Twitter</a>
+      </li>
+    </ul>
+  </div>
+</div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+        <div id="footerContainer">
+            <div id="fourColumnFooter">
+                <div data-fragmentname="Column1" id="Fragment_Column1" xmlns="http://www.w3.org/1999/xhtml">
+  <div class="ListOfLinkLists">
+    <div class="listItems">
+      
+      <div class="linkList" xmlns="http://www.w3.org/1999/xhtml">
+        <div class="linkListTitle">Centros</div>
+        <ul class="links">
+          <li>
+            <a href="http://dev.windows.com/" title="Centro de Desenvolvimento do Windows" id="Column1_41253_6" xmlns="http://www.w3.org/1999/xhtml">Windows</a>
+          </li>
+          <li>
+            <a href="http://azure.microsoft.com/" title="Centro de Desenvolvimento do Microsoft Azure" id="Column1_41253_8" xmlns="http://www.w3.org/1999/xhtml">Microsoft&nbsp;Azure</a>
+          </li>
+          <li>
+            <a href="http://msdn.microsoft.com/vstudio/" title="Centro de Desenvolvimento do Visual Studio" id="Column1_41253_9" xmlns="http://www.w3.org/1999/xhtml">Visual Studio</a>
+          </li>
+          <li>
+            <a href="http://msdn.microsoft.com/" title="Página inicial do Microsoft Developer Network" id="Column1_41253_10" xmlns="http://www.w3.org/1999/xhtml">MSDN</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>              
+                <div data-fragmentname="Column2" id="Fragment_Column2" xmlns="http://www.w3.org/1999/xhtml">
+  <div class="ListOfLinkLists">
+    <div class="listItems">
+      
+      <div class="linkList" xmlns="http://www.w3.org/1999/xhtml">
+        <div class="linkListTitle">Outros sites do Office</div>
+        <ul class="links">
+          <li>
+            <a href="http://office.microsoft.com/" title="Office.com" id="Column2_41253_12" xmlns="http://www.w3.org/1999/xhtml">Office.com&nbsp;para consumidores</a>
+          </li>
+          <li>
+            <a href="http://office.microsoft.com/business/" title="Office 365" id="Column2_41253_14" xmlns="http://www.w3.org/1999/xhtml">Office 365 para usuários e administradores</a>
+          </li>
+          <li>
+            <a href="http://technet.microsoft.com/office" title="Office para profissionais de TI" id="Column2_41253_13" xmlns="http://www.w3.org/1999/xhtml">Office, SharePoint, Exchange, Lync, e Project&nbsp;para profissionais de TI</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>              
+                <div data-fragmentname="Column3" id="Fragment_Column3" xmlns="http://www.w3.org/1999/xhtml">
+  <div class="ListOfLinkLists">
+    <div class="listItems">
+      
+      <div class="linkList" xmlns="http://www.w3.org/1999/xhtml">
+        <div class="linkListTitle">Recursos para desenvolvedores</div>
+        <ul class="links">
+          <li>
+            <a href="http://code.msdn.microsoft.com/office" title="Exemplos de código" id="Column3_41253_18" xmlns="http://www.w3.org/1999/xhtml">Exemplos de código</a>
+          </li>
+          <li>
+            <a href="http://msdn.microsoft.com/office/dn448488" title="Treinamento" id="Column3_833_36" xmlns="http://www.w3.org/1999/xhtml">Treinamento para desenvolvedores</a>
+          </li>
+          <li>
+            <a href="http://stackoverflow.com/questions/tagged/ms-office" title="Estouro de Pilha" id="Column3_833_37" xmlns="http://www.w3.org/1999/xhtml">Estouro de Pilha</a>
+          </li>
+          <li>
+            <a href="http://officespdev.uservoice.com/" title="Comentários dos usuários sobre a plataforma de desenvolvimento do Office" id="Column3_833_40" xmlns="http://www.w3.org/1999/xhtml">UserVoice</a>
+          </li>
+          <li>
+            <a href="http://social.msdn.microsoft.com/Forums/office/pt-BR/home?category=apps,officedev,sharepoint,exchangeserver,lync,msproject" title="Fóruns" id="Column3_41253_20" xmlns="http://www.w3.org/1999/xhtml">Fóruns</a>
+          </li>
+          <li>
+            <a href="http://blogs.office.com/dev/" title="Blogs" id="Column3_833_32" xmlns="http://www.w3.org/1999/xhtml">Blogs</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>              
+                <div data-fragmentname="Column4" id="Fragment_Column4" xmlns="http://www.w3.org/1999/xhtml">
+  <div class="ListOfLinkLists">
+    <div class="listItems">
+      
+      <div class="linkList" xmlns="http://www.w3.org/1999/xhtml">
+        <div class="linkListTitle">Noções básicas</div>
+        <ul class="links">
+          <li>
+            <a href="http://msdn.microsoft.com/office/dn775159" title="APIs do Office 365" id="Column4_833_41" xmlns="http://www.w3.org/1999/xhtml">APIs do Office 365</a>
+          </li>
+          <li>
+            <a href="http://msdn.microsoft.com/office/dn448457" title="Aplicativos para o Office" id="Column4_41253_25" xmlns="http://www.w3.org/1999/xhtml">Aplicativos para o Office<br xmlns=""></a>
+          </li>
+          <li>
+            <a href="http://msdn.microsoft.com/office/dn448479" title="Aplicativos para o SharePoint" id="Column4_41253_26" xmlns="http://www.w3.org/1999/xhtml">Aplicativos para o SharePoint<br xmlns=""></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>              
+            </div>
+            
+            <span class="microsoftLogo" title="Microsoft"></span>
+            <div id="baseFooter">                
+                <div id="FooterCopyright">© 2014 Microsoft</div>                
+                    <form class="selectLocale" id="selectLocaleForm" action="http://msdn.microsoft.com/pt-br/office/SelectLocale">
+        <input type="hidden" name="fromPage" value="http%3a%2f%2fmsdn.microsoft.com%2fpt-br%2flibrary%2foffice%2fff845544(v%3doffice.15).aspx">
+        <a href="http://msdn.microsoft.com/pt-br/library/office/ff845544(v=office.15).aspx#" onclick="$(&#39;#selectLocaleForm&#39;).submit();return false;" title="Altere seu idioma">Brasil - Português</a>
+    </form>    
+
+
+                <div data-fragmentname="BaseFooterLinks" id="Fragment_BaseFooterLinks" xmlns="http://www.w3.org/1999/xhtml">
+  
+  <div class="linkList">
+    <ul class="links horizontal">
+      <li>
+        <a href="http://msdn.microsoft.com/cc300389" id="BaseFooterLinks_41253_29" xmlns="http://www.w3.org/1999/xhtml">Termos de Uso</a>
+      </li>
+      <li>
+        <a href="http://www.microsoft.com/library/toolbar/3.0/trademarks/en-us.mspx" id="BaseFooterLinks_41253_30" xmlns="http://www.w3.org/1999/xhtml">Marcas</a>
+      </li>
+      <li>
+        <a href="http://www.microsoft.com/info/privacy.mspx" id="BaseFooterLinks_41253_31" xmlns="http://www.w3.org/1999/xhtml">Política de Privacidade</a>
+      </li>
+    </ul>
+  </div>
+</div>  
+                <div class="clear"></div>
+            </div>
+        </div>
+    </div> 
+
+
+            <div class="footerPrintView">
+                <div class="footerCopyrightPrintView">© 2014 Microsoft</div>
+            </div>
+
+            
+            
+    
+    
+    <input id="tocPaddingPerLevel" type="hidden" value="17">
+
+
+        
+            <input id="MtpsDevice" type="hidden" value="Default">
+
+
+<!--[CDATA[ Third party scripts and code linked to or referenced from this website are licensed to you by the parties that own such code, not by Microsoft.  See ASP.NET Ajax CDN Terms of Use – http://www.asp.net/ajaxlibrary/CDN.ashx. ]]-->
+        
+            
+            
+            
+            
+            
+        
+
+
+
+
+
+<noscript>&lt;div&gt;&lt;img alt="DCSIMG" id="Img1" width="1" height="1" src="http://m.webtrends.com/dcsmgru7m99k7mqmgrhudo0k8_8c6m/njs.gif?dcsuri=/nojavascript&amp;amp;WT.js=No" /&gt;&lt;/div&gt;</noscript>
+
+
+
+
+
+
+
+
+
+<noscript>
+  &lt;a href="http://www.omniture.com" title="Web Analytics"&gt;
+    &lt;img src="//msstonojsmsdn.112.2o7.net/b/ss/msstonojsmsdn/1/H.20.2--NS/0" height="1" width="1" border="0" alt="" /&gt;
+  &lt;/a&gt;
+</noscript>
+
+
+
+
+<div id="globalRequestVerification">
+    <input name="__RequestVerificationToken" type="hidden" value="8F5CI9RSSkwLhxa1L88iJPNdnSFhG43x5-3IIvlcEziW91Z-72DZ_5wRZVPNS-wK_iuH4uBaJxejaZB8KXRSzDv6ykA1">
+</div>
+
+
+        </div>
+        
+        
+        
+    <script type="text/javascript" class="mtps-injected">
+/*<![CDATA[*/
+(function(window,document){"use strict";function preload(scripts){for(var result=[],script,e,i=0;i<scripts.length;i++)script=scripts[i],script.hasOwnProperty("url")&&(e=document.createElement("script"),e.src=script.url,script.throwaway=e),result.push(script);return result}function inject(scripts,index){var script,elem;if(index>=scripts.length){delete mtps.injectScripts;return}script=scripts[index];elem=document.createElement("script");elem.className="mtps-injected";elem.async=!1;var isLoaded=!1,timeoutId=0,injectNextFnName="",injectNext=elem.onerror=function(){isLoaded||(isLoaded=!0,inject(scripts,index+1),window.clearTimeout(timeoutId),elem.onload=elem.onerror=elem.onreadystatechange=null,injectNextFnName&&delete mtps[injectNextFnName],elem.removeEventListener&&elem.removeEventListener("load",injectNext,!1))};elem.addEventListener?elem.addEventListener("load",injectNext,!1):elem.readyState==="uninitialized"?elem.onreadystatechange=function(){(this.readyState==="loaded"||this.readyState==="complete")&&injectNext()}:elem.onload=injectNext;script.hasOwnProperty("url")?(timeoutId=window.setTimeout(injectNext,12e4),elem.src=script.url):(injectNextFnName="_injectNextScript_"+index,mtps[injectNextFnName]=injectNext,timeoutId=window.setTimeout(injectNext,2e3),elem.text="try {\n"+script.txt+"\n} finally { MTPS."+injectNextFnName+" && MTPS."+injectNextFnName+"(); }");parent.appendChild(elem)}var mtps=window.MTPS||(window.MTPS={}),parent=document.getElementsByTagName("head")[0];mtps.injectScripts=function(scripts){inject(preload(scripts),0)}})(window,document);
+MTPS.injectScripts([
+	{ txt: "/**/\r\n(window.MTPS || (window.MTPS = {})).cdnDomains || (window.MTPS.cdnDomains = { \r\n\t\"image\": \"http://i.msdn.microsoft.com\", \r\n\t\"js\": \"http://i2.msdn.microsoft.com\", \r\n\t\"css\": \"http://i3.msdn.microsoft.com\", \r\n\t\"xap\": \"http://msdn.microsoft.com\"\r\n});\r\n/**/" },
+	{ url: "http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.2.min.js" },
+	{ txt: "//\n  var literalNormalizedUrl = \u0027/pt-br/library/office/ff845544(l=pt-br,v=office.15).aspx\u0027;\n  var wt_nvr_ru = \u0027WT_NVR_RU\u0027;\n  var wt_fpcdom = \u0027.microsoft.com\u0027;\n  var wt_domlist = \u0027msdn.microsoft.com\u0027;\n  var wt_pathlist = \u0027\u0027;\n  var wt_paramlist = \u0027DCSext.mtps_devcenter\u0027;\n  var wt_siteid = \u0027MSDN\u0027;\n  var gDomain = \u0027m.webtrends.com\u0027;\n  var gDcsId = \u0027dcsmgru7m99k7mqmgrhudo0k8_8c6m\u0027;\n  var gFpc = \u0027WT_FPC\u0027;\n\n\n\n  if (document.cookie.indexOf(gFpc + \"=\") == -1) {\n    var wtidJs = document.createElement(\"script\");\n    wtidJs.src = \"//\" + gDomain + \"/\" + gDcsId + \"/wtid.js\";\n    document.getElementsByTagName(\"head\")[0].appendChild(wtidJs);\n  }\n\n\n\n  var detectedLocale = \u0027pt-br\u0027;\n  var wtsp = \u0027_msdn_\u0027;\n  var gTrackEvents = \u00270\u0027;\n/**/" },
+	{ txt: "/**/\n  var omni_guid = \"b6688929-a2cc-4d3f-8786-824b636fe261\";\n/**/" },
+	{ txt: "//\n\n            window.appInsightsId = \u002760854590-027a-4ae4-98be-2741a40f355f\u0027;\n            //" },
+	{ url: "http://i2.msdn.microsoft.com/Combined.js?resources=0:Utilities,1:FeedbackCounterAsync,2:Rating,0:Topic,3:webtrendsscript,4:omni_rsid_MSDN,0:AppInsightsPerf,5:Toc,2:SearchBox;/Areas/Epx/Content/Scripts:0,/Areas/Epx/Shared/Content:1,/Areas/Epx/Themes/Base/Content:2,/Areas/Global/Content/Webtrends/resources:3,/Areas/Global/Content/Omniture/resources/MSDN:4,/Areas/Library/Content:5\u0026amp;hashKey=34A5B0FA6989FB6D4C3CC1DE57FE9567" },
+	{ url: "http://i4.services.social.microsoft.com/search/Widgets/SearchBox.jss?boxid=HeaderSearchTextBox\u0026btnid=HeaderSearchButton\u0026brand=Msdn\u0026loc=pt-br\u0026Refinement=68\u0026focusOnInit=false\u0026iroot=office\u0026emptyWatermark=true\u0026searchButtonTooltip=Pesquisar aqui" },
+	{ url: "http://i2.msdn.microsoft.com/Combined.js?resources=0:header.1,1:NavigationResize;/Areas/Epx/Themes/Office/Content:0,/Areas/Library/Content:1\u0026amp;hashKey=86198094E29AEC4EBCBB1026A46B9769" },
+	{ txt: "MTPS = window.MTPS || {}; MTPS.LocalizedStrings = window.MTPS.LocalizedStrings || {}; MTPS.LocalizedStrings.ExpandButtonTooltip = \u0027Expandir\u0027; MTPS.LocalizedStrings.CollapseButtonTooltip = \u0027Recolher\u0027; MTPS.LocalizedStrings.EnhancedExpandTooltip = \u0027Clique para expandir. Clique duas vezes para expandir tudo.\u0027; MTPS.LocalizedStrings.EnhancedCollapseTooltip = \u0027Clique para recolher. Clique duas vezes para recolher tudo.\u0027; MTPS.LocalizedStrings.ExpandAllButtonTooltip = \u0027Expandir Tudo\u0027; MTPS.LocalizedStrings.CollapseAllButtonTooltip = \u0027Recolher Tudo\u0027;" },
+	{ url: "http://i2.msdn.microsoft.com/Combined.js?resources=0:LibraryMemberFilter,1:Toc_Fixed,1:CodeSnippet,1:TopicNotInScope,1:CollapsibleArea,1:VersionSelector,1:SurveyBroker;/Areas/Library/Content:0,/Areas/Epx/Content/Scripts:1\u0026amp;hashKey=BA0D41FD888DE12A388DAF9CAC70144D" },
+	{ txt: "$(document).ready(function() {\n        try {\n            var token = $(\"#globalRequestVerification input[name=\u0027__RequestVerificationToken\u0027]\").clone();\n            $(\"#siteFeedbackForm\").append(token);\n        } catch(err) {\n            \n        }\n    });" }
+]);
+
+/*]]>*/
+</script>
+<script src="./Como  Determinar quando um processo no shell termina_files/broker-config.js"></script><div id="_WEDCSInsertedData" style="display: none;"><iframe id="_msnFrame" src="./Como  Determinar quando um processo no shell termina_files/c.gif" style="z-index:-1;height:1px;width:1px;display:none;visibility:hidden;" onload="javascript:MscomBeacon();"></iframe></div></body></html>

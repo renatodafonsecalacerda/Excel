@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<!-- saved from url=(0050)http://www.wiseowl.co.uk/blog/s239/collections.htm -->
+<html class=" js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths" lang="en" style=""><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta charset="utf-8">
+         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Creating and Using Collections in VBA</title>
+
+        <!-- canonical is standardised for any page -->
+        <link href="./Creating and Using Collections in VBA_files/Creating and Using Collections in VBA.htm" rel="canonical">
+
+        <link href="http://www.wiseowl.co.uk/Content/css?v=4dg-gUnMOPyD9UCAn6L_Ampl5-0-CtA2nnvkZyAlqMc1" rel="stylesheet">
+
+        <script async="" src="./Creating and Using Collections in VBA_files/analytics.js"></script><script src="./Creating and Using Collections in VBA_files/modernizr"></script>
+
+        <script src="./Creating and Using Collections in VBA_files/foundation"></script>
+
+        
+        <!-- Fonts - Note to self, look at removing extra weights if not being used -->
+       
+
+        <!-- Favicons -->
+        <link rel="shortcut icon" href="http://www.wiseowl.co.uk/favicon.ico" type="image/x-icon">
+        <link rel="apple-touch-icon" href="http://www.wiseowl.co.uk/apple-touch-icon.png">
+        <link rel="apple-touch-icon" sizes="57x57" href="http://www.wiseowl.co.uk/apple-touch-icon-57x57.png">
+      
+        <link rel="apple-touch-icon" sizes="72x72" href="http://www.wiseowl.co.uk/apple-touch-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="http://www.wiseowl.co.uk/apple-touch-icon-76x76.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="http://www.wiseowl.co.uk/apple-touch-icon-114x114.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="http://www.wiseowl.co.uk/apple-touch-icon-120x120.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="http://www.wiseowl.co.uk/apple-touch-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="http://www.wiseowl.co.uk/apple-touch-icon-152x152.png">
+        <meta name="apple-mobile-web-app-title" content="Wise Owl">
+        
+        <!-- Foundation IE 8 and earlier -->
+        <!--[if lt IE 9]>
+          <link rel="stylesheet" href="/css/ie8-grid-foundation-4.css">
+        <![endif]-->
+                        
+    <meta class="foundation-mq-small"><meta class="foundation-mq-medium"><meta class="foundation-mq-large"><style></style></head>
+    <body style="">
+
+        
+        <!-- mobile phone top right menu -->
+        <div class="mobile-menu"></div>
+
+        <!-- normal top menu -->
+        <div class="top-menu full-width">
+          <div class="row">
+            <div class="left large-6 columns">
+              <ul>
+                <li class="dropdown">
+                  <a href="http://www.wiseowl.co.uk/sundry/about-wise-owl/">About us</a>
+                  <ul>
+                    <li><a href="http://www.wiseowl.co.uk/sundry/about-wise-owl/">What we do</a></li>
+                    <li><a href="http://www.wiseowl.co.uk/trainers/">Meet the Wise Owls</a></li>
+                    <li><a href="http://www.wiseowl.co.uk/benefits/">Why we're different</a></li>
+                    <li><a href="http://www.wiseowl.co.uk/enquiry/">Contact us</a></li>
+                  </ul>
+                </li>
+                <li><a href="http://www.wiseowl.co.uk/venue/">Training centres</a></li>
+                <li><a href="http://www.wiseowl.co.uk/reviews/">Testimonials</a></li>
+                <li class="dropdown">
+                  <a href="http://www.wiseowl.co.uk/resources/">Resources</a>
+                  <ul>
+                    <li><a href="http://www.wiseowl.co.uk/blog/">Blogs</a></li>
+                    <li><a href="http://www.wiseowl.co.uk/courseware/">Courseware</a></li>
+                    <li><a href="http://www.wiseowl.co.uk/free-exercises/">Exercises</a></li>
+                    <li><a href="http://www.wiseowl.co.uk/newsletter/">Newsletters</a></li>
+                    <li><a href="http://www.wiseowl.co.uk/skill/">Skills assessment</a></li>
+                    <li><a href="http://www.wiseowl.co.uk/blog/tutorials/">Tutorials</a></li>
+                    <li><a href="http://www.wiseowl.co.uk/videos/">Videos</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+            <div class="right large-6 columns">
+              <ul>
+                <li class="contact">01457 858877</li>
+                <li><a class="button--alpha" href="http://www.wiseowl.co.uk/enquiry/">Contact</a></li>
+                  <li><a class="button--bravo" href="http://www.wiseowl.co.uk/sundry/client-log-in/">Sign in</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Wise Owl logo and buttons header -->
+        <div class="header full-width">
+          <div class="row">
+            <div class="large-5 columns">
+              <div class="medium-center">
+                  
+                <div class="logo--main"><a href="http://www.wiseowl.co.uk/">WiseOwl Training - Established 1992</a></div>
+                
+              </div>
+            </div>
+            <div class="large-7 columns">
+              <div id="jsHidden" class="our-courses large-4 columns woScriptHide" style="visibility: visible;">
+
+                <a class="button--alpha" href="http://www.wiseowl.co.uk/blog/s239/collections.htm#">Our Courses</a>
+                <div class="our-courses__dropdown">
+                  <div class="col">
+                    <div class="our-courses__logo--office"></div>
+                    <ul>
+                      <li><a href="http://www.wiseowl.co.uk/ms-access/">Access</a></li>
+                      <li><a href="http://www.wiseowl.co.uk/excel/">Excel</a></li>
+                      <li><a href="http://www.wiseowl.co.uk/vba-macros/">VBA</a></li>
+                      <li><a href="http://www.wiseowl.co.uk/powerpivot/">PowerPivot</a></li>
+                      
+                    </ul>
+                  </div>
+                  <div class="col">
+                    <div class="our-courses__logo--net"></div>
+                    <ul>
+                      <li><a href="http://www.wiseowl.co.uk/c-sharp/">Visual C#</a></li>
+                      <li><a href="http://www.wiseowl.co.uk/visual-basic/">Visual Basic</a></li>
+                      <li><a href="http://www.wiseowl.co.uk/asp-net/">ASP.NET</a></li>
+                      <li><a href="http://www.wiseowl.co.uk/winforms/">WinForms</a></li>
+                      <li><a href="http://www.wiseowl.co.uk/wpf/">WPF</a></li>
+                    </ul>
+                  </div>
+                  <div class="col last-child">
+                    <div class="our-courses__logo--sql"></div>
+                    <ul>
+                      <li><a href="http://www.wiseowl.co.uk/sql/">SQL</a></li>
+                      <li><a href="http://www.wiseowl.co.uk/reporting-services/">SSRS</a></li>
+                      <li><a href="http://www.wiseowl.co.uk/integration-services/">SSIS</a></li>
+                      <li><a href="http://www.wiseowl.co.uk/analysis-services/">SSAS</a></li>
+                      <li><a href="http://www.wiseowl.co.uk/report-builder/">Report Builder</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="large-8 columns">
+<form action="http://www.wiseowl.co.uk/search/start" method="post">                    <input class="search" type="text" name="what" value="Search for something here!" onfocus="if(this.value==&#39;Search for something here!&#39;) this.value=&#39;&#39;;">
+                    <button type="submit" value="search" class="search__submit">Go</button>
+</form>              </div>
+            </div>
+          </div>
+        </div>
+        
+        <script>
+
+            // if JavaScript enabled, show courses button
+            document.getElementById('jsHidden').style.visibility = 'visible';
+
+        </script>
+
+        <div id="body">
+            
+            <!-- could use this to have optional sections to slot in -->
+            
+            <div class="breadcrumb full-width"><div class="row"><div class="large-12 columns"><ul><li class="breadcrumb__home"><a href="http://www.wiseowl.co.uk/">Wise Owl Training</a></li><li><a href="http://www.wiseowl.co.uk/blog/">Blogs</a></li><li><a href="./Creating and Using Collections in VBA_files/Creating and Using Collections in VBA.htm">Collections of class object using Excel VBA</a></li></ul></div></div></div>
+
+<div class="full-width main-content-wrap">
+    <div class="row">
+        <div class="large-12 columns">
+
+            
+            <div class="main-content large-9 columns right">
+
+                
+                    <div class="woBlogShowBox">
+                        <div class="woBlogShowBoxTitle1">
+                            Collections of class object using Excel VBA
+                        </div>
+
+                        <div class="woBlogShowBoxList">
+                            If you've learnt how to create your own objects using classes in Excel VBA, the next step is to learn how to group them together into collections.  This on-line tutorial will show you how.
+
+                            
+                                <p class="woBlogShowBoxSummaryEnd">This blog is part of our <a href="http://www.wiseowl.co.uk/blog/s161/online-excel-vba-training.htm">free VBA tutorial</a>.&nbsp; You might find it easier to learn from our <a href="http://www.wiseowl.co.uk/powerpivot/">VBA courses</a> or <a href="http://www.wiseowl.co.uk/excel/">Excel courses</a>.</p>
+                        </div>
+                    </div>
+
+                
+                <div class="woBlogShowPost">
+                    <p>
+                        Posted by 
+                        <a href="http://www.wiseowl.co.uk/blog/author/andybrown.htm">Andy Brown</a>
+                         on 05 March 2012 | 4 comments
+                    </p>
+                </div>
+
+                
+                    <div class="woBlogShowBlog woBlogShowSingle">
+                
+
+<h1>Creating and Using Collections in VBA</h1>
+<p>Hmmm ... should I really be writing this blog?&nbsp; VBA isn't a proper 
+object-orientated language (see my previous <a href="http://www.wiseowl.co.uk/blog/s237/classes.htm">classes blog</a>), and doesn't support 
+collections brilliantly.&nbsp; However, I need closure, so ...</p>
+<h2>Typed and Untyped Collections</h2>
+<p>Below are examples of typed and untyped collections:</p>
+<div class="bpImgPair">
+<table cellspacing="20px">
+<tbody><tr>
+<td>
+<img src="./Creating and Using Collections in VBA_files/i1.jpg" alt="Bunch of bananas">
+</td>
+<td>
+<img src="./Creating and Using Collections in VBA_files/i2.jpg" alt="Different fruit">
+</td>
+</tr>
+<tr>
+<td>
+A typed collection</td>
+<td>
+An untyped collection</td>
+</tr>
+</tbody></table>
+</div>
+<p>As the pictures show, the difference is that you can put anything in an 
+untyped collection, <span class="goog_qs-tidbit goog_qs-tidbit-0">but a typed collection must contain objects of the same 
+type.</span></p>
+<div class="hint-wrapper">
+<p><span class="goog_qs-tidbit goog_qs-tidbit-0">It's better</span> to work with typed collections, but unfortunately untyped ones 
+are easier to create.</p>
+</div>
+<h2>The Example Person Class for this Page</h2>
+<p>This page uses the following class called <strong>clsPerson </strong>as an 
+example:</p>
+<div class="code">
+<p class="i0"><span class="codeKeyword">Option</span> <span class="codeKeyword">Explicit</span></p>
+<p class="i0">
+</p><p class="i0"><span class="codeComment">'the person class</span></p>
+<p class="i0"><span class="codeKeyword">Public</span> FirstName <span class="codeKeyword">As</span> <span class="codeKeyword">String</span></p>
+<p class="i0"><span class="codeKeyword">Public</span> LastName <span class="codeKeyword">As</span> <span class="codeKeyword">String</span></p>
+<p class="sel">
+</p><p class="i0"><span class="codeKeyword">Property</span> <span class="codeKeyword">Get</span> FullName() <span class="codeKeyword">As</span> <span class="codeKeyword">String</span></p>
+<p class="i1">
+</p><p class="i1"><span class="codeComment">'return the person's full name</span></p>
+<p class="i1">FullName = FirstName &amp; " " &amp; LastName</p>
+<p class="i1">
+</p><p class="i0"><span class="codeKeyword">End</span> <span class="codeKeyword">Property</span></p>
+</div>
+<p>Here's how you could create 3 instances of this class:</p>
+<div class="code">
+<p class="i0"><span class="codeKeyword">Sub</span> CreatePeople()</p>
+<p class="i1">
+</p><p class="i1"><span class="codeComment">'create 3 new person objects</span></p>
+<p class="i1"><span class="codeKeyword">Dim</span> p1 <span class="codeKeyword">As</span> <span class="codeKeyword">New</span> clsPerson</p>
+<p class="i1"><span class="codeKeyword">Dim</span> p2 <span class="codeKeyword">As</span> <span class="codeKeyword">New</span> clsPerson</p>
+<p class="i1"><span class="codeKeyword">Dim</span> p3 <span class="codeKeyword">As</span> <span class="codeKeyword">New</span> clsPerson</p>
+<p class="i1">
+</p><p class="i1"><span class="codeComment">'give them names</span></p>
+<p class="i1">p1.FirstName = "Rita"</p>
+<p class="i1">p1.LastName = "Smith"</p>
+<p class="i1">
+</p><p class="i1">p2.FirstName = "Sue"</p>
+<p class="i1">p2.LastName = "Jones"</p>
+<p class="i1">
+</p><p class="i1">p3.FirstName = "Bob"</p>
+<p class="i1">p3.LastName = "Brown"</p>
+<p class="i1">
+</p><p class="i1"><span class="codeComment">'list these 3 people out</span></p>
+<p class="i1"><span class="codeKeyword">Debug.Print</span> p1.FullName, p2.FullName, p3.FullName</p>
+<p class="i1">
+</p><p class="i0"><span class="codeKeyword">End</span> <span class="codeKeyword">Sub</span></p>
+</div>
+<p>Running this code would give the following in the <a href="http://www.wiseowl.co.uk/blog/s196/debug-print-immediate.htm">immediate window</a>:</p>
+<div class="bpImgCentre">
+				<img src="./Creating and Using Collections in VBA_files/i3.gif" alt="3 people&#39;s names in immediate window" title="3 people&#39;s names in immediate window"><p>The output from the program above.</p></div>
+<p>However, it would be nice to group the 3 people together so that you can 
+write a loop 
+to print out the people's names - which is where <em>collections </em>come in.</p>
+<h2>Creating and Using Untyped Collections</h2>
+<p>To create an untyped collection is simplicity itself - you just declare it:</p>
+<div class="code">
+<p class="i0"><span class="codeComment">'create a new collection!</span></p>
+<p class="i0"><span class="codeKeyword">Dim</span> Persons <span class="codeKeyword">As</span> <span class="codeKeyword">New</span> Collection</p>
+</div>
+<p>You can then add items into it using the <strong>Add </strong>method:</p><div class="code">
+<p class="i0"><span class="codeComment">'create 3 new person objects</span></p>
+<p class="i0"><span class="codeKeyword">Dim</span> p1 <span class="codeKeyword">As</span> <span class="codeKeyword">New</span> clsPerson</p>
+<p class="i0"><span class="codeKeyword">Dim</span> p2 <span class="codeKeyword">As</span> <span class="codeKeyword">New</span> clsPerson</p>
+<p class="i0"><span class="codeKeyword">Dim</span> p3 <span class="codeKeyword">As</span> <span class="codeKeyword">New</span> clsPerson</p>
+<p class="i0">
+</p><p class="i0"><span class="codeComment">'give them names</span></p>
+<p class="i0">p1.FirstName = "Rita"</p>
+<p class="i0">p1.LastName = "Smith"</p>
+<p class="i0">
+</p><p class="i0">p2.FirstName = "Sue"</p>
+<p class="i0">p2.LastName = "Jones"</p>
+<p class="i0">
+</p><p class="i0">p3.FirstName = "Bob"</p>
+<p class="i0">p3.LastName = "Brown"</p>
+<p class="i0">
+</p><p class="i0"><span class="codeComment">'add the 3 people into the collection</span></p>
+<p class="i0">Persons.Add p1</p>
+<p class="i0">Persons.Add p2</p>
+<p class="i0">Persons.Add p3</p>
+</div>
+<p>The advantage is that you can then loop over items in the collection easily:</p>
+<div class="code">
+<p class="i0"><span class="codeComment">'list out the people</span></p>
+<p class="i0"><span class="codeKeyword">Dim</span> Person <span class="codeKeyword">As</span> clsPerson</p>
+<p class="i0"><span class="codeKeyword">For</span> <span class="codeKeyword">Each</span> Person In Persons</p>
+<p class="i1"><span class="codeKeyword">Debug.Print</span> Person.FullName</p>
+<p class="i0"><span class="codeKeyword">Next</span> Person</p>
+</div>
+<p>You can also show the number of objects in the collection, and remove items 
+easily:</p>
+<div class="bpImageLeft">
+				<img src="./Creating and Using Collections in VBA_files/i4.gif" alt="Collection members" title="Collection members"><p>The built-in properties and methods for a collection.</p></div><div class="bpImgClear">&nbsp;</div><p>
+However, you can add anything into a collection like this, with horrible 
+results:</p>
+<div class="code">
+<p class="i0"><span class="codeKeyword">Sub</span> HorribleUntyped()</p>
+<p class="i1">
+</p><p class="i1"><span class="codeComment">'create a new collection</span></p>
+<p class="i1"><span class="codeKeyword">Dim</span> Persons <span class="codeKeyword">As</span> <span class="codeKeyword">New</span> Collection</p>
+<p class="i1">
+</p><p class="i1"><span class="codeComment">'create 1 new person and a new worksheet</span></p>
+<p class="i1"><span class="codeKeyword">Dim</span> p <span class="codeKeyword">As</span> <span class="codeKeyword">New</span> clsPerson</p>
+<p class="i1"><span class="codeKeyword">Dim</span> w <span class="codeKeyword">As</span> <span class="codeKeyword">New</span> Worksheet</p>
+<p class="i1">
+</p><p class="i1"><span class="codeComment">'give the person a name and choose a worksheet</span></p>
+<p class="i1">p.FirstName = "Rita"</p>
+<p class="i1">p.LastName = "Smith"</p>
+<p class="i1">
+</p><p class="i1"><span class="codeKeyword">Set</span> w = Worksheets("Sheet1")</p>
+<p class="i1">
+</p><p class="i1"><span class="codeComment">'add these items into the collection</span></p>
+<p class="i1">Persons.Add p</p>
+<p class="i1">Persons.Add w</p>
+<p class="i1">
+</p><p class="i1"><span class="codeComment">'list out the "people" !</span></p>
+<p class="i1"><span class="codeKeyword">Dim</span> Person <span class="codeKeyword">As</span> clsPerson</p>
+<p class="i1"><span class="codeKeyword">For</span> <span class="codeKeyword">Each</span> Person In Persons</p>
+<p class="i2"><span class="codeKeyword">Debug.Print</span> Person.FullName</p>
+<p class="i1"><span class="codeKeyword">Next</span> Person</p>
+<p class="i1">
+</p><p class="i0"><span class="codeKeyword">End</span> <span class="codeKeyword">Sub</span></p>
+</div>
+<p>The code above will compile, but when you come to run it will crash when it 
+tries to assume that a worksheet is an object of type <strong>clsPerson</strong>!</p>
+<h2>Typed Collections</h2>
+<p>The alternative - and better, if more time-consuming - approach is to create 
+your own <strong>clsPersons</strong> collection, and define for it:</p>
+<ul>
+				<li><strong>Add</strong> and <strong>Remove</strong> methods</li>
+				<li><strong>Item</strong> and <strong>Count</strong> properties.</li>
+</ul>
+<div class="hint-wrapper">
+<p>You don't have to follow the Microsoft convention - you could give your 
+methods and properties any name you liked - but it makes sense to toe the line, 
+I think.</p>
+</div>
+<p>First create your new class, and name it:</p>
+<div class="bpImageLeft">
+				<img src="./Creating and Using Collections in VBA_files/i5.gif" alt="New clsPersons class" title="New clsPersons class"><p>The new class, which will contain a set of 
+								<strong>clsPerson</strong> objects.</p></div><div class="bpImgClear">&nbsp;</div><p>
+Here's what the code for the properties and methods listed above might look 
+like:</p>
+<div class="code">
+<p class="i0"><span class="codeKeyword">Option</span> <span class="codeKeyword">Explicit</span></p>
+<p class="i0">
+</p><p class="i0"><span class="codeComment">'this collection could contain anything, but the class</span></p>
+<p class="i0"><span class="codeComment">'controls access to it and ensures it will just contain people</span></p>
+<p class="i0"><span class="codeKeyword">Private</span> Persons <span class="codeKeyword">As</span> <span class="codeKeyword">New</span> Collection</p>
+<p class="sel">
+</p><p class="i0"><span class="codeKeyword">Sub</span> Add(FirstName <span class="codeKeyword">As</span> String, LastName <span class="codeKeyword">As</span> String)</p>
+<p class="i1">
+</p><p class="i1"><span class="codeComment">'create a new person and add to collection</span></p>
+<p class="i1"><span class="codeKeyword">Dim</span> p <span class="codeKeyword">As</span> <span class="codeKeyword">New</span> clsPerson</p>
+<p class="i1">
+</p><p class="i1">p.FirstName = FirstName</p>
+<p class="i1">p.LastName = LastName</p>
+<p class="i1">
+</p><p class="i1">Persons.Add p</p>
+<p class="i1">
+</p><p class="i0"><span class="codeKeyword">End</span> <span class="codeKeyword">Sub</span></p>
+<p class="sel">
+</p><p class="i0"><span class="codeKeyword">Property</span> <span class="codeKeyword">Get</span> Count() <span class="codeKeyword">As</span> <span class="codeKeyword">Long</span></p>
+<p class="i1">
+</p><p class="i1"><span class="codeComment">'return the number of people</span></p>
+<p class="i1">Count = Persons.Count</p>
+<p class="i1">
+</p><p class="i0"><span class="codeKeyword">End</span> <span class="codeKeyword">Property</span></p>
+<p class="sel">
+</p><p class="i0"><span class="codeKeyword">Property</span> <span class="codeKeyword">Get</span> Item(NameOrNumber <span class="codeKeyword">As</span> Variant) <span class="codeKeyword">As</span> clsPerson</p>
+<p class="i1">
+</p><p class="i1"><span class="codeComment">'return this particular person</span></p>
+<p class="i1"><span class="codeKeyword">Set</span> Item = Persons(NameOrNumber)</p>
+<p class="i1">
+</p><p class="i0"><span class="codeKeyword">End</span> <span class="codeKeyword">Property</span></p>
+<p class="sel">
+</p><p class="i0"><span class="codeKeyword">Sub</span> Remove(NameOrNumber <span class="codeKeyword">As</span> Variant)</p>
+<p class="i1">
+</p><p class="i1"><span class="codeComment">'remove this person from collection</span></p>
+<p class="i1">Persons.Remove NameOrNumber</p>
+<p class="i1">
+</p><p class="i0"><span class="codeKeyword">End</span> <span class="codeKeyword">Sub</span></p>
+</div>
+<p>We can now use this class to create and list out a collection of persons:</p>
+<div class="code">
+<p class="i0"><span class="codeKeyword">Sub</span> CreatePersonsCollectionSafer()</p>
+<p class="i1">
+</p><p class="i1"><span class="codeComment">'create a new collection of people</span></p>
+<p class="i1"><span class="codeKeyword">Dim</span> Persons <span class="codeKeyword">As</span> <span class="codeKeyword">New</span> clsPersons</p>
+<p class="i1">
+</p><p class="i1"><span class="codeComment">'add 3 people to it</span></p>
+<p class="i1">Persons.Add "Rita", "Smith"</p>
+<p class="i1">Persons.Add "Sue", "Jones"</p>
+<p class="i1">Persons.Add "Bob", "Brown"</p>
+<p class="i1">
+</p><p class="i1"><span class="codeComment">'list out the people</span></p>
+<p class="i1"><span class="codeKeyword">Dim</span> Person <span class="codeKeyword">As</span> clsPerson</p>
+<p class="i1"><span class="codeKeyword">Dim</span> PersonNumber <span class="codeKeyword">As</span> <span class="codeKeyword">Integer</span></p>
+<p class="i1">
+</p><p class="i1"><span class="codeKeyword">For</span> PersonNumber = 1 <span class="codeKeyword">To</span> Persons.Count</p>
+<p class="i2">
+</p><p class="i2"><span class="codeComment">'list out this person (note that we need the word</span></p>
+<p class="i2"><span class="codeComment">'ITEM now to get at the person - can't omit this)</span></p>
+<p class="i2"><span class="codeKeyword">Debug.Print</span> Persons.Item(PersonNumber).FullName</p>
+<p class="i2">
+</p><p class="i1"><span class="codeKeyword">Next</span> PersonNumber</p>
+<p class="i1">
+</p><p class="i0"><span class="codeKeyword">End</span> <span class="codeKeyword">Sub</span></p>
+</div>
+<div class="hint-wrapper">
+<p>Yuk!&nbsp; Not only can we not <a href="http://www.wiseowl.co.uk/blog/s193/for-each-next.htm">loop over the objects</a> in the collection 
+(instead, we have to get at them by number), but we also have to specify the
+<strong>Item </strong>keyword explicitly.&nbsp; There is no perfect solution, it 
+appears!</p>
+</div>
+
+
+                </div>
+
+                
+                    <div class="woBlogShowComment">
+                       <h2>This blog has 4 comments</h2>
+                    
+                        
+                            <div class="woBlogShowCommentTitle">
+                                Comment added on 03 July 2012 at 07:38 GMT
+                            </div>
+                            <div class="woBlogShowCommentText">
+                                Thanks for the blog, helped clarify a few things for me....
+<div><br></div>
+<div>(also, just a query on the <strong>Dim Person as clsPerson</strong> in the middle of the last example.... I don't think that is required as no further reference seems to be made to that var beyond that point. &nbsp;The code still executes without that statement).</div>
+<div><br></div>
+<div>Thanks again!</div>
+                            </div>
+                            <div class="woBlogShowCommentTitle">
+                                Comment added on 11 April 2013 at 19:43 GMT
+                            </div>
+                            <div class="woBlogShowCommentText">
+                                This example helped me so much. &nbsp;I really just wanted to thank you for the help.
+                            </div>
+                            <div class="woBlogShowCommentTitle">
+                                Comment added on 11 September 2013 at 09:49 GMT
+                            </div>
+                            <div class="woBlogShowCommentText">
+                                While you are unable to edit the properties of an excel class via the VBE, you are able to export the class as a cls file and edit it as a text document.&nbsp; This is where the ability to loop comes in.<br><br>Create a class module as you normally would, and then after creating it export it to your desktop.&nbsp; Open it up and place the following code at the top:<br><br>------------------------------------------------------------<br><br>VERSION 1.0 CLASS<br>BEGIN<br>&nbsp; MultiUse = -1&nbsp; 'True<br>END<br><br>'-------------whatever the name of your class is<br>Attribute VB_Name = "clsLOPCEntries"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<br>Attribute VB_GlobalNameSpace = False<br>Attribute VB_Creatable = False<br>Attribute VB_PredeclaredId = False<br>Attribute VB_Exposed = False<br><br>Public Property Get NewEnum() As IUnknown<br>Attribute NewEnum.VB_UserMemId = -4<br>Attribute NewEnum.VB_MemberFlags = "40"<br>&nbsp;&nbsp;&nbsp; Set NewEnum = objPeople.[_NewEnum]<br>End Property<br><br>-------------------------------------------------------------------------------<br><br>The above property will be activated whenever you try and loop through a collection class.&nbsp; This is how you do it!<br><br>So now you can do People.OutputEntries and within your clsPeople have the sub OutputEntries (for each Person in People print Person.Firstname).<br><br>You will not need to have the specific index number, etc. &nbsp;<br><br>This will also allow you to create classes within classes.<br><br>E.g. People.GetPeopleInCity("New York").FilterByLastName("Sondergaard").OutputEntries<br><br>BEAUTIFUL!<br><br>This is how I create relational databases within excel forms ( I will create 20 some odd classes and collection classes and nest them in each other.&nbsp; for example I could have a collection class called People, a person class that is loaded into People, but I can also instantiate a people in Person to allow recursive code and build family trees, etc.)&nbsp; People like my relational excel databases because while access is still restricted one person at a time (for integrity), it allows people to see the data relationally and without the need to pay for the Access or other licenses.<br><br>Based on that example, I can keep on drilling into the data to find out the lineage of a person upward or downward depending on how the code is structured.<br>
+                            </div>
+                            <div class="woBlogShowCommentTitle">
+                                Comment added on 19 September 2013 at 06:44 GMT
+                            </div>
+                            <div class="woBlogShowCommentText">
+                                Hello Everyone,<div><br></div><div>I have tried to use the&nbsp;</div><div><br></div><div>Version 1.0 Class</div><div>Begin</div><div><span class="Apple-tab-span" style="white-space:pre">	</span>MultiUse = -1 'True</div><div>End</div><div><br></div><div>workaraound and when I import the .cls file into the vbe&nbsp;</div><div><br></div><div>The class module starts with&nbsp;</div><div><br></div><div>Multiuse = -1 'True &lt;----------------- THIS TEXT IS IN RED</div><div>End</div><div><br></div><div>I have no idea why but it is very frustrating that so many people can pull this trick off but I just can't get it to work.</div><div><br></div><div>Tanks&nbsp;</div><div><br></div><div>Jason</div>
+                            </div>
+                    </div>
+                    <p>
+                        A full-blown discussion forum is being built for this site, which will allow you once more to add comments and discussion threads. 
+                    </p>
+                
+            </div>
+                
+             
+                
+
+<div class="woMenu3 large-3 columns left">
+            
+    
+        <p class="woMenuTitle">BLOGS BY TOPIC</p>
+        <div class="woMenuBlock">
+            <ul class="woMenuList">
+
+                <li class="woMenuItem"><a href="http://www.wiseowl.co.uk/blog/">Blog home page (251)</a></li>
+                <li class="woMenuItem"><a href="http://www.wiseowl.co.uk/blog/family/general.htm">General (15)</a></li>
+                <li class="woMenuItemCurrent"><a href="http://www.wiseowl.co.uk/blog/family/ms-office.htm">MS Office (134)</a></li>
+                <li class="woMenuItem"><a href="http://www.wiseowl.co.uk/blog/family/sql-server.htm">SQL Server (86)</a></li>
+                <li class="woMenuItem"><a href="http://www.wiseowl.co.uk/blog/family/dot-net-programming.htm">.NET (30)</a></li>
+
+            </ul>
+        </div>
+        <p class="woMenuTitle">BLOGS BY AUTHOR</p>
+        <div class="woMenuBlock">
+            <ul class="woMenuList">
+
+                <li class="woMenuItem"><a href="http://www.wiseowl.co.uk/blog/author/andrewgould.htm">Andrew Gould  (78)</a></li>
+                <li class="woMenuItemCurrent"><a href="http://www.wiseowl.co.uk/blog/author/andybrown.htm">Andy Brown  (157)</a></li>
+                <li class="woMenuItem"><a href="http://www.wiseowl.co.uk/blog/author/davidwakefield.htm">David Wakefield  (3)</a></li>
+                <li class="woMenuItem"><a href="http://www.wiseowl.co.uk/blog/author/jennybrown.htm">Jenny Brown  (1)</a></li>
+                <li class="woMenuItem"><a href="http://www.wiseowl.co.uk/blog/author/michaelallsop.htm">Michael Allsop  (12)</a></li>
+
+            </ul>
+        </div>
+        <p class="woMenuTitle">BLOGS BY YEAR</p>
+        <div class="woMenuBlock">
+            <ul class="woMenuList">
+
+                <li class="woMenuItem"><a href="http://www.wiseowl.co.uk/blog/year/2010.htm">2010 (2)</a></li>
+                <li class="woMenuItem"><a href="http://www.wiseowl.co.uk/blog/year/2011.htm">2011 (76)</a></li>
+                <li class="woMenuItemCurrent"><a href="http://www.wiseowl.co.uk/blog/year/2012.htm">2012 (100)</a></li>
+                <li class="woMenuItem"><a href="http://www.wiseowl.co.uk/blog/year/2013.htm">2013 (45)</a></li>
+                <li class="woMenuItem"><a href="http://www.wiseowl.co.uk/blog/year/2014.htm">2014 (28)</a></li>
+
+            </ul>
+        </div>
+
+</div>
+
+
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+        
+               
+        <div class="footer full-width">
+          <div class="row">
+            <div class="large-12 columns tac">
+              <ul class="social-icons">
+                <li class="icon-facebook"><a href="https://www.facebook.com/pages/Wise-Owl-Business-Solutions/145553635466759">Facebook</a></li>
+                <li class="icon-twitter"><a href="https://twitter.com/wiseowltraining">Twitter</a></li>
+                <li class="icon-youtube"><a href="https://www.youtube.com/user/WiseOwlTutorials">YouTube</a></li>
+                <li class="icon-gplus"><a href="https://plus.google.com/112502917747148301991/">g+</a></li>
+              </ul>
+            </div>
+            <div class="large-12 columns tac">
+        	    <div class="footer-note">
+        		    <p>© Wise Owl Business Solutions Ltd 2014. All Rights Reserved</p>
+        		    <p><a href="http://www.wiseowl.co.uk/site-map.htm">Sitemap</a></p>
+        		    <p><a href="http://www.wiseowl.co.uk/sundry/terms-conditions/">Terms &amp; Conditions</a></p>                    
+        		    <p><a href="http://www.wiseowl.co.uk/sundry/privacy-policy/">Privacy policy</a></p>
+        	    </div>
+            </div>
+          
+          </div>
+        </div>
+        
+        <!--[if gt IE 8]><!-->
+        <script src="./Creating and Using Collections in VBA_files/all-and-ie9-up"></script>
+
+        <!--<![endif]-->
+
+        <!--[if lt IE 9]><!-->
+        <script src="./Creating and Using Collections in VBA_files/all-and-ie8-down"></script>
+
+        <!--<![endif]-->
+
+        <script src="./Creating and Using Collections in VBA_files/all"></script>
+
+
+        <!-- most pages won't have this section in -->
+        
+
+        <!-- Google Analytics -->
+        <script>
+            (function (i, s, o, g, r, a, m) {
+                i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date(); a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+            })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+            ga('create', 'UA-7467174-1', 'auto');
+            ga('send', 'pageview');
+
+        </script>
+
+    
+
+<div id="goog_qs_tidbit_box" class="notranslate goog_qs-slideup"><div id="goog_qs-wrapper"><div id="goog_qs-box-toggle" title="Minimizar" style="background-image: url(chrome-extension://okanipcmceoeemlbjnmnbdibhgpbllgc/images/minimize.png);"></div><div id="goog_qs-box-help" title="Abrir a página de opções e a ajuda" style="background-image: url(chrome-extension://okanipcmceoeemlbjnmnbdibhgpbllgc/images/help.png);"></div><div id="goog_qs-box-info" style="background-image: url(chrome-extension://okanipcmceoeemlbjnmnbdibhgpbllgc/images/icon16x16.png);"><span class="goog_qs-nowrap">C<img>orrespondências</span> <span class="goog_qs-nowrap">n<img>a</span> <span class="goog_qs-nowrap">p<img>ágina</span> <span class="goog_qs-nowrap">p<img>ara</span> <span class="goog_qs-query"><span class="goog_qs-nowrap">v<img>ba</span> <span class="goog_qs-nowrap">c<img>ollection</span> <span class="goog_qs-nowrap">t<img>ypes</span></span></div><div id="goog_qs-box-tidbits"><div class="goog_qs-box-tidbit" title="Clique para ver este texto na página"><span class="goog_qs-nowrap">b<img>ut</span> a <span class="goog_qs-nowrap">t<img>yped</span> <em><span class="goog_qs-nowrap">c<img>ollection</span></em> <span class="goog_qs-nowrap">m<img>ust</span> <span class="goog_qs-nowrap">c<img>ontain</span> <span class="goog_qs-nowrap">o<img>bjects</span> <span class="goog_qs-nowrap">o<img>f</span> <span class="goog_qs-nowrap">t<img>he</span> <span class="goog_qs-nowrap">s<img>ame</span> <em><span class="goog_qs-nowrap">t<img>ype</span></em>. <span class="goog_qs-nowrap">I<img>t's</span> <span class="goog_qs-nowrap">b<img>etter...</span> <span class="goog_qs-go">»</span></div></div><div id="goog_qs-box-bottom"><div class="goog_qs-more-matches" id="goog_qs-box-more-tidbits"><span class="goog_qs-nowrap">M<img>ais</span> <span class="goog_qs-nowrap">c<img>orrespondências</span> <span class="goog_qs-go">»</span></div><div class="goog_qs-more-matches" id="goog_qs-box-fewer-tidbits" style="display:none"><span class="goog_qs-go">«</span>  <span class="goog_qs-nowrap">M<img>enos</span> <span class="goog_qs-nowrap">c<img>orrespondências</span></div><div id="goog_qs-box-feedback-link"><span class="goog_qs-nowrap">F<img>eedback</span></div> <div id="goog_qs-box-new-bug"><span class="goog_qs-nowrap">B<img>ug</span></div></div><div style="clear:both"></div></div></div></body></html>

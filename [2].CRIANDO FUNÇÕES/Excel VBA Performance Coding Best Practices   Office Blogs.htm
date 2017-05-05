@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<!-- saved from url=(0079)http://blogs.office.com/2009/03/12/excel-vba-performance-coding-best-practices/ -->
+<html lang="en-US" id="ttop" class=" js boxshadow fontface" style=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script type="text/javascript" src="./Excel VBA Performance Coding Best Practices   Office Blogs_files/shares.json"></script><script type="text/javascript" src="./Excel VBA Performance Coding Best Practices   Office Blogs_files/counter020.js"></script><script src="./Excel VBA Performance Coding Best Practices   Office Blogs_files/getid.js"></script>
+<meta http-equiv="X-UA-Compatible" content="requiresActiveX=false">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="application-name" content="Microsoft Office Blogs">
+ <meta name="msapplication-TileColor" content="#DA3b01">
+ <meta name="msapplication-square70x70logo" content="OfficeBlog_SmallTile_70x70.png">
+ <meta name="msapplication-square150x150logo" content="OfficeBlog_SquareTile_150x150.png">
+ <meta name="msapplication-wide310x150logo" content="OfficeBlog_WideTile_310x150.png">
+ <meta name="msapplication-square310x310logo" content="OfficeBlog_SmallTile_70x70.png">
+ <meta name="msapplication-notification" content="frequency=30;polling-uri=http://notifications.buildmypinnedsite.com/?feed=http://blogs.office.com/feed&amp;id=1;polling-uri2=http://notifications.buildmypinnedsite.com/?feed=http://blogs.office.com/feed&amp;id=2;polling-uri3=http://notifications.buildmypinnedsite.com/?feed=http://blogs.office.com/feed&amp;id=3;polling-uri4=http://notifications.buildmypinnedsite.com/?feed=http://blogs.office.com/feed&amp;id=4;polling-uri5=http://notifications.buildmypinnedsite.com/?feed=http://blogs.office.com/feed&amp;id=5; cycle=1">
+ <meta name="msvalidate.01" content="A53E6A44CF20918CBE2EAB984657B046">
+ <meta name="google-site-verification" content="WiCZ6HhPFmPMk5PTkdpSnevgiRttL2tQ-7QA_Z81JRk">
+
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<link rel="pingback" href="http://blogs.office.com/xmlrpc.php">
+<link rel="shortcut icon" href="http://blogs.office.com/wp-content/themes/microsoft-office-blogs/images/favicon.ico">
+
+<!--Plugin WP Missed Schedule 2013.1231.2013 Active - Tag 6707293c0218e2d8b7aa38d418ffa608-->
+
+<!-- This website is patched against a big problem not solved from WordPress 2.5+ to date -->
+
+
+<!-- This site is optimized with the Yoast WordPress SEO plugin v1.5.4.2 - https://yoast.com/wordpress/plugins/seo/ -->
+<title>Excel VBA Performance Coding Best Practices | Office Blogs</title>
+<link rel="canonical" href="./Excel VBA Performance Coding Best Practices   Office Blogs_files/Excel VBA Performance Coding Best Practices   Office Blogs.htm">
+<!-- / Yoast WordPress SEO plugin. -->
+
+<link rel="alternate" type="application/rss+xml" title="Office Blogs » Feed" href="http://blogs.office.com/feed/">
+<link rel="alternate" type="application/rss+xml" title="Office Blogs » Comments Feed" href="http://blogs.office.com/comments/feed/">
+<link rel="stylesheet" id="wds_ms-style-css" href="./Excel VBA Performance Coding Best Practices   Office Blogs_files/style.css" type="text/css" media="all">
+<script type="text/javascript" src="./Excel VBA Performance Coding Best Practices   Office Blogs_files/jquery.js"></script>
+<script type="text/javascript" src="./Excel VBA Performance Coding Best Practices   Office Blogs_files/jquery-migrate.min.js"></script>
+<script type="text/javascript" src="./Excel VBA Performance Coding Best Practices   Office Blogs_files/modernizr.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var SafeCommentsAjax = {"ajaxurl":"http:\/\/blogs.office.com\/wp-admin\/admin-ajax.php"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Excel VBA Performance Coding Best Practices   Office Blogs_files/ajax.js"></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://blogs.office.com/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://blogs.office.com/wp-includes/wlwmanifest.xml"> 
+<meta name="generator" content="WordPress 3.9.2">
+<link rel="shortlink" href="http://blogs.office.com/?p=1231">
+<link rel="https://github.com/WP-API/WP-API" href="http://blogs.office.com/wp-json">
+
+  <!-- Enable WAWS Application Insights -->
+  <script type="text/javascript">
+    window.appInsights={queue:[],applicationInsightsId:null,accountId:null,appUserId:null,configUrl:null,start:function(n){function u(n){t[n]=function(){var i=arguments;t.queue.push(function(){t[n].apply(t,i)})}}function f(n,t){if(n){var u=r.createElement(i);u.type="text/javascript";u.src=n;u.async=!0;u.onload=t;u.onerror=t;r.getElementsByTagName(i)[0].parentNode.appendChild(u)}else t()}var r=document,t=this,i;t.applicationInsightsId=n;u("logEvent");u("logPageView");i="script";f(t.configUrl,function(){f("//az416426.vo.msecnd.net/scripts/a/ai.0.7.js")});t.start=function(){}}};
+    
+    appInsights.start("56ad73d9-f02a-446a-8e90-279dfd2b7f32");
+    appInsights.logPageView();
+  </script><script type="text/javascript" src="./Excel VBA Performance Coding Best Practices   Office Blogs_files/ai.0.7.js" async=""></script>
+    <meta name="MS.pgterm" content="excel"><link rel="stylesheet" type="text/css" href="./Excel VBA Performance Coding Best Practices   Office Blogs_files/widget005.old.css" media="all"><link rel="stylesheet" type="text/css" href="./Excel VBA Performance Coding Best Practices   Office Blogs_files/counter015.css" media="all"><script>window["_GOOG_TRANS_EXT_VER"] = "1";</script><script>window["_GOOG_TRANS_EXT_VER"] = "1";</script></head>
+
+<body class="single single-post postid-1231 single-format-standard group-blog">
+	<div id="page" class="hfeed site ">
+		<div class="site-header-wrap">
+		<header id="masthead" class="site-header" role="banner">
+			<div class="site-branding">
+				<h1 class="site-title"><a href="http://blogs.office.com/" rel="home">Office Blogs</a></h1>
+			</div>
+			<a href="http://blogs.office.com/2009/03/12/excel-vba-performance-coding-best-practices/#togglemenu" class="header-mobile-dropdown-toggle">Menu</a>
+			<div class="header-mobile-dropdown">
+				<nav id="site-utility-navigation" class="utility-navigation" role="navigation">
+					<div class="social-links">
+						<span class="social-links-text">Follow us:</span>
+						<ul>
+							<li><a class="social-link-facebook" href="https://www.facebook.com/Office"><img src="./Excel VBA Performance Coding Best Practices   Office Blogs_files/icon-facebook.png" alt="Like us on Facebook"></a></li>
+							<li><a class="social-link-twitter" href="https://twitter.com/Office"><img src="./Excel VBA Performance Coding Best Practices   Office Blogs_files/icon-twitter.png" alt="Follow us on Twitter"></a></li>
+							<li><a class="social-link-linkedin" href="http://www.linkedin.com/groups/Microsoft-Office-1913738"><img src="./Excel VBA Performance Coding Best Practices   Office Blogs_files/icon-linkedin.png" alt="Connect with us on LinkedIn"></a></li>
+						</ul>
+					</div>
+					<div class="menu-utility-nav-container">
+						<ul id="menu-utility-nav" class="menu">
+							<li class="menu-item"><a href="http://blogs.office.com/feed/">Subscribe all</a></li>
+															<li class="menu-item"><a href="http://blogs.office.com/wp-login.php?redirect_to=http%3A%2F%2Fblogs.office.com">Sign in</a></li>
+													</ul>
+					</div>
+				</nav>
+				<div class="header-search">
+					<form role="search" method="get" class="search-form" action="http://blogs.office.com/">
+	<label>
+		<span class="screen-reader-text">Search for:</span>
+		<input type="search" class="search-field" value="" name="s">
+	</label>
+	<input type="submit" class="search-submit" value="Search">
+</form>
+				</div>
+				<nav id="site-navigation" class="main-navigation" role="navigation">
+					<a class="skip-link screen-reader-text" href="http://blogs.office.com/2009/03/12/excel-vba-performance-coding-best-practices/#content">Skip to content</a>
+					<div class="filter-nav-title">Narrow By:</div>
+											<ul class="main-navigation-top-level">
+							<li>
+								<a href=""><span class="ms-icon icon-ms-icons_expand-circle"></span>What products do you use?</a>
+								<ul class="term-filters term-filters-product"><li><a class="term-filter" href="http://blogs.office.com/2009/03/12/excel-vba-performance-coding-best-practices/?filter-product=access" data-term-slug="access" data-term-taxonomy-id="3" data-taxonomy="product">Access</a></li><li><a class="term-filter" href="http://blogs.office.com/2009/03/12/excel-vba-performance-coding-best-practices/?filter-product=excel" data-term-slug="excel" data-term-taxonomy-id="4" data-taxonomy="product">Excel</a></li><li><a class="term-filter" href="http://blogs.office.com/2009/03/12/excel-vba-performance-coding-best-practices/?filter-product=exchange" data-term-slug="exchange" data-term-taxonomy-id="17" data-taxonomy="product">Exchange</a></li><li><a class="term-filter" href="http://blogs.office.com/2009/03/12/excel-vba-performance-coding-best-practices/?filter-product=infopath" data-term-slug="infopath" data-term-taxonomy-id="5" data-taxonomy="product">InfoPath</a></li><li><a class="term-filter" href="http://blogs.office.com/2009/03/12/excel-vba-performance-coding-best-practices/?filter-product=lync" data-term-slug="lync" data-term-taxonomy-id="16" data-taxonomy="product">Lync</a></li><li><a class="term-filter" href="http://blogs.office.com/2009/03/12/excel-vba-performance-coding-best-practices/?filter-product=office-365" data-term-slug="office-365" data-term-taxonomy-id="2" data-taxonomy="product">Office 365</a></li><li><a class="term-filter" href="http://blogs.office.com/2009/03/12/excel-vba-performance-coding-best-practices/?filter-product=office-for-ipad" data-term-slug="office-for-ipad" data-term-taxonomy-id="251" data-taxonomy="product">Office for iPad</a></li><li><a class="term-filter" href="http://blogs.office.com/2009/03/12/excel-vba-performance-coding-best-practices/?filter-product=office-for-mac" data-term-slug="office-for-mac" data-term-taxonomy-id="14" data-taxonomy="product">Office for Mac</a></li><li><a class="term-filter" href="http://blogs.office.com/2009/03/12/excel-vba-performance-coding-best-practices/?filter-product=office-online" data-term-slug="office-online" data-term-taxonomy-id="13" data-taxonomy="product">Office Online</a></li><li><a class="term-filter" href="http://blogs.office.com/2009/03/12/excel-vba-performance-coding-best-practices/?filter-product=onedrive" data-term-slug="onedrive" data-term-taxonomy-id="20" data-taxonomy="product">OneDrive</a></li><li><a class="term-filter" href="http://blogs.office.com/2009/03/12/excel-vba-performance-coding-best-practices/?filter-product=onenote" data-term-slug="onenote" data-term-taxonomy-id="6" data-taxonomy="product">OneNote</a></li><li><a class="term-filter" href="http://blogs.office.com/2009/03/12/excel-vba-performance-coding-best-practices/?filter-product=outlook" data-term-slug="outlook" data-term-taxonomy-id="7" data-taxonomy="product">Outlook</a></li><li><a class="term-filter" href="http://blogs.office.com/2009/03/12/excel-vba-performance-coding-best-practices/?filter-product=outlook-com" data-term-slug="outlook-com" data-term-taxonomy-id="19" data-taxonomy="product">Outlook.com</a></li><li><a class="term-filter" href="http://blogs.office.com/2009/03/12/excel-vba-performance-coding-best-practices/?filter-product=powerpoint" data-term-slug="powerpoint" data-term-taxonomy-id="8" data-taxonomy="product">PowerPoint</a></li><li><a class="term-filter" href="http://blogs.office.com/2009/03/12/excel-vba-performance-coding-best-practices/?filter-product=project" data-term-slug="project" data-term-taxonomy-id="11" data-taxonomy="product">Project</a></li><li><a class="term-filter" href="http://blogs.office.com/2009/03/12/excel-vba-performance-coding-best-practices/?filter-product=publisher" data-term-slug="publisher" data-term-taxonomy-id="9" data-taxonomy="product">Publisher</a></li><li><a class="term-filter" href="http://blogs.office.com/2009/03/12/excel-vba-performance-coding-best-practices/?filter-product=sharepoint" data-term-slug="sharepoint" data-term-taxonomy-id="15" data-taxonomy="product">SharePoint</a></li><li><a class="term-filter" href="http://blogs.office.com/2009/03/12/excel-vba-performance-coding-best-practices/?filter-product=visio" data-term-slug="visio" data-term-taxonomy-id="12" data-taxonomy="product">Visio</a></li><li><a class="term-filter" href="http://blogs.office.com/2009/03/12/excel-vba-performance-coding-best-practices/?filter-product=word" data-term-slug="word" data-term-taxonomy-id="10" data-taxonomy="product">Word</a></li><li><a class="term-filter" href="http://blogs.office.com/2009/03/12/excel-vba-performance-coding-best-practices/?filter-product=yammer" data-term-slug="yammer" data-term-taxonomy-id="18" data-taxonomy="product">Yammer</a></li><li class="term-filter-actions"><ul><li><a href="http://blogs.office.com/" class="term-filters-reset">Clear all</a></li><li><a href="http://blogs.office.com/2009/03/12/excel-vba-performance-coding-best-practices/#" class="term-filters-cancel">Cancel</a></li><li><a href="http://blogs.office.com/2009/03/12/excel-vba-performance-coding-best-practices/#" class="term-filters-apply">Apply</a></li></ul></li></ul>							</li>
+							<li>
+								<a href=""><span class="ms-icon icon-ms-icons_expand-circle"></span>Where do you use Office?</a>
+								<ul class="term-filters term-filters-audience"><li><a class="term-filter" href="http://blogs.office.com/2009/03/12/excel-vba-performance-coding-best-practices/?filter-audience=business" data-term-slug="business" data-term-taxonomy-id="22" data-taxonomy="audience">Business</a></li><li><a class="term-filter" href="http://blogs.office.com/2009/03/12/excel-vba-performance-coding-best-practices/?filter-audience=dev" data-term-slug="dev" data-term-taxonomy-id="25" data-taxonomy="audience">Dev</a></li><li><a class="term-filter" href="http://blogs.office.com/2009/03/12/excel-vba-performance-coding-best-practices/?filter-audience=home" data-term-slug="home" data-term-taxonomy-id="21" data-taxonomy="audience">Home</a></li><li><a class="term-filter" href="http://blogs.office.com/2009/03/12/excel-vba-performance-coding-best-practices/?filter-audience=it" data-term-slug="it" data-term-taxonomy-id="24" data-taxonomy="audience">IT</a></li><li><a class="term-filter" href="http://blogs.office.com/2009/03/12/excel-vba-performance-coding-best-practices/?filter-audience=non-profit" data-term-slug="non-profit" data-term-taxonomy-id="27" data-taxonomy="audience">Non-profit</a></li><li><a class="term-filter" href="http://blogs.office.com/2009/03/12/excel-vba-performance-coding-best-practices/?filter-audience=on-premises" data-term-slug="on-premises" data-term-taxonomy-id="29" data-taxonomy="audience">On-premises</a></li><li><a class="term-filter" href="http://blogs.office.com/2009/03/12/excel-vba-performance-coding-best-practices/?filter-audience=partner" data-term-slug="partner" data-term-taxonomy-id="28" data-taxonomy="audience">Partner</a></li><li><a class="term-filter" href="http://blogs.office.com/2009/03/12/excel-vba-performance-coding-best-practices/?filter-audience=public-sector" data-term-slug="public-sector" data-term-taxonomy-id="26" data-taxonomy="audience">Public sector</a></li><li><a class="term-filter" href="http://blogs.office.com/2009/03/12/excel-vba-performance-coding-best-practices/?filter-audience=school" data-term-slug="school" data-term-taxonomy-id="23" data-taxonomy="audience">School</a></li><li class="term-filter-actions"><ul><li><a href="http://blogs.office.com/" class="term-filters-reset">Clear all</a></li><li><a href="http://blogs.office.com/2009/03/12/excel-vba-performance-coding-best-practices/#" class="term-filters-cancel">Cancel</a></li><li><a href="http://blogs.office.com/2009/03/12/excel-vba-performance-coding-best-practices/#" class="term-filters-apply">Apply</a></li></ul></li></ul>							</li>
+							<li>
+								<a href=""><span class="ms-icon icon-ms-icons_expand-circle"></span>What do you want to see?</a>
+								<ul class="term-filters term-filters-type"><li><a class="term-filter" href="http://blogs.office.com/2009/03/12/excel-vba-performance-coding-best-practices/?filter-type=customer-stories" data-term-slug="customer-stories" data-term-taxonomy-id="34" data-taxonomy="type">Customer stories</a></li><li><a class="term-filter" href="http://blogs.office.com/2009/03/12/excel-vba-performance-coding-best-practices/?filter-type=events" data-term-slug="events" data-term-taxonomy-id="32" data-taxonomy="type">Events</a></li><li><a class="term-filter" href="http://blogs.office.com/2009/03/12/excel-vba-performance-coding-best-practices/?filter-type=news" data-term-slug="news" data-term-taxonomy-id="33" data-taxonomy="type">News</a></li><li><a class="term-filter" href="http://blogs.office.com/2009/03/12/excel-vba-performance-coding-best-practices/?filter-type=podcast" data-term-slug="podcast" data-term-taxonomy-id="261" data-taxonomy="type">Podcast</a></li><li><a class="term-filter" href="http://blogs.office.com/2009/03/12/excel-vba-performance-coding-best-practices/?filter-type=updates" data-term-slug="updates" data-term-taxonomy-id="30" data-taxonomy="type">Updates</a></li><li><a class="term-filter" href="http://blogs.office.com/2009/03/12/excel-vba-performance-coding-best-practices/?filter-type=video-shows" data-term-slug="video-shows" data-term-taxonomy-id="31" data-taxonomy="type">Video Shows</a></li><li class="term-filter-actions"><ul><li><a href="http://blogs.office.com/" class="term-filters-reset">Clear all</a></li><li><a href="http://blogs.office.com/2009/03/12/excel-vba-performance-coding-best-practices/#" class="term-filters-cancel">Cancel</a></li><li><a href="http://blogs.office.com/2009/03/12/excel-vba-performance-coding-best-practices/#" class="term-filters-apply">Apply</a></li></ul></li></ul>							</li>
+						</ul>
+											<div class="mobile-filter-actions">
+						<ul><li><a href="http://blogs.office.com/" class="term-filters-reset">Clear all</a></li><li><a href="http://blogs.office.com/2009/03/12/excel-vba-performance-coding-best-practices/#" class="term-filters-cancel">Cancel</a></li><li><a href="http://blogs.office.com/2009/03/12/excel-vba-performance-coding-best-practices/#" class="term-filters-apply">Apply</a></li></ul>					</div>
+				</nav><!-- #site-navigation -->
+				<div class="applied-filters">
+									</div>
+			</div>
+		</header><!-- #masthead -->
+	</div>
+
+	<div id="content" class="site-content">
+
+	<div id="primary" class="content-area">
+		<main id="main" class="site-main" role="main">
+
+		
+			<article id="post-1231" class="post-1231 post type-post status-publish format-standard hentry col-10">
+	<header class="entry-header">
+		<div class="entry-featured-category-wrap">
+							<div class="entry-featured-category-box featured-category-box-excel">
+										<a href="http://blogs.office.com/" class="back-link">Back</a>
+					<div class="entry-featured-category entry-featured-category-excel">
+						Excel					</div>
+				</div>
+					</div>
+		<h1 class="entry-title">Excel VBA Performance Coding Best Practices</h1>
+
+		<div class="entry-meta">
+			<span class="byline">by <span class="author vcard"><a class="url fn n" href="http://blogs.office.com/author/diego-oppenheimer/">Diego Oppenheimer</a></span></span>, <span class="posted-on">on <a href="./Excel VBA Performance Coding Best Practices   Office Blogs_files/Excel VBA Performance Coding Best Practices   Office Blogs.htm" rel="bookmark"><time class="entry-date published" datetime="2009-03-12T19:27:00+00:00">March 12, 2009</time></a></span> | <a class="num-comments" href="http://blogs.office.com/2009/03/12/excel-vba-performance-coding-best-practices/#comments">0 Comments</a> | 		<span class="addthis_toolbox" addthis:url="http://blogs.office.com/2009/03/12/excel-vba-performance-coding-best-practices/" addthis:title="Excel VBA Performance Coding Best Practices" addthis:description="">
+			<span class="addthis_counter" style="display: inline-block;">16</span>
+		<div class="atclear"></div></span>
+				</div><!-- .entry-meta -->
+	</header><!-- .entry-header -->
+
+	<div class="entry-content">
+		<p><em>Today’s author, Chad Rothschiller, a Program Manager on the Excel team, is back with a follow up from his </em><a href="http://blogs.msdn.com/excel/archive/2009/01/06/vba-excel-performance-your-feedback-requested.aspx"><em>previous post on VBA and Excel performance</em></a><em>.</em></p>
+<p>I want to start off this post by thanking everyone who sent in their examples in response to my January request. It is incredibly helpful to be able to look at what you all are doing with Excel! Not only did I see a huge variety in how Excel is being used, you also pointed out various tips and tricks for writing fast VBA code in Excel.</p>
+<p>In this post I’m going to share with you the most important performance tips I know about. There are tons of sites, pages, and people who are experts as well on this subject, have performed their own tests, and shared their results and ideas. If you think I missed an important concept for how to optimize Excel VBA performance, or if you’ve got a valuable comment or link to share, please feel free to post here so everyone can benefit. Thanks!</p>
+<p><b></b></p>
+<p><b>Turn Off Everything But the Essentials While Your Code is Running</b></p>
+<p>This optimization explicitly turns off Excel functionality you don’t need to happen (over and over and over) while your code runs. Note that in the code sample below we grab the current state of these properties, turn them off, and then restore them at the end of code execution.</p>
+<p>One reason this helps is that if you’re updating (via VBA) several different ranges with new values, or copy / pasting from several ranges to create a consolidated table of data, you likely do not want to have Excel taking time and resources to recalculate formulas, display paste progress, or even redraw the grid, especially <i>after every single operation </i>(even more so if your code uses loops). Just one recalculation and one redraw at the end of your code execution is enough to get the workbook current with all your changes.</p>
+<p>Here’s some sample code that shows how and what to shut off while your code runs. Doing this should help improve the performance of your code:</p>
+<blockquote>
+<p>‘Get current state of various Excel settings; put this at the beginning of your code</p>
+<p>screenUpdateState = Application.ScreenUpdating</p>
+<p>statusBarState = Application.DisplayStatusBar</p>
+<p>calcState = Application.Calculation</p>
+<p>eventsState = Application.EnableEvents</p>
+<p>displayPageBreakState = ActiveSheet.DisplayPageBreaks ‘note this is a sheet-level setting</p>
+<p>‘turn off some Excel functionality so your code runs faster</p>
+<p>Application.ScreenUpdating = False</p>
+<p>Application.DisplayStatusBar = False</p>
+<p>Application.Calculation = xlCalculationManual</p>
+<p>Application.EnableEvents = False</p>
+<p>ActiveSheet.DisplayPageBreaks = False ‘note this is a sheet-level setting</p>
+<p>‘&gt;&gt;your code goes here&lt;&lt;</p>
+<p>‘after your code runs, restore state; put this at the end of your code</p>
+<p>Application.ScreenUpdating = screenUpdateState</p>
+<p>Application.DisplayStatusBar = statusBarState</p>
+<p>Application.Calculation = calcState</p>
+<p>Application.EnableEvents = eventsState</p>
+<p>ActiveSheet.DisplayPageBreaks = displayPageBreaksState ‘note this is a sheet-level setting</p>
+</blockquote>
+<p>Here’s a quick description for each of these settings:</p>
+<p><span style="text-decoration: underline;">Application.ScreenUpdating</span>: This setting tells Excel to not redraw the screen while False. The benefit here is that you probably don’t need Excel using up resources trying to draw the screen since it’s changing faster than the user can perceive. Since it requires lots of resources to draw the screen so frequently, just turn off drawing the screen until the end of your code execution. Be sure to turn it back on right before your code ends.</p>
+<p><span style="text-decoration: underline;">Application.DisplayStatusBar</span>: This setting tells Excel to stop showing status while False. For example, if you use VBA to copy/paste a range, while the paste is completing Excel will show the progress of that operation on the status bar. Turning off screen updating is separate from turning off the status bar display so that you can disable screen updating but still provide feedback to the user, if desired. Again, turn it back on right before your code ends execution.</p>
+<p><span style="text-decoration: underline;">Application.Calculation</span>: This setting allows you to programmatically set Excel’s calculation mode. “Manual” (xlCalculationManual) mode means Excel waits for the user (or your code) to explicitly initiate calculation. “Automatic” is the default and means that Excel decides when to recalculate the workbook (e.g. when you enter a new formula on the sheet). Since recalculating your workbook can be time and resource intensive, you might not want Excel triggering a recalc every time you change a cell value. Turn off calculation while your code executes, then set the mode back. Note: setting the mode back to “Automatic” (xlCalculationAutomatic) will trigger a recalc.</p>
+<p><span style="text-decoration: underline;">Application.EnableEvents</span>: This setting tells Excel to not fire events while False. While looking into Excel VBA performance issues I learned that some desktop search tools implement event listeners (probably to better track document contents as it changes). You might not want Excel firing an event for every cell you’re changing via code, and turning off events will speed up your VBA code performance if there is a COM Add-In listening in on Excel events. (Thanks to Doug Jenkins for pointing this out in my earlier post).</p>
+<p><span style="text-decoration: underline;">ActiveSheet.DisplayPageBreaks</span>: A good description of this setting already exists: <a href="http://support.microsoft.com/kb/199505">http://support.microsoft.com/kb/199505</a> (Thanks to David McRitchie for pointing this out).</p>
+<p><b></b></p>
+<p><b>Read/Write Large Blocks of Cells in a Single Operation</b></p>
+<p>This optimization explicitly reduces the number of times data is transferred between Excel and your code. Instead of looping through cells one at a time and getting or setting a value, do the same operation over the whole range in one line, using an array variable to store values as needed.</p>
+<p>For each of the code examples below, I had put random values (not formulas) into cells A1:C10000.</p>
+<p>Here’s a slow, looping method:</p>
+<blockquote>
+<p>Dim DataRange as Range <br>Dim Irow as Long <br>Dim Icol as Integer <br>Dim MyVar as Double <br>Set DataRange=Range(“A1:C10000″) </p>
+<p>For Irow=1 to 10000 <br>&nbsp; For icol=1 to 3 <br>&nbsp;&nbsp;&nbsp; MyVar=DataRange(Irow,Icol)&nbsp; ‘Read values from the Excel grid 30K times <br>&nbsp;&nbsp;&nbsp; If MyVar &gt; 0 then&nbsp; <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MyVar=MyVar*Myvar ‘ Change the value&nbsp; <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DataRange(Irow,Icol)=MyVar&nbsp; ‘Write values back into the Excel grid 30K times <br>&nbsp;&nbsp;&nbsp; End If&nbsp; <br>&nbsp; Next Icol <br>Next Irow</p>
+</blockquote>
+<p>Here’s the fast version of that code:</p>
+<blockquote>
+<p>Dim DataRange As Variant <br>Dim Irow As Long <br>Dim Icol As Integer <br>Dim MyVar As Double <br>DataRange = Range(“A1:C10000″).Value ‘ read all the values at once from the Excel grid, put into an array </p>
+<p>For Irow = 1 To 10000 <br>&nbsp; For Icol = 1 To 3 <br>&nbsp; MyVar = DataRange(Irow, Icol) <br>&nbsp; If MyVar &gt; 0 Then <br>&nbsp;&nbsp;&nbsp; MyVar=MyVar*Myvar ‘ Change the values in the array <br>&nbsp;&nbsp;&nbsp; DataRange(Irow, Icol) = MyVar <br>&nbsp; End If <br>Next Icol <br>Next Irow <br>Range(“A1:C10000″).Value = DataRange ‘ writes all the results back to the range at once</p>
+</blockquote>
+<p>Note: I first learned of this concept by reading a web page by John Walkenbach found here: <a href="http://www.dailydoseofexcel.com/archives/2006/12/04/writing-to-a-range-using-vba/">http://www.dailydoseofexcel.com/archives/2006/12/04/writing-to-a-range-using-vba/</a></p>
+<p>A previous Excel blog entry by Dany Hoter also compares these two methods, along with a selection / offset method as well: <a href="http://blogs.msdn.com/excel/archive/2008/10/03/what-is-the-fastest-way-to-scan-a-large-range-in-excel.aspx">http://blogs.msdn.com/excel/archive/2008/10/03/what-is-the-fastest-way-to-scan-a-large-range-in-excel.aspx</a></p>
+<p>…which leads me to my next point.</p>
+<p><b>Avoid Selecting / Activating Objects</b></p>
+<p>Notice that in the above-referenced blog post, the selection method of updating a range was the slowest. This next optimization minimizes how frequently Excel has to respond to the selection changing in the workbook by minimizing the selection changing as much as possible.</p>
+<p><span style="text-decoration: underline;">Range Example</span>: Again, see the Excel blog post quoted above. It demonstrates that using selection is the slowest of the 3 methods discussed for reading and writing to ranges.</p>
+<p><span style="text-decoration: underline;">Shapes Example</span>: Setup: I have 40 shapes on a sheet, and I want to write “Hello” in each of them.</p>
+<p>Using the slower “selection” method, the code looks like this:</p>
+<blockquote>
+<p>For i = 0 To ActiveSheet.Shapes.Count</p>
+<p>&nbsp;&nbsp; ActiveSheet.Shapes(i).Select</p>
+<p>&nbsp;&nbsp; Selection.Text = “Hello”</p>
+<p>Next i</p>
+</blockquote>
+<p>The much faster method is to avoid selection completely and directly reference the shape:</p>
+<blockquote>
+<p>For i = 0 To ActiveSheet.Shapes.Count</p>
+<p>&nbsp;&nbsp; ActiveSheet.Shapes(i).TextEffect.Text = “Hello”</p>
+<p>Next i</p>
+</blockquote>
+<p>The concepts illustrated by the examples above can also be applied to objects other than Ranges and Shapes.</p>
+<p>Note: I first learned of this concept, in the context of shapes, by reading a web page by Ron de Bruin found here: <a href="http://www.rondebruin.nl/shape.htm">http://www.rondebruin.nl/shape.htm</a></p>
+<p><b>Related Performance Paper</b></p>
+<p>See the<b> </b>“Improving Performance in Excel 2007″ paper on MSDN: <a href="http://msdn.microsoft.com/en-us/library/aa730921.aspx">http://msdn.microsoft.com/en-us/library/aa730921.aspx</a></p>
+<p>This is a fairly detailed and comprehensive paper that introduces the bigger grid and increased limits in Excel 2007, and primarily focuses on Excel calculation performance and debugging calculation performance bottlenecks. There’s also a short section on how to write faster VBA macros.</p>
+<p><b>Other Performance Optimizations</b></p>
+<p>While the above optimizations are what I consider the most important, there are a few other “honorable mention” optimizations I will mention briefly for you to consider.</p>
+<p>Consider the performance gains by implementing your code’s functionality via XLL / C-API. An overview and supporting materials for the SDK can be found here: <a href="http://msdn.microsoft.com/en-us/library/bb687827.aspx">http://msdn.microsoft.com/en-us/library/bb687827.aspx</a> .</p>
+<p>Declare variables with explicit types to avoid the overhead of determining the data type (repetitively if used in a loop) during code execution.</p>
+<p>For simple functions used by your code in high frequency, implement them yourself in VBA instead of using the WorksheetFunction object.</p>
+<p>Use Range.SpecialCells() to scope down the number of cells your code needs to work with.</p>
+			</div><!-- .entry-content -->
+
+	<footer class="entry-meta">
+		<h2>Tags</h2><ul class="tag-list"><li><a href="http://blogs.office.com/product/excel/">Excel</a></li></ul>
+			</footer><!-- .entry-meta -->
+	<div class="back-to-top-wrap"><a href="http://blogs.office.com/2009/03/12/excel-vba-performance-coding-best-practices/#ttop" class="back-to-top">Back to top</a></div>
+</article><!-- #post-## -->
+
+			<div class="related-posts-bar"><h3>Related blog posts</h3><ul class="related-posts-list"><li class="col-3 related-post">
+				<a href="http://blogs.office.com/2013/07/11/automatically-plot-multiple-pieces-of-online-data-in-your-excel-spreadsheet/">
+								Automatically plot multiple pieces of online data in your Excel spreadsheet</a>
+			</li><li class="col-3 related-post">
+				<a href="http://blogs.office.com/2006/05/04/excel-2007-investments-in-udfs-2-existing-udfs/">
+								Excel 2007 investments in UDFs #2: Existing UDFs</a>
+			</li><li class="col-3 related-post">
+				<a href="http://blogs.office.com/2011/01/11/celebrate-25-years-of-excel-with-us/">
+								Celebrate 25 years of Excel with us!</a>
+			</li>		<li class="col-3">
+			<script language="javascript" type="text/javascript" src="./Excel VBA Performance Coding Best Practices   Office Blogs_files/dap.js"></script><div id="divID" name="divID" align="center" class="cnt_right_ad" style="width: 180px;"><iframe id="dapIfM0" src="./Excel VBA Performance Coding Best Practices   Office Blogs_files/Excel VBA Performance Coding Best Practices   Office Blogs.htm" width="180" height="150" frameborder="0" scrolling="no"></iframe></div><script type="text/javascript">dapMgr.enableACB("divID", false); dapMgr.renderAd("divID", "&AP=1089&PG=OOLBLA", 180, 180);</script><div class="cnt_vertical_space"></div>
+		</li></ul></div>
+			
+		
+		</main><!-- #main -->
+	</div><!-- #primary -->
+
+	<div class="addthis-single-wrap">
+
+		<!-- AddThis Button BEGIN -->
+		<div class="addthis_toolbox  addthis_32x32_style" style="left:50px;top:50px;">
+		<a class="addthis_button_twitter at300b" title="Tweet" href="http://blogs.office.com/2009/03/12/excel-vba-performance-coding-best-practices/#"><img src="./Excel VBA Performance Coding Best Practices   Office Blogs_files/icon-twitter-side.png" alt="Share on twitter"></a>
+		<a class="addthis_button_facebook at300b" title="Facebook" href="http://blogs.office.com/2009/03/12/excel-vba-performance-coding-best-practices/#"><img src="./Excel VBA Performance Coding Best Practices   Office Blogs_files/icon-facebook-side.png" alt="Share on facebook"></a>
+		<a class="addthis_button_linkedin at300b" href="http://www.addthis.com/bookmark.php?v=300&winname=addthis&pub=ra-52a23616101dab3e&source=tbx32-300&lng=pt-BR&s=linkedin&url=http%3A%2F%2Fblogs.office.com%2F2009%2F03%2F12%2Fexcel-vba-performance-coding-best-practices%2F&title=Excel%20VBA%20Performance%20Coding%20Best%20Practices%20%7C%20Office%20Blogs&ate=AT-ra-52a23616101dab3e/-/-/540a1ce77a9a8151/2&frommenu=1&uid=540a1ce76581e71f&ct=1&pre=https%3A%2F%2Fwww.google.com.br%2F&tt=0&captcha_provider=nucaptcha" target="_blank" title="LinkedIn"><img src="./Excel VBA Performance Coding Best Practices   Office Blogs_files/icon-linkedin-side.png" alt="Share on linkedin"></a>
+		<a class="addthis_button_email at300b" target="_blank" title="Email" href="http://blogs.office.com/2009/03/12/excel-vba-performance-coding-best-practices/#"><img src="./Excel VBA Performance Coding Best Practices   Office Blogs_files/icon-mail-side.png" alt="Share on linkedin"></a>
+		<div class="atclear"></div></div>
+		<script type="text/javascript">var addthis_config = {"data_track_addressbar":false};</script>
+		<script type="text/javascript" src="./Excel VBA Performance Coding Best Practices   Office Blogs_files/addthis_widget.js"></script><div id="_atssh" style="visibility: hidden; height: 1px; width: 1px; position: absolute; z-index: 100000;"><iframe id="_atssh248" title="AddThis utility frame" src="./Excel VBA Performance Coding Best Practices   Office Blogs_files/sh171.htm" style="height: 1px; width: 1px; position: absolute; z-index: 100000; border: 0px; left: 0px; top: 0px;"></iframe></div><script type="text/javascript" src="./Excel VBA Performance Coding Best Practices   Office Blogs_files/core153.js"></script>
+		<!-- AddThis Button END -->
+	</div>
+
+
+	</div><!-- #content -->
+	<footer id="colophon" class="site-footer" role="contentinfo">
+		<div class="footer-widgets">
+			<div class="footer-widget-col col-4">
+				<aside id="nav_menu-2" class="widget widget_nav_menu"><h4 class="widget-title">other Microsoft blogs</h4><div class="menu-other-microsoft-blogs-container"><ul id="menu-other-microsoft-blogs" class="menu"><li id="menu-item-18" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-18"><a href="http://blogs.technet.com/b/microsoft_blog/">Official Microsoft Blog</a></li>
+<li id="menu-item-19" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-19"><a href="http://blogs.technet.com/b/microsoft_on_the_issues/">Microsoft On The Issues</a></li>
+<li id="menu-item-20" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-20"><a href="http://blogs.windows.com/">The Windows Blog</a></li>
+</ul></div></aside>			</div>
+			<div class="footer-widget-col col-4">
+				<aside id="nav_menu-3" class="widget widget_nav_menu"><h4 class="widget-title">other product blogs</h4><div class="menu-other-product-blogs-container"><ul id="menu-other-product-blogs" class="menu"><li id="menu-item-3751" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3751"><a href="http://blogs.technet.com/b/exchange/">Exchange Blog</a></li>
+</ul></div></aside>			</div>
+			<div class="footer-widget-col col-4">
+				<aside id="nav_menu-4" class="widget widget_nav_menu"><h4 class="widget-title">other Office blogs</h4><div class="menu-other-office-blogs-container"><ul id="menu-other-office-blogs" class="menu"><li id="menu-item-24" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-24"><a href="http://blogs.technet.com/b/office_sustained_engineering/">Office Updates</a></li>
+</ul></div></aside>			</div>
+		</div>
+
+		<div class="menu-footer-menu-container"><ul id="menu-footer-menu" class="footer-menu"><li id="menu-item-17" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-17"><a href="http://www.windowsazure.com/">Powered by Azure</a></li>
+<li id="menu-item-30" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-30"><a href="http://officeredir.microsoft.com/r/rlidOOlegal?clid=1033&CTT=114">Legal</a></li>
+<li id="menu-item-31" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-31"><a href="http://r.office.microsoft.com/r/rlidTrademarks?clid=en-US">Trademarks</a></li>
+<li id="menu-item-32" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-32"><a href="http://r.office.microsoft.com/r/rlidOOPrivacyStatement?clid=en-US">Privacy Statement</a></li>
+</ul></div>
+		<div class="footer-logo">
+			<img src="./Excel VBA Performance Coding Best Practices   Office Blogs_files/footer-logo.png" alt="Microsoft © 2013 Microsoft Corporation. All Rights Reserved">
+		</div>
+	</footer><!-- #colophon -->
+</div><!-- #page -->
+
+
+<!--Plugin WP Missed Schedule 2013.1231.2013 Active - Tag 6707293c0218e2d8b7aa38d418ffa608-->
+
+<!-- This website is patched against a big problem not solved from WordPress 2.5+ to date -->
+
+<script type="text/javascript">
+/* <![CDATA[ */
+var hashLinkOffset = "200";
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Excel VBA Performance Coding Best Practices   Office Blogs_files/hash-link-scroll-offset.min.js"></script>
+<script type="text/javascript" src="./Excel VBA Performance Coding Best Practices   Office Blogs_files/addthis_widget(1).js"></script>
+<script type="text/javascript" src="./Excel VBA Performance Coding Best Practices   Office Blogs_files/navigation.js"></script>
+<script type="text/javascript" src="./Excel VBA Performance Coding Best Practices   Office Blogs_files/skip-link-focus-fix.js"></script>
+<script type="text/javascript" src="./Excel VBA Performance Coding Best Practices   Office Blogs_files/masonry.min.js"></script>
+<script type="text/javascript" src="./Excel VBA Performance Coding Best Practices   Office Blogs_files/masonry-fixer.js"></script>
+<script type="text/javascript" src="./Excel VBA Performance Coding Best Practices   Office Blogs_files/mobile-menu.js"></script>
+<script type="text/javascript" src="./Excel VBA Performance Coding Best Practices   Office Blogs_files/navigation-filters.js"></script>
+	<!-- START OF SmartSource Data Collector WT -->
+	<!-- Copyright (c) 1996-2009 WebTrends Inc.  All rights reserved. -->
+	<!-- Version: MS.3.0.0 -->
+	<script src="./Excel VBA Performance Coding Best Practices   Office Blogs_files/wt.js" type="text/javascript"></script>
+
+	<!-- ----------------------------------------------------------------------------------- -->
+	<!-- Warning: The two script blocks below must remain inline. Moving them to an external -->
+	<!-- JavaScript include file can cause serious problems with cross-domain tracking.      -->
+	<!-- ----------------------------------------------------------------------------------- -->
+	<script type="text/javascript">
+	//<![CDATA[
+	var _wtobject=new WebTrends();
+	_wtobject.dcsid="dcsw88y81000008ibfg24ix2a_6l4b";
+	// _wtobject.fpcdom=".domain.com";
+	_wtobject.dcsGetId();
+	_wtobject.trackevents=true;
+	//]]>>
+	</script><script type="text/javascript" src="./Excel VBA Performance Coding Best Practices   Office Blogs_files/wtid.js"></script>
+
+	<script type="text/javascript">
+	//<![CDATA[
+	// Add custom parameters here.
+	//_wtobject.DCSext.param_name=param_value;
+	_wtobject.dcsCollect();
+	//]]>>
+	</script>
+
+	<noscript>
+	&lt;div&gt;&lt;img alt="DCSIMG" id="DCSIMG" width="1" height="1" src="http://m.webtrends.com/dcsw88y81000008ibfg24ix2a_6l4b/njs.gif?dcsuri=/nojavascript&amp;amp;WT.js=No&amp;amp;WT.tv=MS.3.0.0"/&gt;&lt;/div&gt;
+	</noscript>
+	<!-- END OF SmartSource Data Collector WT -->
+	    <script type="text/JavaScript"> 
+        var varSegmentation = 0; 
+        var varClickTracking = 1; 
+        var varCustomerTracking = 1; 
+        var varAutoFirePV = 1; 
+        var Route = "50000"; 
+        var Ctrl = "SD200"; 
+        document.write("<script type='text/javascript' src='" + (window.location.protocol) + "//c.microsoft.com/ms.js'" + "'><\/script>");
+    </script><script type="text/javascript" src="./Excel VBA Performance Coding Best Practices   Office Blogs_files/ms.js" '=""></script><iframe id="_msnFrame" src="./Excel VBA Performance Coding Best Practices   Office Blogs_files/c.gif" style="z-index:-1;height:1px;width:1px;display:none;visibility:hidden;"></iframe> 
+
+    <noscript>&lt;img alt="" width="1" height="1" src="http://c.microsoft.com/trans_pixel.aspx"/&gt;</noscript>
+	
+
+
+</body></html>

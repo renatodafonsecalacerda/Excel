@@ -1,0 +1,595 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- saved from url=(0049)http://www.cimaware.com/resources/article_39.html -->
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+
+<title>Using Classes in VBA | Expert Zone</title>
+
+<meta http-equiv="Content-Language" content="en">
+
+<meta name="description" content="You may have heard about Classes in VBA (and other languages) but not know what they are or how to use them.">
+<meta name="keywords" content="TXT.RESOURCES.ARTICLES.39.page_meta_keys">
+<script type="text/javascript" async="" src="./Using Classes in VBA   Expert Zone_files/dc.js"></script><script language="JavaScript" type="text/JavaScript" src="./Using Classes in VBA   Expert Zone_files/eventos.js"></script>
+<script language="JavaScript" type="text/JavaScript" src="./Using Classes in VBA   Expert Zone_files/MenuDesplegable.js"></script>
+<link rel="alternate" type="application/rss+xml" title="RSS" href="http://www.cimaware.com/main/resources/rss.php">
+
+
+
+<link rel="stylesheet" media="screen" href="./Using Classes in VBA   Expert Zone_files/main.css" type="text/css">
+
+<link rel="stylesheet" media="print" href="./Using Classes in VBA   Expert Zone_files/cimaware_print.css" type="text/css">
+<link rel="stylesheet" media="handheld" href="./Using Classes in VBA   Expert Zone_files/cimaware_handheld.css" type="text/css">
+
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-337968-1']);
+  _gaq.push(['_setDomainName', 'www.cimaware.com']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+  
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+</head>
+
+<body style="">
+<!-- INSERCION-CAPA-EDICION-IDIOMA -->
+<!--  CAPA QUE CONTIENE TODAS LAS DEMAS  -->
+<!--  INICIO CAPA MADRE   -->
+<div id="capa_madre">
+
+
+
+<!--  INICIO CUERPO DEL CONTENIDO   -->
+<div id="cuerpo">
+<!--  INICIO CAPA ANCHO MAXIMO  -->
+<div class="minwidth">
+
+
+
+<div class="contenido_general">
+
+<!--<h1><span>Cimaware Software</span></h1>-->
+
+<!-- INICIO METANAVEGACION   -->
+<!-- INICIO METANAVEGACION   -->
+<!-- INICIO CABECERA   -->
+<div id="cabecera">
+<a href="http://www.cimaware.com/main/products/index.php" title="Cimaware home page" class="logo"><span>Cimaware home page</span>&nbsp;</a>
+
+
+
+<!-- LANGUAGES -->
+<div class="caja_combo">
+<select name="menu_idiomas" id="menu_idiomas" size="1" onchange="MenuDesplegable(this);" class="combo_paises" title="Select language">
+<option value="http://www.cimaware.com/main/resources-static/article.php?" selected="selected">English</option>
+<option value="http://es.cimaware.com/main/resources-static/article.php?">Español</option>
+<option value="http://cimaware.de/main/resources-static/article.php?">Deutsch</option>
+<option value="http://cimaware.it/main/resources-static/article.php?">Italiano</option>
+<option value="http://fr.cimaware.com/main/resources-static/article.php?">Français</option> 
+<option value="http://nl.cimaware.com/main/resources-static/article.php?">Nederlands</option> 
+<option value="http://br.cimaware.com/main/resources-static/article.php?">Português</option> 			
+</select>
+</div>
+
+
+
+<div id="metanavegacion">
+<ol>
+	<li><a href="http://www.cimaware.com/main/resources/rss.php" class="meta" title="RSS" id="contacto">RSS</a></li>
+	<li><a href="http://www.cimaware.com/main/resellers/index.php" class="meta" title="Resellers">Resellers</a></li>
+	<li><a href="http://www.cimaware.com/main/affiliates/index.php" class="meta" title="Affiliates">Affiliates</a></li>
+	<li><a href="http://www.cimaware.com/main/members/mainpanel.php" class="meta" title="Registered users" rel="nofollow">Registered users</a></li>
+	<li><a href="http://www.cimaware.com/main/about-us/corporate-info.php" class="meta" title="About Cimaware">About Cimaware</a></li>
+ 	<li><a href="http://www.cimaware.com/main/support/" class="meta" title="Support">Support</a></li>
+	<li><a href="http://www.cimaware.com/main/about-us/contact.php" class="meta" title="Contact us">Contact us</a></li>
+	<li><a href="http://www.cimaware.com/main/products/index.php" class="meta" title="Home">Home</a></li>
+</ol>
+</div>
+</div>
+<!-- FIN METANAVEGACION   -->
+
+<br class="oculto">
+<hr>
+
+
+<!-- INICIO NAVEGACION PRINCIPAL -->
+<!-- INICIO NAVEGACION PRINCIPAL -->
+<div id="madre_cabecera">
+<div id="navegacion">
+<div id="menu_principal">
+<span class="oculto"><strong>Navigation:</strong></span>
+<ul>
+	<li><a href="http://www.cimaware.com/main/products/products.php"><span><span>PRODUCTS</span></span></a></li>
+	<li><a href="http://www.cimaware.com/main/download/"><span><span>DOWNLOADS</span></span></a></li>
+	<li><a href="http://www.cimaware.com/main/why-choose-us/index.php"><span><span>WHY CHOOSE US</span></span></a></li>
+	<li><a href="http://www.cimaware.com/main/securepayment/"><span><span>STORE</span></span></a></li>
+	<li><div><span><span>EXPERT ZONE</span></span></div></li>
+</ul>
+</div>
+</div>
+</div>
+<!-- FIN NAVEGACION PRINCIPAL -->
+<!-- FIN NAVEGACION PRINCIPAL -->
+
+<hr>
+
+<!--  INICIO CONTENIDO PRINCIPAL  -->
+<div class="contenido_interno_sin" id="contenido_principal">
+
+<div id="breadcrumb">
+You are here: 
+<a href="http://www.cimaware.com/main/products/index.php">Home</a> 
+
+
+
+<a href="http://www.cimaware.com/main/resources/index.php"> <span>&nbsp;&nbsp;</span> Expert Zone</a>
+
+
+
+</div>
+
+<div class="mcafee">
+<a target="_blank" href="https://www.mcafeesecure.com/RatingVerify?ref=www.cimaware.com&lang=EN"><img width="94" height="54" border="0" src="./Using Classes in VBA   Expert Zone_files/13.gif" alt="McAfee SECURE sites help keep you safe from identity theft, credit card fraud, spyware, spam, viruses and online scams" oncontextmenu="alert(&#39;Copying Prohibited by Law - McAfee SECURE is a Trademark of McAfee, Inc.&#39;); return false;"></a>
+</div>
+
+<!--  INICIO CONTENIDO LATERAL  -->
+
+<div id="lateral">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+<style type="text/css">
+
+
+
+#lateral ul.destacados_l {
+list-style-type:none;
+margin-left:20px;
+padding:0;
+margin-right:0;}
+
+#lateral ul.destacados_l li a strong,
+#lateral ul.destacados_l li a em {
+font-style:normal;
+padding:0 0;
+display:inline;
+margin:0 auto;
+top:10px;
+position:relative;
+background:transparent;
+line-height:14px;
+color:#414141;
+font-family:"Trebuchet MS",Verdana,Arial, sans-serif;
+}
+
+#lateral ul.destacados_l li a strong {
+font-size:70%;
+font-weight:bold;
+}
+#lateral ul.destacados_l li a em {
+font-size:55%;
+display:inline;
+display:block;
+font-weight:normal;
+}
+
+#lateral ul.destacados_l li a strong#aplicacion {
+font-size:100%;
+font-style:normal;
+font-family:"Trebuchet MS",Verdana,Arial, sans-serif;
+font-weight:normal}
+
+
+#lateral ul.destacados_l li a:hover em,
+#lateral ul.destacados_l li a:hover strong  {
+color:#aaa;
+}
+
+#lateral ul.destacados_l li {
+margin-bottom:10px;}
+
+#lateral ul.destacados_l li a span {
+text-indent:-10000px;
+overflow:hidden;
+position:absolute;} 
+
+
+#lateral ul.destacados_l li a,
+#lateral ul.destacados_l li span {
+width:165px;
+padding:0 10px 0 0;
+text-align:center;
+display:block;
+text-decoration:none;
+height:115px;
+background-position:0 0;
+background-repeat:no-repeat;
+background-color:transparent;
+}
+
+#lateral ul.destacados_l li span.hidetext {display:none;}
+
+
+
+	
+#lateral ul.destacados_l li a.des_lat_newsletter,
+#lateral ul.destacados_l li span.des_lat_newsletter
+{
+background-image:url("http://www.cimaware.com/main/destacados/images/des_lat_newsletter.jpg");height:115px;
+}	
+	
+#lateral ul.destacados_l li a.des_lat_newsletter:hover
+{ background-position:0 -115px;}
+
+#lateral ul.destacados_l li span.des_lat_newsletter {
+width:165px;
+padding:0 10px 0 0;
+text-align:center;
+display:block;
+text-decoration:none;
+height:115px;
+background-position:0 0;
+background-repeat:no-repeat;
+cursor:default;
+background-color:transparent;
+
+}	
+	
+#lateral ul.destacados_l li a.des_lat_rss,
+#lateral ul.destacados_l li span.des_lat_rss
+{
+background-image:url("http://www.cimaware.com/main/destacados/images/des_lat_rss.jpg");height:115px;
+}	
+	
+#lateral ul.destacados_l li a.des_lat_rss:hover
+{ background-position:0 -115px;}
+
+#lateral ul.destacados_l li span.des_lat_rss {
+width:165px;
+padding:0 10px 0 0;
+text-align:center;
+display:block;
+text-decoration:none;
+height:115px;
+background-position:0 0;
+background-repeat:no-repeat;
+cursor:default;
+background-color:transparent;
+
+}	
+</style>
+<ul class="destacados_l">
+<li><a href="http://www.cimaware.com/main/newsletters/index.php" class="des_lat_newsletter"><strong>Newsletter</strong></a></li><li><a href="http://www.cimaware.com/main/resources/rss.php?" class="des_lat_rss"><strong>RSS</strong></a></li>
+</ul>
+<strong class="mas">Categories</strong>
+<ul class="clasificacion_l">
+<li><a href="http://www.cimaware.com/resources/0-1-0.html" rel="tag">Articles</a></li>
+<li><a href="http://www.cimaware.com/resources/0-5-0.html" rel="tag">Blog</a></li>
+<li><a href="http://www.cimaware.com/resources/0-2-0.html" rel="tag">Interviews</a></li>
+<li><a href="http://www.cimaware.com/resources/0-4-0.html" rel="tag">News</a></li>
+<li><a href="http://www.cimaware.com/resources/0-9-0.html" rel="tag">Other resources</a></li>
+<li><a href="http://www.cimaware.com/resources/0-7-0.html" rel="tag">Press releases</a></li>
+<li><a href="http://www.cimaware.com/resources/0-10-0.html" rel="tag">Software Release History</a></li>
+<li><a href="http://www.cimaware.com/resources/author_0.html" rel="tag">Authors</a></li>
+</ul>
+
+<strong class="mas">Related products</strong>
+<ul class="clasificacion_l">
+<li><a href="http://www.cimaware.com/resources/0-0-1.html" rel="tag">Access</a></li>
+<li><a href="http://www.cimaware.com/resources/0-0-3.html" rel="tag">Excel</a></li>
+<li><a href="http://www.cimaware.com/resources/0-0-5.html" rel="tag">Office</a></li>
+<li><a href="http://www.cimaware.com/resources/0-0-2.html" rel="tag">Outlook</a></li>
+<li><a href="http://www.cimaware.com/resources/0-0-9.html" rel="tag">Photography</a></li>
+<li><a href="http://www.cimaware.com/resources/0-0-4.html" rel="tag">Word</a></li>
+</ul>
+</div>
+<!--  FIN CONTENIDO LATERAL  -->
+
+
+<div id="plantilla_contenido">
+<h2>Expert Zone</h2>
+
+<style>
+
+#prueba_expert div * {
+font-size:11px;
+}
+
+</style>
+
+<div id="expert_zone">
+
+<h2 class="h2_tipo">
+<a href="javascript: print();" style="font-size:50%">Print article</a><br class="oculto"><br class="oculto">
+
+Using Classes in VBA | Expert Zone</h2>
+
+<div id="prueba_expert">
+<div>
+<p>You may have heard about Classes in VBA (and other languages) but not know what they are or how to use them. Let‘s find out!</p>
+<br>
+<br>
+<p>........................................................................................................................................................................................<br>
+<br>
+<em>WordFIX is a tool to <strong><a href="http://www.cimaware.com/main/products/excelfix.php">recover Word document</a></strong> files in your PC.</em><br>
+<br>
+........................................................................................................................................................................................<br>
+<br>
+&nbsp;Let‘s find out! We‘ll examine:
+</p><ul>
+    <li>What a Class Is</li>
+    <li>What the Different Elements of a Class Are</li>
+    <li>How to Create a Class Definition</li>
+    <li>How to Instantiate a Class Object</li>
+    <li>How to Create a Class Method</li>
+    <li>How to Use a Class Method</li>
+    <li>How to Create a Class Constructor and a Class Destructor</li>
+    <li>When the Constructor and Destructor Get Called</li>
+    <li>Places to Go From Here</li>
+</ul>
+<p>If you already know something about Objects, and the use of the New and Nothing keywords, you‘ll have a head start.</p>
+<strong><em> What Is a Class, Anyway? </em></strong>
+<p>Classes are Objects which allow you to group a set of related functionality into one group. That‘s it. Classes are the foundation of Object Oriented Programming. You define a Class‘s form, such as Dog or Person or SalesOrder, and then you instantiate an instance of a class in order to use it. To instantiate a class object, you must use the New keyword and assign the result to a variable that is a reference to the class.</p>
+<strong><em> What Can I Do with a Class? </em></strong>
+<p>A Class can contain:</p>
+<ul>
+    <li>Subs and Functions – generally called Class Methods</li>
+    <li>Properties – you can Get and Let these (or Set them if      they are Objects)</li>
+    <li>Events – can be fired</li>
+    <li>A Constructor and a Destructor – called      Class_Initialize and Class_Terminate</li>
+    <li>Public Member Variables – can be accessed from outside      the class – generally considered bad Object Oriented Design      – use Properties instead</li>
+    <li>Private Member Variables – can only be accessed inside      the class – very handy!</li>
+</ul>
+<p>You may take advantage of some of these features at one time or another, depending on the application. You won‘t necessarily use all of them all the time.</p>
+<strong><em> How Do I Create a Class Definition in VBA? </em></strong>
+<p>To create a Class definition in VBA, you will select Insert / Class Module from the VBA menu (while in the correct project, of course).</p>
+<div class="DHImage"><img alt="Figure 1 - Using the Insert / Class Module command in VBA" src="./Using Classes in VBA   Expert Zone_files/f1.gif">
+<h4><strong>Figure 1 – Using the Insert / Class Module command in VBA</strong></h4>
+</div>
+<p>This creates a blank Class for you to use. To name the class, change the name of the class from “Class1” to the desired name in the Properties Pane. You can name the class “Dog”, for example. Some people choose names like “clsDog” so it‘s clear in code that this is the name of a class and not an actual class instance itself. It‘s up to you.</p>
+<div class="DHImage"><img alt="Figure 2 - Changing the name of your class in the Properties pane" src="./Using Classes in VBA   Expert Zone_files/f2.gif">
+<h4><strong>Figure 2 – Changing the name of your class in the Properties pane</strong></h4>
+</div>
+<strong><em> How Do I Instantiate a Class Object </em></strong>
+<p>I would have called this section “How Do I Instantiate a Class Instance” but I thought that would sound too weird. But that‘s what you do – you instantiate (call into existence) a class instance (a particular instance of a class). You can instantiate any number of class instances during the operation of a program – limited mostly by computer memory.</p>
+<p>Let‘s say you do have a Class called Dog. To use the Dog class, you can write the two lines of code below in another Module (never in the Class Module itself):</p>
+<div class="bluetext">
+<pre>Dim Minnie As Dog<br><br>Set Minnie = New Dog</pre>
+</div>
+<p>The first line declares a variable named Minnie of type “reference to Dog”. You can‘t do much with it until you Set it to the result of something – either the result of a Function call, or the result of a New expression. (I hope you know about Objects and using the Set keyword – if not, please brush up on that first – it will make this all much more clear.) The second line actually instantiates the Dog object. (And calls the Constructor.)</p>
+<p>There is another way to instantiate a Class instance using a single line of code:</p>
+<div class="bluetext">
+<pre>Dim Minnie As New Dog</pre>
+</div>
+<p>This method is shortly, and may be perfectly suitable in many applications. There is one difference between this single-line technique and the two-line technique above: In this single-line technique, the Dog object is not actually instantiated until the first call to a class method.</p>
+<p>Most VBA programmers use either method interchangeably – the difference can be important in some applications and irrelevant in others.</p>
+<strong><em> How Do I Create a Class Method? </em></strong>
+<p>What can your dog do? And what can you do to your dog? Well, maybe you can walk it. So you create a Method called Walk in the Class Module. You can write</p>
+<div class="bluetext">
+<pre>Public Sub Walk()<br><br>' Walk the dog...<br><br>End Sub</pre>
+</div>
+<p>Maybe you want to specify how long you will walk the dog. In that case, write:</p>
+<div class="bluetext">
+<pre>Public Sub Walk(ByVal Duration As Integer)<br><br>' Walk the dog for Duration minutes.<br><br>End Sub</pre>
+</div>
+<p>Maybe the dog needs to be able to have a litter with a random number of puppies, up to a certain maximum (and with 1 as the minimum). The HaveLitter Function will return the number of puppies in the litter:</p>
+<div class="bluetext">
+<pre>Public Function HaveLitter(ByVal MaxPuppies As Integer)<br><br>HaveLitter = Int(Rnd * MaxPuppies) + 1<br><br>End Function</pre>
+</div>
+<p>Here‘s what our Dog class looks like:</p>
+<div class="DHImage"><img alt="Figure 3 - The complete code listing of Class Dog at this point" src="./Using Classes in VBA   Expert Zone_files/f3.gif">
+<h4><strong>Figure 3 – The complete code listing of Class Dog at this point</strong></h4>
+</div>
+<strong><em> How Do I Use a Class Method? </em></strong>
+<p>OK, now how do you use these Walk and HaveLitter Methods? Let‘s say you already have a Dog object instantiated:</p>
+<div class="bluetext">
+<pre>Dim Fido As New Dog</pre>
+</div>
+<p>Then, you can walk Fido by writing:</p>
+<div class="bluetext">
+<pre>Fido.Walk 10</pre>
+</div>
+<p>or</p>
+<div class="bluetext">
+<pre>Call Fido.Walk(10)</pre>
+</div>
+<p>Minnie is about to have puppies, so let‘s use the HaveLitter Function:</p>
+<div class="bluetext">
+<pre>Dim Minnie As Dog    ' This is the two-line technique to<br><br>Set Minnie = New Dog ' instantiate a New Dog object.<br><br>MsgBog "Minnie just had " &amp; Minnie.HaveLitter(10) &amp; " puppies!"</pre>
+</div>
+<div class="DHImage"><img alt="Figure 4 - Playing with Fido and Minnie in Code Module Module1" src="./Using Classes in VBA   Expert Zone_files/f4.gif">
+<h4><strong>Figure 4 – Playing with Fido and Minnie in Code Module Module1</strong></h4>
+</div>
+<p>This will display a message box showing how many puppies Minnie had (between 1 and 10).</p>
+<div class="DHImage"><img alt="Figure 5 - Minnie had her puppies!" src="./Using Classes in VBA   Expert Zone_files/f5.gif">
+<h4><strong>Figure 5 – Minnie had her puppies!</strong></h4>
+</div>
+<strong><em> How Do I Create a Class Constructor and Destructor? </em></strong>
+<p>A Class can have a single Constructor and a single Destructor. The Constructor must be named Class_Initialize and the Destructor must be named Class_Terminate. They are called automatically when a Class object is instantiated and destroyed, respectively. You don‘t need to call these Methods; they are called automatically by VBA.</p>
+<p>Let‘s take an example. Let‘s say that you want to get notified when an object is instantiated – as a matter of fact, you can use this as a test to see when the object is actually instantiated and how it varies between the two techniques. You write:</p>
+<div class="bluetext">
+<pre>Private Sub Class_Initialize()<br><br>MsgBox "Initialized!"<br><br>End Sub</pre>
+</div>
+<div class="DHImage"><img alt="Figure 6 - Class Dog with the Class_Initialize event handler" src="./Using Classes in VBA   Expert Zone_files/f6.gif">
+<h4><strong>Figure 6 – Class Dog with the Class_Initialize event handler</strong></h4>
+</div>
+<p>And then write this in another Code Module:</p>
+<div class="bluetext">
+<pre>Dim Minnie As Dog<br><br>Set Minnie = New Dog ' Gets Initialized here.<br><br>MsgBox "About to Walk..."<br><br>Minnie.Walk</pre>
+</div>
+<p>You‘ll see “Initialized!”, then “About to Walk...”</p>
+<p>Compare the results with:</p>
+<div class="bluetext">
+<pre>Dim Minnie As New Dog<br><br>MsgBox "About to Walk..."<br><br>Minnie.Walk ' Gets Initialized here, on first use.</pre>
+</div>
+<p>In this case, you‘ll see “About to Walk...” THEN “Initialized!”, because Minnie doesn‘t actually get instantiated until the first use, when Walk is invoked.</p>
+<div class="DHImage"><img alt="Figure 7 - Two different ways to instantiate Minnie" src="./Using Classes in VBA   Expert Zone_files/f7.gif">
+<h4><strong>Figure 7 – Two different ways to instantiate Minnie</strong></h4>
+</div>
+<p>You can try a similar examples to see when a class gets destroyed using the Class_Terminate method. You‘ll be entering the strange world of VBA garbage collection!</p>
+<strong><em> Where to Go From Here </em></strong>
+<p>In this article, you‘ve learned:</p>
+<ul>
+    <li>What a Class Is</li>
+    <li>What the Different Elements of a Class Are</li>
+    <li>How to Create a Class Definition</li>
+    <li>How to Instantiate a Class Objetc</li>
+    <li>How to Create a Class Method</li>
+    <li>How to Use a Class Method</li>
+    <li>How to Create a Class Constructor and a Class Destructor</li>
+    <li>When the Constructor and Destructor Get Called</li>
+</ul>
+<p>From here, you might want to study the use of Class Properties, Member Variables (Public and Private), and Events. We‘ll see if we can help out in a future article.</p>
+<p>Now that you know what a Class is, it might take a while for it to sink in and to discover how to use them. I expect over time you‘ll start to get ideas of how to use them. It can be very nice to group a bunch of related functions into a class instead of having all your Subs and Functions in one module. It helps you get into the world of Object Oriented Programming, which makes your programs easier to read and easier to debug. Hopefully, soon you‘ll be able to add Object Oriented Programming with the use of Classes to your programming repertoire and maybe even impress your friends. Geek out!</p><p></p>
+</div>
+</div>
+<br>
+<br>
+
+<div class="tags">
+<a href="javascript: print();" class="print">Print article</a><br class="oculto"><br class="oculto">
+Classification: <a href="http://www.cimaware.com/resources/0-1-0.html">Category: Articles</a>&nbsp;<em>-</em>&nbsp;<a href="http://www.cimaware.com/resources/0-0-Word.html">Product: Word</a>&nbsp;<em>-</em>&nbsp;<a href="http://www.cimaware.com/resources/author_22.html">Author: David Horowitz</a> <br><br>
+</div>
+
+<div class="largo2">
+<div class="destacado_largo_interior">
+<p><a href="http://www.cimaware.com/resources/author_22.html" title="Authors"><strong><img border="0" height="60" width="60" alt="David Horowitz" title="David Horowitz" src="./Using Classes in VBA   Expert Zone_files/author_60_22.jpg"></strong><em class="oculto">-</em><em><span>David Horowitz</span></em></a><br>David Horowitz is the lead developer and co-founder with his wife Bonnie of Soundside, Inc., located on the beautiful Long Island Sound near New York City.<br>
+&nbsp;<br>
+David was educated at the University of Pennsylvania, began his career at Microsoft, and has been a freelance software consultant since 1991, working in .NET, C#, VB.NET, C++, assembler, Visual Basic, and Office VBA. David is a database expert, working mostly in Microsoft SQL Server, MySQL, and Microsoft Access. He has developed web-based applications using HTML, XML, ASP, ASP.NET and ActiveX controls. Soundside’s clients are leaders in their industries, including pharmaceutical, scientific, manufacturing, technical, and legal. David is a regular contributor to online ezines on the subject of software development. He has a talent for making difficult subjects easy to understand. David can be contacted at comments@soundside.biz. Check out Soundside’s web site at www.soundside.biz.<br>
+&nbsp;<br>
+&nbsp;&nbsp; &nbsp;<br>
+<span style="font-style: italic;">At Soundside’s web site www.soundside.biz you’ll be able to register for Soundside’s newsletter and browse Soundside’s tools and utilities for Microsoft Office.</span></p><br class="oculto"><br class="oculto">
+</div>
+<p><br>Author website: <a href="http://www.soundside.biz/" target="_blank"><strong>www.soundside.biz</strong></a><br></p>
+</div>
+
+</div>
+</div>
+
+
+</div>
+
+
+
+<!-- INICIO PIE DE PAGINA -->
+<div id="pie">
+<div>
+<ul>
+<li><a href="http://www.cimaware.com/main/legal/privacy.php" class="meta" title="Privacy" rel="nofollow">Privacy</a></li>
+<li><a href="http://www.cimaware.com/main/legal/conditions.php" class="meta" title="Legal" rel="nofollow">Legal</a></li>
+<li><a href="http://www.cimaware.com/main/legal/contractconditions.php" class="meta" title="General Contract Conditions " rel="nofollow">General Contract Conditions </a></li>	
+<li><a href="http://www.cimaware.com/main/about-us/iso.php" class="meta" title="ISO 9001:2000 Certified" id="iso" rel="nofollow">ISO 9001:2000 Certified</a></li>
+<li><a href="http://www.cimaware.com/main/about-us/site-map.php" class="meta" title="Site map">Site map</a></li>
+</ul>
+<div id="copy"><strong>Copyright ©2000-2013 Cimaware Software. All Rights Reserved</strong><br class="oculto"><br><br><a href="http://www.dmca.com/Protection/Status.aspx?ID=f1b807ac-225f-40b8-9535-3a61f7b278a6" title="DMCA"> <img src="./Using Classes in VBA   Expert Zone_files/_dmca_premi_badge_5.png" alt="DMCA.com"></a></div>
+</div>
+<hr>
+<em>&nbsp;</em>
+</div>
+</div>
+<!-- FIN PIE DE PAGINA -->
+
+
+
+
+<!--  FIN CAPA ANCHO MAXIMO  -->
+</div>
+
+<!--  FIN CUERPO DEL CONTENIDO   -->
+</div>
+
+
+<!--  FIN CAPA MADRE   -->
+</div>
+
+
+
+
+</body></html>

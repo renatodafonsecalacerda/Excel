@@ -1,0 +1,24 @@
+
+<!-- saved from url=(0200)https://stackauth.com/auth/global/read?request=5U0%2FMOogZqBUpkEaFK%2BXdz1dHMSinDxKmfnTg0tIaKHQHYSIYfq%2BYtx7e61EHgaucgBW%2F9KjP6qWnQ7xfen8R4FbtODgBlvvIuWQBlX6ObU%3D&nonce=wekZVAAAAACuzOzrNb4Gzg%3D%3D -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+                  <script>
+                  var data = {"ReadSession":"https://stackauth.com/auth/global/read-session","Request":"5U0/MOogZqBUpkEaFK+Xdz1dHMSinDxKmfnTg0tIaKHQHYSIYfq+Ytx7e61EHgaucgBW/9KjP6qWnQ7xfen8R4FbtODgBlvvIuWQBlX6ObU=","Nonce":"wekZVAAAAACuzOzrNb4Gzg==","Referrer":"http://codereview.stackexchange.com/questions/62781/unit-testing-in-vba","StorageName":"GlobalLogin"};
+
+                  var toMsg = window.parent;
+
+                  var obj = localStorage.getItem(data.StorageName);
+                  if(obj != null) {
+                  var req = new XMLHttpRequest();
+                  req.open('POST', data.ReadSession+'?request='+encodeURIComponent(data.Request)+'&nonce='+encodeURIComponent(data.Nonce)+'&seriesAndToken='+encodeURIComponent(obj), false);
+                  req.send(null);
+                  
+                    if(req.status == 200){
+                      toMsg.postMessage(req.responseText, data.Referrer);
+                    }else{
+                      toMsg.postMessage('No Session', data.Referrer);
+                    }
+                  }else{
+                    toMsg.postMessage('No Local Storage', data.Referrer);
+                  }
+                  </script>
+                  </head><body></body></html>

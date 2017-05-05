@@ -1,0 +1,2104 @@
+<!DOCTYPE html>
+<!-- saved from url=(0156)http://www.experts-exchange.com/Software/Office_Productivity/Office_Suites/MS_Office/Excel/A_1756-A-VBA-Progress-Bar-for-Excel-and-Other-Microsoft-Apps.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script type="text/javascript" async="" src="./A VBA Progress Bar for Excel and Other Microsoft Apps._files/munchkin.js"></script><script async="" type="text/javascript" src="./A VBA Progress Bar for Excel and Other Microsoft Apps._files/ca-pub-7120314253074184.js"></script>
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="robots" content="index, follow, noarchive">
+    <meta name="description" content="Keeping the user informed is important If you have written some VBA code for Excel (or Word, or Access), and it takes a long time to execute, it is important to keep the user informed that the code...">
+    <meta name="google-site-verification" content="_5cXhFki_NrEovleFuuN-9eaHvpDQv1Y3I5e1bIesa0">
+    <meta name="msvalidate.01" content="19C984E796A6C2E12B5745B0A771521A">
+    <link rel="publisher" href="https://plus.google.com/110263686057287067086">
+    <meta name="yandex-verification" content="54b30aacc4e975b3">
+    <meta name="keywords" content="Excel, VBA, Automation, Progress Bar, Cancel Button, Time Elapsed, Microsoft Excel Spreadsheet Software">
+    <link rel="canonical" href="./A VBA Progress Bar for Excel and Other Microsoft Apps._files/A VBA Progress Bar for Excel and Other Microsoft Apps..htm">
+    <link rel="alternate" href="http://mobile.experts-exchange.com/Software/Office_Productivity/Office_Suites/MS_Office/Excel/A_1756-A-VBA-Progress-Bar-for-Excel-and-Other-Microsoft-Apps.html" media="only screen and (max-width: 640px)">
+    <meta property="og:title" content="A VBA Progress Bar for Excel and Other Microsoft Apps.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://www.experts-exchange.com/Software/Office_Productivity/Office_Suites/MS_Office/Excel/A_1756-A-VBA-Progress-Bar-for-Excel-and-Other-Microsoft-Apps.html">
+    <meta property="og:image" content="/images/experts-exchange/experts-exchange-logo-opengraph.png">
+    <title>A VBA Progress Bar for Excel and Other Microsoft Apps.</title>
+    
+    <script type="text/javascript" async="" src="./A VBA Progress Bar for Excel and Other Microsoft Apps._files/ga.js"></script><script src="./A VBA Progress Bar for Excel and Other Microsoft Apps._files/quant.js" async="" type="text/javascript"></script><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(t,n,e){function r(e){if(!n[e]){var o=n[e]={exports:{}};t[e][0].call(o.exports,function(n){var o=t[e][1][n];return r(o?o:n)},o,o.exports)}return n[e].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<e.length;o++)r(e[o]);return r}({D5DuLP:[function(t,n){function e(t,n){var e=r[t];return e?e.apply(this,n):(o[t]||(o[t]=[]),void o[t].push(n))}var r={},o={};n.exports=e,e.queues=o,e.handlers=r},{}],handle:[function(t,n){n.exports=t("D5DuLP")},{}],G9z0Bl:[function(t,n){function e(){var t=l.info=NREUM.info;if(t&&t.agent&&t.licenseKey&&t.applicationID&&p&&p.body){l.proto="https"===f.split(":")[0]||t.sslForHttp?"https://":"http://",i("mark",["onload",a()]);var n=p.createElement("script");n.src=l.proto+t.agent,p.body.appendChild(n)}}function r(){"complete"===p.readyState&&o()}function o(){i("mark",["domContent",a()])}function a(){return(new Date).getTime()}var i=t("handle"),u=window,p=u.document,s="addEventListener",c="attachEvent",f=(""+location).split("?")[0],l=n.exports={offset:a(),origin:f,features:[]};p[s]?(p[s]("DOMContentLoaded",o,!1),u[s]("load",e,!1)):(p[c]("onreadystatechange",r),u[c]("onload",e)),i("mark",["firstbyte",a()])},{handle:"D5DuLP"}],loader:[function(t,n){n.exports=t("G9z0Bl")},{}]},{},["G9z0Bl"]);</script>
+    <link rel="shortcut icon" href="http://experts.cachefly.net/images/experts-exchange/favicon.ico" type="image/x-icon">
+    <link href="./A VBA Progress Bar for Excel and Other Microsoft Apps._files/css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="http://experts.cachefly.net/css/2/e0d0f4c5fb965fe53e0adf0d9165f6ce16bf190f9ba0ee2073268ed996bb7b37.css" media="all">
+    <link rel="stylesheet" href="http://experts.cachefly.net/css/2/f4dc53de91cd2bc058fa0f4b97e6a8b8fe51073300126b73fbb6c200e64fe86b.css" media="all">
+    <script src="./A VBA Progress Bar for Excel and Other Microsoft Apps._files/1f83701f53b0e094dd331e0a2eb0bd61adb177a3c10c8c801a5e20cec1a4a8f1.js" type="text/javascript"></script>
+    <script src="./A VBA Progress Bar for Excel and Other Microsoft Apps._files/f5982daa2251855b758452383c2384671582fdaa993025312451929867147ec6.js" type="text/javascript"></script><style type="text/css"></style>
+    <script type="text/javascript">
+        <!--
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-25977090-13']);
+        _gaq.push(['_setCustomVar', 1, 'User Segmentation', 'Free Trial Logged Out Visitor', 2]);
+        _gaq.push(['_setCustomVar', 2, 'Article Page ID', '201405-LO-Art-001', 2]);
+        _gaq.push(['_setDomainName', 'experts-exchange.com']);
+        _gaq.push(['_setAllowLinker', true]);
+        _gaq.push(['_trackEvent', 'General', 'Related Content Algorithm', undefined, 'ALGO_CTRL']);
+        _gaq.push(['_trackEvent', 'General', 'Related Content Is Displayed', undefined, undefined]);
+        _gaq.push(['_trackEvent', 'General', 'Article Premium Entry', undefined, 'Premium Article']);
+        _gaq.push(['_trackEvent', 'General', 'Article Premium Recent', undefined, 'Premium Article']);
+        _gaq.push(['_trackEvent', 'General', 'Entry Page LO User State', undefined, 'GFCF']);
+        _gaq.push(['_trackEvent', 'General', 'Most Recent Content State', undefined, 'GFCF']);
+        _gaq.push(['_trackEvent', 'General', 'Article View Entry', undefined, 'GFCF']);
+        _gaq.push(['_trackEvent', 'General', 'Article View Recent', undefined, 'GFCF']);
+        _gaq.push(['_trackEvent', 'General', 'Article ID', undefined, 1756]);
+        _gaq.push(['_trackEvent', 'General', 'Article Author', undefined, 'alainbryden']);
+        _gaq.push(['_trackEvent', 'General', 'Article Title', undefined, 'A VBA Progress Bar for Excel and Other Microsoft Apps.']);
+        _gaq.push(['_trackEvent', 'General', 'Page View', '201405-LO-Art-001', true]);
+        _gaq.push(['_trackPageview']);
+        setTimeout("_gaq.push(['_trackEvent', '5_seconds', 'Read'])", 5000);
+        //-->
+    </script>
+    <script type="text/javascript">
+      var EETOP={};EETOP.startTime=new Date();EETOP.url='';EETOP.memberBehaviorId=0;EETOP.setUrl=function(url)
+      {EETOP.url=url;}
+      EETOP.setMemberBehaviorId=function(memberBehaviorId)
+      {EETOP.memberBehaviorId=memberBehaviorId;}
+      timeOnPage=function()
+      {var endTime=new Date();var timeSpent=(endTime-EETOP.startTime);if(EETOP.memberBehaviorId>0)
+      {var json={'timeOnPage':timeSpent,'memberBehaviorId':EETOP.memberBehaviorId};onUnloadSubrequest(EETOP.url,json);}}
+      if(window.addEventListener)
+      {window.addEventListener('beforeunload',timeOnPage,false);}
+      else if(window.attachEvent)
+      {window.attachEvent('beforeunload',timeOnPage);}
+      function setTimeOnPageUrl(url)
+      {EETOP.setUrl(url);}
+      function setTimeOnPageMemberBehaviorId(id)
+      {EETOP.setMemberBehaviorId(id);}
+      setTimeOnPageUrl('/jsp/timeOnPage.jsp');
+      setTimeOnPageMemberBehaviorId(1);
+    </script>
+  <script>window["_GOOG_TRANS_EXT_VER"] = "1";</script><script>window["_GOOG_TRANS_EXT_VER"] = "1";</script></head>
+  <body itemscope="itemscope" itemtype="http://schema.org/WebPage" style="">
+    <div id="uberContainer">
+      <div id="wrapper1">
+        <div id="wrapper2">
+          <div id="header" class="">
+            <div id="headerInnerWrap">
+              <div id="flex1">
+                <div class="headerLargeWrapper">
+                  <div class="component logoComponent" id="logoComponent">
+                    <div class="body">
+                      <div class="section">
+                        <h2><a href="http://www.experts-exchange.com/" title="Experts Exchange"><img alt="Experts Exchange" src="./A VBA Progress Bar for Excel and Other Microsoft Apps._files/logoFullLarge.png" title=""></a></h2>
+                      </div>
+                    </div>
+                  </div>
+                  <span class="component textComponent logoSvg loggedout" id="textComponent"><a href="http://www.experts-exchange.com/" title="Experts Exchange"></a></span>
+                  <div class="siteNav">
+                    <span class="component textComponent" id="textComponent-id2"><a class="howItWorks" href="http://www.experts-exchange.com/howItWorks/"><span>How It Works</span></a></span><span class="component textComponent" id="textComponent-id3"><a href="http://www.experts-exchange.com/Software/Office_Productivity/Office_Suites/MS_Office/Excel/A_1756-A-VBA-Progress-Bar-for-Excel-and-Other-Microsoft-Apps.html#" class="browse-topics"><span>Browse Topics</span></a></span><span class="component textComponent" id="textComponent-id4"><a class="join" href="http://www.experts-exchange.com/plansAndPricing.jsp"><span>Join Today</span></a></span><span class="component textComponent" id="textComponent-id5"><a href="http://www.experts-exchange.com/Software/Office_Productivity/Office_Suites/MS_Office/Excel/A_1756-A-VBA-Progress-Bar-for-Excel-and-Other-Microsoft-Apps.html#" class="login-box"><span>Login</span></a></span>
+                  </div>
+                  <div class="headerBrowse toggleItem" id="headerBrowse">
+                    <div class="toggleItemInner">
+                      <div class="component textComponent" id="textComponent-id6">
+                        <div class="body">
+                          <div class="section">
+                            <ul>
+                            	<li><a class="copy" href="http://www.experts-exchange.com/Copy_Review/">Copy Review</a></li>
+                            	<li><a class="database" href="http://www.experts-exchange.com/Database/">Database</a></li>
+                            	<li><a class="hardware" href="http://www.experts-exchange.com/Hardware/">Hardware</a></li>
+                            	<li><a class="networking" href="http://www.experts-exchange.com/Networking/">Networking</a></li>
+                            </ul>
+                            <ul>
+                            	<li><a class="os" href="http://www.experts-exchange.com/OS/">Operating System</a></li>
+                            	<li><a class="programming" href="http://www.experts-exchange.com/Programming/">Programming</a></li>
+                            	<li><a class="security" href="http://www.experts-exchange.com/Security/">Security</a></li>
+                            	<li><a class="software" href="http://www.experts-exchange.com/Software/">Software</a></li>
+                            </ul>
+                            <ul>
+                            	<li><a class="webdev" href="http://www.experts-exchange.com/Web_Development/">Web Development</a></li>
+                            	<li><a class="other" href="http://www.experts-exchange.com/Other/">Other Technical Topics</a></li>
+                            	<li><a class="community" href="http://www.experts-exchange.com/Community_Support/">Community Support</a></li>
+                            	<li><a class="all" href="http://www.experts-exchange.com/allTopics.jsp">Browse All Topics</a></li>
+                            </ul>
+                            
+                          </div>
+                        </div>
+                      </div>
+                      <script type="text/javascript" id="contentJavascript">
+                        toggleBlocks ('#headerBrowse','.siteNav .browse-topics','.siteNav a','#headerInnerWrap .toggleItem','true');
+                      </script>
+                    </div><span class="closeThatToggle"><span>close</span></span>
+                  </div>
+                  <div class="headerLogin toggleItem" id="headerLogin">
+                    <div class="toggleItemInner">
+                      <div class="component login" id="login">
+                        <div class="body">
+                          <div class="section">
+                            <form action="https://secure.experts-exchange.com/login.jsp?redirect=/Software/Office_Productivity/Office_Suites/MS_Office/Excel/A_1756-A-VBA-Progress-Bar-for-Excel-and-Other-Microsoft-Apps.html" method="post" onsubmit="return submitOnce(&#39;#login-loginForm&#39;);" id="login-loginForm">
+                              <div>
+                                <div class="input text">
+                                  <label for="login-loginForm-loginName">Username or email address</label>
+                                  <div>
+                                    <input maxlength="90" name="loginName" type="text" class="inputUsername" id="login-loginForm-loginName">
+                                  </div>
+                                </div>
+                              </div>
+                              <div>
+                                <div class="input password">
+                                  <label for="login-loginForm-loginPassword">Password</label>
+                                  <div>
+                                    <input maxlength="30" name="loginPassword" type="password" class="inputPassword" id="login-loginForm-loginPassword">
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="input checkbox show-password">
+                                <div class="selectionWrapper">
+                                  <ul>
+                                    <li class="first last">
+                                      <input name="showPassword" type="checkbox" class="showPassword ghostPassword" id="login-loginForm-showPassword-checkbox-null">
+                                      <label for="login-loginForm-showPassword-checkbox-null">Show Password</label>
+                                    </li>
+                                  </ul>
+                                </div>
+                              </div>
+                              <script type="text/javascript">
+                                jqOn('#login .showPassword','change',function(e){if(is('#login .showPassword',':checked')){replaceInput('#login .inputPassword','text',jqGetProperty('#login .inputPassword','id'),jqGetProperty('#login .inputPassword','name'),jqGetProperty('#login .inputPassword','value'),'inputPassword','30')}else{replaceInput('#login .inputPassword','password',jqGetProperty('#login .inputPassword','id'),jqGetProperty('#login .inputPassword','name'),jqGetProperty('#login .inputPassword','value'),'inputPassword','30')}});
+                              </script>
+                              <script type="text/javascript">
+                                jqOn('#login','keydown','.inputPassword',function(e){if(/msie/.test(navigator.userAgent.toLowerCase()) && e.which == '13'){submitForm('login-loginForm');}});
+                              </script>
+                              <div class="input checkbox remember-me">
+                                <div class="selectionWrapper">
+                                  <ul>
+                                    <li class="first last">
+                                      <input name="rememberMe" type="checkbox" checked="checked" id="login-loginForm-rememberMe-checkbox-null">
+                                      <label for="login-loginForm-rememberMe-checkbox-null">Keep Me Logged In</label>
+                                    </li>
+                                  </ul>
+                                </div>
+                              </div>
+                              <p class="buttons">
+                                <button name="loginSubmit" type="submit" class="button confirm" title="Login"><span>Login</span></button>
+                                <script type="text/javascript">
+                                  var anchorValue = window.location.hash.substr(1);
+                                  var anchor = $("<input>", { type: "hidden", name: "anchor", value: anchorValue });
+                                  
+                                  if (anchorValue) {
+                                     $('#login-loginForm').append($(anchor));
+                                  }
+                                  
+                                </script>
+                                <a href="http://www.experts-exchange.com/forgotPassword.jsp" class="button forgotPasswordLink" title="Forgot your password?"><span>Forgot your password?</span></a></p>
+                            </form>
+                          </div>
+                        </div>
+                      </div>
+                      <script type="text/javascript" id="contentJavascript-id2">
+                        toggleBlocks ('#headerLogin','.siteNav .login-box','.siteNav a','#headerInnerWrap .toggleItem','true');
+                      </script>
+                    </div><span class="closeThatToggle"><span>close</span></span>
+                  </div>
+                </div>
+                <script type="text/javascript" id="contentJavascript-id3"></script>
+              </div>
+              <div class="component breadcrumb stlco" id="breadcrumb">
+                <div class="body" itemprop="breadcrumb">
+                    <a href="http://www.experts-exchange.com/" title="Experts Exchange"><span>Experts Exchange</span></a> &gt; <a href="http://www.experts-exchange.com/Software/" title="Software"><span>Software</span></a> &gt; <a href="http://www.experts-exchange.com/Software/Office_Productivity/" title="Office / Productivity"><span>Office / Productivity</span></a> &gt; <a href="http://www.experts-exchange.com/Software/Office_Productivity/Office_Suites/" title="Office Suites"><span>Office Suites</span></a> &gt; <a href="http://www.experts-exchange.com/Software/Office_Productivity/Office_Suites/MS_Office/" title="MS Office"><span>MS Office</span></a> &gt; <a href="http://www.experts-exchange.com/Software/Office_Productivity/Office_Suites/MS_Office/Excel/" title="MS Excel"><span>MS Excel</span></a> &gt;   A  V B A  Progress  Bar for  Excel and  Other  Microsoft  Apps 
+                </div>
+              </div>
+              <script type="text/javascript" id="contentJavascript-id4">
+                moveFromPrependTo('.baPoBalanceDueAdminBanner','#wrapper2');
+              </script>
+              <script type="text/javascript" id="contentJavascript-id5">
+                moveFromPrependTo('.baPoBalanceDueLicenseBanner','#wrapper2');
+              </script>
+              <script type="text/javascript" id="contentJavascript-id6">
+                moveFromPrependTo('.netSurvey','#wrapper2');
+              </script>
+              <script type="text/javascript" id="contentJavascript-id7">
+                baUpgradeCtaMove();
+              </script>
+            </div>
+          </div>
+          <div id="flex2"></div>
+          <div id="bodyWrapper">
+            <div id="columnsWrapper">
+              <div id="col1Wrap">
+                <div id="col1" class="">
+                  <div class="viewArticleWrapper">
+                    <div class="component articleHeader" id="articleHeader">
+                      <div class="body">
+                        <h1 class="title">A VBA Progress Bar for Excel and Other Microsoft Apps.</h1>
+                        <a href="http://www.experts-exchange.com/members/alainbryden.html" target="_blank" class="3751703 avatar "><img alt="" src="./A VBA Progress Bar for Excel and Other Microsoft Apps._files/1b61163d-5c6c-4815-b6bc-81aaa423ea15.png"></a>
+                        <dl class="leading-meta">
+                          <dt> by </dt>
+                          <dd><a href="http://www.experts-exchange.com/members/alainbryden.html" rel="author">alainbryden</a></dd>
+                          <dt>Submitted</dt>
+                          <dd><time datetime="2009-10-13T10:45:35-07:00" itemprop="datePublished">2009-10-13 10:45 AM</time></dd>
+                          <dl>
+                            <dt>Last Updated</dt>
+                            <dd>2014-08-27 12:03 AM</dd>
+                          </dl>
+                        </dl>
+                        <div class="stats">
+                          <dl class="awarded">
+                            <dt>Publication Status</dt>
+                            <dd>Awarded</dd>
+                          </dl>
+                          <dl>
+                            <dt>Points</dt>
+                            <dd>40,743</dd>
+                          </dl>
+                          <dl>
+                            <dt>Helpful Votes</dt>
+                            <dd>24</dd>
+                          </dl>
+                          <dl>
+                            <dt>Views</dt>
+                            <dd>28,303</dd>
+                          </dl>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="component viewArticleContent stlco ctContentView lo" id="viewArticleContent">
+                      <div class="body layout2">
+                        <div class="section first">
+                          <aside class="meta leading-meta">
+                            <ul></ul>
+                          </aside>
+                          <div class="awards">
+                            <span class="label">Awards</span>
+                            <ul>
+                              <li class="ee-approved" title="Experts Exchange Approved">Experts Exchange Approved</li>
+                            </ul>
+                          </div>
+                          <div class="content wysiwyg-content">
+                            <b>Keeping the user informed is important</b><br>
+                            If you have written some VBA code for Excel (or Word, or Access), and it takes a long time to execute, it is important to keep the user informed that the code is progressing. Psychologically, it can also have a tremendously positive effect on the perceived responsiveness and speed of your program if the user can see a visual representation of the current progress.<br>
+                            <br>
+                            <b>Common methods of keeping the user informed</b><br>
+                            Currently, a lot of people keep the user informed by allowing the actions of the macro to be seen. (i.e., the flicker of sheets being activated, cells being changed, etc...). This is generally a terrible idea unless the whole routine is finished very quickly. Excel experts should have learned by now that by setting Application.ScreenUpdating<wbr> = False as the first step to a VBA routine can speed up code execution by orders of magnitude. The only problem with this, is that now the program appears to be frozen until the code sets screen updating back to true. If this takes a long time, the user might think excel is frozen.<br>
+                            <br>
+                            Now that Excel's interface is frozen to speed up procedures, it's especially important to inform the user. Many people do this by setting the value of Application.StatusBar. This can hold any text, and updates even when screen updating is disabled. By changing this regularly, the programmer can give a play by play of the current position in the code, or display a percentage completion in a large loop.<br>
+                            <a href="./A VBA Progress Bar for Excel and Other Microsoft Apps._files/Prog-Status-Bar.PNG" target="_blank" title="setting the value of Application.StatusBar (3 KB)"><img alt="setting the value of Application.StatusBar" src="./A VBA Progress Bar for Excel and Other Microsoft Apps._files/Prog-Status-Bar.PNG" class="file-block" style="max-width: 419px;"></a><br>
+                            <b>Something truly impressive</b><br>
+                            If you want a great tool for keeping the user informed you should create a progress bar form, show the form before beginning code execution, and hide it afterwards. This is something you could do yourself, but to get you started, I've been employing and improving on my own custom progress bar for quite some time now. I think you should find it useful and very customizable:<br>
+                            <a href="./A VBA Progress Bar for Excel and Other Microsoft Apps._files/Progress-Bar.PNG" target="_blank" title="Progress Bar (10 KB)"><img alt="Progress Bar" src="./A VBA Progress Bar for Excel and Other Microsoft Apps._files/Progress-Bar.PNG" class="file-block" style="max-width: 415px;"></a><br>
+                            <b>Features</b><br>
+                            
+                            <div class="bullet">
+                              Programmer can configure the progress bar with one function call, then all that is needed to update is to call SetValue.<br>
+                              
+                            </div>
+                            <div class="bullet">
+                              The progress bar's position and percentage label are automatically computed based on the minimum, maximum, and last set value.<br>
+                              
+                            </div>
+                            <div class="bullet">
+                              The status (caption above the progress bar) can be set dynamically to indicate additional information, such as the current stage of execution.<br>
+                              
+                            </div>
+                            <div class="bullet">
+                              An optional cancel button allows the user a mechanism to halt your lengthy process. The cancel button text can also be set, for instance to "Stop" or "Cancel Generation". The default caption is "Cancel". If set to vbNullString, the cancel button is hidden entirely.<br>
+                              
+                            </div>
+                            <div class="bullet">
+                              An optional label can show the time elapsed since the dialogue box was configured. (It is assumed that you will configure the dialogue directly before showing it). If this option is disabled, the progress bar update routine will not waste time in computing the elapsed time.<br>
+                              
+                            </div>
+                            <div class="bullet">
+                              An optional label can estimate the time remaining before completion. This is a very accurate estimate if you have appropriately set the min and max values. (You can test this in the example below.) This can be disabled, in which case no time is wasted in computing the remaining time.<br>
+                              
+                            </div>
+                            <div class="bullet">
+                              Your calling routine can get the current value of the progress bar, as well as the formatted run time. I use this, for instance, for logging, or to display on the status bar the final run time of the routine after it is complete. <a href="./A VBA Progress Bar for Excel and Other Microsoft Apps._files/Time-Taken.PNG" target="_blank" title="Display the final runtime in the status bar (2 KB)"><img alt="Display the final runtime in the status bar" src="./A VBA Progress Bar for Excel and Other Microsoft Apps._files/Time-Taken.PNG" class="file-block" style="max-width: 287px;"></a>
+                            </div>
+                            <br>
+                            <b>Using the progress bar practically</b><br>
+                            You are responsible for picking an appropriate minimum and maximum value. For instance, if you are looping over R rows (from 1 to R) and C columns (from 1 to C), you should set the minimum to 0 and the maximum to ( R*C ). Furthermore, if you are currently on row i and column j, (and you are looping over all rows within each column), you should be setting the current value to [ i + (j-1)*R ]<br>
+                            <br>
+                            If the cancel button is being displayed, you are responsible for periodically checking whether or not the cancel button has been pressed. Do this by checking whether ProgressDialogue.cancelIsP<wbr>ressed is true. If it is true, you should exit the loop and clean up after your routine. Ideally, we could avoid polling using events, but there is no sophisticated event hooking in VBA. An alternative would be to modify the progress dialogue CancelButton_Click method to work very specifically with what you are doing, but regularly checking cancelIsPressed() shouldn't take too much out of your routine's runtime.<br>
+                            <br>
+                            The following code block shows the function calls you should remember to include in your loops when using the progress bar dialogue:<br>
+                            
+                            <pre><code class="" id="code-30-1756-1">Sub wasteTime()
+    Dim i As Long
+    Dim diag As New ProgressDialogue
+    diag.Configure "Wasting Time", "Now wasting your time...", -10000, 10000
+    diag.Show
+    For i = -10000 To 10000
+        diag.SetValue i
+        diag.SetStatus "Now wasting your time... " &amp; i
+        If diag.cancelIsPressed Then Exit For
+    Next i
+    diag.Hide
+End Sub</code></pre>
+                            <p class="buttons">
+                              <button name="codeSnippetId" type="button" value="code-30-1756-1" class="button select-all"><span>Select all</span></button>
+                              <a href="http://www.experts-exchange.com/viewCodeSnippet.jsp?codeSnippetId=30-1756-1" target="_blank" class="button"><span>Open in new window</span></a></p>
+                            <br>
+                            This produces the following progress bar: <a href="./A VBA Progress Bar for Excel and Other Microsoft Apps._files/Sample-Progress-Bar.PNG" target="_blank" title="Using All Features in a Simple Case (9 KB)"><img alt="Using All Features in a Simple Case" src="./A VBA Progress Bar for Excel and Other Microsoft Apps._files/Sample-Progress-Bar.PNG" class="file-block" style="max-width: 415px;"></a><br>
+                            If you are looping over code where you are making a large number of iterations over code that is very quick to execute, then you might find that updating the dialogue becomes your bottleneck. To prevent this, you can only update the progress bar periodically, using a quick check. For instance, you can say:<br>
+                            If index MOD 1000 = 0 Then ProgressDialogue.SetValue(<wbr>index)<br>
+                            This way, the dialogue will only get updated every 1000 loops, and it will have much less impact on your code. You will want to play around with how often you update it, to balance the refresh rate with the amount of time spent updating the progress bar. Ideally, in other applications, a progress bar is kept up to date in a thread, but VBA has no support for threading.
+                            <script type="text/javascript">
+                              jqOn('.select-all','click',function(e){selectElementById(jqGetValue($(this)));return false;});
+                            </script>
+                          </div>
+                          <p class="buttons"><a href="http://www.experts-exchange.com/registerFree.jsp?articleID=1756&rtid=30&refID=1756&redirect=/Software/Office_Productivity/Office_Suites/MS_Office/Excel/A_1756-A-VBA-Progress-Bar-for-Excel-and-Other-Microsoft-Apps.html" class="next"><span>View Next Page &gt;</span></a></p>
+                          <script type="text/javascript">
+                            jqBind('.no-vote','click',function(e){return false;});
+                            jqOne('.button.yes.top','click',function(e){if(!jqHasClass('.button.yes.top','no-vote')){jqSetAttribute('.button.yes.top','disabled','disabled');jqAsyncPost('#viewArticleContenttopVote','',[{name:'yes',value:'true'},{name:'articleID',value:'1756'},{name:'asid',value:'viewArticleContenttopVote'},{name:'componentHtmlId',value:''}]);}return false;});
+                            
+                          </script>
+                        </div>
+                        <div class="section last">
+                          <aside class="meta trailing-meta">
+                            <dl>
+                              <dt class="label tags"><strong>Tags</strong></dt>
+                              <dd class="tag">
+                                <h2><a href="http://www.experts-exchange.com/searchResults.jsp?searchTag=Excel" rel="tag nofollow noindex">Excel</a></h2>
+                                , </dd>
+                              <dd class="tag">
+                                <h2><a href="http://www.experts-exchange.com/searchResults.jsp?searchTag=VBA" rel="tag nofollow noindex">VBA</a></h2>
+                                , </dd>
+                              <dd class="tag">
+                                <h2><a href="http://www.experts-exchange.com/searchResults.jsp?searchTag=Automation" rel="tag nofollow noindex">Automation</a></h2>
+                                , </dd>
+                              <dd class="tag">
+                                <h2><a href="http://www.experts-exchange.com/searchResults.jsp?searchTag=Progress+Bar" rel="tag nofollow noindex">Progress Bar</a></h2>
+                                , </dd>
+                              <dd class="tag">
+                                <h2><a href="http://www.experts-exchange.com/searchResults.jsp?searchTag=Cancel+Button" rel="tag nofollow noindex">Cancel Button</a></h2>
+                                , </dd>
+                              <dd class="tag">
+                                <h2><a href="http://www.experts-exchange.com/searchResults.jsp?searchTag=Time+Elapsed" rel="tag nofollow noindex">Time Elapsed</a></h2>
+                              </dd>
+                              <dt class="label topics"><strong>Topic</strong></dt>
+                              <dd class="topics">
+                                <h3><a href="http://www.experts-exchange.com/Software/Office_Productivity/Office_Suites/MS_Office/Excel/">Microsoft Excel Spreadsheet Software</a></h3>
+                              </dd>
+                            </dl>
+                          </aside>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="stlfr viewArticleAuthorInfo frcomponent-alt-bg top">
+                      <div class="frbody">
+                        <div class="component articleBio submitOverride" id="articleBio">
+                          <div class="head">
+                            <h3 class="subtitle">About The Author</h3>
+                            <div class="ui-chrome"></div>
+                          </div>
+                          <div class="body">
+                            <div id="articleBioAsyncWrap">
+                              <div class="errorSection"></div>
+                              <div class="section">
+                                <span class="name">alainbryden</span>
+                                <div class="article-bio">
+                                  <div class="content wysiwyg-content">
+                                    Alain is a BSc &amp; BCs graduate in a love/hate relationship with Microsoft products.
+                                  </div>
+                                </div>
+                              </div>
+                              <a href="http://www.experts-exchange.com/members/alainbryden.html" target="_blank" class="3751703 avatar "><img alt="" src="./A VBA Progress Bar for Excel and Other Microsoft Apps._files/1b61163d-5c6c-4815-b6bc-81aaa423ea15.png"></a>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="component articleAuthorMore" id="articleAuthorMore">
+                          <header class="head">
+                            <h3 class="subtitle">More Articles From alainbryden</h3>
+                            <div class="ui-chrome"></div>
+                          </header>
+                          <div class="body">
+                            <div class="section">
+                              <ul>
+                                <li><a href="http://www.experts-exchange.com/Software/Office_Productivity/Office_Suites/MS_Office/A_1480-How-to-Split-a-String-with-Multiple-Delimiters-in-VBA.html">How to Split a String with Multiple Delim…</a></li>
+                                <li><a href="http://www.experts-exchange.com/Software/Office_Productivity/Office_Suites/MS_Office/Excel/A_955-How-to-dynamically-control-form-List-Box-controls-in-Excel.html">How to dynamically control form List B…</a></li>
+                                <li><a href="http://www.experts-exchange.com/Software/Office_Productivity/Office_Suites/MS_Office/Excel/A_1300-Get-Excel-OpenText-to-Import-Exact-File-Contents.html">Get Excel OpenText to Import Exact File…</a></li>
+                                <li><a href="http://www.experts-exchange.com/Software/Office_Productivity/Office_Suites/MS_Office/Excel/A_2415-Beginner's-Guide-to-Improving-the-Speed-and-Size-of-Excel-files.html">Beginner's Guide to Improving the Sp…</a></li>
+                                <li><a href="http://www.experts-exchange.com/Software/Office_Productivity/Office_Suites/MS_Office/Excel/A_1457-Automate-Exporting-all-Components-in-an-Excel-Project.html">Automate Exporting all Components in …</a></li>
+                              </ul>
+                              <a href="http://www.experts-exchange.com/ARTH_3676667.html" class="more-results">View All</a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="component viewArticleComments stlco ctCommentView lo" id="viewArticleComments">
+                      <header class="head">
+                        <h4 class="subtitle">Comments</h4>
+                        <div class="ui-chrome"></div>
+                      </header>
+                      <div class="body layout2">
+                        <div class="section">
+                          <article class="comment expert-comment first" id="c9347">
+                            <div class="reply">
+                              <p class="comment-type heading"><span>Expert Comment</span></p>
+                              <div class="comment-inner">
+                                <aside class="meta">
+                                  <address class="author">
+                                    by: <a href="http://www.experts-exchange.com/members/DrewBowen.html">DrewBowen</a>
+                                  </address>
+                                  <span class="asked"> on 2010-02-08 at 13:42:26</span><span class="id"><a href="http://www.experts-exchange.com/Software/Office_Productivity/Office_Suites/MS_Office/Excel/A_1756-A-VBA-Progress-Bar-for-Excel-and-Other-Microsoft-Apps.html#c9347" rel="nofollow">ID: 9347</a></span>
+                                </aside>
+                                <div class="3947668 avatar avatarS">
+                                  <img alt="" src="./A VBA Progress Bar for Excel and Other Microsoft Apps._files/avatar-01-medium.gif">
+                                  <div class="memberSummary hidden"></div>
+                                  <script type="text/javascript">
+                                    jqOn('.avatarS.3947668 img','click',function(e){jqAsyncPost('.avatar.3947668 .memberSummary','/async/avatarSummary.async',[{name:'asid',value:''},{name:'iasid',value:''},{name:'componentHtmlId',value:''},{name:'msaid',value:'3947668'},{name:'avatarAsync',value:'true'}]);jqHide('.memberSummary');jqShow(jqObject(this).siblings('.memberSummary'));jqOne(document,'click',function(e){if(!$(e.target).is('.avatar.3947668 img') && e.button != -1){jqHide('.avatar.3947668 .memberSummary');}});return false;});
+                                  </script>
+                                </div>
+                                <div class="content btf-content">
+                                  <p>This is a really nice upgrade from the basic progress bar that I have been using. Thanks!</p>
+                                </div>
+                              </div>
+                            </div>
+                          </article>
+                          <article class="comment expert-comment" id="c21936">
+                            <div class="reply">
+                              <p class="comment-type heading"><span>Expert Comment</span></p>
+                              <div class="comment-inner">
+                                <aside class="meta">
+                                  <address class="author">
+                                    by: <a href="http://www.experts-exchange.com/members/tigermatt.html">tigermatt</a>
+                                  </address>
+                                  <span class="asked"> on 2010-12-07 at 11:12:36</span><span class="id"><a href="http://www.experts-exchange.com/Software/Office_Productivity/Office_Suites/MS_Office/Excel/A_1756-A-VBA-Progress-Bar-for-Excel-and-Other-Microsoft-Apps.html#c21936" rel="nofollow">ID: 21936</a></span>
+                                </aside>
+                                <div class="3145559 avatar avatarS">
+                                  <img alt="" src="./A VBA Progress Bar for Excel and Other Microsoft Apps._files/4a8a6da0-fdb7-4bbb-8eb8-148ab3fcbc2e.png">
+                                  <div class="memberSummary hidden"></div>
+                                  <script type="text/javascript">
+                                    jqOn('.avatarS.3145559 img','click',function(e){jqAsyncPost('.avatar.3145559 .memberSummary','/async/avatarSummary.async',[{name:'asid',value:''},{name:'iasid',value:''},{name:'componentHtmlId',value:''},{name:'msaid',value:'3145559'},{name:'avatarAsync',value:'true'}]);jqHide('.memberSummary');jqShow(jqObject(this).siblings('.memberSummary'));jqOne(document,'click',function(e){if(!$(e.target).is('.avatar.3145559 img') && e.button != -1){jqHide('.avatar.3145559 .memberSummary');}});return false;});
+                                  </script>
+                                </div>
+                                <div class="content btf-content">
+                                  <div class="first last">
+                                    <br>
+                                    What a fantastic article! Thank you Alain for your efforts!
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </article>
+                          <article class="comment expert-comment" id="c33847">
+                            <div class="reply">
+                              <p class="comment-type heading"><span>Expert Comment</span></p>
+                              <div class="comment-inner">
+                                <aside class="meta">
+                                  <address class="author">
+                                    by: <a href="http://www.experts-exchange.com/members/TigerMan.html">TigerMan</a>
+                                  </address>
+                                  <span class="asked"> on 2011-12-21 at 20:27:44</span><span class="id"><a href="http://www.experts-exchange.com/Software/Office_Productivity/Office_Suites/MS_Office/Excel/A_1756-A-VBA-Progress-Bar-for-Excel-and-Other-Microsoft-Apps.html#c33847" rel="nofollow">ID: 33847</a></span>
+                                </aside>
+                                <div class="3636416 avatar avatarS">
+                                  <img alt="" src="./A VBA Progress Bar for Excel and Other Microsoft Apps._files/e502e565-bd53-48b6-8bf9-2c4706da9148.png">
+                                  <div class="memberSummary hidden"></div>
+                                  <script type="text/javascript">
+                                    jqOn('.avatarS.3636416 img','click',function(e){jqAsyncPost('.avatar.3636416 .memberSummary','/async/avatarSummary.async',[{name:'asid',value:''},{name:'iasid',value:''},{name:'componentHtmlId',value:''},{name:'msaid',value:'3636416'},{name:'avatarAsync',value:'true'}]);jqHide('.memberSummary');jqShow(jqObject(this).siblings('.memberSummary'));jqOne(document,'click',function(e){if(!$(e.target).is('.avatar.3636416 img') && e.button != -1){jqHide('.avatar.3636416 .memberSummary');}});return false;});
+                                  </script>
+                                </div>
+                                <div class="content btf-content">
+                                  <div class="first last">
+                                    alainbryden,<br>
+                                    <br>
+                                    quite elegant ... this however "If index MOD 1000 = 0 Then ProgressDialogue.SetValue(<wbr>index)" is not adequately explained ... <br>
+                                    <br>
+                                    here is a very related question that you might be interested in ...<br>
+                                    <a href="http://www.experts-exchange.com/Software/Office_Productivity/Office_Suites/MS_Office/Excel/Q_27505597.html">http://www.experts-exchang<wbr>e.com/Soft<wbr>ware/Offic<wbr>e_Producti<wbr>vity/<wbr>Offic<wbr>e_Suites/M<wbr>S_Office/E<wbr>xcel/Q_275<wbr>05597.html<wbr></a>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </article>
+                          <article class="comment author-comment" id="c34526">
+                            <div class="reply">
+                              <p class="comment-type heading"><span>Author Comment</span></p>
+                              <div class="comment-inner">
+                                <aside class="meta">
+                                  <address class="author">
+                                    by: <a href="http://www.experts-exchange.com/members/alainbryden.html">alainbryden</a>
+                                  </address>
+                                  <span class="asked"> on 2012-01-13 at 08:07:38</span><span class="id"><a href="http://www.experts-exchange.com/Software/Office_Productivity/Office_Suites/MS_Office/Excel/A_1756-A-VBA-Progress-Bar-for-Excel-and-Other-Microsoft-Apps.html#c34526" rel="nofollow">ID: 34526</a></span>
+                                </aside>
+                                <div class="3751703 avatar avatarS">
+                                  <img alt="" src="./A VBA Progress Bar for Excel and Other Microsoft Apps._files/1b61163d-5c6c-4815-b6bc-81aaa423ea15.png">
+                                  <div class="memberSummary hidden"></div>
+                                  <script type="text/javascript">
+                                    jqOn('.avatarS.3751703 img','click',function(e){jqAsyncPost('.avatar.3751703 .memberSummary','/async/avatarSummary.async',[{name:'asid',value:''},{name:'iasid',value:''},{name:'componentHtmlId',value:''},{name:'msaid',value:'3751703'},{name:'avatarAsync',value:'true'}]);jqHide('.memberSummary');jqShow(jqObject(this).siblings('.memberSummary'));jqOne(document,'click',function(e){if(!$(e.target).is('.avatar.3751703 img') && e.button != -1){jqHide('.avatar.3751703 .memberSummary');}});return false;});
+                                  </script>
+                                </div>
+                                <div class="content btf-content">
+                                  <div class="first">
+                                    Sure thing:<br>
+                                    <br>
+                                    
+                                  </div>
+                                  <div class="attachment embedded">
+                                    <div class="snippet">
+                                      <div>
+                                        <pre class="code"><code id="viewArticleCommentsInlineCode90-34526-1">If ( value mod X = 0 )
+    ...
+   value ++;</code>
+                                        </pre>
+                                        <pre class="line-numbers">1:
+2:
+3:
+</pre>
+                                      </div>
+                                    </div>
+                                    <p class="buttons"><a href="http://www.experts-exchange.com/Software/Office_Productivity/Office_Suites/MS_Office/Excel/A_1756-A-VBA-Progress-Bar-for-Excel-and-Other-Microsoft-Apps.html#" class="button alt copy buttonsInline90-34526-1"><span>Select all</span></a><a href="http://www.experts-exchange.com/viewCodeSnippet.jsp?refID=34526&rtid=90&icsi=1" rel="nofollow" target="_blank" class="button alt blank"><span>Open in new window</span></a></p>
+                                    <script type="text/javascript">
+                                      jqBind('#viewArticleComments .buttonsInline90-34526-1','click',function(e){selectElementById('viewArticleCommentsInlineCode90-34526-1');return false;});
+                                    </script>
+                                  </div>
+                                  <div class="last">
+                                    <br>
+                                    <br>
+                                    This is a common way to execute an operation only every X iterations of a loop. Updating the status bar isn't a hugely expensive operation - but if you're looping over relatively fast code thousands and thousands of times, it can quickly become the bottleneck - updating the status can make your process take much longer!<br>
+                                    <br>
+                                    The way to cut down on this overhead is to only update the status every thousand or so loops - just pick a number that gives you a good looking refresh rate, but one so needlessly fast that you're wasting computing power on invisible updates.<br>
+                                    <br>
+                                    MOD is a function which returns the remainder of an integer division. If you divide a number by 1000, the only time the result will be 0 is if the number is a multiple of 1000, so that's why the code will only get executed every 1000 loops.<br>
+                                    <br>
+                                    Hope that helps.
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </article>
+                          <article class="comment expert-comment" id="c53759">
+                            <div class="reply">
+                              <p class="comment-type heading"><span>Expert Comment</span></p>
+                              <div class="comment-inner">
+                                <aside class="meta">
+                                  <address class="author">
+                                    by: <a href="http://www.experts-exchange.com/members/Rayne.html">Rayne</a>
+                                  </address>
+                                  <span class="asked"> on 2012-05-14 at 12:14:49</span><span class="id"><a href="http://www.experts-exchange.com/Software/Office_Productivity/Office_Suites/MS_Office/Excel/A_1756-A-VBA-Progress-Bar-for-Excel-and-Other-Microsoft-Apps.html#c53759" rel="nofollow">ID: 53759</a></span>
+                                </aside>
+                                <div class="3929149 avatar avatarS">
+                                  <img alt="" src="./A VBA Progress Bar for Excel and Other Microsoft Apps._files/4bb38714-1f71-4b0a-a375-cb606269295f.png">
+                                  <div class="memberSummary hidden"></div>
+                                  <script type="text/javascript">
+                                    jqOn('.avatarS.3929149 img','click',function(e){jqAsyncPost('.avatar.3929149 .memberSummary','/async/avatarSummary.async',[{name:'asid',value:''},{name:'iasid',value:''},{name:'componentHtmlId',value:''},{name:'msaid',value:'3929149'},{name:'avatarAsync',value:'true'}]);jqHide('.memberSummary');jqShow(jqObject(this).siblings('.memberSummary'));jqOne(document,'click',function(e){if(!$(e.target).is('.avatar.3929149 img') && e.button != -1){jqHide('.avatar.3929149 .memberSummary');}});return false;});
+                                  </script>
+                                </div>
+                                <div class="content btf-content">
+                                  <div class="first last">
+                                    Thank you
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </article>
+                          <article class="comment expert-comment" id="c87551">
+                            <div class="reply">
+                              <p class="comment-type heading"><span>Expert Comment</span></p>
+                              <div class="comment-inner">
+                                <aside class="meta">
+                                  <address class="author">
+                                    by: <a href="http://www.experts-exchange.com/members/abys757.html">abys757</a>
+                                  </address>
+                                  <span class="asked"> on 2013-05-10 at 11:28:29</span><span class="id"><a href="http://www.experts-exchange.com/Software/Office_Productivity/Office_Suites/MS_Office/Excel/A_1756-A-VBA-Progress-Bar-for-Excel-and-Other-Microsoft-Apps.html#c87551" rel="nofollow">ID: 87551</a></span>
+                                </aside>
+                                <div class="4647185 avatar avatarS">
+                                  <img alt="" src="./A VBA Progress Bar for Excel and Other Microsoft Apps._files/a42d95bc-a93f-42d3-b157-f23142a990f3.png">
+                                  <div class="memberSummary hidden"></div>
+                                  <script type="text/javascript">
+                                    jqOn('.avatarS.4647185 img','click',function(e){jqAsyncPost('.avatar.4647185 .memberSummary','/async/avatarSummary.async',[{name:'asid',value:''},{name:'iasid',value:''},{name:'componentHtmlId',value:''},{name:'msaid',value:'4647185'},{name:'avatarAsync',value:'true'}]);jqHide('.memberSummary');jqShow(jqObject(this).siblings('.memberSummary'));jqOne(document,'click',function(e){if(!$(e.target).is('.avatar.4647185 img') && e.button != -1){jqHide('.avatar.4647185 .memberSummary');}});return false;});
+                                  </script>
+                                </div>
+                                <div class="content btf-content">
+                                  <div class="first">
+                                    alainbryden<br>
+                                    <br>
+                                    1st GREAT WORK! &nbsp;I've played with your progress bar within your sample workbook but is there a way you could assist me with the following code below. &nbsp;I'm not an expert with VBA &nbsp;(still have my training wheels on). &nbsp;<br>
+                                    <br>
+                                    I have a code that opens another workbook, copies data from the newly opened workbook and pastes it into the original workbook, then exports the data into Access for storage. <br>
+                                    <br>
+                                    
+                                  </div>
+                                  <div class="attachment embedded">
+                                    <div class="snippet">
+                                      <div>
+                                        <pre class="code"><code id="viewArticleCommentsInlineCode90-87551-1">Option Explicit
+
+Function GetData()
+     
+    Dim MasterWB As Workbook
+    Dim ws1 As Worksheet
+    Dim ws2 As Worksheet
+    Dim loEndUserTable As ListObject
+    Dim loMasterTable As ListObject
+    Dim rngIn As Range
+    Dim rngOut As Range
+    Dim AccDatabase As Object
+    Dim FilePath As String
+
+
+
+'Open Master Workbook to update Manager's reports********************************************************************************
+'*************************************************************************************************************
+        
+        'Message Box to Inform End User update is about to occur
+        MsgBox "Please wait while the latest available data is retrieved.  This will take a few  moments.  Thank you for your patience"
+       
+        Application.Workbooks.Open FileName:="T:\ErrorData\Reporting_Analysis\CLC Productivity\Roaming\RoamingDataBackOffice.xlsm"
+
+        With Application
+        
+            .ScreenUpdating = False
+            .DisplayAlerts = False
+            
+        End With
+        
+        'set Master Workbook
+        Set MasterWB = Application.Workbooks("RoamingDataBackOffice.xlsm")
+
+'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ BELOW IS THE COPY FROM WORKBOOK TO WORKBOOK CODE ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        
+'****************************************************************************************************************************************
+'****************************************************************************************************************************************
+'AAR **************************************************************************************************************
+
+    
+    'Set ThisWorkbook = Application.Workbooks
+    Set ws1 = MasterWB.Sheets("AAR")
+     
+    Set loEndUserTable = ws1.ListObjects("AARTracker")
+    Set rngIn = loEndUserTable.DataBodyRange
+    
+    ' only do it if there are rows in the table
+    If Not rngIn Is Nothing Then
+    
+
+        Set ws2 = ThisWorkbook.Worksheets("AAR")
+    
+        Set loMasterTable = ws2.ListObjects("AARTracker")
+        If loMasterTable.DataBodyRange Is Nothing Then
+            ' if no rows yet added to master use the header range
+            Set rngOut = loMasterTable.HeaderRowRange
+        Else
+            Set rngOut = loMasterTable.DataBodyRange
+        End If
+        
+        ' move the range down to the first empty row in the master table,
+        ' and resize it to be the same as the input range
+        Set rngOut = rngOut.Offset(rngOut.Rows.Count, 0). _
+            Resize(rngIn.Rows.Count, rngIn.Columns.Count)
+    
+        rngIn.Copy
+        rngOut.PasteSpecial xlPasteValues
+        
+        
+        ' now delete all rows from the input table
+        loEndUserTable.DataBodyRange.EntireRow.Delete
+        
+    End If
+             
+'****************************************************************************************************************************************
+'****************************************************************************************************************************************
+'SWAC ***********************************************************************************************************
+
+    
+     
+    'Set ThisWorkbook = Application.Workbooks("MPT_EndUser_revised.xlsx")
+    Set ws1 = MasterWB.Sheets("Swac")
+     
+    Set loEndUserTable = ws1.ListObjects("SwacTracker")
+    Set rngIn = loEndUserTable.DataBodyRange
+    
+    ' only do it if there are rows in the table
+    If Not rngIn Is Nothing Then
+    
+
+        Set ws2 = ThisWorkbook.Sheets("Swac")
+    
+        Set loMasterTable = ws2.ListObjects("SwacTracker")
+        If loMasterTable.DataBodyRange Is Nothing Then
+            ' if no rows yet added to master use the header range
+            Set rngOut = loMasterTable.HeaderRowRange
+        Else
+            Set rngOut = loMasterTable.DataBodyRange
+        End If
+        
+        ' move the range down to the first empty row in the master table,
+        ' and resize it to be the same as the input range
+        Set rngOut = rngOut.Offset(rngOut.Rows.Count, 0). _
+            Resize(rngIn.Rows.Count, rngIn.Columns.Count)
+    
+        rngIn.Copy
+        rngOut.PasteSpecial xlPasteValues
+
+        ' now delete all rows from the input table
+        loEndUserTable.DataBodyRange.EntireRow.Delete
+
+    End If
+ 
+'****************************************************************************************************************************************
+'****************************************************************************************************************************************
+'Spanish Tracker***********************************************************************************************************
+
+  
+     
+    'Set ThisWorkbook = Application.Workbooks("MPT_EndUser_revised.xlsx")
+    Set ws1 = MasterWB.Sheets("Spanish Tracker")
+     
+    Set loEndUserTable = ws1.ListObjects("SpanishTracker")
+    Set rngIn = loEndUserTable.DataBodyRange
+    
+    ' only do it if there are rows in the table
+    If Not rngIn Is Nothing Then
+    
+
+        Set ws2 = ThisWorkbook.Sheets("Spanish Tracker")
+    
+        Set loMasterTable = ws2.ListObjects("SpanishTracker")
+        If loMasterTable.DataBodyRange Is Nothing Then
+            ' if no rows yet added to master use the header range
+            Set rngOut = loMasterTable.HeaderRowRange
+        Else
+            Set rngOut = loMasterTable.DataBodyRange
+        End If
+        
+        ' move the range down to the first empty row in the master table,
+        ' and resize it to be the same as the input range
+        Set rngOut = rngOut.Offset(rngOut.Rows.Count, 0). _
+            Resize(rngIn.Rows.Count, rngIn.Columns.Count)
+    
+        rngIn.Copy
+        rngOut.PasteSpecial xlPasteValues
+
+        ' now delete all rows from the input table
+        loEndUserTable.DataBodyRange.EntireRow.Delete
+
+End If
+  
+'****************************************************************************************************************************************
+'****************************************************************************************************************************************
+'Credit Refresh***********************************************************************************************************
+
+    
+     
+    'Set ThisWorkbook = Application.Workbooks("MPT_EndUser_revised.xlsx")
+    Set ws1 = MasterWB.Sheets("Credit Refresh Tracker")
+     
+    Set loEndUserTable = ws1.ListObjects("creditRefreshTracker")
+    Set rngIn = loEndUserTable.DataBodyRange
+    
+    ' only do it if there are rows in the table
+    If Not rngIn Is Nothing Then
+    
+
+        Set ws2 = ThisWorkbook.Sheets("Credit Refresh Tracker")
+    
+        Set loMasterTable = ws2.ListObjects("creditRefreshTracker")
+        If loMasterTable.DataBodyRange Is Nothing Then
+            ' if no rows yet added to master use the header range
+            Set rngOut = loMasterTable.HeaderRowRange
+        Else
+            Set rngOut = loMasterTable.DataBodyRange
+        End If
+        
+        ' move the range down to the first empty row in the master table,
+        ' and resize it to be the same as the input range
+        Set rngOut = rngOut.Offset(rngOut.Rows.Count, 0). _
+            Resize(rngIn.Rows.Count, rngIn.Columns.Count)
+    
+        rngIn.Copy
+        rngOut.PasteSpecial xlPasteValues
+        
+        
+        ' now delete all rows from the input table
+        loEndUserTable.DataBodyRange.EntireRow.Delete
+
+    End If
+
+    
+
+'****************************************************************************************************************************************
+'****************************************************************************************************************************************
+'Cancellation ***********************************************************************************************************
+
+    
+     
+    'Set ThisWorkbook = Application.Workbooks("MPT_EndUser_revised.xlsx")
+    Set ws1 = MasterWB.Sheets("Cancellation Request")
+     
+    Set loEndUserTable = ws1.ListObjects("Cancellation")
+    Set rngIn = loEndUserTable.DataBodyRange
+    
+    ' only do it if there are rows in the table
+    If Not rngIn Is Nothing Then
+    
+
+        Set ws2 = ThisWorkbook.Sheets("Cancellation Request")
+    
+        Set loMasterTable = ws2.ListObjects("Cancellation")
+        If loMasterTable.DataBodyRange Is Nothing Then
+            ' if no rows yet added to master use the header range
+            Set rngOut = loMasterTable.HeaderRowRange
+        Else
+            Set rngOut = loMasterTable.DataBodyRange
+        End If
+        
+        ' move the range down to the first empty row in the master table,
+        ' and resize it to be the same as the input range
+        Set rngOut = rngOut.Offset(rngOut.Rows.Count, 0). _
+            Resize(rngIn.Rows.Count, rngIn.Columns.Count)
+    
+        rngIn.Copy
+        rngOut.PasteSpecial xlPasteValues
+        
+        
+        ' now delete all rows from the input table
+        loEndUserTable.DataBodyRange.EntireRow.Delete
+
+    End If
+
+'****************************************************************************************************************************************
+'****************************************************************************************************************************************
+'Escalations***********************************************************************************************************
+
+    
+     
+    'Set ThisWorkbook = Application.Workbooks("MPT_EndUser_revised.xlsx")
+    Set ws1 = MasterWB.Sheets("Escalations")
+     
+    Set loEndUserTable = ws1.ListObjects("EscTracker")
+    Set rngIn = loEndUserTable.DataBodyRange
+    
+    ' only do it if there are rows in the table
+    If Not rngIn Is Nothing Then
+    
+
+        Set ws2 = ThisWorkbook.Sheets("Escalations")
+    
+        Set loMasterTable = ws2.ListObjects("EscTracker")
+        If loMasterTable.DataBodyRange Is Nothing Then
+            ' if no rows yet added to master use the header range
+            Set rngOut = loMasterTable.HeaderRowRange
+        Else
+            Set rngOut = loMasterTable.DataBodyRange
+        End If
+        
+        ' move the range down to the first empty row in the master table,
+        ' and resize it to be the same as the input range
+        Set rngOut = rngOut.Offset(rngOut.Rows.Count, 0). _
+            Resize(rngIn.Rows.Count, rngIn.Columns.Count)
+    
+        rngIn.Copy
+        rngOut.PasteSpecial xlPasteValues
+        
+        
+        ' now delete all rows from the input table
+        loEndUserTable.DataBodyRange.EntireRow.Delete
+
+    End If
+
+'~~~~~~~~~SAVES Report Workbook, Exports to Access, and then Closes rawData workbook aka MasterWB ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+       
+       'saves source workbook info
+        ThisWorkbook.Save
+
+        'export newly retrieved data to access database
+        
+        Call ExportToAccess
+        
+        'save raw data workbook and close
+        MasterWB.Save
+        MasterWB.Close xlDoNotSaveChanges
+        
+        With Application
+        
+            .ScreenUpdating = True
+            .DisplayAlerts = True
+        End With
+        
+        'Message Box to Inform End User update was successful
+        MsgBox "Thank You.  Your DATA Transferred Successfully.  You may now view the Roaming Backoffice Report."
+            
+
+End Function</code>
+                                        </pre>
+                                        <pre class="line-numbers">1:
+2:
+3:
+4:
+5:
+6:
+7:
+8:
+9:
+10:
+11:
+12:
+13:
+14:
+15:
+16:
+17:
+18:
+19:
+20:
+21:
+22:
+23:
+24:
+25:
+26:
+27:
+28:
+29:
+30:
+31:
+32:
+33:
+34:
+35:
+36:
+37:
+38:
+39:
+40:
+41:
+42:
+43:
+44:
+45:
+46:
+47:
+48:
+49:
+50:
+51:
+52:
+53:
+54:
+55:
+56:
+57:
+58:
+59:
+60:
+61:
+62:
+63:
+64:
+65:
+66:
+67:
+68:
+69:
+70:
+71:
+72:
+73:
+74:
+75:
+76:
+77:
+78:
+79:
+80:
+81:
+82:
+83:
+84:
+85:
+86:
+87:
+88:
+89:
+90:
+91:
+92:
+93:
+94:
+95:
+96:
+97:
+98:
+99:
+100:
+101:
+102:
+103:
+104:
+105:
+106:
+107:
+108:
+109:
+110:
+111:
+112:
+113:
+114:
+115:
+116:
+117:
+118:
+119:
+120:
+121:
+122:
+123:
+124:
+125:
+126:
+127:
+128:
+129:
+130:
+131:
+132:
+133:
+134:
+135:
+136:
+137:
+138:
+139:
+140:
+141:
+142:
+143:
+144:
+145:
+146:
+147:
+148:
+149:
+150:
+151:
+152:
+153:
+154:
+155:
+156:
+157:
+158:
+159:
+160:
+161:
+162:
+163:
+164:
+165:
+166:
+167:
+168:
+169:
+170:
+171:
+172:
+173:
+174:
+175:
+176:
+177:
+178:
+179:
+180:
+181:
+182:
+183:
+184:
+185:
+186:
+187:
+188:
+189:
+190:
+191:
+192:
+193:
+194:
+195:
+196:
+197:
+198:
+199:
+200:
+201:
+202:
+203:
+204:
+205:
+206:
+207:
+208:
+209:
+210:
+211:
+212:
+213:
+214:
+215:
+216:
+217:
+218:
+219:
+220:
+221:
+222:
+223:
+224:
+225:
+226:
+227:
+228:
+229:
+230:
+231:
+232:
+233:
+234:
+235:
+236:
+237:
+238:
+239:
+240:
+241:
+242:
+243:
+244:
+245:
+246:
+247:
+248:
+249:
+250:
+251:
+252:
+253:
+254:
+255:
+256:
+257:
+258:
+259:
+260:
+261:
+262:
+263:
+264:
+265:
+266:
+267:
+268:
+269:
+270:
+271:
+272:
+273:
+274:
+275:
+276:
+277:
+278:
+279:
+280:
+281:
+282:
+283:
+284:
+285:
+286:
+287:
+288:
+289:
+290:
+291:
+292:
+293:
+294:
+295:
+296:
+297:
+298:
+299:
+300:
+301:
+</pre>
+                                      </div>
+                                    </div>
+                                    <p class="buttons"><a href="http://www.experts-exchange.com/Software/Office_Productivity/Office_Suites/MS_Office/Excel/A_1756-A-VBA-Progress-Bar-for-Excel-and-Other-Microsoft-Apps.html#" class="button alt copy buttonsInline90-87551-1"><span>Select all</span></a><a href="http://www.experts-exchange.com/viewCodeSnippet.jsp?refID=87551&rtid=90&icsi=1" rel="nofollow" target="_blank" class="button alt blank"><span>Open in new window</span></a></p>
+                                    <script type="text/javascript">
+                                      jqBind('#viewArticleComments .buttonsInline90-87551-1','click',function(e){selectElementById('viewArticleCommentsInlineCode90-87551-1');return false;});
+                                    </script>
+                                  </div>
+                                  <div class="last">
+                                    <br>
+                                    <br>
+                                    <i><b>My question is would I update the "progress bar" code to work with the vba shown above.</b></i><br>
+                                    <br>
+                                    I downloaded the example workbook, read through your article and for an expert it explains it well but I'm sort of lost because of my inexperience with loops and setting MIN and MAX values for iterations. ((O_O))<br>
+                                    <br>
+                                    Thank you in advance! &nbsp;:)
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </article>
+                          <article class="comment author-comment" id="c87608">
+                            <div class="reply">
+                              <p class="comment-type heading"><span>Author Comment</span></p>
+                              <div class="comment-inner">
+                                <aside class="meta">
+                                  <address class="author">
+                                    by: <a href="http://www.experts-exchange.com/members/alainbryden.html">alainbryden</a>
+                                  </address>
+                                  <span class="asked"> on 2013-05-11 at 03:01:28</span><span class="id"><a href="http://www.experts-exchange.com/Software/Office_Productivity/Office_Suites/MS_Office/Excel/A_1756-A-VBA-Progress-Bar-for-Excel-and-Other-Microsoft-Apps.html#c87608" rel="nofollow">ID: 87608</a></span>
+                                </aside>
+                                <div class="3751703 avatar avatarS">
+                                  <img alt="" src="./A VBA Progress Bar for Excel and Other Microsoft Apps._files/1b61163d-5c6c-4815-b6bc-81aaa423ea15.png">
+                                  <div class="memberSummary hidden"></div>
+                                  <script type="text/javascript">
+                                    jqOn('.avatarS.3751703 img','click',function(e){jqAsyncPost('.avatar.3751703 .memberSummary','/async/avatarSummary.async',[{name:'asid',value:''},{name:'iasid',value:''},{name:'componentHtmlId',value:''},{name:'msaid',value:'3751703'},{name:'avatarAsync',value:'true'}]);jqHide('.memberSummary');jqShow(jqObject(this).siblings('.memberSummary'));jqOne(document,'click',function(e){if(!$(e.target).is('.avatar.3751703 img') && e.button != -1){jqHide('.avatar.3751703 .memberSummary');}});return false;});
+                                  </script>
+                                </div>
+                                <div class="content btf-content">
+                                  <div class="first last">
+                                    Hi abys757,<br>
+                                    <br>
+                                    Your question is quite specific to your own situation and won't contribute to future readers, so what you should do is post a new question and reference this article and someone will assist you in exchange for points.
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </article>
+                          <article class="comment expert-comment" id="c87611">
+                            <div class="reply">
+                              <p class="comment-type heading"><span>Expert Comment</span></p>
+                              <div class="comment-inner">
+                                <aside class="meta">
+                                  <address class="author">
+                                    by: <a href="http://www.experts-exchange.com/members/abys757.html">abys757</a>
+                                  </address>
+                                  <span class="asked"> on 2013-05-11 at 04:29:58</span><span class="id"><a href="http://www.experts-exchange.com/Software/Office_Productivity/Office_Suites/MS_Office/Excel/A_1756-A-VBA-Progress-Bar-for-Excel-and-Other-Microsoft-Apps.html#c87611" rel="nofollow">ID: 87611</a></span>
+                                </aside>
+                                <div class="4647185 avatar avatarS">
+                                  <img alt="" src="./A VBA Progress Bar for Excel and Other Microsoft Apps._files/a42d95bc-a93f-42d3-b157-f23142a990f3.png">
+                                  <div class="memberSummary hidden"></div>
+                                  <script type="text/javascript">
+                                    jqOn('.avatarS.4647185 img','click',function(e){jqAsyncPost('.avatar.4647185 .memberSummary','/async/avatarSummary.async',[{name:'asid',value:''},{name:'iasid',value:''},{name:'componentHtmlId',value:''},{name:'msaid',value:'4647185'},{name:'avatarAsync',value:'true'}]);jqHide('.memberSummary');jqShow(jqObject(this).siblings('.memberSummary'));jqOne(document,'click',function(e){if(!$(e.target).is('.avatar.4647185 img') && e.button != -1){jqHide('.avatar.4647185 .memberSummary');}});return false;});
+                                  </script>
+                                </div>
+                                <div class="content btf-content">
+                                  <div class="first last">
+                                    Ok, thank you and again Great Work!
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </article>
+                          <article class="comment expert-comment" id="c89471">
+                            <div class="reply">
+                              <p class="comment-type heading"><span>Expert Comment</span></p>
+                              <div class="comment-inner">
+                                <aside class="meta">
+                                  <address class="author">
+                                    by: <a href="http://www.experts-exchange.com/members/steverrr.html">steverrr</a>
+                                  </address>
+                                  <span class="asked"> on 2013-06-06 at 13:51:42</span><span class="id"><a href="http://www.experts-exchange.com/Software/Office_Productivity/Office_Suites/MS_Office/Excel/A_1756-A-VBA-Progress-Bar-for-Excel-and-Other-Microsoft-Apps.html#c89471" rel="nofollow">ID: 89471</a></span>
+                                </aside>
+                                <div class="4988926 avatar avatarS">
+                                  <img alt="" src="./A VBA Progress Bar for Excel and Other Microsoft Apps._files/avatar-01-medium.gif">
+                                  <div class="memberSummary hidden"></div>
+                                  <script type="text/javascript">
+                                    jqOn('.avatarS.4988926 img','click',function(e){jqAsyncPost('.avatar.4988926 .memberSummary','/async/avatarSummary.async',[{name:'asid',value:''},{name:'iasid',value:''},{name:'componentHtmlId',value:''},{name:'msaid',value:'4988926'},{name:'avatarAsync',value:'true'}]);jqHide('.memberSummary');jqShow(jqObject(this).siblings('.memberSummary'));jqOne(document,'click',function(e){if(!$(e.target).is('.avatar.4988926 img') && e.button != -1){jqHide('.avatar.4988926 .memberSummary');}});return false;});
+                                  </script>
+                                </div>
+                                <div class="content btf-content">
+                                  <div class="first last">
+                                    Great job. I have been looking for this for years! Thank you
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </article>
+                          <article class="comment expert-comment last" id="c123114">
+                            <div class="reply">
+                              <p class="comment-type heading"><span>Expert Comment</span></p>
+                              <div class="comment-inner">
+                                <aside class="meta">
+                                  <address class="author">
+                                    by: <a href="http://www.experts-exchange.com/members/dEX2018.html">Wouter Duerinck</a>
+                                  </address>
+                                  <span class="asked"> on 2014-08-27 at 00:03:23</span><span class="id"><a href="http://www.experts-exchange.com/Software/Office_Productivity/Office_Suites/MS_Office/Excel/A_1756-A-VBA-Progress-Bar-for-Excel-and-Other-Microsoft-Apps.html#c123114" rel="nofollow">ID: 123114</a></span>
+                                </aside>
+                                <div class="6055502 avatar avatarS">
+                                  <img alt="" src="./A VBA Progress Bar for Excel and Other Microsoft Apps._files/avatar-01-medium.gif">
+                                  <div class="memberSummary hidden"></div>
+                                  <script type="text/javascript">
+                                    jqOn('.avatarS.6055502 img','click',function(e){jqAsyncPost('.avatar.6055502 .memberSummary','/async/avatarSummary.async',[{name:'asid',value:''},{name:'iasid',value:''},{name:'componentHtmlId',value:''},{name:'msaid',value:'6055502'},{name:'avatarAsync',value:'true'}]);jqHide('.memberSummary');jqShow(jqObject(this).siblings('.memberSummary'));jqOne(document,'click',function(e){if(!$(e.target).is('.avatar.6055502 img') && e.button != -1){jqHide('.avatar.6055502 .memberSummary');}});return false;});
+                                  </script>
+                                </div>
+                                <div class="content btf-content">
+                                  <div class="first last">
+                                    I've only seen this now. Seems very nice and will try to make it work for my tactical tools.<br>
+                                    <br>
+                                    1 comment, 1 question.<br>
+                                    <br>
+                                    Comment: instead of exporting and importing modules/forms you can simply drag and drop them from one workbook to the other.<br>
+                                    <br>
+                                    Question on your procedure 'wasteTime'. You declare "Dim diag As New ProgressDialogue" but I get a compile error on this: "user-defined type not defined." Is there a reference I need to add?
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </article>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="component headingComponent resourceHeading" id="headingComponent">
+                      <header class="head">
+                        <h2 class="title uiExpanded">Microsoft Excel Spreadsheet Software Resources</h2>
+                        <div class="ui-chrome"></div>
+                      </header>
+                    </div>
+                    <div class="component resourceCombo" id="resourceCombo">
+                      <div class="body">
+                        <div class="image" id="comboResource" style="visibility: visible; opacity: 1; display: block; position: relative; overflow: hidden; transition: height 0.05s ease-out, width 0.05s ease-out; -webkit-transition: height 0.05s ease-out, width 0.05s ease-out; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); height: 240px;">
+                          <div class="slide slide-one" data-slidr="one" style="display: block; visibility: visible; position: absolute; opacity: 1; z-index: 1; pointer-events: auto; backface-visibility: hidden; transform-style: preserve-3d; -webkit-animation: slidr-fade-in 0.4s ease-out;">
+                            <div class="content-block question ">
+                              <a href="http://www.experts-exchange.com/Software/Office_Productivity/Office_Suites/MS_Office/Excel/Q_28467004.html" title="Adding a new sheet to MS Excel web app"><span>Adding a new sheet to MS Excel web app</span></a>
+                            </div>
+                            <div class="content-block article premium-content">
+                              <a href="http://www.experts-exchange.com/Software/Office_Productivity/Office_Suites/MS_Office/Excel/A_8933-How-to-quickly-and-accurately-populate-Word-documents-with-Excel-data-charts-and-images-including-Automated-Bookmark-generation.html" class="premium-content" title="How to quickly and accurately populate Word documents with Excel data, charts, and images (including Automated Bookmark generation)"><span>How to quickly and accurately populate Word documents with Excel data, charts, and images (including Automated Bookmark generation)</span></a>
+                            </div>
+                            <div class="content-block static ">
+                              <div class="body">
+                                <a href="http://www.experts-exchange.com/askQuestion.jsp"><span> Ask a Question now</span></a>
+                              </div>
+                            </div>
+                            <div class="content-block question premium-content">
+                              <a href="http://www.experts-exchange.com/Software/Office_Productivity/Office_Suites/MS_Office/Excel/Q_28340847.html" class="premium-content" title="Using VBA to format a single data label in excel 2010 bar chart"><span>Using VBA to format a single data label in excel 2010 bar chart</span></a>
+                            </div>
+                            <div class="content-block question premium-content">
+                              <a href="http://www.experts-exchange.com/Software/Office_Productivity/Office_Suites/MS_Office/Excel/Q_28329610.html" class="premium-content" title="Write VBA code for one Excel workbook but avoid affecting other workbooks"><span>Write VBA code for one Excel workbook but avoid affecting other workbooks</span></a>
+                            </div>
+                          </div>
+                          <div class="slide slide-two" data-slidr="two" style="display: block; visibility: hidden; position: absolute; opacity: 0; z-index: 0; pointer-events: none; backface-visibility: hidden; transform-style: preserve-3d;">
+                            <div class="content-block question premium-content">
+                              <a href="http://www.experts-exchange.com/Software/Office_Productivity/Office_Suites/MS_Office/Excel/Q_28327184.html" class="premium-content" title="Prevent VBA written for one Excel workbook from affecting other workbooks"><span>Prevent VBA written for one Excel workbook from affecting other workbooks</span></a>
+                            </div>
+                            <div class="content-block article ">
+                              <a href="http://www.experts-exchange.com/Software/Office_Productivity/Office_Suites/MS_Office/Excel/A_11629-Inquire-Add-In-for-Excel-2013.html" title="Inquire Add-In for Excel 2013"><span>Inquire Add-In for Excel 2013</span></a>
+                            </div>
+                            <div class="content-block article premium-content">
+                              <a href="http://www.experts-exchange.com/Software/Office_Productivity/Office_Suites/MS_Office/Excel/A_8736-Improved-Move-Copy-Add-in-Replacement.html" class="premium-content" title="Improved? Move/Copy Add-in Replacement"><span>Improved? Move/Copy Add-in Replacement</span></a>
+                            </div>
+                            <div class="content-block video-micro-tutorial ">
+                              <img alt="" src="./A VBA Progress Bar for Excel and Other Microsoft Apps._files/2b7acb5c-f46f-4b6f-aedd-e12ff6d31798.jpeg"><a href="http://www.experts-exchange.com/Software/Office_Productivity/Office_Suites/MS_Office/Excel/VP_299.html" title="Data Validation in Excel"><span>Data Validation in Excel</span></a>
+                            </div>
+                            <div class="content-block question premium-content">
+                              <a href="http://www.experts-exchange.com/Software/Office_Productivity/Office_Suites/MS_Office/Excel/Q_28252722.html" class="premium-content" title="Chinese characters in Excel VBA"><span>Chinese characters in Excel VBA</span></a>
+                            </div>
+                          </div>
+                          <div class="slide slide-three" data-slidr="three" style="display: block; visibility: hidden; position: absolute; opacity: 0; z-index: 0; pointer-events: none; backface-visibility: hidden; transform-style: preserve-3d;">
+                            <div class="content-block question ">
+                              <a href="http://www.experts-exchange.com/Software/Office_Productivity/Office_Suites/MS_Office/Excel/Q_28461061.html" title="How to show filename in excel 2010 title bar"><span>How to show filename in excel 2010 title bar</span></a>
+                            </div>
+                            <div class="content-block question ">
+                              <a href="http://www.experts-exchange.com/Software/Office_Productivity/Office_Suites/MS_Office/Excel/Q_28456141.html" title="Excel VBA create subfolders"><span>Excel VBA create subfolders</span></a>
+                            </div>
+                            <div class="content-block article premium-content">
+                              <a href="http://www.experts-exchange.com/Software/Office_Productivity/Office_Suites/MS_Office/Excel/A_8269-Convert-between-Excel-file-formats-XLS-XLSX-XLSM-with-without-macro-option.html" class="premium-content" title="Convert between Excel file formats (.XLS, .XLSX, .XLSM) with/without macro option"><span>Convert between Excel file formats (.XLS, .XLSX, .XLSM) with/without macro option</span></a>
+                            </div>
+                            <div class="content-block article ">
+                              <a href="http://www.experts-exchange.com/Software/Office_Productivity/Office_Suites/MS_Office/Excel/A_11514-Excel-Under-the-Hood-MS-QUery-Data-Connections-Properties-Definition.html" title="Excel Under the Hood - MS QUery Data-Connections-Properties-Definition"><span>Excel Under the Hood - MS QUery Data-Connections-Propertie<wbr>s-Definiti<wbr>on</span></a>
+                            </div>
+                            <div class="content-block question premium-content">
+                              <a href="http://www.experts-exchange.com/Software/Office_Productivity/Office_Suites/MS_Office/Excel/Q_28125244.html" class="premium-content" title="Excel 2013 - progress bar"><span>Excel 2013 - progress bar</span></a>
+                            </div>
+                          </div>
+                        <aside id="comboResource-breadcrumbs" class="" style="opacity: 1; z-index: 3; pointer-events: none; visibility: visible; -webkit-animation: slidr-fade-in 0.4s ease-out;"><ul class="slidr-breadcrumbs"><li class="normal active" data-slidr-breadcrumbs="one"></li><li class="normal" data-slidr-breadcrumbs="two"></li><li class="normal" data-slidr-breadcrumbs="three"></li></ul></aside><aside id="comboResource-control" class="border breadcrumbs" style="opacity: 1; z-index: 2; visibility: visible; pointer-events: none; -webkit-animation: slidr-fade-in 0.4s ease-out;"><div class="slidr-control up disabled" data-slidr-control="up"></div><div class="slidr-control down disabled" data-slidr-control="down"></div><div class="slidr-control left disabled" data-slidr-control="left"></div><div class="slidr-control right" data-slidr-control="right"></div></aside></div>
+                        <script type="text/javascript">
+                          slidrInitialize ('comboResource')
+                        </script>
+                      </div>
+                    </div>
+                    <div class="component textComponent sign-up-free learn-more" id="textComponent-id7">
+                      <div class="body">
+                        <div class="section">
+                          <h2>Not finding the exact solution you need?<strong>Ask the experts for One-on-One help.</strong></h2>
+                          <p class="buttons">
+                            <a class="button confirm" href="http://www.experts-exchange.com/register.jsp?redirect=/Software/Office_Productivity/Office_Suites/MS_Office/Excel/A_1756-A-VBA-Progress-Bar-for-Excel-and-Other-Microsoft-Apps.html" target="_self"><span>Sign Up Free to Ask Your Question</span></a>
+                          </p>
+                          <p>30 day free trial. Cancel anytime.</p>
+                          <p class="how-it-works-btn">Learn More about How It Works</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="component adModel" id="adModel">
+                      <div class="body">
+                        <script async="async" src="./A VBA Progress Bar for Excel and Other Microsoft Apps._files/adsbygoogle.js" type="text/javascript"></script>
+                        <ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-7120314253074184" data-ad-slot="1406894958" data-adsbygoogle-status="done"><ins id="aswift_0_expand" style="display:inline-table;border:none;height:250px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent"><ins id="aswift_0_anchor" style="display:block;border:none;height:250px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent"><iframe width="300" height="250" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;"></iframe></ins></ins></ins>
+                        <script type="text/javascript">
+                          (adsbygoogle = window.adsbygoogle || []).push({});
+                        </script>
+                      </div>
+                    </div>
+                  </div>
+                  <span class="component textComponent" id="textComponent-id8">201405-LO-Art-001</span>
+                </div>
+              </div>
+              <div id="col2Wrap">
+                <div id="col2">
+                  <div class="component textComponent try-it-free" id="textComponent-id9">
+                    <div class="body">
+                      <div class="section">
+                        <h2>Experts Exchange powers the<br>growth and success of technology<br>professionals worldwide.</h2>
+                        <p class="buttons">
+                          <a class="button confirm" href="http://www.experts-exchange.com/register.jsp?redirect=/Software/Office_Productivity/Office_Suites/MS_Office/Excel/A_1756-A-VBA-Progress-Bar-for-Excel-and-Other-Microsoft-Apps.html" target="_self"><span>Try it Free</span></a>
+                        </p>
+                        <p>30 day free trial. Cancel anytime.</p>
+                        <p class="how-it-works-btn">Learn More about How It Works</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="component relatedContent" id="relatedContent">
+                    <div class="head">
+                      <h2 class="title">Related MS Excel Articles<span>Develop your expertise with tips, tricks and how to expert articles.</span></h2>
+                      <div class="ui-chrome"></div>
+                    </div>
+                    <div class="body">
+                      <div class="section">
+                        <div class="sort-options"></div>
+                        <div class="subsection">
+                          <div class="row-contents">
+                            <ol id="listContent">
+                              <li class="row-content odd first"><a href="http://www.experts-exchange.com/Software/Office_Productivity/Office_Suites/MS_Office/Excel/A_2415-Beginner's-Guide-to-Improving-the-Speed-and-Size-of-Excel-files.html" class="relatedContent1 relatedContentLink premium-content" title="Beginner&#39;s Guide to Improving the Speed and reducing the Size of Excel files."><span>Beginner's Guide to Improving the Speed and reducing the Size of Excel files.</span></a></li>
+                              <li class="row-content even"><a href="http://www.experts-exchange.com/Software/Office_Productivity/Office_Suites/MS_Office/Excel/A_5315-Dealing-with-unintended-Excel-Active-X-resizing-quirks-VBA-code-simulates-self-correction.html" class="relatedContent2 relatedContentLink premium-content" title="Dealing with unintended Excel Active-X resizing quirks (VBA code simulates &quot;self correction&quot;)"><span>Dealing with unintended Excel Active-X resizing quirks (VBA code simulates "self correction")</span></a></li>
+                              <li class="row-content odd"><a href="http://www.experts-exchange.com/Software/Office_Productivity/Office_Suites/MS_Office/Excel/A_11093-Documenting-changes-to-VB6-or-VBA-code.html" class="relatedContent3 relatedContentLink" title="Documenting changes to VB6 or VBA code"><span>Documenting changes to VB6 or VBA code</span></a></li>
+                              <li class="row-content even"><a href="http://www.experts-exchange.com/Software/Office_Productivity/Office_Suites/MS_Office/Excel/A_11513-Excel-MS-Query-Generalised-file-locations-is-hard-wiring-avoidable.html" class="relatedContent4 relatedContentLink premium-content" title="Excel - MS Query Generalised file locations - is hard wiring avoidable?"><span>Excel - MS Query Generalised file locations - is hard wiring avoidable?</span></a></li>
+                              <li class="row-content odd"><a href="http://www.experts-exchange.com/Software/Office_Productivity/Office_Suites/MS_Office/Excel/A_11490-Microsoft-Excel-SQL-Versus-VBA-an-instance-of-Turing-Completeness-A-K-A-Excel-Rows-to-Sheets.html" class="relatedContent5 relatedContentLink" title="Microsoft Excel SQL Versus VBA - an instance of Turing Completeness? A.K.A. Excel Rows to Sheets"><span>Microsoft Excel SQL Versus VBA - an instance of Turing Completeness? A.K.A. Excel Rows to Sheets</span></a></li>
+                              <li class="row-content even last"><a href="http://www.experts-exchange.com/Software/Office_Productivity/Office_Suites/MS_Office/Excel/A_3802-Parent-Class-Builder-Add-In-for-Microsoft-Excel.html" class="relatedContent6 relatedContentLink premium-content" title="Parent Class Builder Add-In for Microsoft Excel"><span>Parent Class Builder Add-In for Microsoft Excel</span></a></li>
+                            </ol>
+                          </div>
+                        </div>
+                        <script type="text/javascript">
+                          jqOn('#relatedContent .relatedContentLink','mouseup',function(e){if(jqGetAttribute(this,'href').indexOf('?related=1756') == -1){jqSetAttribute(this,'href',jqGetAttribute(this,'href') + '?related=1756');setTimeout(function(e){jqSetAttribute('#relatedContent .relatedContentLink','href',jqGetAttribute('#relatedContent .relatedContentLink','href').replace('?related=1756',''));}, 1000);}});jqOn('#relatedContent .relatedContentLink','click',function(e){if(e.which == 2 || (e.which == 1 && (e.metaKey || e.ctrlKey || e.shiftKey))){return true;}else{goToUrl(jqGetAttribute(this,'href'));}});
+                        </script>
+                      </div>
+                    </div>
+                  </div>
+                  <span class="component anchorButton" id="anchorButton">
+                  <div class="body">
+                    <a href="http://www.experts-exchange.com/Software/Office_Productivity/Office_Suites/MS_Office/Excel/All_Article_Activity.html" target="_self" class="button medium confirm"><span>See more articles</span></a>
+                  </div>
+                  </span>
+                  <div class="component emailColl altOverride" id="emailColl">
+                    <div class="body">
+                      <div class="section">
+                        <div class="never-fix-computer"> <div class="section">     <div class="body"> <h4>Download the Experts Exchange white paper</h4> <h2>WARNING: Why You Should Never Fix a Computer for Free</h2> <p>Have you fallen into the classic trap of offering pro-bono service to friends or family? Learn why working for free may be selling you short.</p>
+                        <form method="post" id="emailColl-emailForm1409779273238">
+                          <div class="" id="emailColl-emailForm1409779273238-emailAddress-row">
+                            <div class="input text">
+                              <label for="emailColl-emailForm1409779273238-emailAddress">Email Address</label>
+                              <div>
+                                <input maxlength="128" name="emailAddress" type="text" autocomplete="true" id="emailColl-emailForm1409779273238-emailAddress">
+                              </div>
+                            </div>
+                            <p class="note">We will never share this with anyone.</p>
+                          </div>
+                          <script type="text/javascript">
+                            jqOn('#emailColl-emailForm1409779273238-emailAddress','blur',function(e){jqPost('/async/harvesterValidator.jsp',[{name:'emailAddress',value:jqGetValue('#emailColl-emailForm1409779273238-emailAddress')},{name:'req',value:'true'},{name:'htid',value:'1'},{name:'asid',value:'emailColl-emailForm1409779273238-emailAddress-row'},{name:'iasid',value:'emailColl-emailForm1409779273238-emailAddress-row'}],function(e){var i = e.indexOf('\n'); jqAddClass(jqRemoveClass(jqRemoveClass(jqRemoveClass(jqRemoveClass('#emailColl-emailForm1409779273238-emailAddress-row',''),'focused'),'valid'),'invalid'),e.slice(0, i));jqSetHtml('#emailColl-emailForm1409779273238-emailAddress-row .note',e.slice(i+1));});return true;});
+                          </script>
+                          <button name="formSubmitMarketoEmailCollectorModel" type="submit" class="button submit"><span>Download Now</span></button>
+                        </form>
+                        <script type="text/javascript">
+                          jqBind('#emailColl-emailForm1409779273238','submit',function(e){if(submitOnce('#emailColl-emailForm1409779273238','#emailColl-emailForm1409779273238') == true){jqAsyncPost('#emailColl','/async/emailCollector.jsp',jqAddToFormJson('#emailColl-emailForm1409779273238',[{name:'asid',value:'emailColl'},{name:'iasid',value:'emailColl'},{name:'componentHtmlId',value:'emailColl'},{name:'asyncAction',value:'SUBMIT'},{name:'formSubmitMarketoEmailCollectorModel',value:''}]));}return false;});
+                        </script>
+                        </div></div></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="component adModel stlco ad-160x600 component-alt-bg" id="adModel-id2">
+                    <div class="body">
+                      <script async="async" src="./A VBA Progress Bar for Excel and Other Microsoft Apps._files/adsbygoogle.js" type="text/javascript"></script>
+                      <ins class="adsbygoogle" style="display:inline-block;width:160px;height:600px" data-ad-client="ca-pub-7120314253074184" data-ad-slot="7878904158" data-adsbygoogle-status="done"><ins id="aswift_1_expand" style="display:inline-table;border:none;height:600px;margin:0;padding:0;position:relative;visibility:visible;width:160px;background-color:transparent"><ins id="aswift_1_anchor" style="display:block;border:none;height:600px;margin:0;padding:0;position:relative;visibility:visible;width:160px;background-color:transparent"><iframe width="160" height="600" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_1" name="aswift_1" style="left:0;position:absolute;top:0;"></iframe></ins></ins></ins>
+                      <script type="text/javascript">
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                      </script>
+                    </div>
+                  </div>
+                  <div class="component relatedContent related-solutions" id="relatedContent-id2">
+                    <div class="head">
+                      <h2 class="title">Related Solutions <span>Need more help?<br>We have over 3 million solutions here.</span></h2>
+                      <div class="ui-chrome"></div>
+                    </div>
+                    <div class="body">
+                      <div class="section">
+                        <div class="sort-options"></div>
+                        <div class="subsection">
+                          <div class="row-contents">
+                            <ol id="listContent">
+                              <li class="row-content odd first"><a href="http://www.experts-exchange.com/Software/Office_Productivity/Office_Suites/MS_Office/Excel/Q_28452671.html" class="relatedContent1 relatedContentLink" title="Excel 2007 lost vertical scroll bar"><span>Excel 2007 lost vertical scroll bar</span></a></li>
+                              <li class="row-content even"><a href="http://www.experts-exchange.com/Software/Office_Productivity/Office_Suites/MS_Office/Excel/Q_28435587.html" class="relatedContent2 relatedContentLink" title="Excel VBA"><span>Excel VBA</span></a></li>
+                              <li class="row-content odd"><a href="http://www.experts-exchange.com/Software/Office_Productivity/Office_Suites/MS_Office/Excel/Q_27802052.html" class="relatedContent3 relatedContentLink premium-content" title="Excel VBA progress bar"><span>Excel VBA progress bar</span></a></li>
+                              <li class="row-content even"><a href="http://www.experts-exchange.com/Software/Office_Productivity/Office_Suites/MS_Office/Excel/Q_28390566.html" class="relatedContent4 relatedContentLink premium-content" title="IS it possible to have dynamic Menus in Excel 2010 using VBA like we do have in other Technologies ?"><span>IS it possible to have dynamic Menus in Excel 2010 using VBA like we do have in other Technologi…</span></a></li>
+                              <li class="row-content odd"><a href="http://www.experts-exchange.com/Software/Office_Productivity/Office_Suites/MS_Office/Excel/Q_28097424.html" class="relatedContent5 relatedContentLink premium-content" title="PROGRESS BAR IN A USER FORM IN EXCEL VBA"><span>PROGRESS BAR IN A USER FORM IN EXCEL VBA</span></a></li>
+                              <li class="row-content even last"><a href="http://www.experts-exchange.com/Software/Office_Productivity/Office_Suites/MS_Office/Excel/Q_27842083.html" class="relatedContent6 relatedContentLink premium-content" title="Progress Bar Without Cancel Button"><span>Progress Bar Without Cancel Button</span></a></li>
+                            </ol>
+                          </div>
+                        </div>
+                        <script type="text/javascript">
+                          jqOn('#relatedContent-id2 .relatedContentLink','mouseup',function(e){if(jqGetAttribute(this,'href').indexOf('?related=1756') == -1){jqSetAttribute(this,'href',jqGetAttribute(this,'href') + '?related=1756');setTimeout(function(e){jqSetAttribute('#relatedContent-id2 .relatedContentLink','href',jqGetAttribute('#relatedContent-id2 .relatedContentLink','href').replace('?related=1756',''));}, 1000);}});jqOn('#relatedContent-id2 .relatedContentLink','click',function(e){if(e.which == 2 || (e.which == 1 && (e.metaKey || e.ctrlKey || e.shiftKey))){return true;}else{goToUrl(jqGetAttribute(this,'href'));}});
+                        </script>
+                      </div>
+                    </div>
+                  </div>
+                  <span class="component anchorButton" id="anchorButton-id2">
+                  <div class="body">
+                    <a href="http://www.experts-exchange.com/search.jsp" target="_self" class="button medium confirm"><span>Search more solutions</span></a>
+                  </div>
+                  </span>
+                  <div class="component videoPresContent relatedContent" id="videoPresContent">
+                    <div class="head">
+                      <h2 class="title"> Top Video Tutorials<span>Develop your skills with step by step technical training tutorials.</span></h2>
+                      <div class="ui-chrome"></div>
+                    </div>
+                    <div class="body">
+                      <div class="">
+                        <div class="section section-1 first">
+                          <a href="http://www.experts-exchange.com/Software/Server_Software/Email_Servers/Exchange/VP_197.html" class="thumbnail"><img alt="Exchange 2013: Creating a Resource Mailbox" src="./A VBA Progress Bar for Excel and Other Microsoft Apps._files/090c63b8-27d8-4271-9e31-950dacb9c01e.jpeg"></a><a href="http://www.experts-exchange.com/Software/Server_Software/Email_Servers/Exchange/VP_197.html" class="vpContent1" title="Exchange 2013: Creating a Resource Mailbox"><span>Exchange 2013: Creating a Resource Mailbox</span></a>
+                        </div>
+                        <div class="section section-2">
+                          <a href="http://www.experts-exchange.com/Web_Development/Software/VP_520.html" class="thumbnail"><img alt="Setting Up Basic WordPress SEO" src="./A VBA Progress Bar for Excel and Other Microsoft Apps._files/4fd04246-fa0b-46f5-9877-61b2613d5f61.jpeg"></a><a href="http://www.experts-exchange.com/Web_Development/Software/VP_520.html" class="vpContent2" title="Setting Up Basic WordPress SEO"><span>Setting Up Basic WordPress SEO</span></a>
+                        </div>
+                        <div class="section section-3">
+                          <a href="http://www.experts-exchange.com/Programming/Languages/Scripting/Python/VP_191.html" class="thumbnail"><img alt="Python Programming: If Statements" src="./A VBA Progress Bar for Excel and Other Microsoft Apps._files/2f959f67-8e0e-45db-8309-baa4b91e8800.jpeg"></a><a href="http://www.experts-exchange.com/Programming/Languages/Scripting/Python/VP_191.html" class="vpContent3" title="Python Programming: If Statements"><span>Python Programming: If Statements</span></a>
+                        </div>
+                        <div class="section section-4">
+                          <a href="http://www.experts-exchange.com/Software/VMWare/VP_161.html" class="thumbnail"><img alt="How to Create a Blueprint within VMware vCloud Automation Center" src="./A VBA Progress Bar for Excel and Other Microsoft Apps._files/0c628495-7421-4b2f-ad52-f75b3238489c.jpeg"></a><a href="http://www.experts-exchange.com/Software/VMWare/VP_161.html" class="vpContent4" title="How to Create a Blueprint within VMware vCloud Automation Center"><span>How to Create a Blueprint within VMware vCloud Automatio…</span></a>
+                        </div>
+                        <div class="section section-5 last">
+                          <a href="http://www.experts-exchange.com/Networking/Web_Computing/VP_627.html" class="thumbnail"><img alt="Connect to Amazon EC2 Instance Using PuTTY" src="./A VBA Progress Bar for Excel and Other Microsoft Apps._files/4fd83a0f-29f9-467d-9613-6b2699b379be.jpeg"></a><a href="http://www.experts-exchange.com/Networking/Web_Computing/VP_627.html" class="vpContent5" title="Connect to Amazon EC2 Instance Using PuTTY"><span>Connect to Amazon EC2 Instance Using PuTTY</span></a>
+                        </div>
+                        <a href="http://www.experts-exchange.com/videos/" class="vpContentMore" title="See more video tutorials"><span>See more video tutorials</span></a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="component textComponent" id="textComponent-id10">
+                    <div class="body">
+                      <div class="section">
+                        <script type="text/javascript">
+                        $(document).ready(function() {
+                          $("#col1").addClass("fix-for-ie8").removeClass("fix-for-ie8");
+                        });
+                        </script>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="flex3"></div>
+        </div>
+        <div class="component textComponent" id="textComponent-id11">
+          <div class="body">
+            <div class="section">
+              <div id="overlay"></div>
+              
+              <div id="how-it-works-popup" class="overlay-content">
+                <div class="body">
+                  <div class="close"></div>
+                  <h2 class="title">Experts Exchange powers the growth and success<br>of technology professionals worldwide.</h2>
+                  <ul>
+                    <li>
+                      <h2>Solve</h2>
+                      <p>Experts Exchange is the tech professional’s trusted, on-demand resource for solving difficult problems, making informed decisions, and delivering excellent solutions.</p>
+                    </li>
+                    <li>
+                      <h2>Learn</h2>
+                      <p>With unparalleled access to technical experts, verified real-world solutions, and diverse educational content, Experts Exchange enables personalized development of technology skills.</p>
+                    </li>
+                    <li>
+                      <h2>Network</h2>
+                      <p>Experts Exchange gives you the professional exposure and valued relationships key to building the career you want.</p>
+                    </li>
+                  </ul>
+                  <div class="cta">
+                    <h2>Join the Network Today</h2>
+                    <p class="buttons">
+                      <a class="button submit" href="http://www.experts-exchange.com/plansAndPricing.jsp?redirect=/Software/Office_Productivity/Office_Suites/MS_Office/Excel/A_1756-A-VBA-Progress-Bar-for-Excel-and-Other-Microsoft-Apps.html" target="_self"><span>See Plans and Pricing</span></a>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+          </div>
+        </div>
+        <div class="component textComponent" id="textComponent-id12">
+          <div class="body">
+            <div class="section">
+              <script type="text/javascript">
+              
+              /* How it Works Popup */
+              
+              $(".how-it-works-btn").click(function() {
+                $("#overlay, #how-it-works-popup").show().addClass("visible");
+              });
+              $("#how-it-works-popup .close").click(function() {
+                $("#overlay, #how-it-works-popup").removeClass("visible");
+                setTimeout(function(){$("#overlay, #how-it-works-popup").hide()},500);
+              });
+              </script>
+              
+            </div>
+          </div>
+        </div>
+        <div id="footer">
+          <div id="footerInnerWrap">
+            <div class="fatty-footer">
+              <div class="footerTopWrap">
+                <div class="footerTop">
+                  <div class="component textComponent siteLinks" id="textComponent-id13">
+                    <div class="body">
+                      <div class="section">
+                        
+                        <div class="links">
+                        	<p class="title">Join Experts Exchange</p>
+                        	<ul>
+                        		<li><a href="http://www.experts-exchange.com/howItWorks/" class="footer-how">How It works</a></li>
+                        		<li><a href="http://www.experts-exchange.com/howItWorks/solve.jsp" class="footer-solve">Solve</a></li>
+                        		<li><a href="http://www.experts-exchange.com/howItWorks/learn.jsp" class="footer-learn">Learn</a></li>
+                        		<li><a href="http://www.experts-exchange.com/howItWorks/network.jsp" class="footer-network">Network</a></li>
+                        	</ul>
+                        	<ul>
+                        		<li><a href="http://www.experts-exchange.com/business.jsp" class="footer-business">For Business</a></li>
+                        		<li><a href="http://www.experts-exchange.com/plansAndPricing.jsp" class="footer-plans">Plans and Pricing</a></li>
+                        		<li><a href="http://pages.experts-exchange.com/resource-center.html" class="footer-library">Resource Library</a></li>
+                        	</ul>
+                        </div>
+                        <div class="links">
+                        	<p class="title">About Experts Exchange</p>
+                        	<ul>
+                        		<li><a href="http://www.experts-exchange.com/whoWeAre.jsp" class="footer-who">Who We Are</a></li>
+                        		<li><a href="http://www.experts-exchange.com/experts.jsp" class="footer-experts">The Experts</a></li>
+                        		<li><a href="http://www.experts-exchange.com/careers.jsp" class="footer-careers">Careers</a></li>
+                        	</ul>
+                        	<ul>
+                        		<li><a href="http://www.experts-exchange.com/contactUs.jsp" class="footer-contact">Contact Us</a></li>
+                        		<li><a href="http://blog.experts-exchange.com/" class="footer-blog">Blog</a></li>
+                        	</ul>
+                        </div>
+                        
+                        
+                      </div>
+                    </div>
+                  </div>
+                  <div class="component textComponent siteLinks" id="textComponent-id14">
+                    <div class="body">
+                      <div class="section">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="footerBottomWrap">
+                <div class="footerBottom">
+                  <div class="footerBottomInner">
+                    <div>
+                      <div class="component logoComponent" id="logoComponent-id2">
+                        <div class="body">
+                          <div class="section">
+                            <h2><a href="http://www.experts-exchange.com/" title="Experts Exchange"><img alt="Experts Exchange" src="./A VBA Progress Bar for Excel and Other Microsoft Apps._files/logoFull.png" title=""></a></h2>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <span class="component textComponent footerMainLinks" id="textComponent-id15"><a href="http://www.experts-exchange.com/privacyPolicy.jsp">Privacy Policy</a>
+                    <a href="http://www.experts-exchange.com/terms.jsp">Terms of Use</a>
+                    <a href="http://support.experts-exchange.com/">Help</a>
+                    <a href="http://www.experts-exchange.com/siteMap.jsp">Site Map</a></span><span class="component textComponent footerCopyright" id="textComponent-id16">© 1996-2014 <a href="http://www.experts-exchange.com/index.jsp">Experts Exchange, LLC.</a> All rights reserved. Covered by US Patent.</span>
+                    <div class="component mobileButton non-mobile-true" id="mobileButton">
+                      <div class="body">
+                        <a href="http://mobile.experts-exchange.com/Software/Office_Productivity/Office_Suites/MS_Office/Excel/A_1756-A-VBA-Progress-Bar-for-Excel-and-Other-Microsoft-Apps.html?mobileFullSite=false" rel="nofollow" class="button mobileButton return-to-mobile" title="View Experts Exchange Mobile Site"><span>Mobile Site</span></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <script type="text/javascript" id="contentJavascript-id8">
+              popupHandlerPort();
+            </script>
+            <div id="deprecatedBrowserWarning">
+              <span class="component textComponent" id="textComponent-id17"></span>
+            </div>
+            <span class="component textComponent" id="textComponent-id18"></span>
+            <script type="text/javascript" id="contentJavascript-id9">
+              bpBrickHeight();
+            </script>
+            <script type="text/javascript" id="contentJavascript-id10">
+              bpPlanCount();
+            </script>
+            <script type="text/javascript" id="contentJavascript-id11"></script>
+            <div id="free-member-popup">
+              <div class="component textComponent" id="textComponent-id19">
+                <div class="body">
+                  <div class="section">
+                  </div>
+                </div>
+              </div>
+            <span class="closeFreeMember"></span></div>
+            <script type="text/javascript" id="contentJavascript-id12">
+              freeMemberPopupBottom("#free-member-popup");
+            </script>
+          </div>
+        </div>
+      </div><div id="invisibleClose" class="hidden"></div>
+    </div>
+    <script type="text/javascript" id="contentJavascript-id13">
+      fileUploadLO();
+    </script>
+    <div class="component textComponent" id="textComponent-id20">
+      <div class="body">
+        <div class="section">
+           
+          <!-- Start Quantcast Tag -->
+          <script type="text/javascript"> 
+          var _qevents = _qevents || [];
+          
+          (function() {
+          var elem = document.createElement('script');
+          elem.src = (document.location.protocol == "https:" ? "https://secure" : "http://edge") + ".quantserve.com/quant.js";
+          elem.async = true;
+          elem.type = "text/javascript";
+          var scpt = document.getElementsByTagName('script')[0];
+          scpt.parentNode.insertBefore(elem, scpt);
+          })();
+          
+          _qevents.push(
+          {qacct:"p-ckH2GSLJ_n4pm",labels:"_fp.event.Articles Landing Page"}
+          );
+          </script>
+          <noscript>
+          &lt;img src="//pixel.quantserve.com/pixel/p-ckH2GSLJ_n4pm.gif?labels=_fp.event.Articles+Landing+Page" style="display: none;" border="0" height="1" width="1" alt="Quantcast"/&gt;
+          </noscript>
+          <!-- End Quantcast tag -->
+          
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript">
+      adroll_adv_id = "GGCU75PN5NCQBI5IAY2KOE";
+      adroll_pix_id = "YHVUTU3HGBGZNEYV4XVWXH";
+      (function () {
+      var oldonload = window.onload;
+      window.onload = function(){
+         __adroll_loaded=true;
+         var scr = document.createElement("script");
+         var host = (("https:" == document.location.protocol) ? "https://s.adroll.com" : "http://a.adroll.com");
+         scr.setAttribute('async', 'true');
+         scr.type = "text/javascript";
+         scr.src = host + "/j/roundtrip.js";
+         ((document.getElementsByTagName('head') || [null])[0] ||
+          document.getElementsByTagName('script')[0].parentNode).appendChild(scr);
+         if(oldonload){oldonload()}};
+      }());
+    </script>
+    <script type="text/javascript">
+        /* <![CDATA[ */
+        var google_conversion_id = 988514747;
+        var google_conversion_label = "7snGCP3lmAcQu5Ou1wM";
+        var google_custom_params = window.google_tag_params;
+        var google_remarketing_only = true;
+        /* ]]> */
+    </script>
+    <script src="./A VBA Progress Bar for Excel and Other Microsoft Apps._files/conversion.js" type="text/javascript"></script><iframe name="google_conversion_frame" title="Google conversion frame" width="300" height="13" src="./A VBA Progress Bar for Excel and Other Microsoft Apps._files/saved_resource.htm" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no">&lt;img height="1" width="1" border="0" alt="" src="http://googleads.g.doubleclick.net/pagead/viewthroughconversion/988514747/?frame=0&amp;random=1409780200557&amp;cv=7&amp;fst=1409780200557&amp;num=1&amp;fmt=1&amp;label=7snGCP3lmAcQu5Ou1wM&amp;guid=ON&amp;u_h=1024&amp;u_w=1280&amp;u_ah=971&amp;u_aw=1280&amp;u_cd=24&amp;u_his=1&amp;u_tz=-180&amp;u_java=true&amp;u_nplug=18&amp;u_nmime=36&amp;frm=0&amp;url=http%3A//www.experts-exchange.com/Software/Office_Productivity/Office_Suites/MS_Office/Excel/A_1756-A-VBA-Progress-Bar-for-Excel-and-Other-Microsoft-Apps.html&amp;ref=https%3A//www.google.com.br/" /&gt;</iframe>
+    <noscript>
+      &lt;div style="display:inline;"&gt;
+        &lt;img alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/988514747/?value=0&amp;amp;label=7snGCP3lmAcQu5Ou1wM&amp;amp;guid=ON&amp;amp;script=0" height="1" width="1" style="border-style:none;" /&gt;
+      &lt;/div&gt;
+    </noscript>
+    <script type="text/javascript">
+        <!--
+        (function() {
+          var ga = document.createElement('script');     ga.type = 'text/javascript'; ga.async = true;
+          ga.src = ('https:'   == document.location.protocol ? 'https://ssl'   : 'http://www') + '.google-analytics.com/ga.js';
+          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+        //-->
+    </script>
+    <script type="text/javascript">
+        <!--
+          var sOmniture = setUpOmnitureVariable('eexchangeprod');
+          sOmniture.pageName='201405-LO-Art-001';
+          sOmniture.server='cms2.prod.us-east-1b.aws.redsrci.com';
+          sOmniture.channel='/Software/Office_Productivity/Office_Suites/MS_Office/Excel/';
+          sOmniture.pageType='';
+          sOmniture.prop53='201405-LO-Art-001 - Premium Article : GFCF';
+          sOmniture.eVar68='201405-LO-Art-001';
+          sOmniture.eVar64='GFCF';
+          sOmniture.eVar63='Premium';
+          sOmniture.eVar62='Premium';
+          sOmniture.eVar33='/Software/Office_Productivity/Office_Suites/MS_Office/Excel/';
+          sOmniture.eVar31='177.159.138.229';
+          sOmniture.eVar30='Wednesday';
+          sOmniture.eVar75='GFCF';
+          sOmniture.eVar29='2PM';
+          sOmniture.eVar6='Free Trial Logged Out Visitor';
+          sOmniture.eVar74='Premium Article';
+          sOmniture.hier='/Software/Office_Productivity/Office_Suites/MS_Office/Excel/';
+          sOmniture.events='';
+        
+        function asyncOmniture_timeOnPage() {sOmniture.eVar59=Math.floor(PageTimer.getTimeOnPage()/1000); sOmniture.events=''; sOmniture.t();sOmniture.eVar59='';sOmniture.events='';}
+        jqOn(window,'beforeunload',function(e){asyncOmniture_timeOnPage();});
+        function asyncOmniture_event98() {sOmniture.events='event98';sOmniture.t();sOmniture.events='';}
+        jqReady(function(e){setTimeout(function(e){asyncOmniture_event98();},5000);});
+        //-->
+    </script>
+    <script type="text/javascript">
+          sOmniture.prop9='alainbryden';
+          sOmniture.prop12='A VBA Progress Bar for Excel and Other Microsoft Apps.';
+          sOmniture.eVar68='201405-LO-Art-001';
+          sOmniture.eVar65='GFCF';
+          sOmniture.eVar64='GFCF';
+          sOmniture.eVar38='alainbryden';
+          sOmniture.eVar15='1756';
+          sOmniture.eVar61='ALGO_CTRL';
+          sOmniture.eVar75='GFCF';
+          sOmniture.eVar74='Premium Article';
+          sOmniture.eVar48='A VBA Progress Bar for Excel and Other Microsoft Apps.';
+          sOmniture.events='event4,event24,event95';
+        /************* DO NOT ALTER ANYTHING BELOW THIS LINE ! **************/
+        var s_code=sOmniture.t();
+        if(s_code)document.write(s_code)
+        
+    </script>
+    <script type="text/javascript">
+          sOmniture.prop9='';
+          sOmniture.prop12='';
+          sOmniture.eVar68='';
+          sOmniture.eVar65='';
+          sOmniture.eVar64='';
+          sOmniture.eVar38='';
+          sOmniture.eVar15='';
+          sOmniture.eVar61='';
+          sOmniture.eVar75='';
+          sOmniture.eVar74='';
+          sOmniture.eVar48='';
+          sOmniture.events='';
+        
+    </script>
+    <noscript>
+        &lt;img
+        src="http://metrics.experts-exchange.com/b/ss/eexchangeprod/1/H.7--NS/0"
+        height="1" width="1" border="0" alt="" /&gt;&lt;!--/DO NOT REMOVE/--&gt;
+        &lt;!-- End SiteCatalyst code version: H.7. --&gt;
+    </noscript>
+    <script type="text/javascript">
+        <!--
+        function asyncOmniture_157610833(e) { sOmniture.events='event75';sOmniture.t(); sOmniture.events='';}
+        jqOn('#relatedContent-id2 .relatedContentLink','mouseup keypress click',function(e){if((e.type == "mouseup" && e.which != 2) || (e.type == "keypress" && e.which != 13)){return true;}
+        if(e.type != "click" || e.which != 2){asyncOmniture_157610833(e);}
+        if(e.which == 2 || (e.which == 1 && (e.metaKey || e.ctrlKey || e.shiftKey))){return true;}
+        else if(jqGetAttribute(this,'href')!= '#' && jqGetAttribute(this,'href')!== undefined && jqGetAttribute(this,'href').indexOf('https://secure.livechatinc.com') == -1){ return false;}});
+        function asyncOmniture_932798041(e) { sOmniture.events='event75';sOmniture.t(); sOmniture.events='';}
+        jqOn('#relatedContent .relatedContentLink','mouseup keypress click',function(e){if((e.type == "mouseup" && e.which != 2) || (e.type == "keypress" && e.which != 13)){return true;}
+        if(e.type != "click" || e.which != 2){asyncOmniture_932798041(e);}
+        if(e.which == 2 || (e.which == 1 && (e.metaKey || e.ctrlKey || e.shiftKey))){return true;}
+        else if(jqGetAttribute(this,'href')!= '#' && jqGetAttribute(this,'href')!== undefined && jqGetAttribute(this,'href').indexOf('https://secure.livechatinc.com') == -1){ return false;}});
+        function asyncOmniture_358700127(e) { sOmniture.eVar54='Related Solution - 6'; sOmniture.events='';sOmniture.t(); sOmniture.eVar54=''; sOmniture.events='';}
+        jqOn('#relatedContent-id2 .relatedContent6','mouseup keypress click',function(e){if((e.type == "mouseup" && e.which != 2) || (e.type == "keypress" && e.which != 13)){return true;}
+        if(e.type != "click" || e.which != 2){asyncOmniture_358700127(e);}
+        if(e.which == 2 || (e.which == 1 && (e.metaKey || e.ctrlKey || e.shiftKey))){return true;}
+        else if(jqGetAttribute(this,'href')!= '#' && jqGetAttribute(this,'href')!== undefined && jqGetAttribute(this,'href').indexOf('https://secure.livechatinc.com') == -1){ return false;}});
+        function asyncOmniture_358700126(e) { sOmniture.eVar54='Related Solution - 5'; sOmniture.events='';sOmniture.t(); sOmniture.eVar54=''; sOmniture.events='';}
+        jqOn('#relatedContent-id2 .relatedContent5','mouseup keypress click',function(e){if((e.type == "mouseup" && e.which != 2) || (e.type == "keypress" && e.which != 13)){return true;}
+        if(e.type != "click" || e.which != 2){asyncOmniture_358700126(e);}
+        if(e.which == 2 || (e.which == 1 && (e.metaKey || e.ctrlKey || e.shiftKey))){return true;}
+        else if(jqGetAttribute(this,'href')!= '#' && jqGetAttribute(this,'href')!== undefined && jqGetAttribute(this,'href').indexOf('https://secure.livechatinc.com') == -1){ return false;}});
+        function asyncOmniture_358700125(e) { sOmniture.eVar54='Related Solution - 4'; sOmniture.events='';sOmniture.t(); sOmniture.eVar54=''; sOmniture.events='';}
+        jqOn('#relatedContent-id2 .relatedContent4','mouseup keypress click',function(e){if((e.type == "mouseup" && e.which != 2) || (e.type == "keypress" && e.which != 13)){return true;}
+        if(e.type != "click" || e.which != 2){asyncOmniture_358700125(e);}
+        if(e.which == 2 || (e.which == 1 && (e.metaKey || e.ctrlKey || e.shiftKey))){return true;}
+        else if(jqGetAttribute(this,'href')!= '#' && jqGetAttribute(this,'href')!== undefined && jqGetAttribute(this,'href').indexOf('https://secure.livechatinc.com') == -1){ return false;}});
+        function asyncOmniture_358700124(e) { sOmniture.eVar54='Related Solution - 3'; sOmniture.events='';sOmniture.t(); sOmniture.eVar54=''; sOmniture.events='';}
+        jqOn('#relatedContent-id2 .relatedContent3','mouseup keypress click',function(e){if((e.type == "mouseup" && e.which != 2) || (e.type == "keypress" && e.which != 13)){return true;}
+        if(e.type != "click" || e.which != 2){asyncOmniture_358700124(e);}
+        if(e.which == 2 || (e.which == 1 && (e.metaKey || e.ctrlKey || e.shiftKey))){return true;}
+        else if(jqGetAttribute(this,'href')!= '#' && jqGetAttribute(this,'href')!== undefined && jqGetAttribute(this,'href').indexOf('https://secure.livechatinc.com') == -1){ return false;}});
+        function asyncOmniture_358700123(e) { sOmniture.eVar54='Related Solution - 2'; sOmniture.events='';sOmniture.t(); sOmniture.eVar54=''; sOmniture.events='';}
+        jqOn('#relatedContent-id2 .relatedContent2','mouseup keypress click',function(e){if((e.type == "mouseup" && e.which != 2) || (e.type == "keypress" && e.which != 13)){return true;}
+        if(e.type != "click" || e.which != 2){asyncOmniture_358700123(e);}
+        if(e.which == 2 || (e.which == 1 && (e.metaKey || e.ctrlKey || e.shiftKey))){return true;}
+        else if(jqGetAttribute(this,'href')!= '#' && jqGetAttribute(this,'href')!== undefined && jqGetAttribute(this,'href').indexOf('https://secure.livechatinc.com') == -1){ return false;}});
+        function asyncOmniture_358700122(e) { sOmniture.eVar54='Related Solution - 1'; sOmniture.events='';sOmniture.t(); sOmniture.eVar54=''; sOmniture.events='';}
+        jqOn('#relatedContent-id2 .relatedContent1','mouseup keypress click',function(e){if((e.type == "mouseup" && e.which != 2) || (e.type == "keypress" && e.which != 13)){return true;}
+        if(e.type != "click" || e.which != 2){asyncOmniture_358700122(e);}
+        if(e.which == 2 || (e.which == 1 && (e.metaKey || e.ctrlKey || e.shiftKey))){return true;}
+        else if(jqGetAttribute(this,'href')!= '#' && jqGetAttribute(this,'href')!== undefined && jqGetAttribute(this,'href').indexOf('https://secure.livechatinc.com') == -1){ return false;}});
+        function asyncOmniture_41237611(e) { sOmniture.eVar54='Top Video Tutorials - 5'; sOmniture.events='';sOmniture.t(); sOmniture.eVar54=''; sOmniture.events='';}
+        jqOn('#videoPresContent .vpContent5','mouseup keypress click',function(e){if((e.type == "mouseup" && e.which != 2) || (e.type == "keypress" && e.which != 13)){return true;}
+        if(e.type != "click" || e.which != 2){asyncOmniture_41237611(e);}
+        if(e.which == 2 || (e.which == 1 && (e.metaKey || e.ctrlKey || e.shiftKey))){return true;}
+        else if(jqGetAttribute(this,'href')!= '#' && jqGetAttribute(this,'href')!== undefined && jqGetAttribute(this,'href').indexOf('https://secure.livechatinc.com') == -1){goToUrl(jqGetAttribute(this,'href'),false); return false;}});
+        function asyncOmniture_41237612(e) { sOmniture.eVar54='Top Video Tutorials - 4'; sOmniture.events='';sOmniture.t(); sOmniture.eVar54=''; sOmniture.events='';}
+        jqOn('#videoPresContent .vpContent4','mouseup keypress click',function(e){if((e.type == "mouseup" && e.which != 2) || (e.type == "keypress" && e.which != 13)){return true;}
+        if(e.type != "click" || e.which != 2){asyncOmniture_41237612(e);}
+        if(e.which == 2 || (e.which == 1 && (e.metaKey || e.ctrlKey || e.shiftKey))){return true;}
+        else if(jqGetAttribute(this,'href')!= '#' && jqGetAttribute(this,'href')!== undefined && jqGetAttribute(this,'href').indexOf('https://secure.livechatinc.com') == -1){goToUrl(jqGetAttribute(this,'href'),false); return false;}});
+        function asyncOmniture_41237613(e) { sOmniture.eVar54='Top Video Tutorials - 3'; sOmniture.events='';sOmniture.t(); sOmniture.eVar54=''; sOmniture.events='';}
+        jqOn('#videoPresContent .vpContent3','mouseup keypress click',function(e){if((e.type == "mouseup" && e.which != 2) || (e.type == "keypress" && e.which != 13)){return true;}
+        if(e.type != "click" || e.which != 2){asyncOmniture_41237613(e);}
+        if(e.which == 2 || (e.which == 1 && (e.metaKey || e.ctrlKey || e.shiftKey))){return true;}
+        else if(jqGetAttribute(this,'href')!= '#' && jqGetAttribute(this,'href')!== undefined && jqGetAttribute(this,'href').indexOf('https://secure.livechatinc.com') == -1){goToUrl(jqGetAttribute(this,'href'),false); return false;}});
+        function asyncOmniture_41237614(e) { sOmniture.eVar54='Top Video Tutorials - 2'; sOmniture.events='';sOmniture.t(); sOmniture.eVar54=''; sOmniture.events='';}
+        jqOn('#videoPresContent .vpContent2','mouseup keypress click',function(e){if((e.type == "mouseup" && e.which != 2) || (e.type == "keypress" && e.which != 13)){return true;}
+        if(e.type != "click" || e.which != 2){asyncOmniture_41237614(e);}
+        if(e.which == 2 || (e.which == 1 && (e.metaKey || e.ctrlKey || e.shiftKey))){return true;}
+        else if(jqGetAttribute(this,'href')!= '#' && jqGetAttribute(this,'href')!== undefined && jqGetAttribute(this,'href').indexOf('https://secure.livechatinc.com') == -1){goToUrl(jqGetAttribute(this,'href'),false); return false;}});
+        function asyncOmniture_41237615(e) { sOmniture.eVar54='Top Video Tutorials - 1'; sOmniture.events='';sOmniture.t(); sOmniture.eVar54=''; sOmniture.events='';}
+        jqOn('#videoPresContent .vpContent1','mouseup keypress click',function(e){if((e.type == "mouseup" && e.which != 2) || (e.type == "keypress" && e.which != 13)){return true;}
+        if(e.type != "click" || e.which != 2){asyncOmniture_41237615(e);}
+        if(e.which == 2 || (e.which == 1 && (e.metaKey || e.ctrlKey || e.shiftKey))){return true;}
+        else if(jqGetAttribute(this,'href')!= '#' && jqGetAttribute(this,'href')!== undefined && jqGetAttribute(this,'href').indexOf('https://secure.livechatinc.com') == -1){goToUrl(jqGetAttribute(this,'href'),false); return false;}});
+        function asyncOmniture_148197355(e) { sOmniture.eVar54='Search more video tutorials'; sOmniture.events='';sOmniture.t(); sOmniture.eVar54=''; sOmniture.events='';}
+        jqOn('#videoPresContent .vpContentMore','mouseup keypress click',function(e){if((e.type == "mouseup" && e.which != 2) || (e.type == "keypress" && e.which != 13)){return true;}
+        if(e.type != "click" || e.which != 2){asyncOmniture_148197355(e);}
+        if(e.which == 2 || (e.which == 1 && (e.metaKey || e.ctrlKey || e.shiftKey))){return true;}
+        else if(jqGetAttribute(this,'href')!= '#' && jqGetAttribute(this,'href')!== undefined && jqGetAttribute(this,'href').indexOf('https://secure.livechatinc.com') == -1){goToUrl(jqGetAttribute(this,'href'),false); return false;}});
+        function asyncOmniture_1726466615(e) { sOmniture.eVar54='Related Article6'; sOmniture.events='';sOmniture.t(); sOmniture.eVar54=''; sOmniture.events='';}
+        jqOn('#relatedContent .relatedContent6','mouseup keypress click',function(e){if((e.type == "mouseup" && e.which != 2) || (e.type == "keypress" && e.which != 13)){return true;}
+        if(e.type != "click" || e.which != 2){asyncOmniture_1726466615(e);}
+        if(e.which == 2 || (e.which == 1 && (e.metaKey || e.ctrlKey || e.shiftKey))){return true;}
+        else if(jqGetAttribute(this,'href')!= '#' && jqGetAttribute(this,'href')!== undefined && jqGetAttribute(this,'href').indexOf('https://secure.livechatinc.com') == -1){ return false;}});
+        function asyncOmniture_1726466616(e) { sOmniture.eVar54='Related Article5'; sOmniture.events='';sOmniture.t(); sOmniture.eVar54=''; sOmniture.events='';}
+        jqOn('#relatedContent .relatedContent5','mouseup keypress click',function(e){if((e.type == "mouseup" && e.which != 2) || (e.type == "keypress" && e.which != 13)){return true;}
+        if(e.type != "click" || e.which != 2){asyncOmniture_1726466616(e);}
+        if(e.which == 2 || (e.which == 1 && (e.metaKey || e.ctrlKey || e.shiftKey))){return true;}
+        else if(jqGetAttribute(this,'href')!= '#' && jqGetAttribute(this,'href')!== undefined && jqGetAttribute(this,'href').indexOf('https://secure.livechatinc.com') == -1){ return false;}});
+        function asyncOmniture_1726466617(e) { sOmniture.eVar54='Related Article4'; sOmniture.events='';sOmniture.t(); sOmniture.eVar54=''; sOmniture.events='';}
+        jqOn('#relatedContent .relatedContent4','mouseup keypress click',function(e){if((e.type == "mouseup" && e.which != 2) || (e.type == "keypress" && e.which != 13)){return true;}
+        if(e.type != "click" || e.which != 2){asyncOmniture_1726466617(e);}
+        if(e.which == 2 || (e.which == 1 && (e.metaKey || e.ctrlKey || e.shiftKey))){return true;}
+        else if(jqGetAttribute(this,'href')!= '#' && jqGetAttribute(this,'href')!== undefined && jqGetAttribute(this,'href').indexOf('https://secure.livechatinc.com') == -1){ return false;}});
+        function asyncOmniture_1726466618(e) { sOmniture.eVar54='Related Article3'; sOmniture.events='';sOmniture.t(); sOmniture.eVar54=''; sOmniture.events='';}
+        jqOn('#relatedContent .relatedContent3','mouseup keypress click',function(e){if((e.type == "mouseup" && e.which != 2) || (e.type == "keypress" && e.which != 13)){return true;}
+        if(e.type != "click" || e.which != 2){asyncOmniture_1726466618(e);}
+        if(e.which == 2 || (e.which == 1 && (e.metaKey || e.ctrlKey || e.shiftKey))){return true;}
+        else if(jqGetAttribute(this,'href')!= '#' && jqGetAttribute(this,'href')!== undefined && jqGetAttribute(this,'href').indexOf('https://secure.livechatinc.com') == -1){ return false;}});
+        function asyncOmniture_1726466619(e) { sOmniture.eVar54='Related Article2'; sOmniture.events='';sOmniture.t(); sOmniture.eVar54=''; sOmniture.events='';}
+        jqOn('#relatedContent .relatedContent2','mouseup keypress click',function(e){if((e.type == "mouseup" && e.which != 2) || (e.type == "keypress" && e.which != 13)){return true;}
+        if(e.type != "click" || e.which != 2){asyncOmniture_1726466619(e);}
+        if(e.which == 2 || (e.which == 1 && (e.metaKey || e.ctrlKey || e.shiftKey))){return true;}
+        else if(jqGetAttribute(this,'href')!= '#' && jqGetAttribute(this,'href')!== undefined && jqGetAttribute(this,'href').indexOf('https://secure.livechatinc.com') == -1){ return false;}});
+        function asyncOmniture_1726466620(e) { sOmniture.eVar54='Related Article1'; sOmniture.events='';sOmniture.t(); sOmniture.eVar54=''; sOmniture.events='';}
+        jqOn('#relatedContent .relatedContent1','mouseup keypress click',function(e){if((e.type == "mouseup" && e.which != 2) || (e.type == "keypress" && e.which != 13)){return true;}
+        if(e.type != "click" || e.which != 2){asyncOmniture_1726466620(e);}
+        if(e.which == 2 || (e.which == 1 && (e.metaKey || e.ctrlKey || e.shiftKey))){return true;}
+        else if(jqGetAttribute(this,'href')!= '#' && jqGetAttribute(this,'href')!== undefined && jqGetAttribute(this,'href').indexOf('https://secure.livechatinc.com') == -1){ return false;}});
+        function asyncOmniture_1278713838(e) { sOmniture.prop52='Database'; sOmniture.events='';sOmniture.t(); sOmniture.prop52=''; sOmniture.events='';}
+        jqOn('.headerBrowse .database','mouseup keypress click',function(e){if((e.type == "mouseup" && e.which != 2) || (e.type == "keypress" && e.which != 13)){return true;}
+        if(e.type != "click" || e.which != 2){asyncOmniture_1278713838(e);}
+        if(e.which == 2 || (e.which == 1 && (e.metaKey || e.ctrlKey || e.shiftKey))){return true;}
+        else if(jqGetAttribute(this,'href')!= '#' && jqGetAttribute(this,'href')!== undefined && jqGetAttribute(this,'href').indexOf('https://secure.livechatinc.com') == -1){goToUrl(jqGetAttribute(this,'href'),false); return false;}});
+        function asyncOmniture_2102659235(e) { sOmniture.prop52='How It Works'; sOmniture.events='';sOmniture.t(); sOmniture.prop52=''; sOmniture.events='';}
+        jqOn('.siteNav .howItWorks','mouseup keypress click',function(e){if((e.type == "mouseup" && e.which != 2) || (e.type == "keypress" && e.which != 13)){return true;}
+        if(e.type != "click" || e.which != 2){asyncOmniture_2102659235(e);}
+        if(e.which == 2 || (e.which == 1 && (e.metaKey || e.ctrlKey || e.shiftKey))){return true;}
+        else if(jqGetAttribute(this,'href')!= '#' && jqGetAttribute(this,'href')!== undefined && jqGetAttribute(this,'href').indexOf('https://secure.livechatinc.com') == -1){goToUrl(jqGetAttribute(this,'href'),false); return false;}});
+        function asyncOmniture_1428177060(e) { sOmniture.eVar54='Try it Free Button on Popup'; sOmniture.events='';sOmniture.t(); sOmniture.eVar54=''; sOmniture.events='';}
+        jqOn('#how-it-works-popup .cta a','mouseup keypress click',function(e){if((e.type == "mouseup" && e.which != 2) || (e.type == "keypress" && e.which != 13)){return true;}
+        if(e.type != "click" || e.which != 2){asyncOmniture_1428177060(e);}
+        if(e.which == 2 || (e.which == 1 && (e.metaKey || e.ctrlKey || e.shiftKey))){return true;}
+        else if(jqGetAttribute(this,'href')!= '#' && jqGetAttribute(this,'href')!== undefined && jqGetAttribute(this,'href').indexOf('https://secure.livechatinc.com') == -1){goToUrl(jqGetAttribute(this,'href'),false); return false;}});
+        function asyncOmniture_1896452781(e) { sOmniture.eVar54='Top Right CTA – Learn More'; sOmniture.events='';sOmniture.t(); sOmniture.eVar54=''; sOmniture.events='';}
+        jqOn('#col2 .try-it-free .how-it-works-btn','mouseup keypress click',function(e){if((e.type == "mouseup" && e.which != 2) || (e.type == "keypress" && e.which != 13)){return true;}
+        if(e.type != "click" || e.which != 2){asyncOmniture_1896452781(e);}
+        if(e.which == 2 || (e.which == 1 && (e.metaKey || e.ctrlKey || e.shiftKey))){return true;}
+        else if(jqGetAttribute(this,'href')!= '#' && jqGetAttribute(this,'href')!== undefined && jqGetAttribute(this,'href').indexOf('https://secure.livechatinc.com') == -1){goToUrl(jqGetAttribute(this,'href'),false); return false;}});
+        function asyncOmniture_1143720021(e) { sOmniture.eVar54='Related Solution - Search more solutions'; sOmniture.events='';sOmniture.t(); sOmniture.eVar54=''; sOmniture.events='';}
+        jqOn('#col2 .anchorButton a','mouseup keypress click',function(e){if((e.type == "mouseup" && e.which != 2) || (e.type == "keypress" && e.which != 13)){return true;}
+        if(e.type != "click" || e.which != 2){asyncOmniture_1143720021(e);}
+        if(e.which == 2 || (e.which == 1 && (e.metaKey || e.ctrlKey || e.shiftKey))){return true;}
+        else if(jqGetAttribute(this,'href')!= '#' && jqGetAttribute(this,'href')!== undefined && jqGetAttribute(this,'href').indexOf('https://secure.livechatinc.com') == -1){goToUrl(jqGetAttribute(this,'href'),false); return false;}});
+        function asyncOmniture_540153818(e) { sOmniture.prop52='Join'; sOmniture.events='';sOmniture.t(); sOmniture.prop52=''; sOmniture.events='';}
+        jqOn('.siteNav .join','mouseup keypress click',function(e){if((e.type == "mouseup" && e.which != 2) || (e.type == "keypress" && e.which != 13)){return true;}
+        if(e.type != "click" || e.which != 2){asyncOmniture_540153818(e);}
+        if(e.which == 2 || (e.which == 1 && (e.metaKey || e.ctrlKey || e.shiftKey))){return true;}
+        else if(jqGetAttribute(this,'href')!= '#' && jqGetAttribute(this,'href')!== undefined && jqGetAttribute(this,'href').indexOf('https://secure.livechatinc.com') == -1){goToUrl(jqGetAttribute(this,'href'),false); return false;}});
+        function asyncOmniture_808579098(e) { sOmniture.prop52='Software'; sOmniture.events='';sOmniture.t(); sOmniture.prop52=''; sOmniture.events='';}
+        jqOn('.headerBrowse .software','mouseup keypress click',function(e){if((e.type == "mouseup" && e.which != 2) || (e.type == "keypress" && e.which != 13)){return true;}
+        if(e.type != "click" || e.which != 2){asyncOmniture_808579098(e);}
+        if(e.which == 2 || (e.which == 1 && (e.metaKey || e.ctrlKey || e.shiftKey))){return true;}
+        else if(jqGetAttribute(this,'href')!= '#' && jqGetAttribute(this,'href')!== undefined && jqGetAttribute(this,'href').indexOf('https://secure.livechatinc.com') == -1){goToUrl(jqGetAttribute(this,'href'),false); return false;}});
+        function asyncOmniture_1756540904(e) { sOmniture.eVar54='Top Right CTA – Learn More – Try it Free'; sOmniture.events='';sOmniture.t(); sOmniture.eVar54=''; sOmniture.events='';}
+        jqOn('#col2 .try-it-free .body .section .how-it-works-btn','mouseup keypress click',function(e){if((e.type == "mouseup" && e.which != 2) || (e.type == "keypress" && e.which != 13)){return true;}
+        if(e.type != "click" || e.which != 2){asyncOmniture_1756540904(e);}
+        if(e.which == 2 || (e.which == 1 && (e.metaKey || e.ctrlKey || e.shiftKey))){return true;}
+        else if(jqGetAttribute(this,'href')!= '#' && jqGetAttribute(this,'href')!== undefined && jqGetAttribute(this,'href').indexOf('https://secure.livechatinc.com') == -1){goToUrl(jqGetAttribute(this,'href'),false); return false;}});
+        function asyncOmniture_1847077793(e) { sOmniture.eVar54='Top Right CTA – Try it Free'; sOmniture.events='';sOmniture.t(); sOmniture.eVar54=''; sOmniture.events='';}
+        jqOn('#col2 .try-it-free .submit','mouseup keypress click',function(e){if((e.type == "mouseup" && e.which != 2) || (e.type == "keypress" && e.which != 13)){return true;}
+        if(e.type != "click" || e.which != 2){asyncOmniture_1847077793(e);}
+        if(e.which == 2 || (e.which == 1 && (e.metaKey || e.ctrlKey || e.shiftKey))){return true;}
+        else if(jqGetAttribute(this,'href')!= '#' && jqGetAttribute(this,'href')!== undefined && jqGetAttribute(this,'href').indexOf('https://secure.livechatinc.com') == -1){goToUrl(jqGetAttribute(this,'href'),false); return false;}});
+        function asyncOmniture_335179598(e) { sOmniture.prop52='All'; sOmniture.events='';sOmniture.t(); sOmniture.prop52=''; sOmniture.events='';}
+        jqOn('.headerBrowse .all','mouseup keypress click',function(e){if((e.type == "mouseup" && e.which != 2) || (e.type == "keypress" && e.which != 13)){return true;}
+        if(e.type != "click" || e.which != 2){asyncOmniture_335179598(e);}
+        if(e.which == 2 || (e.which == 1 && (e.metaKey || e.ctrlKey || e.shiftKey))){return true;}
+        else if(jqGetAttribute(this,'href')!= '#' && jqGetAttribute(this,'href')!== undefined && jqGetAttribute(this,'href').indexOf('https://secure.livechatinc.com') == -1){goToUrl(jqGetAttribute(this,'href'),false); return false;}});
+        function asyncOmniture_1800695656(e) { sOmniture.prop52='Copy Review'; sOmniture.events='';sOmniture.t(); sOmniture.prop52=''; sOmniture.events='';}
+        jqOn('.headerBrowse .copy','mouseup keypress click',function(e){if((e.type == "mouseup" && e.which != 2) || (e.type == "keypress" && e.which != 13)){return true;}
+        if(e.type != "click" || e.which != 2){asyncOmniture_1800695656(e);}
+        if(e.which == 2 || (e.which == 1 && (e.metaKey || e.ctrlKey || e.shiftKey))){return true;}
+        else if(jqGetAttribute(this,'href')!= '#' && jqGetAttribute(this,'href')!== undefined && jqGetAttribute(this,'href').indexOf('https://secure.livechatinc.com') == -1){goToUrl(jqGetAttribute(this,'href'),false); return false;}});
+        function asyncOmniture_438371763(e) { sOmniture.prop52='Security'; sOmniture.events='';sOmniture.t(); sOmniture.prop52=''; sOmniture.events='';}
+        jqOn('.headerBrowse .security','mouseup keypress click',function(e){if((e.type == "mouseup" && e.which != 2) || (e.type == "keypress" && e.which != 13)){return true;}
+        if(e.type != "click" || e.which != 2){asyncOmniture_438371763(e);}
+        if(e.which == 2 || (e.which == 1 && (e.metaKey || e.ctrlKey || e.shiftKey))){return true;}
+        else if(jqGetAttribute(this,'href')!= '#' && jqGetAttribute(this,'href')!== undefined && jqGetAttribute(this,'href').indexOf('https://secure.livechatinc.com') == -1){goToUrl(jqGetAttribute(this,'href'),false); return false;}});
+        function asyncOmniture_830759349(e) { sOmniture.prop52='Browse Topics'; sOmniture.events='';sOmniture.t(); sOmniture.prop52=''; sOmniture.events='';}
+        jqOn('.siteNav .browse-topics','mouseup keypress click',function(e){if((e.type == "mouseup" && e.which != 2) || (e.type == "keypress" && e.which != 13)){return true;}
+        if(e.type != "click" || e.which != 2){asyncOmniture_830759349(e);}
+        if(e.which == 2 || (e.which == 1 && (e.metaKey || e.ctrlKey || e.shiftKey))){return true;}
+        else if(jqGetAttribute(this,'href')!= '#' && jqGetAttribute(this,'href')!== undefined && jqGetAttribute(this,'href').indexOf('https://secure.livechatinc.com') == -1){goToUrl(jqGetAttribute(this,'href'),false); return false;}});
+        function asyncOmniture_159618932(e) { sOmniture.prop52='Web Dev'; sOmniture.events='';sOmniture.t(); sOmniture.prop52=''; sOmniture.events='';}
+        jqOn('.headerBrowse .webdev','mouseup keypress click',function(e){if((e.type == "mouseup" && e.which != 2) || (e.type == "keypress" && e.which != 13)){return true;}
+        if(e.type != "click" || e.which != 2){asyncOmniture_159618932(e);}
+        if(e.which == 2 || (e.which == 1 && (e.metaKey || e.ctrlKey || e.shiftKey))){return true;}
+        else if(jqGetAttribute(this,'href')!= '#' && jqGetAttribute(this,'href')!== undefined && jqGetAttribute(this,'href').indexOf('https://secure.livechatinc.com') == -1){goToUrl(jqGetAttribute(this,'href'),false); return false;}});
+        function asyncOmniture_393841573(e) { sOmniture.prop52='Hardware'; sOmniture.events='';sOmniture.t(); sOmniture.prop52=''; sOmniture.events='';}
+        jqOn('.headerBrowse .hardware','mouseup keypress click',function(e){if((e.type == "mouseup" && e.which != 2) || (e.type == "keypress" && e.which != 13)){return true;}
+        if(e.type != "click" || e.which != 2){asyncOmniture_393841573(e);}
+        if(e.which == 2 || (e.which == 1 && (e.metaKey || e.ctrlKey || e.shiftKey))){return true;}
+        else if(jqGetAttribute(this,'href')!= '#' && jqGetAttribute(this,'href')!== undefined && jqGetAttribute(this,'href').indexOf('https://secure.livechatinc.com') == -1){goToUrl(jqGetAttribute(this,'href'),false); return false;}});
+        function asyncOmniture_640452629(e) { sOmniture.prop52='Login'; sOmniture.events='';sOmniture.t(); sOmniture.prop52=''; sOmniture.events='';}
+        jqOn('.siteNav .login-box','mouseup keypress click',function(e){if((e.type == "mouseup" && e.which != 2) || (e.type == "keypress" && e.which != 13)){return true;}
+        if(e.type != "click" || e.which != 2){asyncOmniture_640452629(e);}
+        if(e.which == 2 || (e.which == 1 && (e.metaKey || e.ctrlKey || e.shiftKey))){return true;}
+        else if(jqGetAttribute(this,'href')!= '#' && jqGetAttribute(this,'href')!== undefined && jqGetAttribute(this,'href').indexOf('https://secure.livechatinc.com') == -1){goToUrl(jqGetAttribute(this,'href'),false); return false;}});
+        function asyncOmniture_1683774297(e) { sOmniture.prop52='Networking'; sOmniture.events='';sOmniture.t(); sOmniture.prop52=''; sOmniture.events='';}
+        jqOn('.headerBrowse .networking','mouseup keypress click',function(e){if((e.type == "mouseup" && e.which != 2) || (e.type == "keypress" && e.which != 13)){return true;}
+        if(e.type != "click" || e.which != 2){asyncOmniture_1683774297(e);}
+        if(e.which == 2 || (e.which == 1 && (e.metaKey || e.ctrlKey || e.shiftKey))){return true;}
+        else if(jqGetAttribute(this,'href')!= '#' && jqGetAttribute(this,'href')!== undefined && jqGetAttribute(this,'href').indexOf('https://secure.livechatinc.com') == -1){goToUrl(jqGetAttribute(this,'href'),false); return false;}});
+        function asyncOmniture_426454679(e) { sOmniture.prop52='OS'; sOmniture.events='';sOmniture.t(); sOmniture.prop52=''; sOmniture.events='';}
+        jqOn('.headerBrowse .os','mouseup keypress click',function(e){if((e.type == "mouseup" && e.which != 2) || (e.type == "keypress" && e.which != 13)){return true;}
+        if(e.type != "click" || e.which != 2){asyncOmniture_426454679(e);}
+        if(e.which == 2 || (e.which == 1 && (e.metaKey || e.ctrlKey || e.shiftKey))){return true;}
+        else if(jqGetAttribute(this,'href')!= '#' && jqGetAttribute(this,'href')!== undefined && jqGetAttribute(this,'href').indexOf('https://secure.livechatinc.com') == -1){goToUrl(jqGetAttribute(this,'href'),false); return false;}});
+        function asyncOmniture_133664810(e) { sOmniture.prop52='Community'; sOmniture.events='';sOmniture.t(); sOmniture.prop52=''; sOmniture.events='';}
+        jqOn('.headerBrowse .community','mouseup keypress click',function(e){if((e.type == "mouseup" && e.which != 2) || (e.type == "keypress" && e.which != 13)){return true;}
+        if(e.type != "click" || e.which != 2){asyncOmniture_133664810(e);}
+        if(e.which == 2 || (e.which == 1 && (e.metaKey || e.ctrlKey || e.shiftKey))){return true;}
+        else if(jqGetAttribute(this,'href')!= '#' && jqGetAttribute(this,'href')!== undefined && jqGetAttribute(this,'href').indexOf('https://secure.livechatinc.com') == -1){goToUrl(jqGetAttribute(this,'href'),false); return false;}});
+        function asyncOmniture_1786499(e) { sOmniture.prop52='Other'; sOmniture.events='';sOmniture.t(); sOmniture.prop52=''; sOmniture.events='';}
+        jqOn('.headerBrowse .other','mouseup keypress click',function(e){if((e.type == "mouseup" && e.which != 2) || (e.type == "keypress" && e.which != 13)){return true;}
+        if(e.type != "click" || e.which != 2){asyncOmniture_1786499(e);}
+        if(e.which == 2 || (e.which == 1 && (e.metaKey || e.ctrlKey || e.shiftKey))){return true;}
+        else if(jqGetAttribute(this,'href')!= '#' && jqGetAttribute(this,'href')!== undefined && jqGetAttribute(this,'href').indexOf('https://secure.livechatinc.com') == -1){goToUrl(jqGetAttribute(this,'href'),false); return false;}});
+        //-->
+    </script>
+    <script type="text/javascript">
+      $.ajax({url: '//munchkin.marketo.net/munchkin-beta.js',dataType: 'script',cache: true,success: function() {Munchkin.init('556-EMW-319'); }});
+    </script>
+    <!-- cms2.prod.us-east-1b.aws.redsrci.com:80 - Page: 75653 -->
+    <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"applicationID":"3642000","applicationTime":375,"beacon":"beacon-3.newrelic.com","queueTime":0,"licenseKey":"a5f224d161","transactionName":"ZQNRMkZYW0tXW0QPXFxJAUl4dhUVFnlvSUVbA0QnRk1cW1pdHg5HXwo=","agent":"js-agent.newrelic.com\/nr-411.min.js","errorBeacon":"bam.nr-data.net"}</script>
+  
+
+<script src="./A VBA Progress Bar for Excel and Other Microsoft Apps._files/nr-411.min.js"></script><script type="text/javascript" src="./A VBA Progress Bar for Excel and Other Microsoft Apps._files/a5f224d161"></script></body></html>

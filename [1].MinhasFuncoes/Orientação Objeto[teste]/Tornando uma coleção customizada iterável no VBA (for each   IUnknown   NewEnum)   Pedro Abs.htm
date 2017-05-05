@@ -1,0 +1,1268 @@
+<!DOCTYPE html>
+<!-- saved from url=(0116)http://pedroabs.wordpress.com/2014/02/26/tornando-uma-colecao-customizada-iteravel-no-vba-for-each-iunknown-newenum/ -->
+<html lang="pt"><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<title>Tornando uma coleção customizada iterável no VBA (for each / IUnknown / NewEnum) | Pedro Abs</title>
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<link rel="stylesheet" type="text/css" media="all" href="./Tornando uma coleção customizada iterável no VBA (for each   IUnknown   NewEnum)   Pedro Abs_files/style.css">
+<link rel="pingback" href="http://pedroabs.wordpress.com/xmlrpc.php">
+<meta name="google-site-verification" content="eadBnVXV3kxMohl5vX0jk570OEoPG3it0rvreJFZnXk">
+<link rel="alternate" type="application/rss+xml" title="Pedro Abs » Feed" href="http://pedroabs.wordpress.com/feed/">
+<link rel="alternate" type="application/rss+xml" title="Pedro Abs » Feed de comentários" href="http://pedroabs.wordpress.com/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="Feed de comentários de Pedro Abs » Tornando uma coleção customizada iterável no VBA (for each / IUnknown / NewEnum)" href="http://pedroabs.wordpress.com/2014/02/26/tornando-uma-colecao-customizada-iteravel-no-vba-for-each-iunknown-newenum/feed/">
+<script type="text/javascript">
+/* <![CDATA[ */
+function addLoadEvent(func){var oldonload=window.onload;if(typeof window.onload!='function'){window.onload=func;}else{window.onload=function(){oldonload();func();}}}
+/* ]]> */
+</script>
+<link rel="stylesheet" id="all-css-0" href="./Tornando uma coleção customizada iterável no VBA (for each   IUnknown   NewEnum)   Pedro Abs_files/saved_resource" type="text/css" media="all">
+<script type="text/javascript">
+/* <![CDATA[ */
+var LoggedOutFollow = {"invalid_email":"A sua tentativa subscri\u00e7\u00e3o falhou. Por favor tente com um endere\u00e7o de email v\u00e1lido."};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Tornando uma coleção customizada iterável no VBA (for each   IUnknown   NewEnum)   Pedro Abs_files/saved_resource(1)"></script>
+<link rel="stylesheet" id="all-css-0" href="./Tornando uma coleção customizada iterável no VBA (for each   IUnknown   NewEnum)   Pedro Abs_files/style(1).css" type="text/css" media="all">
+<!--[if lt IE 8]>
+<link rel='stylesheet' id='highlander-comments-ie7-css'  href='http://s2.wp.com/wp-content/mu-plugins/highlander-comments/style-ie7.css?m=1351637563g&#038;ver=20110606' type='text/css' media='all' />
+<![endif]-->
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://pedroabs.wordpress.com/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://s1.wp.com/wp-includes/wlwmanifest.xml"> 
+<link rel="prev" title="Desenvolvendo VBA e XML, fazendo uma requisição web (Web Request)" href="http://pedroabs.wordpress.com/2014/02/06/desenvolvendo-vba-e-xml-fazendo-uma-requisicao-web-web-request/">
+<link rel="next" title="VBA, organizando coleções seguindo princípios da orientação a objetos." href="http://pedroabs.wordpress.com/2014/03/10/vba-organizando-colecoes-seguindo-principios-da-orientacao-a-objetos/">
+<meta name="generator" content="WordPress.com">
+<link rel="canonical" href="./Tornando uma coleção customizada iterável no VBA (for each   IUnknown   NewEnum)   Pedro Abs_files/Tornando uma coleção customizada iterável no VBA (for each   IUnknown   NewEnum)   Pedro Abs.htm">
+<link rel="shortlink" href="http://wp.me/p12ts3-JM">
+<link rel="alternate" type="application/json+oembed" href="https://public-api.wordpress.com/oembed/1.0/?format=json&url=http%3A%2F%2Fpedroabs.wordpress.com%2F2014%2F02%2F26%2Ftornando-uma-colecao-customizada-iteravel-no-vba-for-each-iunknown-newenum%2F&for=wpcom-auto-discovery"><link rel="alternate" type="application/xml+oembed" href="https://public-api.wordpress.com/oembed/1.0/?format=xml&url=http%3A%2F%2Fpedroabs.wordpress.com%2F2014%2F02%2F26%2Ftornando-uma-colecao-customizada-iteravel-no-vba-for-each-iunknown-newenum%2F&for=wpcom-auto-discovery">
+<!-- Jetpack Open Graph Tags -->
+<meta property="og:type" content="article">
+<meta property="og:title" content="Tornando uma coleção customizada iterável no VBA (for each / IUnknown / NewEnum)">
+<meta property="og:url" content="http://pedroabs.wordpress.com/2014/02/26/tornando-uma-colecao-customizada-iteravel-no-vba-for-each-iunknown-newenum/">
+<meta property="og:description" content="Na linguagem de programação Java, existem três principais famílias de coleções sendo que cada uma delas pode implementar vários objetos dentro da mesma família. Citando cada uma dessas grandes famí...">
+<meta property="article:published_time" content="2014-02-26T22:57:43+00:00">
+<meta property="article:modified_time" content="2014-02-26T22:57:43+00:00">
+<meta property="article:author" content="http://pedroabs.wordpress.com/author/pedroabs/">
+<meta property="og:site_name" content="Pedro Abs">
+<meta property="og:image" content="http://pedroabs.files.wordpress.com/2014/02/cole-o-cc3b3digo-newenum.png">
+<meta name="twitter:site" content="@pedroabs">
+<meta name="twitter:image:src" content="http://pedroabs.files.wordpress.com/2014/02/cole-o-cc3b3digo-newenum.png?w=640">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:creator" content="@pedroabs">
+<meta property="fb:app_id" content="249643311490">
+<meta property="article:publisher" content="https://www.facebook.com/WordPresscom">
+<link rel="shortcut icon" type="image/x-icon" href="http://0.gravatar.com/blavatar/613ad8305d59a1918ea739830c02a1ec?s=16" sizes="16x16">
+<link rel="icon" type="image/x-icon" href="http://0.gravatar.com/blavatar/613ad8305d59a1918ea739830c02a1ec?s=16" sizes="16x16">
+<link rel="apple-touch-icon-precomposed" href="http://1.gravatar.com/blavatar/3389b522f8a929539310aa62c356097b?s=114">
+<link rel="openid.server" href="http://pedroabs.wordpress.com/?openidserver=1">
+<link rel="openid.delegate" href="http://pedroabs.wordpress.com/">
+<link rel="search" type="application/opensearchdescription+xml" href="http://pedroabs.wordpress.com/osd.xml" title="Pedro Abs">
+<link rel="search" type="application/opensearchdescription+xml" href="http://wordpress.com/opensearch.xml" title="WordPress.com">
+<meta name="application-name" content="Pedro Abs"><meta name="msapplication-window" content="width=device-width;height=device-height"><meta name="msapplication-tooltip" content="Java, Visual Basic, MS Access, Javascript"><meta name="msapplication-task" content="name=Subscrever;action-uri=http://pedroabs.wordpress.com/feed/;icon-uri=http://0.gravatar.com/blavatar/613ad8305d59a1918ea739830c02a1ec?s=16"><meta name="msapplication-task" content="name=Sign up for a free blog;action-uri=http://wordpress.com/signup/;icon-uri=http://s2.wp.com/i/favicon.ico"><meta name="msapplication-task" content="name=WordPress.com Support;action-uri=http://support.wordpress.com/;icon-uri=http://s2.wp.com/i/favicon.ico"><meta name="msapplication-task" content="name=Fórum WordPress.com;action-uri=http://forums.wordpress.com/;icon-uri=http://s2.wp.com/i/favicon.ico"><meta name="title" content="Tornando uma coleção customizada iterável no VBA (for each / IUnknown / NewEnum) | Pedro Abs on WordPress.com">
+<meta name="description" content="Na linguagem de programação Java, existem três principais famílias de coleções sendo que cada uma delas pode implementar vários objetos dentro da mesma família. Citando cada uma dessas grandes famílias e suas breves características são: List - Adiciona-se objetos / valores à uma coleção permitindo a iteração rápida entre eles. Set - Adiciona-se objetos /…">
+<style type="text/css" id="custom-background-css">
+body.custom-background { background-color: #1e279f; }
+</style>
+
+<script type="text/javascript" src="./Tornando uma coleção customizada iterável no VBA (for each   IUnknown   NewEnum)   Pedro Abs_files/google_service.js">
+</script>
+<script type="text/javascript">
+if ( typeof GS_googleAddAdSenseService == 'function' ) { GS_googleAddAdSenseService("ca-pub-3443918307802676"); }
+if ( typeof GS_googleEnableAllServices == 'function' ) { GS_googleEnableAllServices() };
+</script><script src="./Tornando uma coleção customizada iterável no VBA (for each   IUnknown   NewEnum)   Pedro Abs_files/google_ads.js"></script>
+<script type="text/javascript" src="./Tornando uma coleção customizada iterável no VBA (for each   IUnknown   NewEnum)   Pedro Abs_files/amzn_ads.js"></script>
+<script type="text/javascript">
+try { amznads.getAds("3033","300x250"); } catch(e) { /* ignore */ }
+</script><script type="text/javascript" src="./Tornando uma coleção customizada iterável no VBA (for each   IUnknown   NewEnum)   Pedro Abs_files/bid"></script>
+<script type="text/javascript">
+var amznKeys = amznads.getKeys();
+if (typeof amznKeys != "undefined" && amznKeys != "") { for (var i =0; i < amznKeys.length; i++) { var key = amznKeys[i]; GA_googleAddAttr("amzn", key);} }
+document.close();
+</script>
+<script type="text/javascript">
+if ( typeof GA_googleAddSlot == 'function' ) { GA_googleAddSlot("ca-pub-3443918307802676", "wpcom_below_post"); }
+</script>
+<script type="text/javascript">
+if ( typeof GA_googleFetchAds == 'function' ) { GA_googleFetchAds(); }
+</script>
+
+<script type="text/javascript">
+var wpcom_ads = { bid: 15366207, pt: 'permalink', wa: 0, as: 0, domain: 'pedroabs.wordpress.com', url: 'http://pedroabs.wordpress.com/2014/02/26/tornando-uma-colecao-customizada-iteravel-no-vba-for-each-iunknown-newenum/', gid: '', };
+</script>
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+<script type="text/javascript">
+	window.google_analytics_uacct = "UA-52447-2";
+</script>
+
+<script type="text/javascript">
+	var _gaq = _gaq || [];
+	_gaq.push(['_setAccount', 'UA-52447-2']);
+	_gaq.push(['_setDomainName', 'wordpress.com']);
+	_gaq.push(['_initData']);
+	_gaq.push(['_trackPageview']);
+
+	(function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ga);
+	})();
+</script><script type="text/javascript" async="" src="./Tornando uma coleção customizada iterável no VBA (for each   IUnknown   NewEnum)   Pedro Abs_files/ga.js"></script>
+<script type="text/javascript" src="./Tornando uma coleção customizada iterável no VBA (for each   IUnknown   NewEnum)   Pedro Abs_files/osd.js"></script><link rel="stylesheet" type="text/css" id="gravatar-card-css" href="./Tornando uma coleção customizada iterável no VBA (for each   IUnknown   NewEnum)   Pedro Abs_files/hovercard.css"><link rel="stylesheet" type="text/css" id="gravatar-card-services-css" href="./Tornando uma coleção customizada iterável no VBA (for each   IUnknown   NewEnum)   Pedro Abs_files/services.css"><script type="text/javascript" async="" src="./Tornando uma coleção customizada iterável no VBA (for each   IUnknown   NewEnum)   Pedro Abs_files/saved_resource(2)"></script></head>
+
+<body class="single single-post postid-2838 single-format-standard custom-background mp6 single-author highlander-enabled highlander-light" style="">
+<div id="wrapper" class="hfeed">
+	<div id="header">
+		<div id="masthead">
+			<div id="branding" role="banner">
+								<div id="site-title">
+					<span>
+						<a href="http://pedroabs.wordpress.com/" title="Pedro Abs" rel="home" sl-processed="1">Pedro Abs</a>
+					</span>
+				</div>
+				<div id="site-description">Java, Visual Basic, MS Access, Javascript</div>
+
+										<a class="home-link" href="http://pedroabs.wordpress.com/" title="Pedro Abs" rel="home" sl-processed="1">
+							<img src="./Tornando uma coleção customizada iterável no VBA (for each   IUnknown   NewEnum)   Pedro Abs_files/cropped-rosto2.jpg" width="940" height="198" alt="">
+						</a>
+								</div><!-- #branding -->
+
+			<div id="access" role="navigation">
+			  				<div class="skip-link screen-reader-text"><a href="http://pedroabs.wordpress.com/2014/02/26/tornando-uma-colecao-customizada-iteravel-no-vba-for-each-iunknown-newenum/#content" title="Saltar para o conteúdo" sl-processed="1">Saltar para o conteúdo</a></div>
+								<div class="menu-header"><ul id="menu-menuprincipal" class="menu"><li id="menu-item-3124" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-3124"><a href="http://pedroabs.wordpress.com/category/administracao/" sl-processed="1">Administração</a>
+<ul class="sub-menu">
+	<li id="menu-item-3075" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3075"><a title="Planejamento e Controle da Produção" href="http://pedroabs.wordpress.com/planejamento-e-controle-da-producao/" sl-processed="1">Planejamento e Controle da Produção</a></li>
+	<li id="menu-item-3055" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3055"><a href="http://pedroabs.wordpress.com/sistema-de-cotacao-de-mercadorias/" sl-processed="1">Cotação</a></li>
+	<li id="menu-item-3133" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3133"><a href="http://pedroabs.wordpress.com/tag/supermercado/" sl-processed="1">Supermercadista</a></li>
+</ul>
+</li>
+<li id="menu-item-3119" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3119"><a href="http://pedroabs.wordpress.com/category/desenvolvimento/java/" sl-processed="1">Java</a></li>
+<li id="menu-item-3115" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-3115"><a href="http://pedroabs.wordpress.com/category/desenvolvimento/web/" sl-processed="1">Javascript</a>
+<ul class="sub-menu">
+	<li id="menu-item-3123" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3123"><a href="http://pedroabs.wordpress.com/tag/game/" sl-processed="1">Jogos</a></li>
+</ul>
+</li>
+<li id="menu-item-3116" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3116"><a href="http://pedroabs.wordpress.com/category/desenvolvimento/microsoft/visual-basic-6-0-e-vba/" sl-processed="1">VBA</a></li>
+<li id="menu-item-3120" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3120"><a href="http://pedroabs.wordpress.com/category/pessoal/dicas/" sl-processed="1">Dicas</a></li>
+<li id="menu-item-2379" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-2379"><a href="http://pedroabs.wordpress.com/posts/" sl-processed="1">Muito mais …</a>
+<ul class="sub-menu">
+	<li id="menu-item-3130" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3130"><a href="http://pedroabs.wordpress.com/category/desenvolvimento/design-pattern/" sl-processed="1">Design Patterns (Padrões de Projeto)</a></li>
+	<li id="menu-item-3131" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3131"><a href="http://pedroabs.wordpress.com/category/desenvolvimento/projetos/" sl-processed="1">Projetos</a></li>
+	<li id="menu-item-3132" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3132"><a href="http://pedroabs.wordpress.com/category/desenvolvimento/web/" sl-processed="1">Desenvolvimento web</a></li>
+</ul>
+</li>
+<li id="menu-item-2380" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-2380"><a href="http://pedroabs.wordpress.com/about/" sl-processed="1">Sobre</a>
+<ul class="sub-menu">
+	<li id="menu-item-2829" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2829"><a href="http://pedroabs.wordpress.com/feed/" sl-processed="1">Seguir por RSS</a></li>
+	<li id="menu-item-2830" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2830"><a href="https://twitter.com/pedroabs" sl-processed="1">Twitter</a></li>
+</ul>
+</li>
+<li id="menu-item-2381" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-2381"><a href="http://pedroabs.wordpress.com/entre-em-contato/" sl-processed="1">Fale comigo</a>
+<ul class="sub-menu">
+	<li id="menu-item-3182" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3182"><a href="http://pedroabs.wordpress.com/?s=aulas+de+informatica" sl-processed="1">Aulas de informática</a></li>
+	<li id="menu-item-3081" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3081"><a href="http://pedroabs.wordpress.com/assistencia-remota-team-viewer/" sl-processed="1">Quer ajuda ?</a></li>
+</ul>
+</li>
+</ul></div>			</div><!-- #access -->
+		</div><!-- #masthead -->
+	</div><!-- #header -->
+
+	<div id="main">
+
+		<div id="container">
+			<div id="content" role="main">
+
+			
+
+				<div id="nav-above" class="navigation">
+					<div class="nav-previous"><a href="http://pedroabs.wordpress.com/2014/02/06/desenvolvendo-vba-e-xml-fazendo-uma-requisicao-web-web-request/" rel="prev" sl-processed="1"><span class="meta-nav">←</span> Desenvolvendo VBA e XML, fazendo uma requisição web (Web&nbsp;Request)</a></div>
+					<div class="nav-next"><a href="http://pedroabs.wordpress.com/2014/03/10/vba-organizando-colecoes-seguindo-principios-da-orientacao-a-objetos/" rel="next" sl-processed="1">VBA, organizando coleções seguindo princípios da orientação a&nbsp;objetos. <span class="meta-nav">→</span></a></div>
+				</div><!-- #nav-above -->
+
+				<div id="post-2838" class="post-2838 post type-post status-publish format-standard has-post-thumbnail hentry category-visual-basic-6-0-e-vba tag-for-each tag-iunknown tag-newenum tag-vb6 tag-vba tag-vba-orientado-a-objetos tag-_newenum">
+											<h2 class="entry-title"><a href="./Tornando uma coleção customizada iterável no VBA (for each   IUnknown   NewEnum)   Pedro Abs_files/Tornando uma coleção customizada iterável no VBA (for each   IUnknown   NewEnum)   Pedro Abs.htm" rel="bookmark" sl-processed="1">Tornando uma coleção customizada iterável no VBA (for each / IUnknown /&nbsp;NewEnum)</a></h2>					
+					<div class="entry-meta">
+													<span class="meta-prep meta-prep-author">Publicado em</span> <a href="./Tornando uma coleção customizada iterável no VBA (for each   IUnknown   NewEnum)   Pedro Abs_files/Tornando uma coleção customizada iterável no VBA (for each   IUnknown   NewEnum)   Pedro Abs.htm" title="19:57" rel="bookmark" sl-processed="1"><span class="entry-date">26/02/2014</span></a> 							<span class="by-author"><span class="sep">por</span> <span class="author vcard"><a class="url fn n" href="http://pedroabs.wordpress.com/author/pedroabs/" title="Ver todos os artigos de pedroabs" rel="author" sl-processed="1">pedroabs</a></span> </span>											</div><!-- .entry-meta -->
+
+					<div class="entry-content">
+						<p>Na linguagem de programação Java, existem três principais famílias de coleções sendo que cada uma delas pode implementar vários objetos dentro da mesma família. Citando cada uma dessas grandes famílias e suas breves características são:</p>
+<p><strong>List</strong> – Adiciona-se objetos / valores à uma coleção permitindo a iteração rápida entre eles.</p>
+<p><strong>Set</strong> – Adiciona-se objetos / valores à uma coleção permitindo a iteração entre eles sendo estes não repetidos.</p>
+<p><strong>Map</strong> – Adiciona-se objetos / valores à uma coleção identificados por uma chave (key, value).</p>
+<p>No VBA temos duas opções: <em><strong>(1)</strong></em> criar uma matriz (array) dos objetos ou valores que queremos “colecionar”. Ex:</p>
+<address>dim i() as Integer</address>
+<address>ReDim i(8) as Integer</address>
+<p>Ou <em><strong>(2)</strong> </em>instanciar e utilizar um objeto do tipo Collection. Ex:</p>
+<address>dim animais as Collection</address>
+<address>set animais&nbsp;= new Collection</address>
+<p>ou até mesmo abreviando a instrução:</p>
+<address>dim animais&nbsp;as new Collection</address>
+<p>O primeiro ponto “<em>contra</em>” à utilizar o objeto Collection pura e simplesmente é que ele aceita qualquer tipo de valor:</p>
+<address>animais.add 1</address>
+<address>animais.add “uma string”</address>
+<p>Além do <strong><em>Java</em></strong> possuir várias coleções em 3 principais famílias, temos, na linguagem, o <strong><em>Generics</em></strong>, que faz com que definamos em tempo de compilação qual o tipo que uma determinada coleção vai aceitar:</p>
+<address>List&lt;Animal&gt; animais = new ArrayList&lt;Animal&gt;();<span style="color:#008000;"> /*coleção que só aceita instância de animais*/</span></address>
+<p>Para contornar esta limitação, podemos implementar uma classe no VBA <em>(Módulo de Classe)</em> que representa uma coleção com seus métodos específicos da escolha do programador:</p>
+<address>dim animal as new Animal</address>
+<address>animal.Nome = “Leão”</address>
+<address>animais.addAnimal animal</address>
+<p>Desta forma, não fica muito melhor que a coleção customizada aceite apenas animais (e não números nem strings) ?</p>
+<p>Bem, o objeto nativo [Collection] no VBA possui uma característica muito interessante que é a capacidade de se iterar por seus itens usando-se da instrução [<em>for each</em>]. Ex:</p>
+<address><strong>for each</strong> animal in animais</address>
+<address>&nbsp; &nbsp; &nbsp; &nbsp; ‘faça algo com cada animal achado na coleção…</address>
+<address><strong>next</strong> animal</address>
+<address>&nbsp;</address>
+<p>Porém, ao se codificar nossa nova coleção, perdemos provisóriamente a capacidade de se usar esta sintaxe. Veja o erro apresentado:</p>
+<p><a href="http://pedroabs.files.wordpress.com/2014/02/erro-iterator.png" class="hoverZoomLink" sl-processed="1"><img class="alignnone size-full wp-image-2842" alt="erro iterator" src="./Tornando uma coleção customizada iterável no VBA (for each   IUnknown   NewEnum)   Pedro Abs_files/erro-iterator.png"></a></p>
+<p>Existe, então, uma forma “<em><strong>OCULTA</strong></em>” de se permitir com que uma coleção customizada aceite essa propriedade.</p>
+<p><strong><em>Objetivo final</em></strong>: implementar no módulo de classe o método NewEnum conforme abaixo:</p>
+<address>Public Function NewEnum() As IUnknown<br>
+Set NewEnum = pCol.[_NewEnum]<br>
+End Function</address>
+<p>Passos:</p>
+<p><strong><em>(1)</em></strong> <em>Opcional</em>: a interface IUnknown é uma interface oculta do VBA. Para que possamos vê-la na janela Object Browser temos que selecionar a opção de ver objetos ocultos:</p>
+<p><a href="http://pedroabs.files.wordpress.com/2014/02/exibir-membros-ocultos.png" class="hoverZoomLink" sl-processed="1"><img class="alignnone size-full wp-image-2843" alt="exibir membros ocultos" src="./Tornando uma coleção customizada iterável no VBA (for each   IUnknown   NewEnum)   Pedro Abs_files/exibir-membros-ocultos.png"></a></p>
+<p>Após fazer isso podemos verificar a existência do membro que antes era oculto:</p>
+<p><a href="http://pedroabs.files.wordpress.com/2014/02/membro-oculto-desocultado.png" class="hoverZoomLink" sl-processed="1"><img class="alignnone size-full wp-image-2844" alt="membro oculto desocultado" src="./Tornando uma coleção customizada iterável no VBA (for each   IUnknown   NewEnum)   Pedro Abs_files/membro-oculto-desocultado.png"></a></p>
+<p>Esse primeiro passo não é essencial para que o código funcione. Ele é apenas importante para percebermos que a interface existe <em>(não vem do além). &nbsp; &nbsp; &nbsp;&nbsp;</em>&nbsp; <span class="wp-smiley emoji emoji-bigsmile" title=":-D">:-D</span></p>
+<p><strong><em>(2)</em></strong> Exporte a classe que representa uma nova coleção para, por exemplo, a área de trabalho do seu computador:</p>
+<p><a href="http://pedroabs.files.wordpress.com/2014/02/exportar-classe-vba1.png" class="hoverZoomLink" sl-processed="1"><img class="alignnone size-full wp-image-2846" alt="exportar classe vba" src="./Tornando uma coleção customizada iterável no VBA (for each   IUnknown   NewEnum)   Pedro Abs_files/exportar-classe-vba1.png" width="640" height="511"></a></p>
+<p><strong><em>(3)</em></strong> Na sua área de trabalho ou &nbsp;em outro local que você tenha salvo a classe, abra-á com o bloco de notas e cole na mesma o seguinte código:</p>
+<p><a href="http://pedroabs.files.wordpress.com/2014/02/cole-o-cc3b3digo-newenum.png" class="hoverZoomLink" sl-processed="1"><img class="alignnone size-full wp-image-2847" alt="cole o código NewEnum" src="./Tornando uma coleção customizada iterável no VBA (for each   IUnknown   NewEnum)   Pedro Abs_files/cole-o-cc3b3digo-newenum.png"></a></p>
+<address>Public Function NewEnum() As IUnknown<br>
+Attribute NewEnum.VB_UserMemId = -4<br>
+Set NewEnum = pCol.[_NewEnum]<br>
+End Function</address>
+<address>&nbsp;</address>
+<p><strong><em>(4)</em></strong> <strong>Apague</strong> a classe original contida no projeto e <strong>importe</strong> o arquivo com essas alterações previamente salvas:</p>
+<p><a href="http://pedroabs.files.wordpress.com/2014/02/importar-arquivo-de-classe-vba.png" class="hoverZoomLink" sl-processed="1"><img class="alignnone size-full wp-image-2848" alt="importar arquivo de classe vba" src="./Tornando uma coleção customizada iterável no VBA (for each   IUnknown   NewEnum)   Pedro Abs_files/importar-arquivo-de-classe-vba.png"></a></p>
+<p>Pronto !!!</p>
+<p>Observe que no código VBA a linha destacada abaixo em vermelho fica oculta:</p>
+<address>Public Function NewEnum() As IUnknown<br>
+<strong><span style="color:#ff0000;">Attribute NewEnum.VB_UserMemId = -4</span></strong><br>
+Set NewEnum = pCol.[_NewEnum]<br>
+End Function</address>
+<p>Veja imagem:</p>
+<p><a href="http://pedroabs.files.wordpress.com/2014/02/vba-iterador-linha-oculta.png" class="hoverZoomLink" sl-processed="1"><img class="alignnone size-full wp-image-2849" alt="vba iterador linha oculta" src="./Tornando uma coleção customizada iterável no VBA (for each   IUnknown   NewEnum)   Pedro Abs_files/vba-iterador-linha-oculta.png"></a></p>
+<p>Faça o download de uma planilha MS Excel com código VBA de exemplo: <a href="https://onedrive.live.com/redir?resid=79C9BCBBFC35E868%21774" target="_blank" sl-processed="1">CustomCollection.xlsm</a></p>
+
+<div class="wpcnt">
+<div class="wpa">
+<a class="wpa-about" href="http://wordpress.com/about-these-ads/" rel="nofollow" sl-processed="1">About these ads</a>
+<script type="text/javascript">
+		var wpcom_adclk_hovering = false;
+		var wpcom_adclk_recorded = false;
+		var wpcom_adclk_theme = "Twenty Ten";
+		var wpcom_adclk_slot = "wpcom_below_post";
+		var wpcom_adclk_network = ( typeof wpcom_adclk_network === "undefined" ) ? "" : wpcom_adclk_network ;
+
+		jQuery(document).ready( function() {
+			function wpcom_adclk_hover_yes() { wpcom_adclk_hovering = true; }
+			function wpcom_adclk_hover_no() { wpcom_adclk_hovering = false; }
+			jQuery(".wpa").click(wpcom_adclk_click);
+			jQuery(".wpa iframe").hover( wpcom_adclk_hover_yes, wpcom_adclk_hover_no );
+			jQuery(".wpa object").hover( wpcom_adclk_hover_yes, wpcom_adclk_hover_no );
+
+			jQuery(window).blur( function() {
+				if ( wpcom_adclk_hovering ) { wpcom_adclk_click(); }
+			});
+		});
+
+		function wpcom_adclk_impression() {
+			var stat_gif = document.location.protocol + "//pixel.wp.com/g.gif?v=wpcom-no-pv";
+			stat_gif += "&x_ads_imp_theme=" + wpcom_adclk_theme;
+			stat_gif += "&x_ads_imp_placement="+wpcom_adclk_slot;
+			stat_gif += "&x_ads_imp_network=" + wpcom_adclk_network;
+			stat_gif += "&x_ads_imp_theme_network="+wpcom_adclk_theme+"_"+wpcom_adclk_network;
+			new Image().src = stat_gif + "&baba=" + Math.random();
+			return true;
+		}
+
+		function wpcom_adclk_click() {
+			if (wpcom_adclk_recorded) { return true; } // no double counting
+			var stat_gif = document.location.protocol + "//pixel.wp.com/g.gif?v=wpcom-no-pv";
+			stat_gif += "&x_ads_click_theme=" + wpcom_adclk_theme;
+			stat_gif += "&x_ads_click_placement="+wpcom_adclk_slot;
+			stat_gif += "&x_ads_click_network=" + wpcom_adclk_network;
+			stat_gif += "&x_ads_click_theme_network="+wpcom_adclk_theme+"_"+wpcom_adclk_network;
+
+			new Image().src = stat_gif + "&baba=" + Math.random();
+			wpcom_adclk_recorded = true;
+			var now=new Date(); var end=now.getTime()+250;
+			while(true){now=new Date();if(now.getTime()>end){break;}}
+			return true;
+		}
+	
+if ( typeof GA_googleAddAttr == 'function' ) {
+GA_googleAddAttr("AdOpt", "1");
+GA_googleAddAttr("Origin", "other");
+GA_googleAddAttr("LangId", "60");
+GA_googleAddAttr("Domain", "pedroabs.wordpress.com");
+GA_googleAddAttr("BlogId", "15366207");
+GA_googleAddAttr("PageURL", "http://pedroabs.wordpress.com/2014/02/26/tornando-uma-colecao-customizada-iteravel-no-vba-for-each-iunknown-newenum/");
+GA_googleAddAttr("Tag", "visual-basic-6-0-e-vba");
+GA_googleAddAttr("Tag", "for-each");
+GA_googleAddAttr("Tag", "iunknown");
+GA_googleAddAttr("Tag", "newenum");
+GA_googleAddAttr("Tag", "vb6");
+GA_googleAddAttr("Tag", "vba");
+GA_googleAddAttr("Tag", "vba-orientado-a-objetos");
+GA_googleAddAttr("Tag", "_newenum");
+GA_googleAddAttr("theme_bg", "ffffff");
+GA_googleAddAttr("theme_text", "333333");
+GA_googleAddAttr("theme_link", "0066cc");
+GA_googleAddAttr("theme_border", "cccccc");
+GA_googleAddAttr("theme_url", "ff4b33");
+GA_googleAddAdSensePageAttr("google_page_url", "http://pedroabs.wordpress.com/2014/02/26/tornando-uma-colecao-customizada-iteravel-no-vba-for-each-iunknown-newenum/");
+GA_googleFillSlot("wpcom_below_post");
+}
+</script><script src="./Tornando uma coleção customizada iterável no VBA (for each   IUnknown   NewEnum)   Pedro Abs_files/ads"></script><div id="google_ads_div_wpcom_below_post_ad_wrapper">
+<div id="google_ads_div_wpcom_below_post_ad_container" style="display:inline-block;"><script type="text/javascript">
+<!--//<![CDATA[
+   document.MAX_ct0 ='';
+   var m3_u = (location.protocol=='https:'?'https://cas.criteo.com/delivery/ajs.php?':'http://cas.criteo.com/delivery/ajs.php?');
+   var m3_r = Math.floor(Math.random()*99999999999);
+   document.write ("<scr"+"ipt type='text/javascript' src='"+m3_u);
+   document.write ("zoneid=153906");document.write("&amp;nodis=1");
+   document.write ('&amp;cb=' + m3_r);
+   if (document.MAX_used != ',') document.write ("&amp;exclude=" + document.MAX_used);
+   document.write (document.charset ? '&amp;charset='+document.charset : (document.characterSet ? '&amp;charset='+document.characterSet : ''));
+   document.write ("&amp;loc=" + escape(window.location));
+   if (document.referrer) document.write ("&amp;referer=" + escape(document.referrer));
+   if (document.context) document.write ("&context=" + escape(document.context));
+   if ((typeof(document.MAX_ct0) != 'undefined') && (document.MAX_ct0.substring(0,4) == 'http')) {
+       document.write ("&amp;ct0=" + escape(document.MAX_ct0));
+   }
+   if (document.mmm_fo) document.write ("&amp;mmm_fo=1");
+   document.write ("'></scr"+"ipt>");
+//]]>--></script><script type="text/javascript" src="./Tornando uma coleção customizada iterável no VBA (for each   IUnknown   NewEnum)   Pedro Abs_files/ajs.php"></script><!-- WordPress Passback Ad Tag -->
+<iframe src="./Tornando uma coleção customizada iterável no VBA (for each   IUnknown   NewEnum)   Pedro Abs_files/w2.htm" frameborder="0" scrolling="no" style="overflow: hidden; width: 300px; height: 250px;"></iframe>
+<div id="beacon_d8333cdcab" style="position: absolute; left: 0px; top: 0px; visibility: hidden;">
+<img width="0" height="0" src="./Tornando uma coleção customizada iterável no VBA (for each   IUnknown   NewEnum)   Pedro Abs_files/lg.php">
+</div>
+
+
+</div>
+</div>
+
+</div>
+</div>
+
+<script type="text/javascript">
+jQuery( window ).load( function() {
+    if ( jQuery(".wpa script[src*='virool.com']").length > 0 || jQuery(".wpa script[src*='shareth.ru']").length > 0 || jQuery(".wpa iframe[src*='boomvideo.tv']").length > 0 || jQuery(".wpa iframe[src*='viewablemedia.net']").length > 0 || jQuery(".wpa .sharethrough-placement").length > 0 ) {
+        jQuery( '.wpa' ).css( 'width', '400px' );
+    }
+setTimeout(function(){if(typeof GS_googleAddAdSenseService !== 'function'){new Image().src=document.location.protocol+"//pixel.wp.com/g.gif?v=wpcom-no-pv&x_noads=adblock&baba="+Math.random()}},100);
+} );
+</script>
+
+<div id="jp-post-flair" class="sharedaddy sd-like-enabled sd-sharing-enabled"><div class="sharedaddy sd-sharing-enabled"><div class="robots-nocontent sd-block sd-social sd-social-icon-text sd-sharing"><h3 class="sd-title">Compartilhe ....</h3><div class="sd-content"><ul><li class="share-email share-service-visible"><a rel="nofollow" class="share-email sd-button share-icon" href="http://pedroabs.wordpress.com/2014/02/26/tornando-uma-colecao-customizada-iteravel-no-vba-for-each-iunknown-newenum/?share=email&nb=1" target="_blank" title="Carregue aqui para partilhar por email com um amigo" sl-processed="1"><span>Email</span></a></li><li class="share-facebook"><a rel="nofollow" class="share-facebook sd-button share-icon" href="http://pedroabs.wordpress.com/2014/02/26/tornando-uma-colecao-customizada-iteravel-no-vba-for-each-iunknown-newenum/?share=facebook&nb=1" target="_blank" title="Partilhar no Facebook" id="sharing-facebook-2838" sl-processed="1"><span>Facebook<span class="share-count">3</span></span></a></li><li class="share-twitter"><a rel="nofollow" class="share-twitter sd-button share-icon" href="http://pedroabs.wordpress.com/2014/02/26/tornando-uma-colecao-customizada-iteravel-no-vba-for-each-iunknown-newenum/?share=twitter&nb=1" target="_blank" title="Carregue aqui para partilhar no Twitter" id="sharing-twitter-2838" sl-processed="1"><span>Twitter<span class="share-count">1</span></span></a></li><li class="share-google-plus-1"><a rel="nofollow" class="share-google-plus-1 sd-button share-icon" href="http://pedroabs.wordpress.com/2014/02/26/tornando-uma-colecao-customizada-iteravel-no-vba-for-each-iunknown-newenum/?share=google-plus-1&nb=1" target="_blank" title="Click to share on Google+" id="sharing-google-2838" sl-processed="1"><span>Google</span></a></li><li class="share-linkedin"><a rel="nofollow" class="share-linkedin sd-button share-icon" href="http://pedroabs.wordpress.com/2014/02/26/tornando-uma-colecao-customizada-iteravel-no-vba-for-each-iunknown-newenum/?share=linkedin&nb=1" target="_blank" title="Click to share on LinkedIn" id="sharing-linkedin-2838" sl-processed="1"><span>LinkedIn<span class="share-count">4</span></span></a></li><li class="share-print"><a rel="nofollow" class="share-print sd-button share-icon" href="http://pedroabs.wordpress.com/2014/02/26/tornando-uma-colecao-customizada-iteravel-no-vba-for-each-iunknown-newenum/#print" target="_blank" title="Carregue aqui para imprimir" sl-processed="1"><span>Print</span></a></li><li class="share-pocket"><a rel="nofollow" class="share-pocket sd-button share-icon" href="http://pedroabs.wordpress.com/2014/02/26/tornando-uma-colecao-customizada-iteravel-no-vba-for-each-iunknown-newenum/?share=pocket&nb=1" target="_blank" title="Click to share on Pocket" sl-processed="1"><span>Pocket</span></a></li><li class="share-stumbleupon"><a rel="nofollow" class="share-stumbleupon sd-button share-icon" href="http://pedroabs.wordpress.com/2014/02/26/tornando-uma-colecao-customizada-iteravel-no-vba-for-each-iunknown-newenum/?share=stumbleupon&nb=1" target="_blank" title="Carregue aqui para partilhar no StumbleUpon" sl-processed="1"><span>StumbleUpon</span></a></li><li class="share-tumblr"><a rel="nofollow" class="share-tumblr sd-button share-icon" href="http://pedroabs.wordpress.com/2014/02/26/tornando-uma-colecao-customizada-iteravel-no-vba-for-each-iunknown-newenum/?share=tumblr&nb=1" target="_blank" title="Clique para partilhar no Tumblr" sl-processed="1"><span>Tumblr</span></a></li><li class="share-reddit"><a rel="nofollow" class="share-reddit sd-button share-icon" href="http://pedroabs.wordpress.com/2014/02/26/tornando-uma-colecao-customizada-iteravel-no-vba-for-each-iunknown-newenum/?share=reddit&nb=1" target="_blank" title="Carregue aqui para partilhar no Reddit" sl-processed="1"><span>Reddit</span></a></li><li class="share-end"></li></ul></div></div></div><div class="sharedaddy sd-block sd-like jetpack-likes-widget-wrapper jetpack-likes-widget-loaded" id="like-post-wrapper-15366207-2838-541afbae62e57" data-src="//widgets.wp.com/likes/#blog_id=15366207&amp;post_id=2838&amp;origin=pedroabs.wordpress.com&amp;obj_id=15366207-2838-541afbae62e57" data-name="like-post-frame-15366207-2838-541afbae62e57"><h3 class="sd-title">Gostar disto:</h3><div class="likes-widget-placeholder post-likes-widget-placeholder" style="height: 55px; display: none;"><span class="button"><span>Gosto</span></span> <span class="loading">Carregando...</span></div><iframe class="post-likes-widget jetpack-likes-widget" name="like-post-frame-15366207-2838-541afbae62e57" height="55px" width="100%" frameborder="0" src="./Tornando uma coleção customizada iterável no VBA (for each   IUnknown   NewEnum)   Pedro Abs_files/saved_resource.htm"></iframe><span class="sd-text-color"></span><a class="sd-link-color"></a></div>
+<div id="jp-relatedposts" class="jp-relatedposts" style="display: block;">
+	<h3 class="jp-relatedposts-headline"><em>Related</em></h3>
+<div class="jp-relatedposts-items jp-relatedposts-items-visual"><div class="jp-relatedposts-post jp-relatedposts-post0 jp-relatedposts-post-thumbs" data-post-id="2856" data-post-format="false"><a class="jp-relatedposts-post-a" href="http://pedroabs.wordpress.com/2014/03/10/vba-organizando-colecoes-seguindo-principios-da-orientacao-a-objetos/" title="VBA, organizando coleções seguindo princípios da orientação a objetos.
+
+A linguagem de programação Java, além de completamente orientada a objetos possui algumas facilidades já prontas e implícitas que ajudam muito a vida do desenvolvedor. Neste artigo, focarei-me na habilidade&amp;hellip;" rel="nofollow" data-origin="2838" data-position="0" sl-processed="1"><img class="jp-relatedposts-post-img" src="./Tornando uma coleção customizada iterável no VBA (for each   IUnknown   NewEnum)   Pedro Abs_files/teste.png" width="350" alt="VBA, organizando coleções seguindo princípios da orientação a objetos."></a><h4 class="jp-relatedposts-post-title"><a class="jp-relatedposts-post-a" href="http://pedroabs.wordpress.com/2014/03/10/vba-organizando-colecoes-seguindo-principios-da-orientacao-a-objetos/" title="VBA, organizando coleções seguindo princípios da orientação a objetos.
+
+A linguagem de programação Java, além de completamente orientada a objetos possui algumas facilidades já prontas e implícitas que ajudam muito a vida do desenvolvedor. Neste artigo, focarei-me na habilidade&amp;hellip;" rel="nofollow" data-origin="2838" data-position="0" sl-processed="1">VBA, organizando coleções seguindo princípios da orientação a objetos.</a></h4><p class="jp-relatedposts-post-excerpt">A linguagem de programação Java, além de completamente orientada a objetos possui algumas facilidades já prontas e implícitas que ajudam muito a vida do desenvolvedor. Neste artigo, focarei-me na habilidade…</p><p class="jp-relatedposts-post-context">In "Java"</p></div><div class="jp-relatedposts-post jp-relatedposts-post1 jp-relatedposts-post-nothumbs" data-post-id="1939" data-post-format="aside"><h4 class="jp-relatedposts-post-title"><a class="jp-relatedposts-post-a" href="http://pedroabs.wordpress.com/2013/05/29/como-fazer-um-looping-por-todas-as-tabelas-ms-access-vba/" title="Como fazer um looping por todas as tabelas MS Access - VBA
+
+Eu tenho um banco de dados MS Access com muitas tabelas e sem integridade referencial configurada (foreign-keys). Cada vez que eu faço um teste de inserção em todas as tabelas,&amp;hellip;" rel="nofollow" data-origin="2838" data-position="1" sl-processed="1">Como fazer um looping por todas as tabelas MS Access - VBA</a></h4><p class="jp-relatedposts-post-excerpt">Eu tenho um banco de dados MS Access com muitas tabelas e sem integridade referencial configurada (foreign-keys). Cada vez que eu faço um teste de inserção em todas as tabelas,…</p><p class="jp-relatedposts-post-context">In "MS Access"</p></div><div class="jp-relatedposts-post jp-relatedposts-post2 jp-relatedposts-post-nothumbs" data-post-id="498" data-post-format="false"><h4 class="jp-relatedposts-post-title"><a class="jp-relatedposts-post-a" href="http://pedroabs.wordpress.com/2010/12/23/iterator-design-pattern-por-debaixo-dos-panos/" title="Iterator Design Pattern (por debaixo dos panos)
+
+Neste pequeno exemplo, utilizamos dos seguintes conceitos: Generics Inner Class Iterator Design Pattern O exemplo abaixo foi elaborado com a motivação de entender como deve funcionar o método &#39;iterator()&#39; que&amp;hellip;" rel="nofollow" data-origin="2838" data-position="2" sl-processed="1">Iterator Design Pattern (por debaixo dos panos)</a></h4><p class="jp-relatedposts-post-excerpt">Neste pequeno exemplo, utilizamos dos seguintes conceitos: Generics Inner Class Iterator Design Pattern O exemplo abaixo foi elaborado com a motivação de entender como deve funcionar o método 'iterator()' que…</p><p class="jp-relatedposts-post-context">In "Design Pattern"</p></div></div></div></div>											</div><!-- .entry-content -->
+
+					<div id="entry-author-info">
+						<div id="author-avatar">
+							<img alt="" src="./Tornando uma coleção customizada iterável no VBA (for each   IUnknown   NewEnum)   Pedro Abs_files/3408c0a1305daced311ca798f08401f7" class="avatar avatar-60 grav-hashed grav-hijack hoverZoomLink" height="60" width="60" id="grav-3408c0a1305daced311ca798f08401f7-0">						</div><!-- #author-avatar -->
+						<div id="author-description">
+							<h2>Sobre pedroabs</h2>
+							Interessado em Java.							<div id="author-link">
+								<a href="http://pedroabs.wordpress.com/author/pedroabs/" rel="author" sl-processed="1">
+									Ver todos os artigos de pedroabs <span class="meta-nav">→</span>								</a>
+							</div><!-- #author-link	-->
+						</div><!-- #author-description -->
+					</div><!-- #entry-author-info -->
+
+					<div class="entry-utility">
+												Esta entrada foi publicada em <a href="http://pedroabs.wordpress.com/category/desenvolvimento/microsoft/visual-basic-6-0-e-vba/" rel="category tag" sl-processed="1">Visual Basic 6.0 e VBA</a> com as etiquetas <a href="http://pedroabs.wordpress.com/tag/for-each/" rel="tag" sl-processed="1">for each</a>, <a href="http://pedroabs.wordpress.com/tag/iunknown/" rel="tag" sl-processed="1">IUnknown</a>, <a href="http://pedroabs.wordpress.com/tag/newenum/" rel="tag" sl-processed="1">NewEnum</a>, <a href="http://pedroabs.wordpress.com/tag/vb6/" rel="tag" sl-processed="1">VB6</a>, <a href="http://pedroabs.wordpress.com/tag/vba/" rel="tag" sl-processed="1">VBA</a>, <a href="http://pedroabs.wordpress.com/tag/vba-orientado-a-objetos/" rel="tag" sl-processed="1">VBA Orientado a Objetos</a>, <a href="http://pedroabs.wordpress.com/tag/_newenum/" rel="tag" sl-processed="1">_NewEnum</a>. <a href="./Tornando uma coleção customizada iterável no VBA (for each   IUnknown   NewEnum)   Pedro Abs_files/Tornando uma coleção customizada iterável no VBA (for each   IUnknown   NewEnum)   Pedro Abs.htm" title="Permalink to Tornando uma coleção customizada iterável no VBA (for each / IUnknown / NewEnum)" rel="bookmark" sl-processed="1">ligação permanente</a>.											</div><!-- .entry-utility -->
+				</div><!-- #post-## -->
+
+				<div id="nav-below" class="navigation">
+					<div class="nav-previous"><a href="http://pedroabs.wordpress.com/2014/02/06/desenvolvendo-vba-e-xml-fazendo-uma-requisicao-web-web-request/" rel="prev" sl-processed="1"><span class="meta-nav">←</span> Desenvolvendo VBA e XML, fazendo uma requisição web (Web&nbsp;Request)</a></div>
+					<div class="nav-next"><a href="http://pedroabs.wordpress.com/2014/03/10/vba-organizando-colecoes-seguindo-principios-da-orientacao-a-objetos/" rel="next" sl-processed="1">VBA, organizando coleções seguindo princípios da orientação a&nbsp;objetos. <span class="meta-nav">→</span></a></div>
+				</div><!-- #nav-below -->
+
+				
+			<div id="comments">
+
+
+
+								<div id="respond" class="comment-respond js">
+				<h3 id="reply-title" class="comment-reply-title">Deixar uma resposta <small><a rel="nofollow" id="cancel-comment-reply-link" href="http://pedroabs.wordpress.com/2014/02/26/tornando-uma-colecao-customizada-iteravel-no-vba-for-each-iunknown-newenum/#respond" style="display:none;" sl-processed="1">Cancelar resposta</a></small></h3>
+									<form action="http://pedroabs.wordpress.com/wp-comments-post.php" method="post" id="commentform" class="comment-form">
+																										
+
+
+												<input type="hidden" id="highlander_comment_nonce" name="highlander_comment_nonce" value="80e63ee713"><input type="hidden" name="_wp_http_referer" value="/2014/02/26/tornando-uma-colecao-customizada-iteravel-no-vba-for-each-iunknown-newenum/">
+<input type="hidden" name="hc_post_as" id="hc_post_as" value="guest">
+
+<div class="comment-form-field comment-textarea">
+	
+	<div id="comment-form-comment"><textarea tabindex="-1" style="position: absolute; top: -999px; left: 0px; right: auto; bottom: auto; border: 0px; padding: 0px; box-sizing: content-box; word-wrap: break-word; overflow: hidden; -webkit-transition: none; transition: none; height: 0px !important; min-height: 0px !important; font-family: Arial, Helvetica, Tahoma, Verdana, sans-serif; font-size: 14px; font-weight: 400; font-style: normal; letter-spacing: 0px; text-transform: none; text-decoration: none; word-spacing: 0px; text-indent: 0px; line-height: 24px; width: 618px;" class="autosizejs "></textarea><textarea id="comment" name="comment" title="Escreva o seu comentário aqui..." placeholder="Escreva o seu comentário aqui..." style="height: 44px; overflow: hidden; word-wrap: break-word; resize: horizontal;"></textarea></div>
+</div>
+
+<div id="comment-form-identity" style="display: none;">
+
+	<div id="comment-form-nascar">
+		<p>Preencha os seus detalhes abaixo ou clique num ícone para iniciar sessão:</p>
+		<ul>
+			<li class="selected" style="display:none;">
+				<a href="http://pedroabs.wordpress.com/2014/02/26/tornando-uma-colecao-customizada-iteravel-no-vba-for-each-iunknown-newenum/#comment-form-guest" id="postas-guest" title="Guest" sl-processed="1">
+					<span></span>
+				</a>
+			</li>
+			<li>
+				<a href="http://pedroabs.wordpress.com/2014/02/26/tornando-uma-colecao-customizada-iteravel-no-vba-for-each-iunknown-newenum/#comment-form-load-service:WordPress.com" id="postas-wordpress" title="WordPress.com" sl-processed="1">
+					<span></span>
+				</a>
+			</li>
+			<li>
+				<a href="http://pedroabs.wordpress.com/2014/02/26/tornando-uma-colecao-customizada-iteravel-no-vba-for-each-iunknown-newenum/#comment-form-load-service:Twitter" id="postas-twitter" title="Twitter" sl-processed="1">
+					<span></span>
+				</a>
+			</li>
+			<li>
+				<a href="http://pedroabs.wordpress.com/2014/02/26/tornando-uma-colecao-customizada-iteravel-no-vba-for-each-iunknown-newenum/#comment-form-load-service:Facebook" id="postas-facebook" title="Facebook" sl-processed="1">
+					<span></span>
+				</a>
+			</li>
+			<li>
+			<iframe id="googleplus-sign-in" name="googleplus-sign-in" src="./Tornando uma coleção customizada iterável no VBA (for each   IUnknown   NewEnum)   Pedro Abs_files/saved_resource(6).htm" width="24" height="24" scrolling="no" allowtransparency="true" seamless="seamless" frameborder="0"></iframe>
+			</li>
+		</ul>
+	</div>
+
+	<div id="comment-form-guest" class="comment-form-service selected">
+		<div class="comment-form-padder">
+			<div class="comment-form-avatar">
+<a href="https://gravatar.com/site/signup/" target="_blank" sl-processed="1">				<img src="./Tornando uma coleção customizada iterável no VBA (for each   IUnknown   NewEnum)   Pedro Abs_files/mu.gif" alt="Gravatar" width="25" class="no-grav">
+</a>			</div>
+
+				<div class="comment-form-fields">
+				<div class="comment-form-field comment-form-email">
+					<label for="email">Email <span class="required">(obrigatório)</span> <span class="nopublish">(O endereço nunca será tornado público)</span></label>
+					<div class="comment-form-input"><input id="email" name="email" type="email" value=""></div>
+				</div>
+				<div class="comment-form-field comment-form-author">
+					<label for="author">Nome <span class="required">(obrigatório)</span></label>
+					<div class="comment-form-input"><input id="author" name="author" type="text" value=""></div>
+				</div>
+				<div class="comment-form-field comment-form-url">
+					<label for="url">Website</label>
+					<div class="comment-form-input"><input id="url" name="url" type="text" value=""></div>
+				</div>
+			</div>
+	
+		</div>
+	</div>
+
+	<div id="comment-form-wordpress" class="comment-form-service">
+		<div class="comment-form-padder">
+			<div class="comment-form-avatar">
+				<img src="./Tornando uma coleção customizada iterável no VBA (for each   IUnknown   NewEnum)   Pedro Abs_files/wplogo.png" alt="WordPress.com Logo" width="25" class="no-grav">
+			</div>
+
+				<div class="comment-form-fields">
+				<input type="hidden" name="wp_avatar" id="wordpress-avatar" class="comment-meta-wordpress" value="">
+				<input type="hidden" name="wp_user_id" id="wordpress-user_id" class="comment-meta-wordpress" value="">
+				<input type="hidden" name="wp_access_token" id="wordpress-access_token" class="comment-meta-wordpress" value="">
+				<p class="comment-form-posting-as pa-wordpress"><strong></strong> Está a comentar usando a sua conta <span class="skimlinks-unlinked">WordPress.com</span> <span class="comment-form-log-out">(&nbsp;<a href="javascript:HighlanderComments.doExternalLogout( 'wordpress' );" sl-processed="1">Log&nbsp;Out</a>&nbsp;/&nbsp;<a href="http://pedroabs.wordpress.com/2014/02/26/tornando-uma-colecao-customizada-iteravel-no-vba-for-each-iunknown-newenum/#" onclick="javascript:HighlanderComments.switchAccount();return false;" sl-processed="1">Modificar</a>&nbsp;)</span></p>
+			</div>
+	
+		</div>
+	</div>
+
+	<div id="comment-form-twitter" class="comment-form-service">
+		<div class="comment-form-padder">
+			<div class="comment-form-avatar">
+				<img src="./Tornando uma coleção customizada iterável no VBA (for each   IUnknown   NewEnum)   Pedro Abs_files/mu.gif" alt="Imagem do Twitter" width="25" class="no-grav">
+			</div>
+
+				<div class="comment-form-fields">
+				<input type="hidden" name="twitter_avatar" id="twitter-avatar" class="comment-meta-twitter" value="">
+				<input type="hidden" name="twitter_user_id" id="twitter-user_id" class="comment-meta-twitter" value="">
+				<input type="hidden" name="twitter_access_token" id="twitter-access_token" class="comment-meta-twitter" value="">
+				<p class="comment-form-posting-as pa-twitter"><strong></strong> Está a comentar usando a sua conta Twitter <span class="comment-form-log-out">(&nbsp;<a href="javascript:HighlanderComments.doExternalLogout( 'twitter' );" sl-processed="1">Log&nbsp;Out</a>&nbsp;/&nbsp;<a href="http://pedroabs.wordpress.com/2014/02/26/tornando-uma-colecao-customizada-iteravel-no-vba-for-each-iunknown-newenum/#" onclick="javascript:HighlanderComments.switchAccount();return false;" sl-processed="1">Modificar</a>&nbsp;)</span></p>
+			</div>
+	
+		</div>
+	</div>
+
+	<div id="comment-form-facebook" class="comment-form-service">
+		<div class="comment-form-padder">
+			<div class="comment-form-avatar">
+				<img src="./Tornando uma coleção customizada iterável no VBA (for each   IUnknown   NewEnum)   Pedro Abs_files/mu.gif" alt="Facebook photo" width="25" class="no-grav">
+			</div>
+
+				<div class="comment-form-fields">
+				<input type="hidden" name="fb_avatar" id="facebook-avatar" class="comment-meta-facebook" value="">
+				<input type="hidden" name="fb_user_id" id="facebook-user_id" class="comment-meta-facebook" value="">
+				<input type="hidden" name="fb_access_token" id="facebook-access_token" class="comment-meta-facebook" value="">
+				<p class="comment-form-posting-as pa-facebook"><strong></strong> Está a comentar usando a sua conta Facebook <span class="comment-form-log-out">(&nbsp;<a href="javascript:HighlanderComments.doExternalLogout( 'facebook' );" sl-processed="1">Log&nbsp;Out</a>&nbsp;/&nbsp;<a href="http://pedroabs.wordpress.com/2014/02/26/tornando-uma-colecao-customizada-iteravel-no-vba-for-each-iunknown-newenum/#" onclick="javascript:HighlanderComments.switchAccount();return false;" sl-processed="1">Modificar</a>&nbsp;)</span></p>
+			</div>
+	
+		</div>
+	</div>
+
+	<div id="comment-form-googleplus" class="comment-form-service">
+		<div class="comment-form-padder">
+			<div class="comment-form-avatar">
+				<img src="./Tornando uma coleção customizada iterável no VBA (for each   IUnknown   NewEnum)   Pedro Abs_files/mu.gif" alt="Google+ photo" width="25" class="no-grav">
+			</div>
+
+				<div class="comment-form-fields">
+				<input type="hidden" name="googleplus_avatar" id="googleplus-avatar" class="comment-meta-googleplus" value="">
+				<input type="hidden" name="googleplus_user_id" id="googleplus-user_id" class="comment-meta-googleplus" value="">
+				<input type="hidden" name="googleplus_access_token" id="googleplus-access_token" class="comment-meta-googleplus" value="">
+				<p class="comment-form-posting-as pa-googleplus"><strong></strong> Está a comentar usando a sua conta Google+ <span class="comment-form-log-out">(&nbsp;<a href="javascript:HighlanderComments.doExternalLogout( 'googleplus' );" sl-processed="1">Log&nbsp;Out</a>&nbsp;/&nbsp;<a href="http://pedroabs.wordpress.com/2014/02/26/tornando-uma-colecao-customizada-iteravel-no-vba-for-each-iunknown-newenum/#" onclick="javascript:HighlanderComments.switchAccount();return false;" sl-processed="1">Modificar</a>&nbsp;)</span></p>
+			</div>
+	
+		</div>
+	</div>
+
+
+	<div id="comment-form-load-service" class="comment-form-service">
+		<div class="comment-form-posting-as-cancel"><a href="javascript:HighlanderComments.cancelExternalWindow();" sl-processed="1">Cancelar</a></div>
+		<p>Connecting to %s</p>
+	</div>
+
+	
+</div>
+
+<script type="text/javascript">
+var highlander_expando_javascript = function(){
+	var input = document.createElement( 'input' ),
+	    comment = jQuery( '#comment' );
+
+	if ( 'placeholder' in input ) {
+		comment.attr( 'placeholder', jQuery( '.comment-textarea label' ).remove().text() );
+	}
+
+	// Expando Mode: start small, then auto-resize on first click + text length
+	jQuery( '#comment-form-identity' ).hide();
+	jQuery( '#comment-form-subscribe' ).hide();
+	jQuery( '#commentform .form-submit' ).hide();
+
+	comment.css( { 'height':'10px' } ).one( 'focus', function() {
+		var timer = setInterval( HighlanderComments.resizeCallback, 10 )
+		jQuery( this ).animate( { 'height': HighlanderComments.initialHeight } ).delay( 100 ).queue( function(n) { clearInterval( timer ); HighlanderComments.resizeCallback(); n(); } );
+		jQuery( '#comment-form-identity' ).slideDown();
+		jQuery( '#comment-form-subscribe' ).slideDown();
+		jQuery( '#commentform .form-submit' ).slideDown();
+	});
+}
+jQuery(document).ready( highlander_expando_javascript );
+</script>
+
+<div id="comment-form-subscribe" style="display: none;">
+	<p class="comment-subscription-form"><input type="checkbox" name="subscribe" id="subscribe" value="subscribe" style="width: auto;" tabindex="6"> <label class="subscribe-label" id="subscribe-label" for="subscribe" style="display: inline;">Notify me of new comments via email.</label></p><p class="post-subscription-form"><input type="checkbox" name="subscribe_blog" id="subscribe_blog" value="subscribe" style="width: auto;" tabindex="7"> <label class="subscribe-label" id="subscribe-blog-label" for="subscribe_blog" style="display: inline;">Quero ser notificado de novos artigos por email.</label></p></div>
+
+												<p class="form-submit" style="display: none;">
+							<input name="submit" type="submit" id="comment-submit" value="Publicar comentário">
+							<input type="hidden" name="comment_post_ID" value="2838" id="comment_post_ID">
+<input type="hidden" name="comment_parent" id="comment_parent" value="0">
+						</p>
+						<p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="6a3b114d7b"></p>
+<input type="hidden" name="genseq" value="1411054510">
+<p style="display: none;"></p>					<input type="hidden" id="ak_js" name="ak_js" value="1411055466582"></form>
+							</div><!-- #respond -->
+			<div style="clear: both"></div>
+</div><!-- #comments -->
+
+
+			</div><!-- #content -->
+		</div><!-- #container -->
+
+
+		<div id="primary" class="widget-area" role="complementary">
+						<ul class="xoxo">
+
+<li id="text-5" class="widget-container widget_text">			<div class="textwidget"><table><tbody><tr><td>
+<a href="http://education.oracle.com/pls/web_prod-plq-dad/db_pages.getpage?page_id=41&p_org_id=378219&lang=PTB&p_exam_id=1Z0_851" target="newwindow" sl-processed="1"><img src="./Tornando uma coleção customizada iterável no VBA (for each   IUnknown   NewEnum)   Pedro Abs_files/ocp_javase6programmer_clr.gif"></a></td></tr>
+<tr><td>
+<a href="https://www.mcpvirtualbusinesscard.com/VBCServer/pedroabs/card" target="newwindow" sl-processed="1"><img src="https://www.mcpvirtualbusinesscard.com/images/logos/MCP.png"></a>
+</td></tr>
+</tbody></table>
+
+</div>
+		</li><li id="search-2" class="widget-container widget_search"><form role="search" method="get" id="searchform" class="searchform" action="http://pedroabs.wordpress.com/">
+				<div>
+					<label class="screen-reader-text" for="s">Procurar por:</label>
+					<input type="text" value="" name="s" id="s">
+					<input type="submit" id="searchsubmit" value="Procurar">
+				</div>
+			</form></li><li id="categories-2" class="widget-container widget_categories"><h3 class="widget-title">Categorias</h3>		<ul>
+	<li class="cat-item cat-item-37528"><a href="http://pedroabs.wordpress.com/category/administracao/" sl-processed="1">Administração</a>
+</li>
+	<li class="cat-item cat-item-4983"><a href="http://pedroabs.wordpress.com/category/desenvolvimento/" sl-processed="1">Desenvolvimento</a>
+<ul class="children">
+	<li class="cat-item cat-item-4827"><a href="http://pedroabs.wordpress.com/category/desenvolvimento/banco-de-dados/" sl-processed="1">Banco de Dados</a>
+</li>
+	<li class="cat-item cat-item-36769"><a href="http://pedroabs.wordpress.com/category/desenvolvimento/design-pattern/" sl-processed="1">Design Pattern</a>
+</li>
+	<li class="cat-item cat-item-1017"><a href="http://pedroabs.wordpress.com/category/desenvolvimento/java/" sl-processed="1">Java</a>
+	<ul class="children">
+	<li class="cat-item cat-item-44333101"><a href="http://pedroabs.wordpress.com/category/desenvolvimento/java/arrays-colletions/" sl-processed="1">Arrays &amp; Colletions</a>
+</li>
+	<li class="cat-item cat-item-157723"><a href="http://pedroabs.wordpress.com/category/desenvolvimento/java/assertions/" sl-processed="1">Assertions</a>
+</li>
+	<li class="cat-item cat-item-43076256"><a href="http://pedroabs.wordpress.com/category/desenvolvimento/java/compilacao-e-distribuicao/" sl-processed="1">Compilação e distribuição</a>
+</li>
+	<li class="cat-item cat-item-44332777"><a href="http://pedroabs.wordpress.com/category/desenvolvimento/java/garbage-collector-gc/" sl-processed="1">Garbage Collector (GC)</a>
+</li>
+	<li class="cat-item cat-item-18369"><a href="http://pedroabs.wordpress.com/category/desenvolvimento/java/generics/" sl-processed="1">Generics</a>
+</li>
+	<li class="cat-item cat-item-2550080"><a href="http://pedroabs.wordpress.com/category/desenvolvimento/java/inner-class/" sl-processed="1">inner class</a>
+</li>
+	<li class="cat-item cat-item-356119"><a href="http://pedroabs.wordpress.com/category/desenvolvimento/java/java-io/" sl-processed="1">java.io</a>
+</li>
+	<li class="cat-item cat-item-44449981"><a href="http://pedroabs.wordpress.com/category/desenvolvimento/java/java-util-e-java-text/" sl-processed="1">java.util.* e java.text.*</a>
+</li>
+	<li class="cat-item cat-item-54025"><a href="http://pedroabs.wordpress.com/category/desenvolvimento/java/regex/" sl-processed="1">REGEX</a>
+</li>
+	<li class="cat-item cat-item-57505"><a href="http://pedroabs.wordpress.com/category/desenvolvimento/java/threads/" sl-processed="1">Threads</a>
+</li>
+	</ul>
+</li>
+	<li class="cat-item cat-item-41127272"><a href="http://pedroabs.wordpress.com/category/desenvolvimento/metodologias-e-processos/" sl-processed="1">Metodologias e Processos</a>
+</li>
+	<li class="cat-item cat-item-637"><a href="http://pedroabs.wordpress.com/category/desenvolvimento/microsoft/" sl-processed="1">Microsoft</a>
+	<ul class="children">
+	<li class="cat-item cat-item-2426"><a href="http://pedroabs.wordpress.com/category/desenvolvimento/microsoft/c/" sl-processed="1">C#</a>
+</li>
+	<li class="cat-item cat-item-95041"><a href="http://pedroabs.wordpress.com/category/desenvolvimento/microsoft/ms-access/" sl-processed="1">MS Access</a>
+</li>
+	<li class="cat-item cat-item-176118"><a href="http://pedroabs.wordpress.com/category/desenvolvimento/microsoft/vb-net/" sl-processed="1">vb.net</a>
+</li>
+	<li class="cat-item cat-item-166952347"><a href="http://pedroabs.wordpress.com/category/desenvolvimento/microsoft/visual-basic-6-0-e-vba/" sl-processed="1">Visual Basic 6.0 e VBA</a>
+</li>
+	</ul>
+</li>
+	<li class="cat-item cat-item-166952383"><a href="http://pedroabs.wordpress.com/category/desenvolvimento/ooad-e-poo/" title="Object Oriented Analysis and Design" sl-processed="1">OOAD e POO</a>
+</li>
+	<li class="cat-item cat-item-32827"><a href="http://pedroabs.wordpress.com/category/desenvolvimento/projetos/" sl-processed="1">Projetos</a>
+</li>
+	<li class="cat-item cat-item-41127278"><a href="http://pedroabs.wordpress.com/category/desenvolvimento/testes_de_software/" sl-processed="1">Testes_de_Software</a>
+</li>
+	<li class="cat-item cat-item-151"><a href="http://pedroabs.wordpress.com/category/desenvolvimento/web/" sl-processed="1">Web</a>
+	<ul class="children">
+	<li class="cat-item cat-item-24286750"><a href="http://pedroabs.wordpress.com/category/desenvolvimento/web/javascript-e-ajax/" sl-processed="1">Javascript e AJAX</a>
+</li>
+	<li class="cat-item cat-item-234937"><a href="http://pedroabs.wordpress.com/category/desenvolvimento/web/servlet-jsp/" sl-processed="1">Servlet &amp; JSP</a>
+</li>
+	</ul>
+</li>
+</ul>
+</li>
+	<li class="cat-item cat-item-4984"><a href="http://pedroabs.wordpress.com/category/pessoal/" sl-processed="1">Pessoal</a>
+<ul class="children">
+	<li class="cat-item cat-item-5650"><a href="http://pedroabs.wordpress.com/category/pessoal/dicas/" sl-processed="1">Dicas</a>
+</li>
+	<li class="cat-item cat-item-2200"><a href="http://pedroabs.wordpress.com/category/pessoal/links/" sl-processed="1">Links</a>
+</li>
+	<li class="cat-item cat-item-15243"><a href="http://pedroabs.wordpress.com/category/pessoal/meio-ambiente/" sl-processed="1">Meio Ambiente</a>
+</li>
+	<li class="cat-item cat-item-3919"><a href="http://pedroabs.wordpress.com/category/pessoal/opiniao/" sl-processed="1">Opinião</a>
+</li>
+	<li class="cat-item cat-item-8422"><a href="http://pedroabs.wordpress.com/category/pessoal/reclamacoes/" sl-processed="1">Reclamações</a>
+</li>
+</ul>
+</li>
+		</ul>
+</li><li id="wp_tag_cloud-2" class="widget-container wp_widget_tag_cloud"><h3 class="widget-title"></h3><div style="overflow:hidden"><a href="http://pedroabs.wordpress.com/tag/access/" class="tag-link-25399" title="2 tópicos" style="font-size: 8pt;" sl-processed="1">access</a>
+<a href="http://pedroabs.wordpress.com/tag/administracao/" class="tag-link-37528" title="5 tópicos" style="font-size: 11.559322033898pt;" sl-processed="1">Administração</a>
+<a href="http://pedroabs.wordpress.com/tag/ajax/" class="tag-link-141" title="4 tópicos" style="font-size: 10.610169491525pt;" sl-processed="1">ajax</a>
+<a href="http://pedroabs.wordpress.com/tag/arquivo/" class="tag-link-102514" title="2 tópicos" style="font-size: 8pt;" sl-processed="1">Arquivo</a>
+<a href="http://pedroabs.wordpress.com/tag/array/" class="tag-link-271798" title="5 tópicos" style="font-size: 11.559322033898pt;" sl-processed="1">Array</a>
+<a href="http://pedroabs.wordpress.com/tag/assertion/" class="tag-link-1381798" title="2 tópicos" style="font-size: 8pt;" sl-processed="1">Assertion</a>
+<a href="http://pedroabs.wordpress.com/tag/c/" class="tag-link-2426" title="2 tópicos" style="font-size: 8pt;" sl-processed="1">C#</a>
+<a href="http://pedroabs.wordpress.com/tag/cartao-de-ponto/" class="tag-link-4057755" title="2 tópicos" style="font-size: 8pt;" sl-processed="1">Cartão de Ponto</a>
+<a href="http://pedroabs.wordpress.com/tag/cmv/" class="tag-link-1171565" title="2 tópicos" style="font-size: 8pt;" sl-processed="1">CMV</a>
+<a href="http://pedroabs.wordpress.com/tag/collection/" class="tag-link-6747" title="24 tópicos" style="font-size: 18.915254237288pt;" sl-processed="1">Collection</a>
+<a href="http://pedroabs.wordpress.com/tag/compilando-e-executando/" class="tag-link-51830238" title="8 tópicos" style="font-size: 13.576271186441pt;" sl-processed="1">compilando e executando</a>
+<a href="http://pedroabs.wordpress.com/tag/comercio/" class="tag-link-162713" title="7 tópicos" style="font-size: 12.983050847458pt;" sl-processed="1">comércio</a>
+<a href="http://pedroabs.wordpress.com/tag/cotacao/" class="tag-link-1524817" title="3 tópicos" style="font-size: 9.4237288135593pt;" sl-processed="1">Cotação</a>
+<a href="http://pedroabs.wordpress.com/tag/css/" class="tag-link-169" title="2 tópicos" style="font-size: 8pt;" sl-processed="1">CSS</a>
+<a href="http://pedroabs.wordpress.com/tag/dateformat/" class="tag-link-1891720" title="2 tópicos" style="font-size: 8pt;" sl-processed="1">DateFormat</a>
+<a href="http://pedroabs.wordpress.com/tag/design-pattern-2/" class="tag-link-38293869" title="9 tópicos" style="font-size: 14.169491525424pt;" sl-processed="1">design pattern</a>
+<a href="http://pedroabs.wordpress.com/tag/design-patterns/" class="tag-link-4884" title="11 tópicos" style="font-size: 15.118644067797pt;" sl-processed="1">Design Patterns</a>
+<a href="http://pedroabs.wordpress.com/tag/dica/" class="tag-link-205369" title="12 tópicos" style="font-size: 15.474576271186pt;" sl-processed="1">Dica</a>
+<a href="http://pedroabs.wordpress.com/tag/dicas-2/" class="tag-link-34944661" title="5 tópicos" style="font-size: 11.559322033898pt;" sl-processed="1">dicas</a>
+<a href="http://pedroabs.wordpress.com/tag/duvida/" class="tag-link-670900" title="8 tópicos" style="font-size: 13.576271186441pt;" sl-processed="1">dúvida</a>
+<a href="http://pedroabs.wordpress.com/tag/extenso/" class="tag-link-2567456" title="2 tópicos" style="font-size: 8pt;" sl-processed="1">extenso</a>
+<a href="http://pedroabs.wordpress.com/tag/fluxo-de-execucao/" class="tag-link-51830082" title="7 tópicos" style="font-size: 12.983050847458pt;" sl-processed="1">fluxo de execução</a>
+<a href="http://pedroabs.wordpress.com/tag/for-loop/" class="tag-link-885520" title="5 tópicos" style="font-size: 11.559322033898pt;" sl-processed="1">for loop</a>
+<a href="http://pedroabs.wordpress.com/tag/formacao-de-preco-de-venda/" class="tag-link-3067638" title="3 tópicos" style="font-size: 9.4237288135593pt;" sl-processed="1">formação de preço de venda</a>
+<a href="http://pedroabs.wordpress.com/tag/game/" class="tag-link-1221" title="5 tópicos" style="font-size: 11.559322033898pt;" sl-processed="1">game</a>
+<a href="http://pedroabs.wordpress.com/tag/garbage-collector/" class="tag-link-1418072" title="4 tópicos" style="font-size: 10.610169491525pt;" sl-processed="1">garbage collector</a>
+<a href="http://pedroabs.wordpress.com/tag/generics/" class="tag-link-18369" title="3 tópicos" style="font-size: 9.4237288135593pt;" sl-processed="1">Generics</a>
+<a href="http://pedroabs.wordpress.com/tag/html/" class="tag-link-647" title="2 tópicos" style="font-size: 8pt;" sl-processed="1">html</a>
+<a href="http://pedroabs.wordpress.com/tag/inner-class-2/" class="tag-link-49392986" title="10 tópicos" style="font-size: 14.64406779661pt;" sl-processed="1">inner-class</a>
+<a href="http://pedroabs.wordpress.com/tag/integracao/" class="tag-link-65212" title="4 tópicos" style="font-size: 10.610169491525pt;" sl-processed="1">Integração</a>
+<a href="http://pedroabs.wordpress.com/tag/java-2/" class="tag-link-2549795" title="8 tópicos" style="font-size: 13.576271186441pt;" sl-processed="1">java</a>
+<a href="http://pedroabs.wordpress.com/tag/java-basico/" class="tag-link-468131" title="45 tópicos" style="font-size: 22pt;" sl-processed="1">Java básico</a>
+<a href="http://pedroabs.wordpress.com/tag/javascript/" class="tag-link-457" title="20 tópicos" style="font-size: 17.966101694915pt;" sl-processed="1">javascript</a>
+<a href="http://pedroabs.wordpress.com/tag/jetty/" class="tag-link-403647" title="2 tópicos" style="font-size: 8pt;" sl-processed="1">Jetty</a>
+<a href="http://pedroabs.wordpress.com/tag/jogo/" class="tag-link-414576" title="4 tópicos" style="font-size: 10.610169491525pt;" sl-processed="1">jogo</a>
+<a href="http://pedroabs.wordpress.com/tag/locale/" class="tag-link-17382" title="3 tópicos" style="font-size: 9.4237288135593pt;" sl-processed="1">locale</a>
+<a href="http://pedroabs.wordpress.com/tag/mala-direta/" class="tag-link-1421566" title="5 tópicos" style="font-size: 11.559322033898pt;" sl-processed="1">mala direta</a>
+<a href="http://pedroabs.wordpress.com/tag/mercadoria/" class="tag-link-2673657" title="3 tópicos" style="font-size: 9.4237288135593pt;" sl-processed="1">mercadoria</a>
+<a href="http://pedroabs.wordpress.com/tag/ms-access/" class="tag-link-95041" title="20 tópicos" style="font-size: 17.966101694915pt;" sl-processed="1">MS Access</a>
+<a href="http://pedroabs.wordpress.com/tag/ms-excel/" class="tag-link-86865" title="9 tópicos" style="font-size: 14.169491525424pt;" sl-processed="1">MS Excel</a>
+<a href="http://pedroabs.wordpress.com/tag/ms-outlook/" class="tag-link-21116" title="4 tópicos" style="font-size: 10.610169491525pt;" sl-processed="1">MS Outlook</a>
+<a href="http://pedroabs.wordpress.com/tag/ms-word/" class="tag-link-9562" title="2 tópicos" style="font-size: 8pt;" sl-processed="1">MS Word</a>
+<a href="http://pedroabs.wordpress.com/tag/ms-xml/" class="tag-link-212576207" title="3 tópicos" style="font-size: 9.4237288135593pt;" sl-processed="1">MS XML</a>
+<a href="http://pedroabs.wordpress.com/tag/msxml/" class="tag-link-2270812" title="3 tópicos" style="font-size: 9.4237288135593pt;" sl-processed="1">MSXML</a>
+<a href="http://pedroabs.wordpress.com/tag/modulo-de-classe/" class="tag-link-192985076" title="6 tópicos" style="font-size: 12.389830508475pt;" sl-processed="1">Módulo de Classe</a>
+<a href="http://pedroabs.wordpress.com/tag/ocx/" class="tag-link-1635457" title="2 tópicos" style="font-size: 8pt;" sl-processed="1">OCX</a>
+<a href="http://pedroabs.wordpress.com/tag/oo/" class="tag-link-104268" title="4 tópicos" style="font-size: 10.610169491525pt;" sl-processed="1">OO</a>
+<a href="http://pedroabs.wordpress.com/tag/ooad-e-poo/" class="tag-link-166952383" title="2 tópicos" style="font-size: 8pt;" sl-processed="1">OOAD e POO</a>
+<a href="http://pedroabs.wordpress.com/tag/opiniao/" class="tag-link-3919" title="3 tópicos" style="font-size: 9.4237288135593pt;" sl-processed="1">Opinião</a>
+<a href="http://pedroabs.wordpress.com/tag/orientacao-a-objetos/" class="tag-link-1091736" title="5 tópicos" style="font-size: 11.559322033898pt;" sl-processed="1">Orientação à objetos</a>
+<a href="http://pedroabs.wordpress.com/tag/pec-das-domesticas/" class="tag-link-125309180" title="5 tópicos" style="font-size: 11.559322033898pt;" sl-processed="1">PEC das Domésticas</a>
+<a href="http://pedroabs.wordpress.com/tag/pegadinha/" class="tag-link-265330" title="2 tópicos" style="font-size: 8pt;" sl-processed="1">Pegadinha</a>
+<a href="http://pedroabs.wordpress.com/tag/poo/" class="tag-link-55621" title="4 tópicos" style="font-size: 10.610169491525pt;" sl-processed="1">POO</a>
+<a href="http://pedroabs.wordpress.com/tag/precificacao/" class="tag-link-11202192" title="4 tópicos" style="font-size: 10.610169491525pt;" sl-processed="1">precificação</a>
+<a href="http://pedroabs.wordpress.com/tag/projeto/" class="tag-link-70094" title="7 tópicos" style="font-size: 12.983050847458pt;" sl-processed="1">projeto</a>
+<a href="http://pedroabs.wordpress.com/tag/reflection/" class="tag-link-8408" title="2 tópicos" style="font-size: 8pt;" sl-processed="1">Reflection</a>
+<a href="http://pedroabs.wordpress.com/tag/regex-2/" class="tag-link-36434238" title="3 tópicos" style="font-size: 9.4237288135593pt;" sl-processed="1">regex</a>
+<a href="http://pedroabs.wordpress.com/tag/scratch/" class="tag-link-15939" title="2 tópicos" style="font-size: 8pt;" sl-processed="1">scratch</a>
+<a href="http://pedroabs.wordpress.com/tag/serializacao/" class="tag-link-2033627" title="4 tópicos" style="font-size: 10.610169491525pt;" sl-processed="1">Serialização</a>
+<a href="http://pedroabs.wordpress.com/tag/sistema-sanas/" class="tag-link-192982874" title="4 tópicos" style="font-size: 10.610169491525pt;" sl-processed="1">Sistema SANAS</a>
+<a href="http://pedroabs.wordpress.com/tag/sort/" class="tag-link-18128" title="2 tópicos" style="font-size: 8pt;" sl-processed="1">Sort</a>
+<a href="http://pedroabs.wordpress.com/tag/static-import/" class="tag-link-1132817" title="4 tópicos" style="font-size: 10.610169491525pt;" sl-processed="1">static-import</a>
+<a href="http://pedroabs.wordpress.com/tag/supermercado/" class="tag-link-58233" title="6 tópicos" style="font-size: 12.389830508475pt;" sl-processed="1">supermercado</a>
+<a href="http://pedroabs.wordpress.com/tag/sybase/" class="tag-link-37681" title="2 tópicos" style="font-size: 8pt;" sl-processed="1">Sybase</a>
+<a href="http://pedroabs.wordpress.com/tag/thread/" class="tag-link-12932" title="18 tópicos" style="font-size: 17.491525423729pt;" sl-processed="1">Thread</a>
+<a href="http://pedroabs.wordpress.com/tag/treeview/" class="tag-link-2235562" title="3 tópicos" style="font-size: 9.4237288135593pt;" sl-processed="1">TreeView</a>
+<a href="http://pedroabs.wordpress.com/tag/variaveis/" class="tag-link-273497" title="5 tópicos" style="font-size: 11.559322033898pt;" sl-processed="1">Variáveis</a>
+<a href="http://pedroabs.wordpress.com/tag/vb-net/" class="tag-link-176118" title="6 tópicos" style="font-size: 12.389830508475pt;" sl-processed="1">vb.net</a>
+<a href="http://pedroabs.wordpress.com/tag/vb6/" class="tag-link-89415" title="5 tópicos" style="font-size: 11.559322033898pt;" sl-processed="1">VB6</a>
+<a href="http://pedroabs.wordpress.com/tag/vba/" class="tag-link-32862" title="22 tópicos" style="font-size: 18.440677966102pt;" sl-processed="1">VBA</a>
+<a href="http://pedroabs.wordpress.com/tag/vba-orientado-a-objetos/" class="tag-link-192638053" title="6 tópicos" style="font-size: 12.389830508475pt;" sl-processed="1">VBA Orientado a Objetos</a>
+<a href="http://pedroabs.wordpress.com/tag/visual-basic-6/" class="tag-link-69681" title="2 tópicos" style="font-size: 8pt;" sl-processed="1">Visual Basic 6</a>
+<a href="http://pedroabs.wordpress.com/tag/web/" class="tag-link-151" title="28 tópicos" style="font-size: 19.627118644068pt;" sl-processed="1">Web</a>
+<a href="http://pedroabs.wordpress.com/tag/windows-7/" class="tag-link-729864" title="3 tópicos" style="font-size: 9.4237288135593pt;" sl-processed="1">Windows 7</a>
+<a href="http://pedroabs.wordpress.com/tag/xml/" class="tag-link-6852" title="5 tópicos" style="font-size: 11.559322033898pt;" sl-processed="1">XML</a></div></li>			</ul>
+		</div><!-- #primary .widget-area -->
+
+
+		<div id="secondary" class="widget-area" role="complementary">
+			<ul class="xoxo">
+				<li id="rss_links-3" class="widget-container widget_rss_links"><h3 class="widget-title">Siga-me!</h3><ul><li><a href="http://pedroabs.wordpress.com/feed/" title="Subscribe to Artigos" sl-processed="1">RSS - Artigos</a></li></ul>
+</li><li id="text-3" class="widget-container widget_text"><h3 class="widget-title">Entre em contato:</h3>			<div class="textwidget"><a href="http://pedroabs.wordpress.com/entre-em-contato/" sl-processed="1">fale comigo</a>
+ 
+<br>
+<a href="http://twitter.com/pedroabs" class="twitter-follow-button" target="newwindow" sl-processed="1">Follow @pedroabs</a>
+
+</div>
+		</li>			</ul>
+		</div><!-- #secondary .widget-area -->
+
+	</div><!-- #main -->
+
+	<div id="footer" role="contentinfo">
+		<div id="colophon">
+
+
+
+			<div id="footer-widget-area" role="complementary">
+
+				<div id="first" class="widget-area">
+					<ul class="xoxo">
+						<li id="text-9" class="widget-container widget_text">			<div class="textwidget"><span class="embed-youtube" style="text-align:center; display: block;"><iframe class="youtube-player" type="text/html" width="640" height="390" src="./Tornando uma coleção customizada iterável no VBA (for each   IUnknown   NewEnum)   Pedro Abs_files/NAPO_IV4Fu0.htm" frameborder="0"></iframe></span>
+</div>
+		</li>					</ul>
+				</div><!-- #first .widget-area -->
+
+				<div id="second" class="widget-area">
+					<ul class="xoxo">
+						<li id="text-7" class="widget-container widget_text">			<div class="textwidget"><a href="http://lista.mercadolivre.com.br/_CustId_57423655" target="_new" sl-processed="1"><img src="./Tornando uma coleção customizada iterável no VBA (for each   IUnknown   NewEnum)   Pedro Abs_files/logo-mercadolivre-new.png"></a>
+
+<a href="http://lista.mercadolivre.com.br/_CustId_57423655" target="_new" sl-processed="1">Vendo sempre o que não mais uso...</a> 
+<p>
+Quem sabe assim eu ajudo a poupar um pouco o meio ambiente.
+</p></div>
+		</li>					</ul>
+				</div><!-- #second .widget-area -->
+
+				<div id="third" class="widget-area">
+					<ul class="xoxo">
+						<li id="text-8" class="widget-container widget_text">			<div class="textwidget"><a href="http://www.marcoscredie.com/" target="_blank" sl-processed="1"><img src="./Tornando uma coleção customizada iterável no VBA (for each   IUnknown   NewEnum)   Pedro Abs_files/marcos-credie.png"></a>
+<br>
+<br>
+<a href="https://www.facebook.com/media/set/?set=a.10203465971673969.1073741826.1353519960&type=1&l=1570113fa6" target="_blank" sl-processed="1">minhas fotos</a></div>
+		</li>					</ul>
+				</div><!-- #third .widget-area -->
+
+				<div id="fourth" class="widget-area">
+					<ul class="xoxo">
+						<li id="text-6" class="widget-container widget_text">			<div class="textwidget"><a href="http://www.culturabrasil.com.br/controle-remoto?start=fm" target="_blank" sl-processed="1"><img src="./Tornando uma coleção customizada iterável no VBA (for each   IUnknown   NewEnum)   Pedro Abs_files/logoam.png"></a>
+
+<a href="http://www.culturabrasil.com.br/controle-remoto?start=fm" target="blank" sl-processed="1">Ouça a rádio</a>
+<br>
+<a href="http://www.culturabrasil.com.br/" target="blank" sl-processed="1">Site da Rádio</a>  
+<br>
+&nbsp;--&gt; Rádio Cultura Brasil também em 1200 AM !
+<br>
+<a href="http://cmais.com.br/" target="blank" sl-processed="1">Portal da TV Cultura</a></div>
+		</li>					</ul>
+				</div><!-- #fourth .widget-area -->
+
+			</div><!-- #footer-widget-area -->
+
+			<div id="site-info">
+				<a href="http://pedroabs.wordpress.com/" title="Pedro Abs" rel="home" sl-processed="1">
+					Pedro Abs				</a>
+			</div><!-- #site-info -->
+
+			<div id="site-generator">
+				<a href="https://wordpress.com/themes/twentyten/" title="Learn more about this theme" sl-processed="1">The Twenty Ten Theme</a>.				<a href="https://pt.wordpress.com/?ref=footer_website" sl-processed="1">Create a free website or blog at WordPress.com</a>.
+			</div><!-- #site-generator -->
+
+		</div><!-- #colophon -->
+	</div><!-- #footer -->
+
+</div><!-- #wrapper -->
+
+<script type="text/javascript" src="./Tornando uma coleção customizada iterável no VBA (for each   IUnknown   NewEnum)   Pedro Abs_files/gprofiles.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var WPGroHo = {"my_hash":""};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Tornando uma coleção customizada iterável no VBA (for each   IUnknown   NewEnum)   Pedro Abs_files/wpgroho.js"></script>
+
+	<script>
+		//initialize and attach hovercards to all gravatars
+		jQuery( document ).ready( function( $ ) {
+			if ( typeof Gravatar.init !== "function" ) {
+				return;
+			}			
+
+			Gravatar.profile_cb = function( hash, id ) {
+				WPGroHo.syncProfileData( hash, id );
+			};
+			Gravatar.my_hash = WPGroHo.my_hash;
+			Gravatar.init( 'body', '#wp-admin-bar-my-account' );
+		});
+	</script>
+
+		<div style="display:none">
+	<div class="grofile-hash-map-3408c0a1305daced311ca798f08401f7">
+	</div>
+	</div>
+<script type="text/javascript">
+/* <![CDATA[ */
+var HighlanderComments = {"loggingInText":"Logging In\u2026","submittingText":"Posting Comment\u2026","postCommentText":"Publicar coment\u00e1rio","connectingToText":"Connecting to %s","commentingAsText":"%1$s: Est\u00e1 a comentar atrav\u00e9s da sua conta %2$s.","logoutText":"Terminar sess\u00e3o","loginText":"Iniciar sess\u00e3o","connectURL":"http:\/\/pedroabs.wordpress.com\/public.api\/connect\/?action=request","logoutURL":"https:\/\/pedroabs.wordpress.com\/wp-login.php?action=logout&_wpnonce=ddd89a5fd1","homeURL":"http:\/\/pedroabs.wordpress.com\/","postID":"2838","gravDefault":"blank","enterACommentError":"Por favor escreva um coment\u00e1rio","enterEmailError":"Please enter your email address here","invalidEmailError":"Endere\u00e7o de e-mail inv\u00e1lido","enterAuthorError":"Please enter your name here","gravatarFromEmail":"This picture will show whenever you leave a comment. Click to customize it.","logInToExternalAccount":"Log in to use details from one of these accounts.","change":"Modificar","changeAccount":"Change Account","comment_registration":"","userIsLoggedIn":"","isJetpack":"0"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Tornando uma coleção customizada iterável no VBA (for each   IUnknown   NewEnum)   Pedro Abs_files/saved_resource(3)"></script>
+
+	<div id="bit" class="loggedout-follow-normal" style="bottom: -243px;">
+		<a class="bsub" href="javascript:void(0)" sl-processed="1"><span id="bsub-text">Seguir</span></a>
+		<div id="bitsubscribe">
+
+					<h3><label for="loggedout-follow-field">Follow “Pedro Abs”</label></h3>
+
+			<form action="https://subscribe.wordpress.com/" method="post" accept-charset="utf-8" id="loggedout-follow">
+			<p>Get every new post delivered to your Inbox.</p>
+
+			<p id="loggedout-follow-error" style="display: none;"></p>
+
+						<p class="bit-follow-count">Junte-se a 80 outros seguidores</p>
+			<p><input type="email" name="email" value="Enter your email address" onfocus="this.value=(this.value==&quot;Enter your email address&quot;) ? &quot;&quot; : this.value;" onblur="this.value=(this.value==&quot;&quot;) ? &quot;Enter email address&quot; : this.value;" id="loggedout-follow-field"></p>
+
+			<input type="hidden" name="action" value="subscribe">
+			<input type="hidden" name="blog_id" value="15366207">
+			<input type="hidden" name="source" value="http://pedroabs.wordpress.com/2014/02/26/tornando-uma-colecao-customizada-iteravel-no-vba-for-each-iunknown-newenum/">
+			<input type="hidden" name="sub-type" value="loggedout-follow">
+
+			<input type="hidden" id="_wpnonce" name="_wpnonce" value="868b581641"><input type="hidden" name="_wp_http_referer" value="/2014/02/26/tornando-uma-colecao-customizada-iteravel-no-vba-for-each-iunknown-newenum/">
+			<p id="bsub-subscribe-button"><input type="submit" value="Sign me up"></p>
+			</form>
+					<div id="bsub-credit"><a href="https://wordpress.com/?ref=lof" sl-processed="1">Powered by WordPress.com</a></div>
+		</div><!-- #bitsubscribe -->
+	</div><!-- #bit -->
+
+	<script type="text/javascript">
+		WPCOM_sharing_counts = {"http:\/\/pedroabs.wordpress.com\/2014\/02\/26\/tornando-uma-colecao-customizada-iteravel-no-vba-for-each-iunknown-newenum\/":2838}	</script>
+	<div id="sharing_email" style="display: none;">
+		<form action="./Tornando uma coleção customizada iterável no VBA (for each   IUnknown   NewEnum)   Pedro Abs_files/Tornando uma coleção customizada iterável no VBA (for each   IUnknown   NewEnum)   Pedro Abs.htm" method="post">
+			<label for="target_email">Enviar para endereço de Email</label>
+			<input type="email" name="target_email" id="target_email" value="">
+
+			
+				<label for="source_name">O seu nome</label>
+				<input type="text" name="source_name" id="source_name" value="">
+
+				<label for="source_email">O seu endereço de email</label>
+				<input type="email" name="source_email" id="source_email" value="">
+
+			
+			<div class="recaptcha" id="sharing_recaptcha"></div><input type="hidden" name="recaptcha_public_key" id="recaptcha_public_key" value="6LcYW8MSAAAAADBAuEH9yaPcF7lWh11Iq62ZKtoo">
+			<img style="float: right; display: none" class="loading" src="./Tornando uma coleção customizada iterável no VBA (for each   IUnknown   NewEnum)   Pedro Abs_files/loading.gif" alt="loading" width="16" height="16">
+			<input type="submit" value="Enviar Email" class="sharing_send">
+			<a href="http://pedroabs.wordpress.com/2014/02/26/tornando-uma-colecao-customizada-iteravel-no-vba-for-each-iunknown-newenum/#cancel" class="sharing_cancel" sl-processed="1">Cancelar</a>
+
+			<div class="errors errors-1" style="display: none;">
+				O artigo não foi enviado - por favor verifique os seus endereços de email!			</div>
+
+			<div class="errors errors-2" style="display: none;">
+				A verificação do email falhou, tente de novamente			</div>
+
+			<div class="errors errors-3" style="display: none;">
+				Lamentamos, mas o seu site não pode partilhar artigos por email.			</div>
+		</form>
+	</div>
+		<script type="text/javascript">
+		jQuery(document).on( 'ready post-load', function(){
+			jQuery( 'a.share-facebook' ).on( 'click', function() {
+				window.open( jQuery(this).attr( 'href' ), 'wpcomfacebook', 'menubar=1,resizable=1,width=600,height=400' );
+				return false;
+			});
+		});
+		</script>
+				<script type="text/javascript">
+		jQuery(document).on( 'ready post-load', function(){
+			jQuery( 'a.share-twitter' ).on( 'click', function() {
+				window.open( jQuery(this).attr( 'href' ), 'wpcomtwitter', 'menubar=1,resizable=1,width=600,height=350' );
+				return false;
+			});
+		});
+		</script>
+				<script type="text/javascript">
+		jQuery(document).on( 'ready post-load', function(){
+			jQuery( 'a.share-google-plus-1' ).on( 'click', function() {
+				window.open( jQuery(this).attr( 'href' ), 'wpcomgoogle-plus-1', 'menubar=1,resizable=1,width=480,height=550' );
+				return false;
+			});
+		});
+		</script>
+				<script type="text/javascript">
+		jQuery(document).on( 'ready post-load', function(){
+			jQuery( 'a.share-linkedin' ).on( 'click', function() {
+				window.open( jQuery(this).attr( 'href' ), 'wpcomlinkedin', 'menubar=1,resizable=1,width=580,height=450' );
+				return false;
+			});
+		});
+		</script>
+				<script type="text/javascript">
+		jQuery(document).on( 'ready post-load', function(){
+			jQuery( 'a.share-pocket' ).on( 'click', function() {
+				window.open( jQuery(this).attr( 'href' ), 'wpcompocket', 'menubar=1,resizable=1,width=450,height=450' );
+				return false;
+			});
+		});
+		</script>
+				<script type="text/javascript">
+		jQuery(document).on( 'ready post-load', function(){
+			jQuery( 'a.share-tumblr' ).on( 'click', function() {
+				window.open( jQuery(this).attr( 'href' ), 'wpcomtumblr', 'menubar=1,resizable=1,width=450,height=450' );
+				return false;
+			});
+		});
+		</script>
+				<iframe src="./Tornando uma coleção customizada iterável no VBA (for each   IUnknown   NewEnum)   Pedro Abs_files/master.htm" scrolling="no" id="likes-master" name="likes-master" style="display:none;"></iframe>
+		<div id="likes-other-gravatars"><div class="likes-text"><span>%d</span> bloggers like this:</div><ul class="wpl-avatars sd-like-gravatars"></ul></div>
+		<script type="text/javascript">
+		//<![CDATA[
+			var jetpackLikesWidgetQueue = [];
+			var jetpackLikesWidgetBatch = [];
+			var jetpackLikesMasterReady = false;
+
+			function JetpackLikespostMessage( message, target ) {
+				if ( "string" === typeof message ){
+					try{
+						message = JSON.parse( message );
+					}
+					catch(e) {
+						return;
+					}
+				}
+
+				pm( {
+					target: target,
+					type: 'likesMessage',
+					data: message,
+					origin: '*'
+				} );
+			}
+
+			function JetpackLikesBatchHandler() {
+				var requests = [];
+				jQuery( 'div.jetpack-likes-widget-unloaded' ).each( function( i ) {
+					if ( jetpackLikesWidgetBatch.indexOf( this.id ) > -1 )
+						return;
+					jetpackLikesWidgetBatch.push( this.id );
+					var regex = /like-(post|comment)-wrapper-(\d+)-(\d+)-(\w+)/;
+					var match = regex.exec( this.id );
+					if ( ! match || match.length != 5 )
+						return;
+
+					var info = {
+						blog_id: match[2],
+						width:   this.width
+					};
+
+					if ( 'post' == match[1] ) {
+						info.post_id = match[3];
+					} else if ( 'comment' == match[1] ) {
+						info.comment_id = match[3];
+					}
+
+					info.obj_id = match[4];
+
+					requests.push( info );
+				});
+
+				if ( requests.length > 0 ) {
+					JetpackLikespostMessage( { event: 'initialBatch', requests: requests }, window.frames['likes-master'] );
+				}
+			}
+
+			function JetpackLikesMessageListener( event ) {
+				if ( "undefined" == typeof event.event )
+					return;
+
+				if ( 'masterReady' == event.event ) {
+					jQuery( document ).ready( function() {
+						jetpackLikesMasterReady = true;
+
+						var stylesData = {
+								event: 'injectStyles'
+						};
+
+						if ( jQuery( 'iframe.admin-bar-likes-widget' ).length > 0 ) {
+							JetpackLikespostMessage( { event: 'adminBarEnabled' }, window.frames[ 'likes-master' ] );
+
+							stylesData.adminBarStyles = {
+								background: jQuery( '#wpadminbar .quicklinks li#wp-admin-bar-wpl-like > a' ).css( 'background' ),
+								isRtl: ( 'rtl' == jQuery( '#wpadminbar' ).css( 'direction' ) )
+							};
+						}
+
+						if ( !window.addEventListener )
+							jQuery( '#wp-admin-bar-admin-bar-likes-widget' ).hide();
+
+						stylesData.textStyles = {
+							color: jQuery( '.sd-text-color').css( 'color' ),
+							fontFamily: jQuery( '.sd-text-color' ).css( 'font-family' ),
+							fontSize: jQuery( '.sd-text-color' ).css( 'font-size' ),
+							direction: jQuery( '.sd-text-color' ).css( 'direction' ),
+							fontWeight: jQuery( '.sd-text-color' ).css( 'font-weight' ),
+							fontStyle: jQuery( '.sd-text-color' ).css( 'font-style' ),
+							textDecoration: jQuery( '.sd-text-color' ).css('text-decoration')
+						};
+
+						stylesData.linkStyles = {
+							color: jQuery( '.sd-link-color' ).css('color'),
+							fontFamily: jQuery( '.sd-link-color' ).css('font-family'),
+							fontSize: jQuery( '.sd-link-color' ).css('font-size'),
+							textDecoration: jQuery( '.sd-link-color' ).css('text-decoration'),
+							fontWeight: jQuery( '.sd-link-color' ).css( 'font-weight' ),
+							fontStyle: jQuery( '.sd-link-color' ).css( 'font-style' )
+						};
+
+						JetpackLikespostMessage( stylesData, window.frames[ 'likes-master' ] );
+
+						JetpackLikesBatchHandler();
+
+						jQuery( document ).on( 'inview', 'div.jetpack-likes-widget-unloaded', function() {
+							jetpackLikesWidgetQueue.push( this.id );
+						});
+					});
+				}
+
+				if ( 'showLikeWidget' == event.event ) {
+					jQuery( '#' + event.id + ' .post-likes-widget-placeholder'  ).fadeOut( 'fast', function() {
+						jQuery( '#' + event.id + ' .post-likes-widget' ).fadeIn( 'fast', function() {
+							JetpackLikespostMessage( { event: 'likeWidgetDisplayed', blog_id: event.blog_id, post_id: event.post_id, obj_id: event.obj_id }, window.frames['likes-master'] );
+						});
+					});
+				}
+
+				if ( 'clickReblogFlair' == event.event ) {
+					wpcom_reblog.toggle_reblog_box_flair( event.obj_id );
+				}
+
+				if ( 'showOtherGravatars' == event.event ) {
+					var $container = jQuery( '#likes-other-gravatars' );
+					var $list = $container.find( 'ul' );
+
+					$container.hide();
+					$list.html( '' );
+
+					$container.find( '.likes-text span' ).text( event.total );
+
+					jQuery.each( event.likers, function( i, liker ) {
+						$list.append( '<li class="' + liker.css_class + '"><a href="' + liker.profile_URL + '" class="wpl-liker" rel="nofollow" target="_parent"><img src="' + liker.avatar_URL + '" alt="' + liker.name + '" width="30" height="30" style="padding-right: 3px;" /></a></li>');
+					} );
+
+					var offset = jQuery( "[name='" + event.parent + "']" ).offset();
+
+					$container.css( 'left', offset.left + event.position.left - 10 + 'px' );
+					$container.css( 'top', offset.top + event.position.top - 33 + 'px' );
+
+					var rowLength = Math.floor( event.width / 37 );
+					var height = ( Math.ceil( event.likers.length / rowLength ) * 37 ) + 13;
+					if ( height > 204 ) {
+						height = 204;
+					}
+
+					$container.css( 'height', height + 'px' );
+					$container.css( 'width', rowLength * 37 - 7 + 'px' );
+
+					$list.css( 'width', rowLength * 37 + 'px' );
+
+					$container.fadeIn( 'slow' );
+
+					var scrollbarWidth = $list[0].offsetWidth - $list[0].clientWidth;
+					if ( scrollbarWidth > 0 ) {
+						$container.width( $container.width() + scrollbarWidth );
+						$list.width( $list.width() + scrollbarWidth );
+					}
+				}
+			}
+
+			pm.bind( 'likesMessage', function(e) { JetpackLikesMessageListener(e); } );
+
+			jQuery( document ).click( function( e ) {
+				var $container = jQuery( '#likes-other-gravatars' );
+
+				if ( $container.has( e.target ).length === 0 ) {
+					$container.fadeOut( 'slow' );
+				}
+			});
+
+			function JetpackLikesWidgetQueueHandler() {
+				var wrapperID;
+				if ( ! jetpackLikesMasterReady ) {
+					setTimeout( JetpackLikesWidgetQueueHandler, 500 );
+					return;
+				}
+
+				if ( jetpackLikesWidgetQueue.length > 0 ) {
+					// We may have a widget that needs creating now
+					var found = false;
+					while( jetpackLikesWidgetQueue.length > 0 ) {
+						// Grab the first member of the queue that isn't already loading.
+						wrapperID = jetpackLikesWidgetQueue.splice( 0, 1 )[0];
+						if ( jQuery( '#' + wrapperID ).hasClass( 'jetpack-likes-widget-unloaded' ) ) {
+							found = true;
+							break;
+						}
+					}
+					if ( ! found ) {
+						setTimeout( JetpackLikesWidgetQueueHandler, 500 );
+						return;
+					}
+				} else if ( jQuery( 'div.jetpack-likes-widget-unloaded' ).length > 0 ) {
+					// Grab any unloaded widgets for a batch request
+					JetpackLikesBatchHandler();
+
+					// Get the next unloaded widget
+					wrapperID = jQuery( 'div.jetpack-likes-widget-unloaded' ).first()[0].id;
+					if ( ! wrapperID ) {
+						// Everything is currently loaded
+						setTimeout( JetpackLikesWidgetQueueHandler, 500 );
+						return;
+					}
+				}
+
+				if ( 'undefined' === typeof wrapperID ) {
+					setTimeout( JetpackLikesWidgetQueueHandler, 500 );
+					return;
+				}
+
+				var $wrapper = jQuery( '#' + wrapperID );
+				$wrapper.find( 'iframe' ).remove();
+
+				if ( $wrapper.hasClass( 'slim-likes-widget' ) ) {
+					$wrapper.find( '.post-likes-widget-placeholder' ).after( "<iframe class='post-likes-widget jetpack-likes-widget' name='" + $wrapper.data( 'name' ) + "' height='22px' width='68px' frameBorder='0' scrolling='no' src='" + $wrapper.data( 'src' ) + "'></iframe>" );
+				} else {
+					$wrapper.find( '.post-likes-widget-placeholder' ).after( "<iframe class='post-likes-widget jetpack-likes-widget' name='" + $wrapper.data( 'name' ) + "' height='55px' width='100%' frameBorder='0' src='" + $wrapper.data( 'src' ) + "'></iframe>" );
+				}
+
+				$wrapper.removeClass( 'jetpack-likes-widget-unloaded' ).addClass( 'jetpack-likes-widget-loading' );
+
+				$wrapper.find( 'iframe' ).load( function( e ) {
+					var $iframe = jQuery( e.target );
+					$wrapper.removeClass( 'jetpack-likes-widget-loading' ).addClass( 'jetpack-likes-widget-loaded' );
+
+					JetpackLikespostMessage( { event: 'loadLikeWidget', name: $iframe.attr( 'name' ), width: $iframe.width() }, window.frames[ 'likes-master' ] );
+
+					if ( $wrapper.hasClass( 'slim-likes-widget' ) ) {
+						$wrapper.find( 'iframe' ).Jetpack( 'resizeable' );
+					}
+				});
+				setTimeout( JetpackLikesWidgetQueueHandler, 250 );
+			}
+			JetpackLikesWidgetQueueHandler();
+		//]]>
+		</script>
+<script type="text/javascript" src="./Tornando uma coleção customizada iterável no VBA (for each   IUnknown   NewEnum)   Pedro Abs_files/form.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var recaptcha_options = {"lang":"pt"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Tornando uma coleção customizada iterável no VBA (for each   IUnknown   NewEnum)   Pedro Abs_files/saved_resource(4)"></script>
+<script type="text/javascript">
+// <![CDATA[
+(function() {
+try{
+  if ( window.external &&'msIsSiteMode' in window.external) {
+    if (window.external.msIsSiteMode()) {
+      var jl = document.createElement('script');
+      jl.type='text/javascript';
+      jl.async=true;
+      jl.src='/wp-content/plugins/ie-sitemode/custom-jumplist.php';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(jl, s);
+    }
+  }
+}catch(e){}
+})();
+// ]]>
+</script>	<script type="text/javascript">
+	var skimlinks_pub_id = "725X584219"
+	var skimlinks_sitename = "pedroabs.wordpress.com";
+	</script>
+	<script type="text/javascript" src="./Tornando uma coleção customizada iterável no VBA (for each   IUnknown   NewEnum)   Pedro Abs_files/725X1342.skimlinks.js"></script><script src="./Tornando uma coleção customizada iterável no VBA (for each   IUnknown   NewEnum)   Pedro Abs_files/w.js" type="text/javascript"></script>
+<script type="text/javascript">
+st_go({'blog':'15366207','v':'wpcom','tz':'-3','user_id':'0','post':'2838','subd':'pedroabs'});
+ex_go({'crypt':'UE5XaGUuOTlwaD85flAmcm1mcmZsaDhkV11YdWFnNncxc1tjZG9XVXhRW3J8TyVnZTFjeVYvfDc4K0xVWWxvcGRUW2g9LnlTRlRuOEZ2XzFFaS1iJVlzbG01JmIsSl1PUHAmbkZMZGR1SEEwMzlxfGVCQ0JRWlVVTn40dmM2Ylh8WmhCVlRHdzlbWSV0WmMwXUpsamtRbVt5cytHZXJ6XS44RGh5V2ssWWRLWzhXaEF0ZmgvNz80YnI3fGE/MkpHbHNuJkNHc0M4ZTFlW1NTXzFsQVAlPVFpLi5CY1Yzci9xR3w1ejg9JTMmdzdWUj9tM1YwXTklS2dzaG55WlZnT1pjR0lCak9+MCVFaFZSdWNYXTEzclJSOWImVl0/SE1Qd0FOK3w9c2t0JW8xZEpiYzFsbV89eVYtS3d8VHwrQQ=='});
+addLoadEvent(function(){linktracker_init('15366207',2838);});
+	</script><img id="wpstats" src="./Tornando uma coleção customizada iterável no VBA (for each   IUnknown   NewEnum)   Pedro Abs_files/g.gif" alt=""><img id="wpstats2" src="./Tornando uma coleção customizada iterável no VBA (for each   IUnknown   NewEnum)   Pedro Abs_files/g(1).gif" alt="" style="display:none">
+<noscript>&lt;img src="http://pixel.wp.com/b.gif?v=noscript" style="height:0px;width:0px;overflow:hidden" alt="" /&gt;</noscript>
+<script>
+if ( 'object' === typeof wpcom_mobile_user_agent_info ) {
+
+	wpcom_mobile_user_agent_info.init();
+	var mobileStatsQueryString = "";
+	
+	if( false !== wpcom_mobile_user_agent_info.matchedPlatformName )
+		mobileStatsQueryString += "&x_" + 'mobile_platforms' + '=' + wpcom_mobile_user_agent_info.matchedPlatformName;
+	
+	if( false !== wpcom_mobile_user_agent_info.matchedUserAgentName )
+		mobileStatsQueryString += "&x_" + 'mobile_devices' + '=' + wpcom_mobile_user_agent_info.matchedUserAgentName;
+	
+	if( wpcom_mobile_user_agent_info.isIPad() )
+		mobileStatsQueryString += "&x_" + 'ipad_views' + '=' + 'views';
+
+	if( "" != mobileStatsQueryString ) {
+		new Image().src = document.location.protocol + '//pixel.wp.com/g.gif?v=wpcom-no-pv' + mobileStatsQueryString + '&baba=' + Math.random();
+	}
+	
+}
+</script>
+
+<iframe id="google_osd_static_frame_8470313386060" name="google_osd_static_frame" style="display: none; width: 0px; height: 0px;"></iframe><img id="hzDownscaled" style="position: absolute; top: -10000px;"><img id="hzDownscaled" style="position: absolute; top: -10000px;"></body></html>

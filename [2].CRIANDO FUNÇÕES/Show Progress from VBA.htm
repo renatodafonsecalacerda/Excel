@@ -1,0 +1,1052 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0029)http://oreilly.com/pub/h/2607 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Show Progress from VBA</title>
+	<meta name="keywords" content=",O&#39;Reilly Media">
+	<meta name="description" content="When macros take a long time to run, people get nervous. Did it crash? How much longer will it take? Do I have time to run to the bathroom? Relax. This hack shows you two ways to create a macro progress...">
+	<meta name="date" content="Dec. 09, 2004">
+	<meta name="search_date" content="2004-12-09">
+	<meta name="pagename" content="Show Progress from VBA">
+	<meta name="site" content="O&#39;Reilly Network">
+	<meta name="subtitle" content="">
+	<meta name="author" content=" ">
+<meta name="target" content="">
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="Show Progress from VBA">
+	<meta name="twitter:description" content="When macros take a long time to run, people get nervous. Did it crash? How much longer will it take? Do I have time to run to the bathroom? Relax. This hack shows you two ways to create a macro progress...">
+	<meta name="twitter:site" content="@OReillyMedia">
+	<meta name="twitter:image" content="http://cdn.oreillystatic.com/oreilly/images/oreilly-social-icon-120.png">
+	<meta property="og:title" content="Show Progress from VBA">
+	<meta property="og:type" content="article">
+	<meta property="og:image" content="http://cdn.oreillystatic.com/oreilly/images/oreilly-social-icon-200.png">
+
+<title>hacks.oreilly.com -- O'Reilly Hacks Series</title>
+
+<!-- feed autodiscovery links -->
+<link rel="alternate" type="application/atom+xml" title="Hacks" href="http://www.oreillynet.com/pub/feed/23">
+
+<link rel="alternate" type="application/rdf+xml" title="Hacks" href="http://www.oreillynet.com/pub/feed/23?format=rss1">
+
+<link rel="alternate" type="application/rss+xml" title="Hacks" href="http://www.oreillynet.com/pub/feed/23?format=rss2">
+
+
+<!-- js -->
+<script language="JavaScript" type="text/javascript" src="./Show Progress from VBA_files/common.js"></script>
+<link rel="STYLESHEET" type="text/css" href="./Show Progress from VBA_files/main.css">
+<script>window["_GOOG_TRANS_EXT_VER"] = "1";</script><script>window["_GOOG_TRANS_EXT_VER"] = "1";</script></head>
+<body bgcolor="#ffffff" text="#000000" marginwidth="0" marginheight="0" leftmargin="0" rightmargin="0" topmargin="0" style="">
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+<td>
+<!-- header -->
+<table cellspacing="0" cellpadding="0" border="0" width="100%">
+<tbody><tr>
+<td><a href="http://www.oreilly.com/"><img src="./Show Progress from VBA_files/header_part1.gif" width="130" height="102" border="0" alt="O&#39;Reilly"></a></td>
+<td align="middle"><a href="http://hacks.oreilly.com/"><img src="./Show Progress from VBA_files/header_part2.gif" width="450" height="102" border="0" alt="Hacks"></a></td>
+<td align="left"><img src="./Show Progress from VBA_files/header_part3.gif" width="130" height="102" border="0" alt=" "></td>
+</tr>
+</tbody></table>
+</td>
+</tr>
+</tbody></table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+
+</tr></tbody></table><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+<!-- tabs -->
+<td valign="bottom"><nobr><a href="http://www.oreilly.com/"><img src="./Show Progress from VBA_files/tab_ora_blue.gif" border="0" width="81" height="16" alt="oreilly.com"></a><a href="http://www.oreillynet.com/"><img src="./Show Progress from VBA_files/tab_orn2.gif" border="0" width="110" height="16" alt="O&#39;Reilly Network"></a><a href="http://safari.oreilly.com/"><img src="./Show Progress from VBA_files/tab_safari.gif" border="0" width="114" height="16" alt="Safari Bookshelf"></a><a href="http://conferences.oreilly.com/"><img src="./Show Progress from VBA_files/tab_conf.gif" border="0" width="88" height="16" alt="Conferences"></a></nobr></td>
+<td align="right" valign="bottom" height="30" width="100%" class="tiny"><!-- nobr><a href="https://epoch.oreilly.com/account/myaccount.orm">Sign In/My Account</a> | <a href="http://epoch.oreilly.com/shop/cart.orm">View Cart</a>&nbsp;&nbsp;&nbsp;</nobr -->
+
+<nobr><a href="https://epoch.oreilly.com/account/default.orm" class="v1">Sign In/My Account</a>&nbsp;|&nbsp;<a href="https://epoch.oreilly.com/shop/cart.orm" class="v1">View Cart</a>&nbsp;&nbsp;&nbsp;</nobr></td>
+</tr>
+<!-- Horizontal Nav Links -->
+<tr><td colspan="2" width="100%"><table border="0" cellpadding="0" cellspacing="1" class="topmenu">
+<tbody><tr>
+<td style="background-color:#000099;" width="64"><a href="http://www.oreilly.com/catalog/">Book List</a></td>
+<td style="background-color:#000099;" width="86"><a href="http://learninglab.oreilly.com/?CMP=ILC-X95O50359550">Learning&nbsp;Lab</a></td>
+<td style="background-color:#000099;" width="86"><a href="http://www.oreilly.com/store/pdfs.html">PDFs</a></td>
+<td style="background-color:#000099;" width="86"><a href="http://www.thinkgeek.com/oreilly/">O'Reilly&nbsp;Gear</a></td>
+<td style="background-color:#000099;" width="80"><a href="http://www.oreillynet.com/cs/nl/home">Newsletters</a></td>
+<td style="background-color:#000099;" width="80"><a href="http://press.oreilly.com/">Press Room</a></td>
+<td style="background-color:#000099;" width="40"><a href="http://jobs.oreilly.com/">Jobs</a></td>
+
+<!-- Flags -->
+<td style="background-color:#000099;text-align:left;vertical-align:bottom;" width="*">&nbsp;</td>
+<!-- END Flags -->
+
+</tr>
+</tbody></table></td></tr>
+</tbody></table>
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tbody><tr>
+<!-- navbar -->
+<td width="135" valign="top" bgcolor="#000000"><img src="./Show Progress from VBA_files/trans.gif" width="145" height="1" alt=" "><br>
+<!--csinclude record="sc/1028" field="html" />
+<csinclude record="sc/1033" field="html" sitecode="oreilly" /><br />
+<csinclude record="sc/1110" field="html" -->
+<div class="noindex">
+<table border="0" cellpadding="1" cellspacing="0" width="140" bgcolor="#000000">
+<tbody><tr>
+<td rowspan="120">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2"><img src="./Show Progress from VBA_files/trans.gif" width="1" height="6" alt=" "></td>
+</tr>
+<!-- Search -->
+<tr><td colspan="2" class="nav2">Search</td></tr>
+
+<tr>
+<td colspan="2" class="nav"><noindex>
+<form method="get" action="http://search.atomz.com/search/" id="search" name="searchForm" onsubmit="processQuery();">
+<nobr><input type="text" name="query" size="10" maxlength="80" value="">&nbsp;<input type="submit" name="search" value="Go"></nobr>
+<input type="hidden" name="sp-q">
+<input name="sp-a" value="sp1000a5a9" type="hidden">
+<input name="sp-f" value="ISO-8859-1" type="hidden">
+<input name="sp-t" value="search" type="hidden">
+<input name="sp-x-1" value="cat" type="hidden">
+<input name="sp-q-1" value="" type="hidden">
+<input name="sp-x-2" value="cat2" type="hidden">
+<input name="sp-q-2" value="" type="hidden">
+<input name="sp-c" value="25" type="hidden">
+<input name="sp-p" value="all" type="hidden">
+<input name="c" value="" type="hidden">
+<input name="p" value="" type="hidden">
+<input type="hidden" name="sp-k" value="Articles|Books|Conferences|Other|Weblogs">
+</form>
+</noindex></td>
+</tr>
+
+
+	
+<!-- END Search -->
+
+
+<tr><td colspan="2"><img src="./Show Progress from VBA_files/trans.gif" width="1" height="6" alt=" "></td></tr>
+<!-- Hacks Nav -->
+<tr>
+<td colspan="2">
+<table bgcolor="#000099" border="0" cellpadding="4" cellspacing="0" width="120">
+<tbody><tr><td>
+<table bgcolor="#000099" border="0" cellpadding="2" cellspacing="0">
+<tbody><tr>
+<td class="nav4"><a href="http://hacks.oreilly.com/" class="noline">Hacks Site</a></td>
+</tr>
+<tr>
+<td><a href="http://www.oreilly.com/pub/q/hack_titles" class="nav3">• List of Titles</a></td>
+</tr>
+<tr>
+<td><a href="http://www.makezine.com/cs/hackszine/create/hack?x-layout=hackszine" class="nav3">• Got a Hack?</a></td>
+</tr>
+<tr>
+<td><a href="http://www.makezine.com/cs/hackszine/create/hack?x-layout=hackszine&x-template=requesthack.form" class="nav3">• Suggestion Box</a></td>
+</tr>
+<tr>
+<!-- td><a href="http://hacks.oreilly.com/about.html" class="nav3">&#8226; About Hacks</a></td -->
+</tr>
+</tbody></table>
+</td></tr></tbody></table>
+</td></tr>
+
+
+
+
+
+
+<!-- Resource Centers -->
+
+<tr>
+<td colspan="2"><img src="./Show Progress from VBA_files/trans.gif" width="1" height="6" alt=" "></td>
+</tr>
+
+<tr>
+<td colspan="2" class="nav2">Resource Centers</td>
+</tr>
+<tr>
+<td colspan="2"><a href="http://bio.oreilly.com/" class="nav">Bioinformatics</a></td>
+</tr>
+<tr>
+<td colspan="2"><a href="http://cprog.oreilly.com/" class="nav">C/C++</a></td>
+</tr>
+<tr>
+<td colspan="2"><a href="http://databases.oreilly.com/" class="nav">Databases</a></td>
+</tr>
+<tr>
+<td colspan="2"><a href="http://digitalmedia.oreilly.com/" class="nav">Digital Media</a></td>
+</tr>
+<tr>
+<td colspan="2"><a href="http://enterprisedev.oreilly.com/" class="nav">Enterprise Development</a></td>
+</tr>
+
+<tr>
+<td colspan="2"><a href="http://gamedev.oreilly.com/" class="nav">Game Development</a></td>
+</tr>
+
+<tr>
+<td colspan="2"><a href="http://java.oreilly.com/" class="nav">Java</a></td>
+</tr>
+<tr>
+<td colspan="2"><a href="http://linux.oreilly.com/" class="nav">Linux/Unix</a></td>
+</tr>
+<tr>
+<td colspan="2"><a href="http://mac.oreilly.com/" class="nav">Macintosh/OS X</a></td>
+</tr>
+<tr>
+<td colspan="2"><a href="http://dotnet.oreilly.com/" class="nav">.NET</a></td>
+</tr>
+<tr>
+<td colspan="2"><a href="http://opensource.oreilly.com/" class="nav">Open Source</a></td>
+</tr>
+<tr>
+<td colspan="2"><a href="http://oracle.oreilly.com/" class="nav">Oracle</a></td>
+</tr>
+<tr>
+<td colspan="2"><a href="http://perl.oreilly.com/" class="nav">Perl</a></td>
+</tr>
+<tr>
+<td colspan="2"><a href="http://python.oreilly.com/" class="nav">Python</a></td>
+</tr>
+
+<tr>
+<td colspan="2"><a href="http://scripting.oreilly.com/" class="nav">Scripting</a></td>
+</tr>
+
+<tr>
+<td colspan="2"><a href="http://security.oreilly.com/" class="nav">Security</a></td>
+</tr>
+
+<tr>
+<td colspan="2"><a href="http://sd.oreilly.com/" class="nav">Software Development</a></td>
+</tr>
+
+<tr>
+<td colspan="2"><a href="http://networking.oreilly.com/" class="nav">SysAdmin/Networking</a></td>
+</tr>
+
+<tr>
+<td colspan="2"><a href="http://web.oreilly.com/" class="nav">Web</a></td>
+</tr>
+<tr>
+<td colspan="2"><a href="http://webservices.oreilly.com/" class="nav">Web Services</a></td>
+</tr>
+<tr>
+<td colspan="2"><a href="http://windows.oreilly.com/" class="nav">Windows</a></td>
+</tr>
+
+<tr>
+<td colspan="2"><a href="http://wireless.oreilly.com/" class="nav">Wireless</a></td>
+</tr>
+
+<tr>
+<td colspan="2"><a href="http://xml.oreilly.com/" class="nav">XML</a></td>
+</tr>
+<!-- END Resource Centers -->
+
+
+
+<!-- BEGIN book_1 ad -->
+<tr><td colspan="2"><img src="./Show Progress from VBA_files/trans.gif" width="1" height="10" alt=" "></td></tr>
+<tr>
+<td colspan="2"><div class="adtag " style="width:120px;"><!-- dy -->
+<!-- begin ad tag -->
+<script language="JavaScript" type="text/javascript">
+//<![CDATA[
+var ord = (ord != null ? ord : Math.random()*10000000000000000 );
+document.write('<script language="JavaScript" src="http://ad.doubleclick.net/adj/ttm.oreilly/home;sz=120x240;tile=1;ord=' + ord + '?" type="text/javascript"><\/script>');
+//]]>
+</script><script language="JavaScript" src="./Show Progress from VBA_files/home;sz=120x240;tile=1" type="text/javascript"></script><noscript>&lt;a href="http://ad.doubleclick.net/jump/ttm.oreilly/home;sz=120x240;tile=1;ord=1782662341?" target="_blank"&gt;&lt;img src="http://ad.doubleclick.net/ad/ttm.oreilly/home;sz=120x240;ord=123456789?" width="120" height="240" border="0" alt="" /&gt;&lt;/a&gt;</noscript>
+<!-- End ad tag -->
+</div>
+
+</td>
+</tr>
+<tr><td colspan="2"><img src="./Show Progress from VBA_files/trans.gif" width="1" height="10" alt=" "></td></tr>
+<!-- END ad -->
+
+
+<!-- Book Series -->
+<tr>
+
+<td colspan="2" class="nav2">Book Series</td>
+
+</tr>
+
+<tr>
+<td colspan="2"><a href="http://annoyances.oreilly.com/" class="nav">Annoyances</a></td>
+</tr>
+
+<tr>
+<td colspan="2"><a href="http://cdbookshelves.oreilly.com/" class="nav">CD Bookshelves</a></td>
+</tr>
+<tr>
+<td colspan="2"><a href="http://cookbooks.oreilly.com/" class="nav">Cookbooks</a></td>
+</tr>
+<tr>
+<td colspan="2"><a href="http://devnotebooks.oreilly.com/" class="nav">Developer's Notebooks</a></td>
+</tr>
+<tr>
+<td colspan="2"><a href="http://hacks.oreilly.com/" class="nav">Hacks</a></td>
+</tr>
+<tr>
+<td colspan="2"><a href="http://headfirst.oreilly.com/" class="nav">Head First</a></td>
+</tr>
+<tr>
+<td colspan="2"><a href="http://nutshells.oreilly.com/" class="nav">In A Nutshell</a></td>
+</tr>
+<tr>
+<td colspan="2"><a href="http://www.missingmanuals.com/" class="nav">Missing Manuals</a></td>
+</tr>
+<tr>
+<td colspan="2"><a href="http://pocketrefs.oreilly.com/" class="nav">Pocket  References</a></td>
+</tr>
+<tr>
+<td colspan="2"><a href="http://personaltrainer.oreilly.com/" class="nav">Personal Trainer</a></td>
+</tr>
+<tr>
+<td colspan="2"><a href="http://techsociety.oreilly.com/" class="nav">Technology&nbsp;&amp;&nbsp;Society</a></td>
+</tr>
+<tr>
+<td colspan="2"><img src="./Show Progress from VBA_files/trans.gif" width="1" height="10" alt=" "></td>
+</tr>
+<!-- END Book Series -->
+
+<!-- Publishing Partners -->
+<tr>
+<td colspan="2" class="nav2">Publishing Partners</td>
+</tr>
+
+
+<tr>
+<td colspan="2"><a href="http://mandriva.oreilly.com/" class="nav">Mandriva</a></td>
+</tr>
+
+<tr>
+<td colspan="2"><a href="http://nostarch.oreilly.com/" class="nav">No Starch Press</a></td>
+</tr>
+
+<tr>
+<td colspan="2"><a href="http://paraglyph.oreilly.com/" class="nav">Paraglyph Press</a></td>
+</tr>
+
+<tr>
+<td colspan="2"><a href="http://pcp.oreilly.com/" class="nav">PC Publishing</a></td>
+</tr>
+
+
+<tr>
+<td colspan="2"><a href="http://pragmatic.oreilly.com/" class="nav">Pragmatic Bookshelf</a></td>
+</tr>
+
+
+<tr>
+<td colspan="2"><a href="http://sitepoint.oreilly.com/" class="nav">SitePoint</a></td>
+</tr>
+
+
+
+<tr>
+<td colspan="2"><a href="http://syngress.oreilly.com/" class="nav">Syngress Publishing</a></td>
+</tr>
+
+<!-- End Publishing Partners -->
+
+
+<tr>
+<td colspan="2"><img src="./Show Progress from VBA_files/trans.gif" width="1" height="10" alt=" "></td>
+</tr>
+
+
+<tr>
+<td colspan="2"><img src="./Show Progress from VBA_files/trans(1).gif" width="1" height="10" alt=" "></td>
+</tr>
+
+<!-- Online Publications -->
+<tr>
+<td colspan="2" class="nav2">Online Publications</td>
+</tr>
+<tr>
+<td colspan="2"><a href="http://www.linuxdevcenter.com/" class="nav">LinuxDevCenter.com</a></td>
+</tr>
+<tr>
+<td colspan="2"><a href="http://www.macdevcenter.com/" class="nav">MacDevCenter.com</a></td>
+</tr>
+<tr>
+<td colspan="2"><a href="http://www.onjava.com/" class="nav">ONJava.com</a></td>
+</tr>
+<tr>
+<td colspan="2"><a href="http://www.onlamp.com/" class="nav">ONLamp.com</a></td>
+</tr>
+<tr>
+<td colspan="2"><a href="http://openp2p.com/" class="nav">OpenP2P.com</a></td>
+</tr>
+<tr>
+<td colspan="2"><a href="http://www.perl.com/" class="nav">Perl.com</a></td>
+</tr>
+<tr>
+<td colspan="2"><a href="http://webservices.xml.com/" class="nav">WebServices.XML.com</a></td>
+</tr>
+<tr>
+<td colspan="2"><a href="http://www.windowsdevcenter.com/" class="nav">WindowsDevCenter.com</a></td>
+</tr>
+
+<tr>
+<td colspan="2"><a href="http://www.xml.com/" class="nav">XML.com</a></td>
+</tr>
+<tr>
+<td colspan="2"><img src="./Show Progress from VBA_files/trans(1).gif" width="1" height="10" alt=" "></td>
+</tr>
+<!-- end Online publications -->
+
+<!--  BEGIN optional ad or Sponsored Zones -->
+
+<tr>
+<td colspan="2"><img src="./Show Progress from VBA_files/trans.gif" width="1" height="10" alt=" "></td>
+</tr>
+<!--  END optional ad  -->
+
+<!-- Special Interest, Special Sales, Inside O'Reilly -->
+<tr>
+<td colspan="2" class="nav2">Special Interest</td>
+</tr>
+
+<tr>
+<td colspan="2"><a href="http://www.oreilly.com/beta/" class="nav">Beta Chapters</a></td>
+</tr>
+<tr>
+<td colspan="2"><a href="http://events.oreilly.com/" class="nav">Events</a></td>
+</tr>
+<tr>
+<td colspan="2"><a href="http://www.oreilly.com/editors/" class="nav">From the Editors List</a></td>
+</tr>
+
+<tr>
+<td colspan="2"><a href="http://letters.oreilly.com/" class="nav">Letters</a></td>
+</tr>
+
+<tr>
+<td colspan="2"><a href="http://make.oreilly.com/" class="nav">MAKE</a></td>
+</tr>
+
+<tr>
+<td colspan="2"><a href="http://www.oreilly.com/openbook/" class="nav">Open Books</a></td>
+</tr>
+
+<tr>
+<td colspan="2"><a href="http://tim.oreilly.com/" class="nav">tim.oreilly.com</a></td>
+</tr>
+
+
+<tr>
+<td colspan="2"><img src="./Show Progress from VBA_files/trans(1).gif" width="1" height="10" alt=" "></td>
+</tr>
+
+<tr>
+<td colspan="2" class="nav2">Special Sales</td>
+</tr>
+<tr>
+<td colspan="2"><a href="http://academic.oreilly.com/" class="nav">Academic</a></td>
+</tr>
+
+<tr>
+<td colspan="2"><a href="http://corporate.oreilly.com/" class="nav">Corporate Services</a></td>
+</tr>
+<tr>
+<td colspan="2"><a href="http://government.oreilly.com/" class="nav">Government</a></td>
+</tr>
+<tr>
+<td colspan="2"><img src="./Show Progress from VBA_files/trans(1).gif" width="1" height="10" alt=" "></td>
+</tr>
+<tr>
+<td colspan="2" class="nav2">Inside O'Reilly</td>
+</tr>
+<tr>
+<td colspan="2"><a href="http://www.oreilly.com/about.html" class="nav">About O'Reilly</a></td>
+</tr>
+<tr>
+<td colspan="2"><a href="http://www.oreilly.com/bookstores/index.html" class="nav">Bookstores</a></td>
+</tr>
+<!--tr>
+<td colspan="2"><a href="https://epoch.oreilly.com/catalog/" class="nav">Catalog Request</a></td>
+</tr-->
+<tr><td colspan="2"><a href="http://www.oreilly.com/oreilly/contact.html" class="nav">Contact Us</a></td>
+</tr>
+<tr>
+<td colspan="2"><a href="http://international.oreilly.com/" class="nav">International</a></td>
+</tr>
+<tr>
+<td colspan="2"><a href="http://register.oreilly.com/" class="nav">Register Your Book</a></td>
+</tr>
+<tr>
+<td colspan="2"><a href="http://ug.oreilly.com/" class="nav">User Groups</a></td>
+</tr>
+<tr>
+<td colspan="2"><a href="http://www.oreilly.com/oreilly/author/intro.html" class="nav">Writing for O'Reilly</a></td>
+</tr>
+
+<tr>
+<td colspan="2"><img src="./Show Progress from VBA_files/trans(1).gif" width="1" height="10" alt=" "></td>
+</tr>
+
+
+
+
+
+
+<tr>
+<td colspan="2"><img src="./Show Progress from VBA_files/trans.gif" width="1" height="10" alt=" "></td>
+
+</tr>
+
+
+
+<tr><td>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</td></tr>
+
+
+<tr>
+<td colspan="2"><img src="./Show Progress from VBA_files/trans.gif" width="1" height="10" alt=" "></td>
+
+</tr>
+
+</tbody></table>
+<!--  END navbar  -->
+</div> <!-- end noindex -->
+</td>
+
+<!-- main content -->
+<td valign="top"><img src="./Show Progress from VBA_files/trans.gif" width="600" height="1" alt=" "><br>
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr><td valign="top">
+<table border="0" cellpadding="12" cellspacing="0" width="100%">
+<tbody><tr><td>
+
+
+
+<table width="120" align="right" border="0" cellpadding="1" cellspacing="0" bgcolor="#000099">
+<tbody><tr>
+<td>&nbsp;</td>
+<td><table width="100%" border="0" cellpadding="4" cellspacing="0" bgcolor="#ffffff"><tbody><tr><td align="middle">
+<b>Buy the book!</b><br><a href="http://www.oreilly.com/catalog/9780596004934/"><img src="./Show Progress from VBA_files/9780596004934_xs.gif" alt="Word Hacks" border="0" vspace="6"></a><br>
+<span class="secondary3">
+By <a href="http://www.oreillynet.com/pub/au/1848">Andrew Savikas</a><br>
+November 2004<br>
+<a href="http://www.oreilly.com/catalog/9780596004934/"><b>More Info</b></a><br>
+</span>
+</td>
+</tr>
+</tbody></table>
+</td>
+</tr>
+</tbody></table>
+
+<a href="http://oreilly.com/pub/ht/17"><img src="./Show Progress from VBA_files/sub-header17.gif" border="0"></a><br> 
+
+<table border="0" cellpadding="0" cellspacing="0">
+<tbody><tr>
+<td height="10"></td></tr>
+<tr>
+<td valign="top">
+
+<table border="0" cellpadding="4" cellspacing="6" align="left">
+<tbody><tr>
+<td bgcolor="#006699" align="middle"><span class="hdr4-w">HACK</span><br>
+<span class="hdr3-w">#65</span></td>
+</tr>
+</tbody></table>
+
+</td>
+<td><span class="hdr3">Show Progress from VBA</span>
+<br><span class="smalltext3"><b>When macros take a long time to run, people get
+nervous. Did it crash? How much longer will it take? Do I have time
+to run to the bathroom? Relax. This hack shows you two ways to create
+a macro progress bar using VBA</b><br>
+
+
+<span class="author">[<a href="http://oreilly.com/pub/h/2607#thread" class="author">Discuss (<!-- -->0)</a> | <a href="./Show Progress from VBA_files/Show Progress from VBA.htm" class="author">Link to this hack</a>]</span></span></td>
+</tr>
+</tbody></table>
+
+<span class="secondary3">
+
+<p></p><div class="sect1"><a name="wordhks-CHP-7-SECT-10">
+<p>Before adding a full-fledged
+progress bar to your macro, consider
+whether something more subtle might be effective enough to keep the
+macro user informed. Within a macro, you can use the
+<tt class="literal">StatusBar</tt> property to display text in
+Word's <em class="emphasis">status bar—</em>the
+little area at the bottom of the window that displays the current
+page, line count, and so forth.</p><p>The following macro displays a personalized message in the status
+bar. Put the macro in the template of your choice   
+and run it from Tools→Macro→Macros:</p><blockquote><pre class="code">Sub SayHello( )
+StatusBar = "Hello, " &amp; Application.UserName &amp; _
+    ". My that's a nice shirt you're wearing." 
+End Sub</pre></blockquote><p>You can take a tip from Word, which often displays messages in the
+status bar (e.g., when you save a document), and use the status bar
+as a means of communication from within a macro.</p><p>For example, the following macro uses a <tt class="literal">For</tt><tt class="literal">Each</tt> loop   
+to highlight any paragraph set to outline Level 2 that contains more
+than 10 words. As it completes this task, it prints the text of the
+paragraph to the status bar:</p><blockquote><pre class="code">Sub HighlightLongHeadings( )
+Dim para As Paragraph
+For Each para In ActiveDocument.Paragraphs
+    StatusBar = "Checking: " &amp; para.Range.Text
+    If para.OutlineLevel = wdOutlineLevel2 Then
+        If para.Range.Words.Count &gt; 10 Then
+            para.Range.HighlightColorIndex = wdBrightGreen
+        End If
+    End If
+Next para
+StatusBar = ""
+End Sub</pre></blockquote><p>This solution usually provides enough visual feedback to keep users
+assured that the macro's still hard at work and that
+Word hasn't crashed.</p><p>If you want a more specific, or just less subtle, feedback method,
+you can create a custom progress bar that appears in its own dialog
+box while your macro runs. The following sections describe two ways
+to create your own progress bar using VBA. Both adapt the
+<tt class="literal">HighlightLongHeadings</tt> macro shown above.</p>
+</a><div class="sect2"><a name="wordhks-CHP-7-SECT-10"></a><a name="wordhks-CHP-7-SECT-10.1">
+<h3 class="head2">Continuous Progress</h3><p>The first technique combines the code for the progress
+bar with the code for the macro.</p><p>To keep the example simple, you should put this code in your Normal
+template. Select Tools→Macro→Visual Basic Editor,
+choose Normal in the Project Explorer (near the top left of the
+window), and then select Insert→UserForm. Next, choose
+View→Toolbox to display the Toolbox (it may already be
+showing). Select the Label control (the one with the
+"A" on it). Now move your cursor to
+the <tt class="literal">UserForm</tt> and drag the cursor to create a new
+label, like the one shown in . Try to
+position the top-left corner of the label near the top left of the
+<tt class="literal">UserForm</tt>.</p></a><div class="figure"><a name="wordhks-CHP-7-SECT-10.1"></a><a name="wordhks-CHP-7-FIG-9"><img src="./Show Progress from VBA_files/wrdh_0709.gif"></a></div><h4 class="head4"><a name="wordhks-CHP-7-FIG-9">Figure 1. Creating a simple progress bar with a UserForm</a></h4><p><a name="wordhks-CHP-7-FIG-9">Next, select View→Code and insert the following code:</a></p><blockquote><pre class="code"><a name="wordhks-CHP-7-FIG-9">Private Sub UserForm_Activate( )
+Dim lParaCount As Long
+Dim i As Integer
+Dim para As Paragraph
+Dim lMaxProgressBarWidth As Long
+Dim sIncrement As Single
+
+' Resize the UserForm
+Me.Width = 240
+Me.Height = 120
+
+' Resize the label
+Me.Label1.Height = 50
+Me.Label1.Caption = ""
+Me.Label1.Width = 0
+Me.Label1.BackColor = wdColorBlue
+
+lMaxProgressBarWidth = 200
+lParaCount = ActiveDocument.Paragraphs.Count
+sIncrement = lMaxProgressBarWidth / lParaCount
+i = 1
+
+For Each para In ActiveDocument.Paragraphs
+    Me.Label1.Width = Format(Me.Label1.Width + sIncrement, "#.##")
+    Me.Caption = "Checking " &amp; CStr(i) &amp; " of " &amp; CStr(lParaCount)
+    Me.Repaint
+    If para.OutlineLevel = wdOutlineLevel2 Then
+        If para.Range.Words.Count &gt; 10 Then
+            para.Range.HighlightColorIndex = wdBrightGreen
+        End If
+    End If
+i = i + 1
+Next para
+
+Unload Me
+
+End Sub</a></pre></blockquote><p><a name="wordhks-CHP-7-FIG-9">From the Project Explorer, select one of the code modules in Normal,
+as shown in . If you
+don't have any code modules in Normal, select
+Insert→Module to create one.</a></p><div class="figure"><a name="wordhks-CHP-7-FIG-10"><img src="./Show Progress from VBA_files/wrdh_0710.gif"></a></div><h4 class="head4"><a name="wordhks-CHP-7-FIG-10">Figure 2. Select one of the code modules in your Normal template</a></h4><p><a name="wordhks-CHP-7-FIG-10">In the code module you've selected, insert the
+following code:</a></p><blockquote><pre class="code"><a name="wordhks-CHP-7-FIG-10">Sub HighlightLongHeadings( )
+    UserForm1.Show
+End Sub</a></pre></blockquote><p><a name="wordhks-CHP-7-FIG-10">Now select File→Close and Return to Microsoft Word. To run
+the macro, select Tools→Macro→Macros and choose
+<tt class="literal">HighlightLongHeadings</tt>. When you run the macro,
+you'll see a progress bar like the one shown in
+.</a></p><div class="figure"><a name="wordhks-CHP-7-FIG-11"><img src="./Show Progress from VBA_files/wrdh_0711.gif"></a></div><h4 class="head4"><a name="wordhks-CHP-7-FIG-11">Figure 3. A simple progress bar in action</a></h4><a name="wordhks-CHP-7-NOTE-220"><blockquote class="note"><h4 class="objtitle">TIP</h4><p>If the document is very short, you probably won't
+see the progress bar—it'll finish filling in
+too fast. Test this out on a long document to really see it in
+action.</p></blockquote><p>One of the lines in the <tt class="literal">UserForm</tt> code deserves a
+closer look:</p><blockquote><pre class="code">Format(Me.Label1.Width + sIncrement, "#.##")</pre></blockquote><p>The variable <tt class="literal">sIncrement</tt> is the final width of the
+progress bar divided by the total number of paragraphs in the
+document. As the macro visits each paragraph in the document, the
+width of the bar increases by the value of
+<tt class="literal">sIncrement</tt>. Since the maximum width of the bar in
+this example is 200 pixels (as defined in the variable
+<tt class="literal">lMaxProgressBarWidth</tt>), if there are 10 paragraphs
+in the document, the width of the bar will increase by 20 pixels as
+each paragraph is examined.</p><p>If there are hundreds or thousands of paragraphs in a document, the
+value of <tt class="literal">sIncrement</tt> can become quite
+small—smaller than the measurements
+<tt class="literal">UserForm</tt>s are designed to handle. When that
+happens, VBA will round the number according to its own internal
+rounding rules, which can cause the width of the progress bar to
+eventually exceed the width of the <tt class="literal">UserForm</tt>.
+However, if you use the <tt class="literal">Format</tt> function, the
+increment amount will be rounded more precisely, keeping it confined
+to the boundaries of the <tt class="literal">UserForm</tt>.</p>
+</a></div><a name="wordhks-CHP-7-NOTE-220">
+
+</a><div class="sect2"><a name="wordhks-CHP-7-NOTE-220"></a><a name="wordhks-CHP-7-SECT-10.2">
+<h3 class="head2">Incremental Progress</h3><p>One drawback to the technique described in the previous section is
+that the code for the progress bar is mixed with the code used to
+modify the document. To create another macro that displays a similar
+progress bar, you'd need to create another, similar
+<tt class="literal">UserForm</tt>. But by separating the code for the
+progress bar from the code that works on the document, you can reuse
+your progress bar in a variety of situations.</p><p>This section shows you how to create a dialog that reports the
+progress of a macro as a percentage, in increments of 10%, as shown
+in . You can use this same progress bar
+from within any macro whose progress can be translated into a
+percentage.</p></a><div class="figure"><a name="wordhks-CHP-7-SECT-10.2"></a><a name="wordhks-CHP-7-FIG-12"><img src="./Show Progress from VBA_files/wrdh_0712.gif"></a></div><h4 class="head4"><a name="wordhks-CHP-7-FIG-12">Figure 4. A progress bar that displays percentage increments</a></h4><p><a name="wordhks-CHP-7-FIG-12">To keep the example simple, you should put this code in your Normal
+template. Select Tools→Macro→Visual Basic Editor,
+choose Normal in the Project Explorer (near the top left of the
+window), and then select Insert→UserForm. Next, choose
+View→Toolbox to display the Toolbox (it may already be
+showing).</a></p><p><a name="wordhks-CHP-7-FIG-12">On the Toolbox, select the Frame control (the box with
+"xyz" at the top), and then draw a
+single frame on your blank <tt class="literal">UserForm</tt>. With the
+frame selected, go to the Properties window. Change the
+frame's height to 30 and its width to 18 and set its
+<tt class="literal">Visible</tt> property to <tt class="literal">False</tt>. Then
+delete the frame's caption and change its background
+color to blue, as shown in .</a></p><div class="figure"><a name="wordhks-CHP-7-FIG-13"><img src="./Show Progress from VBA_files/wrdh_0713.gif"></a></div><h4 class="head4"><a name="wordhks-CHP-7-FIG-13">Figure 5. Change the frame's caption and background color from the Properties window</a></h4><p><a name="wordhks-CHP-7-FIG-13">In the listbox at the top of the Properties window, select
+<tt class="literal">UserForm1</tt> instead of <tt class="literal">Frame1</tt>,
+and then change the <tt class="literal">ShowModal</tt> property to
+<tt class="literal">False</tt>. While in the Properties window, change the
+name of the <tt class="literal">UserForm</tt> to
+<tt class="literal">IncrementalProgress</tt>.</a></p><p><a name="wordhks-CHP-7-FIG-13">Now go back to the <tt class="literal">UserForm</tt> itself and select the
+frame. Choose Edit→Copy, and then paste the frame nine
+times. Align the 10 frames as best you can in a single row. While
+holding down the Ctrl key, select all of the frames. Then select
+Format→Align and align the centers and tops of all the
+frames.</a></p><p><a name="wordhks-CHP-7-FIG-13">Next, select the Label control from the Toolbox (the one with the
+"A" on it) and draw a label
+underneath the frames, as shown in . From
+the Properties window, delete the label's caption.</a></p><div class="figure"><a name="wordhks-CHP-7-FIG-14"><img src="./Show Progress from VBA_files/wrdh_0714.gif"></a></div><h4 class="head4"><a name="wordhks-CHP-7-FIG-14">Figure 6. Creating an incremental progress bar</a></h4><p><a name="wordhks-CHP-7-FIG-14">With this method, you display the dialog when your macro starts, then
+periodically increment its progress as a percentage. It involves more
+code, but it's more versatile than the first method.</a></p><p><a name="wordhks-CHP-7-FIG-14">Now select View→Code and insert the following:</a></p><blockquote><pre class="code"><a name="wordhks-CHP-7-FIG-14">Private Sub UserForm_Initialize( )
+Me.Caption = "0% Complete"
+End Sub
+
+Public Function Increment(sPercentComplete As Single, _
+    sDescription As String)
+On Error Resume Next
+Me.Label1.Caption = sDescription
+Me.Repaint
+Dim iPercentIncrement As Integer
+iPercentIncrement = Format(sPercentComplete, "#")
+
+Select Case iPercentIncrement
+    Case 10
+        Me.Frame1.visible = True
+        Me.Caption = "10% Complete"
+        Me.Repaint
+    Case 20
+        Me.Frame2.visible = True
+        Me.Caption = "20% Complete"
+        Me.Repaint
+    Case 30
+        Me.Frame3.visible = True
+        Me.Caption = "30% Complete"
+        Me.Repaint
+    Case 40
+        Me.Frame4.visible = True
+        Me.Caption = "40% Complete"
+        Me.Repaint
+    Case 50
+        Me.Frame5.visible = True
+        Me.Caption = "50% Complete"
+        Me.Repaint
+    Case 60
+        Me.Frame6.visible = True
+        Me.Caption = "60% Complete"
+        Me.Repaint
+    Case 70
+        Me.Frame7.visible = True
+        Me.Caption = "70% Complete"
+        Me.Repaint
+    Case 80
+        Me.Frame8.visible = True
+        Me.Caption = "80% Complete"
+        Me.Repaint
+    Case 90
+        Me.Frame9.visible = True
+        Me.Caption = "90% Complete"
+        Me.Repaint
+    Case 100
+        Me.Frame10.visible = True
+        Me.Caption = "100% Complete"
+        Me.Repaint
+    End Select
+End Function</a></pre></blockquote><p><a name="wordhks-CHP-7-FIG-14">You can now use the progress bar from within your macros. All you
+need to do is provide the percentage and any text
+you'd like displayed underneath the progress bars.</a></p><p><a name="wordhks-CHP-7-FIG-14">The following is the <tt class="literal">HighlightLongHeadings</tt> macro,
+revised to use this progress bar. The lines shown in bold are the
+ones that interact with the progress bar.</a></p><blockquote><pre class="code"><a name="wordhks-CHP-7-FIG-14">Sub HighlightLongHeadings( )
+Dim lParaCount As Long
+Dim sPercentage As Single
+Dim i As Integer
+Dim para As Paragraph
+Dim sStatus As String
+
+<b class="emphasis-bold">IncrementalProgress.Show</b>
+
+lParaCount = ActiveDocument.Paragraphs.Count
+i = 1
+
+For Each para In ActiveDocument.Paragraphs
+    
+    sPercentage = (i / lParaCount) * 100
+    sStatus = "Checking " &amp; i &amp; " of " &amp; lParaCount &amp; " paragraphs"
+    <b class="emphasis-bold">IncrementalProgress.Increment sPercentage, sStatus</b>
+    
+    If para.OutlineLevel = wdOutlineLevel2 Then
+        If para.Range.Words.Count &gt; 10 Then
+            para.Range.HighlightColorIndex = wdBrightGreen
+        End If
+    End If
+i = i + 1
+Next para
+
+<b class="emphasis-bold">Unload IncrementalProgress</b>
+End Sub</a></pre></blockquote><p><a name="wordhks-CHP-7-FIG-14">Running this macro will display the progress bar shown in .</a></p><p><a name="wordhks-CHP-7-FIG-14">Your macros will take longer to run, because the progress bar adds
+overhead. You should test versions of your macros with and without the
+progress bar to determine whether you find the performance hit
+acceptable.</a></p><a name="wordhks-CHP-7-NOTE-221"><blockquote class="note"><h4 class="objtitle">WARNING</h4><p>The above code assumes you will hit each percentage stop along the
+way. If you expect to skip increments, modify the code to make sure
+you "turn on" all the increment
+frames lower than the current one. For example:</p><blockquote><pre class="code">...
+Case 40
+    With Me
+      .Frame1.Visible = True
+      .Frame2.Visible = True
+      .Frame3.Visible = True
+      .Frame4.Visible = True
+      .Caption = "40% Complete"
+      .Repaint
+    End With
+...</pre></blockquote></blockquote>
+</a></div><a name="wordhks-CHP-7-NOTE-221">
+
+</a></div><a name="wordhks-CHP-7-NOTE-221">
+
+
+</a> <p></p>
+
+
+
+
+
+
+
+</span>
+
+<div class="clear"></div>
+<!-- opens cond=post_comments -->
+
+<a name="thread"></a>
+
+<div class="feedback">
+<div class="rbox">
+<div class="rboxtop"><div></div></div>
+<div class="rbcontent">
+<b class="headline"><!--csif cond=""><cselse-->Comments on this hack</b><br>
+<!--span class="smalltext">You must be <a href="http://www.oreillynet.com/cs/user/login">logged in</a> to the O'Reilly Network to post a comment.</span-->
+<div class="clear"></div>
+<!--div class="tb_left"><a href="http://www.oreillynet.com/cs/user/create/cs_msg?x-lr=cs_disc/11332&x-lr2=h/2607&page="><img src="/images/button_post.gif" border="0" width="118" height="20" alt="Post Comment" /></a>
+</div-->
+<!-- rbcontent & rbox closed in cs_disc/thread_header.view -->
+<!-- thread_header.view -->
+<div class="tb_right">
+
+</div><!--end .tb_right -->
+
+<!-- this div is causing a problem on dm -->
+<!-- <div class="clear"></div> -->
+
+<!-- closing divs from a/print.view, et al -->
+
+
+</div> <!--end div.rbcontent -->
+<div class="rboxbot"><div></div></div>
+</div> <!--end div.rbox -->
+
+
+
+
+
+<!-- thread_footer.view -->
+
+
+
+
+
+
+</div>
+
+
+<!-- closes cond=post_comments -->
+
+
+</td></tr>
+<tr>
+<td colspan="3" align="center"><hr size="1" noshade="noshade">
+<div class="tiny">
+<p><b><a href="http://www.oreilly.com/">O'Reilly Home</a> | <a href="http://www.oreillynet.com/pub/a/mediakit/privacy.html">Privacy Policy</a></b><br><img src="./Show Progress from VBA_files/trans(1).gif" width="1" height="6" alt=" "><br>
+<i>© 2007 O'Reilly Media, Inc.<br>
+Website: <script type="text/javascript">
+<!--
+var name = "webmaster";
+var domain = "oreilly.com";
+var display = "";
+var subject = "";
+var ending = "";
+var style = "";
+document.write('<a class="' + style + '" href="mailto:' + name + '&#64;' + domain + '?subject=' + subject + '">');
+if (display) {
+ document.write(display);
+} else {
+ document.write(name + '&#64;' + domain);
+}
+document.write('</a>' + ending);
+
+// -->
+</script><a class="" href="mailto:webmaster@oreilly.com?subject=">webmaster@oreilly.com</a>
+
+ | Customer Service: <script type="text/javascript">
+<!--
+var name = "orders";
+var domain = "oreilly.com";
+var display = "";
+var subject = "";
+var ending = "";
+var style = "";
+document.write('<a class="' + style + '" href="mailto:' + name + '&#64;' + domain + '?subject=' + subject + '">');
+if (display) {
+ document.write(display);
+} else {
+ document.write(name + '&#64;' + domain);
+}
+document.write('</a>' + ending);
+
+// -->
+</script><a class="" href="mailto:orders@oreilly.com?subject=">orders@oreilly.com</a>
+
+ | Book issues: <script type="text/javascript">
+<!--
+var name = "booktech";
+var domain = "oreilly.com";
+var display = "";
+var subject = "";
+var ending = "";
+var style = "";
+document.write('<a class="' + style + '" href="mailto:' + name + '&#64;' + domain + '?subject=' + subject + '">');
+if (display) {
+ document.write(display);
+} else {
+ document.write(name + '&#64;' + domain);
+}
+document.write('</a>' + ending);
+
+// -->
+</script><a class="" href="mailto:booktech@oreilly.com?subject=">booktech@oreilly.com</a>
+
+</i>
+</p>
+<p>All trademarks and registered trademarks appearing on oreilly.com are the property of their respective owners.</p>
+</div>
+
+</td>
+</tr>
+</tbody></table>
+</td>
+</tr>
+</tbody></table>
+</td></tr></tbody></table>
+<!-- path_info: /h/2607 -->
+<!-- table: h - ref_id: 2607 -->
+<!-- table: h - ref_id: 2607 -->
+<!-- table: h - ref_id: 2607 - cs_rid: 2607 -->
+<!-- 0 domain: www.oreilly.com - path_info: h/2607 -->
+<!-- 1 domain: www.oreilly.com - path_info: h/2607 -->
+<!-- 2 domain: www.oreilly.com - path_info: h/2607 -->
+<!-- 3 domain: www.oreilly.com - path_info: h/2607 -->
+<!-- 4 domain: oreilly.com - path_info: h/2607 -->
+<!-- 5 domain: oreilly - path_info: h/2607 -->
+<!-- 6 domain: oreilly - path_info: h/2607 s_channel: oreilly -->
+<!-- 7 domain: oreilly - path_info: h/2607 -->
+<!-- 8 domain: www.oreilly.com - path_info: h/2607 -->
+
+<script language="JavaScript" type="text/javascript"><!--
+var s_account="ororeilly,orglobal"
+//--></script>
+<!-- SiteCatalyst code version: H.20.2. Copyright 1997-2009 Omniture, Inc. More info available at http://www.omniture.com  -->
+<script language="JavaScript" type="text/javascript" src="./Show Progress from VBA_files/s_code.js"></script>
+<script language="JavaScript" type="text/javascript"><!--
+s.pageName="oreilly:oreilly:show progress from vba"
+s.channel="oreilly"
+s.prop1="oreilly:oreilly"
+s.prop2="oreilly:oreilly"
+s.prop3="oreilly:oreilly"
+s.prop4=""
+s.prop5="show progress from vba"
+s.prop6="n/h/2607"
+s.prop24="12/09/2004"
+s.prop21=""
+s.hier1="oreilly,oreilly"
+/************* DO NOT ALTER ANYTHING BELOW THIS LINE ! **************/
+var s_code=s.t();if(s_code)document.write(s_code)//--></script>
+<!-- End SiteCatalyst code version: H.20.2. -->
+<!-- analytics.pl: 2014/9/3 14:21:16 -->
+
+
+
+</body></html>

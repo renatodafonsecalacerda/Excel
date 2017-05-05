@@ -1,0 +1,5 @@
+loopPlan(p as worksheet, coluna, vretorno)
+
+regExpressions(lista, exp)
+
+limpaLista(lista, 1letra) as variant

@@ -1,0 +1,1758 @@
+<!DOCTYPE html>
+<!-- saved from url=(0071)http://codereview.stackexchange.com/questions/62781/unit-testing-in-vba -->
+<html itemscope="" itemtype="http://schema.org/QAPage"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <title>oop - Unit Testing in VBA - Code Review Stack Exchange</title>
+    <link rel="shortcut icon" href="http://cdn.sstatic.net/codereview/img/favicon.ico?v=8ddc1eb8f929">
+    <link rel="apple-touch-icon image_src" href="http://cdn.sstatic.net/codereview/img/apple-touch-icon.png?v=bb26b8631f86">
+    <link rel="search" type="application/opensearchdescription+xml" title="Code Review Stack Exchange" href="http://codereview.stackexchange.com/opensearch.xml">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@StackCodeReview">
+    <meta name="twitter:domain" content="codereview.stackexchange.com">
+    <meta property="og:type" content="website">
+    <meta property="og:image" itemprop="image primaryImageOfPage" content="http://cdn.sstatic.net/codereview/img/apple-touch-icon.png?v=bb26b8631f86">
+    <meta name="twitter:title" property="og:title" itemprop="title name" content="Unit Testing in VBA">
+    <meta name="twitter:description" property="og:description" itemprop="description" content="Unit testing in VBA is... lacking. (What isn&#39;t lacking in VBA though?) Since I&#39;ve become more interested in unit testing lately, I decided I needed something better than Debug.Assert(), so I started ">
+    <meta property="og:url" content="http://codereview.stackexchange.com/questions/62781/unit-testing-in-vba">
+    <link rel="canonical" href="./oop - Unit Testing in VBA - Code Review Stack Exchange_files/oop - Unit Testing in VBA - Code Review Stack Exchange.htm">
+
+    
+    
+    <script async="" src="./oop - Unit Testing in VBA - Code Review Stack Exchange_files/quant.js"></script><script async="" src="./oop - Unit Testing in VBA - Code Review Stack Exchange_files/beacon.js"></script><script async="" src="./oop - Unit Testing in VBA - Code Review Stack Exchange_files/analytics.js"></script><script async="" src="./oop - Unit Testing in VBA - Code Review Stack Exchange_files/adzerk2_2_17_76"></script><script src="./oop - Unit Testing in VBA - Code Review Stack Exchange_files/jquery.min.js"></script>
+    <script src="./oop - Unit Testing in VBA - Code Review Stack Exchange_files/stub.en.js"></script>
+    <link rel="stylesheet" type="text/css" href="./oop - Unit Testing in VBA - Code Review Stack Exchange_files/all.css">
+    
+    <link rel="alternate" type="application/atom+xml" title="Feed for question &#39;Unit Testing in VBA&#39;" href="http://codereview.stackexchange.com/feeds/question/62781">
+    <script>
+        
+        StackExchange.ready(function () {
+                
+                StackExchange.using("snippets", function () {
+                    StackExchange.snippets.initSnippetRenderer();
+                });
+                
+
+            StackExchange.using("postValidation", function () {
+                StackExchange.postValidation.initOnBlurAndSubmit($('#post-form'), 2, 'answer');
+            });
+
+            
+            StackExchange.question.init({showAnswerHelp:true,totalCommentCount:0,shownCommentCount:0,highlightColor:'#F4A83D',backgroundColor:'#FFF',questionId:62781});
+
+            styleCode();
+
+                StackExchange.realtime.subscribeToQuestion('196', '62781');
+            
+                    });
+    </script>
+
+                <script type="text/x-mathjax-config;executed=true">
+                    MathJax.Hub.Config({"HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"], linebreaks: { automatic:true }, EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50) },
+                                        tex2jax: { inlineMath: [ ["\\$", "\\$"] ], displayMath: [ ["$$","$$"], ["\\[", "\\]"] ], processEscapes: true, ignoreClass: "tex2jax_ignore|dno" },
+                                        TeX: {  noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } }, Macros: { href: "{}" } },
+                                        messageStyle: "none"
+                });
+                </script>        
+            <script src="./oop - Unit Testing in VBA - Code Review Stack Exchange_files/MathJax.js"></script>  
+
+    <script>
+        StackExchange.ready(function () {
+            StackExchange.realtime.init('wss://qa.sockets.stackexchange.com,ws://qa.sockets.stackexchange.com');
+            StackExchange.realtime.subscribeToInboxNotifications();
+                    StackExchange.realtime.subscribeToReputationNotifications('196');
+                StackExchange.realtime.subscribeToTopBarNotifications('196');
+        });
+    </script>
+    <script>
+        StackExchange.init({"locale":"en","stackAuthUrl":"https://stackauth.com","serverTime":1410984384,"networkMetaHostname":"meta.stackexchange.com","styleCode":true,"enableUserHovercards":true,"snippets":{"enabled":true,"domain":"stacksnippets.net"},"site":{"name":"Code Review Stack Exchange","description":"Q&A for peer programmer code reviews","isNoticesTabEnabled":true,"recaptchaPublicKey":"6LdsB7sSAAAAAAzjgEF_Hd8vXv-C42sa_KyofaGR","recaptchaAudioLang":"en","enableNewTagCreationWarning":false,"enableSocialMediaInSharePopup":true,"useGoogleOAuth2":true},"user":{"fkey":"d94a02f6e45d0da9e6def426f2317b8d","isAnonymous":true}});
+        StackExchange.using.setCacheBreakers({"js/prettify-full.en.js":"0e5259d5a09e","js/moderator.en.js":"fe284c240963","js/full-anon.en.js":"4756967b5b89","js/full.en.js":"237cc7048596","js/wmd.en.js":"671f07ec8009","js/third-party/jquery.autocomplete.min.js":"e5f01e97f7c3","js/third-party/jquery.autocomplete.min.en.js":"","js/mobile.en.js":"a45819ba5673","js/help.en.js":"4a00463b8aeb","js/tageditor.en.js":"71b204ea47fc","js/tageditornew.en.js":"6d282dfb2206","js/inline-tag-editing.en.js":"06a39d658ac8","js/revisions.en.js":"507cd4269137","js/review.en.js":"c87d607c37e8","js/tagsuggestions.en.js":"b278f9a0b23b","js/post-validation.en.js":"bec3ba57df2a","js/explore-qlist.en.js":"24424eb238e8","js/events.en.js":"a634f199544a","js/keyboard-shortcuts.en.js":"90fd9a53046e","js/external-editor.en.js":"7bf4d75730d1","js/mathjax-editing.en.js":"b7d54b577beb","js/external-editor.en.js":"7bf4d75730d1","js/snippet-javascript.en.js":"b2396b302e9d","js/snippet-javascript-codemirror.en.js":"1b264d587011"});
+        StackExchange.using("gps", function() {
+             StackExchange.gps.init(true);
+        });
+    </script>
+    
+        <script>
+            StackExchange.ready(function () {
+                $('#nav-tour').click(function () {
+                    StackExchange.using("gps", function() {
+                        StackExchange.gps.track("aboutpage.click", { aboutclick_location: "headermain" }, true);
+                    });
+                });
+            });
+        </script>
+    
+    
+<script async="" src="./oop - Unit Testing in VBA - Code Review Stack Exchange_files/full-anon.en.js"></script><script async="" src="./oop - Unit Testing in VBA - Code Review Stack Exchange_files/snippet-javascript.en.js"></script><script async="" src="./oop - Unit Testing in VBA - Code Review Stack Exchange_files/post-validation.en.js"></script><script async="" src="./oop - Unit Testing in VBA - Code Review Stack Exchange_files/prettify-full.en.js"></script><script async="" src="./oop - Unit Testing in VBA - Code Review Stack Exchange_files/external-editor.en.js"></script><style type="text/css">.MathJax_Hover_Frame {border-radius: .25em; -webkit-border-radius: .25em; -moz-border-radius: .25em; -khtml-border-radius: .25em; box-shadow: 0px 0px 15px #83A; -webkit-box-shadow: 0px 0px 15px #83A; -moz-box-shadow: 0px 0px 15px #83A; -khtml-box-shadow: 0px 0px 15px #83A; border: 1px solid #A6D ! important; display: inline-block; position: absolute}
+.MathJax_Hover_Arrow {position: absolute; width: 15px; height: 11px; cursor: pointer}
+</style><style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 2px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_MenuItem {padding: 2px 2em; background: transparent}
+.MathJax_MenuArrow {position: absolute; right: .5em; color: #666666}
+.MathJax_MenuActive .MathJax_MenuArrow {color: white}
+.MathJax_MenuArrow.RTL {left: .5em; right: auto}
+.MathJax_MenuCheck {position: absolute; left: .7em}
+.MathJax_MenuCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuRadioCheck {position: absolute; left: 1em}
+.MathJax_MenuRadioCheck.RTL {right: 1em; left: auto}
+.MathJax_MenuLabel {padding: 2px 2em 4px 1.33em; font-style: italic}
+.MathJax_MenuRule {border-top: 1px solid #CCCCCC; margin: 4px 1px 0px}
+.MathJax_MenuDisabled {color: GrayText}
+.MathJax_MenuActive {background-color: Highlight; color: HighlightText}
+.MathJax_Menu_Close {position: absolute; width: 31px; height: 31px; top: -15px; left: -15px}
+</style><style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+#MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
+#MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+</style><style type="text/css">.MathJax_Preview {color: #888}
+#MathJax_Message {position: fixed; left: 1em; bottom: 1.5em; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+#MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+.MathJax_Error {color: #CC0000; font-style: italic}
+</style><style type="text/css">.MathJax_Display {text-align: center; margin: 1em 0em; position: relative; display: block!important; text-indent: 0; max-width: none; max-height: none; min-width: 0; min-height: 0; width: 100%}
+.MathJax .merror {background-color: #FFFF88; color: #CC0000; border: 1px solid #CC0000; padding: 1px 3px; font-style: normal; font-size: 90%}
+.MathJax .MJX-monospace {font-family: monospace}
+.MathJax .MJX-sans-serif {font-family: sans-serif}
+#MathJax_Tooltip {background-color: InfoBackground; color: InfoText; border: 1px solid black; box-shadow: 2px 2px 5px #AAAAAA; -webkit-box-shadow: 2px 2px 5px #AAAAAA; -moz-box-shadow: 2px 2px 5px #AAAAAA; -khtml-box-shadow: 2px 2px 5px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true'); padding: 3px 4px; z-index: 401; position: absolute; left: 0; top: 0; width: auto; height: auto; display: none}
+.MathJax {display: inline; font-style: normal; font-weight: normal; line-height: normal; font-size: 100%; font-size-adjust: none; text-indent: 0; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; direction: ltr; max-width: none; max-height: none; min-width: 0; min-height: 0; border: 0; padding: 0; margin: 0}
+.MathJax img, .MathJax nobr, .MathJax a {border: 0; padding: 0; margin: 0; max-width: none; max-height: none; min-width: 0; min-height: 0; vertical-align: 0; line-height: normal; text-decoration: none}
+img.MathJax_strut {border: 0!important; padding: 0!important; margin: 0!important; vertical-align: 0!important}
+.MathJax span {display: inline; position: static; border: 0; padding: 0; margin: 0; vertical-align: 0; line-height: normal; text-decoration: none}
+.MathJax nobr {white-space: nowrap!important}
+.MathJax img {display: inline!important; float: none!important}
+.MathJax * {transition: none; -webkit-transition: none; -moz-transition: none; -ms-transition: none; -o-transition: none}
+.MathJax_Processing {visibility: hidden; position: fixed; width: 0; height: 0; overflow: hidden}
+.MathJax_Processed {display: none!important}
+.MathJax_ExBox {display: block!important; overflow: hidden; width: 1px; height: 60ex; min-height: 0; max-height: none}
+.MathJax .MathJax_EmBox {display: block!important; overflow: hidden; width: 1px; height: 60em; min-height: 0; max-height: none}
+.MathJax .MathJax_HitBox {cursor: text; background: white; opacity: 0; filter: alpha(opacity=0)}
+.MathJax .MathJax_HitBox * {filter: none; opacity: 1; background: transparent}
+#MathJax_Tooltip * {filter: none; opacity: 1; background: transparent}
+@font-face {font-family: MathJax_Main; src: url('http://cdn.mathjax.org/mathjax/latest/fonts/HTML-CSS/TeX/woff/MathJax_Main-Regular.woff?rev=2.4-beta-2') format('woff'), url('http://cdn.mathjax.org/mathjax/latest/fonts/HTML-CSS/TeX/otf/MathJax_Main-Regular.otf?rev=2.4-beta-2') format('opentype')}
+@font-face {font-family: MathJax_Main-bold; src: url('http://cdn.mathjax.org/mathjax/latest/fonts/HTML-CSS/TeX/woff/MathJax_Main-Bold.woff?rev=2.4-beta-2') format('woff'), url('http://cdn.mathjax.org/mathjax/latest/fonts/HTML-CSS/TeX/otf/MathJax_Main-Bold.otf?rev=2.4-beta-2') format('opentype')}
+@font-face {font-family: MathJax_Main-italic; src: url('http://cdn.mathjax.org/mathjax/latest/fonts/HTML-CSS/TeX/woff/MathJax_Main-Italic.woff?rev=2.4-beta-2') format('woff'), url('http://cdn.mathjax.org/mathjax/latest/fonts/HTML-CSS/TeX/otf/MathJax_Main-Italic.otf?rev=2.4-beta-2') format('opentype')}
+@font-face {font-family: MathJax_Math-italic; src: url('http://cdn.mathjax.org/mathjax/latest/fonts/HTML-CSS/TeX/woff/MathJax_Math-Italic.woff?rev=2.4-beta-2') format('woff'), url('http://cdn.mathjax.org/mathjax/latest/fonts/HTML-CSS/TeX/otf/MathJax_Math-Italic.otf?rev=2.4-beta-2') format('opentype')}
+@font-face {font-family: MathJax_Caligraphic; src: url('http://cdn.mathjax.org/mathjax/latest/fonts/HTML-CSS/TeX/woff/MathJax_Caligraphic-Regular.woff?rev=2.4-beta-2') format('woff'), url('http://cdn.mathjax.org/mathjax/latest/fonts/HTML-CSS/TeX/otf/MathJax_Caligraphic-Regular.otf?rev=2.4-beta-2') format('opentype')}
+@font-face {font-family: MathJax_Size1; src: url('http://cdn.mathjax.org/mathjax/latest/fonts/HTML-CSS/TeX/woff/MathJax_Size1-Regular.woff?rev=2.4-beta-2') format('woff'), url('http://cdn.mathjax.org/mathjax/latest/fonts/HTML-CSS/TeX/otf/MathJax_Size1-Regular.otf?rev=2.4-beta-2') format('opentype')}
+@font-face {font-family: MathJax_Size2; src: url('http://cdn.mathjax.org/mathjax/latest/fonts/HTML-CSS/TeX/woff/MathJax_Size2-Regular.woff?rev=2.4-beta-2') format('woff'), url('http://cdn.mathjax.org/mathjax/latest/fonts/HTML-CSS/TeX/otf/MathJax_Size2-Regular.otf?rev=2.4-beta-2') format('opentype')}
+@font-face {font-family: MathJax_Size3; src: url('http://cdn.mathjax.org/mathjax/latest/fonts/HTML-CSS/TeX/woff/MathJax_Size3-Regular.woff?rev=2.4-beta-2') format('woff'), url('http://cdn.mathjax.org/mathjax/latest/fonts/HTML-CSS/TeX/otf/MathJax_Size3-Regular.otf?rev=2.4-beta-2') format('opentype')}
+@font-face {font-family: MathJax_Size4; src: url('http://cdn.mathjax.org/mathjax/latest/fonts/HTML-CSS/TeX/woff/MathJax_Size4-Regular.woff?rev=2.4-beta-2') format('woff'), url('http://cdn.mathjax.org/mathjax/latest/fonts/HTML-CSS/TeX/otf/MathJax_Size4-Regular.otf?rev=2.4-beta-2') format('opentype')}
+.MathJax .noError {vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
+</style></head>
+<body class="question-page new-topbar" style=""><div id="MathJax_Message" style="display: none;"></div><div style="visibility: hidden; overflow: hidden; position: absolute; top: 0px; height: 1px; width: auto; padding: 0px; border: 0px; margin: 0px; text-align: left; text-indent: 0px; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal;"><div id="MathJax_Hidden"></div></div>
+    <noscript>&lt;div id="noscript-padding"&gt;&lt;/div&gt;</noscript>
+    <div id="notify-container"></div>
+    <div id="overlay-header"></div>
+    <div id="custom-header"></div>
+<div class="topbar">
+    <div class="topbar-wrapper">
+        
+        <div class="js-topbar-dialog-corral">
+
+<div class="topbar-dialog siteSwitcher-dialog dno">
+    <div class="header">
+        <h3><a href="http://codereview.stackexchange.com/">current community</a></h3>
+    </div>
+    <div class="modal-content current-site-container">
+        <ul class="current-site">
+                <li>
+                        <div class="related-links">
+            <a href="http://chat.stackexchange.com/" class="js-gps-track" data-gps-track="site_switcher.click({ item_type:6 })">chat</a>
+                    <a href="http://blog.stackexchange.com/" class="js-gps-track" data-gps-track="site_switcher.click({ item_type:7 })">blog</a>
+            </div>
+
+
+
+
+    <a href="http://codereview.stackexchange.com/" class="current-site-link site-link js-gps-track" data-id="196" data-gps-track="
+        site_switcher.click({ item_type:3 })">
+        <div class="site-icon favicon favicon-codereview" title="Code Review"></div>
+        Code Review
+    </a>
+
+                </li>
+                <li class="related-site">
+                        <div class="L-shaped-icon-container">
+        <span class="L-shaped-icon"></span>
+    </div>
+
+                    
+
+
+
+    <a href="http://meta.codereview.stackexchange.com/" class="site-link js-gps-track" data-id="198" data-gps-track="
+            site.switch({ target_site:198, item_type:3 }),
+        site_switcher.click({ item_type:4 })">
+        <div class="site-icon favicon favicon-codereviewmeta" title="Code Review Meta"></div>
+        Code Review Meta
+    </a>
+
+                </li>
+                    </ul>
+    </div>
+    
+    <div class="header" id="your-communities-header">
+        <h3>
+your communities        </h3>
+            
+    </div>
+    <div class="modal-content" id="your-communities-section">
+            
+            <div class="call-to-login">
+                        <a href="https://codereview.stackexchange.com/users/signup?returnurl=http%3a%2f%2fcodereview.stackexchange.com%2fquestions%2f62781%2funit-testing-in-vba" class="js-gps-track" data-gps-track="site_switcher.click({ item_type:10 })">Sign up</a>
+                    or
+                    <a href="https://codereview.stackexchange.com/users/login?returnurl=http%3a%2f%2fcodereview.stackexchange.com%2fquestions%2f62781%2funit-testing-in-vba" class="js-gps-track" data-gps-track="site_switcher.click({ item_type:11 })">log in</a>
+
+                    to customize your list.
+            </div>
+    </div>
+    
+    <div class="header">
+        <h3><a href="http://stackexchange.com/sites">more stack exchange communities</a></h3>
+    </div>
+    <div class="modal-content">
+            <div class="child-content"></div>
+    </div>
+</div>
+        </div>
+
+        <div class="network-items">
+            
+            <a href="http://stackexchange.com/" class="topbar-icon icon-site-switcher yes-hover js-site-switcher-button js-gps-track" data-gps-track="site_switcher.show" title="A list of all 131 Stack Exchange sites">
+                <span class="hidden-text">Stack Exchange</span>
+            </a>
+            
+        </div>
+
+        <div class="topbar-links">
+            
+                <div class="links-container">
+                    <span class="topbar-menu-links">
+                            <a href="https://codereview.stackexchange.com/users/signup?returnurl=http%3a%2f%2fcodereview.stackexchange.com%2fquestions%2f62781%2funit-testing-in-vba" class="login-link">sign up</a>
+                            <a href="https://codereview.stackexchange.com/users/login?returnurl=http%3a%2f%2fcodereview.stackexchange.com%2fquestions%2f62781%2funit-testing-in-vba" class="login-link">log in</a>
+                            <a href="http://codereview.stackexchange.com/tour">tour</a>
+
+                            <a href="http://codereview.stackexchange.com/questions/62781/unit-testing-in-vba#" class="icon-help js-help-button" title="Help Center and other resources">
+        help
+        <span class="triangle"></span>
+    </a>
+    <div class="topbar-dialog help-dialog js-help-dialog dno">
+        <div class="modal-content">
+            <ul>
+                                    <li>
+                        <a href="http://codereview.stackexchange.com/tour" class="js-gps-track" data-gps-track="help_popup.click({ item_type:1 })">
+                            Tour
+                            <span class="item-summary">
+                                Start here for a quick overview of the site
+                            </span>
+                        </a>
+                    </li>
+                <li>
+                    <a href="http://codereview.stackexchange.com/help" class="js-gps-track" data-gps-track="help_popup.click({ item_type:4 })">
+                        Help Center
+                        <span class="item-summary">
+                            Detailed answers to any questions you might have
+                        </span>
+                    </a>
+                </li>
+                    <li>
+                        <a href="http://meta.codereview.stackexchange.com/" class="js-gps-track" data-gps-track="help_popup.click({ item_type:2 })">
+                            Meta
+                            <span class="item-summary">
+                                Discuss the workings and policies of this site
+                            </span>
+                        </a>
+                    </li>
+            </ul>
+        </div>
+    </div>
+
+                    </span>
+                </div>
+
+			<div class="search-container">
+                <form id="search" action="http://codereview.stackexchange.com/search" method="get" autocomplete="off">
+                    <input name="q" type="text" placeholder="search" value="" tabindex="1" autocomplete="off" maxlength="240">
+                </form>
+			</div>
+            	
+        </div>      
+    </div> 
+</div>
+<script>
+    StackExchange.ready(function () { StackExchange.topbar.init(); });
+</script>
+    <div class="container">
+        <div id="header" class="headeranon">
+            <br class="cbt">
+            <div id="hlogo">
+                <a href="http://codereview.stackexchange.com/">
+                    Code Review
+                        <span class="beta-title">beta</span>
+                </a>
+            </div>
+            <div id="hmenus">
+                <div class="nav mainnavs mainnavsanon">
+                    <ul>
+                        <li class="youarehere"><a id="nav-questions" href="http://codereview.stackexchange.com/questions">Questions</a></li>
+                        <li><a id="nav-tags" href="http://codereview.stackexchange.com/tags">Tags</a></li>
+                        <li><a id="nav-users" href="http://codereview.stackexchange.com/users">Users</a></li>
+                        <li><a id="nav-badges" href="http://codereview.stackexchange.com/help/badges">Badges</a></li>
+                        <li><a id="nav-unanswered" href="http://codereview.stackexchange.com/unanswered">Unanswered</a></li>
+                    </ul>
+                </div>
+                <div class="nav askquestion">
+                    <ul>
+                        <li>
+                            <a id="nav-askquestion" href="http://codereview.stackexchange.com/questions/ask">Ask Question</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+
+
+
+        <div id="content" class="snippet-hidden">
+            
+
+<div itemscope="" itemtype="http://schema.org/Question">
+	<link itemprop="image" href="http://cdn.sstatic.net/codereview/img/apple-touch-icon.png">
+			<!--googleoff: all-->
+
+<div id="herobox-mini">
+    <div id="hero-content">
+        <span id="controls">
+            <a href="http://codereview.stackexchange.com/tour" id="tell-me-more" class="button">Take the 2-minute tour</a>
+            <span id="close"><a title="click to dismiss">×</a></span>
+        </span>
+        <div id="blurb">
+            Code Review Stack Exchange is a question and answer site for peer programmer code reviews. It's 100% free, no registration required.
+        </div>        
+    </div>
+    <script>
+        $('#tell-me-more').click(function () {
+            var clickSource = $("body").attr("class") + '-mini';
+            if ($("body").hasClass("questions-page")) {
+                clickSource = 'questionpagemini';
+            } else if ($("body").hasClass("question-page")) {
+                clickSource = 'questionpagemini';
+            } else if ($("body").hasClass("home-page")) {
+                clickSource = 'homepagemini';
+            }
+
+            StackExchange.using("gps", function () {
+                StackExchange.gps.track("aboutpage.click", { aboutclick_location: clickSource } , true);
+            });
+        });
+        $('#herobox-mini #close').click(function () {
+            StackExchange.using("gps", function () {
+                StackExchange.gps.track("hero.action", { hero_action_type: "close" }, true);
+            });
+            $.cookie("hero", "none", { path: "/", expires: 365 });
+            var $hero = $("#herobox-mini");
+            $hero.slideUp('fast', function () { $hero.remove(); });
+            return false;
+        });
+    </script>
+</div>
+			<!--googleon: all-->
+			<div id="question-header">
+			<h1 itemprop="name"><a href="./oop - Unit Testing in VBA - Code Review Stack Exchange_files/oop - Unit Testing in VBA - Code Review Stack Exchange.htm" class="question-hyperlink">Unit Testing in VBA</a></h1>
+		</div>
+			<div id="mainbar">
+
+			
+
+<div class="question" data-questionid="62781" id="question">
+
+        <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+    <input type="hidden" name="_id_" value="62781">
+    <a class="vote-up-off" title="This question shows research effort; it is useful and clear">up vote</a>
+    <span itemprop="upvoteCount" class="vote-count-post ">9</span>
+    <a class="vote-down-off" title="This question does not show any research effort; it is unclear or not useful">down vote</a>
+    
+    <a class="star-off" href="http://codereview.stackexchange.com/questions/62781/unit-testing-in-vba#" title="This is a favorite question (click again to undo)">favorite</a>
+    <div class="favoritecount"><b>2</b></div>   
+
+</div>
+
+            </td>
+            
+<td class="postcell">
+<div>
+    <div class="post-text" itemprop="text">
+
+        <p>Unit testing in VBA is... lacking. (What isn't lacking in VBA though?) Since I've become more interested in unit testing lately, I decided I needed something better than <code>Debug.Assert()</code>, so I started building this framework. Currently there is a ton of functionality missing, but since I'm new to unit testing and interfaces, I don't want to get too deep before realizing I've made a huge mistake. The code is simple, but works just fine.</p>
+
+<p>I want to be able to run the output to either a file or the immediate window, so I created a simple <code>IOutput</code> interface that contains one subroutine. </p>
+
+<p><strong>IOutput.cls</strong></p>
+
+<pre class="lang-vb prettyprint prettyprinted" style=""><code><span class="kwd">Public</span><span class="pln"> </span><span class="kwd">Sub</span><span class="pln"> PrintLine</span><span class="pun">(</span><span class="kwd">Optional</span><span class="pln"> </span><span class="kwd">ByVal</span><span class="pln"> </span><span class="kwd">object</span><span class="pln"> </span><span class="kwd">As</span><span class="pln"> </span><span class="kwd">Variant</span><span class="pun">)</span><span class="pln">
+</span><span class="kwd">End</span><span class="pln"> </span><span class="kwd">Sub</span></code></pre>
+
+<p>And a <code>Console</code> class implementing it. <code>Console</code> uses <code>VBPredeclaredId = True</code> to create a default instance. The Logger class remains unimplemented for the moment. </p>
+
+<p><strong>Console.cls</strong></p>
+
+<pre class="lang-vb prettyprint prettyprinted" style=""><code><span class="kwd">Implements</span><span class="pln"> IOutput
+
+</span><span class="kwd">Public</span><span class="pln"> </span><span class="kwd">Sub</span><span class="pln"> PrintLine</span><span class="pun">(</span><span class="kwd">Optional</span><span class="pln"> </span><span class="kwd">ByVal</span><span class="pln"> </span><span class="kwd">object</span><span class="pln"> </span><span class="kwd">As</span><span class="pln"> </span><span class="kwd">Variant</span><span class="pun">)</span><span class="pln">
+    </span><span class="kwd">If</span><span class="pln"> IsMissing</span><span class="pun">(</span><span class="kwd">object</span><span class="pun">)</span><span class="pln"> </span><span class="kwd">Then</span><span class="pln">
+        </span><span class="com">'newline</span><span class="pln">
+        Debug</span><span class="pun">.</span><span class="pln">Print vbNullString
+    </span><span class="kwd">Else</span><span class="pln">
+        Debug</span><span class="pun">.</span><span class="pln">Print </span><span class="kwd">object</span><span class="pln">
+    </span><span class="kwd">End</span><span class="pln"> </span><span class="kwd">If</span><span class="pln">
+</span><span class="kwd">End</span><span class="pln"> </span><span class="kwd">Sub</span><span class="pln">
+
+</span><span class="kwd">Private</span><span class="pln"> </span><span class="kwd">Sub</span><span class="pln"> IOutput_PrintLine</span><span class="pun">(</span><span class="kwd">Optional</span><span class="pln"> </span><span class="kwd">ByVal</span><span class="pln"> </span><span class="kwd">object</span><span class="pln"> </span><span class="kwd">As</span><span class="pln"> </span><span class="kwd">Variant</span><span class="pun">)</span><span class="pln">
+    PrintLine </span><span class="kwd">object</span><span class="pln">
+</span><span class="kwd">End</span><span class="pln"> </span><span class="kwd">Sub</span></code></pre>
+
+<p>The <code>UnitTest</code> class then takes in an <code>IOutput</code> object in and stores it as a property. I need the Output stream to be available to the local project, but I don't want to expose it to external projects referencing it, so I declared it at a <code>Friend</code> scope (more on that later).</p>
+
+<p><strong>UnitTest.cls</strong></p>
+
+<pre class="lang-vb prettyprint prettyprinted" style=""><code><span class="kwd">Private</span><span class="pln"> Type TUnitTest
+    Name </span><span class="kwd">As</span><span class="pln"> </span><span class="kwd">String</span><span class="pln">
+    OutStream </span><span class="kwd">As</span><span class="pln"> IOutput
+    Assert </span><span class="kwd">As</span><span class="pln"> Assert
+</span><span class="kwd">End</span><span class="pln"> Type
+
+</span><span class="kwd">Private</span><span class="pln"> this </span><span class="kwd">As</span><span class="pln"> TUnitTest
+
+</span><span class="kwd">Public</span><span class="pln"> </span><span class="kwd">Property</span><span class="pln"> </span><span class="kwd">Get</span><span class="pln"> Name</span><span class="pun">()</span><span class="pln"> </span><span class="kwd">As</span><span class="pln"> </span><span class="kwd">String</span><span class="pln">
+    Name </span><span class="pun">=</span><span class="pln"> this</span><span class="pun">.</span><span class="pln">Name
+</span><span class="kwd">End</span><span class="pln"> </span><span class="kwd">Property</span><span class="pln">
+
+</span><span class="kwd">Friend</span><span class="pln"> </span><span class="kwd">Property</span><span class="pln"> </span><span class="kwd">Get</span><span class="pln"> OutStream</span><span class="pun">()</span><span class="pln"> </span><span class="kwd">As</span><span class="pln"> IOutput
+    </span><span class="kwd">Set</span><span class="pln"> OutStream </span><span class="pun">=</span><span class="pln"> this</span><span class="pun">.</span><span class="pln">OutStream
+</span><span class="kwd">End</span><span class="pln"> </span><span class="kwd">Property</span><span class="pln">
+
+</span><span class="kwd">Public</span><span class="pln"> </span><span class="kwd">Property</span><span class="pln"> </span><span class="kwd">Get</span><span class="pln"> Assert</span><span class="pun">()</span><span class="pln"> </span><span class="kwd">As</span><span class="pln"> Assert
+    </span><span class="kwd">Set</span><span class="pln"> Assert </span><span class="pun">=</span><span class="pln"> this</span><span class="pun">.</span><span class="pln">Assert
+</span><span class="kwd">End</span><span class="pln"> </span><span class="kwd">Property</span><span class="pln">
+
+</span><span class="kwd">Friend</span><span class="pln"> </span><span class="kwd">Sub</span><span class="pln"> Initialize</span><span class="pun">(</span><span class="pln">Name </span><span class="kwd">As</span><span class="pln"> </span><span class="kwd">String</span><span class="pun">,</span><span class="pln"> out </span><span class="kwd">As</span><span class="pln"> IOutput</span><span class="pun">)</span><span class="pln">
+    this</span><span class="pun">.</span><span class="pln">Name </span><span class="pun">=</span><span class="pln"> Name
+    </span><span class="kwd">Set</span><span class="pln"> this</span><span class="pun">.</span><span class="pln">OutStream </span><span class="pun">=</span><span class="pln"> out
+    </span><span class="kwd">Set</span><span class="pln"> this</span><span class="pun">.</span><span class="pln">Assert </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">New</span><span class="pln"> Assert
+    </span><span class="kwd">Set</span><span class="pln"> this</span><span class="pun">.</span><span class="pln">Assert</span><span class="pun">.</span><span class="pln">Parent </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">Me</span><span class="pln">
+</span><span class="kwd">End</span><span class="pln"> </span><span class="kwd">Sub</span></code></pre>
+
+<p>The <code>UnitTest</code> creates it's own instance of the <code>Assert</code> object. I have a real concern here. I don't like that I have to pass in the test name along with the actual conditions I'm testing. </p>
+
+<p><strong>Assert.cls</strong></p>
+
+<pre class="lang-vb prettyprint prettyprinted" style=""><code><span class="kwd">Private</span><span class="pln"> </span><span class="kwd">Const</span><span class="pln"> PASS </span><span class="kwd">As</span><span class="pln"> </span><span class="kwd">String</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="str">"Pass"</span><span class="pln">
+</span><span class="kwd">Private</span><span class="pln"> </span><span class="kwd">Const</span><span class="pln"> FAIL </span><span class="kwd">As</span><span class="pln"> </span><span class="kwd">String</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="str">"Fail"</span><span class="pln">
+
+</span><span class="kwd">Private</span><span class="pln"> Type TAssert
+    Parent </span><span class="kwd">As</span><span class="pln"> UnitTest
+</span><span class="kwd">End</span><span class="pln"> Type
+
+</span><span class="kwd">Private</span><span class="pln"> this </span><span class="kwd">As</span><span class="pln"> TAssert
+
+</span><span class="kwd">Public</span><span class="pln"> </span><span class="kwd">Static</span><span class="pln"> </span><span class="kwd">Property</span><span class="pln"> </span><span class="kwd">Get</span><span class="pln"> Parent</span><span class="pun">()</span><span class="pln"> </span><span class="kwd">As</span><span class="pln"> UnitTest
+    </span><span class="kwd">Set</span><span class="pln"> Parent </span><span class="pun">=</span><span class="pln"> this</span><span class="pun">.</span><span class="pln">Parent
+</span><span class="kwd">End</span><span class="pln"> </span><span class="kwd">Property</span><span class="pln">
+
+</span><span class="kwd">Public</span><span class="pln"> </span><span class="kwd">Static</span><span class="pln"> </span><span class="kwd">Property</span><span class="pln"> </span><span class="kwd">Set</span><span class="pln"> Parent</span><span class="pun">(</span><span class="kwd">ByVal</span><span class="pln"> Value </span><span class="kwd">As</span><span class="pln"> UnitTest</span><span class="pun">)</span><span class="pln">
+    </span><span class="kwd">Set</span><span class="pln"> this</span><span class="pun">.</span><span class="pln">Parent </span><span class="pun">=</span><span class="pln"> Value
+</span><span class="kwd">End</span><span class="pln"> </span><span class="kwd">Property</span><span class="pln">
+
+</span><span class="kwd">Public</span><span class="pln"> </span><span class="kwd">Sub</span><span class="pln"> IsTrue</span><span class="pun">(</span><span class="pln">testName </span><span class="kwd">As</span><span class="pln"> </span><span class="kwd">String</span><span class="pun">,</span><span class="pln"> condition </span><span class="kwd">As</span><span class="pln"> </span><span class="kwd">Boolean</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">Optional</span><span class="pln"> message </span><span class="kwd">As</span><span class="pln"> </span><span class="kwd">String</span><span class="pun">)</span><span class="pln">
+
+    </span><span class="kwd">Dim</span><span class="pln"> output </span><span class="kwd">As</span><span class="pln"> </span><span class="kwd">String</span><span class="pln">
+    output </span><span class="pun">=</span><span class="pln"> IIf</span><span class="pun">(</span><span class="pln">condition</span><span class="pun">,</span><span class="pln"> PASS</span><span class="pun">,</span><span class="pln"> FAIL</span><span class="pun">)</span><span class="pln">
+
+    Report testName</span><span class="pun">,</span><span class="pln"> output</span><span class="pun">,</span><span class="pln"> message
+
+</span><span class="kwd">End</span><span class="pln"> </span><span class="kwd">Sub</span><span class="pln">
+
+</span><span class="kwd">Public</span><span class="pln"> </span><span class="kwd">Sub</span><span class="pln"> IsFalse</span><span class="pun">(</span><span class="pln">testName </span><span class="kwd">As</span><span class="pln"> </span><span class="kwd">String</span><span class="pun">,</span><span class="pln"> condition </span><span class="kwd">As</span><span class="pln"> </span><span class="kwd">Boolean</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">Optional</span><span class="pln"> message </span><span class="kwd">As</span><span class="pln"> </span><span class="kwd">String</span><span class="pun">)</span><span class="pln">
+    </span><span class="kwd">Dim</span><span class="pln"> output </span><span class="kwd">As</span><span class="pln"> </span><span class="kwd">String</span><span class="pln">
+    output </span><span class="pun">=</span><span class="pln"> IIf</span><span class="pun">(</span><span class="pln">condition</span><span class="pun">,</span><span class="pln"> FAIL</span><span class="pun">,</span><span class="pln"> PASS</span><span class="pun">)</span><span class="pln">
+
+    Report testName</span><span class="pun">,</span><span class="pln"> output</span><span class="pun">,</span><span class="pln"> message
+</span><span class="kwd">End</span><span class="pln"> </span><span class="kwd">Sub</span><span class="pln">
+
+</span><span class="kwd">Private</span><span class="pln"> </span><span class="kwd">Sub</span><span class="pln"> Report</span><span class="pun">(</span><span class="pln">testName </span><span class="kwd">As</span><span class="pln"> </span><span class="kwd">String</span><span class="pun">,</span><span class="pln"> output </span><span class="kwd">As</span><span class="pln"> </span><span class="kwd">String</span><span class="pun">,</span><span class="pln"> message </span><span class="kwd">As</span><span class="pln"> </span><span class="kwd">String</span><span class="pun">)</span><span class="pln">
+
+    output </span><span class="pun">=</span><span class="pln"> this</span><span class="pun">.</span><span class="pln">Parent</span><span class="pun">.</span><span class="pln">Name </span><span class="pun">&amp;</span><span class="pln"> </span><span class="str">"."</span><span class="pln"> </span><span class="pun">&amp;</span><span class="pln"> testName </span><span class="pun">&amp;</span><span class="pln"> </span><span class="str">": "</span><span class="pln"> </span><span class="pun">&amp;</span><span class="pln"> output
+
+    </span><span class="kwd">If</span><span class="pln"> message </span><span class="pun">&lt;&gt;</span><span class="pln"> vbNullString </span><span class="kwd">Then</span><span class="pln">
+        output </span><span class="pun">=</span><span class="pln"> output </span><span class="pun">&amp;</span><span class="pln"> </span><span class="str">": "</span><span class="pln"> </span><span class="pun">&amp;</span><span class="pln"> message
+    </span><span class="kwd">End</span><span class="pln"> </span><span class="kwd">If</span><span class="pln">
+
+    this</span><span class="pun">.</span><span class="pln">Parent</span><span class="pun">.</span><span class="pln">OutStream</span><span class="pun">.</span><span class="pln">PrintLine output
+</span><span class="kwd">End</span><span class="pln"> </span><span class="kwd">Sub</span></code></pre>
+
+<p>Finally, I don't want to import all of these classes into each project I'm working on. It will be a nightmare to keep them all synced as I make changes to the VBAUnit project. <a href="http://support.microsoft.com/kb/555159">So I changed their instancing to "PublicNotCreatable"</a>.</p>
+
+<blockquote>
+  <p>If the instancing property is PublicNotCreatable, the class behaves normally when used within the same project, but a variable can be declared of that class type in other projects. The other project cannot create a new instance of the class, but can have a variable of the class's type. To allow another project to use a new instance of the class, the project containing the class must provide a global-scope function that creates a new instance of a class and returns it to the caller. For example, suppose Project1 contains a class named Class1, whose Instancing property is PublicNotCreatable. Suppose also that Project2 references Project1. </p>
+</blockquote>
+
+<p><a href="http://www.cpearson.com/excel/scope.aspx"><em>Cpearson.com</em></a></p>
+
+<p>So I have a regular *.bas module named <code>Provider</code> that contains this single function.</p>
+
+<p><strong>Provider.bas</strong></p>
+
+<pre class="lang-vb prettyprint prettyprinted" style=""><code><span class="kwd">Public</span><span class="pln"> </span><span class="kwd">Function</span><span class="pln"> New_UnitTest</span><span class="pun">(</span><span class="pln">Name </span><span class="kwd">As</span><span class="pln"> </span><span class="kwd">String</span><span class="pun">,</span><span class="pln"> out </span><span class="kwd">As</span><span class="pln"> IOutput</span><span class="pun">)</span><span class="pln"> </span><span class="kwd">As</span><span class="pln"> UnitTest
+    </span><span class="kwd">Set</span><span class="pln"> New_UnitTest </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">New</span><span class="pln"> UnitTest
+    New_UnitTest</span><span class="pun">.</span><span class="pln">Initialize Name</span><span class="pun">,</span><span class="pln"> out
+</span><span class="kwd">End</span><span class="pln"> </span><span class="kwd">Function</span></code></pre>
+
+<p>Then, from another project, I go just add VBAUnit to the references. (If you don't have it open, you have to click browse and navigate to the actual file.) I did just that and wrote some tests that essentially test themselves. </p>
+
+<p>This is where the <code>Friend</code> scope comes into play. <code>VBAUnit</code> has access to the <code>Initialize</code> subroutine and to the <code>OutputStream</code> property, but they're not visible to any external projects.</p>
+
+<p><strong>AssertConditionTest</strong></p>
+
+<p>This code is boilerplate code. Each new test I create will need these line. Also, once I have implemented a file logger, this is where you would need to decide where to output the results to. I don't like boiler plate, but I can't think of a way to get around it. I'm <em>way</em> open to suggestion on this.</p>
+
+<pre class="lang-vb prettyprint prettyprinted" style=""><code><span class="kwd">Private</span><span class="pln"> test </span><span class="kwd">As</span><span class="pln"> VBAUnit</span><span class="pun">.</span><span class="pln">UnitTest
+
+</span><span class="kwd">Private</span><span class="pln"> </span><span class="kwd">Sub</span><span class="pln"> Class_Initialize</span><span class="pun">()</span><span class="pln">
+    </span><span class="kwd">Set</span><span class="pln"> test </span><span class="pun">=</span><span class="pln"> VBAUnit</span><span class="pun">.</span><span class="pln">New_UnitTest</span><span class="pun">(</span><span class="pln">TypeName</span><span class="pun">(</span><span class="kwd">Me</span><span class="pun">),</span><span class="pln"> VBAUnit</span><span class="pun">.</span><span class="pln">Console</span><span class="pun">)</span><span class="pln">
+</span><span class="kwd">End</span><span class="pln"> </span><span class="kwd">Sub</span><span class="pln">
+
+</span><span class="kwd">Private</span><span class="pln"> </span><span class="kwd">Sub</span><span class="pln"> Class_Terminate</span><span class="pun">()</span><span class="pln">
+    </span><span class="kwd">Set</span><span class="pln"> test </span><span class="pun">=</span><span class="pln"> </span><span class="lit">Nothing</span><span class="pln">
+</span><span class="kwd">End</span><span class="pln"> </span><span class="kwd">Sub</span></code></pre>
+
+<p>Followed by the actual tests.</p>
+
+<pre class="lang-vb prettyprint prettyprinted" style=""><code><span class="kwd">Public</span><span class="pln"> </span><span class="kwd">Sub</span><span class="pln"> RunAllTests</span><span class="pun">()</span><span class="pln">
+    IsTrueShouldPass
+    IsTrueShouldFail
+    IsFalseShouldPass
+    IsFalseShouldFail
+</span><span class="kwd">End</span><span class="pln"> </span><span class="kwd">Sub</span><span class="pln">
+
+</span><span class="kwd">Public</span><span class="pln"> </span><span class="kwd">Sub</span><span class="pln"> IsTrueShouldPass</span><span class="pun">()</span><span class="pln">
+    test</span><span class="pun">.</span><span class="pln">Assert</span><span class="pun">.</span><span class="pln">IsTrue </span><span class="str">"IsTrueShouldPass"</span><span class="pun">,</span><span class="pln"> </span><span class="lit">True</span><span class="pln">
+</span><span class="kwd">End</span><span class="pln"> </span><span class="kwd">Sub</span><span class="pln">
+
+</span><span class="kwd">Public</span><span class="pln"> </span><span class="kwd">Sub</span><span class="pln"> IsTrueShouldFail</span><span class="pun">()</span><span class="pln">
+    test</span><span class="pun">.</span><span class="pln">Assert</span><span class="pun">.</span><span class="pln">IsTrue </span><span class="str">"IsTrueShouldFail"</span><span class="pun">,</span><span class="pln"> </span><span class="lit">False</span><span class="pln">
+</span><span class="kwd">End</span><span class="pln"> </span><span class="kwd">Sub</span><span class="pln">
+
+</span><span class="kwd">Public</span><span class="pln"> </span><span class="kwd">Sub</span><span class="pln"> IsFalseShouldPass</span><span class="pun">()</span><span class="pln">
+    test</span><span class="pun">.</span><span class="pln">Assert</span><span class="pun">.</span><span class="pln">IsFalse </span><span class="str">"IsFalseShouldPass"</span><span class="pun">,</span><span class="pln"> </span><span class="lit">False</span><span class="pun">,</span><span class="pln"> </span><span class="str">"with a message."</span><span class="pln">
+</span><span class="kwd">End</span><span class="pln"> </span><span class="kwd">Sub</span><span class="pln">
+
+</span><span class="kwd">Public</span><span class="pln"> </span><span class="kwd">Sub</span><span class="pln"> IsFalseShouldFail</span><span class="pun">()</span><span class="pln">
+    test</span><span class="pun">.</span><span class="pln">Assert</span><span class="pun">.</span><span class="pln">IsFalse </span><span class="str">"IsFalseShouldFail"</span><span class="pun">,</span><span class="pln"> </span><span class="lit">True</span><span class="pun">,</span><span class="pln"> </span><span class="str">"with a message."</span><span class="pln">
+</span><span class="kwd">End</span><span class="pln"> </span><span class="kwd">Sub</span></code></pre>
+
+<p>Finally, in this project, we have a regular *bas. This is just kind of throw away code that we use to run the tests we're interested in.</p>
+
+<pre class="lang-vb prettyprint prettyprinted" style=""><code><span class="kwd">Public</span><span class="pln"> </span><span class="kwd">Sub</span><span class="pln"> TestTheTests</span><span class="pun">()</span><span class="pln">
+    </span><span class="kwd">Dim</span><span class="pln"> test </span><span class="kwd">As</span><span class="pln"> </span><span class="kwd">New</span><span class="pln"> AssertConditionTest
+    test</span><span class="pun">.</span><span class="pln">RunAllTests
+    test</span><span class="pun">.</span><span class="pln">IsFalseShouldPass
+</span><span class="kwd">End</span><span class="pln"> </span><span class="kwd">Sub</span></code></pre>
+
+<p><strong>To summarize:</strong></p>
+
+<ol>
+<li>Am I using interfaces in an intelligent way?</li>
+<li>Is there anyway to ditch the boilerplate code in <code>AssertConditionTest</code>?</li>
+<li><p>How can I avoid passing a "Test name" into each Assert statement and still get results like this? My method feels like a dirty hack at best.</p>
+
+<blockquote>
+<pre class="lang-vb prettyprint prettyprinted" style=""><code><span class="pln">AssertConditionTest</span><span class="pun">.</span><span class="pln">IsTrueShouldPass</span><span class="pun">:</span><span class="pln"> Pass
+AssertConditionTest</span><span class="pun">.</span><span class="pln">IsTrueShouldFail</span><span class="pun">:</span><span class="pln"> Fail
+AssertConditionTest</span><span class="pun">.</span><span class="pln">IsFalseShouldPass</span><span class="pun">:</span><span class="pln"> Pass</span><span class="pun">:</span><span class="pln"> </span><span class="kwd">with</span><span class="pln"> a message</span><span class="pun">.</span><span class="pln">
+AssertConditionTest</span><span class="pun">.</span><span class="pln">IsFalseShouldFail</span><span class="pun">:</span><span class="pln"> Fail</span><span class="pun">:</span><span class="pln"> </span><span class="kwd">with</span><span class="pln"> a message</span><span class="pun">.</span></code></pre>
+</blockquote></li>
+<li><p>Was it a stupid decision to make <code>Assert</code> it's own class and keeping a Parent UnitTest property?</p></li>
+</ol>
+
+    </div>
+    <div class="post-taglist">
+        <a href="http://codereview.stackexchange.com/questions/tagged/oop" class="post-tag js-gps-track" title="show questions tagged &#39;oop&#39;" rel="tag">oop</a> <a href="http://codereview.stackexchange.com/questions/tagged/unit-testing" class="post-tag js-gps-track" title="show questions tagged &#39;unit-testing&#39;" rel="tag">unit-testing</a> <a href="http://codereview.stackexchange.com/questions/tagged/vba" class="post-tag js-gps-track" title="show questions tagged &#39;vba&#39;" rel="tag">vba</a> <a href="http://codereview.stackexchange.com/questions/tagged/library" class="post-tag js-gps-track" title="show questions tagged &#39;library&#39;" rel="tag">library</a> <a href="http://codereview.stackexchange.com/questions/tagged/interface" class="post-tag js-gps-track" title="show questions tagged &#39;interface&#39;" rel="tag">interface</a> 
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://codereview.stackexchange.com/q/62781" title="short permalink to this question" class="short-link" id="link-post-62781">share</a><span class="lsep">|</span><a href="http://codereview.stackexchange.com/posts/62781/edit" class="suggest-edit-post" title="">improve this question</a></div>        
+    </td>
+    <td align="right" class="post-signature">
+<div class="user-info ">
+    <div class="user-action-time">
+        <a href="http://codereview.stackexchange.com/posts/62781/revisions" title="show all edits to this post">edited <span title="2014-09-12 19:42:02Z" class="relativetime">Sep 12 at 19:42</span></a>
+    </div>
+    <div class="user-gravatar32">
+        
+    </div>
+    <div class="user-details">
+        <br>
+        
+    </div>
+</div>    </td>
+    <td class="post-signature owner">
+        <div class="user-info user-hover">
+    <div class="user-action-time">
+        asked <span title="2014-09-12 19:31:04Z" class="relativetime">Sep 12 at 19:31</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://codereview.stackexchange.com/users/41243/rubberduck"><div class="gravatar-wrapper-32"><img src="./oop - Unit Testing in VBA - Code Review Stack Exchange_files/gXN1G.jpg" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://codereview.stackexchange.com/users/41243/rubberduck">RubberDuck</a><br>
+        <span class="reputation-score" title="reputation score " dir="ltr">7,091</span><span title="2 gold badges"><span class="badge1"></span><span class="badgecount">2</span></span><span title="11 silver badges"><span class="badge2"></span><span class="badgecount">11</span></span><span title="56 bronze badges"><span class="badge3"></span><span class="badgecount">56</span></span>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</div>
+</td>
+        </tr>
+                
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-62781" class="comments  dno">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+                        <tr><td></td><td></td></tr>
+                </tbody>
+		    </table>
+	    </div>
+            <div id="comments-link-62781" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid answering questions in comments.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span><a class="js-show-link comments-link dno" title="expand to show all comments on this post, or add one of your own" href="http://codereview.stackexchange.com/questions/62781/unit-testing-in-vba#" onclick=""></a>
+            </div>
+    </td>
+</tr>        </tbody></table>
+</div>
+
+			<div id="answers">
+
+				<a name="tab-top"></a>
+				<div id="answers-header">
+					<div class="subheader answers-subheader">
+						<h2>
+								1 Answer
+                                <span style="display:none;" itemprop="answerCount">1</span>
+						</h2>
+						<div>
+							<div id="tabs">
+        <a href="http://codereview.stackexchange.com/questions/62781/unit-testing-in-vba?answertab=active#tab-top" title="Answers with the latest activity first">active</a>
+        <a href="http://codereview.stackexchange.com/questions/62781/unit-testing-in-vba?answertab=oldest#tab-top" title="Answers in the order they were provided">oldest</a>
+        <a class="youarehere" href="http://codereview.stackexchange.com/questions/62781/unit-testing-in-vba?answertab=votes#tab-top" title="Answers with the highest score first">votes</a>
+</div>
+						</div>
+					</div>    
+				</div>    
+
+
+
+
+  
+<a name="62792"></a>
+<div id="answer-62792" class="answer" data-answerid="62792" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+    <input type="hidden" name="_id_" value="62792">
+    <a class="vote-up-off" title="This answer is useful">up vote</a>
+    <span itemprop="upvoteCount" class="vote-count-post ">4</span>
+    <a class="vote-down-off" title="This answer is not useful">down vote</a>
+    
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<blockquote>
+  <p><strong>IOutput</strong> class module (Interface)</p>
+</blockquote>
+
+<p>Looking at how the interface is being used:</p>
+
+<blockquote>
+<pre class="lang-vb prettyprint prettyprinted" style=""><code><span class="pln">this</span><span class="pun">.</span><span class="pln">Parent</span><span class="pun">.</span><span class="pln">OutStream</span><span class="pun">.</span><span class="pln">PrintLine output</span></code></pre>
+</blockquote>
+
+<p>Where <code>output</code> is clearly a <code>String</code>, which makes sense. But the interface's signature doesn't reflect that, and is confusing:</p>
+
+<blockquote>
+<pre class="lang-vb prettyprint prettyprinted" style=""><code><span class="kwd">Public</span><span class="pln"> </span><span class="kwd">Sub</span><span class="pln"> PrintLine</span><span class="pun">(</span><span class="kwd">Optional</span><span class="pln"> </span><span class="kwd">ByVal</span><span class="pln"> </span><span class="kwd">object</span><span class="pln"> </span><span class="kwd">As</span><span class="pln"> </span><span class="kwd">Variant</span><span class="pun">)</span></code></pre>
+</blockquote>
+
+<p>Why is the parameter <em>optional</em>? and why is it a <em>Variant</em>? ...and why is it called <em>object</em>? I would have expected this:</p>
+
+<pre class="lang-vb prettyprint prettyprinted" style=""><code><span class="kwd">Public</span><span class="pln"> </span><span class="kwd">Sub</span><span class="pln"> PrintLine</span><span class="pun">(</span><span class="kwd">ByVal</span><span class="pln"> output </span><span class="kwd">As</span><span class="pln"> </span><span class="kwd">String</span><span class="pun">)</span></code></pre>
+
+<p>Which leads me to the implementation:</p>
+
+<blockquote>
+  <p><strong>Console</strong> class module</p>
+</blockquote>
+
+<p>If the parameter is a <code>String</code>, and isn't optional, the <code>PrintLine</code> implementation gets... <em>a little bit</em> simpler:</p>
+
+<pre class="lang-vb prettyprint prettyprinted" style=""><code><span class="kwd">Option</span><span class="pln"> Explicit </span><span class="com">'always. even if you're not **yet** declaring anything.</span><span class="pln">
+</span><span class="kwd">Implements</span><span class="pln"> IOutput
+
+</span><span class="kwd">Public</span><span class="pln"> </span><span class="kwd">Sub</span><span class="pln"> PrintLine</span><span class="pun">(</span><span class="kwd">ByVal</span><span class="pln"> output </span><span class="kwd">As</span><span class="pln"> </span><span class="kwd">String</span><span class="pun">)</span><span class="pln">
+    Debug</span><span class="pun">.</span><span class="pln">Print output
+</span><span class="kwd">End</span><span class="pln"> </span><span class="kwd">Sub</span><span class="pln">
+
+</span><span class="kwd">Private</span><span class="pln"> </span><span class="kwd">Sub</span><span class="pln"> IOutput_PrintLine</span><span class="pun">(</span><span class="kwd">ByVal</span><span class="pln"> output </span><span class="kwd">As</span><span class="pln"> </span><span class="kwd">String</span><span class="pun">)</span><span class="pln">
+    PrintLine output
+</span><span class="kwd">End</span><span class="pln"> </span><span class="kwd">Sub</span></code></pre>
+
+<p>It seems your <code>Console</code> class was intended to be used a bit like a .net <code>System.Console</code>, a static class.</p>
+
+<p>In the context of the <code>IOutput</code> interface implementation, it doesn't make sense for that class to be static, nor to have an optional parameter to its <code>PrintLine</code> method. However, if you encapsulate a <em>test result</em> in its own class...</p>
+
+<pre class="lang-vb prettyprint prettyprinted" style=""><code><span class="kwd">Option</span><span class="pln"> Explicit
+
+</span><span class="kwd">Public</span><span class="pln"> </span><span class="kwd">Enum</span><span class="pln"> TestOutcome
+    Inconclusive
+    Failed
+    Succeeded
+</span><span class="kwd">End</span><span class="pln"> </span><span class="kwd">Enum</span><span class="pln">
+
+</span><span class="kwd">Private</span><span class="pln"> Type TTestResult
+    outcome </span><span class="kwd">As</span><span class="pln"> TestOutcome
+    output </span><span class="kwd">As</span><span class="pln"> </span><span class="kwd">String</span><span class="pln">
+</span><span class="kwd">End</span><span class="pln"> Type
+
+</span><span class="kwd">Private</span><span class="pln"> this </span><span class="kwd">As</span><span class="pln"> TTestResult
+
+</span><span class="kwd">Public</span><span class="pln"> </span><span class="kwd">Property</span><span class="pln"> </span><span class="kwd">Get</span><span class="pln"> TestOutcome</span><span class="pun">()</span><span class="pln"> </span><span class="kwd">As</span><span class="pln"> TestOutcome
+    TestOutcome </span><span class="pun">=</span><span class="pln"> this</span><span class="pun">.</span><span class="pln">outcome
+</span><span class="kwd">End</span><span class="pln"> </span><span class="kwd">Property</span><span class="pln">
+
+</span><span class="kwd">Friend</span><span class="pln"> </span><span class="kwd">Property</span><span class="pln"> </span><span class="kwd">Let</span><span class="pln"> TestOutcome</span><span class="pun">(</span><span class="kwd">ByVal</span><span class="pln"> value </span><span class="kwd">As</span><span class="pln"> TestOutcome</span><span class="pun">)</span><span class="pln">
+    this</span><span class="pun">.</span><span class="pln">outcome </span><span class="pun">=</span><span class="pln"> value
+</span><span class="kwd">End</span><span class="pln"> </span><span class="kwd">Property</span><span class="pln">
+
+</span><span class="kwd">Public</span><span class="pln"> </span><span class="kwd">Property</span><span class="pln"> </span><span class="kwd">Get</span><span class="pln"> TestOutput</span><span class="pun">()</span><span class="pln"> </span><span class="kwd">As</span><span class="pln"> </span><span class="kwd">String</span><span class="pln">
+    TestOutput </span><span class="pun">=</span><span class="pln"> this</span><span class="pun">.</span><span class="pln">output
+</span><span class="kwd">End</span><span class="pln"> </span><span class="kwd">Property</span><span class="pln">
+
+</span><span class="kwd">Friend</span><span class="pln"> </span><span class="kwd">Property</span><span class="pln"> </span><span class="kwd">Let</span><span class="pln"> TestOutput</span><span class="pun">(</span><span class="kwd">ByVal</span><span class="pln"> value </span><span class="kwd">As</span><span class="pln"> </span><span class="kwd">String</span><span class="pun">)</span><span class="pln">
+    this</span><span class="pun">.</span><span class="pln">output </span><span class="pun">=</span><span class="pln"> value
+</span><span class="kwd">End</span><span class="pln"> </span><span class="kwd">Property</span><span class="pln">
+
+</span><span class="kwd">Public</span><span class="pln"> </span><span class="kwd">Function</span><span class="pln"> Create</span><span class="pun">(</span><span class="kwd">ByVal</span><span class="pln"> outcome </span><span class="kwd">As</span><span class="pln"> TestOutcome</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">ByVal</span><span class="pln"> output </span><span class="kwd">As</span><span class="pln"> </span><span class="kwd">String</span><span class="pun">)</span><span class="pln">
+
+    </span><span class="kwd">Dim</span><span class="pln"> result </span><span class="kwd">As</span><span class="pln"> </span><span class="kwd">New</span><span class="pln"> TestResult
+    result</span><span class="pun">.</span><span class="pln">TestOutcome </span><span class="pun">=</span><span class="pln"> outcome
+    result</span><span class="pun">.</span><span class="pln">TestOutput </span><span class="pun">=</span><span class="pln"> output
+
+    </span><span class="kwd">Set</span><span class="pln"> Create </span><span class="pun">=</span><span class="pln"> result
+
+</span><span class="kwd">End</span><span class="pln"> </span><span class="kwd">Function</span></code></pre>
+
+<p>...then I'd renamed <code>IOutput</code> to <code>ITestOutput</code>, and change the signature like this:</p>
+
+<pre class="lang-vb prettyprint prettyprinted" style=""><code><span class="kwd">Public</span><span class="pln"> </span><span class="kwd">Sub</span><span class="pln"> WriteResult</span><span class="pun">(</span><span class="kwd">ByVal</span><span class="pln"> result </span><span class="kwd">As</span><span class="pln"> TestResult</span><span class="pun">)</span><span class="pln">
+</span><span class="kwd">End</span><span class="pln"> </span><span class="kwd">Sub</span></code></pre>
+
+<p>and <code>Console</code> would look ilke this:</p>
+
+<pre class="lang-vb prettyprint prettyprinted" style=""><code><span class="kwd">Option</span><span class="pln"> Explicit
+</span><span class="kwd">Implements</span><span class="pln"> ITestOutput
+
+</span><span class="kwd">Public</span><span class="pln"> </span><span class="kwd">Sub</span><span class="pln"> WriteResult</span><span class="pun">(</span><span class="kwd">ByVal</span><span class="pln"> result </span><span class="kwd">As</span><span class="pln"> TestResult</span><span class="pun">)</span><span class="pln">
+    Debug</span><span class="pun">.</span><span class="pln">Print result</span><span class="pun">.</span><span class="pln">TestOutput
+</span><span class="kwd">End</span><span class="pln"> </span><span class="kwd">Sub</span><span class="pln">
+
+</span><span class="kwd">Private</span><span class="pln"> </span><span class="kwd">Sub</span><span class="pln"> ITestOutput_WriteResult</span><span class="pun">(</span><span class="kwd">ByVal</span><span class="pln"> result </span><span class="kwd">As</span><span class="pln"> TestResult</span><span class="pun">)</span><span class="pln">
+    WriteResult result
+</span><span class="kwd">End</span><span class="pln"> </span><span class="kwd">Sub</span></code></pre>
+
+<p>That gives <code>WriteResult</code> a much clearer intent than <code>PrintLine</code>, and doesn't stop you from implementing a <code>WriteLine(String)</code> method and keeping <code>Console</code> as a static utility class, and as a bonus you have a concept of a <em>test result</em> that can be <em>inconclusive</em>, <em>failed</em> or <em>successful</em>.</p>
+
+<hr>
+
+<blockquote>
+  <p><strong>UnitTest</strong> class module</p>
+</blockquote>
+
+<p>Mucho kudos, this is the first time I'm seeing a warranted use of the <code>Friend</code> keyword in VBA. This is pretty clever, and enables several things that aren't otherwise possible in VBA:</p>
+
+<ul>
+<li><strong>Factories</strong>: a class can now be created and initialized with parameter values, as if created with a <em>constructor</em>.</li>
+<li><strong>Immutability</strong>: a class can only expose getters, and be immutable from the client code's perspective.</li>
+</ul>
+
+<p>Impressive. I wish I had realized VBAProjects could reference each other, 10 years ago!</p>
+
+<hr>
+
+<blockquote>
+  <p><strong>Provider</strong> code module</p>
+</blockquote>
+
+<p>I don't like this. I would have made it a "static" class module (with a default instance), and called it <code>UnitTestFactory</code>.</p>
+
+<p>I don't like the method name either - again, underscores in identifiers are confusing in VBA. If that code is in a class called <code>UnitTestFactory</code>, the method's name could simply be <code>Create</code>.</p>
+
+<p>I don't like that you're assigning the result, and then calling a method on that reference - it looks very awkward and would be much clearer with a <code>result</code> variable, and I would make the <code>IOutput</code> implementation/reference a property of the factory class, removing it from the method's signature:</p>
+
+<pre class="lang-vb prettyprint prettyprinted" style=""><code><span class="kwd">Option</span><span class="pln"> Explicit
+</span><span class="kwd">Private</span><span class="pln"> Type TUnitTestFactory
+    TestOutput </span><span class="kwd">As</span><span class="pln"> IOutput
+</span><span class="kwd">End</span><span class="pln"> Type
+
+</span><span class="kwd">Private</span><span class="pln"> this </span><span class="kwd">As</span><span class="pln"> TUnitTestFactory
+
+</span><span class="kwd">Public</span><span class="pln"> </span><span class="kwd">Property</span><span class="pln"> </span><span class="kwd">Get</span><span class="pln"> TestOutput</span><span class="pun">()</span><span class="pln"> </span><span class="kwd">As</span><span class="pln"> IOutput
+    </span><span class="kwd">Set</span><span class="pln"> TestOutput </span><span class="pun">=</span><span class="pln"> this</span><span class="pun">.</span><span class="pln">TestOutput 
+</span><span class="kwd">End</span><span class="pln"> </span><span class="kwd">Property</span><span class="pln">
+
+</span><span class="kwd">Public</span><span class="pln"> </span><span class="kwd">Property</span><span class="pln"> </span><span class="kwd">Set</span><span class="pln"> TestOutput</span><span class="pun">(</span><span class="kwd">ByVal</span><span class="pln"> value </span><span class="kwd">As</span><span class="pln"> IOutput</span><span class="pun">)</span><span class="pln">
+    </span><span class="kwd">Set</span><span class="pln"> this</span><span class="pun">.</span><span class="pln">TestOutput </span><span class="pun">=</span><span class="pln"> value
+</span><span class="kwd">End</span><span class="pln"> </span><span class="kwd">Property</span><span class="pln">
+
+</span><span class="kwd">Public</span><span class="pln"> </span><span class="kwd">Function</span><span class="pln"> Create</span><span class="pun">(</span><span class="kwd">ByVal</span><span class="pln"> testName </span><span class="kwd">As</span><span class="pln"> </span><span class="kwd">String</span><span class="pun">)</span><span class="pln"> </span><span class="kwd">As</span><span class="pln"> UnitTest
+    </span><span class="kwd">Dim</span><span class="pln"> result </span><span class="kwd">As</span><span class="pln"> </span><span class="kwd">New</span><span class="pln"> UnitTest
+    </span><span class="kwd">Set</span><span class="pln"> result</span><span class="pun">.</span><span class="pln">Initialize testName</span><span class="pun">,</span><span class="pln"> TestOutput
+    </span><span class="kwd">Set</span><span class="pln"> Create </span><span class="pun">=</span><span class="pln"> result
+</span><span class="kwd">End</span><span class="pln"> </span><span class="kwd">Function</span></code></pre>
+
+<hr>
+
+<blockquote>
+  <p><strong>Assert</strong> class module</p>
+</blockquote>
+
+<p>I've never seen the <code>Static</code> keyword used like this (what's a <em>static property</em> in VBA anyway?), and the <code>Parent</code> property makes me think that class is doing more than it should. I believe the <code>TestOutcome</code> enum and the <code>TestResult</code> class I've suggested above, would be helpful here... but I don't think it's <code>Assert</code>'s job to <em>report</em> the test's outcome - by keeping that responsibility at the test level, you remove the need to pass the test's name to the <code>Assert</code> methods.</p>
+
+<p>Question is, <em>how to do that?</em></p>
+
+<p>I think I'd expose an event:</p>
+
+<pre class="lang-vb prettyprint prettyprinted" style=""><code><span class="kwd">Public</span><span class="pln"> </span><span class="kwd">Event</span><span class="pln"> AssertCompleted</span><span class="pun">(</span><span class="kwd">ByVal</span><span class="pln"> result </span><span class="kwd">As</span><span class="pln"> TestResult</span><span class="pun">)</span></code></pre>
+
+<p>This would make a method like <code>IsTrue</code> look like this:</p>
+
+<pre class="lang-vb prettyprint prettyprinted" style=""><code><span class="kwd">Public</span><span class="pln"> </span><span class="kwd">Sub</span><span class="pln"> IsTrue</span><span class="pun">(</span><span class="kwd">ByVal</span><span class="pln"> condition </span><span class="kwd">As</span><span class="pln"> </span><span class="kwd">Boolean</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">Optional</span><span class="pln"> message </span><span class="kwd">As</span><span class="pln"> </span><span class="kwd">String</span><span class="pun">)</span><span class="pln">
+
+    </span><span class="kwd">Dim</span><span class="pln"> outcome </span><span class="kwd">As</span><span class="pln"> TestOutcome
+    outcome </span><span class="pun">=</span><span class="pln"> IIf</span><span class="pun">(</span><span class="pln">condition</span><span class="pun">,</span><span class="pln"> TestOutcome</span><span class="pun">.</span><span class="pln">Succeeded</span><span class="pun">,</span><span class="pln"> TestOutcome</span><span class="pun">.</span><span class="pln">Failed</span><span class="pun">)</span><span class="pln">
+
+    result </span><span class="pun">=</span><span class="pln"> TestResult</span><span class="pun">.</span><span class="pln">Create</span><span class="pun">(</span><span class="pln">outcome</span><span class="pun">,</span><span class="pln"> message</span><span class="pun">)</span><span class="pln">
+    </span><span class="kwd">RaiseEvent</span><span class="pln"> AssertCompleted</span><span class="pun">(</span><span class="pln">result</span><span class="pun">)</span><span class="pln">
+
+</span><span class="kwd">End</span><span class="pln"> </span><span class="kwd">Sub</span></code></pre>
+
+<p>For this to work, a <code>UnitTest</code> class only needs this - note that I'd want to call the variable <code>assert</code>, so I'd rename the class to <code>TestAssert</code>, and forfeit the default instance / static-ness of the type:</p>
+
+<pre class="lang-vb prettyprint prettyprinted" style=""><code><span class="kwd">Private</span><span class="pln"> </span><span class="kwd">WithEvents</span><span class="pln"> assert </span><span class="kwd">As</span><span class="pln"> TestAssert
+
+</span><span class="kwd">Private</span><span class="pln"> </span><span class="kwd">Sub</span><span class="pln"> assert_AssertCompleted</span><span class="pun">(</span><span class="kwd">ByVal</span><span class="pln"> result </span><span class="kwd">As</span><span class="pln"> TestResult</span><span class="pun">)</span><span class="pln">
+    OutStream</span><span class="pun">.</span><span class="pln">WriteResult result
+</span><span class="kwd">End</span><span class="pln"> </span><span class="kwd">Sub</span></code></pre>
+
+<p>And... Bingo!</p>
+
+<hr>
+
+<blockquote>
+  <p><em>This code is boilerplate code. Each new test I create will need these line.</em></p>
+</blockquote>
+
+<p>Don't worry about that boilerplate code. It's needed because it's the only logical place for the client code to specify an implementation for the output interface - a test might want to output to a text file, another might want to output to the <em>immediate pane</em>, and another might want to send the output to a listbox on a modal form... and it's really the client code's job to specify that.</p>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://codereview.stackexchange.com/a/62792" title="short permalink to this answer" class="short-link" id="link-post-62792">share</a><span class="lsep">|</span><a href="http://codereview.stackexchange.com/posts/62792/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+    <td align="right" class="post-signature">
+<div class="user-info ">
+    <div class="user-action-time">
+        <a href="http://codereview.stackexchange.com/posts/62792/revisions" title="show all edits to this post">edited <span title="2014-09-13 16:10:22Z" class="relativetime">Sep 13 at 16:10</span></a>
+    </div>
+    <div class="user-gravatar32">
+        
+    </div>
+    <div class="user-details">
+        <br>
+        
+    </div>
+</div>    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info user-hover">
+    <div class="user-action-time">
+        answered <span title="2014-09-12 22:18:10Z" class="relativetime">Sep 12 at 22:18</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://codereview.stackexchange.com/users/23788/mats-mug"><div class="gravatar-wrapper-32"><img src="./oop - Unit Testing in VBA - Code Review Stack Exchange_files/cLiNJ.jpg" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://codereview.stackexchange.com/users/23788/mats-mug">Mat's Mug</a><br>
+        <span class="reputation-score" title="reputation score 21808" dir="ltr">21.8k</span><span title="3 gold badges"><span class="badge1"></span><span class="badgecount">3</span></span><span title="43 silver badges"><span class="badge2"></span><span class="badgecount">43</span></span><span title="150 bronze badges"><span class="badge3"></span><span class="badgecount">150</span></span>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-62792" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+
+    <tr id="comment-114761" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of &#39;useful comment&#39; votes received" class="cool">1</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Using a static class with a default instance is genius. I should have thought of it, but I was smoking MSDN's documentation I guess. Using events to report that the assert is completed is brilliant as well. Great advice. You're also completely right about separating the concerns of asserting and reporting. The static property snuck in there because I was using the "Insert" tool..... lesson learned there. I'll just type them out from now on.</span>
+                –&nbsp;
+                    <a href="http://codereview.stackexchange.com/users/41243/rubberduck" title="7091 reputation" class="comment-user owner">RubberDuck</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://codereview.stackexchange.com/questions/62781/unit-testing-in-vba#comment114761_62792"><span title="2014-09-14 01:20:44Z" class="relativetime-clean">Sep 14 at 1:20</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-114794" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Also, IOutput takes an optional variant because if I call <code>Console.PrintLine</code> or <code>Logger.PrintLine</code> without a parameter, I want it to print a blank line. It takes variant because objects will be cast to a string and printed. I must have picked that up in Ruby. Not sure I'll change that part.</span>
+                –&nbsp;
+                    <a href="http://codereview.stackexchange.com/users/41243/rubberduck" title="7091 reputation" class="comment-user owner">RubberDuck</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://codereview.stackexchange.com/questions/62781/unit-testing-in-vba#comment114794_62792"><span title="2014-09-14 13:58:10Z" class="relativetime-clean">Sep 14 at 13:58</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-114841" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">@RubberDuck thinking again, ...what prevents <code>Assert.IsTrue</code> from being a function and return a <code>TestResult</code>, instead of raising an event?</span>
+                –&nbsp;
+                    <a href="http://codereview.stackexchange.com/users/23788/mats-mug" title="21808 reputation" class="comment-user">Mat's Mug</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://codereview.stackexchange.com/questions/62781/unit-testing-in-vba#comment114841_62792"><span title="2014-09-14 19:33:29Z" class="relativetime-clean">Sep 14 at 19:33</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-114861" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of &#39;useful comment&#39; votes received" class="cool">1</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">As far as I can tell, it's behavior does. It doesn't ask if this is true, it asserts it. It takes an action.</span>
+                –&nbsp;
+                    <a href="http://codereview.stackexchange.com/users/41243/rubberduck" title="7091 reputation" class="comment-user owner">RubberDuck</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://codereview.stackexchange.com/questions/62781/unit-testing-in-vba#comment114861_62792"><span title="2014-09-14 21:12:20Z" class="relativetime-clean">2 days ago</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+            <div id="comments-link-62792" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span><a class="js-show-link comments-link dno" title="expand to show all comments on this post, or add one of your own" href="http://codereview.stackexchange.com/questions/62781/unit-testing-in-vba#" onclick=""></a>
+            </div>
+    </td>
+</tr>    </tbody></table>
+</div>
+									<a name="new-answer"></a>
+						<form id="post-form" action="http://codereview.stackexchange.com/questions/62781/answer/submit" method="post" class="post-form">
+						    <input type="hidden" id="post-id" value="62781">
+                            <input type="hidden" id="qualityBanWarningShown" name="qualityBanWarningShown" value="false">
+							<h2 class="space">Your Answer</h2>
+
+
+        <script>
+            StackExchange.ifUsing("editor", function () {
+                return StackExchange.using("mathjaxEditing", function () {
+                    StackExchange.MarkdownEditor.creationCallbacks.add(function (editor, postfix) {
+                        StackExchange.mathjaxEditing.prepareWmdForMathJax(editor, postfix, [["\\$", "\\$"]]);
+                    });
+                });
+            }, "mathjax-editing");
+        </script>
+
+            <script>
+            StackExchange.ifUsing("editor", function () {
+                StackExchange.using("externalEditor", function () {
+                    StackExchange.using("snippets", function () {
+                        StackExchange.snippets.init();
+                    });
+                });
+            }, "code-snippets");
+        </script>
+    
+
+<script>
+    StackExchange.ready(function() {
+        initTagRenderer("".split(" "), "".split(" "));
+       
+        StackExchange.using("externalEditor", function() {
+            // Have to fire editor after snippets, if snippets enabled
+            if (StackExchange.options.snippets.enabled) {
+                StackExchange.using("snippets", function() {
+                    createEditor();
+                });
+            }
+            else {
+                createEditor();
+            }
+        });
+
+        function createEditor() {
+            prepareEditor({
+                heartbeatType: 'answer',
+                bindNavPrevention: true,
+                postfix: "",
+                    onDemand: true,
+                    discardSelector: ".discard-answer"
+                ,immediatelyShowMarkdownHelp:true
+                });
+                
+
+        }
+    });  
+</script>
+
+
+<div id="post-editor" class="post-editor">
+
+    <div style="position: relative;">     
+        <div class="wmd-container">
+            <div id="wmd-button-bar" class="wmd-button-bar"><ul id="wmd-button-row" class="wmd-button-row"><li id="wmd-bold-button" class="wmd-button" style="left: 0px;"><span style="background-position: 0px -20px;"></span></li><li id="wmd-italic-button" class="wmd-button" style="left: 25px;"><span style="background-position: -20px -20px;"></span></li><li id="wmd-spacer1" class="wmd-spacer" style="left: 50px;"><span style="background-position: -40px -20px;"></span></li><li id="wmd-link-button" class="wmd-button" style="left: 75px;"><span style="background-position: -40px -20px;"></span></li><li id="wmd-quote-button" class="wmd-button" style="left: 100px;"><span style="background-position: -60px -20px;"></span></li><li id="wmd-code-button" class="wmd-button" style="left: 125px;"><span style="background-position: -80px -20px;"></span></li><li id="wmd-image-button" class="wmd-button" style="left: 150px;"><span style="background-position: -100px -20px;"></span></li><li id="wmd-spacer2" class="wmd-spacer" style="left: 175px;"><span style="background-position: -120px -20px;"></span></li><li id="wmd-olist-button" class="wmd-button" style="left: 200px;"><span style="background-position: -120px -20px;"></span></li><li id="wmd-ulist-button" class="wmd-button" style="left: 225px;"><span style="background-position: -140px -20px;"></span></li><li id="wmd-heading-button" class="wmd-button" style="left: 250px;"><span style="background-position: -160px -20px;"></span></li><li id="wmd-hr-button" class="wmd-button" style="left: 275px;"><span style="background-position: -180px -20px;"></span></li><li id="wmd-spacer3" class="wmd-spacer" style="left: 300px;"><span style="background-position: -200px -20px;"></span></li><li id="wmd-undo-button" class="wmd-button" style="left: 325px;"><span style="background-position: -200px -20px;"></span></li><li id="wmd-redo-button" class="wmd-button" style="left: 350px;"><span style="background-position: -220px -20px;"></span></li></ul></div>
+            <textarea id="wmd-input" class="wmd-input" name="post-text" cols="92" rows="15" tabindex="101" data-min-length=""></textarea>
+        </div>
+    </div>
+
+    <div class="fl" style="margin-top: 8px; height:24px;">&nbsp;</div>
+    <div id="draft-saved" class="draft-saved community-option fl" style="margin-top: 8px; height:24px; display:none;">draft saved</div>
+
+    <div id="draft-discarded" class="draft-discarded community-option fl" style="margin-top: 8px; height:24px; display:none;">draft discarded</div>
+
+
+
+    <div id="wmd-preview" class="wmd-preview"></div>
+    <div></div>
+    <div class="edit-block">
+        <input id="fkey" name="fkey" type="hidden" value="d94a02f6e45d0da9e6def426f2317b8d">
+        <input id="author" name="author" type="text">
+    </div>
+</div>
+							<div style="position: relative;">
+								
+            <div class="form-item new-post-login">
+        
+                <div class="new-login-form">
+                    <div class="new-login-left">
+                        <h3>Sign up or <a id="login-link" href="http://codereview.stackexchange.com/users/login?returnurl=%2fquestions%2f62781%2funit-testing-in-vba%23new-answer">log in</a></h3>
+                        <script>
+                            StackExchange.ready(function () {
+                                StackExchange.helpers.onClickDraftSave('#login-link');
+                            });
+                        </script>
+                        <div class="preferred-login google-login">
+                            <p><span class="icon"></span><span>Sign up using Google</span></p>
+                        </div>
+                        <div class="preferred-login facebook-login">
+                            <p><span class="icon"></span><span>Sign up using Facebook</span></p>
+                        </div>
+                        <div class="preferred-login stackexchange-login">
+                            <p><span class="icon"></span><span>Sign up using Stack Exchange</span></p>
+                        </div>
+                    </div>
+                    <input type="hidden" name="manual-openid" class="manual-openid">
+                    <input type="hidden" name="use-facebook" class="use-facebook" value="false">
+                    <input type="hidden" name="use-google-oauth2" class="use-google-oauth2" value="false">
+                    <input type="button" class="submit-openid" value="Submit" style="display:none">
+                    <div class="new-login-right">
+                                <h3>Post as a guest</h3>
+    <div class="form-item">
+        <table>
+        <tbody><tr>
+                    <script>
+                StackExchange.ready(function () {
+                    StackExchange.helpers.bindHelpOverlayEvents($('.vm input'));
+                });
+            </script>
+            <td class="vm">
+                <div>
+                    <label for="display-name">Name</label>
+                    <input id="display-name" name="display-name" type="text" size="30" maxlength="30" value="" tabindex="105">
+                </div>
+                <div>
+                    <label for="m-address">Email</label>
+                    <input id="m-address" name="m-address" type="text" size="30" maxlength="100" value="" tabindex="106">
+                    <span class="edit-field-overlay">required, but not shown</span>
+                </div>
+            </td>
+        </tr>
+        </tbody></table>
+    </div>
+
+                    </div>
+                </div>
+            </div>
+            <script>
+                StackExchange.ready(
+                    function () {
+                        StackExchange.openid.initPostLogin('.new-post-login', '%2fquestions%2f62781%2funit-testing-in-vba%23new-answer');
+                    }
+                );
+            </script>
+            <noscript>
+                        &lt;h3&gt;Post as a guest&lt;/h3&gt;
+    &lt;div class="form-item"&gt;
+        &lt;table&gt;
+        &lt;tr&gt;
+                    &lt;script&gt;
+                StackExchange.ready(function () {
+                    StackExchange.helpers.bindHelpOverlayEvents($('.vm input'));
+                });
+            &lt;/script&gt;
+            &lt;td class="vm"&gt;
+                &lt;div&gt;
+                    &lt;label for="display-name"&gt;Name&lt;/label&gt;
+                    &lt;input id="display-name" name="display-name" type="text" size="30" maxlength="30" value="" tabindex="105"&gt;
+                &lt;/div&gt;
+                &lt;div&gt;
+                    &lt;label for="m-address"&gt;Email&lt;/label&gt;
+                    &lt;input id="m-address" name="m-address" type="text" size="30" maxlength="100" value="" tabindex="106"&gt;
+                    &lt;span class="edit-field-overlay"&gt;required, but not shown&lt;/span&gt;
+                &lt;/div&gt;
+            &lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;/table&gt;
+    &lt;/div&gt;
+
+            </noscript>
+							</div>
+           
+															<div class="form-submit cbt">
+									<input id="submit-button" type="submit" value="Post Your Answer" tabindex="110">
+									<a href="http://codereview.stackexchange.com/questions/62781/unit-testing-in-vba#" class="discard-answer dno">discard</a>
+
+<p class="privacy-policy-agreement">
+By posting your answer, you agree to the <a href="http://stackexchange.com/legal/privacy-policy" target="_blank">privacy policy</a> and <a href="http://stackexchange.com/legal/terms-of-service" target="_blank">terms of service</a>.</p>
+<input type="hidden" name="legalLinksShown" value="1">								</div>
+						</form>
+
+
+
+						<h2 class="bottom-notice" data-loc="1">
+Not the answer you're looking for?							Browse other questions tagged <a href="http://codereview.stackexchange.com/questions/tagged/oop" class="post-tag" title="show questions tagged &#39;oop&#39;" rel="tag">oop</a> <a href="http://codereview.stackexchange.com/questions/tagged/unit-testing" class="post-tag" title="show questions tagged &#39;unit-testing&#39;" rel="tag">unit-testing</a> <a href="http://codereview.stackexchange.com/questions/tagged/vba" class="post-tag" title="show questions tagged &#39;vba&#39;" rel="tag">vba</a> <a href="http://codereview.stackexchange.com/questions/tagged/library" class="post-tag" title="show questions tagged &#39;library&#39;" rel="tag">library</a> <a href="http://codereview.stackexchange.com/questions/tagged/interface" class="post-tag" title="show questions tagged &#39;interface&#39;" rel="tag">interface</a>  or <a href="http://codereview.stackexchange.com/questions/ask">ask your own question</a>.						</h2>
+			</div>
+		</div>
+				<div id="sidebar" class="show-votes">
+						    <div class="module question-stats">
+			        <table id="qinfo">
+			            <tbody><tr>
+			                <td>
+			                    <p class="label-key">asked</p>
+			                </td>
+			                <td style="padding-left: 10px">
+			                    <p class="label-key" title="2014-09-12 19:31:04Z"><b>5 days ago</b></p>
+			                </td>
+			            </tr>
+			            <tr>
+			                <td>
+			                    <p class="label-key">viewed</p>
+			                </td>
+
+			                <td style="padding-left: 10px">
+			                    <p class="label-key">
+			                        <b>68 times</b>
+			                    </p>
+			                </td>
+			            </tr>
+			                <tr>
+			                    <td>
+			                        <p class="label-key">active</p>
+			                    </td>
+			                    <td style="padding-left: 10px">
+			                        <p class="label-key"><b><a href="http://codereview.stackexchange.com/questions/62781/unit-testing-in-vba?lastactivity" class="lastactivity-link" title="2014-09-13 16:10:22Z">4 days ago</a></b></p>
+			                    </td>
+			                </tr>
+			        </tbody></table>
+			    </div>
+			<div class="module community-bulletin" data-tracker="cb=1">
+    <div class="related">
+                <div class="bulletin-title">
+                    Blog
+                </div>
+                <hr>
+    <div class="spacer">
+        <div class="bulletin-item-type">
+                <a href="http://blog.stackoverflow.com/2014/09/introducing-runnable-javascript-css-and-html-code-snippets/?cb=1" class="question-hyperlink">
+<div class="favicon favicon-stackexchangemeta" title="Meta Stack Exchange"></div>                </a>
+            </div>
+                <div class="bulletin-item-content">
+                    <a href="http://blog.stackoverflow.com/2014/09/introducing-runnable-javascript-css-and-html-code-snippets/?cb=1" class="question-hyperlink">Introducing Runnable JavaScript, CSS, and HTML Code Snippets</a>
+                </div>
+                <br class="cbt">
+            </div>
+    </div>
+</div>			
+			<style type="text/css">
+    .ads { margin-left: 60px; }
+    .ad-container { width: 220px; height: 250px; margin-right: 20px; margin-bottom: 20px; }
+    .ad-container .ad { height: 250px; }
+    .ad-container .footer-container { overflow: hidden; height: 30px; position: relative; top: -30px; }
+    .ad-container .footer-container .footer { font-family: Arial,Helvetic,Sans-Serif; font-size: 12px; text-align: center; padding-top: 9px; background-color: #000; color: #EFF; opacity: 0.9; filter: alpha(opacity=90); top: 30px; height: 30px; position: relative; }
+    .ad-container a:hover { text-decoration: underline; }
+    #adzerk2 { height: 250px; }
+</style>
+<script>
+    StackExchange.ready(function () {
+        $(".ad-container").hover(
+            function () {
+                $(".ad-container .footer-container .footer").stop(true, true).animate({ top: "0px" }, "fast");
+            },
+            function () {
+                $(".ad-container .footer-container .footer").animate({ top: "30px" }, "fast");
+            });
+    });
+</script>
+    <script>
+        var z = document.createElement("script"); z.async = true; z.src = '//engine.adzerk.net/z/12057/adzerk2_2_17_76?keywords=x-host-codereview.stackexchange.com'; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(z, s);
+    </script>
+    <div class="everyonelovesstackoverflow" id="adzerk2"><div id="a51-ad-container" style="height: 250px; width: 220px;">
+<style type="text/css">
+#a51-ad { background: url("//cdn.sstatic.net/area51/Img/bg-area51-ad-commitment.png") no-repeat bottom center; }
+#a51-ad, #a51-ad a { display:block; height: 250px; width: 220px; text-decoration: none; }
+#a51-ad table { position: relative; top: 55px; }
+#a51-ad-title-row { height: 95px; }
+#a51-ad-title { padding: 0 5px; text-align: center; font-size: 27.0px; line-height: 31.0px; font-family: Impact,'Futura-CondensedExtraBold',sans-serif; color: #FBF9E2; text-shadow: 3px 3px 3px #000; width: 220px; vertical-align: middle; }
+#a51-ad-subtitle { padding:3px; text-align: center; color: white; font-family: Arial,Liberation Sans,DejaVu Sans,sans-serif; font-size: 14px; font-weight: bold; }
+</style>
+<!--[if lte IE 7]>
+<style type-"text/css">
+#a51-ad { background: url(//cdn.sstatic.net/area51/Img/bg-area51-ad-commitment.png) no-repeat bottom center; }
+</style>
+<![endif]-->
+<div id="a51-ad">
+    <a href="http://engine.adzerk.net/r?e=eyJhdiI6NDE0LCJhdCI6MTcsImNtIjoxMTYxLCJjaCI6MTE5OCwiY3IiOjI5NzEsImRpIjoiMDhmOWRkNGRiMjBmNDg1Y2IwY2M3ODAxYjkxZGRhZTgiLCJkbSI6MSwiZmMiOjQ2NTAsImZsIjozMzM1LCJpcCI6IjE5Mi4xNjguMy4yMCIsImt3IjoieC1ob3N0LWNvZGVyZXZpZXcuc3RhY2tleGNoYW5nZS5jb20iLCJudyI6MjIsInBjIjowLCJwciI6MTc1NiwicnQiOjEsInN0IjoxMjA1NywidWsiOiJ1ZTEtOGFmMTVmY2VhMjNlNDA2OTliMzllNmMwNGRmNDdiMzEiLCJ6biI6NzYsInRzIjoxNDEwOTg0Mzg1MzgwLCJ1ciI6bnVsbH0&s=_TAw1E4ffy7SsUVA94IPFTZ06bI&url=http%3A%2F%2Farea51.stackexchange.com%2Fproposals%2F68765%2Fstack-overflow-in-korean%3Fcommit%3D1">
+        <table>
+            <tbody><tr id="a51-ad-title-row"><td id="a51-ad-title">Stack Overflow (in Korean) Q&amp;A</td></tr>
+            <tr><td id="a51-ad-subtitle">37% committed</td></tr>
+        </tbody></table>        
+    </a>
+</div>
+</div><script type="text/javascript">window._a51AdUrl = "http://engine.adzerk.net/r?e=eyJhdiI6NDE0LCJhdCI6MTcsImNtIjoxMTYxLCJjaCI6MTE5OCwiY3IiOjI5NzEsImRpIjoiMDhmOWRkNGRiMjBmNDg1Y2IwY2M3ODAxYjkxZGRhZTgiLCJkbSI6MSwiZmMiOjQ2NTAsImZsIjozMzM1LCJpcCI6IjE5Mi4xNjguMy4yMCIsImt3IjoieC1ob3N0LWNvZGVyZXZpZXcuc3RhY2tleGNoYW5nZS5jb20iLCJudyI6MjIsInBjIjowLCJwciI6MTc1NiwicnQiOjEsInN0IjoxMjA1NywidWsiOiJ1ZTEtOGFmMTVmY2VhMjNlNDA2OTliMzllNmMwNGRmNDdiMzEiLCJ6biI6NzYsInRzIjoxNDEwOTg0Mzg1MzgwLCJ1ciI6bnVsbH0&s=_TAw1E4ffy7SsUVA94IPFTZ06bI";</script><script type="text/javascript" src="./oop - Unit Testing in VBA - Code Review Stack Exchange_files/js"></script><img height="0px" width="0px" border="0" style="position:absolute;" src="./oop - Unit Testing in VBA - Code Review Stack Exchange_files/i.gif"></div>
+			  
+    
+            <div class="module sidebar-linked">
+	<h4 id="h-linked">Linked</h4>
+	<div class="linked" data-tracker="lq=1">
+<div class="spacer">
+	<a href="http://codereview.stackexchange.com/q/62925?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">6</div>
+	</a>
+	<a href="http://codereview.stackexchange.com/questions/62925/a-hacked-up-testing-framework?lq=1" class="question-hyperlink">A hacked-up testing framework</a>
+</div>			</div>
+</div>
+
+				<div class="module sidebar-related">
+					<h4 id="h-related">Related</h4>
+                    <div class="related js-gps-related-questions" data-tracker="rq=1">
+                        <div class="spacer js-gps-track">
+<a href="http://codereview.stackexchange.com/q/856?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">13
+    </div>
+</a><a href="http://codereview.stackexchange.com/questions/856/unit-testing-function?rq=1" class="question-hyperlink">Unit-testing function</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://codereview.stackexchange.com/q/5019?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">4
+    </div>
+</a><a href="http://codereview.stackexchange.com/questions/5019/unit-testing-extension-for-equality-testing?rq=1" class="question-hyperlink">Unit testing extension for equality testing</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://codereview.stackexchange.com/q/26532?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes default">2
+    </div>
+</a><a href="http://codereview.stackexchange.com/questions/26532/two-dimensional-unit-testing?rq=1" class="question-hyperlink">Two dimensional unit testing</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://codereview.stackexchange.com/q/29289?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes default">1
+    </div>
+</a><a href="http://codereview.stackexchange.com/questions/29289/unit-testing-event-triggering?rq=1" class="question-hyperlink">Unit testing event triggering</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://codereview.stackexchange.com/q/29697?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes default">0
+    </div>
+</a><a href="http://codereview.stackexchange.com/questions/29697/using-moq-in-unit-testing?rq=1" class="question-hyperlink">Using MOQ In Unit Testing</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://codereview.stackexchange.com/q/41714?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">7
+    </div>
+</a><a href="http://codereview.stackexchange.com/questions/41714/are-these-the-right-type-of-unit-tests-to-write?rq=1" class="question-hyperlink">Are these the right type of unit tests to write?</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://codereview.stackexchange.com/q/43868?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">8
+    </div>
+</a><a href="http://codereview.stackexchange.com/questions/43868/simple-hello-world-with-unit-tests?rq=1" class="question-hyperlink">Simple Hello World with unit tests</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://codereview.stackexchange.com/q/52099?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes default">6
+    </div>
+</a><a href="http://codereview.stackexchange.com/questions/52099/fusemonsteraction-implementation-and-unit-tests?rq=1" class="question-hyperlink">FuseMonsterAction implementation and unit tests</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://codereview.stackexchange.com/q/52364?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">7
+    </div>
+</a><a href="http://codereview.stackexchange.com/questions/52364/extending-the-vba-extensibility-library?rq=1" class="question-hyperlink">Extending the VBA Extensibility Library</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://codereview.stackexchange.com/q/60504?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes default">8
+    </div>
+</a><a href="http://codereview.stackexchange.com/questions/60504/building-a-better-collection-enumerable-in-vba?rq=1" class="question-hyperlink">Building a better Collection. Enumerable in VBA</a>
+</div>
+
+                    </div>
+				</div>
+            
+<div id="hot-network-questions" class="module">
+    <h4>
+        <a href="http://stackexchange.com/questions?tab=hot" class="js-gps-track" data-gps-track="posts_hot_network.click({ item_type:1, location:11 })">
+            Hot Network Questions
+        </a>
+    </h4>
+    <ul>
+            <li>
+                <div class="favicon favicon-mathematica" title="Mathematica Stack Exchange"></div><a href="http://mathematica.stackexchange.com/questions/59925/vertical-mis-aligning-of-plotmarkers-and-legend-text-in-v10-plotlegends" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:387 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Vertical (mis-)aligning of plotmarkers and legend text in V10 PlotLegends
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-cs" title="Computer Science Stack Exchange"></div><a href="http://cs.stackexchange.com/questions/30081/why-is-the-processors-pipeline-delay-calculated-as-nmaxdelay-why-not-nd1" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:419 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why is the processor's pipeline delay calculated as N*max(Delay) ? why not N*(D1 + D2 + D3 ... )?
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-stats" title="Cross Validated"></div><a href="http://stats.stackexchange.com/questions/115753/maximum-likelihood-of-a-sequence-of-events-described-by-a-bernoulli-distribution" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:65 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    maximum-likelihood of a sequence of events described by a Bernoulli distribution
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-travel" title="Travel Stack Exchange"></div><a href="http://travel.stackexchange.com/questions/36589/traveling-to-the-us-with-new-passport-visa-on-the-old-one" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:273 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Traveling to the US with new passport, visa on the old one
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-music" title="Musical Practice &amp; Performance Stack Exchange"></div><a href="http://music.stackexchange.com/questions/23658/pay-to-play-gigs" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:240 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Pay to Play Gigs
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-gaming" title="Arqade"></div><a href="http://gaming.stackexchange.com/questions/184302/is-destiny-loot-communal" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:41 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Is Destiny loot communal?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-superuser" title="Super User"></div><a href="http://superuser.com/questions/812173/what-is-the-purpose-of-this-4-pin-cable-with-3-wires-that-came-with-an-old-ide-d" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:3 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    What is the purpose of this 4 pin cable with 3 wires that came with an old IDE DVD-ROM drive?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-mathematica" title="Mathematica Stack Exchange"></div><a href="http://mathematica.stackexchange.com/questions/59905/is-there-a-better-way-to-grow-black-tulips" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:387 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Is there a better way to "grow" black tulips?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-dba" title="Database Administrators Stack Exchange"></div><a href="http://dba.stackexchange.com/questions/76834/what-is-the-logic-behind-isnumeric-for-certain-special-characters" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:182 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    What is the logic behind ISNUMERIC for certain special characters?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-cstheory" title="Theoretical Computer Science Stack Exchange"></div><a href="http://cstheory.stackexchange.com/questions/25767/liptons-most-influential-results" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:114 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Lipton's most influential results
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-ell" title="English Language Learners Stack Exchange"></div><a href="http://ell.stackexchange.com/questions/33679/using-the-pronoun-we-when-im-not-a-part-of-it" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:481 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Using the pronoun 'we' when I'm not a part of it!
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-askubuntu" title="Ask Ubuntu"></div><a href="http://askubuntu.com/questions/525231/how-can-i-run-original-command-that-aliased-with-same-name" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:89 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How can I run original command that aliased with same name?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-scifi" title="Science Fiction &amp; Fantasy Stack Exchange"></div><a href="http://scifi.stackexchange.com/questions/67779/why-was-sting-able-to-kill-the-mirkwood-spiders-with-ease-but-not-shelob" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:186 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why was Sting able to kill the Mirkwood spiders with ease, but not Shelob?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-money" title="Personal Finance &amp; Money Stack Exchange"></div><a href="http://money.stackexchange.com/questions/37042/employer-time-requirements-to-transfer-from-paycheck-to-401k" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:93 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Employer time requirements to transfer from paycheck to 401(k)
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-academia" title="Academia Stack Exchange"></div><a href="http://academia.stackexchange.com/questions/28623/how-to-find-someone-online-to-collaborate-on-a-joint-paper" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:415 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How to find someone online to collaborate on a joint paper?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-rpg" title="Role-playing Games Stack Exchange"></div><a href="http://rpg.stackexchange.com/questions/47859/what-can-i-do-to-paper-to-make-it-look-aged" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:122 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    What can I do to paper to make it look aged?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-apple" title="Ask Different"></div><a href="http://apple.stackexchange.com/questions/145614/moving-file-between-disks-in-mac-os-x" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:118 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Moving file between disks in Mac OS X?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-academia" title="Academia Stack Exchange"></div><a href="http://academia.stackexchange.com/questions/28626/citations-as-detailed-as-possible" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:415 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Citations as detailed as possible?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-judaism" title="Mi Yodeya"></div><a href="http://judaism.stackexchange.com/questions/45501/hyperbole-in-the-gemara" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:248 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Hyperbole in the Gemara?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-security" title="Information Security Stack Exchange"></div><a href="http://security.stackexchange.com/questions/67596/why-is-it-a-security-problem-not-to-update-ones-browser" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:162 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why is it a security problem not to update ones browser?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-music" title="Musical Practice &amp; Performance Stack Exchange"></div><a href="http://music.stackexchange.com/questions/23670/how-does-one-improve-on-his-her-drumming-technique-without-owning-a-drumset" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:240 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How does one improve on his/her drumming technique without owning a drumset?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-mathoverflow" title="MathOverflow"></div><a href="http://mathoverflow.net/questions/180846/results-true-in-a-dimension-and-false-for-higher-dimensions" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:504 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Results true in a dimension and false for higher dimensions
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-tex" title="TeX - LaTeX Stack Exchange"></div><a href="http://tex.stackexchange.com/questions/201622/why-does-xetex-not-display-basic-unicode-characters" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:85 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why does XeTeX not display basic Unicode characters?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-workplace" title="The Workplace Stack Exchange"></div><a href="http://workplace.stackexchange.com/questions/33869/how-to-stop-people-from-ccing-my-boss-in-trivial-e-mails" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:423 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How to stop people from CC'ing my boss in trivial e-mails?
+                </a>
+
+            </li>
+    </ul>
+
+        
+</div>
+		</div>
+	
+<div id="feed-link">
+    <div id="feed-link-text">
+        <a href="http://codereview.stackexchange.com/feeds/question/62781" title="feed of this question and its answers">
+            <span class="feed-icon"></span>question feed
+        </a>
+    </div>
+</div>	<script>
+StackExchange.ready(function(){$.get('/posts/62781/ivc/c7b0');});
+</script>
+<noscript>
+    &lt;div&gt;&lt;img src="/posts/62781/ivc/c7b0" class="dno" alt="" width="0" height="0"&gt;&lt;/div&gt;
+</noscript><div style="display:none" id="prettify-lang">lang-vb</div></div>
+
+
+
+        </div>
+    </div>
+    <div id="footer" class="categories">
+        <div class="footerwrap">
+            <div id="footer-menu">
+                <div class="top-footer-links">
+                        <a href="http://codereview.stackexchange.com/tour">tour</a>
+                    <a href="http://codereview.stackexchange.com/help">help</a>
+                        <a href="http://codereview.stackexchange.com/help/badges">badges</a>
+                    <a href="http://blog.stackexchange.com/?blb=1">blog</a>
+                        <a href="http://chat.stackexchange.com/">chat</a>
+                    <a href="http://data.stackexchange.com/">data</a>
+                    <a href="http://stackexchange.com/legal">legal</a>
+                    <a href="http://stackexchange.com/legal/privacy-policy">privacy policy</a>
+                    <a href="http://stackexchange.com/work-here">work here</a>
+                    <a href="http://stackexchange.com/mediakit">advertising info</a>
+
+                    <a onclick="StackExchange.switchMobile(&quot;on&quot;)">mobile</a>
+                    <b><a href="http://codereview.stackexchange.com/contact">contact us</a></b>
+                        <b><a href="http://meta.codereview.stackexchange.com/">feedback</a></b>
+                    
+                </div>
+                <div id="footer-sites">
+                    <table>
+    <tbody><tr>
+            <th colspan="3">
+                Technology
+            </th>
+            <th>
+                Life / Arts
+            </th>
+            <th>
+                Culture / Recreation
+            </th>
+            <th>
+                Science
+            </th>
+            <th>
+                Other
+            </th>
+    </tr>
+    <tr>
+            <td>
+                <ol>
+                        <li><a href="http://stackoverflow.com/" title="professional and enthusiast programmers">Stack Overflow</a></li>
+                        <li><a href="http://serverfault.com/" title="professional system and network administrators">Server Fault</a></li>
+                        <li><a href="http://superuser.com/" title="computer enthusiasts and power users">Super User</a></li>
+                        <li><a href="http://webapps.stackexchange.com/" title="power users of web applications">Web Applications</a></li>
+                        <li><a href="http://askubuntu.com/" title="Ubuntu users and developers">Ask Ubuntu</a></li>
+                        <li><a href="http://webmasters.stackexchange.com/" title="pro webmasters">Webmasters</a></li>
+                        <li><a href="http://gamedev.stackexchange.com/" title="professional and independent game developers">Game Development</a></li>
+                        <li><a href="http://tex.stackexchange.com/" title="users of TeX, LaTeX, ConTeXt, and related typesetting systems">TeX - LaTeX</a></li>
+                            </ol></td><td><ol>
+                        <li><a href="http://programmers.stackexchange.com/" title="professional programmers interested in conceptual questions about software development">Programmers</a></li>
+                        <li><a href="http://unix.stackexchange.com/" title="users of Linux, FreeBSD and other Un*x-like operating systems.">Unix &amp; Linux</a></li>
+                        <li><a href="http://apple.stackexchange.com/" title="power users of Apple hardware and software">Ask Different (Apple)</a></li>
+                        <li><a href="http://wordpress.stackexchange.com/" title="WordPress developers and administrators">WordPress Development</a></li>
+                        <li><a href="http://gis.stackexchange.com/" title="cartographers, geographers and GIS professionals">Geographic Information Systems</a></li>
+                        <li><a href="http://electronics.stackexchange.com/" title="electronics and electrical engineering professionals, students, and enthusiasts">Electrical Engineering</a></li>
+                        <li><a href="http://android.stackexchange.com/" title="enthusiasts and power users of the Android operating system">Android Enthusiasts</a></li>
+                        <li><a href="http://security.stackexchange.com/" title="Information security professionals">Information Security</a></li>
+                            </ol></td><td><ol>
+                        <li><a href="http://dba.stackexchange.com/" title="database professionals who wish to improve their database skills and learn from others in the community">Database Administrators</a></li>
+                        <li><a href="http://drupal.stackexchange.com/" title="Drupal developers and administrators">Drupal Answers</a></li>
+                        <li><a href="http://sharepoint.stackexchange.com/" title="SharePoint enthusiasts">SharePoint</a></li>
+                        <li><a href="http://ux.stackexchange.com/" title="user experience researchers and experts">User Experience</a></li>
+                        <li><a href="http://mathematica.stackexchange.com/" title="users of Mathematica">Mathematica</a></li>
+                        <li><a href="http://salesforce.stackexchange.com/" title="Salesforce administrators, implementation experts, developers and anybody in-between">Salesforce</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#technology" class="more">
+                                more (13)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://photo.stackexchange.com/" title="professional, enthusiast and amateur photographers">Photography</a></li>
+                        <li><a href="http://scifi.stackexchange.com/" title="science fiction and fantasy enthusiasts">Science Fiction &amp; Fantasy</a></li>
+                        <li><a href="http://graphicdesign.stackexchange.com/" title="Graphic Design professionals, students, and enthusiasts">Graphic Design</a></li>
+                        <li><a href="http://cooking.stackexchange.com/" title="professional and amateur chefs">Seasoned Advice (cooking)</a></li>
+                        <li><a href="http://diy.stackexchange.com/" title="contractors and serious DIYers">Home Improvement</a></li>
+                        <li><a href="http://money.stackexchange.com/" title="people who want to be financially literate">Personal Finance &amp; Money</a></li>
+                        <li><a href="http://academia.stackexchange.com/" title="academics and those enrolled in higher education">Academia</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#lifearts" class="more">
+                                more (10)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://english.stackexchange.com/" title="linguists, etymologists, and serious English language enthusiasts">English Language &amp; Usage</a></li>
+                        <li><a href="http://skeptics.stackexchange.com/" title="scientific skepticism">Skeptics</a></li>
+                        <li><a href="http://judaism.stackexchange.com/" title="those who base their lives on Jewish law and tradition and anyone interested in learning more">Mi Yodeya (Judaism)</a></li>
+                        <li><a href="http://travel.stackexchange.com/" title="road warriors and seasoned travelers">Travel</a></li>
+                        <li><a href="http://christianity.stackexchange.com/" title="committed Christians, experts in Christianity and those interested in learning more">Christianity</a></li>
+                        <li><a href="http://gaming.stackexchange.com/" title="passionate videogamers on all platforms">Arqade (gaming)</a></li>
+                        <li><a href="http://bicycles.stackexchange.com/" title="people who build and repair bicycles, people who train cycling, or commute on bicycles">Bicycles</a></li>
+                        <li><a href="http://rpg.stackexchange.com/" title="gamemasters and players of tabletop, paper-and-pencil role-playing games">Role-playing Games</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#culturerecreation" class="more">
+                                more (21)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://math.stackexchange.com/" title="people studying math at any level and professionals in related fields">Mathematics</a></li>
+                        <li><a href="http://stats.stackexchange.com/" title="people interested in statistics, machine learning, data analysis, data mining, and data visualization">Cross Validated (stats)</a></li>
+                        <li><a href="http://cstheory.stackexchange.com/" title="theoretical computer scientists and researchers in related fields">Theoretical Computer Science</a></li>
+                        <li><a href="http://physics.stackexchange.com/" title="active researchers, academics and students of physics">Physics</a></li>
+                        <li><a href="http://mathoverflow.net/" title="professional mathematicians">MathOverflow</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#science" class="more">
+                                more (7)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://stackapps.com/" title="apps, scripts, and development with the Stack Exchange API">Stack Apps</a></li>
+                        <li><a href="http://meta.stackexchange.com/" title="meta-discussion of the Stack Exchange family of Q&amp;A websites">Meta Stack Exchange</a></li>
+                        <li><a href="http://area51.stackexchange.com/" title="proposing new sites in the Stack Exchange network">Area 51</a></li>
+                        <li><a href="http://careers.stackoverflow.com/?utm_source=stackoverflow.com&utm_medium=site-ui&utm_campaign=footerlink">Stack Overflow Careers</a></li>
+                    
+                </ol>
+            </td>
+    </tr>
+</tbody></table>
+                </div>
+            </div>
+
+            <div id="copyright">
+                site design / logo © 2014 stack exchange inc; user contributions licensed under <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license">cc by-sa 3.0</a> 
+                with <a href="http://blog.stackoverflow.com/2009/06/attribution-required/" rel="license">attribution required</a>
+            </div>
+            <div id="svnrev">
+                rev 2014.9.17.1862
+            </div>
+            
+        </div>
+    <iframe id="global-auth-frame" style="display:none" src="./oop - Unit Testing in VBA - Code Review Stack Exchange_files/read.htm"></iframe></div>
+    <noscript>
+        &lt;div id="noscript-warning"&gt;Code Review Stack Exchange works best with JavaScript enabled&lt;img src="http://pixel.quantserve.com/pixel/p-c1rF4kxgLUzNc.gif" alt="" class="dno"&gt;&lt;/div&gt;
+    </noscript>
+
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () { (i[r].q = i[r].q || []).push(arguments) }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m);
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+        ga('create', 'UA-5620270-24', '.stackexchange.com');
+        
+        
+        ga('set', 'dimension2', '|oop|unit-testing|vba|library|interface|');         
+        ga('send', 'pageview');
+        var _qevents = _qevents || [],
+            _comscore = _comscore || [];
+        (function () {
+            var ssl='https:'==document.location.protocol,
+                s=document.getElementsByTagName('script')[0],
+                qc=document.createElement('script');
+            qc.async=true;
+            qc.src=(ssl?'https://secure':'http://edge')+'.quantserve.com/quant.js';
+            s.parentNode.insertBefore(qc, s);
+            var sc=document.createElement('script');
+            sc.async=true;
+            sc.src=(ssl?'https://sb':'http://b') + '.scorecardresearch.com/beacon.js';
+            s.parentNode.insertBefore(sc, s);
+        })();
+        _comscore.push({ c1: "2", c2: "17440561" });
+        _qevents.push({ qacct: "p-c1rF4kxgLUzNc" });
+    </script>        
+    
+    
+<div style="position: absolute; width: 0px; height: 0px; overflow: hidden; padding: 0px; border: 0px; margin: 0px;"><div id="MathJax_Font_Test" style="position: absolute; visibility: hidden; top: 0px; left: 0px; width: auto; padding: 0px; border: 0px; margin: 0px; white-space: nowrap; text-align: left; text-indent: 0px; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; font-size: 40px; font-weight: normal; font-style: normal; font-family: MathJax_Size1, monospace;"></div></div></body></html>

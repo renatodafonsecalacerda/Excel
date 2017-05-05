@@ -1,0 +1,81 @@
+﻿    #BrowserInfoBanner
+    {
+        position: relative;
+        padding-top: 20px;
+    }
+    #BrowserInfoBanner img
+    {
+        border: none;
+    }
+    .graphic, #slider0prev, #slider0next
+    {
+        display: block;
+        margin: 0;
+        padding: 0;
+    }
+    #slider ul, #slider li,#slider1 ul, #slider1 li
+    {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+    #slider, #slider1
+    {
+        margin-top: 10px;
+    }
+    #slider li, #slider1 li
+    {
+        width: 165px;
+        height: 240px;
+        overflow: hidden;
+    }
+    #sliderprev, #slidernext, #slider1prev, #slider1next
+    {
+        display: inline;
+        width: 19px;
+        height: 19px; 
+        /*position:absolute;*/
+       /* left: 90px;*/
+       /* top: 271px;*/
+       /*buttons moved up*/
+       margin-top: -240px;
+       text-indent:-8000px;
+       overflow: hidden;
+    }
+    #sliderprev, #slider1prev {
+       position: absolute;
+       left: 123px;
+    }
+
+    #slidernext, #slider1next {
+       position: absolute;
+       left: 143px;
+    }
+    
+    
+    #sliderprev a, #slider1prev a
+    {
+        display:block;position:relative;width:19px;height:19px;background:url(http://support.microsoft.com/library/images/support/cs/left_button_RN.png) no-repeat 0 0;
+    }
+    #slidernext a, #slider1next a
+    {
+        display:block;position:relative;width:19px;height:19px;background:url(http://support.microsoft.com/library/images/support/cs/right_button_RN.png) no-repeat 0 0;
+    }
+    #sliderprev a:hover, #slider1prev a:hover
+    {
+        display:block;position:relative;width:19px;height:19px;background:url(http://support.microsoft.com/library/images/support/cs/left_button_hover_RN.png) no-repeat 0 0;
+    }
+    #slidernext a:hover, #slider1next a:hover
+    {
+        display:block;position:relative;width:19px;height:19px;background:url(http://support.microsoft.com/library/images/support/cs/right_button_hover_RN.png) no-repeat 0 0;
+    }
+    #BrowserInfoBanner ul
+    {
+        padding-left:0px;
+    }
+    .display_block
+    {
+      margin-left:7px!important;
+      margin-bottom:10px !important;
+      display:block!important;
+    }

@@ -1,0 +1,1512 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0098)http://www.msofficegurus.com.br/artigos/microsoft-office/excel/587-usando-o-clipboard-com-vba.html -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt-br" lang="pt-br" slick-uniqueid="3"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script async="" type="text/javascript" src="./MS Office Gurus - Usando o clipboard com VBA_files/ca-pub-5293584863859445.js"></script><script type="text/javascript">
+var siteurl='/';
+var tmplurl='/templates/ja_nex/';
+var isRTL = false;
+</script>
+
+  <!--<base href="http://www.msofficegurus.com.br/artigos/microsoft-office/excel/587-usando-o-clipboard-com-vba.html">--><base href=".">
+  
+  <meta name="keywords" content="clipboard, área de transferência, vba, excel">
+  <meta name="author" content="Adelson Silva">
+  <meta name="description" content="Aprenda como usar o clipboard com VBA com Adelson Silva">
+  <meta name="generator" content="Joomla! - Open Source Content Management">
+  <title>MS Office Gurus - Usando o clipboard com VBA</title>
+  <link href="http://www.msofficegurus.com.br/component/search/?Itemid=670&catid=86&id=587&format=opensearch" rel="search" title="Pesquisar MS Office Gurus" type="application/opensearchdescription+xml">
+  <link rel="stylesheet" href="./MS Office Gurus - Usando o clipboard com VBA_files/css_5f79a.css" type="text/css">
+  <link rel="stylesheet" href="./MS Office Gurus - Usando o clipboard com VBA_files/css_2fa7c.css" type="text/css">
+  <link rel="stylesheet" href="./MS Office Gurus - Usando o clipboard com VBA_files/css_5bf24.css" type="text/css">
+  <style type="text/css">
+
+		/* This is dynamic style for smiley */
+        #jac-wrapper .plugin_embed .smileys li,.jac-mod_content .smileys li{
+            display: inline;
+            float: left;
+            height:20px;
+            width:20px;
+            margin:0 1px 1px 0 !important;
+            border:none;
+            padding:0
+        }
+        #jac-wrapper .plugin_embed .smileys .smiley,.jac-mod_content .smileys .smiley{
+            background: url(http://www.msofficegurus.com.br/components/com_jacomment/asset/images/smileys/default/smileys_bg.png) no-repeat;
+            display:block;
+            height:20px;
+            width:20px;
+        }
+        #jac-wrapper .plugin_embed .smileys .smiley:hover,.jac-mod_content .smileys .smiley:hover{
+            background:#fff;
+        }
+        #jac-wrapper .plugin_embed .smileys .smiley span, .jac-mod_content .smileys .smiley span{
+            background: url(http://www.msofficegurus.com.br/components/com_jacomment/asset/images/smileys/default/smileys.png) no-repeat;
+            display: inline;
+            float: left;
+            height:12px;
+            width:12px;
+            margin:0px;
+        }
+        #jac-wrapper .plugin_embed .smileys .smiley span span, .jac-mod_content .smileys .smiley span span{
+            display: none;
+        } 
+        #jac-wrapper .comment-text .smiley {
+            font-family:inherit;
+			font-size:100%;
+			font-style:inherit;
+			font-weight:inherit;
+			text-align:justify;
+        }
+        #jac-wrapper .comment-text .smiley span, .jac-mod_content .smiley span{
+            background: url(http://www.msofficegurus.com.br/components/com_jacomment/asset/images/smileys/default/smileys.png) no-repeat scroll 0 0 transparent;
+			display:inline;
+			float:left;
+			height:12px;
+			margin:0px;
+			width:12px;
+        }
+        .comment-text .smiley span span,.jac-mod_content .smiley span span{
+            display:none;
+        }
+	
+div#poll_loading_2 {
+	background: url(media/system/images/mootree_loader.gif) 0% 50% no-repeat;
+	width:100%;
+	height:20px; 
+	padding: 4px 0 0 20px; 
+}
+
+  </style>
+  <script src="./MS Office Gurus - Usando o clipboard com VBA_files/js_cc143.js" type="text/javascript"></script>
+  <script src="./MS Office Gurus - Usando o clipboard com VBA_files/jquery.min.js" type="text/javascript"></script>
+  <script src="./MS Office Gurus - Usando o clipboard com VBA_files/js_79c8f.js" type="text/javascript"></script>
+  <script type="text/javascript">
+
+		window.addEvent('domready', function() {
+
+			SqueezeBox.initialize({});
+			SqueezeBox.assign($$('a.modal'), {
+				parse: 'rel'
+			});
+		});
+var K2SitePath = '/';
+window.addEvent('load', function() {
+				new JCaption('img.caption');
+			});
+  </script>
+
+<!--[if ie]><link href="/plugins/system/jat3/jat3/base-themes/default/css/template-ie.css" type="text/css" rel="stylesheet" /><![endif]--> 
+<!--[if ie 7]><link href="/plugins/system/jat3/jat3/base-themes/default/css/template-ie7.css" type="text/css" rel="stylesheet" /><![endif]--> 
+<!--[if ie 7]><link href="/templates/ja_nex/css/template-ie7.css" type="text/css" rel="stylesheet" /><![endif]--> 
+
+
+
+
+<link href="http://www.msofficegurus.com.br/plugins/system/jat3/jat3/base-themes/default/images/favicon.ico" rel="shortcut icon" type="image/x-icon">
+    
+    <style type="text/css">
+/*dynamic css*/
+
+    body.bd .main {width: 990px;}
+    body.bd #ja-wrapper {min-width: 990px;}
+</style>	<link href="./MS Office Gurus - Usando o clipboard com VBA_files/style.css" type="text/css" rel="stylesheet">
+<script src="./MS Office Gurus - Usando o clipboard com VBA_files/jsapi" type="text/javascript"></script>
+<script src="./MS Office Gurus - Usando o clipboard com VBA_files/script.js" type="text/javascript"></script><script src="./MS Office Gurus - Usando o clipboard com VBA_files/saved_resource" type="text/javascript"></script><script src="./MS Office Gurus - Usando o clipboard com VBA_files/default+pt_BR.I.js" type="text/javascript"></script>
+
+		<script type="text/javascript">
+			oJaTranslate = new JAGoogleTranslate('pt-PT', 1);
+		</script>
+<script charset="UTF-8" src="./MS Office Gurus - Usando o clipboard com VBA_files/pt-BR.js"></script><link rel="stylesheet" type="text/css" href="./MS Office Gurus - Usando o clipboard com VBA_files/widget005.old.css" media="all"><script>window["_GOOG_TRANS_EXT_VER"] = "1";</script><style type="text/css">.a2a_menu, .a2a_menu * { -moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box;float:none;margin:0;padding:0;height:auto;width:auto;}.a2a_menu { border-radius: 6px;display:none;direction:ltr;background:#FFF;font: 14px Arial,Helvetica,sans-serif;color:#000;line-height:12px;border: 1px solid #CCC;vertical-align:baseline;overflow:hidden;}.a2a_mini {min-width:200px;position:absolute;width: 300px;z-index:9999997;}.a2a_overlay {display: none;background: #CCC; _height: expression( ((e=document.documentElement.clientHeight)?e:document.body.clientHeight)+"px" ); _width: expression( ((e=document.documentElement.clientWidth)?e:document.body.clientWidth)+"px" ); filter: alpha(opacity=50); opacity: .7;position: fixed;_position: absolute; top: 0;right: 0;left: 0;bottom: 0;z-index: 9999998;-webkit-animation: a2aFadeInOverlay .14s ease-out;animation: a2aFadeInOverlay .14s ease-out;}.a2a_full {background: #FFF;height: auto;height: calc(320px);top: 15%;_top: expression(40+((e=document.documentElement.scrollTop)?e:document.body.scrollTop)+"px"); left: 50%;margin-left: -320px; position: fixed;_position: absolute; text-align: center;width: 640px;z-index: 9999999; -webkit-animation: a2aFadeIn .14s ease-in;    animation: a2aFadeIn .14s ease-in;}.a2a_full_header,.a2a_full_services,.a2a_full_footer {border: 0;margin: 0;padding: 12px;box-sizing: border-box;}.a2a_full_header {padding-bottom: 8px;}.a2a_full_services {height: 280px; overflow-y: scroll;padding: 0 12px;-webkit-overflow-scrolling: touch;}.a2a_full_services .a2a_i {display: inline-block;float: none;width: 181px;width: calc(33.334% - 18px);}div.a2a_full_footer {font-size: 9px;text-align: center;padding: 6px 12px;}div.a2a_full_footer a,div.a2a_full_footer a:visited {display: inline;font-size: 9px;padding: 6px 12px; }div.a2a_full_footer a:hover {background: none;border: 0;color: #0166FF;}div.a2a_full_footer a span.a2a_i_a2a_sm {display: inline-block;padding-left: 14px;vertical-align: bottom;}@-webkit-keyframes a2aFadeIn {from { opacity: 0; }  to { opacity: 1; }}@keyframes a2aFadeIn {from { opacity: 0; }  to { opacity: 1; }}@-webkit-keyframes a2aFadeInOverlay {from { opacity: 0; }  to { opacity: .7; }}@keyframes a2aFadeInOverlay {from { opacity: 0; }  to { opacity: .7; }}@media (max-width: 639px) {.a2a_full {top: 15%;left: 0;margin-left: auto;width: 100%;}}@media (min-width: 318px) and (max-width: 437px) {.a2a_full .a2a_full_services .a2a_i {width: calc(50% - 18px);}}@media (max-width: 317px) {.a2a_full .a2a_full_services .a2a_i {width: calc(100% - 18px);}}@media (max-height: 436px) {.a2a_full {bottom: 40px;height: auto;top: 40px;}}.a2a_menu a{color:#0166FF;text-decoration:none;font:14px Arial,Helvetica,sans-serif;line-height:14px;height:auto;width:auto;outline:none;-moz-outline:none;}.a2a_menu a:visited{color:#0166FF}.a2a_menu a:hover,.a2a_menu a:active,.a2a_menu a.a2a_i:focus,.a2a_tabs div:hover{color:#2A2A2A;border:1px solid #EEE;background-color:#EEE;text-decoration:none}.a2a_menu span,.a2a_img{background:url(http://static.addtoany.com/menu/icons.27.png) no-repeat;border:0;display:block;line-height:16px}.a2a_menu span.a2a_i_find { height:16px;left: 8px;position:absolute;top: 7px;width:16px;}.a2a_menu span.a2a_i_find svg {background-color: #FFF;}.a2a_menu span.a2a_i_find svg path {fill: #CCC;}#a2a_menu_container{display:inline-block} #a2a_menu_container{_display:inline} .a2a_menu_title_container {padding: 6px 8px;}.a2a_menu_find_container {border: 1px solid #CCC;border-radius: 6px;padding: 2px 24px 2px 0;position: relative;text-align: left;}.a2a_cols_container{border-bottom-right-radius:8px;border-top-right-radius:8px}.a2a_cols_container .a2a_col1{overflow-x:hidden;overflow-y:auto;-webkit-overflow-scrolling:touch}.a2a_menu input, .a2a_menu input[type="text"]{display:block;background-image:none;box-shadow:none;line-height:100%;margin:0;overflow:hidden;padding:0;-moz-box-shadow:none;-webkit-box-shadow:none;-webkit-appearance:none} .a2a_menu_title_container input.a2a_menu_title {background-color: #FFF;border: 0;color: #2A2A2A;font: inherit;margin: 0;padding: 0;width: 99%;}.a2a_menu_find_container input.a2a_menu_find {background-color: transparent;_background-color: #FFF;border: 0;color: #2A2A2A;font-size: 16px;height: 20px;line-height: 20px;left: 28px;outline: 0;padding: 2px 0;position: relative;width: 99%;}.a2a_clear{clear:both} .a2a_img, .a2a_svg { display:block; overflow:hidden; }.a2a_img{height:16px;line-height:16px;width:16px;}.a2a_svg{height:32px;line-height:32px;width:32px;}.a2a_default_style a{float:left;line-height:16px;padding:0 2px}.a2a_default_style a:hover .a2a_img,.a2a_default_style a:hover .a2a_svg,.a2a_floating_style a:hover .a2a_img,.a2a_floating_style a:hover .a2a_svg { opacity: .7;}.a2a_default_style .a2a_svg, .a2a_floating_style .a2a_svg { border-radius:14% ;} .a2a_default_style .a2a_img, .a2a_default_style .a2a_dd, .a2a_default_style .a2a_svg{float:left}.a2a_default_style .a2a_img_text{margin-right:4px}.a2a_default_style .a2a_divider{border-left:1px solid #000;display:inline;float:left;height:16px;line-height:16px;margin:0 5px}.a2a_kit a{cursor:pointer}.a2a_floating_style { background-color: #fff; border-radius: 6px; padding: 4px; position: fixed; z-index: 9999995; }.a2a_vertical_style a { display: block; padding: 4px; }.a2a_floating_style.a2a_default_style { bottom: 0; }.a2a_floating_style.a2a_default_style a { padding: 4px; }.a2a_nowrap{white-space:nowrap}.a2a_note{margin:0 auto;padding:9px;font-size:12px;text-align:center}.a2a_note .a2a_note_note{margin:0;color:#2A2A2A}.a2a_wide a{display:block;margin-top:3px;border:1px solid #EEE;padding:3px;text-align:center}.a2a_tabs{float:left;margin:0 0 3px} .a2a_tabs a,.a2a_tabs div{margin:1px;background-color:#EEE; border:1px solid #EEE; font-size:11px; padding:6px 12px ; white-space:nowrap} .a2a_tabs a span, .a2a_tabs div span{display:inline-block;padding-left:20px;height:auto;width:auto} .a2a_tabs_default a span, .a2a_tabs_default div span{height:auto;max-width:99px;overflow:hidden;padding-left:20px;width:auto;_width:expression(this.clientWidth > 99? "97px" : "auto");}.a2a_tabs a, .a2a_tabs a:visited, .a2a_tabs a:hover, .a2a_tabs div, .a2a_tabs div:hover{cursor:pointer;border-bottom:1px solid #EEE;color:#2A2A2A;border-bottom-left-radius:0;-webkit-border-bottom-left-radius:0;-moz-border-radius-bottomleft:0;border-bottom-right-radius:0;-webkit-border-bottom-right-radius:0;-moz-border-radius-bottomright:0}a.a2a_tab_selected, a.a2a_tab_selected:visited,a.a2a_tab_selected:hover,a.a2a_tab_selected:active,a.a2a_tab_selected:focus, div.a2a_tab_selected,div.a2a_tab_selected:hover{color:#0166FF;background-color:#FFF;border:1px solid #CCC;border-bottom:1px solid #FFF}a.a2a_i,i.a2a_i{display:block;float:left;border:1px solid #FFF;padding:6px 8px;text-align:left;white-space:nowrap;width:132px;}a.a2a_i span, a.a2a_more span {overflow: hidden;padding: 0 0 0 21px;text-overflow: ellipsis;}a.a2a_sss:hover {border-left: 1px solid #CCC;}a.a2a_menu_show_more_less{border-bottom:1px solid #FFF;border-left:0;border-right:0;margin:6px 0 0;padding:6px}a.a2a_menu_show_more_less span{display:inline-block;height:16px;margin:0 auto;vertical-align:bottom;} iframe.a2a_shim {background-color: transparent;border: 0;bottom: 0;filter: alpha(opacity=0); height: 100%;left: 0;right: 0;top: 0;position: absolute;width: 100%;z-index: 9999996;_height: expression( ((e=document.documentElement.clientHeight)?e:document.body.clientHeight)+"px" ); _width: expression( ((e=document.documentElement.clientWidth)?e:document.body.clientWidth)+"px" ); }.a2a_dd img {border:0;-ms-touch-action:manipulation;}.a2a_i_a2a{background-position:0 0!important}.a2a_i_a2a_sm{background-position:0 -17px!important}.a2a_i_agregator{background-position:0 -34px!important}.a2a_i_aim{background-position:0 -51px!important}.a2a_i_allvoices{background-position:0 -68px!important}.a2a_i_amazon{background-position:0 -85px!important}.a2a_i_aol{background-position:0 -102px!important}.a2a_i_app_net{background-position:0 -119px!important}.a2a_i_arto{background-position:0 -136px!important}.a2a_i_baidu{background-position:0 -153px!important}.a2a_i_bebo{background-position:0 -170px!important}.a2a_i_bibsonomy{background-position:0 -187px!important}.a2a_i_bitty{background-position:0 -204px!important}.a2a_i_blinklist{background-position:0 -221px!important}.a2a_i_blogger{background-position:0 -238px!important}.a2a_i_bloglines{background-position:0 -255px!important}.a2a_i_blogmarks{background-position:0 -272px!important}.a2a_i_bloomberg_current{background-position:0 -289px!important}.a2a_i_bookmark{background-position:0 -306px!important}.a2a_i_bookmarks_fr{background-position:0 -323px!important}.a2a_i_box{background-position:0 -340px!important}.a2a_i_buddymarks{background-position:0 -357px!important}.a2a_i_buffer{background-position:0 -374px!important}.a2a_i_care2{background-position:0 -391px!important}.a2a_i_chrome{background-position:0 -408px!important}.a2a_i_citeulike{background-position:0 -425px!important}.a2a_i_dailyrotation{background-position:0 -442px!important}.a2a_i_default{background-position:0 -459px!important}.a2a_i_delicious{background-position:0 -476px!important}.a2a_i_designfloat{background-position:0 -493px!important}.a2a_i_diaspora{background-position:0 -510px!important}.a2a_i_digg{background-position:0 -527px!important}.a2a_i_diigo{background-position:0 -544px!important}.a2a_i_dzone{background-position:0 -561px!important}.a2a_i_email{background-position:0 -578px!important}.a2a_i_evernote{background-position:0 -595px!important}.a2a_i_facebook{background-position:0 -612px!important}.a2a_i_fark{background-position:0 -629px!important}.a2a_i_feed{background-position:0 -646px!important}.a2a_i_feedblitz{background-position:0 -663px!important}.a2a_i_feedbucket{background-position:0 -680px!important}.a2a_i_feedly{background-position:0 -697px!important}.a2a_i_feedmailer{background-position:0 -714px!important}.a2a_i_find{background-position:0 -731px!important}.a2a_i_fireant{background-position:0 -748px!important}.a2a_i_firefox{background-position:0 -765px!important}.a2a_i_flipboard{background-position:0 -782px!important}.a2a_i_folkd{background-position:0 -799px!important}.a2a_i_friendfeed{background-position:0 -816px!important}.a2a_i_funp{background-position:0 -833px!important}.a2a_i_gmail{background-position:0 -850px!important}.a2a_i_google{background-position:0 -867px!important}.a2a_i_google_plus{background-position:0 -884px!important}.a2a_i_hatena{background-position:0 -901px!important}.a2a_i_instapaper{background-position:0 -918px!important}.a2a_i_itunes{background-position:0 -935px!important}.a2a_i_jamespot{background-position:0 -952px!important}.a2a_i_jumptags{background-position:0 -969px!important}.a2a_i_khabbr{background-position:0 -986px!important}.a2a_i_kindle{background-position:0 -1003px!important}.a2a_i_klipfolio{background-position:0 -1020px!important}.a2a_i_line{background-position:0 -1037px!important}.a2a_i_linkagogo{background-position:0 -1054px!important}.a2a_i_linkatopia{background-position:0 -1071px!important}.a2a_i_linkedin{background-position:0 -1088px!important}.a2a_i_livejournal{background-position:0 -1105px!important}.a2a_i_mail_ru{background-position:0 -1122px!important}.a2a_i_mendeley{background-position:0 -1139px!important}.a2a_i_meneame{background-position:0 -1156px!important}.a2a_i_miro{background-position:0 -1173px!important}.a2a_i_mixi{background-position:0 -1190px!important}.a2a_i_my_msn{background-position:0 -1207px!important}.a2a_i_myspace{background-position:0 -1224px!important}.a2a_i_netlog{background-position:0 -1241px!important}.a2a_i_netvibes{background-position:0 -1258px!important}.a2a_i_netvouz{background-position:0 -1275px!important}.a2a_i_newsalloy{background-position:0 -1292px!important}.a2a_i_newsisfree{background-position:0 -1309px!important}.a2a_i_newstrust{background-position:0 -1326px!important}.a2a_i_newsvine{background-position:0 -1343px!important}.a2a_i_nowpublic{background-position:0 -1360px!important}.a2a_i_odnoklassniki{background-position:0 -1377px!important}.a2a_i_oknotizie{background-position:0 -1394px!important}.a2a_i_oldreader{background-position:0 -1411px!important}.a2a_i_orkut{background-position:0 -1428px!important}.a2a_i_outlook{background-position:0 -1445px!important}.a2a_i_outlook_com{background-position:0 -1462px!important}.a2a_i_pdf{background-position:0 -1479px!important}.a2a_i_phonefavs{background-position:0 -1496px!important}.a2a_i_pinboard{background-position:0 -1513px!important}.a2a_i_pinterest{background-position:0 -1530px!important}.a2a_i_plurk{background-position:0 -1547px!important}.a2a_i_pocket{background-position:0 -1564px!important}.a2a_i_podnova{background-position:0 -1581px!important}.a2a_i_print{background-position:0 -1598px!important}.a2a_i_printfriendly{background-position:0 -1615px!important}.a2a_i_protopage{background-position:0 -1632px!important}.a2a_i_pusha{background-position:0 -1649px!important}.a2a_i_rapidfeeds{background-position:0 -1666px!important}.a2a_i_reddit{background-position:0 -1683px!important}.a2a_i_rediff{background-position:0 -1700px!important}.a2a_i_segnalo{background-position:0 -1717px!important}.a2a_i_share{background-position:0 -1734px!important}.a2a_i_sina_weibo{background-position:0 -1751px!important}.a2a_i_sitejot{background-position:0 -1768px!important}.a2a_i_slashdot{background-position:0 -1785px!important}.a2a_i_springpad{background-position:0 -1802px!important}.a2a_i_startaid{background-position:0 -1819px!important}.a2a_i_stumbleupon{background-position:0 -1836px!important}.a2a_i_stumpedia{background-position:0 -1853px!important}.a2a_i_symbaloo{background-position:0 -1870px!important}.a2a_i_technotizie{background-position:0 -1887px!important}.a2a_i_thefreedictionary{background-position:0 -1904px!important}.a2a_i_thefreelibrary{background-position:0 -1921px!important}.a2a_i_tuenti{background-position:0 -1938px!important}.a2a_i_tumblr{background-position:0 -1955px!important}.a2a_i_twiddla{background-position:0 -1972px!important}.a2a_i_twitter{background-position:0 -1989px!important}.a2a_i_typepad{background-position:0 -2006px!important}.a2a_i_viadeo{background-position:0 -2023px!important}.a2a_i_vk{background-position:0 -2040px!important}.a2a_i_wanelo{background-position:0 -2057px!important}.a2a_i_webnews{background-position:0 -2074px!important}.a2a_i_whatsapp{background-position:0 -2091px!important}.a2a_i_winksite{background-position:0 -2108px!important}.a2a_i_wists{background-position:0 -2125px!important}.a2a_i_wordpress{background-position:0 -2142px!important}.a2a_i_xerpi{background-position:0 -2159px!important}.a2a_i_xing{background-position:0 -2176px!important}.a2a_i_y18{background-position:0 -2193px!important}.a2a_i_yahoo{background-position:0 -2210px!important}.a2a_i_yim{background-position:0 -2227px!important}.a2a_i_yoolink{background-position:0 -2244px!important}.a2a_i_youmob{background-position:0 -2261px!important}</style><script>window["_GOOG_TRANS_EXT_VER"] = "1";</script></head>
+
+<body id="bd" class="bd fs3 com_content">
+<a name="Top" id="Top"></a>
+<div id="ja-wrapper">
+
+
+    <div id="ja-cpanel-wrapper">
+<div id="ja-cpanel" style="top: 0px;">
+    <div style="margin: -3px -1px 0px 0px; position: static; overflow: hidden; height: 0px;"><div id="ja-cpanel-main" style="margin: -372px 0px 0px; overflow: hidden;">
+        <div class="ja-cpanel-head clearfix">
+            <a href="http://wiki.joomlart.com/wiki/JA_T3_Framework_2/Overview" class="first" title="About T3"><span>About</span></a>
+            <a href="http://wiki.joomlart.com/wiki/JA_T3_Framework_2/Guides" title="Guides"><span>Guides</span></a>
+            <a href="http://wiki.joomlart.com/wiki/JA_T3_Framework_2/FAQs" title="FAQs"><span>FAQs</span></a>
+        </div>
+        <div class="ja-cpanel-tools clearfix">
+                    <h3>Font Size</h3>
+
+<div class="ja-box-usertools">
+  <ul class="ja-usertools-font clearfix">
+      <li class="font-inc">
+      <a title="Increase font size" onclick="switchFontSize(&#39;ja_nex_font&#39;, &#39;inc&#39;);return false;">
+        <span>Increase font size</span>
+      </a>
+    </li>
+      <li class="font-dec">
+      <a title="Decrease font size" onclick="switchFontSize(&#39;ja_nex_font&#39;, &#39;dec&#39;);return false;">
+        <span>Decrease font size</span>
+      </a>
+    </li>
+      <li class="font-reset">
+      <a title="Default font size" onclick="switchFontSize(&#39;ja_nex_font&#39;, &#39;reset&#39;);return false;">
+        <span>Default font size</span>
+      </a>
+    </li>
+    </ul>
+</div>
+<script type="text/javascript">
+  var DefaultFontSize=parseInt('3');
+  var CurrentFontSize=parseInt('3');
+</script>                                    <h3>Profile</h3>
+
+<div class="ja-box-usertools">
+  <ul class="ja-usertools-profile clearfix">
+      <li class="profile ">
+      <input type="radio" id="user_profile_black" name="user_profile" value="black">
+      <label for="user_profile_black" title="black">
+        <span>black</span>
+      </label>
+    </li>
+      <li class="profile ">
+      <input type="radio" id="user_profile_blue" name="user_profile" value="blue">
+      <label for="user_profile_blue" title="blue">
+        <span>blue</span>
+      </label>
+    </li>
+      <li class="profile profile-active">
+      <input type="radio" id="user_profile_default" name="user_profile" value="default" checked="checked">
+      <label for="user_profile_default" title="default">
+        <span>default</span>
+      </label>
+    </li>
+      <li class="profile ">
+      <input type="radio" id="user_profile_green" name="user_profile" value="green">
+      <label for="user_profile_green" title="green">
+        <span>green</span>
+      </label>
+    </li>
+      <li class="profile ">
+      <input type="radio" id="user_profile_homepage" name="user_profile" value="homepage">
+      <label for="user_profile_homepage" title="homepage">
+        <span>homepage</span>
+      </label>
+    </li>
+      <li class="profile ">
+      <input type="radio" id="user_profile_orange" name="user_profile" value="orange">
+      <label for="user_profile_orange" title="orange">
+        <span>orange</span>
+      </label>
+    </li>
+      <li class="profile ">
+      <input type="radio" id="user_profile_pink" name="user_profile" value="pink">
+      <label for="user_profile_pink" title="pink">
+        <span>pink</span>
+      </label>
+    </li>
+    </ul>
+</div>                                    <h3>Menu Style</h3>
+
+<div class="ja-box-usertools">
+  <ul class="ja-usertools-menu clearfix">
+  
+    <li class="menu-mega-active">
+      <input type="radio" id="user_menu_mega" name="user_menu" value="mega" checked="checked">
+      <label for="user_menu_mega" title="Mega">
+        <span>Mega</span>
+      </label>
+    </li>
+  
+    <li class="menu-css">
+      <input type="radio" id="user_menu_css" name="user_menu" value="css">
+      <label for="user_menu_css" title="Css">
+        <span>Css</span>
+      </label>
+    </li>
+  
+    <li class="menu-dropline">
+      <input type="radio" id="user_menu_dropline" name="user_menu" value="dropline">
+      <label for="user_menu_dropline" title="Dropline">
+        <span>Dropline</span>
+      </label>
+    </li>
+  
+    <li class="menu-split">
+      <input type="radio" id="user_menu_split" name="user_menu" value="split">
+      <label for="user_menu_split" title="Split">
+        <span>Split</span>
+      </label>
+    </li>
+    </ul>
+</div>                </div>
+        <div class="ja-cpanel-action clearfix">
+            <a href="http://www.msofficegurus.com.br/artigos/microsoft-office/excel/587-usando-o-clipboard-com-vba.html#" onclick="cpanel_apply();return false;" class="button" title="Apply setting"><span>Apply</span></a>
+            <a href="http://www.msofficegurus.com.br/artigos/microsoft-office/excel/587-usando-o-clipboard-com-vba.html#" onclick="cpanel_reset();return false;" title="Reset to default setting"><span>Reset</span></a>
+            <a target="_blank" href="http://www.joomlart.com/joomla/jat3-framework/" class="ja-cpanel-video"><span>&nbsp;</span></a>
+        </div>
+    </div></div>
+    <a href="http://www.msofficegurus.com.br/artigos/microsoft-office/excel/587-usando-o-clipboard-com-vba.html#" id="ja-cpanel-toggle"><span>Cpanel</span></a>
+</div>
+</div>
+
+<script type="text/javascript">
+    var tmpl_name = 'ja_nex';
+    window.addEvent('load', function () {
+        $('ja-cpanel-toggle').status == 'close';
+        $('ja-cpanel-toggle').slider = new Fx.Slide('ja-cpanel-main', {duration: 400});
+        $('ja-cpanel-toggle').slider.hide();
+        $('ja-cpanel').setStyle ('top', 0);
+        $('ja-cpanel-toggle').addEvent ('click', function (e) {
+            this.slider.toggle();
+            if (this.hasClass ('open')) {
+                this.removeClass ('open').addClass ('close');
+            } else {
+                this.removeClass ('close').addClass ('open');
+            }
+            new Event(e).stop();
+        });
+    });
+</script>            <div id="ja-topmenu" class="wrap ">
+                   <div class="main clearfix">
+           <p class="ja-day">
+	  <span class="date">28</span><span class="month">Agosto</span><span class="year">2014</span>	</p>            </div>
+                        </div>
+                        <div id="ja-header" class="wrap ">
+                   <div class="main clearfix">
+           <div class="logo-text">
+    <h1><a href="http://www.msofficegurus.com.br/index.php" title="MS Office Gurus"><span>MS Office Gurus</span></a></h1>
+    <p class="site-slogan">Onde os desenvolvedores Office se encontram</p>
+</div>
+<div class="topheader clearfix">
+<div id="ja-search">
+    <form action="http://www.msofficegurus.com.br/artigos/microsoft-office/excel.html" method="post">
+	<div class="search">
+		<label for="mod-search-searchword35">Pesquisar...</label><input name="searchword" id="mod-search-searchword35" maxlength="20" class="inputbox" type="text" size="20" value="Pesquisar..." onblur="if (this.value==&#39;&#39;) this.value=&#39;Pesquisar...&#39;;" onfocus="if (this.value==&#39;Pesquisar...&#39;) this.value=&#39;&#39;;"><input type="image" value="Pesquisar" class="button" src="./MS Office Gurus - Usando o clipboard com VBA_files/searchButton.gif" onclick="this.form.searchword.focus();">	<input type="hidden" name="task" value="search">
+	<input type="hidden" name="option" value="com_search">
+	<input type="hidden" name="Itemid" value="670">
+	</div>
+</form>
+
+</div>
+
+<div id="ja-social">
+    
+
+<div class="custom">
+	<div class="social"><a class="ico-social ico-facebooks" href="http://www.msofficegurus.com.br/artigos/microsoft-office/excel/587-usando-o-clipboard-com-vba.html#" title="Facebook"><span>Facebook</span></a><a class="ico-social ico-twitters" href="http://www.msofficegurus.com.br/artigos/microsoft-office/excel/587-usando-o-clipboard-com-vba.html#" title="Twitter"><span>Twitter</span></a><a class="ico-social ico-rss" href="http://www.msofficegurus.com.br/artigos/microsoft-office/excel/587-usando-o-clipboard-com-vba.html#" title="RSS"><span>RSS</span></a></div></div>
+
+</div>
+</div>            </div>
+                        </div>
+                        <div id="ja-mainnav" class="wrap ">
+                   <div class="main clearfix">
+           <div class="ja-megamenu clearfix" id="ja-megamenu">
+<ul class="megamenu level0"><li class="mega first"><a href="http://www.msofficegurus.com.br/" class="mega first" id="menu435" title="Home"><span class="menu-title">Home</span></a></li><li class="mega"><a href="http://loja.msofficegurus.com/" target="_blank" class="mega" id="menu698" title="Loja Virtual"><span class="menu-title">Loja Virtual</span></a></li><li class="mega haschild active"><a href="http://www.msofficegurus.com.br/artigos.html" class="mega haschild active" id="menu661" title="Artigos"><span class="menu-title">Artigos</span></a><div class="childcontent cols3 " style="width: 700px; height: 222px;">
+<div class="childcontent-inner-wrap" style="width: 690px;">
+<div class="childcontent-inner clearfix" style="width: 690px;"><div class="megacol column1 first" style="width: 230px;"><ul class="megamenu level1"><li class="mega first group"><div class="group"><div class="group-title"><a href="http://www.msofficegurus.com.br/artigos/microsoft-office.html" class="mega first group" id="menu659" title="Microsoft Office"><span class="menu-title">Microsoft Office</span></a></div><div class="group-content"><ul class="megamenu level1"><li class="mega first"><a href="http://www.msofficegurus.com.br/artigos/microsoft-office/access.html" class="mega first" id="menu618" title="Access"><span class="has-image" style="background-image:url(/images/access2010.jpg);"><span class="menu-title">Access</span></span></a></li><li class="mega active"><a href="http://www.msofficegurus.com.br/artigos/microsoft-office/excel.html" class="mega active" id="menu670" title="Excel"><span class="has-image" style="background-image:url(/images/excel2010.png);"><span class="menu-title">Excel</span></span></a></li><li class="mega"><a href="http://www.msofficegurus.com.br/artigos/microsoft-office/outlook.html" class="mega" id="menu671" title="Outlook"><span class="has-image" style="background-image:url(/images/outlook2010.jpg);"><span class="menu-title">Outlook</span></span></a></li><li class="mega"><a href="http://www.msofficegurus.com.br/artigos/microsoft-office/powerpoint.html" class="mega" id="menu672" title="PowerPoint"><span class="has-image" style="background-image:url(/images/powerpoint.jpg);"><span class="menu-title">PowerPoint</span></span></a></li><li class="mega"><a href="http://www.msofficegurus.com.br/artigos/microsoft-office/project.html" class="mega" id="menu674" title="Project"><span class="has-image" style="background-image:url(/images/project.jpg);"><span class="menu-title">Project</span></span></a></li><li class="mega last"><a href="http://www.msofficegurus.com.br/artigos/microsoft-office/word.html" class="mega last" id="menu612" title="Word"><span class="has-image" style="background-image:url(/images/word2010.jpg);"><span class="menu-title">Word</span></span></a></li></ul></div></div></li></ul></div><div class="megacol column2" style="width: 230px;"><ul class="megamenu level1"><li class="mega first group"><div class="group"><div class="group-title"><a href="http://www.msofficegurus.com.br/artigos/outros-aplicativos.html" class="mega first group" id="menu660" title="Outros aplicativos"><span class="menu-title">Outros aplicativos</span></a></div><div class="group-content"><ul class="megamenu level1"><li class="mega first"><a href="http://www.msofficegurus.com.br/artigos/outros-aplicativos/windows.html" class="mega first" id="menu675" title="Windows"><span class="has-image" style="background-image:url(/images/windows.png);"><span class="menu-title">Windows</span></span></a></li><li class="mega"><a href="http://www.msofficegurus.com.br/artigos/outros-aplicativos/servidor-sql.html" class="mega" id="menu676" title="Servidor SQL"><span class="has-image" style="background-image:url(/images/SQL.jpg);"><span class="menu-title">Servidor SQL</span></span></a></li><li class="mega last"><a href="http://www.msofficegurus.com.br/artigos/outros-aplicativos/outros.html" class="mega last" id="menu677" title="Outros"><span class="menu-title">Outros</span></a></li></ul></div></div></li></ul></div><div class="megacol column3 last" style="width: 230px;"><ul class="megamenu level1"><li class="mega first group"><div class="group"><div class="group-title"><a href="http://www.msofficegurus.com.br/artigos/microsoft-office/excel/587-usando-o-clipboard-com-vba.html#" class="mega first group" id="menu662" title="COOL VIDEO"><span class="menu-title">COOL VIDEO</span></a></div><div class="group-content">	<div class="ja-moduletable moduletable no-background  clearfix" id="Mod48">
+						<div class="ja-box-ct clearfix">
+		
+
+<div class="custom no-background">
+	<p style="padding-bottom: 5px;"><object data="http://vimeo.com/moogaloop.swf?clip_id=7421222&server=vimeo.com&color=333333&fullscreen=1" type="application/x-shockwave-flash" width="153" height="86"><param name="quality" value="high"><param name="src" value="http://vimeo.com/moogaloop.swf?clip_id=7421222&amp;server=vimeo.com&amp;color=333333&amp;fullscreen=1"><param name="pluginspage" value="http://vimeo.com/moogaloop.swf?clip_id=7421222&amp;server=vimeo.com&amp;color=33bbbb&amp;fullscreen=1"><param name="scale" value="noborder"></object></p></div>
+		</div>
+    </div>
+	</div></div></li></ul></div></div>
+</div></div></li><li class="mega haschild"><a href="http://www.msofficegurus.com.br/noticias.html" class="mega haschild" id="menu602" title="Notícias"><span class="menu-title">Notícias</span></a><div class="childcontent cols1 " style="width: 470px; height: 30px;">
+<div class="childcontent-inner-wrap" style="width: 460px;">
+<div class="childcontent-inner clearfix" style="width: 460px;"><div class="megacol column1 first" style="width: 230px;"><ul class="megamenu level1"><li class="mega first"><a href="http://www.msofficegurus.com.br/noticias/noticias-de-ti.html" class="mega first" id="menu601" title="Notícias de TI"><span class="menu-title">Notícias de TI</span></a></li></ul></div></div>
+</div></div></li><li class="mega last"><a href="http://www.epirus.com.br/forum-epirus.html" target="_blank" class="mega last" id="menu588" title="MSOG Fórum"><span class="menu-title">MSOG Fórum</span></a></li></ul>
+</div>            <script type="text/javascript">
+                var megamenu = new jaMegaMenuMoo ('ja-megamenu', {
+                    'bgopacity': 0,
+                    'delayHide': 300,
+                    'slide'    : 0,
+                    'fading'   : 0,
+                    'direction': 'down',
+                    'action'   : 'mouseover',
+                    'tips'     : false,
+                    'duration' : 300,
+                    'hidestyle': 'fastwhenshow'
+                });
+            </script>
+            <!-- jdoc:include type="menu" level="0" / -->
+
+
+<ul class="no-display">
+    <li><a href="http://www.msofficegurus.com.br/artigos/microsoft-office/excel/587-usando-o-clipboard-com-vba.html#ja-content" title="Skip to content">Skip to content</a></li>
+</ul>            </div>
+                        </div>
+                        <div id="ja-topbar" class="wrap ">
+                   <div class="main clearfix">
+           <div id="ja-top-header">
+	<div class="ja-healineswrap">
+		<em>Mais recentes</em>
+	<div id="jalh-modid126" class="ja-headlines ">
+		<div style="white-space:nowrap; " id="jahl-wapper-items-jalh-modid126">
+		<!-- HEADLINE CONTENT -->
+								<div class="ja-headlines-item jahl-horizontal" style="visibility: visible; z-index: 10; width: 198px; left: 877px; opacity: 0;">
+					<a title="Caros amigos,
+Recentemente lancei mais um livro, em inglês, sobre programação VBA entitulado: Excel Programming with VBA Starter
+Neste livro, você aprenderá como:
+
+
+
+
+Extender e melhorar suas planilhas Excel utilizando o poder das Macros e programação com VBA
+Se familiarizar com a lin..." href="http://www.msofficegurus.com.br/artigos/microsoft-office/excel/7973-excel-programming-with-vba-starter.html"><span> Excel Programming with VBA Starter</span>
+					</a> 
+				</div>
+						<div class="ja-headlines-item jahl-horizontal" style="visibility: visible; opacity: 0; z-index: 9; width: 277px; left: 877px;">
+					<a title="Estou trabalhando em um projeto o qual possui várias tarefas, como determino um marco (milestone)? Um milestone (ou marco) é um evento que requer atenção especial. Milestones funcionam como marcadores dentro de um projeto de modo que revisão dos processos possa ser feita de modo a corrigir poss..." href="http://www.msofficegurus.com.br/artigos/88-microsoft-office/project/6182-microsoft-office-project-2007-criando-milestones-marcos.html"><span>Microsoft Office Project 2007 - Criando Milestone ...</span>
+					</a> 
+				</div>
+						<div class="ja-headlines-item jahl-horizontal" style="visibility: visible; opacity: 0; z-index: 8; width: 249px; left: 877px;">
+					<a title="O evento WindowActivate ocorrerá quando ativarmos um outro documento. Este evento e bastante útil caso o leitor tenha algum tipo de configuração que somente deve aparecer quando um determinado documento está aberto. Vamos supor que você tenha uma barra de ferramenta personalizada para trabalha..." href="http://www.msofficegurus.com.br/artigos/microsoft-office/word/4547-eventos-windowactivate-e-windowdeactivate.html"><span>Eventos WindowActivate e WindowDeactivate</span>
+					</a> 
+				</div>
+						<div class="ja-headlines-item jahl-horizontal" style="visibility: visible; opacity: 0; z-index: 7; width: 233px; left: 877px;">
+					<a title="FG_AUTHORS: Webmaster
+" a="" internet="" é="" isso,="" troca="" livre="" de="" informações"por="" ana="" freitassão="" paulo,="" 20="" (ae)="" -="" entrevista="" com="" matthew="" oswald,="" ilustrador,="" 22="" anos,="" criador="" do="" me="" gusta-="" como="" o="" gusta="" surgiu?-="" há="" três="" um="" amigo="" pediu="" para="" desenhar="" algo="" em="" pixels.="" eu="" fiz="" essa="" tirinha="" e="" subi="" no..."="" href="http://www.msofficegurus.com.br/noticias/noticias-de-ti/4136-a-internet-%C3%A9-isso-troca-livre-de-informa%C3%A7%C3%B5es.html"><span> A internet é isso, troca livre de informações </span>
+					</a> 
+				</div>
+						<div class="ja-headlines-item jahl-horizontal" style="visibility: visible; opacity: 0; z-index: 6; width: 122px; left: 877px;">
+					<a title="FG_AUTHORS: Webmaster
+" o="" hacker="" é="" um="" curioso"por="" aesão="" paulo,="" 20="" (ae)="" -="" entrevista="" com="" pedro="" markun,="" do="" transparência="" hackerpode="" sair="" de="" tudo="" uma="" maratona="" 24="" horas="" duração.="" unir="" jornalistas="" e="" gente="" interessada="" em="" programação="" é,="" para="" membro="" da="" mar..."="" href="http://www.msofficegurus.com.br/noticias/noticias-de-ti/4135-o-hacker-%C3%A9-um-curioso.html"><span> O hacker é um curioso </span>
+					</a> 
+				</div>
+						<div class="ja-headlines-item jahl-horizontal" style="visibility: visible; opacity: 0; z-index: 5; width: 275px; left: 877px;">
+					<a title="FG_AUTHORS: Webmaster
+" galaxy="" s="" iii="" está="" sendo="" bem="" recebido",="" garante="" michel="" pietsunpor="" camilo="" rochasão="" paulo,="" 13="" (ae)="" -="" pietsun="" é="" vice-presidente="" da="" área="" de="" telecomunicações="" samsung.="" por="" telefone,="" ele="" falou="" com="" a="" reportagem="" sobre="" o="" lançamento="" do="" iii.-="" como="" estão="" as="" vendas..."="" href="http://www.msofficegurus.com.br/noticias/noticias-de-ti/3962-galaxy-s-iii-est%C3%A1-sendo-bem-recebido-garante-michel-pietsun.html"><span> Galaxy S III está sendo bem recebido , garante M...</span>
+					</a> 
+				</div>
+						<div class="ja-headlines-item jahl-horizontal" style="visibility: visible; opacity: 0; z-index: 4; width: 274px; left: 877px;">
+					<a title="O homem afirma que o adolescente está abalado com a situação.
+Segundo o advogado, não há acusação formal contra o enteado...." href="http://www.msofficegurus.com.br/noticias/noticias-de-ti/3212-ele-%C3%A9-inocente-diz-padrasto-de-suspeito-de-chantagear-dieckmann.html"><span>'Ele é inocente' diz padrasto de suspeito de chan...</span>
+					</a> 
+				</div>
+						<div class="ja-headlines-item jahl-horizontal" style="visibility: visible; opacity: 0; z-index: 3; width: 304px; left: 877px;">
+					<a title="G1 responde a dúvidas sobre o game que tem muita violência e tiros.
+Game de ação tem versões para PC, PS3 e X360 e chega dia 31 no Brasil...." href="http://www.msofficegurus.com.br/noticias/noticias-de-ti/3173-max-payne-3-ambientado-em-sp-chega-hoje-aos-eua-conhe%C3%A7a-o-game.html"><span>'Max Payne 3', ambientado em SP, chega hoje aos EU...</span>
+					</a> 
+				</div>
+						<div class="ja-headlines-item jahl-horizontal" style="visibility: visible; opacity: 0; z-index: 2; width: 245px; left: 877px;">
+					<a title="Jogadores poderão jogar sem pagar até personagem atingir o nível 13.
+Nos primeiros 30 dias do game, jogadores precisarão de convite para teste...." href="http://www.msofficegurus.com.br/noticias/noticias-de-ti/3146-diablo-iii-ter%C3%A1-vers%C3%A3o-de-testes-gratuita-ap%C3%B3s-lan%C3%A7amento.html"><span>'Diablo III' terá versão de testes gratuita apó...</span>
+					</a> 
+				</div>
+						<div class="ja-headlines-item jahl-horizontal" style="visibility: visible; opacity: 1; z-index: 1; width: 277px; left: 0px;">
+					<a title="Diego Cruz prestou depoimento na última semana em Macatuba, SP.
+De acordo com o delegado da cidade, os suspeitos eram conhecidos...." href="http://www.msofficegurus.com.br/noticias/noticias-de-ti/3133-apenas-compartilhei-afirma-suspeito-de-vazar-fotos-de-dieckmann.html"><span>'Apenas compartilhei', afirma suspeito de vazar fo...</span>
+					</a> 
+				</div>
+						<!-- //HEADLINE CONTENT -->
+		</div>	
+	</div>
+	
+</div>
+<script type="text/javascript">
+// options setting
+var options = { box:$('jalh-modid126'),
+				items: $$('#jalh-modid126 .ja-headlines-item'),
+				mode: 'horizontal',
+				wrapper:$('jahl-wapper-items-jalh-modid126'),
+				buttons:{next: $$('.ja-headelines-next'), previous: $$('.ja-headelines-pre')},
+				interval:3000,
+				fxOptions : { duration: 500,
+							  transition: Fx.Transitions.Circ.easeIn ,
+							  wait: false }	};
+
+var jahl = new JANewSticker( options );
+</script>
+
+</div>
+
+	<div id="ja-headtools" class="ja-headtool">
+  <ul> 			
+			<li>
+		<a class="login-switch" href="http://www.msofficegurus.com.br/component/user/?view=login" onclick="showBox(&#39;ja-user-login&#39;,&#39;mod_login_username&#39;,this, window.event || event);return false;" title=""><span>Login</span></a>
+	
+	<!--LOFIN FORM content-->
+	<div id="ja-user-login" style="width:370px;">
+		  <form action="http://www.msofficegurus.com.br/artigos/microsoft-office/excel.html" method="post" name="form-login" id="login-form">
+	<div class="pretext">
+		</div>
+	<fieldset class="userdata">
+	<label for="modlgn-username" class="ja-login-user" id="form-login-username">
+		<span>Nome de usuário:</span><br>
+		<input id="modlgn-username" type="text" name="username" class="inputbox" size="18">
+	</label>
+	<label for="modlgn-passwd" class="ja-login-password" id="form-login-password">
+    	<span>Senha: </span> <br>
+        <input type="password" id="modlgn-passwd" name="password" class="inputbox" size="20" alt="password">
+    </label>
+		<label for="modlgn-remember" id="form-login-remember">
+		
+		<input id="modlgn-remember" type="checkbox" name="remember" class="inputbox" value="yes">
+	</label>
+		<input type="submit" name="Submit" class="button" value="Entrar">
+	<input type="hidden" name="option" value="com_users">
+	<input type="hidden" name="task" value="user.login">
+	<input type="hidden" name="return" value="L2FydGlnb3MvbWljcm9zb2Z0LW9mZmljZS9leGNlbC81ODctdXNhbmRvLW8tY2xpcGJvYXJkLWNvbS12YmEuaHRtbA==">
+	<input type="hidden" name="a9b674cffeb37ccee65885f048cdff3a" value="1">	</fieldset>
+		                <div class="ja-login-links clearfix">
+							<a href="http://www.msofficegurus.com.br/using-joomla/extensions/components/users-component/password-reset.html">
+								Esqueceu sua senha?</a>
+                			<a href="http://www.msofficegurus.com.br/using-joomla/extensions/components/users-component/username-reminder.html">
+								Esqueceu seu nome de usuário?</a>
+                                    <a href="http://www.msofficegurus.com.br/using-joomla/extensions/components/users-component/registration-form.html">
+						Criar conta</a>
+                                </div>
+	        	    </form>
+    </div>
+		
+	</li>
+		<li>
+		<a class="register-switch" href="http://www.msofficegurus.com.br/component/users/?task=registration" onclick="showBox(&#39;ja-user-register&#39;,&#39;namemsg&#39;,this, window.event || event);return false;">
+			<span>Criar conta</span>
+		</a>
+		<!--LOFIN FORM content-->
+		<script type="text/javascript" src="./MS Office Gurus - Usando o clipboard com VBA_files/validate.js"></script>
+		<div id="ja-user-register" style="width:370px;">
+				<script type="text/javascript">
+				/*
+					Window.onDomReady(function(){
+						document.formvalidator.setHandler('passverify', function (value) { return ($('password').value == value); }	);
+					});
+				*/
+				</script>
+				
+								<form id="member-registration" action="http://www.msofficegurus.com.br/component/users/?task=registration.register" method="post" class="form-validate">
+		<fieldset>
+						<table cellpadding="0" cellspacing="0" border="0" width="100%" class="contentpane">
+				<tbody><tr>
+					<td width="30%">
+							<label class="hasTip required" for="jform_name" id="jform_name-lbl" title="Name&lt;br&gt;Enter your full name">
+						Seu nome:</label>						
+					</td>
+					<td><input type="text" size="30" value="" class="inputbox required" maxlength="50" id="jform_name" name="jform[name]" aria-required="true" required="required"><span class="red">*</span></td>
+				</tr>
+				<tr>
+					<td><label title="" class="hasTip required" for="jform_username" id="jform_username-lbl">
+						Nome de usuário:</label></td>
+					<td><input type="text" size="30" class="inputbox required" value="" id="jform_username" name="jform[username]" aria-required="true" required="required"><span class="red">*</span></td>
+				</tr>
+				<tr>
+					<td><label title="" class="hasTip required" for="jform_password1" id="jform_password1-lbl">
+						Senha:</label></td>
+					<td><input type="password" size="30" class="inputbox required" value="" id="jform_password1" name="jform[password1]" aria-required="true" required="required"><span class="red">*</span>
+					</td>
+				</tr>
+				<tr>
+					<td><label title="" class="hasTip required" for="jform_password2" id="jform_password2-lbl">
+						Confirme sua senha:</label></td>
+					<td><input type="password" size="30" class="inputbox required" value="" id="jform_password2" name="jform[password2]" aria-required="true" required="required"><span class="red">*</span></td>
+				</tr>
+				<tr>
+					<td><label title="" class="hasTip required" for="jform_email1" id="jform_email1-lbl">Email:</label></td>
+					<td><input type="text" size="30" class="inputbox required" value="" id="jform_email1" name="jform[email1]" aria-required="true" required="required"><span class="red">*</span></td>
+				</tr>
+				<tr>
+					<td><label title="" class="hasTip required" for="jform_email2" id="jform_email2-lbl">
+						Confirme seu email:</label></td>
+					<td><input type="text" size="30" class="inputbox required" value="" id="jform_email2" name="jform[email2]" aria-required="true" required="required"><span class="red">*</span></td>
+				</tr>
+			</tbody></table>
+		</fieldset>
+		<br>
+		<p>Campos marcados com asterisco (*) são obrigatórios.</p>
+		<button type="submit" class="button validate">Criar conta</button>
+		<div>
+			<input type="hidden" name="option" value="com_users">
+			<input type="hidden" name="task" value="registration.register">
+			<input type="hidden" name="a9b674cffeb37ccee65885f048cdff3a" value="1">		</div>
+	</form>
+				<!-- Old code -->
+		</div>
+	</li>
+			<!--LOFIN FORM content-->
+
+	</ul>
+</div>            </div>
+                        </div>
+                        <div id="ja-breadcrums" class="wrap ">
+                   <div class="main clearfix">
+           <div class="ja-breadcrums">
+	<div class="breadcrums-view">
+	<!--strong>You are here</strong--> 
+	</div>
+</div>
+
+<ul class="no-display">
+	<li><a href="http://www.msofficegurus.com.br/artigos/microsoft-office/excel/587-usando-o-clipboard-com-vba.html#ja-content" title="Skip to content">Skip to content</a></li>
+</ul>            </div>
+                        </div>
+            
+    <!-- MAIN CONTAINER -->
+    <div id="ja-container" class="wrap ja-r1">
+               <div class="main">
+                           <div class="main-inner1 clearfix">
+                        <div id="ja-mainbody" style="width:75%">
+            <!-- CONTENT -->
+            <div id="ja-main" style="width:100%">
+            <div class="inner clearfix">
+
+                
+<div id="system-message-container">
+<dl id="system-message">
+<dt class="message">Mensagem</dt>
+<dd class="message message">
+	<ul>
+		<li>Kunena is not installed or the installed Kunena version is not supported. The plug-in has now been disabled. Please install/upgrade Kunena to version 1.7 for the Kunena Discuss Plug-in to function properly.</li>
+	</ul>
+</dd>
+</dl>
+</div>
+                
+                <div id="ja-contentwrap" class="clearfix ">
+                    <div id="ja-content" class="column" style="width:100%">
+                        <div id="ja-current-content" class="column" style="width:100%">
+                            
+                                                        <div id="ja-content-main" class="ja-content-main clearfix">
+                                <div class="item-page clearfix">
+	<h2 class="contentheading">
+			<a href="./MS Office Gurus - Usando o clipboard com VBA_files/MS Office Gurus - Usando o clipboard com VBA.htm">
+		Usando o clipboard com VBA</a>
+		</h2>
+
+	
+<div class="article-tools clearfix">
+	<ul class="actions">
+						<li class="print-icon">
+			<a href="http://www.msofficegurus.com.br/artigos/microsoft-office/excel/587-usando-o-clipboard-com-vba.html?tmpl=component&print=1&layout=default&page=" title="Imprimir" onclick="window.open(this.href,&#39;win2&#39;,&#39;status=no,toolbar=no,scrollbars=yes,titlebar=no,menubar=no,resizable=yes,width=640,height=480,directories=no,location=no&#39;); return false;" rel="nofollow"><img src="./MS Office Gurus - Usando o clipboard com VBA_files/printButton.png" alt="Imprimir"></a>			</li>
+		
+					<li class="email-icon">
+			<a href="http://www.msofficegurus.com.br/component/mailto/?tmpl=component&template=ja_nex&link=237fef01bd35f573a1a48f215eeb2394f56bdd17" title="E-mail" onclick="window.open(this.href,&#39;win2&#39;,&#39;width=400,height=350,menubar=yes,resizable=yes&#39;); return false;"><img src="./MS Office Gurus - Usando o clipboard com VBA_files/emailButton.png" alt="E-mail"></a>			</li>
+				
+				
+		
+	</ul>
+
+
+
+	<dl class="article-info">
+	<dt class="article-info-term"></dt>
+	<dd class="published">
+	Última atualização em 15 Janeiro 2012	</dd>
+	
+	<dd class="hits">
+	Acessos: <span>2349</span>	</dd>
+	</dl>
+</div>
+
+<div class="content-links">
+	<ul>
+		</ul></div>
+	
+<div class="ja-translate-wrapper">
+        
+    <div id="ja-translate-content-0" class="ja-translate-content">
+    <p><span class="dropcap">D</span>entre os recursos disponíveis no VBA podemos encontrar uma biblioteca chamada DataObjects. Trata-se de um conjunto de objetos que, dentre outras funções, podem ser usados para manipular a area de transferencia do windows.</p>
+<p>Abaixo segue os métodos basicos da area de transferencia</p>
+<div class="code">
+<p>Dim dto As New DataObject</p>
+</div>
+<div class="code">
+<p>'Envia um conteudo de texto para area de transferencia<br>Sub EnviaParaAreaTransferencia(sText As String)<br>&nbsp;&nbsp;&nbsp; dto.SetText sText<br>&nbsp;&nbsp;&nbsp; dto.PutInClipboard<br>End Sub</p>
+</div>
+<div class="code">
+<p>'Captura conteudo da area de transferencia<br>Sub PegaConteudo()<br>&nbsp;&nbsp;&nbsp; dto.GetFromClipboard<br>&nbsp;&nbsp;&nbsp; EnviaParaAreaTransferencia "teste"<br>&nbsp;&nbsp;&nbsp; MsgBox dto.GetText<br>End Sub</p>
+</div>
+<div class="code">
+<p>'Limpa a area de transferencia<br>Sub LimpaAreaTransferencia()<br>&nbsp;&nbsp;&nbsp; dto.Clear<br>End Sub</p>
+</div>
+<p>ate a proxima...</p> 
+
+<!-- JAComment starts -->
+                        <!-- BEGIN - load blog head -->
+			<script type="text/javascript">
+//<![CDATA[	
+	jQuery(document).ready(function($){	
+		jac_init();		
+	});
+	
+	var JACommentConfig = {
+		jac_base_url 			: '/component/jacomment/',
+		siteurl 				: '/component/jacomment/?tmpl=component&amp;view=comments',
+		minLengthComment 		: '10',		
+		errorMinLength 			: 'Your comment is too short.',
+		maxLengthComment 		: '1000',
+		errorMaxLength 			: 'Your comment is too long.',			
+		isEnableAutoexpanding  : '1',
+		dateASC					: 'Latest comment on top',
+		dateDESC				: 'Latest comment in bottom',
+		votedASC				: 'Most rated on top',
+		strLogin				: 'Login now',
+		isEnableBBCode			: '1',
+		hdCurrentComment		: 0,
+		
+		contentoption			: 'com_content',
+		contentid				: '587',
+		commenttype				: '1',
+		jacomentUrl				: 'http://msofficegurus.com.br/artigos/microsoft-office/excel/587-usando-o-clipboard-com-vba.html',
+		contenttitle			: 'Usando o clipboard com VBA',
+				
+		hidInputComment			: 'You must input comment.',
+		hidInputWordInComment	: 'The words are too long you should add more spaces between them',
+		hidEndEditText			: 'Please exit spell check before submitting comment',
+		hidInputName			: 'You must input name',
+		hidInputEmail			: 'You must input email',
+		hidValidEmail			: 'Your email is invalid',
+		hidAgreeToAbide			: 'You must agree to abide by the website rules',
+		hidInputCaptcha			: 'You must input text of captcha',
+		textQuoting			    : 'Quoting',
+		textQuote			    : 'Quote',
+		textPosting			    : 'Posting',
+		textReply			    : 'Reply',
+		textCheckSpelling		: 'No writing errors',
+		mesExpandForm			: '(+) Click to Expand',
+		mesCollapseForm			: '(-) CLick to Collapse',
+		theme					: 'default',
+		txtCopiedDecode			: 'Copied dcode'							
+	};																	
+//]]>
+</script>
+<script type="text/javascript" src="./MS Office Gurus - Usando o clipboard com VBA_files/jquery.autoresize.js"></script><script type="text/javascript" src="./MS Office Gurus - Usando o clipboard com VBA_files/dcodr.js"></script>
+<script type="text/javascript" src="./MS Office Gurus - Usando o clipboard com VBA_files/dcode.js"></script>
+	  
+<script language="javascript" type="text/javascript">
+	function open_youtube(id){jacCreatForm('open_youtube',id,400,200,0,0,'Embed a YouTube video',0,'Embed video');}
+</script>
+			<!-- END   - load blog head -->
+				 	   	
+			  <div id="jac-social-links">
+			    <ul>
+					<li><!-- AddThis Button BEGIN --><a class="addthis_button" href="http://addthis.com/bookmark.php?v=250&pub=xa-4af3e1272f178ef0"><img src="./MS Office Gurus - Usando o clipboard com VBA_files/lg-share-en.gif" width="125" height="16" alt="Bookmark and Share" style="border:0"></a><script type="text/javascript" src="./MS Office Gurus - Usando o clipboard com VBA_files/addthis_widget.js"></script><div id="_atssh" style="visibility: hidden; height: 1px; width: 1px; position: absolute; z-index: 100000;"><iframe id="_atssh368" title="AddThis utility frame" style="height: 1px; width: 1px; position: absolute; z-index: 100000; border: 0px; left: 0px; top: 0px;" src="./MS Office Gurus - Usando o clipboard com VBA_files/sh171.htm"></iframe></div><script type="text/javascript" src="./MS Office Gurus - Usando o clipboard com VBA_files/core153.js"></script><!-- AddThis Button END --></li><li><a class="a2a_dd" href="http://www.addtoany.com/share_save#url=http%3A%2F%2Fwww.msofficegurus.com.br%2Fartigos%2Fmicrosoft-office%2Fexcel%2F587-usando-o-clipboard-com-vba.html&title=MS%20Office%20Gurus%20-%20Usando%20o%20clipboard%20com%20VBA&description=Aprenda%20como%20usar%20o%20clipboard%20com%20VBA%20com%20Adelson%20Silva"><img src="./MS Office Gurus - Usando o clipboard com VBA_files/share_save_171_16.png" width="171" height="16" border="0" alt="Share/Bookmark"></a><script type="text/javascript">a2a_linkname=document.title;a2a_linkurl=location.href;</script><script type="text/javascript" src="./MS Office Gurus - Usando o clipboard com VBA_files/page.js"></script></li><li><script type="text/javascript" src="./MS Office Gurus - Usando o clipboard com VBA_files/button.js"></script></li>			    </ul>
+			  </div>	  
+										
+            <div id="jac-wrapper" class="clearfix"><!-- BEGIN - load blog header -->
+
+
+
+	  
+
+<!-- END   - load blog header -->
+
+<!-- BEGIN - load blog header -->
+<div id="jac-loader">Loading...</div>
+<div id="jac-msg-succesfull" style="display: none;">&nbsp;</div><!-- END   - load blog header -->
+
+	<!-- BEGIN - load blog add new -->
+			<div id="jac-wrapper-form-add-new" class="clearfix">
+		      
+<div id="jac-post-new-comment">
+	<ul class="form-comment">
+		<li class="clearfix form-comment" id="jac-editor-addnew">
+				          	    
+<!-- BEGIN - Add jacSmileys- Add youTube - check spelling -->
+	       <div class="plugin_embed form-actions clearfix">
+       	<ul class="jac-wrapper-actions">			        								    
+    	    <li class="form-act-smiley"><ul onmouseover="document.getElementById(&quot;jacSmileys-&quot;).style.display=&quot;block&quot;;" onmouseout="document.getElementById(&quot;jacSmileys-&quot;).style.display=&quot;none&quot;;" style="display: none;" id="jacSmileys-" class="smileys">
+	<li><a href="javascript:jacInsertSmiley(":)");" class="smiley"><span style="background-position: 0px 0px;" onmouseover="document.getElementById(&quot;jacSmileys-&quot;).style.display=&quot;block&quot;;"><span>:)</span></span></a></li>
+	<li><a href="javascript:jacInsertSmiley(":D");" class="smiley"><span style="background-position: -12px 0px;" onmouseover="document.getElementById(&quot;jacSmileys-&quot;).style.display=&quot;block&quot;;"><span>:D</span></span></a></li>
+	<li><a href="javascript:jacInsertSmiley("xD");" class="smiley"><span style="background-position: -24px 0px;" onmouseover="document.getElementById(&quot;jacSmileys-&quot;).style.display=&quot;block&quot;;"><span>xD</span></span></a></li>
+	<li><a href="javascript:jacInsertSmiley(";)");" class="smiley"><span style="background-position: -36px 0px;" onmouseover="document.getElementById(&quot;jacSmileys-&quot;).style.display=&quot;block&quot;;"><span>;)</span></span></a></li>
+	<li><a href="javascript:jacInsertSmiley(":p");" class="smiley"><span style="background-position: -48px 0px;" onmouseover="document.getElementById(&quot;jacSmileys-&quot;).style.display=&quot;block&quot;;"><span>:p</span></span></a></li>
+	<li><a href="javascript:jacInsertSmiley("^_^");" class="smiley"><span style="background-position: 0px -12px;" onmouseover="document.getElementById(&quot;jacSmileys-&quot;).style.display=&quot;block&quot;;"><span>^_^</span></span></a></li>
+	<li><a href="javascript:jacInsertSmiley(":$");" class="smiley"><span style="background-position: -12px -12px;" onmouseover="document.getElementById(&quot;jacSmileys-&quot;).style.display=&quot;block&quot;;"><span>:$</span></span></a></li>
+	<li><a href="javascript:jacInsertSmiley("B)");" class="smiley"><span style="background-position: -24px -12px;" onmouseover="document.getElementById(&quot;jacSmileys-&quot;).style.display=&quot;block&quot;;"><span>B)</span></span></a></li>
+	<li><a href="javascript:jacInsertSmiley(":*");" class="smiley"><span style="background-position: -36px -12px;" onmouseover="document.getElementById(&quot;jacSmileys-&quot;).style.display=&quot;block&quot;;"><span>:*</span></span></a></li>
+	<li><a href="javascript:jacInsertSmiley("(3");" class="smiley"><span style="background-position: -48px -12px;" onmouseover="document.getElementById(&quot;jacSmileys-&quot;).style.display=&quot;block&quot;;"><span>(3</span></span></a></li>
+	<li><a href="javascript:jacInsertSmiley(":S");" class="smiley"><span style="background-position: 0px -24px;" onmouseover="document.getElementById(&quot;jacSmileys-&quot;).style.display=&quot;block&quot;;"><span>:S</span></span></a></li>
+	<li><a href="javascript:jacInsertSmiley(":|");" class="smiley"><span style="background-position: -12px -24px;" onmouseover="document.getElementById(&quot;jacSmileys-&quot;).style.display=&quot;block&quot;;"><span>:|</span></span></a></li>
+	<li><a href="javascript:jacInsertSmiley("=/");" class="smiley"><span style="background-position: -24px -24px;" onmouseover="document.getElementById(&quot;jacSmileys-&quot;).style.display=&quot;block&quot;;"><span>=/</span></span></a></li>
+	<li><a href="javascript:jacInsertSmiley(":x");" class="smiley"><span style="background-position: -36px -24px;" onmouseover="document.getElementById(&quot;jacSmileys-&quot;).style.display=&quot;block&quot;;"><span>:x</span></span></a></li>
+	<li><a href="javascript:jacInsertSmiley("o.0");" class="smiley"><span style="background-position: -48px -24px;" onmouseover="document.getElementById(&quot;jacSmileys-&quot;).style.display=&quot;block&quot;;"><span>o.0</span></span></a></li>
+	<li><a href="javascript:jacInsertSmiley(":o");" class="smiley"><span style="background-position: 0px -36px;" onmouseover="document.getElementById(&quot;jacSmileys-&quot;).style.display=&quot;block&quot;;"><span>:o</span></span></a></li>
+	<li><a href="javascript:jacInsertSmiley(":(");" class="smiley"><span style="background-position: -12px -36px;" onmouseover="document.getElementById(&quot;jacSmileys-&quot;).style.display=&quot;block&quot;;"><span>:(</span></span></a></li>
+	<li><a href="javascript:jacInsertSmiley(":@");" class="smiley"><span style="background-position: -24px -36px;" onmouseover="document.getElementById(&quot;jacSmileys-&quot;).style.display=&quot;block&quot;;"><span>:@</span></span></a></li>
+	<li><a href="javascript:jacInsertSmiley(":'(");" class="smiley"><span style="background-position: -36px -36px;" onmouseover="document.getElementById(&quot;jacSmileys-&quot;).style.display=&quot;block&quot;;"><span>:'(</span></span></a></li>
+</ul>
+<a href="javascript:void(0);" class="act-smiley" onclick="javascript:jacChangeDisplay(&quot;jacSmileys-&quot;, &quot;block&quot;, &quot;smiley&quot;)" title="Add a smiley"><span>Add a smiley</span></a></li>			    	    
+    	    		    	<li class="form-act-spell"><a id="checkLink" href="javascript:jac_check_atd('')" title="Check spelling"></a></li>			         
+		    			    	    	            
+		    		    	<li class="form-act-utube">			        
+	                <a href="javascript:open_youtube('');" class="plugin" title="Embed video"><span>Embed video</span></a>
+	            </li>
+		    					    
+		    					    			    				    				    							    
+			<!--  BEGIN - BBCODE -->				
+		    <li class="jac-bbcode-bold-text"><a href="http://www.msofficegurus.com.br/artigos/microsoft-office/excel/587-usando-o-clipboard-com-vba.html#" title="Bold text" onclick="return DCODE.doClick (&#39;newcomment&#39;, &#39;B&#39;);">B</a>
+</li>
+<li class="jac-bbcode-italic-text"><a href="http://www.msofficegurus.com.br/artigos/microsoft-office/excel/587-usando-o-clipboard-com-vba.html#" title="Italic text" onclick="return DCODE.doClick (&#39;newcomment&#39;, &#39;I&#39;);">I</a>
+</li>
+<li class="jac-bbcode-underline-text"><a href="http://www.msofficegurus.com.br/artigos/microsoft-office/excel/587-usando-o-clipboard-com-vba.html#" title="Underline text" onclick="return DCODE.doClick (&#39;newcomment&#39;, &#39;U&#39;);">U</a>
+</li>
+<li class="jac-bbcode-line-through-text"><a href="http://www.msofficegurus.com.br/artigos/microsoft-office/excel/587-usando-o-clipboard-com-vba.html#" title="Line through text" onclick="return DCODE.doClick (&#39;newcomment&#39;, &#39;S&#39;);">S</a>
+</li>
+<li class="jac-bbcode-bullet-list-text"><a href="http://www.msofficegurus.com.br/artigos/microsoft-office/excel/587-usando-o-clipboard-com-vba.html#" title="UnOrderes Text" onclick="return DCODE.doClick (&#39;newcomment&#39;, &#39;UL&#39;);">UL</a>
+</li>
+<li class="jac-bbcode-quotation"><a href="http://www.msofficegurus.com.br/artigos/microsoft-office/excel/587-usando-o-clipboard-com-vba.html#" title="Quotation" onclick="return DCODE.doClick (&#39;newcomment&#39;, &#39;QUOTE&#39;);">Quote</a>
+</li>
+<li class="jac-bbcode-link"><a href="http://www.msofficegurus.com.br/artigos/microsoft-office/excel/587-usando-o-clipboard-com-vba.html#" title="Link and email text" onclick="return DCODE.doClick (&#39;newcomment&#39;, &#39;LINK&#39;);">LINK</a>
+</li>
+<li class="jac-bbcode-image"><a href="http://www.msofficegurus.com.br/artigos/microsoft-office/excel/587-usando-o-clipboard-com-vba.html#" title="Image" onclick="return DCODE.doClick (&#39;newcomment&#39;, &#39;IMG&#39;);">Img</a>
+</li>		    <!--  END - BBCODE -->		    
+		<li class="jac-act-button loaded"><a title="(-) CLick to Collapse" href="javascript:void(0)">(-) CLick to Collapse</a></li></ul>	 		
+	</div>
+	 
+<!-- END - Add jacSmileys- Add youTube - check spelling -->
+<!-- BEGIN - Text area  -->    
+	<div id="jac-container-textarea" class="form-comment clearfix"><textarea style="overflow-y: hidden; resize: none; position: absolute; top: 0px; left: -9999px; height: 168px; width: 679.9375px; line-height: normal; text-decoration: none; letter-spacing: normal;" onblur="checkWordLength(this.value,&#39;newcomment&#39;, &#39;jaCountText&#39;)" class="field textarea jac-new-comment jac-expand-field" rows="12" cols="80" tabindex="-1"></textarea><textarea style="overflow-y: hidden; resize: none;" onblur="checkWordLength(this.value,&#39;newcomment&#39;, &#39;jaCountText&#39;)" class="field textarea jac-new-comment jac-expand-field dcode" rows="12" cols="80" tabindex="1" id="newcomment" name="newcomment"></textarea></div>		           	    
+	<input type="hidden" id="jac_hid_text_comment" value="Text comment">     					
+<!-- END - Text area  -->									        			        
+		</li>
+		<!--BEGIN  Upload form-->
+				<!--END  Upload form-->
+	</ul>
+		<div class="jac-act-form" style="display: none;"></div>
+		<div id="err_newcomment" style="color: red;"></div>
+		<!-- Expan form-->
+			<div class="jac-expand-form clearfix">
+				<!--BEGIN TEXT LOGIN OR LOOUT-->
+				<ul>
+								<li class="clearfix">
+				<label class="description" id="title1">Comment as a guest or <strong><a href="javascript:open_login('Login now', '');">login</a></strong></label>
+								<!--END TEXT LOGIN OR LOOUT-->
+				<!--BEGIN  Name, email, website-->
+								<div id="other_field" class="clearfix">
+				<div class="form-userdata clearfix">
+					<!-- BEGIN TEXT NAME-->
+					<span class="jac-form-guest">
+												<label for="guestName">Name <span id="required_1" class="required">*</span></label>
+						<input id="guestName" value="Name" name="name" type="text" class="field text inputbox jac-inner-text" size="18" tabindex="2" title="It will be displayed next to your comments.">
+						<input type="hidden" value="Name" id="jac_hid_text_name">
+						<div id="err_guestName" style="color: red;"></div>
+					</span>
+					<!-- END TEXT NAME-->
+					<!-- BEGIN TEXT EMAIL-->
+					<span class="jac-form-guest">
+												<label for="guestEmail">Email <span id="required_2" class="required">*</span></label>
+						<input id="guestEmail" value="Email" name="email" type="text" class="field text inputbox jac-inner-text" size="18" tabindex="3" title="It will NOT be displayed publicly.">
+						<input type="hidden" value="Email" id="jac_hid_text_email">
+						<div id="err_guestEmail" style="color: red;"></div>
+					</span>
+					<!-- END TEXT EMAIL-->
+					<!-- BEGIN WEBSITE-->
+															<span class="jac-form-guest">
+						<label for="guestWebsite">Website</label>
+						<input id="guestWebsite" name="website" type="text" class="field text inputbox jac-inner-text" value="Website" size="18" tabindex="4" title="(Optional) If you have a website, link to it here.">
+						<input type="hidden" value="Website" id="jac_hid_text_website">
+					</span>
+										<!-- END WEBSITE-->
+				</div></div>
+				</li>
+								<!--END  Name, email, website-->
+								<li class="clearfix">
+					<!-- BEGIN -  CAPTCHA -->
+					<div id="jac-new-captcha">
+						<img alt="Captcha Image" title="Click to refresh captcha" onmousemove="actionjacLoadNewCaptcha(&#39;show&#39;)" onmouseout="actionjacLoadNewCaptcha()" onclick="jacLoadNewCaptcha(0)" id="jac_image_captcha" src="./MS Office Gurus - Usando o clipboard com VBA_files/saved_resource(1)">
+						<div id="jac-refresh-image" style="display:none;"></div>
+						<div class="type_captcha"><span><label for="textCaptcha">Type the code shown<span id="required_4" class="required">&nbsp;*</span></label>
+												<input type="text" name="captcha" class="field text inputbox " id="textCaptcha" tabindex="5" value="">
+						<input type="hidden" value="Type the code shown" id="jac_hid_text_captcha">
+						<div id="err_textCaptcha" style="color: red;"></div></span></div>
+					</div>
+					<!-- END -  CAPTCHA -->
+				</li>
+									<!-- BEGIN -  EMAIL SUBSCRIPTION -->
+								<li class="clearfix">
+					<div class="jac-subscribe clearfix">
+						<span class="jac-text-blow-guest"> Subscribe to</span>&nbsp;
+						<select id="subscription_type" name="subscription_type" tabindex="6">
+	<option value="0" selected="selected">None</option>
+	<option value="1">Replies</option>
+	<option value="2">New comments</option>
+</select>
+						<br>
+						</div>
+					</li>
+										<!-- END -  EMAIL SUBSCRIPTION -->
+					<!-- BEGIN -  TERM AND CONDITION -->
+										<!-- END -  TERM AND CONDITION -->
+			</ul>
+		</div>
+	<p id="ja-addnew-error" class="ja-error" style="display: none;"></p>
+	<ul>
+	<li class="buttons clearfix">
+	<!--BEGIN - action buttion	-->
+	<div class="jac-addnew clearfix" style="clear:both;">
+		<input type="button" class="btTxt" tabindex="8" onclick="cancelComment(&#39;cancelReply&#39;,0,&#39;Reply&#39;,&#39;Posting&#39;)" style="display: none;" title="Cancel" id="btlCancelComment" value="Cancel">
+		<input type="button" class="btTxt" tabindex="9" onclick="postNewComment()" title="Post new comment" id="btlAddNewComment" value="Submit comment">
+		<!--<a tabindex="8" href="javascript:cancelComment('cancelReply',0,'Reply','Posting')" style="display: none;" title="Cancel" id="jac_cancel_comment_link">Cancel</a>
+		<a tabindex="9" href="javascript:postNewComment()" title="Post new comment" id="jac_post_new_comment">Submit comment</a>
+		<span id="jac_span_post_new_comment" style="display: none;">Submit comment</span>-->
+	</div>
+	<!--END - action buttion	-->
+	</li>
+	</ul>
+</div>
+		</div>
+		<!-- END - load blog total -->
+
+	<!-- BEGIN - load blog sort -->
+	<div id="jac-sort">
+	Sort by:&nbsp;
+	<a href="javascript:sortComment('date',this)" class="jac-sort-by-active-asc" title="Latest comment on top" id="jac-sort-by-date">Date</a>&nbsp;
+	<a href="javascript:sortComment('voted',this)" class="jac-sort-by" title="Most rated on top" id="jac-sort-by-voted">Rating</a>&nbsp;						
+</div>
+	<input type="hidden" value="date" id="orderby" name="orderby">			
+	<!-- END - load blog sort -->
+
+	<!-- BEGIN - load blog total -->
+	<div id="jac-total-comment">
+	<h2 class="componentheading"><span id="jac-number-total-comment">1 Comment</span>
+					<a id="jac-rss" href="http://www.msofficegurus.com.br/component/jacomment/?view=jafeeds&layout=rss&contentid=587&contentoption=com_content&tmpl=component"></a>
+			</h2>	
+</div>	<!-- END - load blog total -->
+	<div id="jac-container-new-comment" class="clearfix lh0"></div>
+	<!-- END - load blog items -->
+	<div id="jac-container-comment" class="clearfix lh0">
+	<!-- COMMENT CONTENT -->
+<div class="comment-content wrap">
+	<!-- START COMMENT LIST -->
+	<div class="comment-listwrap">
+	
+<ol class="comment-list comment-list-lv0">	
+								
+				
+		<!-- A ROW COMMENT -->
+		<li id="jac-row-comment-5" class="jac-row-comment row1 list-item  rank-high jac-first ">
+			    <a name="jacommentid:5" href="http://www.msofficegurus.com.br/artigos/microsoft-office/excel/587-usando-o-clipboard-com-vba.html#jacommentid:5" id="jacommentid:5" style="margin-top: -34px;" title=""></a>
+		<div id="jac-content-of-comment-5" class="comment-contentmain comment-contentholder clearfix ja-imagesize3 ">						
+									
+	        <div class="avatar clearfix">                	
+	            	            		            							<img src="./MS Office Gurus - Usando o clipboard com VBA_files/avatar-large.png" alt="Bruno" style="height:40px; width:40px;">
+																            	        </div>    
+								
+				<div class="comment-data clearfix">
+					<div class="comment-heading clearfix">						
+						                			
+								<span class="comment-user">Bruno</span>								         			
+		              							
+						<span class="time_show"> 50 Months Ago</span>	        
+	          	  
+			          <div class="comment-ranking" id="jac-vote-comment-5">	          	
+			          	<span class="vote-comment-3 comment-rankingresult" id="voted-of-5">(0) Vote</span>
+			          											<div class="jac-vote-comment">																							
+									<a href="javascript:voteComment(5,'up')" title="Vote Up" class="voteup-btn hasTip"></a>
+									<a href="javascript:voteComment(5,'down')" title="Vote Down" class="votedown-btn hasTip"></a>													
+								</div>	
+											          </div>
+			    											
+						<div class="jac-show-report-3 comment-report" id="jac-show-report-5">						
+															<a class="report-btn" href="javascript:reportComment(5)" title="Flagged! It will be removed when enough people flag it.">REPORT</a>
+																					
+						</div>
+												<div class="comment-admin status-isapproved" id="jac-change-type-5">
+															</div>
+					</div>
+					<div id="jac-text-5" class="comment-text">
+						<p>fiz uma macro de abre diversos arquivos copia as áreas e cola dentro destas outras planilhas que estão abertas, porem antes de executar o final de todas as colagens ele gera uma mensagem dizendo que a área de transferência esta cheia.<br>
+Tentei inserir este código acima mais não deu certo como posso fazer para ir colando e esvaziando a área de transferência?</p> 
+					</div>
+																	
+								
+				</div>
+				<div id="jac-div-footer-5">
+				<div class="comment-action clearfix">
+					<div class="comment-showreply showreply-isshowing" id="jac-div-show-child-5">
+											</div>
+										<div class="comment-reply" id="jac-span-reply-5">
+																																																		
+						<a onclick="replyComment(5,&#39;Posting&#39;,&#39;Reply&#39;);return false;" href="http://www.msofficegurus.com.br/artigos/microsoft-office/excel/587-usando-o-clipboard-com-vba.html#jacommentid:5" id="jac-a-reply-5" title="Reply comment"><span id="reply-5">Reply comment</span></a>																						
+															</div>					
+					<div class="comment-quote" id="jac-div-quote-5"><a id="jac-a-quote-5" href="javascript:replyComment(5,'Quoting','Quote','quote')" title="Quote this comment and reply"><span id="quote-5">Quote</span></a></div>													
+									</div>					
+				</div>								
+			<span id="jac-badge-pending-5" class="badge-pending" style="display: none;"></span>
+		</div>
+		<div id="jac-edit-comment-5" class="comment-contentmain clearfix ja-imagesize3" style="display: none;"></div>
+		<div id="jac-result-reply-comment-5" class="jac-reply-comment jac-reply-level-0 comment-contentmain clearfix ja-imagesize3" style="display: none;"></div>										
+		<div id="childen-comment-of-5" class="jac-childen-array  " style="display:none;">						
+					</div>			
+		<input type="hidden" id="jac-parent-of-comment-5" value="0">
+	</li>																																					
+	<!-- //A ROW COMMENT -->		
+																														
+			
+</ol>				
+	</div>
+</div>
+<!-- COMMENT CONTENT -->    
+	</div>
+	<!-- END - load blog items -->
+		<div id="jac-pagination" class="pagination wrap clearfix">
+	<div class="jac-display-limit">
+			<label for="list">Display # </label>
+		<select id="list" name="list" onchange="jac_doPaging(00, this.value, &#39;&#39;, &#39;&#39;)">
+	<option value="5">5</option>
+	<option value="10" selected="selected">10</option>
+	<option value="15">15</option>
+	<option value="20">20</option>
+	<option value="50">50</option>
+	<option value="100">100</option>
+</select>
+	</div>
+<div class="jac-page-links" id="jav-page-links-comment">
+	</div>	</div>
+	
+<input type="hidden" id="limitstart" value="0">
+
+<!-- BEGIN - load template footer -->
+<div id="jac-copyright">
+	Copyright JAComment</div><!-- END   - load template footer --></div>				
+            <script type="text/javascript">
+            //<![CDATA[
+            window.addEvent("load", function() {
+            	var url = window.location.hash;
+            	c_url = url.split('#');
+            	id = 0;
+            	tmp = 0;
+            	if(c_url.length >= 1){		
+            		for(i=1; i< c_url.length; i++){			
+            			if(c_url[i].indexOf("jacommentid:") >-1){				
+            				tmp = c_url[i].split(':')[1];				
+            				if(tmp != ""){									
+            					id = parseInt(tmp, 10);
+            				}
+            			}
+            		}
+            	}
+            	            	
+            	url = "?tmpl=component&option=com_jacomment&view=comments&contentoption=com_content&contentid=587&ran=102768802";
+            	if(id != 0){
+					url += "&currentCommentID=" + id;
+            	}
+				var req = new Request({
+					 method: 'get',
+                         url: url,                         
+                         onComplete: function(text) { 
+						$('jac-wrapper').innerHTML = $('jac-wrapper').innerHTML + text;																		 						
+						//$('jacommentid:'+id).getPosition();
+						moveBackground(id, 'http://www.msofficegurus.com.br/');																																						
+							jac_auto_expand_textarea();			 
+                        }						
+					}).send();					 							
+            	});			
+				//]]>						
+				</script>
+            
+<!-- JAComment ends -->
+
+
+    </div>
+    
+        	<div class="ja-translate" id="ja-translate-0">
+        <a href="http://www.msofficegurus.com.br/artigos/microsoft-office/excel/587-usando-o-clipboard-com-vba.html#" onclick="return oJaTranslate.toggleLanguages(&#39;0&#39;);" class="translate-link" title="TRANSLATE">
+                <img src="./MS Office Gurus - Usando o clipboard com VBA_files/translate.png" alt="TRANSLATE">
+                        <img id="ja-translate-loading-0" src="./MS Office Gurus - Usando o clipboard com VBA_files/loading.gif" alt="TRANSLATING" style="display:none;">
+        </a> 
+        <br>
+        <div id="ja-translate-languages-0" class="ja-tranlate-languages" style="display:none;">
+        	<div class="languages" style="width:460px;">
+                        <a id="ja-lang-0-af" class="total-col-4" href="http://www.msofficegurus.com.br/artigos/microsoft-office/excel/587-usando-o-clipboard-com-vba.html#" onclick="return oJaTranslate.translate(&#39;0&#39;, &#39;af&#39;);" title="afrikaans">
+                <img src="./MS Office Gurus - Usando o clipboard com VBA_files/af.png" class="ja-translate-flags" alt="[af]" title="afrikaans">
+                afrikaans            </a>
+                        <a id="ja-lang-0-sq" class="total-col-4" href="http://www.msofficegurus.com.br/artigos/microsoft-office/excel/587-usando-o-clipboard-com-vba.html#" onclick="return oJaTranslate.translate(&#39;0&#39;, &#39;sq&#39;);" title="albanian">
+                <img src="./MS Office Gurus - Usando o clipboard com VBA_files/sq.png" class="ja-translate-flags" alt="[sq]" title="albanian">
+                albanian            </a>
+                        <a id="ja-lang-0-ar" class="total-col-4" href="http://www.msofficegurus.com.br/artigos/microsoft-office/excel/587-usando-o-clipboard-com-vba.html#" onclick="return oJaTranslate.translate(&#39;0&#39;, &#39;ar&#39;);" title="arabic">
+                <img src="./MS Office Gurus - Usando o clipboard com VBA_files/ar.png" class="ja-translate-flags" alt="[ar]" title="arabic">
+                arabic            </a>
+                        <a id="ja-lang-0-be" class="total-col-4" href="http://www.msofficegurus.com.br/artigos/microsoft-office/excel/587-usando-o-clipboard-com-vba.html#" onclick="return oJaTranslate.translate(&#39;0&#39;, &#39;be&#39;);" title="belarusian">
+                <img src="./MS Office Gurus - Usando o clipboard com VBA_files/be.png" class="ja-translate-flags" alt="[be]" title="belarusian">
+                belarusian            </a>
+                        <a id="ja-lang-0-bg" class="total-col-4" href="http://www.msofficegurus.com.br/artigos/microsoft-office/excel/587-usando-o-clipboard-com-vba.html#" onclick="return oJaTranslate.translate(&#39;0&#39;, &#39;bg&#39;);" title="bulgarian">
+                <img src="./MS Office Gurus - Usando o clipboard com VBA_files/bg.png" class="ja-translate-flags" alt="[bg]" title="bulgarian">
+                bulgarian            </a>
+                        <a id="ja-lang-0-ca" class="total-col-4" href="http://www.msofficegurus.com.br/artigos/microsoft-office/excel/587-usando-o-clipboard-com-vba.html#" onclick="return oJaTranslate.translate(&#39;0&#39;, &#39;ca&#39;);" title="catalan">
+                <img src="./MS Office Gurus - Usando o clipboard com VBA_files/ca.png" class="ja-translate-flags" alt="[ca]" title="catalan">
+                catalan            </a>
+                        <a id="ja-lang-0-zh" class="total-col-4" href="http://www.msofficegurus.com.br/artigos/microsoft-office/excel/587-usando-o-clipboard-com-vba.html#" onclick="return oJaTranslate.translate(&#39;0&#39;, &#39;zh&#39;);" title="chinese">
+                <img src="./MS Office Gurus - Usando o clipboard com VBA_files/zh.png" class="ja-translate-flags" alt="[zh]" title="chinese">
+                chinese            </a>
+                        <a id="ja-lang-0-zh-CN" class="total-col-4" href="http://www.msofficegurus.com.br/artigos/microsoft-office/excel/587-usando-o-clipboard-com-vba.html#" onclick="return oJaTranslate.translate(&#39;0&#39;, &#39;zh-CN&#39;);" title="chinese simplified">
+                <img src="./MS Office Gurus - Usando o clipboard com VBA_files/zh-CN.png" class="ja-translate-flags" alt="[zh-CN]" title="chinese simplified">
+                chinese simplified            </a>
+                        <a id="ja-lang-0-zh-TW" class="total-col-4" href="http://www.msofficegurus.com.br/artigos/microsoft-office/excel/587-usando-o-clipboard-com-vba.html#" onclick="return oJaTranslate.translate(&#39;0&#39;, &#39;zh-TW&#39;);" title="chinese traditional">
+                <img src="./MS Office Gurus - Usando o clipboard com VBA_files/zh-TW.png" class="ja-translate-flags" alt="[zh-TW]" title="chinese traditional">
+                chinese traditional            </a>
+                        <a id="ja-lang-0-hr" class="total-col-4" href="http://www.msofficegurus.com.br/artigos/microsoft-office/excel/587-usando-o-clipboard-com-vba.html#" onclick="return oJaTranslate.translate(&#39;0&#39;, &#39;hr&#39;);" title="croatian">
+                <img src="./MS Office Gurus - Usando o clipboard com VBA_files/hr.png" class="ja-translate-flags" alt="[hr]" title="croatian">
+                croatian            </a>
+                        <a id="ja-lang-0-cs" class="total-col-4" href="http://www.msofficegurus.com.br/artigos/microsoft-office/excel/587-usando-o-clipboard-com-vba.html#" onclick="return oJaTranslate.translate(&#39;0&#39;, &#39;cs&#39;);" title="czech">
+                <img src="./MS Office Gurus - Usando o clipboard com VBA_files/cs.png" class="ja-translate-flags" alt="[cs]" title="czech">
+                czech            </a>
+                        <a id="ja-lang-0-da" class="total-col-4" href="http://www.msofficegurus.com.br/artigos/microsoft-office/excel/587-usando-o-clipboard-com-vba.html#" onclick="return oJaTranslate.translate(&#39;0&#39;, &#39;da&#39;);" title="danish">
+                <img src="./MS Office Gurus - Usando o clipboard com VBA_files/da.png" class="ja-translate-flags" alt="[da]" title="danish">
+                danish            </a>
+                        <a id="ja-lang-0-nl" class="total-col-4" href="http://www.msofficegurus.com.br/artigos/microsoft-office/excel/587-usando-o-clipboard-com-vba.html#" onclick="return oJaTranslate.translate(&#39;0&#39;, &#39;nl&#39;);" title="dutch">
+                <img src="./MS Office Gurus - Usando o clipboard com VBA_files/nl.png" class="ja-translate-flags" alt="[nl]" title="dutch">
+                dutch            </a>
+                        <a id="ja-lang-0-en" class="total-col-4" href="http://www.msofficegurus.com.br/artigos/microsoft-office/excel/587-usando-o-clipboard-com-vba.html#" onclick="return oJaTranslate.translate(&#39;0&#39;, &#39;en&#39;);" title="english">
+                <img src="./MS Office Gurus - Usando o clipboard com VBA_files/en.png" class="ja-translate-flags" alt="[en]" title="english">
+                english            </a>
+                        <a id="ja-lang-0-et" class="total-col-4" href="http://www.msofficegurus.com.br/artigos/microsoft-office/excel/587-usando-o-clipboard-com-vba.html#" onclick="return oJaTranslate.translate(&#39;0&#39;, &#39;et&#39;);" title="estonian">
+                <img src="./MS Office Gurus - Usando o clipboard com VBA_files/et.png" class="ja-translate-flags" alt="[et]" title="estonian">
+                estonian            </a>
+                        <a id="ja-lang-0-fi" class="total-col-4" href="http://www.msofficegurus.com.br/artigos/microsoft-office/excel/587-usando-o-clipboard-com-vba.html#" onclick="return oJaTranslate.translate(&#39;0&#39;, &#39;fi&#39;);" title="finnish">
+                <img src="./MS Office Gurus - Usando o clipboard com VBA_files/fi.png" class="ja-translate-flags" alt="[fi]" title="finnish">
+                finnish            </a>
+                        <a id="ja-lang-0-fr" class="total-col-4" href="http://www.msofficegurus.com.br/artigos/microsoft-office/excel/587-usando-o-clipboard-com-vba.html#" onclick="return oJaTranslate.translate(&#39;0&#39;, &#39;fr&#39;);" title="french">
+                <img src="./MS Office Gurus - Usando o clipboard com VBA_files/fr.png" class="ja-translate-flags" alt="[fr]" title="french">
+                french            </a>
+                        <a id="ja-lang-0-gl" class="total-col-4" href="http://www.msofficegurus.com.br/artigos/microsoft-office/excel/587-usando-o-clipboard-com-vba.html#" onclick="return oJaTranslate.translate(&#39;0&#39;, &#39;gl&#39;);" title="galician">
+                <img src="./MS Office Gurus - Usando o clipboard com VBA_files/gl.png" class="ja-translate-flags" alt="[gl]" title="galician">
+                galician            </a>
+                        <a id="ja-lang-0-de" class="total-col-4" href="http://www.msofficegurus.com.br/artigos/microsoft-office/excel/587-usando-o-clipboard-com-vba.html#" onclick="return oJaTranslate.translate(&#39;0&#39;, &#39;de&#39;);" title="german">
+                <img src="./MS Office Gurus - Usando o clipboard com VBA_files/de.png" class="ja-translate-flags" alt="[de]" title="german">
+                german            </a>
+                        <a id="ja-lang-0-el" class="total-col-4" href="http://www.msofficegurus.com.br/artigos/microsoft-office/excel/587-usando-o-clipboard-com-vba.html#" onclick="return oJaTranslate.translate(&#39;0&#39;, &#39;el&#39;);" title="greek">
+                <img src="./MS Office Gurus - Usando o clipboard com VBA_files/el.png" class="ja-translate-flags" alt="[el]" title="greek">
+                greek            </a>
+                        <a id="ja-lang-0-iw" class="total-col-4" href="http://www.msofficegurus.com.br/artigos/microsoft-office/excel/587-usando-o-clipboard-com-vba.html#" onclick="return oJaTranslate.translate(&#39;0&#39;, &#39;iw&#39;);" title="hebrew">
+                <img src="./MS Office Gurus - Usando o clipboard com VBA_files/iw.png" class="ja-translate-flags" alt="[iw]" title="hebrew">
+                hebrew            </a>
+                        <a id="ja-lang-0-hi" class="total-col-4" href="http://www.msofficegurus.com.br/artigos/microsoft-office/excel/587-usando-o-clipboard-com-vba.html#" onclick="return oJaTranslate.translate(&#39;0&#39;, &#39;hi&#39;);" title="hindi">
+                <img src="./MS Office Gurus - Usando o clipboard com VBA_files/hi.png" class="ja-translate-flags" alt="[hi]" title="hindi">
+                hindi            </a>
+                        <a id="ja-lang-0-hu" class="total-col-4" href="http://www.msofficegurus.com.br/artigos/microsoft-office/excel/587-usando-o-clipboard-com-vba.html#" onclick="return oJaTranslate.translate(&#39;0&#39;, &#39;hu&#39;);" title="hungarian">
+                <img src="./MS Office Gurus - Usando o clipboard com VBA_files/hu.png" class="ja-translate-flags" alt="[hu]" title="hungarian">
+                hungarian            </a>
+                        <a id="ja-lang-0-is" class="total-col-4" href="http://www.msofficegurus.com.br/artigos/microsoft-office/excel/587-usando-o-clipboard-com-vba.html#" onclick="return oJaTranslate.translate(&#39;0&#39;, &#39;is&#39;);" title="icelandic">
+                <img src="./MS Office Gurus - Usando o clipboard com VBA_files/is.png" class="ja-translate-flags" alt="[is]" title="icelandic">
+                icelandic            </a>
+                        <a id="ja-lang-0-id" class="total-col-4" href="http://www.msofficegurus.com.br/artigos/microsoft-office/excel/587-usando-o-clipboard-com-vba.html#" onclick="return oJaTranslate.translate(&#39;0&#39;, &#39;id&#39;);" title="indonesian">
+                <img src="./MS Office Gurus - Usando o clipboard com VBA_files/id.png" class="ja-translate-flags" alt="[id]" title="indonesian">
+                indonesian            </a>
+                        <a id="ja-lang-0-ga" class="total-col-4" href="http://www.msofficegurus.com.br/artigos/microsoft-office/excel/587-usando-o-clipboard-com-vba.html#" onclick="return oJaTranslate.translate(&#39;0&#39;, &#39;ga&#39;);" title="irish">
+                <img src="./MS Office Gurus - Usando o clipboard com VBA_files/ga.png" class="ja-translate-flags" alt="[ga]" title="irish">
+                irish            </a>
+                        <a id="ja-lang-0-it" class="total-col-4" href="http://www.msofficegurus.com.br/artigos/microsoft-office/excel/587-usando-o-clipboard-com-vba.html#" onclick="return oJaTranslate.translate(&#39;0&#39;, &#39;it&#39;);" title="italian">
+                <img src="./MS Office Gurus - Usando o clipboard com VBA_files/it.png" class="ja-translate-flags" alt="[it]" title="italian">
+                italian            </a>
+                        <a id="ja-lang-0-ja" class="total-col-4" href="http://www.msofficegurus.com.br/artigos/microsoft-office/excel/587-usando-o-clipboard-com-vba.html#" onclick="return oJaTranslate.translate(&#39;0&#39;, &#39;ja&#39;);" title="japanese">
+                <img src="./MS Office Gurus - Usando o clipboard com VBA_files/ja.png" class="ja-translate-flags" alt="[ja]" title="japanese">
+                japanese            </a>
+                        <a id="ja-lang-0-ko" class="total-col-4" href="http://www.msofficegurus.com.br/artigos/microsoft-office/excel/587-usando-o-clipboard-com-vba.html#" onclick="return oJaTranslate.translate(&#39;0&#39;, &#39;ko&#39;);" title="korean">
+                <img src="./MS Office Gurus - Usando o clipboard com VBA_files/ko.png" class="ja-translate-flags" alt="[ko]" title="korean">
+                korean            </a>
+                        <a id="ja-lang-0-lv" class="total-col-4" href="http://www.msofficegurus.com.br/artigos/microsoft-office/excel/587-usando-o-clipboard-com-vba.html#" onclick="return oJaTranslate.translate(&#39;0&#39;, &#39;lv&#39;);" title="latvian">
+                <img src="./MS Office Gurus - Usando o clipboard com VBA_files/lv.png" class="ja-translate-flags" alt="[lv]" title="latvian">
+                latvian            </a>
+                        <a id="ja-lang-0-lt" class="total-col-4" href="http://www.msofficegurus.com.br/artigos/microsoft-office/excel/587-usando-o-clipboard-com-vba.html#" onclick="return oJaTranslate.translate(&#39;0&#39;, &#39;lt&#39;);" title="lithuanian">
+                <img src="./MS Office Gurus - Usando o clipboard com VBA_files/lt.png" class="ja-translate-flags" alt="[lt]" title="lithuanian">
+                lithuanian            </a>
+                        <a id="ja-lang-0-mk" class="total-col-4" href="http://www.msofficegurus.com.br/artigos/microsoft-office/excel/587-usando-o-clipboard-com-vba.html#" onclick="return oJaTranslate.translate(&#39;0&#39;, &#39;mk&#39;);" title="macedonian">
+                <img src="./MS Office Gurus - Usando o clipboard com VBA_files/mk.png" class="ja-translate-flags" alt="[mk]" title="macedonian">
+                macedonian            </a>
+                        <a id="ja-lang-0-ms" class="total-col-4" href="http://www.msofficegurus.com.br/artigos/microsoft-office/excel/587-usando-o-clipboard-com-vba.html#" onclick="return oJaTranslate.translate(&#39;0&#39;, &#39;ms&#39;);" title="malay">
+                <img src="./MS Office Gurus - Usando o clipboard com VBA_files/ms.png" class="ja-translate-flags" alt="[ms]" title="malay">
+                malay            </a>
+                        <a id="ja-lang-0-mt" class="total-col-4" href="http://www.msofficegurus.com.br/artigos/microsoft-office/excel/587-usando-o-clipboard-com-vba.html#" onclick="return oJaTranslate.translate(&#39;0&#39;, &#39;mt&#39;);" title="maltese">
+                <img src="./MS Office Gurus - Usando o clipboard com VBA_files/mt.png" class="ja-translate-flags" alt="[mt]" title="maltese">
+                maltese            </a>
+                        <a id="ja-lang-0-no" class="total-col-4" href="http://www.msofficegurus.com.br/artigos/microsoft-office/excel/587-usando-o-clipboard-com-vba.html#" onclick="return oJaTranslate.translate(&#39;0&#39;, &#39;no&#39;);" title="norwegian">
+                <img src="./MS Office Gurus - Usando o clipboard com VBA_files/no.png" class="ja-translate-flags" alt="[no]" title="norwegian">
+                norwegian            </a>
+                        <a id="ja-lang-0-fa" class="total-col-4" href="http://www.msofficegurus.com.br/artigos/microsoft-office/excel/587-usando-o-clipboard-com-vba.html#" onclick="return oJaTranslate.translate(&#39;0&#39;, &#39;fa&#39;);" title="persian">
+                <img src="./MS Office Gurus - Usando o clipboard com VBA_files/fa.png" class="ja-translate-flags" alt="[fa]" title="persian">
+                persian            </a>
+                        <a id="ja-lang-0-pl" class="total-col-4" href="http://www.msofficegurus.com.br/artigos/microsoft-office/excel/587-usando-o-clipboard-com-vba.html#" onclick="return oJaTranslate.translate(&#39;0&#39;, &#39;pl&#39;);" title="polish">
+                <img src="./MS Office Gurus - Usando o clipboard com VBA_files/pl.png" class="ja-translate-flags" alt="[pl]" title="polish">
+                polish            </a>
+                        <a id="ja-lang-0-pt-PT" class="total-col-4" href="http://www.msofficegurus.com.br/artigos/microsoft-office/excel/587-usando-o-clipboard-com-vba.html#" onclick="return oJaTranslate.translate(&#39;0&#39;, &#39;pt-PT&#39;);" title="portuguese">
+                <img src="./MS Office Gurus - Usando o clipboard com VBA_files/pt-PT.png" class="ja-translate-flags" alt="[pt-PT]" title="portuguese">
+                portuguese            </a>
+                        <a id="ja-lang-0-ro" class="total-col-4" href="http://www.msofficegurus.com.br/artigos/microsoft-office/excel/587-usando-o-clipboard-com-vba.html#" onclick="return oJaTranslate.translate(&#39;0&#39;, &#39;ro&#39;);" title="romanian">
+                <img src="./MS Office Gurus - Usando o clipboard com VBA_files/ro.png" class="ja-translate-flags" alt="[ro]" title="romanian">
+                romanian            </a>
+                        <a id="ja-lang-0-ru" class="total-col-4" href="http://www.msofficegurus.com.br/artigos/microsoft-office/excel/587-usando-o-clipboard-com-vba.html#" onclick="return oJaTranslate.translate(&#39;0&#39;, &#39;ru&#39;);" title="russian">
+                <img src="./MS Office Gurus - Usando o clipboard com VBA_files/ru.png" class="ja-translate-flags" alt="[ru]" title="russian">
+                russian            </a>
+                        <a id="ja-lang-0-sr" class="total-col-4" href="http://www.msofficegurus.com.br/artigos/microsoft-office/excel/587-usando-o-clipboard-com-vba.html#" onclick="return oJaTranslate.translate(&#39;0&#39;, &#39;sr&#39;);" title="serbian">
+                <img src="./MS Office Gurus - Usando o clipboard com VBA_files/sr.png" class="ja-translate-flags" alt="[sr]" title="serbian">
+                serbian            </a>
+                        <a id="ja-lang-0-sk" class="total-col-4" href="http://www.msofficegurus.com.br/artigos/microsoft-office/excel/587-usando-o-clipboard-com-vba.html#" onclick="return oJaTranslate.translate(&#39;0&#39;, &#39;sk&#39;);" title="slovak">
+                <img src="./MS Office Gurus - Usando o clipboard com VBA_files/sk.png" class="ja-translate-flags" alt="[sk]" title="slovak">
+                slovak            </a>
+                        <a id="ja-lang-0-sl" class="total-col-4" href="http://www.msofficegurus.com.br/artigos/microsoft-office/excel/587-usando-o-clipboard-com-vba.html#" onclick="return oJaTranslate.translate(&#39;0&#39;, &#39;sl&#39;);" title="slovenian">
+                <img src="./MS Office Gurus - Usando o clipboard com VBA_files/sl.png" class="ja-translate-flags" alt="[sl]" title="slovenian">
+                slovenian            </a>
+                        <a id="ja-lang-0-es" class="total-col-4" href="http://www.msofficegurus.com.br/artigos/microsoft-office/excel/587-usando-o-clipboard-com-vba.html#" onclick="return oJaTranslate.translate(&#39;0&#39;, &#39;es&#39;);" title="spanish">
+                <img src="./MS Office Gurus - Usando o clipboard com VBA_files/es.png" class="ja-translate-flags" alt="[es]" title="spanish">
+                spanish            </a>
+                        <a id="ja-lang-0-sw" class="total-col-4" href="http://www.msofficegurus.com.br/artigos/microsoft-office/excel/587-usando-o-clipboard-com-vba.html#" onclick="return oJaTranslate.translate(&#39;0&#39;, &#39;sw&#39;);" title="swahili">
+                <img src="./MS Office Gurus - Usando o clipboard com VBA_files/sw.png" class="ja-translate-flags" alt="[sw]" title="swahili">
+                swahili            </a>
+                        <a id="ja-lang-0-sv" class="total-col-4" href="http://www.msofficegurus.com.br/artigos/microsoft-office/excel/587-usando-o-clipboard-com-vba.html#" onclick="return oJaTranslate.translate(&#39;0&#39;, &#39;sv&#39;);" title="swedish">
+                <img src="./MS Office Gurus - Usando o clipboard com VBA_files/sv.png" class="ja-translate-flags" alt="[sv]" title="swedish">
+                swedish            </a>
+                        <a id="ja-lang-0-tl" class="total-col-4" href="http://www.msofficegurus.com.br/artigos/microsoft-office/excel/587-usando-o-clipboard-com-vba.html#" onclick="return oJaTranslate.translate(&#39;0&#39;, &#39;tl&#39;);" title="tagalog">
+                <img src="./MS Office Gurus - Usando o clipboard com VBA_files/tl.png" class="ja-translate-flags" alt="[tl]" title="tagalog">
+                tagalog            </a>
+                        <a id="ja-lang-0-th" class="total-col-4" href="http://www.msofficegurus.com.br/artigos/microsoft-office/excel/587-usando-o-clipboard-com-vba.html#" onclick="return oJaTranslate.translate(&#39;0&#39;, &#39;th&#39;);" title="thai">
+                <img src="./MS Office Gurus - Usando o clipboard com VBA_files/th.png" class="ja-translate-flags" alt="[th]" title="thai">
+                thai            </a>
+                        <a id="ja-lang-0-tr" class="total-col-4" href="http://www.msofficegurus.com.br/artigos/microsoft-office/excel/587-usando-o-clipboard-com-vba.html#" onclick="return oJaTranslate.translate(&#39;0&#39;, &#39;tr&#39;);" title="turkish">
+                <img src="./MS Office Gurus - Usando o clipboard com VBA_files/tr.png" class="ja-translate-flags" alt="[tr]" title="turkish">
+                turkish            </a>
+                        <a id="ja-lang-0-uk" class="total-col-4" href="http://www.msofficegurus.com.br/artigos/microsoft-office/excel/587-usando-o-clipboard-com-vba.html#" onclick="return oJaTranslate.translate(&#39;0&#39;, &#39;uk&#39;);" title="ukrainian">
+                <img src="./MS Office Gurus - Usando o clipboard com VBA_files/uk.png" class="ja-translate-flags" alt="[uk]" title="ukrainian">
+                ukrainian            </a>
+                        <a id="ja-lang-0-vi" class="total-col-4" href="http://www.msofficegurus.com.br/artigos/microsoft-office/excel/587-usando-o-clipboard-com-vba.html#" onclick="return oJaTranslate.translate(&#39;0&#39;, &#39;vi&#39;);" title="vietnamese">
+                <img src="./MS Office Gurus - Usando o clipboard com VBA_files/vi.png" class="ja-translate-flags" alt="[vi]" title="vietnamese">
+                vietnamese            </a>
+                        <a id="ja-lang-0-cy" class="total-col-4" href="http://www.msofficegurus.com.br/artigos/microsoft-office/excel/587-usando-o-clipboard-com-vba.html#" onclick="return oJaTranslate.translate(&#39;0&#39;, &#39;cy&#39;);" title="welsh">
+                <img src="./MS Office Gurus - Usando o clipboard com VBA_files/cy.png" class="ja-translate-flags" alt="[cy]" title="welsh">
+                welsh            </a>
+                        <a id="ja-lang-0-yi" class="total-col-4" href="http://www.msofficegurus.com.br/artigos/microsoft-office/excel/587-usando-o-clipboard-com-vba.html#" onclick="return oJaTranslate.translate(&#39;0&#39;, &#39;yi&#39;);" title="yiddish">
+                <img src="./MS Office Gurus - Usando o clipboard com VBA_files/yi.png" class="ja-translate-flags" alt="[yi]" title="yiddish">
+                yiddish            </a>
+                        </div>
+        </div>
+        
+        <div id="ja-translate-backup-0" class="ja-translate-backup">
+        <span class="ja-translate-title">Usando o clipboard com VBA</span>
+        
+    <p><span class="dropcap">D</span>entre os recursos disponíveis no VBA podemos encontrar uma biblioteca chamada DataObjects. Trata-se de um conjunto de objetos que, dentre outras funções, podem ser usados para manipular a area de transferencia do windows.</p>
+<p>Abaixo segue os métodos basicos da area de transferencia</p>
+<div class="code">
+<p>Dim dto As New DataObject</p>
+</div>
+<div class="code">
+<p>'Envia um conteudo de texto para area de transferencia<br>Sub EnviaParaAreaTransferencia(sText As String)<br>&nbsp;&nbsp;&nbsp; dto.SetText sText<br>&nbsp;&nbsp;&nbsp; dto.PutInClipboard<br>End Sub</p>
+</div>
+<div class="code">
+<p>'Captura conteudo da area de transferencia<br>Sub PegaConteudo()<br>&nbsp;&nbsp;&nbsp; dto.GetFromClipboard<br>&nbsp;&nbsp;&nbsp; EnviaParaAreaTransferencia "teste"<br>&nbsp;&nbsp;&nbsp; MsgBox dto.GetText<br>End Sub</p>
+</div>
+<div class="code">
+<p>'Limpa a area de transferencia<br>Sub LimpaAreaTransferencia()<br>&nbsp;&nbsp;&nbsp; dto.Clear<br>End Sub</p>
+</div>
+<p>ate a proxima...</p> 
+
+
+                        
+			
+
+
+	  
+
+			
+				 	   	
+			  <div id="jac-social-links_jabak">
+			    <ul>
+					<li><a class="addthis_button" href="http://addthis.com/bookmark.php?v=250&pub=xa-4af3e1272f178ef0"><img src="./MS Office Gurus - Usando o clipboard com VBA_files/lg-share-en.gif" width="125" height="16" alt="Bookmark and Share" style="border:0"></a><div id="_atssh_jabak" style="visibility: hidden; height: 1px; width: 1px; position: absolute; z-index: 100000;"><iframe id="_atssh368_jabak" title="AddThis utility frame" style="height: 1px; width: 1px; position: absolute; z-index: 100000; border: 0px; left: 0px; top: 0px;"></iframe></div></li><li><a class="a2a_dd" href="http://www.addtoany.com/share_save"><img src="./MS Office Gurus - Usando o clipboard com VBA_files/share_save_171_16.png" width="171" height="16" border="0" alt="Share/Bookmark"></a></li><li></li>			    </ul>
+			  </div>	  
+										
+            <div id="jac-wrapper_jabak" class="clearfix"></div>				
+            
+            
+
+
+
+    <!--end_of_jatranslate--></div>
+        <span id="ja-backup-title-0" class="ja-translate-title">Usando o clipboard com VBA</span>
+        
+        <div id="ja-translate-js-0" class="ja-translate-js">Fix IE Bug. Dont remove this line.<script type="text/javascript">
+//<![CDATA[	
+	jQuery(document).ready(function($){	
+		jac_init();		
+	});
+	
+	var JACommentConfig = {
+		jac_base_url 			: '/component/jacomment/',
+		siteurl 				: '/component/jacomment/?tmpl=component&amp;view=comments',
+		minLengthComment 		: '10',		
+		errorMinLength 			: 'Your comment is too short.',
+		maxLengthComment 		: '1000',
+		errorMaxLength 			: 'Your comment is too long.',			
+		isEnableAutoexpanding  : '1',
+		dateASC					: 'Latest comment on top',
+		dateDESC				: 'Latest comment in bottom',
+		votedASC				: 'Most rated on top',
+		strLogin				: 'Login now',
+		isEnableBBCode			: '1',
+		hdCurrentComment		: 0,
+		
+		contentoption			: 'com_content',
+		contentid				: '587',
+		commenttype				: '1',
+		jacomentUrl				: 'http://msofficegurus.com.br/artigos/microsoft-office/excel/587-usando-o-clipboard-com-vba.html',
+		contenttitle			: 'Usando o clipboard com VBA',
+				
+		hidInputComment			: 'You must input comment.',
+		hidInputWordInComment	: 'The words are too long you should add more spaces between them',
+		hidEndEditText			: 'Please exit spell check before submitting comment',
+		hidInputName			: 'You must input name',
+		hidInputEmail			: 'You must input email',
+		hidValidEmail			: 'Your email is invalid',
+		hidAgreeToAbide			: 'You must agree to abide by the website rules',
+		hidInputCaptcha			: 'You must input text of captcha',
+		textQuoting			    : 'Quoting',
+		textQuote			    : 'Quote',
+		textPosting			    : 'Posting',
+		textReply			    : 'Reply',
+		textCheckSpelling		: 'No writing errors',
+		mesExpandForm			: '(+) Click to Expand',
+		mesCollapseForm			: '(-) CLick to Collapse',
+		theme					: 'default',
+		txtCopiedDecode			: 'Copied dcode'							
+	};																	
+//]]>
+</script><script type="text/javascript" src="./MS Office Gurus - Usando o clipboard com VBA_files/jquery.autoresize.js"></script><script type="text/javascript" src="./MS Office Gurus - Usando o clipboard com VBA_files/dcodr.js"></script><script type="text/javascript" src="./MS Office Gurus - Usando o clipboard com VBA_files/dcode.js"></script><script language="javascript" type="text/javascript">
+	function open_youtube(id){jacCreatForm('open_youtube',id,400,200,0,0,'Embed a YouTube video',0,'Embed video');}
+</script><script type="text/javascript" src="./MS Office Gurus - Usando o clipboard com VBA_files/addthis_widget.js"></script><script type="text/javascript" src="./MS Office Gurus - Usando o clipboard com VBA_files/core153.js"></script><script type="text/javascript">a2a_linkname=document.title;a2a_linkurl=location.href;</script><script type="text/javascript" src="./MS Office Gurus - Usando o clipboard com VBA_files/page.js"></script><script type="text/javascript" src="./MS Office Gurus - Usando o clipboard com VBA_files/button.js"></script><script type="text/javascript">
+            //<![CDATA[
+            window.addEvent("load", function() {
+            	var url = window.location.hash;
+            	c_url = url.split('#');
+            	id = 0;
+            	tmp = 0;
+            	if(c_url.length >= 1){		
+            		for(i=1; i< c_url.length; i++){			
+            			if(c_url[i].indexOf("jacommentid:") >-1){				
+            				tmp = c_url[i].split(':')[1];				
+            				if(tmp != ""){									
+            					id = parseInt(tmp, 10);
+            				}
+            			}
+            		}
+            	}
+            	            	
+            	url = "?tmpl=component&option=com_jacomment&view=comments&contentoption=com_content&contentid=587&ran=102768802";
+            	if(id != 0){
+					url += "&currentCommentID=" + id;
+            	}
+				var req = new Request({
+					 method: 'get',
+                         url: url,                         
+                         onComplete: function(text) { 
+						$('jac-wrapper').innerHTML = $('jac-wrapper').innerHTML + text;																		 						
+						//$('jacommentid:'+id).getPosition();
+						moveBackground(id, 'http://www.msofficegurus.com.br/');																																						
+							jac_auto_expand_textarea();			 
+                        }						
+					}).send();					 							
+            	});			
+				//]]>						
+				</script></div>
+    
+		<script type="text/javascript">
+        window.addEvent('domready', function() {
+            oJaTranslate.saveOriginalContent('0');
+        });
+        </script>
+    </div>
+    </div>
+	</div>                            </div>
+                            
+                                                    </div>
+
+                                            </div>
+
+                    
+                </div>
+
+                                <div id="ja-content-mass-bottom" class="ja-mass ja-mass-bottom clearfix">
+                    	<div class="ja-moduletable moduletable whitebg adv  clearfix" id="Mod74">
+						<div class="ja-box-ct clearfix">
+		
+
+<div class="custom whitebg adv">
+	<script type="text/javascript"><!--
+google_ad_client = "ca-pub-5293584863859445";
+/* JB_AD_FORUM_POST_IMG */
+google_ad_slot = "0170482596";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript" src="./MS Office Gurus - Usando o clipboard com VBA_files/show_ads.js">
+</script><ins id="aswift_0_expand" style="display:inline-table;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent"><ins id="aswift_0_anchor" style="display:block;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent"><iframe width="728" height="90" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;"></iframe></ins></ins></div>
+		</div>
+    </div>
+	                </div>
+                            </div>
+            </div>
+            <!-- //CONTENT -->
+            
+        </div>
+                <!-- RIGHT COLUMN-->
+        <div id="ja-right" class="column sidebar" style="width:25%">
+
+            
+                        <div class="ja-colswrap clearfix ja-r1">
+                                <div id="ja-right1" class="ja-col  column" style="width:100%">
+                    	<div class="ja-moduletable moduletable adv   clearfix" id="Mod141">
+						<div class="ja-box-ct clearfix">
+		
+
+<div class="custom adv ">
+	<script type="text/javascript"><!--
+google_ad_client = "ca-pub-5293584863859445";
+/* MSOG_BR_IMAGE_AD */
+google_ad_slot = "5919108768";
+google_ad_width = 200;
+google_ad_height = 200;
+//-->
+</script>
+<script type="text/javascript" src="./MS Office Gurus - Usando o clipboard com VBA_files/show_ads.js">
+</script><ins id="aswift_1_expand" style="display:inline-table;border:none;height:200px;margin:0;padding:0;position:relative;visibility:visible;width:200px;background-color:transparent"><ins id="aswift_1_anchor" style="display:block;border:none;height:200px;margin:0;padding:0;position:relative;visibility:visible;width:200px;background-color:transparent"><iframe width="200" height="200" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_1" name="aswift_1" style="left:0;position:absolute;top:0;"></iframe></ins></ins></div>
+		</div>
+    </div>
+		<div class="ja-moduletable moduletable  clearfix" id="Mod169">
+						<h3><span>pesquisa</span></h3>
+				<div class="ja-box-ct clearfix">
+		
+<div class="poll" style="border:none; padding:1px;">
+
+    <h4>O que você está achando do Windows 8?</h4>
+
+<div id="polldiv_2">
+
+			
+			<div>
+				<div style="padding:3px;">Não estou usando - 60.7%</div>
+				<div style="height:10px; padding:1px; border:1px solid #cccccc;">
+					<div style="width: 60.7%; height:10px;background:#ff0000;"></div>
+				</div>
+			</div>
+			
+			<div>
+				<div style="padding:3px;">É o MELHOR Windows já lançado pela Microsoft - 35.7%</div>
+				<div style="height:10px; padding:1px; border:1px solid #cccccc;">
+					<div style="width: 35.7%; height:10px;background:#ffff99;"></div>
+				</div>
+			</div>
+			
+			<div>
+				<div style="padding:3px;">É o PIOR Windows já lançado pela Microsoft - 0%</div>
+				<div style="height:10px; padding:1px; border:1px solid #cccccc;">
+					<div style="width: 2%; height:10px;background:#000080;"></div>
+				</div>
+			</div>
+			
+			<div>
+				<div style="padding:3px;">A interface é BOA, mas a velocidade é RUIM - 0%</div>
+				<div style="height:10px; padding:1px; border:1px solid #cccccc;">
+					<div style="width: 2%; height:10px;background:#333333;"></div>
+				</div>
+			</div>
+			
+			<div>
+				<div style="padding:3px;">A interface é RUIM, mas a velocidade é BOA - 0%</div>
+				<div style="height:10px; padding:1px; border:1px solid #cccccc;">
+					<div style="width: 2%; height:10px;background:#ff6600;"></div>
+				</div>
+			</div>
+			
+			<div>
+				<div style="padding:3px;">A interface é BOA e a velocidade TAMBÉM - 0%</div>
+				<div style="height:10px; padding:1px; border:1px solid #cccccc;">
+					<div style="width: 2%; height:10px;background:#ff00ff;"></div>
+				</div>
+			</div>
+			
+			<div>
+				<div style="padding:3px;">A interface é RUIM e a velocidade TAMBÉM - 3.6%</div>
+				<div style="height:10px; padding:1px; border:1px solid #cccccc;">
+					<div style="width: 3.6%; height:10px;background:#ff99cc;"></div>
+				</div>
+			</div>
+<br><b>Total votes</b>: 28<div id="mod_poll_messages_2" style="margin:5px;">The voting for this poll has ended on: 31 Ago 2012 - 00:00 </div>
+<!-- End of #polldiv -->
+</div>
+<div id="poll_links" style="padding-top:5px; ">
+
+		<a class="poll_result_link" href="http://www.msofficegurus.com.br/component/acepolls/poll/2-o-que-voce-esta-achando-do-windows-8.html">View details</a><br>
+		
+		<a class="poll_result_link" target="_blank" href="http://www.msofficegurus.com.br/artigos/outros-aplicativos/windows/1381-windows-8-demo-previo-ao-consumidor.html">
+		read the related article &gt;&gt;</a>
+	
+</div>
+</div>		</div>
+    </div>
+		<div class="ja-moduletable moduletable_badge badge-hot  clearfix" id="Mod170">
+		<span class="badge">&nbsp;</span>
+				<h3><span>Atividade do fórum</span></h3>
+				<div class="ja-box-ct clearfix">
+		ERROR: mod_kunenalatest: Kunena 1.6.3 (or later) is not installed on your system!		</div>
+    </div>
+	                </div>
+                
+                            </div>
+                                </div>
+        <!-- //RIGHT COLUMN-->
+                            </div>
+                            </div>
+                </div>
+        <!-- //MAIN CONTAINER -->
+
+                <div id="ja-botsl1" class="wrap ">
+                        <div class="wrap-inner1">
+                         <div class="main">
+                           <div class="main-inner1 clearfix">
+                <!-- SPOTLIGHT -->
+<div class="ja-box-wrap column ja-box-full" style="width: 100%;">
+    	<div class="ja-moduletable moduletable_menu  clearfix" id="Mod151">
+						<div class="ja-box-ct clearfix">
+		
+<ul class="menu">
+<li class="item-435"><a href="http://www.msofficegurus.com.br/">Home</a></li><li class="item-698"><a href="http://loja.msofficegurus.com/" target="_blank">Loja Virtual</a></li><li class="item-661 active parent"><a href="http://www.msofficegurus.com.br/artigos.html">Artigos</a></li><li class="item-602 parent"><a href="http://www.msofficegurus.com.br/noticias.html">Notícias</a></li><li class="item-588"><a href="http://www.epirus.com.br/forum-epirus.html" target="_blank">MSOG Fórum</a></li></ul>
+		</div>
+    </div>
+		<div class="ja-moduletable moduletable_search   clearfix" id="Mod70">
+						<div class="ja-box-ct clearfix">
+		<form action="http://www.msofficegurus.com.br/artigos/microsoft-office/excel.html" method="post">
+	<div class="search_search ">
+		<label for="mod-search-searchword70">Pesquisar...</label><input name="searchword" id="mod-search-searchword70" maxlength="20" class="inputbox_search " type="text" size="20" value="Pesquisar..." onblur="if (this.value==&#39;&#39;) this.value=&#39;Pesquisar...&#39;;" onfocus="if (this.value==&#39;Pesquisar...&#39;) this.value=&#39;&#39;;"><input type="image" value="Pesquisar" class="button_search " src="./MS Office Gurus - Usando o clipboard com VBA_files/searchButton.gif" onclick="this.form.searchword.focus();">	<input type="hidden" name="task" value="search">
+	<input type="hidden" name="option" value="com_search">
+	<input type="hidden" name="Itemid" value="670">
+	</div>
+</form>
+		</div>
+    </div>
+	
+</div>
+<!-- SPOTLIGHT -->
+
+<script type="text/javascript">
+    window.addEvent('load', function (){ 
+		//equalHeight ('#ja-botsl1 .ja-box-wrap'); 
+		equalHeightEx('#ja-botsl1 .ja-box-wrap', '.ja-box');
+	});
+</script>                </div>
+                            </div>
+                            </div>
+                            </div>
+                        <div id="ja-footer" class="wrap ">
+                   <div class="main clearfix">
+           <div class="ja-copyright">
+    <small>Copyright © 2014 MS Office Gurus. Todos os direitos reservados.<br> Designed by <a href="http://www.joomlart.com/" title="Visit Joomlart.com!">JoomlArt.com</a>.</small>
+<small><a href="http://www.joomla.org/">Joomla!</a> é um software livre com <a href="http://www.gnu.org/licenses/gpl-2.0.html">licença GNU/GPL v2.0</a></small>
+</div>
+
+
+<ul class="ja-links">
+		<li class="top"><a href="http://www.msofficegurus.com.br/artigos/microsoft-office/excel/587-usando-o-clipboard-com-vba.html#Top" title="Back to Top">Topo</a></li>
+</ul>
+
+<div id="ja-poweredby" class="t3-logo t3-logo-light">
+    <a href="http://t3.joomlart.com/" title="Powered By T3 Framework" target="_blank">Powered By T3 Framework</a>
+</div>            </div>
+                        </div>
+            
+</div>
+
+
+
+	<div id="ja-translate-popup" style="display:none;"></div>
+
+
+
+<div id="sbox-overlay" aria-hidden="true" tabindex="-1" style="z-index: 65555; opacity: 0;"></div><div id="sbox-window" role="dialog" aria-hidden="true" class="shadow" style="z-index: 65557;"><div id="sbox-content" style="opacity: 0;"></div><a id="sbox-btn-close" href="http://www.msofficegurus.com.br/artigos/microsoft-office/excel/587-usando-o-clipboard-com-vba.html#" role="button" aria-controls="sbox-window"></a></div><div style="position: static;"><div class="a2a_overlay" id="a2apage_overlay"></div><div class="a2a_menu a2a_full" id="a2apage_full"><div class="a2a_full_header"><div id="a2apage_find_container" class="a2a_menu_find_container"><input id="a2apage_find" class="a2a_menu_find" type="text" onclick="a2a.focus_find()" onkeyup="a2a.do_find()" autocomplete="off" title="Encontre qualquer serviço para adicionar"><span id="a2apage_find_icon" class="a2a_i_find" onclick="a2a.focus_find()"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="16px" height="16px" viewBox="8 8 16 16"><path fill="#0166FF" d="M21.636,20.553l-3.291-3.291c0.536-0.753,0.858-1.667,0.858-2.661c0-2.542-2.061-4.602-4.602-4.602C12.06,9.999,10,12.059,10,14.601c0,2.541,2.06,4.602,4.602,4.602c0.994,0,1.907-0.32,2.659-0.856l3.291,3.29c0.401,0.402,0.968,0.486,1.268,0.184C22.119,21.521,22.036,20.953,21.636,20.553z M14.602,17.9c-1.823,0-3.3-1.477-3.3-3.3s1.477-3.3,3.3-3.3s3.3,1.477,3.3,3.3S16.424,17.9,14.602,17.9z"></path></svg></span></div></div><div class="a2a_full_services" id="a2apage_full_services"><a rel="nofollow" class="a2a_i" href="http://www.msofficegurus.com.br/" target="_blank"><span style="background-image: url(http://static.dihitt.com.br/banners/dihitt_16x16_01.jpg);">diHITT</span></a><a rel="nofollow" class="a2a_i" href="http://www.msofficegurus.com.br/" target="_blank"><span class="a2a_i_facebook">Facebook</span></a><a rel="nofollow" class="a2a_i" href="http://www.msofficegurus.com.br/" target="_blank"><span class="a2a_i_twitter">Twitter</span></a><a rel="nofollow" class="a2a_i" href="http://www.msofficegurus.com.br/" target="_blank"><span class="a2a_i_google_plus">Google+</span></a><a rel="nofollow" class="a2a_i" href="http://www.msofficegurus.com.br/" target="_blank"><span class="a2a_i_pinterest">Pinterest</span></a><a rel="nofollow" class="a2a_i" href="http://www.msofficegurus.com.br/" target="_blank"><span class="a2a_i_linkedin">LinkedIn</span></a><a rel="nofollow" class="a2a_i" href="http://www.msofficegurus.com.br/" target="_blank"><span class="a2a_i_email">Email</span></a><a rel="nofollow" class="a2a_i" href="http://www.msofficegurus.com.br/" target="_blank"><span class="a2a_i_stumbleupon">StumbleUpon</span></a><a rel="nofollow" class="a2a_i" href="http://www.msofficegurus.com.br/" target="_blank"><span class="a2a_i_reddit">Reddit</span></a><a rel="nofollow" class="a2a_i" href="http://www.msofficegurus.com.br/" target="_blank"><span class="a2a_i_wordpress">WordPress</span></a><a rel="nofollow" class="a2a_i" href="http://www.msofficegurus.com.br/" target="_blank"><span class="a2a_i_tumblr">Tumblr</span></a><a rel="nofollow" class="a2a_i" href="http://www.msofficegurus.com.br/" target="_blank"><span class="a2a_i_delicious">Delicious</span></a><a rel="nofollow" class="a2a_i" href="http://www.msofficegurus.com.br/" target="_blank"><span class="a2a_i_digg">Digg</span></a><a rel="nofollow" class="a2a_i" href="http://www.msofficegurus.com.br/" target="_blank"><span class="a2a_i_google">Google Bookmarks</span></a><a rel="nofollow" class="a2a_i" href="http://www.msofficegurus.com.br/" target="_blank"><span class="a2a_i_yahoo">Yahoo Bookmarks</span></a><a rel="nofollow" class="a2a_i" href="http://www.msofficegurus.com.br/" target="_blank"><span class="a2a_i_whatsapp">WhatsApp</span></a><a rel="nofollow" class="a2a_i" href="http://www.msofficegurus.com.br/" target="_blank"><span class="a2a_i_evernote">Evernote</span></a><a rel="nofollow" class="a2a_i" href="http://www.msofficegurus.com.br/" target="_blank"><span class="a2a_i_line">Line</span></a><a rel="nofollow" class="a2a_i" href="http://www.msofficegurus.com.br/" target="_blank"><span class="a2a_i_wanelo">Wanelo</span></a><a rel="nofollow" class="a2a_i" href="http://www.msofficegurus.com.br/" target="_blank"><span class="a2a_i_app_net">App.net</span></a><a rel="nofollow" class="a2a_i" href="http://www.msofficegurus.com.br/" target="_blank"><span class="a2a_i_buffer">Buffer</span></a><a rel="nofollow" class="a2a_i" href="http://www.msofficegurus.com.br/" target="_blank"><span class="a2a_i_xing">XING</span></a><a rel="nofollow" class="a2a_i" href="http://www.msofficegurus.com.br/" target="_blank"><span class="a2a_i_bebo">Bebo</span></a><a rel="nofollow" class="a2a_i" href="http://www.msofficegurus.com.br/" target="_blank"><span class="a2a_i_orkut">Orkut</span></a><a rel="nofollow" class="a2a_i" href="http://www.msofficegurus.com.br/" target="_blank"><span class="a2a_i_mixi">Mixi</span></a><a rel="nofollow" class="a2a_i" href="http://www.msofficegurus.com.br/" target="_blank"><span class="a2a_i_vk">VK</span></a><a rel="nofollow" class="a2a_i" href="http://www.msofficegurus.com.br/" target="_blank"><span class="a2a_i_pocket">Pocket</span></a><a rel="nofollow" class="a2a_i" href="http://www.msofficegurus.com.br/" target="_blank"><span class="a2a_i_gmail">Google Gmail</span></a><a rel="nofollow" class="a2a_i" href="http://www.msofficegurus.com.br/" target="_blank"><span class="a2a_i_mendeley">Mendeley</span></a><a rel="nofollow" class="a2a_i" href="http://www.msofficegurus.com.br/" target="_blank"><span class="a2a_i_yahoo">Yahoo Mail</span></a><a rel="nofollow" class="a2a_i" href="http://www.msofficegurus.com.br/" target="_blank"><span class="a2a_i_pinboard">Pinboard</span></a><a rel="nofollow" class="a2a_i" href="http://www.msofficegurus.com.br/" target="_blank"><span class="a2a_i_outlook_com">Outlook.com</span></a><a rel="nofollow" class="a2a_i" href="http://www.msofficegurus.com.br/" target="_blank"><span class="a2a_i_box">Box.net</span></a><a rel="nofollow" class="a2a_i" href="http://www.msofficegurus.com.br/" target="_blank"><span class="a2a_i_aol">AOL Mail</span></a><a rel="nofollow" class="a2a_i" href="http://www.msofficegurus.com.br/" target="_blank"><span class="a2a_i_instapaper">Instapaper</span></a><a rel="nofollow" class="a2a_i" href="http://www.msofficegurus.com.br/" target="_blank"><span class="a2a_i_y18">Hacker News</span></a><a rel="nofollow" class="a2a_i" href="http://www.msofficegurus.com.br/" target="_blank"><span class="a2a_i_springpad">Springpad</span></a><a rel="nofollow" class="a2a_i" href="http://www.msofficegurus.com.br/" target="_blank"><span class="a2a_i_myspace">MySpace</span></a><a rel="nofollow" class="a2a_i" href="http://www.msofficegurus.com.br/" target="_blank"><span class="a2a_i_flipboard">Flipboard</span></a><a rel="nofollow" class="a2a_i" href="http://www.msofficegurus.com.br/" target="_blank"><span class="a2a_i_arto">Arto</span></a><a rel="nofollow" class="a2a_i" href="http://www.msofficegurus.com.br/" target="_blank"><span class="a2a_i_aim">AIM</span></a><a rel="nofollow" class="a2a_i" href="http://www.msofficegurus.com.br/" target="_blank"><span class="a2a_i_yim">Yahoo Messenger</span></a><a rel="nofollow" class="a2a_i" href="http://www.msofficegurus.com.br/" target="_blank"><span class="a2a_i_mail_ru">Mail.Ru</span></a><a rel="nofollow" class="a2a_i" href="http://www.msofficegurus.com.br/" target="_blank"><span class="a2a_i_plurk">Plurk</span></a><a rel="nofollow" class="a2a_i" href="http://www.msofficegurus.com.br/" target="_blank"><span class="a2a_i_diaspora">Diaspora</span></a><a rel="nofollow" class="a2a_i" href="http://www.msofficegurus.com.br/" target="_blank"><span class="a2a_i_fark">Fark</span></a><a rel="nofollow" class="a2a_i" href="http://www.msofficegurus.com.br/" target="_blank"><span class="a2a_i_blogger">Blogger Post</span></a><a rel="nofollow" class="a2a_i" href="http://www.msofficegurus.com.br/" target="_blank"><span class="a2a_i_typepad">TypePad Post</span></a><a rel="nofollow" class="a2a_i" href="http://www.msofficegurus.com.br/" target="_blank"><span class="a2a_i_kindle">Kindle It</span></a><a rel="nofollow" class="a2a_i" href="http://www.msofficegurus.com.br/" target="_blank"><span class="a2a_i_sina_weibo">Sina Weibo</span></a><a rel="nofollow" class="a2a_i" href="http://www.msofficegurus.com.br/" target="_blank"><span class="a2a_i_baidu">Baidu</span></a><a rel="nofollow" class="a2a_i" href="http://www.msofficegurus.com.br/" target="_blank"><span class="a2a_i_netlog">Netlog</span></a><a rel="nofollow" class="a2a_i" href="http://www.msofficegurus.com.br/" target="_blank"><span class="a2a_i_citeulike">CiteULike</span></a><a rel="nofollow" class="a2a_i" href="http://www.msofficegurus.com.br/" target="_blank"><span class="a2a_i_jumptags">Jumptags</span></a><a rel="nofollow" class="a2a_i" href="http://www.msofficegurus.com.br/" target="_blank"><span class="a2a_i_funp">FunP</span></a><a rel="nofollow" class="a2a_i" href="http://www.msofficegurus.com.br/" target="_blank"><span class="a2a_i_phonefavs">PhoneFavs</span></a><a rel="nofollow" class="a2a_i" href="http://www.msofficegurus.com.br/" target="_blank"><span class="a2a_i_xerpi">Xerpi</span></a><a rel="nofollow" class="a2a_i" href="http://www.msofficegurus.com.br/" target="_blank"><span class="a2a_i_netvouz">Netvouz</span></a><a rel="nofollow" class="a2a_i" href="http://www.msofficegurus.com.br/" target="_blank"><span class="a2a_i_diigo">Diigo</span></a><a rel="nofollow" class="a2a_i" href="http://www.msofficegurus.com.br/" target="_blank"><span class="a2a_i_bibsonomy">BibSonomy</span></a><a rel="nofollow" class="a2a_i" href="http://www.msofficegurus.com.br/" target="_blank"><span class="a2a_i_blogmarks">BlogMarks</span></a><a rel="nofollow" class="a2a_i" href="http://www.msofficegurus.com.br/" target="_blank"><span class="a2a_i_startaid">StartAid</span></a><a rel="nofollow" class="a2a_i" href="http://www.msofficegurus.com.br/" target="_blank"><span class="a2a_i_khabbr">Khabbr</span></a><a rel="nofollow" class="a2a_i" href="http://www.msofficegurus.com.br/" target="_blank"><span class="a2a_i_meneame">Meneame</span></a><a rel="nofollow" class="a2a_i" href="http://www.msofficegurus.com.br/" target="_blank"><span class="a2a_i_yoolink">Yoolink</span></a><a rel="nofollow" class="a2a_i" href="http://www.msofficegurus.com.br/" target="_blank"><span class="a2a_i_bookmarks_fr">Bookmarks.fr</span></a><a rel="nofollow" class="a2a_i" href="http://www.msofficegurus.com.br/" target="_blank"><span class="a2a_i_technotizie">Technotizie</span></a><a rel="nofollow" class="a2a_i" href="http://www.msofficegurus.com.br/" target="_blank"><span class="a2a_i_newsvine">NewsVine</span></a><a rel="nofollow" class="a2a_i" href="http://www.msofficegurus.com.br/" target="_blank"><span class="a2a_i_friendfeed">FriendFeed</span></a><a rel="nofollow" class="a2a_i" href="http://www.msofficegurus.com.br/" target="_blank"><span class="a2a_i_protopage">Protopage Bookmarks</span></a><a rel="nofollow" class="a2a_i" href="http://www.msofficegurus.com.br/" target="_blank"><span class="a2a_i_blinklist">Blinklist</span></a><a rel="nofollow" class="a2a_i" href="http://www.msofficegurus.com.br/" target="_blank"><span class="a2a_i_webnews">Webnews</span></a><a rel="nofollow" class="a2a_i" href="http://www.msofficegurus.com.br/" target="_blank"><span class="a2a_i_segnalo">Segnalo</span></a><a rel="nofollow" class="a2a_i" href="http://www.msofficegurus.com.br/" target="_blank"><span class="a2a_i_pusha">Pusha</span></a><a rel="nofollow" class="a2a_i" href="http://www.msofficegurus.com.br/" target="_blank"><span class="a2a_i_youmob">YouMob</span></a><a rel="nofollow" class="a2a_i" href="http://www.msofficegurus.com.br/" target="_blank"><span class="a2a_i_slashdot">Slashdot</span></a><a rel="nofollow" class="a2a_i" href="http://www.msofficegurus.com.br/" target="_blank"><span class="a2a_i_allvoices">Allvoices</span></a><a rel="nofollow" class="a2a_i" href="http://www.msofficegurus.com.br/" target="_blank"><span class="a2a_i_jamespot">Jamespot</span></a><a rel="nofollow" class="a2a_i" href="http://www.msofficegurus.com.br/" target="_blank"><span class="a2a_i_twiddla">Twiddla</span></a><a rel="nofollow" class="a2a_i" href="http://www.msofficegurus.com.br/" target="_blank"><span class="a2a_i_linkagogo">LinkaGoGo</span></a><a rel="nofollow" class="a2a_i" href="http://www.msofficegurus.com.br/" target="_blank"><span class="a2a_i_nowpublic">NowPublic</span></a><a rel="nofollow" class="a2a_i" href="http://www.msofficegurus.com.br/" target="_blank"><span class="a2a_i_livejournal">LiveJournal</span></a><a rel="nofollow" class="a2a_i" href="http://www.msofficegurus.com.br/" target="_blank"><span class="a2a_i_linkatopia">Linkatopia</span></a><a rel="nofollow" class="a2a_i" href="http://www.msofficegurus.com.br/" target="_blank"><span class="a2a_i_buddymarks">BuddyMarks</span></a><a rel="nofollow" class="a2a_i" href="http://www.msofficegurus.com.br/" target="_blank"><span class="a2a_i_viadeo">Viadeo</span></a><a rel="nofollow" class="a2a_i" href="http://www.msofficegurus.com.br/" target="_blank"><span class="a2a_i_wists">Wists</span></a><a rel="nofollow" class="a2a_i" href="http://www.msofficegurus.com.br/" target="_blank"><span class="a2a_i_sitejot">SiteJot</span></a><a rel="nofollow" class="a2a_i" href="http://www.msofficegurus.com.br/" target="_blank"><span class="a2a_i_dzone">DZone</span></a><a rel="nofollow" class="a2a_i" href="http://www.msofficegurus.com.br/" target="_blank"><span class="a2a_i_care2">Care2 News</span></a><a rel="nofollow" class="a2a_i" href="http://www.msofficegurus.com.br/" target="_blank"><span class="a2a_i_bitty">Bitty Browser</span></a><a rel="nofollow" class="a2a_i" href="http://www.msofficegurus.com.br/" target="_blank"><span class="a2a_i_odnoklassniki">Odnoklassniki</span></a><a rel="nofollow" class="a2a_i" href="http://www.msofficegurus.com.br/" target="_blank"><span class="a2a_i_symbaloo">Symbaloo Feeds</span></a><a rel="nofollow" class="a2a_i" href="http://www.msofficegurus.com.br/" target="_blank"><span class="a2a_i_folkd">Folkd</span></a><a rel="nofollow" class="a2a_i" href="http://www.msofficegurus.com.br/" target="_blank"><span class="a2a_i_newstrust">NewsTrust</span></a><a rel="nofollow" class="a2a_i" href="http://www.msofficegurus.com.br/" target="_blank"><span class="a2a_i_amazon">Amazon Wish List</span></a><a rel="nofollow" class="a2a_i" href="http://www.msofficegurus.com.br/" target="_blank"><span class="a2a_i_printfriendly">PrintFriendly</span></a><a rel="nofollow" class="a2a_i" href="http://www.msofficegurus.com.br/" target="_blank"><span class="a2a_i_tuenti">Tuenti</span></a><a rel="nofollow" class="a2a_i" href="http://www.msofficegurus.com.br/" target="_blank"><span class="a2a_i_rediff">Rediff MyPage</span></a><i class="a2a_i"></i><i class="a2a_i"></i></div><div class="a2a_full_footer"><a href="http://www.addtoany.com/" title="Share Buttons" target="_blank"><span class="a2a_i_a2a_sm">AddToAny</span></a></div></div><div id="a2apage_dropdown" class="a2a_menu a2a_mini" onmouseover="a2a.onMouseOver_stay()" onmouseout="a2a.onMouseOut_delay()" style="display:none"><div id="a2apage_title_container" class="a2a_menu_title_container" style="display:none"><input id="a2apage_title" class="a2a_menu_title"></div><div class="a2a_mini_services" id="a2apage_mini_services"><a rel="nofollow" class="a2a_i" href="http://www.msofficegurus.com.br/" target="_blank"><span style="background-image: url(http://static.dihitt.com.br/banners/dihitt_16x16_01.jpg);">diHITT</span></a><a rel="nofollow" class="a2a_i" href="http://www.msofficegurus.com.br/" target="_blank"><span class="a2a_i_facebook">Facebook</span></a><a rel="nofollow" class="a2a_i" href="http://www.msofficegurus.com.br/" target="_blank"><span class="a2a_i_twitter">Twitter</span></a><a rel="nofollow" class="a2a_i" href="http://www.msofficegurus.com.br/" target="_blank"><span class="a2a_i_google_plus">Google+</span></a><a rel="nofollow" class="a2a_i" href="http://www.msofficegurus.com.br/" target="_blank"><span class="a2a_i_pinterest">Pinterest</span></a><a rel="nofollow" class="a2a_i" href="http://www.msofficegurus.com.br/" target="_blank"><span class="a2a_i_linkedin">LinkedIn</span></a><a rel="nofollow" class="a2a_i" href="http://www.msofficegurus.com.br/" target="_blank"><span class="a2a_i_email">Email</span></a><a rel="nofollow" class="a2a_i" href="http://www.msofficegurus.com.br/" target="_blank"><span class="a2a_i_stumbleupon">StumbleUpon</span></a><a rel="nofollow" class="a2a_i" href="http://www.msofficegurus.com.br/" target="_blank"><span class="a2a_i_reddit">Reddit</span></a><a rel="nofollow" class="a2a_i" href="http://www.msofficegurus.com.br/" target="_blank"><span class="a2a_i_wordpress">WordPress</span></a></div><div id="a2apage_cols_container" class="a2a_cols_container"><div class="a2a_col1" id="a2apage_col1"></div><div id="a2apage_2_col1" style="display:none"><a rel="nofollow" class="a2a_i" href="http://www.msofficegurus.com.br/" target="_blank"><span class="a2a_i_gmail">Google Gmail</span></a><a rel="nofollow" class="a2a_i" href="http://www.msofficegurus.com.br/" target="_blank"><span class="a2a_i_yahoo">Yahoo Mail</span></a><a rel="nofollow" class="a2a_i" href="http://www.msofficegurus.com.br/" target="_blank"><span class="a2a_i_outlook_com">Outlook.com</span></a><a rel="nofollow" class="a2a_i" href="http://www.msofficegurus.com.br/" target="_blank"><span class="a2a_i_aol">AOL Mail</span></a><a rel="nofollow" class="a2a_i a2a_emailer" href="http://www.msofficegurus.com.br/" target="_blank" id="a2apage_any_email"><span class="a2a_i_email">Any email</span></a><a rel="nofollow" class="a2a_i a2a_emailer a2a_email_client" href="http://www.msofficegurus.com.br/" target="" id="a2apage_email_client"><span class="a2a_i_email">Email app</span></a></div><div class="a2a_clear"></div></div><div class="a2apage_wide a2a_wide"><a href="" id="a2apage_show_more_less" class="a2a_menu_show_more_less a2a_more" onmouseover="img=this.firstChild;if(a2a.c.color_arrow_hover==&#39;fff&#39;){if(img.className.indexOf(&#39;_wt&#39;)==-1)img.className+=&#39;_wt&#39;}else img.className=img.className.replace(/_wt/,&#39;&#39;)" onmouseout="img=this.firstChild;if(a2a.c.color_arrow==&#39;fff&#39;){if(img.className.indexOf(&#39;_wt&#39;)==-1)img.className+=&#39;_wt&#39;}else img.className=img.className.replace(/_wt/,&#39;&#39;)" title="Mostrar todos"><span class="a2a_i_a2a">More…</span></a></div></div><div style="height: 1px; width: 1px; position: absolute; z-index: 100000; top: 0px; visibility: hidden;"><iframe id="a2apage_sm_ifr" height="1" width="1" title="AddToAny Utility Frame" transparency="true" allowtransparency="true" frameborder="0" src="./MS Office Gurus - Usando o clipboard com VBA_files/sm11.htm" style="height: 1px; width: 1px; border: 0px; left: 0px; top: 0px; position: absolute; z-index: 100000; display: none;"></iframe></div></div></body></html>

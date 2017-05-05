@@ -1,0 +1,649 @@
+
+<!-- saved from url=(0046)http://www.fontstuff.com/vba/vbatut07_2003.htm -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+<meta name="GENERATOR" content="Microsoft FrontPage 6.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<link rel="stylesheet" type="text/css" href="./VBA Tips  A Pop-up Calendar for Excel_files/fontstuffie.css">
+<title>VBA Tips: A Pop-up Calendar for Excel</title><script language="javascript" type="text/javascript">
+<!--
+	function popup(pageURL){
+		newwindow=window.open(pageURL,'newWin','toolbar=no,width=600,height=500,resizable=yes,scrollbars=yes')
+	}
+//-->
+</script></head>
+
+<body>
+<a name="top"></a>
+<table border="1" cellpadding="0" cellspacing="0" style="border-width:0; border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber1" height="91">
+  <tbody><tr>
+    <td width="22%" style="border-left-style: none; border-left-width: medium; border-right-style: none; border-right-width: medium; border-top-style: none; border-top-width: medium; border-bottom-style: none" height="1" valign="bottom">
+    &nbsp;</td>
+    <td width="78%" style="border-left-style: none; border-left-width: medium; border-right-style: none; border-right-width: medium; border-top-style: none; border-top-width: medium" height="1" colspan="2" align="right" valign="bottom">
+    <img border="0" src="./VBA Tips  A Pop-up Calendar for Excel_files/bannervba_sm.gif" width="130" height="36"></td>
+  </tr>
+  <tr>
+    <td width="22%" style="border-left-style: none; border-left-width: medium; border-right-style: none; border-right-width: medium; border-top-style: solid; border-top-width: 2; border-bottom-style: none; border-bottom-width: medium" height="1">
+    <img border="0" src="./VBA Tips  A Pop-up Calendar for Excel_files/clearpixel.gif" width="2" height="2"></td>
+    <td width="44%" style="border-left-style: none; border-left-width: medium; border-right-style: none; border-right-width: medium; border-top-style: solid; border-top-width: 2; border-bottom-style: none; border-bottom-width: medium" height="1"></td>
+    <td width="34%" style="border-left-style: none; border-left-width: medium; border-right-style: none; border-right-width: medium; border-top-style: solid; border-top-width: 2; border-bottom-style: none; border-bottom-width: medium" height="1"></td>
+  </tr>
+  <tr>
+    <td width="100%" style="border-style: none; border-width: medium" height="24" colspan="3" bgcolor="#000000">
+    <font color="#FFFFFF"><b>|</b> <b>&nbsp; <a href="http://www.fontstuff.com/index.html">
+    <font color="#FFFFFF">Home</font></a>&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;
+    <a href="http://www.fontstuff.com/excel/index.htm"><font color="#FFFFFF">Excel</font></a>&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;
+    <a href="http://www.fontstuff.com/access/index.htm"><font color="#FFFFFF">Access</font></a>&nbsp;&nbsp; |&nbsp;&nbsp;
+    <a href="http://www.fontstuff.com/word/index.htm"><font color="FFFFFF">Word</font></a>&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;<a href="http://www.fontstuff.com/outlook/index.htm"><font color="#FFFFFF">Outlook</font></a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;
+    <a href="http://www.fontstuff.com/frontpage/index.htm"><font color="#FFFFFF">FrontPage</font></a>&nbsp;&nbsp; 
+    |&nbsp;&nbsp; <a href="http://www.fontstuff.com/vba/index.htm"><font color="#FFFFFF">VBA</font></a>&nbsp;&nbsp; |&nbsp;&nbsp;
+    <a href="http://www.fontstuff.com/downloads/index.htm"><font color="#FFFFFF">Downloads</font></a>&nbsp;&nbsp; 
+    |&nbsp;&nbsp;&nbsp;<a href="http://www.fontstuff.com/siteindex.htm"><font color="#FFFFFF">Index</font></a>&nbsp;&nbsp;&nbsp;|</b></font></td>
+  </tr>
+  <tr>
+    <td width="22%" style="border-style: none; border-width: medium" height="15"></td>
+    <td width="44%" style="border-style: none; border-width: medium" height="15"></td>
+    <td width="34%" style="border-style: none; border-width: medium" height="15"></td>
+  </tr>
+  <tr>
+    <td width="22%" style="border-style: none; border-width: medium" height="15" valign="top">
+      <table border="1" width="100%" height="91" cellspacing="0" bordercolorlight="#000000" bordercolordark="#000000" style="border-collapse: collapse" bordercolor="#111111" cellpadding="0">
+        <tbody><tr>
+          <td width="100%" align="center" height="24" bgcolor="#000000" bordercolor="#000000">
+          <font color="#FFFFFF"><b>A Pop-up Calendar</b></font></td>
+        </tr>
+        <tr>
+          <td width="100%" height="11" bordercolor="#000000" bordercolordark="#000000">
+            <ul>
+              <li><a href="http://www.fontstuff.com/vba/index.htm">VBA Index</a></li>
+              <li><a href="http://www.fontstuff.com/vba/vbatut07pfv.htm">Printer Friendly Version</a></li>
+              <li><a href="http://www.fontstuff.com/bookshelf/index.htm#vba">Excel VBA Books</a></li>
+              <li>Related Topics:<br>
+              <a href="http://www.fontstuff.com/vba/vbatut03.htm">Build an Excel Add-In</a>.<br>
+              <a href="http://www.fontstuff.com/access/acctut09.htm">A Pop-up Calendar for your Access 
+              Forms</a>.</li>
+              <li><a href="http://www.fontstuff.com/vba/vbatut07_2003.htm#download">Download the files</a></li>
+            </ul>
+          </td>
+        </tr>
+      </tbody></table>
+      <img border="0" src="./VBA Tips  A Pop-up Calendar for Excel_files/clearpixel.gif" width="175" height="1">
+      <table border="1" width="100%" height="91" cellspacing="0" bordercolorlight="#000000" bordercolordark="#000000" style="border-collapse: collapse" bordercolor="#111111" cellpadding="0">
+        <tbody><tr>
+          <td width="100%" align="center" height="24" bgcolor="#000080" bordercolor="#000000">
+          <font color="#FFFFFF"><b>Get the Calendar Control</b></font></td>
+        </tr>
+        <tr>
+          <td width="100%" height="11" bordercolor="#000000" bordercolordark="#000000">
+            <p class="boxout">If your copy of Microsoft Office does not include 
+            a copy of the <i>mscal.ocx</i> ActiveX calendar control used in this 
+            tutorial you can download a copy from here. Follow the link below 
+            for full instructions...</p>
+            <p class="boxout" align="center">
+            <a href="javascript:popup('http://www.fontstuff.com/mailbag/qvba01.htm')">[get the 
+            file]</a></p></td>
+        </tr>
+      </tbody></table>
+      <br>
+      <table border="1" width="100%" height="91" cellspacing="0" bordercolorlight="#000000" bordercolordark="#000000" style="border-collapse: collapse" bordercolor="#111111" cellpadding="0">
+        <tbody><tr>
+          <td width="100%" align="center" height="24" bgcolor="#FF0000" bordercolor="#000000">
+          <font color="#FFFFFF"><b>Important Update!</b></font></td>
+        </tr>
+        <tr>
+          <td width="100%" height="11" bordercolor="#000000" bordercolordark="#000000">
+            <p class="boxout">In some circumstances the <i>Insert Date</i> 
+            shortcut menu entry is not removed when Excel closes, resulting in 
+            multiple menu entries. This update explains how to fix the problem.</p>
+            <p class="boxout" align="center">
+            <a href="javascript:popup('http://www.fontstuff.com/mailbag/qexcel01.htm')">[view the update]</a></p></td>
+        </tr>
+      </tbody></table>
+      </td>
+    <td width="78%" style="border-style: none; border-width: medium" height="15" valign="top" colspan="2">
+      <table border="0">
+        <tbody><tr>
+          <td valign="top"><img border="0" src="./VBA Tips  A Pop-up Calendar for Excel_files/clearpixel.gif" width="25" height="1"><p>&nbsp;</p></td>
+          <td valign="top">
+            <h1>A Pop-up Calendar for Excel</h1>
+            <p><b>This tutorial was written for Excel 2003 and earlier versions 
+			of Excel.<br>
+			<a href="http://www.fontstuff.com/vba/vbatut07.htm">Click here to go to the Excel 2007/2010 
+			version of the tutorial</a>.</b></p>
+			<p>One of the biggest problems in maintaining "good" data
+            is the entry of dates. People seem to get confused about entering
+            dates. Should they enter dd/mm/yy or mm/dd/yy? Do they enter slashes
+            or dashes or dots? And what was the date of the third Thursday in
+            September last year anyway? What you really need is a calendar!</p>
+            <p>This tutorial shows you how to create a pop-up calendar using the
+            Microsoft ActiveX Calendar Control that is installed with Excel. The
+            user will be able to call up the calendar with a keyboard shortcut,
+            from a toolbar button or menu, or from the right-click context menu.
+            When the user selects a date it is automatically entered into the
+            active cell on the worksheet...</p>
+            <p align="center">
+            <img border="0" src="./VBA Tips  A Pop-up Calendar for Excel_files/vbatut07aa.gif" alt="A pop-up calendar for entering dates into Excel cells" width="308" height="249"></p>
+            <h2>Where Does the Code Go?</h2>
+            <p>The code that creates and operates the calendar has to reside
+            inside an Excel file. The question is which one? If you want the pop-up calendar to be available whenever you are
+            working in Excel you should create it in <b>Personal.xls</b>,
+            sometimes referred to as your <i>Personal Macro Workbook</i>,
+            because this files exists to store code that you want to be
+            available to all your Excel files. Personal.xls opens and is hidden
+            each time Excel is started. Any macros and functions it contains are
+            then available for use in any other workbook.</p>
+            <p>Alternatively, you could create your pop-up calendar in a
+            specific workbook. It would be available whenever (and only) when
+            that workbook was open, but also available to any other workbook that
+            was open at the same time.</p>
+            <p>In this tutorial I will be using Personal.xls but if you choose
+            to put your pop-up calendar somewhere else you can still follow the
+            same instructions.</p>
+            <p>If you want to distribute your calendar, you should consider 
+            saving it as an Excel Add-In. To find out more about Excel Add-Ins 
+            take a look at my tutorial <a target="_blank" href="http://www.fontstuff.com/vba/vbatut03.htm">
+            Build an Excel Add-In</a>. Alternatively you can download a 
+            ready-made <a href="http://www.fontstuff.com/vba/vbatut07_2003.htm#download">Pop-up Calendar Add-In</a> at the 
+            bottom of this page.</p>
+            <h2>Prepare the Workbook (Personal.xls)</h2>
+            <p>You can miss out this step if you want to store your calendar in 
+            a different workbook. Otherwise, start Excel and go to <b>Tools &gt; Macro &gt; Visual Basic Editor</b>
+            (Keys: <b>Alt+F11</b>) to open the Visual Basic Editor.</p>
+            <p>First you need to check if a copy of Personal.xls already exists.
+            If there isn't one you will have to create one (it's quite easy!).
+            Look at the <b>Project Explorer</b> window (normally on the upper
+            left of the Visual Basic Editor window).&nbsp;</p>
+            <p>
+            <img border="0" src="./VBA Tips  A Pop-up Calendar for Excel_files/vbatut07a.gif" align="left" alt="The Project Explorer window showing Personal.xls" hspace="10" width="219" height="232">If
+            you can see <b>VBAProject&nbsp;(PERSONAL.XLS)</b> you already have a
+            copy. If there is no Personal.xls then you need to could create one.
+            Here's a quick way to do it...</p>
+            <p>Switch to Excel and go to <b>Tools &gt; Macro &gt; Record New
+            Macro</b>. When the <b>Record Macro</b> dialog box opens choose <b>Store
+            Macro in: Personal Macro Workbook</b>, click <b>&lt;OK&gt;</b>, then
+            click the <b>Stop Recording </b>button (the one with the small blue
+            square) on the macro recording toolbar. This procedure forces Excel
+            to create a copy of the Personal.xls file.</p>
+            <p>Switch back to the Visual Basic Editor and use the Project
+            Explorer to navigate to <b>Module1</b> in Personal.xls.&nbsp;
+            Double-click it to open the code window where you will see the macro
+            you just recorded. Select the lines from <b>Sub Macro1()</b> to <b>End
+            Sub </b>and press the <b>[DELETE] </b>key to remove it.</p>
+            <h2>Build the Calendar and Write its Code</h2>
+            <h3>Step 1: Insert a New UserForm</h3>
+            <table border="0">
+              <tbody><tr>
+                <td valign="top">
+                <img border="0" src="./VBA Tips  A Pop-up Calendar for Excel_files/vbatut07b.gif" hspace="5" alt="Inserting a UserForm" vspace="5" width="124" height="150"></td>
+                <td valign="top">The calendar is going to be displayed on a VBA
+                  UserForm. In the Project Explorer click on <b>VBAProject
+                  (PERSONAL.XLS)</b> then go to <b>Insert &gt; UserForm</b> to
+                  open a new blank UserForm [click the thumbnail below to see a
+                  full-sized image of the Visual Basic Editor window]...
+                  <p align="center"><a href="http://www.fontstuff.com/images/vbatut07c.gif" class="hoverZoomLink">
+                  <img border="0" src="./VBA Tips  A Pop-up Calendar for Excel_files/vbatut07c_small.gif" alt="vbatut07c.gif (22096 bytes)" width="139" height="100"></a></p></td>
+              </tr>
+            </tbody></table>
+            <p>Make the following changes in the Properties Window...<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Name:&nbsp;&nbsp;&nbsp;</b><i>frmCalendar</i><br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Caption:&nbsp;&nbsp;&nbsp;</b><i>Select a Date</i></p>
+            <h3>Step 2: Locate the Calendar Control Tool</h3>
+            <p>You need to draw a Calendar Control (active objects on forms are
+            called "controls") on the UserForm, but the one you need is
+            not normally included in the Toolbox. To install it, first make sure 
+            that the Toolbox is visible. If it isn't, switch it on with <b>View 
+            &gt; Toolbox</b>. Then go to <b>Tools
+            &gt; Additional Controls</b>. In the dialog box find <b>Calendar Control 8.0</b>
+            (for Excel 97 and 2000, Calendar Control 10.0 for Excel 2002) and
+            select it. Click the <b>&lt;OK&gt; </b>button  to close the dialog. This adds a new button to the toolbox,
+            labelled Calendar.</p>
+            <p class="note">NOTE: The <i>Calendar Control</i> is an ActiveX
+            control (actually a file called <b>mscal.ocx</b>) supplied
+            with Microsoft Office. It is normally installed with a standard
+            installation of Microsoft Office Professional or Microsoft Access, but if you can't
+            find it on the list you will need to get hold of a copy. If you are 
+            distributing your file, or planning to use it on more than one 
+            computer, you will also need to make sure that the host computer has 
+            the mscal.ocx file installed. You will
+            find it on the CD that your copy of Microsoft Office Professional 
+            came on, or you can download a copy from here.</p>
+            <p class="note"><a href="javascript:popup('http://www.fontstuff.com/mailbag/qvba01.htm')">[Follow this link for 
+            full instructions on downloading and installing the mscal.ocx 
+            ActiveX Calendar Control file.]</a></p>
+            <h3>Step 3: Add a Calendar Control to the UserForm </h3>
+            <p>Click the Calendar tool then click on the UserForm near its upper
+            left corner to place a calendar on the UserForm.</p>
+            <div align="center">
+              <center>
+              <table border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse; border-width: 0" bordercolor="#111111" id="AutoNumber2">
+                <tbody><tr>
+                  <td style="border-style: none; border-width: medium" align="center">
+                  <img border="0" src="./VBA Tips  A Pop-up Calendar for Excel_files/vbatut07d.gif" alt="Click on the form near the upper left corner..." width="123" height="101"></td>
+                  <td style="border-style: none; border-width: medium" align="center">
+                  &nbsp;&nbsp;&gt;&gt;&gt;&nbsp;&nbsp;</td>
+                  <td style="border-style: none; border-width: medium">
+                  <img border="0" src="./VBA Tips  A Pop-up Calendar for Excel_files/vbatut07e.gif" alt="An ActiveX Calendar Control on a UserForm" width="322" height="242"></td>
+                </tr>
+              </tbody></table>
+              </center>
+            </div>
+            <p>Make sure the calendar is selected then take a look at the choices in
+            the properties window. Click on the <b>Custom</b> category (near the top of
+            the list) and click the <b>[...]</b> button to open the calendar 
+            control's custom properties
+            dialog. You can format the calendar any way you like. I made the following changes...</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>General - Show Month/Year
+            Title:</b>&nbsp;&nbsp;&nbsp;<i>No</i><br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Font - DayFont Size:&nbsp;&nbsp;&nbsp;</b><i>Size 8, Not Bold</i> <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Font - GridFont:</b>&nbsp;&nbsp;&nbsp;<i>Size 8</i></p>
+            <p>Omitting the title and making the text smaller allowed me to resize the calendar to a smaller rectangle by 
+            dragging the resize handles (white rectangles)...</p>
+            <p align="center">
+            <img border="0" src="./VBA Tips  A Pop-up Calendar for Excel_files/vbatut07f.gif" alt="Resize the Calendar Control" width="322" height="242"></p>
+            <p>Now click on the UserForm itself so that you can see its resizing
+            handles and resize it to fit the calendar...</p>
+            <p align="center">
+            <img border="0" src="./VBA Tips  A Pop-up Calendar for Excel_files/vbatut07g.gif" alt="Resize the UserForm to fit the calendar" width="219" height="224"></p>
+            <p>To get a
+            preview of how the calendar will look click the <b>F5</b> key. When you do 
+            this the UserForm will open in Excel as it would in use. Click the 
+            UserForm's close button (<b>[x]</b>) to return to the Visual Basic 
+            Editor.</p>
+            <h3>Step 4: Add a Command Button</h3>
+            <p>If the user opens the calendar by mistake, they will be able to 
+            close it by clicking the <b>[x]</b> button without entering a date 
+            on the worksheet. Most users also expect a form or dialog box to 
+            close without making changes if they press the <b>[ESCAPE] </b>key on 
+            their keyboard. This doesn't happen by itself. You have to program 
+            the UserForm to respond to this event. To do this you will place a 
+            command button on the UserForm which closes it when clicked. By 
+            setting the button's <b>Cancel</b> property to <i>Yes</i> the effect 
+            of the user hitting the <b>[ESCAPE]</b> key will be to 
+            programmatically click the button. The user doesn't need to see the button, 
+            so you can hide it behind the calendar.</p>
+            <p>Click the <b>Command Button</b> tool on the toolbox then click on the calendar 
+            (just left of centre) to place a command button on the UserForm. Note 
+            that the command button places itself behind the calendar by 
+            default, although you can still see its outline when it is 
+            selected...</p>
+            <p align="center">
+            <img border="0" src="./VBA Tips  A Pop-up Calendar for Excel_files/vbatut07h.gif" alt="Place a Command Button on the UserForm" width="207" height="212"></p>
+            <p>With the command button selected,  make the
+            following changes in the properties window... &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Name:</b>&nbsp;&nbsp;&nbsp;<i>cmdClose<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</i><b>Cancel:</b>&nbsp;&nbsp;&nbsp;<i>True</i></p>
+            <h3>Step 5: Write Code for the Command Button</h3>
+            <p>This step adds some code to the <i>Click</i> event of the 
+            command button so that when clicked (i.e. when the user hits the 
+            [ESCAPE] key) the UserForm closes without anything else happening.</p>
+            <p>Go to <b>View &gt; Code </b>(Keys: <b>F7</b>) to open the UserForm's code window. If
+            the command button was still selected there will already be an
+            entry. If not, choose <b>cmdClose</b> from the left hand (<i>General</i>)
+            drop-down list at the top of the code window. It should
+            automatically select <b>Click</b> from the right-hand (<i>Declarations</i>)
+            list. Place your cursor between the <b>Sub...</b> and <b>End&nbsp;Sub</b> lines and
+            press the <b>[TAB]</b> key to indent your code. Type <i>Unload Me</i>. Your line of code will look like this:</p>
+            <p align="left">
+            <img border="0" src="./VBA Tips  A Pop-up Calendar for Excel_files/vbatut07i.gif" alt="Code to close the UserForm" width="500" height="62"></p>
+            <p>Use <b>[CTRL]+[TAB]</b> (or go to <b>Window &gt; frmCalendar(UserForm)</b>) to switch back to the UserForm 
+            window and test the code. Press <b>[F5]</b> to open the form in Excel. Notice that the command
+            button is invisible (it is behind the calendar). Press the <b>[ESCAPE]</b>
+            key and see that the UserForm closes.</p>
+            <h3>Step 6: Write Code for the Calendar</h3>
+            <p>This step builds the code that will transfer the date that the user 
+            chooses to the active (selected) cell on the worksheet. </p>
+            <p>Return to the UserForm's code window. Open the left-hand
+            (General) drop-down list at the top of the code window and choose <b>Calendar1</b>.
+            If it is not already selected, choose <b>Click </b> in the right-hand list.
+            This enters the start and end lines of the <b> Calendar1_Click </b> 
+            procedure. </p>
+            <p>Place the cursor between the two lines and press <b> [TAB] </b> to 
+            indent your code (indenting blocks of code is good practice - it 
+            makes the code easier to read) then type: </p>
+            <p><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ActiveCell.Value = 
+            Calendar1.Value</i> </p>
+            <p>...which transfers the date selected on the calendar 
+            to the active cell. On the next line type: </p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i>Unload Me</i> </p>
+            <p>...which closes 
+            the form. Your code should look like this: </p>
+            <p>&nbsp;<img border="0" src="./VBA Tips  A Pop-up Calendar for Excel_files/vbatut07j.gif" alt="Code to insert the date and close the form" width="500" height="78"> </p>
+            <p>To make the calendar a bit more user-friendly you will now add 
+            some code that checks to see if the active cell already contains a 
+            date. If it does, then the calendar will show the same date when it 
+            opens. If there is no date in the cell (or if what is in the cell 
+            isn't a date) the calendar will show today's date. To do this we 
+            make use of the UserForm's <b> Initialize</b> event, which happens as the 
+            UserForm opens. </p>
+            <p>Open the left-hand drop-down list at the top 
+            of the code window and choose <b>UserForm</b>, then open the right-hand 
+            list and choose <b>Initialize</b>. (You will notice that when you chose 
+            "Initialize" the start and end lines for the <i> UserForm_Click</i> 
+            procedure were created. You don't need these so it is safe to delete 
+            them.) </p>
+            <p>Place your cursor between the start and end lines of the <b> 
+            UserForm_Initialize</b> procedure and type the following:&nbsp; </p>
+            <p><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If 
+            IsDate(ActiveCell.Value) Then<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Calendar1.Value =
+            DateValue(ActiveCell.Value)<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Else<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Calendar1.Value = Date<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;End If</i> </p>
+            <p>This IF Statement checks the active cell for a date. If it is a 
+            date then the calendar displays the same date. If not it uses the 
+            VBA <b> Date</b> function to display the current date. Your completed code 
+            should look like this: </p>
+            <p>
+            <img border="0" src="./VBA Tips  A Pop-up Calendar for Excel_files/vbatut07k.gif" alt="Code to check for an existing date" width="500" height="126"> </p>
+            <p>Now you need to write some code to display the UserForm on demand. 
+            If you had to create Personal.xls you will already have a code 
+            module (<i>Module1</i>). Otherwise, or if you are using a different 
+            workbook, go to <b> Insert &gt; Module</b> to create one. Double-click the name 
+            of the module in the Project Explorer window to open its code window 
+            (or right-click it and choose <b> View Code</b>). </p>
+            <p>Type the line <i>Sub OpenCalendar</i> and press enter. The Visual 
+            Basic Editor places a pair of brackets at the end of the line and 
+            adds the line <i>End Sub</i>, placing your cursor between 
+            them. Press <b> [TAB]</b> then type <i>frmCalendar.Show</i>. Your code should 
+            look like this: </p>
+            <p>
+            <img border="0" src="./VBA Tips  A Pop-up Calendar for Excel_files/vbatut07l.gif" alt="Code to display the UserForm" width="500" height="62"> </p>
+            <p>
+            This simple procedure will display the UserForm when run from Excel.</p>
+            <h3>Step 7: Test the Code </h3>
+            <p>At this point it is a good idea to save your 
+            file in case something goes wrong! In the Visual Basic Editor window 
+            go to <b> File &gt; Save PERSONAL.XLS </b> (or whatever your file is called).
+            </p>
+            <p>Switch to Excel and select an empty cell in which to enter a 
+            date. Go to <b> Tools &gt; Macro &gt; Macros</b> (Keys: <b>Alt</b> +
+            <b>F8</b>) to open the 
+            Macro dialog. Make sure that the macro <i> PERSONAL.XLS!OpenCalendar</i> is 
+            selected and click <b> &lt;Run&gt;.</b> </p>
+            <p align="center">
+            <img border="0" src="./VBA Tips  A Pop-up Calendar for Excel_files/vbatut07m.gif" alt="The Macro dialog ready to run the OpenCalendar procedure" width="404" height="104"> </p>
+            <p>When the calendar opens it will display today's date. Choose a 
+            date (NOTE: always choose month and year <i>before</i> choosing day because
+            clicking on a day fires the <i>Calendar1_Click</i> event). When you click the 
+            day the calendar closes and enters your date into the cell. </p>
+            <p>Now select a cell that already contains a date and run the macro. 
+            When the calendar opens it displays the date that was already in the 
+            cell. If you wish you can choose another date, or you can press the <b> 
+            [ESCAPE]</b> key to close the calendar without making any changes. </p>
+            <h2>Adding Extra Features</h2>
+            <h3>Adding a Toolbar Button or Menu Item</h3>
+            <p>A useful addition is a toolbar button and/or menu item that lets 
+            the user call the macro that opens the UserForm. They don't need to 
+            know that they are calling a macro - they will just be using your 
+            new <i>Insert Date</i> tool!</p>
+            <h4><b>To create a toolbar button:</b></h4>
+            <p>Go to <b>View &gt; Toolbars &gt; Customize</b> and choose the <b>
+            Commands</b> tab on the <b>Customize</b> dialog. In the left-hand 
+            window scroll down to <b>Macros</b> and select it. You will see two 
+            items in the right-hand window, one for a new button and the other 
+            for a new menu item.</p>
+            <p align="center">
+            <img border="0" src="./VBA Tips  A Pop-up Calendar for Excel_files/vbatut07q.gif" alt="Selecting a custom macro button in the Customize dialog" width="374" height="224"></p>
+            <p>Drag <b>Custom Button</b> from the dialog box to a position 
+            on one of your toolbars then release the mouse button to place the 
+            new button on the toolbar. You can rearrange and edit your toolbars 
+            and menus as much as you want when the <b>Customize</b> dialog is 
+            open...</p>
+            <div align="center">
+              <center>
+              <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" id="AutoNumber3">
+                <tbody><tr>
+                  <td align="center">
+                  <img border="0" src="./VBA Tips  A Pop-up Calendar for Excel_files/vbatut07r.gif" alt="Drag the custom button to a toolbar location" width="82" height="68"></td>
+                  <td align="center">&nbsp;&nbsp;&nbsp;&gt;&gt;&gt;&nbsp;&nbsp;&nbsp;</td>
+                  <td align="center">
+                  <img border="0" src="./VBA Tips  A Pop-up Calendar for Excel_files/vbatut07s.gif" alt="A new custom button in position" width="82" height="68"></td>
+                </tr>
+              </tbody></table>
+              </center>
+            </div>
+            <p>You must link the button to the macro, and you will probably want 
+            to change its image too:</p>
+            <ul>
+              <li>Right-click the button and enter some text (such as <i>Insert 
+              Date</i>) in the text box next to <b>Name</b>, then press <b>
+              [ENTER]</b>. This text will be the tool-tip that the user sees 
+              when they point at the button.</li>
+              <li>Right-click the button and choose <b>Edit Button Image</b>. 
+              This is the fun part. I'll leave it up to you to figure out how to use this 
+              tool, but I can guarantee endless hours of amusement!<br>
+              <a href="http://www.fontstuff.com/images/vbatut07z.gif" class="hoverZoomLink">
+              <img border="0" src="./VBA Tips  A Pop-up Calendar for Excel_files/vbatut07z_small.gif" xthumbnail-orig-image="../images/vbatut07z.gif" alt="Click the thumbnail to view a full-sized image of the button image editor" width="83" height="75"></a></li>
+              <li>Right-click the button and choose <b>Assign Macro</b>, choose 
+              the name of your macro (in this case <i> PERSONAL.XLS!OpenCalendar</i>) 
+              from the list, and click <b>&lt;OK&gt;</b>.</li>
+            </ul>
+            <p>Here's what my button looks like:</p>
+            <div align="center">
+              <center>
+              <table border="0">
+                <tbody><tr>
+                  <td valign="top">
+                  <img border="0" src="./VBA Tips  A Pop-up Calendar for Excel_files/vbatut07o.gif" alt="A custom button icon for the calendar" width="71" height="68"></td>
+                  <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                  <td>
+                  <img border="0" src="./VBA Tips  A Pop-up Calendar for Excel_files/vbatut07n.gif" alt="A custom toolbar button for opening the calendar" width="111" height="92"></td>
+                </tr>
+              </tbody></table>
+              </center>
+            </div>
+            <p>Make any other changes you want and click <b>&lt;Close&gt;</b> on the
+            <b>Customize</b> dialog box. You can now test your button. When you 
+            click it the UserForm will open and you can insert a date.</p>
+            <h4><b>To create a new menu item:</b></h4>
+            <p>Open the <b>Customize</b> dialog as in the previous step and 
+            select the <b>Macros</b> category. This time drag <b>Custom Menu 
+            Item</b> from the dialog box to one of your menus, but don't release 
+            it yet. The menu will 
+            open and allow you to place your new menu item wherever you choose.</p>
+            <ul>
+              <li>Right-click the menu item and enter some text (such as <i>&amp;Date</i>) 
+              in the text box next to <b>Name</b>, then press <b>[ENTER]</b>. 
+              This text will be the title of the menu item. The ampersand (<b>&amp;</b>) 
+              does not appear itself but causes the following letter to be 
+              underlined (i.e. <b><u>D</u>ate</b>). This allows users to select 
+              the menu item by using their keyboard.</li>
+              <li>You can have a button image too if you want. I used the same 
+              image as for my custom button. To do this right-click on the 
+              button and choose <b>Copy Button Image</b> then right-click on the 
+              menu item and choose <b>Paste Button Image</b>.</li>
+              <li>Right-click the menu item and choose <b>Assign Macro</b>, 
+              choose the name of your macro (in this case <i> PERSONAL.XLS!OpenCalendar</i>) 
+              from the list, and click <b>&lt;OK&gt;</b>.</li>
+            </ul>
+            <p>Here's how it looks...</p>
+            <div align="center">
+              <center>
+              <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber4">
+                <tbody><tr>
+                  <td width="20%" align="center">
+                  <img border="0" src="./VBA Tips  A Pop-up Calendar for Excel_files/vbatut07t.gif" alt="Positioning a new menu item on an existing menu" width="162" height="209"></td>
+                  <td width="20%" align="center">&gt;</td>
+                  <td width="20%" align="center">
+                  <img border="0" src="./VBA Tips  A Pop-up Calendar for Excel_files/vbatut07u.gif" alt="The new menu item in position" width="162" height="209"></td>
+                  <td width="20%" align="center">&gt;</td>
+                  <td width="20%" align="center">
+                  <img border="0" src="./VBA Tips  A Pop-up Calendar for Excel_files/vbatut07v.gif" alt="The finished menu item with a custom button image" width="162" height="209"></td>
+                </tr>
+              </tbody></table>
+              </center>
+            </div>
+            <p>Close the <b>Customize</b> dialog box and test your menu item.</p>
+            <h3>Assigning Keyboard Shortcut</h3>
+            <p>You can 
+            also assign a keyboard shortcut. There are two ways to do this. You 
+            can do it manually or have the workbook assign a shortcut when it is 
+            opened. The advantage of the latter method is that, if the calendar 
+            is contained in its own workbook, the shortcut applies only when the 
+            workbook is open. It also means that the shortcut is applied 
+            automatically on which ever computer the file is being used - handy 
+            for files that are being distributed and for add-ins too.</p>
+            <h4><b>To assign a shortcut manually:</b></h4>
+            <p>In Excel go to <b> Tools &gt; Macro 
+            &gt; Macros </b> to open the <b> Macro </b> dialog. Select the name 
+            of your macro (in this case <i> PERSONAL.XLS!OpenCalendar</i>) 
+            then click the <b> &lt;Options&gt;</b> button. This lets you assign a keyboard 
+            shortcut and an optional description to a macro.&nbsp; Assign the shortcut by clicking in the small white box and typing 
+            the key combination you want to use. In the illustration 
+            below I have assigned the shortcut
+            [CTRL]+[SHIFT]+[C].... </p>
+            <p align="center">
+            <img border="0" src="./VBA Tips  A Pop-up Calendar for Excel_files/vbatut07p.gif" alt="Manually assigning a keyboard shortcut" width="225" height="134"> </p>
+            <h4 align="left">
+            <b>To assign a shortcut with code:</b></h4>
+            <p align="left">
+            In the Visual Basic 
+            Editor find the <b>This Workbook</b> entry for PERSONAL.XLS (or your 
+            chosen workbook) in the project explorer and double click it (or 
+            right-click and choose <b> View Code</b>) to open its code window. Open the 
+            left-hand (General) drop-down list at the top of the code window and choose
+            <b>Workbook</b>. This creates the start and end lines for the <b> Workbook_Open</b> 
+            procedure. This is a special macro that runs automatically whenever 
+            the workbook is opened. Between the start and end lines type the line: </p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i>Application.OnKey 
+            "+^{C}", "Module1.OpenCalendar"</i> </p>
+            <p>The + sign signifies Shift, the ^ signifies CTRL and {C} 
+            signifies the letter C. You can use any key combination you like. 
+            Your code should look something like this:</p>
+            <p>
+            <img border="0" src="./VBA Tips  A Pop-up Calendar for Excel_files/vbatut07w.gif" alt="Code to assign a keyboard shortcut" width="500" height="62"></p>
+            <p>You will need to save and close the workbook and then reopen it 
+            before you can try it out. 
+            If you are using PERSONAL.XLS you will need to close Excel and reopen 
+            it. Save the file first!</p>
+            <h3>Adding the Calendar to the Shortcut Menu</h3>
+            <p>Using VBA you can add custom items to shortcut menus (the menu 
+            you see when you right-click on something, sometimes called <i>
+            context</i> menus). Here's how to add an item to the "Cell" shortcut 
+            menu (the one which appears when you right-click on a worksheet 
+            cell). The menu item will call the macro that opens the calendar's 
+            UserForm.</p>
+            <p>Is is a good idea to place the code that creates the shortcut 
+            menu item in the <i>Workbook_Open</i> macro, so that the menu item 
+            is added whenever the workbook is opened. But to ensure that the 
+            item appears only once (the menu item is persistent - a duplicate 
+            would be created each time you opened the file!) you should also 
+            create a procedure to <i>remove</i> the menu item when the file 
+            closes. To do this you can create a <i>Workbook_BeforeClose</i> 
+            macro, which runs automatically when its host workbook closes.</p>
+            <h4>Code to create the new shortcut menu item:</h4>
+            <p>If you have created a keyboard shortcut with code (in the 
+            previous step) you will already have a <i>Workbook_Open</i> macro. 
+            If not, create one as described above (you can omit the line that 
+            assigns a keyboard shortcut if you want).</p>
+            <p>Add lines to the <i>Workbook_Open</i> procedure as follows:</p>
+            <p>If necessary, make an empty line above the existing code, and 
+            enter as the first line the variable declaration:</p>
+            <p><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dim NewControl as CommandBarControl</i></p>
+            <p>The next line of code, which can be entered below your shortcut 
+            key code, tells Excel that the variable is a new item (or <i>control</i>) 
+            to be added to the right-click menu of a cell:</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i>Set NewControl = 
+            Application.CommandBars("Cell").Controls.Add</i></p>
+            <p>Now some code to describe the new item:</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i>With NewControl<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.Caption = "Insert Date"<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.OnAction = "Module1.OpenCalendar"<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.BeginGroup = True<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;End With</i></p>
+            <p>The <i>Caption</i> is the text which appears on the menu, and can 
+            be anything you want. Make sure that <i>OnAction</i> correctly 
+            specifies your macro's name and location. The optional <i>BeginGroup</i> 
+            puts a separator line above the new item on the menu. Your finished 
+            code should look like this:</p>
+            <p><img border="0" src="./VBA Tips  A Pop-up Calendar for Excel_files/vbatut07x.gif" width="538" height="174"></p>
+            <p>Here's how the resulting shortcut menu looks:</p>
+            <p align="center">
+            <img border="0" src="./VBA Tips  A Pop-up Calendar for Excel_files/vbatut07ab.gif" alt="A shortcut to the pop-up calendar on the cell context menu" width="204" height="318"></p>
+            <h4>Code to remove the new shortcut menu item:</h4>
+            <p>This procedure reverses the action of the code in the previous 
+            step. This is necessary because items added to the shortcut menu 
+            will remain there even when the workbook that created them is not 
+            open. Choosing the shortcut would then result in an error (although 
+            not a serious one... the user would see a message to the effect that 
+            Excel couldn't find the macro). Also, because the workbook creates 
+            the menu item as it opens, you would end up with several copies of 
+            the item if you didn't remove it as the workbook closed.</p>
+            <p>In the same module as the <i>Workbook_Open</i> procedure use the 
+            drop-down lists to create a <i>Workbook_BeforeClose</i> procedure. 
+            Enter the line:</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i>On Error Resume Next</i></p>
+            <p>...which tells Excel to ignore any error that might occur (i.e. 
+            if it tries to remove the menu item but can't find one). Then enter 
+            the line:</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i>Application.CommandBars("Cell").Controls("Insert Date").Delete</i></p>
+            <p>...which removes your item from the shortcut menu of a cell. 
+            Your finished code should look like this:</p>
+            <p><img border="0" src="./VBA Tips  A Pop-up Calendar for Excel_files/vbatut07y.gif" width="538" height="78"></p>
+            <p class="note">
+            TIP: If you should find yourself with unwanted copies of custom menu 
+            items on the shortcut menu (because, like me, you wanted to test the 
+            first procedure before you created the second one!). You can give 
+            the instruction from the Visual Basic Editor's <b>Immediate Window</b> 
+            (go to<b> View &gt; Immediate Window</b> or Keys: <b>CTRL+G</b>). Click 
+            in the Immediate Window and type the line the starting <i>
+            Application...<b> </b></i>and ending <i>...Delete</i> then press <b>
+            [ENTER]</b>.</p>
+            <h2><a name="download">Download the File</a></h2>
+            <p>You can download a zip file containing a fully working example of the Pop-up Calendar 
+            as an Excel workbook (.xls) or as an Excel Add-In (.xla). Find out more 
+            about Excel add-ins by reading my tutorial
+            <a target="_blank" href="http://www.fontstuff.com/vba/vbatut03.htm">Build an Excel Add-In</a>. To 
+            download one of the files right-click the link and choose <i>Save 
+            Target As</i>... </p>
+            <div align="center">
+              <center>
+              <table border="0" id="AutoNumber5">
+                <tbody><tr>
+                  <td style="border-left-style: none; border-left-width: medium; border-right-style: none; border-right-width: medium; border-top-style: solid; border-top-width: 1; border-bottom-style: solid; border-bottom-width: 1" bordercolorlight="#000000" bordercolordark="#000000" valign="middle">
+                  <a href="http://www.fontstuff.com/downloads/Excel%20Calendar%20Workbook.zip">
+                  <img border="0" src="./VBA Tips  A Pop-up Calendar for Excel_files/icozipsm.gif" align="top" width="20" height="20">
+                  Excel Calendar Workbook.zip</a> [11KB]&nbsp;&nbsp;&nbsp;</td>
+                  <td style="border-left-style: none; border-left-width: medium; border-right-style: none; border-right-width: medium; border-top-style: solid; border-top-width: 1; border-bottom-style: solid; border-bottom-width: 1" bordercolorlight="#000000" bordercolordark="#000000">
+                  <a href="http://www.fontstuff.com/downloads/Excel%20Calendar%20Add-In.zip">
+                  <img border="0" src="./VBA Tips  A Pop-up Calendar for Excel_files/icozipsm.gif" align="top" width="20" height="20">Excel 
+                  Calendar Add-In.zip</a> [13KB]&nbsp;&nbsp;</td>
+                </tr>
+              </tbody></table>
+              </center>
+            </div>
+            <p>If you want to create a custom button or menu item to call the 
+            macro from the Add-In, check the instructions in the
+            <a href="http://www.fontstuff.com/vba/vbatut03.htm#assign">Build an Excel Add-In</a> tutorial 
+            first.</p></td>
+        </tr>
+        <tr>
+          <td valign="top"></td>
+          <td valign="top" align="right">
+            <a href="http://www.fontstuff.com/vba/vbatut07_2003.htm#top">^ top</a>
+          </td>
+        </tr>
+        <tr>
+          <td valign="top" align="left">&nbsp;</td>
+          <td valign="top" align="left">
+            &nbsp;<p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p align="right">
+            <!--webbot bot="HitCounter" u-custom="ctrverdana8.gif" i-image="5" i-resetvalue="0" PREVIEW="&lt;strong&gt;[Hit Counter]&lt;/strong&gt;" i-digits="0" startspan --><img src="./VBA Tips  A Pop-up Calendar for Excel_files/saved_resource" alt="Hit Counter"><!--webbot bot="HitCounter" i-checksum="4702" endspan --></p></td>
+        </tr>
+      </tbody></table>
+      <p>&nbsp;</p></td>
+  </tr>
+  <tr>
+    <td width="22%" style="border-style: none; border-width: medium" height="15"></td>
+    <td width="44%" style="border-style: none; border-width: medium" height="15"></td>
+    <td width="34%" style="border-style: none; border-width: medium" height="15"></td>
+  </tr>
+</tbody></table>
+<p>&nbsp;</p>
+
+
+
+</body></html>

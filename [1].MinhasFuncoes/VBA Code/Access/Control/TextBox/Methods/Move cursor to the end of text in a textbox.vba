@@ -1,0 +1,1 @@
+Me![<cursor>].SelStart = Me![].SelLength 'TODO: specify name in Me![] (two places)

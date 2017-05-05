@@ -1,0 +1,866 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- saved from url=(0044)http://spreadsheetpage.com/index.php/tip/C32 -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Spreadsheet Page Excel Tips</title>
+
+<link rel="stylesheet" type="text/css" media="all" href="./Spreadsheet Page Excel Tips_files/index.php">
+<style type="text/css" media="screen">@import "http://spreadsheetpage.com/index.php?css=site/site_css.v.1266356314";</style>
+
+<link rel="alternate" type="application/rss+xml" title="RSS" href="http://spreadsheetpage.com/index.php/site/rss_2.0/">
+<link rel="alternate" type="application/atom+xml" title="Atom" href="http://spreadsheetpage.com/index.php/site/atom/">
+<script>window["_GOOG_TRANS_EXT_VER"] = "1";</script><script>window["_GOOG_TRANS_EXT_VER"] = "1";</script></head>
+
+<body style="">
+
+<div id="content">
+<div id="logo">
+<h1 style="font-size:90%"><a href="http://j-walk.com/">J-Walk &amp; Associates, Inc.</a></h1>
+</div>
+<ul id="menu">
+<li><a href="http://spreadsheetpage.com/">Home</a></li>
+<li><a href="http://spreadsheetpage.com/index.php/books">Books</a></li>
+<li><a href="http://spreadsheetpage.com/index.php/products">Products</a></li>
+<li><a href="http://spreadsheetpage.com/index.php/tips">Tips</a></li>
+<li><a href="http://spreadsheetpage.com/index.php/files">Downloads</a></li>
+<li><a href="http://spreadsheetpage.com/index.php/resources">Resources</a></li>
+<li><a href="http://spreadsheetpage.com/index.php/blog">Blog</a></li>
+<li><a href="http://spreadsheetpage.com/index.php/siteinfo/support">Support</a></li>
+<li><a href="http://spreadsheetpage.com/index.php/searchpage">Search</a></li>
+</ul>
+<div id="intro">
+<a href="http://spreadsheetpage.com/"></a>
+</div>
+
+  <div id="right">
+    <div style="clear: both">
+
+
+
+<h1 class="tiptitle">User-Defined Function Argument Descriptions In Excel 2010</h1>
+<p style="font-size: .9em;">Category: <a href="http://spreadsheetpage.com/index.php/tip/C32/">VBA Functions</a> | <a href="http://spreadsheetpage.com/index.php/tip/user-defined_function_argument_descriptions_in_excel_2010/">[Item URL]</a></p>
+
+<p>One of the new features in Excel 2010 is the ability to provide argument 
+descriptions for user-defined functions. These descriptions appear in Function 
+Arguments dialog box -- which is displayed after you choose a function using the 
+Insert Function dialog box.</p>
+
+<p>Here's a simple (but very useful) user-defined 
+function:</p>
+<pre>Function EXTRACTELEMENT(Txt, n, Separator) As String
+     EXTRACTELEMENT = Split(Application.Trim(Txt), Separator)(n - 1)
+End Function
+</pre>
+<p>Here's a VBA macro that provides a description for the EXTRACTELEMENT function, assigns it 
+to a function category, and provides a description for each of its three 
+arguments:</p>
+<pre>Sub DescribeFunction()
+   Dim FuncName As String
+   Dim FuncDesc As String
+   Dim Category As String
+   Dim ArgDesc(1 To 3) As String
+
+   FuncName = "EXTRACTELEMENT"
+   FuncDesc = "Returns the nth element of a string that uses a separator character"
+   Category = 7 <font color="#0000FF">'Text category</font>
+   ArgDesc(1) = "String that contains the elements"
+   ArgDesc(2) = "Element number to return"
+   ArgDesc(3) = "Single-character element separator"
+
+   Application.MacroOptions _
+      Macro:=FuncName, _
+      Description:=FuncDesc, _
+      Category:=Category, _
+      ArgumentDescriptions:=ArgDesc
+End Sub
+</pre>
+
+<p>You need to run this macro only one time. After doing so, the descriptive 
+information is stored in the workbook (or add-in) that defines the function. </p>
+<p>Here's how the function appears in the Function Arguments dialog box:</p>
+<blockquote>
+
+<p><img border="0" src="./Spreadsheet Page Excel Tips_files/funcargdesc.png" width="500" height="286"></p>
+</blockquote>
+<p>What about compatibility with earlier versions?</p>
+
+<p>If the file is opened in Excel 2007, the argument descriptions are not 
+displayed. If you save the workbook as an XLS file, the Compatibility Checker 
+kicks in and tells you that the function descriptions will be removed.
+<br clear="all">
+
+
+
+
+
+
+</p><h1 class="tiptitle">Extracting An Email Address From Text</h1>
+<p style="font-size: .9em;">Category: <a href="http://spreadsheetpage.com/index.php/tip/C32/">VBA Functions</a> | <a href="http://spreadsheetpage.com/index.php/tip/extracting_an_email_address_from_text/">[Item URL]</a></p>
+
+<p>This tip describes a VBA function that accepts a text string as input, and 
+returns the first email address found in the text. The figure below shows this 
+function in use. The formula in cell B2 is:</p>
+<pre>=ExtractEmailAddress(A2)</pre>
+<blockquote>
+
+<p>
+ <img border="0" src="./Spreadsheet Page Excel Tips_files/extractemail2.png" width="562" height="342"></p>
+</blockquote>
+
+<p>If an email address is not found, the function returns an empty string. Also, 
+note that it only extracts the <i>first</i> email address.</p><p dir="ltr">The 
+function is not very elegant. It just starts with the first "at symbol" it finds, 
+and examines the characters before and after the at symbol.</p>
+<pre>Function ExtractEmailAddress(s As String) As String
+    Dim AtSignLocation As Long
+    Dim i As Long
+    Dim TempStr As String
+    Const CharList As String = "[A-Za-z0-9._-]"
+    
+    <font color="#0000FF">'Get location of the @</font>
+    AtSignLocation = InStr(s, "@")
+    If AtSignLocation = 0 Then
+        ExtractEmailAddress = "" 'not found
+    Else
+        TempStr = ""
+        <font color="#0000FF">'Get 1st half of email address</font>
+        For i = AtSignLocation - 1 To 1 Step -1
+            If Mid(s, i, 1) Like CharList Then
+                TempStr = Mid(s, i, 1) &amp; TempStr
+            Else
+                Exit For
+            End If
+        Next i
+        If TempStr = "" Then Exit Function
+        <font color="#0000FF">'get 2nd half</font>
+        TempStr = TempStr &amp; "@"
+        For i = AtSignLocation + 1 To Len(s)
+            If Mid(s, i, 1) Like CharList Then
+                TempStr = TempStr &amp; Mid(s, i, 1)
+            Else
+                Exit For
+            End If
+        Next i
+    End If
+    <font color="#0000FF">'Remove trailing period if it exists</font>
+    If Right(TempStr, 1) = "." Then TempStr = _
+       Left(TempStr, Len(TempStr) - 1)
+    ExtractEmailAddress = TempStr
+End Function
+</pre>
+<br clear="all">
+
+
+
+
+
+
+<h1 class="tiptitle">Quantifying Color Choices</h1>
+<p style="font-size: .9em;">Category: <a href="http://spreadsheetpage.com/index.php/tip/C18/">Formatting</a> / <a href="http://spreadsheetpage.com/index.php/tip/C32/">VBA Functions</a> | <a href="http://spreadsheetpage.com/index.php/tip/quantifying_color_choices/">[Item URL]</a></p>
+<p><b><img border="0" src="./Spreadsheet Page Excel Tips_files/downloadicon.png" align="bottom" width="34" height="29">A companion file is available:</b> <a href="http://spreadsheetpage.com/index.php/file/functions_to_quantify_color_contrast">Click here to download</a></p>
+
+<p>I got lots of Excel workbooks via email. A significant number of them have 
+some downright ugly color choices. Beauty is in the eye of the beholder, but 
+there's no excuse for making color choices that result in illegible text.</p>
+<p>
+The World Wide Web Consortium (W3C) has created some formulas that can help you 
+determine if your foreground and background colors are legible:
+ <a href="http://www.w3.org/TR/AERT#color-contrast">Ensure that foreground and 
+background color combinations provide sufficient contrast when viewed by someone 
+having color deficits or when viewed on a black and white screen</a>.</p>
+<p>The 
+W3C presents two formulas, each of which returns a value:</p>
+<ul>
+ <li>Color Brightness Difference: returns a value between 0 and 255</li>
+ <li>Color Difference: Returns a value between 0 and 765</li>
+</ul>
+
+<p>I converted their formulas into VBA functions, and formulas that use these 
+functions are shown in Columns B and C:</p>
+<blockquote>
+ 
+<p><img border="0" src="./Spreadsheet Page Excel Tips_files/colordifferencefunction.png" width="496" height="631"></p>
+</blockquote>
+
+<p>To be an acceptable color combination, the Color Difference score should be 
+500 or greater, <u>and</u> the Brightness Difference score should be 125 or 
+greater. I used conditional formatting to highlight values that exceed 
+these minimums.</p>
+<p>Column D has a simple formula that determines if both 
+score meet the minimum requirement.</p>
+<p>These formulas seem to work quite 
+well. The color combination deemed Acceptable are all very legible. Bottom line: You can't go wrong with black text on a white 
+background. Reserve the fancy colors for column headers, or for special areas of a worksheet that you want to be noticed. </p>
+<br clear="all">
+
+
+
+
+
+
+<h1 class="tiptitle">Determining The User’s Video Resolution</h1>
+<p style="font-size: .9em;">Category: <a href="http://spreadsheetpage.com/index.php/tip/C32/">VBA Functions</a> | <a href="http://spreadsheetpage.com/index.php/tip/determining_the_users_video_resolution/">[Item URL]</a></p>
+
+<p>How you can determine the current video resolution? There are two ways that I'm 
+aware of:</p>
+<ol>
+  <li>Maximize Excel's window and then access the Application's Width and Height 
+  properties </li>
+  <li>Use a Windows API function </li>
+</ol>
+
+<p>This document presents VBA code to demonstrate both of these techniques. </p>
+<h3>Getting Excel's window size </h3>
+
+<p>The VBA subroutine below maximizes Excel's window, and then displays the 
+width and height. </p>
+<pre>Sub ShowAppSize()
+<font color="#0000FF">'   Maximize the window</font>
+    Application.WindowState = xlMaximized
+
+<font color="#0000FF">'   Get the dimensions</font>
+    appWidth = Application.Width
+    appHeight = Application.Height
+
+<font color="#0000FF">'   Show a message box</font>
+    Msg = "Excel's window size is: "
+
+    Msg = Msg &amp; appWidth &amp; " X " &amp; appHeight
+    MsgBox Msg
+End Sub
+</pre>
+
+<p>This subroutine is quite straightforward, and works with Excel 5 or later 
+versions. The disadvantage is that Excel's metric system does not correspond to 
+pixels. For example, when the video resolution is 1024 X 768 pixels, the 
+preceding subroutine reports that the maximized window size is 774 X 582. </p>
+<h3>Using the GetSystemMetrics API function </h3>
+
+<p>The subroutine below demonstrates how to use a Windows API function to 
+determine the current video resolution. The result is expressed in pixels.</p>
+<pre><font color="#0000FF">' API declaration</font>
+ Declare Function GetSystemMetrics32 Lib "user32" _
+    Alias "GetSystemMetrics" (ByVal nIndex As Long) As Long
+
+ Public Const SM_CXSCREEN = 0
+ Public Const SM_CYSCREEN = 1
+
+Sub DisplayVideoInfo()
+    vidWidth = GetSystemMetrics32(SM_CXSCREEN)
+    vidHeight = GetSystemMetrics32(SM_CYSCREEN)
+    Msg = "The current video mode is: "
+    Msg = Msg &amp; vidWidth &amp; " X " &amp; vidHeight
+    MsgBox Msg
+End Sub
+</pre>
+<br clear="all">
+
+
+
+
+
+
+<h1 class="tiptitle">Identifying Unique Values In An Array Or Range</h1>
+<p style="font-size: .9em;">Category: <a href="http://spreadsheetpage.com/index.php/tip/C32/">VBA Functions</a> | <a href="http://spreadsheetpage.com/index.php/tip/identifying_unique_values_in_an_array_or_range/">[Item URL]</a></p>
+
+<p>Have you ever had to work with just the unique items in a range? If your data is 
+in the form of a database, you can use the Advanced Filter command to extract 
+the unique items from a single column. But if your data spans multiple columns, 
+Advanced Filter won't work. And the Advanced Filter won't do you any good if 
+your data is in a VBA array.</p>
+
+<p>In this document I present a VBA function that accepts either a worksheet 
+range object or a VBA array. The function returns either: </p>
+<ul>
+  <li>A variant array that consists of just the unique elements in the input 
+  array or range (or) </li>
+  <li>A single value: the number of unique elements in the input array or range.
+  </li>
+</ul>
+
+<p>Here's the syntax for the UniqueItems function (which is listed at the end of 
+this document):</p>
+<pre> UniqueItems(ArrayIn, Count)
+
+</pre>
+<ul>
+  <li><b>ArrayIn:</b> A range object, or an array</li>
+  <li><b>Count:</b> (Optional) If True or omitted, the function returns a single 
+  value - the number of unique items in ArrayIn. If False, the function returns 
+  an array that consists of the unique items in ArrayIn. </li>
+</ul>
+<h3>Example 1</h3>
+
+<p>The subroutine below demonstrates UniqueItems. The routine generates 100 
+random integers and stores them in an array. This array is then passed to the 
+UniqueItems function and a message box displays the number of unique integers in 
+the array. The number will vary each time you run the subroutine. </p>
+<pre>Sub Test1()
+    Dim z(1 To 100)
+    For i = 1 To 100
+        z(i) = Int(Rnd() * 100)
+    Next i
+    MsgBox UniqueItems(z, True)
+End Sub
+</pre>
+<h3>Example 2</h3>
+
+<p>The subroutine below counts the number of common elements in two worksheet 
+ranges. It creates two arrays. Array1 consists of the unique items in A1:A16; 
+Array2 consists of the unique items in B1:B16. A nested loop counts the number 
+of items that are in both ranges. </p>
+<pre>Sub Test2()
+    Set Range1 = Sheets("Sheet1").Range("A1:A16")
+    Set Range2 = Sheets("Sheet1").Range("B1:B16")
+    Array1 = UniqueItems(Range1, False)
+    Array2 = UniqueItems(Range2, False)
+    CommonCount = 0
+    For i = LBound(Array1) To UBound(Array1)
+        For j = LBound(Array2) To UBound(Array2)
+            If Array1(i) = Array2(j) Then _
+              CommonCount = CommonCount + 1
+        Next j
+    Next i
+    MsgBox CommonCount
+End Sub
+</pre>
+<h3>Example 3</h3>
+
+<p>The UniqueItems function can also be used in worksheet formulas. The formula 
+below returns the number of unique items in a range: </p>
+<pre>  =UniqueItems(A1:D21)
+</pre>
+<h3>Example 4</h3>
+
+<p>To display the unique items in a range, you must array-enter the formula into 
+a range of cells (use Ctrl+Shift+Enter). The result of the UniqueItems function 
+is a horizontal array. If you would like to display the unique values in a 
+column, you can use the TRANSPOSE function. The formula below (which is 
+array-entered into a vertical range) returns the unique items in A1:D21. </p>
+<pre>  =TRANSPOSE(UniqueItems(A1:D21,FALSE))
+</pre>
+<h3>The Code</h3>
+<pre>Option Base 1
+
+Function UniqueItems(ArrayIn, Optional Count As Variant) As Variant
+<font color="#0000FF">'   Accepts an array or range as input
+'   If Count = True or is missing, the function returns the number of unique elements
+'   If Count = False, the function returns a variant array of unique elements</font>
+    Dim Unique() As Variant ' array that holds the unique items
+    Dim Element As Variant
+    Dim i As Integer
+    Dim FoundMatch As Boolean
+<font color="#0000FF">'   If 2nd argument is missing, assign default value</font>
+    If IsMissing(Count) Then Count = True
+<font color="#0000FF">'   Counter for number of unique elements</font>
+    NumUnique = 0
+<font color="#0000FF">'   Loop thru the input array</font>
+    For Each Element In ArrayIn
+        FoundMatch = False
+<font color="#0000FF">'       Has item been added yet?</font>
+        For i = 1 To NumUnique
+            If Element = Unique(i) Then
+                FoundMatch = True
+                Exit For <font color="#0000FF">'(exit loop)</font>
+            End If
+        Next i
+AddItem:
+<font color="#0000FF">'       If not in list, add the item to unique list</font>
+        If Not FoundMatch And Not IsEmpty(Element) Then
+            NumUnique = NumUnique + 1
+            ReDim Preserve Unique(NumUnique)
+            Unique(NumUnique) = Element
+        End If
+    Next Element
+<font color="#0000FF">'   Assign a value to the function</font>
+    If Count Then UniqueItems = NumUnique Else UniqueItems = Unique
+End Function
+</pre>
+<p style="font-size:90%">(Thanks to Peter Atherton for suggesting the method to avoid converting blanks to zero values)</p>
+<br clear="all">
+
+
+
+
+
+
+<h1 class="tiptitle">Getting A List Of File Names Using VBA</h1>
+<p style="font-size: .9em;">Category: <a href="http://spreadsheetpage.com/index.php/tip/C32/">VBA Functions</a> | <a href="http://spreadsheetpage.com/index.php/tip/getting_a_list_of_file_names_using_vba/">[Item URL]</a></p>
+
+<p>If your macro needs to present a list of files for the user to choose from, the 
+easiest approach is to use the GetOpenFileName method of the Application object. 
+For example, the code below displays the standard File Open dialog box. If the 
+user selects a file, the filename is stored in SelectedFile; if the user clicks 
+Cancel, SelectedFile is equal to False.</p>
+
+<pre> Filter = "Excel files (*.xls), *.xls"
+ Caption = "Select a File"
+ SelectedFile = Application.GetOpenFilename(Filter, , Caption)
+</pre>
+
+<p>In some cases, however, you may want to get a list of all files in a 
+particular directory. The VBA function below (GetFileList) accepts a DOS path 
+and filespec as its argument, and returns a variant array that contains all of 
+the filenames in that directory. If no matching files are found, the function 
+returns False. </p>
+<pre>Function GetFileList(FileSpec As String) As Variant
+<font color="#0000FF">'   Returns an array of filenames that match FileSpec
+'   If no matching files are found, it returns False</font>
+
+    Dim FileArray() As Variant
+    Dim FileCount As Integer
+    Dim FileName As String
+    
+    On Error GoTo NoFilesFound
+
+    FileCount = 0
+    FileName = Dir(FileSpec)
+    If FileName = "" Then GoTo NoFilesFound
+    
+<font color="#0000FF">'   Loop until no more matching files are found</font>
+    Do While FileName &lt;&gt; ""
+        FileCount = FileCount + 1
+        ReDim Preserve FileArray(1 To FileCount)
+        FileArray(FileCount) = FileName
+        FileName = Dir()
+    Loop
+    GetFileList = FileArray
+    Exit Function
+
+<font color="#0000FF">'   Error handler</font>
+NoFilesFound:
+    GetFileList = False
+End Function</pre>
+
+
+<p>The subroutine listed below demonstrates how to use this function. In this 
+example, the filespec is passed to the GetFileList function and the result is 
+stored in x. If x is an array, it means that matching files were found. A 
+message box displays the number of files and the filenames are copied to column 
+A in Sheet1. If x is not an array, it means that no matching files were found.
+</p>
+<pre>Sub test()
+    Dim p As String, x As Variant
+
+    p = "c:/msoffice/excel/library/*.xls"
+    x = GetFileList(p)
+    Select Case IsArray(x)
+        Case True 'files found
+            MsgBox UBound(x)
+            Sheets("Sheet1").Range("A:A").Clear
+            For i = LBound(x) To UBound(x)
+                Sheets("Sheet1").Cells(i, 1).Value = x(i)
+            Next i
+        Case False 'no files found
+            MsgBox "No matching files"
+    End Select
+End Sub</pre>
+<br clear="all">
+
+
+
+
+
+
+<h1 class="tiptitle">Looping Through Ranges Efficiently In Custom Worksheet Functions</h1>
+<p style="font-size: .9em;">Category: <a href="http://spreadsheetpage.com/index.php/tip/C32/">VBA Functions</a> | <a href="http://spreadsheetpage.com/index.php/tip/looping_through_ranges_efficiently_in_custom_worksheet_functions/">[Item URL]</a></p>
+
+<p>If you create custom worksheet functions using VBA, this tip describes how to 
+write efficient looping code.</p>
+
+<p>Consider the following custom worksheet function.
+</p>
+<pre>Function CountBetween(InRange, Lower, Upper)
+    TheCount = 0
+    For Each Cell In InRange
+        If Cell.Value &gt;= Lower And Cell.Value &lt;= Upper _
+          Then TheCount = TheCount + 1
+    Next Cell
+    CountBetween = TheCount
+End Function
+</pre>
+
+
+<p>This function returns the number of cells in a range that fall between two 
+values. The first argument is a range, the second argument is the lower 
+comparison value, and the third argument is the upper comparison value. If you 
+wanted to count the number of values between 1 and 5 in the range A1:A20, you 
+could use this formula: </p>
+<pre>  =CountBetween(A1:A20,1,5)</pre>
+
+
+<p>This function works fine in most situations. However, try entering the 
+following formula and see what happens: </p>
+<pre>  =CountBetween(A:A,1,5)</pre>
+
+
+<p>You'll find that evaluating this function seems to take forever since it will 
+loop through all cells in the range -- even those that are beyond the 
+worksheet's "used range." </p>
+
+
+<p>My original approach to solving this problem was to use the SpecialCells 
+method to create a subset of the input range that consisted only of nonempty 
+cells. However, I discovered that SpecialCells is off-limits inside of a 
+worksheet function. </p>
+
+
+<p>I eventually learned the solution. The function below uses the Intersect function to create a 
+new range object that consists of the intersection of the UsedRange and the 
+input range. </p>
+
+<pre>Function CountBetween2(InRange, Lower, Upper)
+    Set SubSetRange = Intersect(InRange.Parent.UsedRange, InRange)
+    TheCount = 0
+    For Each Cell In SubSetRange
+        If Cell.Value &gt;= Lower And Cell.Value &lt;= Upper Then _
+            TheCount = TheCount + 1
+    Next Cell
+    CountBetween2 = TheCount
+End Function</pre>
+
+
+<p>The addition of the Set statement solves the problem. You'll find that this 
+function works equally fast with either of these formulas: </p>
+<pre>  =CountBetween(A1:A20,1,5)
+  =CountBetween(A:A,1,5)</pre>
+
+
+<p>This technique can be adapted to any custom worksheet function that accepts a 
+range argument and loops through each cell in the range.</p>
+<br clear="all">
+
+
+
+
+
+
+<h1 class="tiptitle">Undoing A VBA Subroutine</h1>
+<p style="font-size: .9em;">Category: <a href="http://spreadsheetpage.com/index.php/tip/C32/">VBA Functions</a> | <a href="http://spreadsheetpage.com/index.php/tip/undoing_a_vba_subroutine/">[Item URL]</a></p>
+
+<p>Computer users are accustomed to the ability to "undo" an operation. 
+Almost every operation you perform in Excel can be undone. If you program in 
+VBA, you may have wondered if it's possible to undo the effects of a subroutine. 
+The answer is <i>yes</i>. The qualified answer is <i>it's not always easy.</i></p>
+
+<p>Making the effects of your subroutines undoable isn't automatic. Your 
+subroutine will need to store the previous state so it can be restored if the 
+user choose the Edit Undo command. How you do this will vary, depending on what 
+the subroutine does. In extreme cases, you might need to save an entire 
+worksheet. If your subroutine modifies a range, for example, you need only save 
+the contents of that range. </p>
+
+<p>The code below demonstrates how to enable the Edit Undo command after a 
+subroutine is executed. The subroutine itself is very simple: it simply inserts 
+a 0 into every cell in the current range selection. The bulk of the code is used 
+to save the contents of the current selection. </p>
+<h3>Trying it out</h3>
+
+<p>To try out this example code: </p>
+<ol>
+  <li>Copy the code to an empty VBA module. </li>
+  <li>Enter some data into a worksheet range. </li>
+  <li>Select the range and execute the ZeroRange subroutine. The cells will be 
+  replaced with zeros. </li>
+  <li>Select the Edit Undo command. The original contents of the selection will 
+  be restored. </li>
+</ol>
+<h3>How it works</h3>
+
+<p>The OldSelection array stores the cell address and the cell contents (using a 
+custom data type). Notice that this array is declared as a Public variable so 
+it's available to all subroutines. The last statement in the ZeroRange 
+subroutine specifies the text to display in the Undo menu, and the subroutine to 
+call if this command is selected. The UndoZero routine loops through the 
+OldSelection array and restores the values to their appropriate cells. Notice 
+that I also store the workbook and worksheet -- which ensures that the correct 
+cells will be restored even if the user switches out of the original worksheet.
+</p>
+<h3>The Undo example</h3>
+<pre><font color="#0000FF">'Custom data type for undoing</font>
+    Type SaveRange
+        Val As Variant
+        Addr As String
+    End Type
+    
+<font color="#0000FF">'   Stores info about current selection</font>
+    Public OldWorkbook As Workbook
+    Public OldSheet As Worksheet
+    Public OldSelection() As SaveRange
+
+
+Sub ZeroRange()
+<font color="#0000FF">'   Inserts zero into all selected cells</font>
+
+<font color="#0000FF">'   Abort if a range isn't selected</font>
+    If TypeName(Selection) &lt;&gt; "Range" Then Exit Sub
+
+<font color="#0000FF">'   The next block of statements
+'   Save the current values for undoing</font>
+    ReDim OldSelection(Selection.Count)
+    Set OldWorkbook = ActiveWorkbook
+    Set OldSheet = ActiveSheet
+    i = 0
+    For Each cell In Selection
+        i = i + 1
+        OldSelection(i).Addr = cell.Address
+        OldSelection(i).Val = cell.Formula
+    Next cell
+            
+<font color="#0000FF">'   Insert 0 into current selection</font>
+    Application.ScreenUpdating = False
+    Selection.Value = 0
+    
+<font color="#0000FF">'   Specify the Undo Sub</font>
+    Application.OnUndo "Undo the ZeroRange macro", "UndoZero"
+End Sub
+
+
+Sub UndoZero()
+<font color="#0000FF">'   Undoes the effect of the ZeroRange sub</font>
+    
+<font color="#0000FF">'   Tell user if a problem occurs</font>
+    On Error GoTo Problem
+
+    Application.ScreenUpdating = False
+    
+<font color="#0000FF">'   Make sure the correct workbook and sheet are active</font>
+    OldWorkbook.Activate
+    OldSheet.Activate
+    
+<font color="#0000FF">'   Restore the saved information</font>
+    For i = 1 To UBound(OldSelection)
+        Range(OldSelection(i).Addr).Formula = OldSelection(i).Val
+    Next i
+    Exit Sub
+
+<font color="#0000FF">'   Error handler</font>
+Problem:
+    MsgBox "Can't undo"
+End Sub</pre>
+<h3>Other examples of Undo</h3>
+
+<p>If you've purchased the source code to
+ <a href="http://spreadsheetpage.com/index.php/pup/">Power Utility Pak</a>, you can examine these utilities for other, more complex, 
+examples of using undo.</p>
+<br clear="all">
+
+
+
+
+
+
+<h1 class="tiptitle">Determining The Last Non-empty Cell In A Column Or Row</h1>
+<p style="font-size: .9em;">Category: <a href="http://spreadsheetpage.com/index.php/tip/C32/">VBA Functions</a> | <a href="http://spreadsheetpage.com/index.php/tip/determining_the_last_non_empty_cell_in_a_column_or_row/">[Item URL]</a></p>
+
+<p>This tip presents two useful VBA functions that can be used in worksheet 
+formulas. LASTINCOLUMN returns the contents of the last non-empty cell in a 
+column; LASTINROW returns the contents of the last non-empty cell in a row. Each 
+function accepts a range as its single argument. The range argument can be a 
+complete column (for LASTINCOLUMN) or a complete row (for LASTINROW). If the 
+supplied argument is not a complete column or row, the function uses the column 
+or row of the upper left cell in the range. For example, the following formula 
+returns the last value in column B:</p>
+<pre>=LASTINCOLUMN(B5)</pre>
+
+<p>The formula below returns the last value in row 7: </p>
+<pre>=LASTINROW(C7:D9)
+</pre>
+
+<p>You'll find that these functions are quite fast, since they only examine the 
+cells in the intersection of the specified column (or row) and the worksheet's 
+used range. </p>
+<h3>The LASTINCOLUMN function</h3>
+<pre>Function LASTINCOLUMN(rngInput As Range)
+    Dim WorkRange As Range
+    Dim i As Long, CellCount As Long
+    Application.Volatile
+    Set WorkRange = rngInput.Columns(1).EntireColumn
+    Set WorkRange = Intersect(WorkRange.Parent.UsedRange, WorkRange)
+    CellCount = WorkRange.Count
+    For i = CellCount To 1 Step -1
+        If Not IsEmpty(WorkRange(i)) Then
+            LASTINCOLUMN = WorkRange(i).Value
+            Exit Function
+        End If
+    Next i
+End Function</pre>
+<h3>The LASTINROW function</h3>
+<pre>Function LASTINROW(rngInput As Range) As Variant
+    Dim WorkRange As Range
+    Dim i As Long, CellCount As Long
+    Application.Volatile
+    Set WorkRange = rngInput.Rows(1).EntireRow
+    Set WorkRange = Intersect(WorkRange.Parent.UsedRange, WorkRange)
+    CellCount = WorkRange.Count
+    For i = CellCount To 1 Step -1
+        If Not IsEmpty(WorkRange(i)) Then
+            LASTINROW = WorkRange(i).Value
+            Exit Function
+        End If
+    Next i
+End Function</pre>
+<br clear="all">
+
+
+
+
+
+
+<h1 class="tiptitle">Multifunctional Functions</h1>
+<p style="font-size: .9em;">Category: <a href="http://spreadsheetpage.com/index.php/tip/C32/">VBA Functions</a> | <a href="http://spreadsheetpage.com/index.php/tip/multifunctional_functions/">[Item URL]</a></p>
+
+<p>This tip describes a technique that may be helpful in some situations - making a 
+single worksheet function act like multiple functions. For example, the VBA 
+listing below is for a custom function called StatFunction. It takes two 
+arguments: the range (rng), and the operation (op). Depending on the value of 
+op, the function will return any of the following: AVERAGE, COUNT, MAX, MEDIAN, 
+MIN, MODE, STDEV, SUM, or VAR.</p>
+
+<p>For example, you can use this function in your worksheet as follows: </p>
+<pre> =STATFUNCTION(B1:B24,A24)
+
+</pre>
+
+<p>The result of the formula depends on the contents of cell A24 -- which should 
+be a string such as <i>Average, Count, Max</i>, etc. You can adapt this 
+technique for other types of functions. </p>
+<h3>The StatFunction Function</h3>
+<pre>Function STATFUNCTION(rng, op)
+    Select Case UCase(op)
+        Case "SUM"
+            STATFUNCTION = Application.Sum(rng)
+        Case "AVERAGE"
+            STATFUNCTION = Application.Average(rng)
+        Case "MEDIAN"
+            STATFUNCTION = Application.Median(rng)
+        Case "MODE"
+            STATFUNCTION = Application.Mode(rng)
+        Case "COUNT"
+            STATFUNCTION = Application.Count(rng)
+        Case "MAX"
+            STATFUNCTION = Application.Max(rng)
+        Case "MIN"
+            STATFUNCTION = Application.Min(rng)
+        Case "VAR"
+            STATFUNCTION = Application.Var(rng)
+        Case "STDEV"
+            STATFUNCTION = Application.StDev(rng)
+        Case Else
+            STATFUNCTION = Evaluate("NA()")
+    End Select
+End Function
+</pre>
+<br clear="all">
+
+
+
+
+
+<center>
+<div class="paginate">
+Page 1 of 3 pages <br>
+
+
+<a href="http://spreadsheetpage.com/index.php/tip/C32/P10/">[Next page]</a>
+
+</div>
+</center>
+
+
+</div>
+  </div>
+
+<div id="left">
+<h2><br>Excel Tips</h2>
+<p>Excel has a long history, and it continues to evolve and change. Consequently, the tips provided here do not necessarily apply to all versions of Excel.</p> 
+<p>In particular, the user interface for Excel 2007 (and later), is vastly different from its predecessors. Therefore, the menu commands listed in older tips, will not
+correspond to the Excel 2007 (and later) user interface.</p>
+
+<h2>All Tips</h2>
+<ul id="leftnav">
+<li><a href="http://spreadsheetpage.com/index.php/tips">List all tips, by category</a></li>
+<li><a href="http://spreadsheetpage.com/index.php/tip/">Browse all tips</a></li>
+</ul>
+
+<h2>Browse Tips by Category</h2>
+<ul id="leftnav">
+
+<li><a href="http://spreadsheetpage.com/index.php/tip/C26">General</a></li>  
+
+<li><a href="http://spreadsheetpage.com/index.php/tip/C18">Formatting</a></li>  
+
+<li><a href="http://spreadsheetpage.com/index.php/tip/C17">Formulas</a></li>  
+
+<li><a href="http://spreadsheetpage.com/index.php/tip/C16">Charts &amp; Graphics</a></li>  
+
+<li><a href="http://spreadsheetpage.com/index.php/tip/C19">Printing</a></li>  
+
+<li><a href="http://spreadsheetpage.com/index.php/tip/C33">General VBA</a></li>  
+
+<li><a href="http://spreadsheetpage.com/index.php/tip/C30">CommandBars &amp; Menus</a></li>  
+
+<li><a href="http://spreadsheetpage.com/index.php/tip/C29">UserForms</a></li>  
+
+<li><a href="./Spreadsheet Page Excel Tips_files/Spreadsheet Page Excel Tips.htm">VBA Functions</a></li>  
+
+</ul>
+
+<h2>Search for Tips</h2>
+<form method="post" action="http://spreadsheetpage.com/index.php">
+<div class="hiddenFields">
+<input type="hidden" name="ACT" value="19">
+<input type="hidden" name="XID" value="6874b0018cbe6d729e20545dfd3be77bbb6ffe2d">
+<input type="hidden" name="RP" value="searchresults">
+<input type="hidden" name="NRP" value="">
+<input type="hidden" name="RES" value="">
+<input type="hidden" name="status" value="">
+<input type="hidden" name="weblog" value="tip">
+<input type="hidden" name="search_in" value="everywhere">
+<input type="hidden" name="where" value="all">
+<input type="hidden" name="site_id" value="1">
+</div>
+
+
+<p><label for="keywords">Search:</label><br>
+<input type="text" name="keywords" id="keywords" value="" size="18" maxlength="100"> <input type="submit" value="Go" style="vertical-align:bottom"></p>
+<ul id="leftnav"><li><a href="http://spreadsheetpage.com/index.php/searchpage/">Advanced Search</a></li></ul>
+</form>
+
+<h2>Tip Books</h2>
+<p>Needs tips? Here are two books, with nothing but tips:</p><p>
+
+<a href="http://spreadsheetpage.com/index.php/book/john_walkenbachs_favorite_excel_2007_tips_tricks/"><img border="0" src="./Spreadsheet Page Excel Tips_files/2007tips_sm.png"></a>
+</p><p>Contains more than 200 useful tips and tricks for Excel 2007 | Other  <a href="http://spreadsheetpage.com/index.php/book/C4/">Excel 2007</a> books | 
+Amazon link: <a href="http://www.amazon.com/exec/obidos/ISBN=0470137665/ref=nosim/jwalkassociateA/">John Walkenbach's Favorite Excel 2007 Tips &amp; Tricks</a></p>
+
+<a href="http://spreadsheetpage.com/index.php/book/101_excel_2013_tips_tricks_timesavers/"><img border="0" src="./Spreadsheet Page Excel Tips_files/101tips.jpg"></a>
+<p>Contains more than 100 useful tips and tricks for Excel 2013 | Other  <a href="http://spreadsheetpage.com/index.php/book/C46/">Excel 2013</a> books | 
+Amazon link: <a href="http://www.amazon.com/exec/obidos/ISBN=111864218X/ref=nosim/jwalkassociateA/">101 Excel 2013 Tips, Tricks &amp;Timesavers</a></p>
+
+
+
+
+</div>
+
+<div id="footer">
+<p>© Copyright 2014, J-Walk &amp; Associates, Inc.<br>
+This site is not affiliated with Microsoft Corporation.<br>
+<a href="http://spreadsheetpage.com/index.php/siteinfo/privacy/">Privacy Policy</a>
+</p>
+
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script><script src="./Spreadsheet Page Excel Tips_files/ga.js" type="text/javascript"></script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-5147388-1");
+pageTracker._initData();
+pageTracker._trackPageview();
+</script>
+</div><!--"footer" -->
+</div>
+
+
+
+</body></html>

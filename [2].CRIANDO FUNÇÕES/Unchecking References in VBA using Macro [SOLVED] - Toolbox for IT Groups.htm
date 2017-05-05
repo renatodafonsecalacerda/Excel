@@ -1,0 +1,2715 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0118)http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/unchecking-references-in-vba-using-macro-4735351 -->
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://www.facebook.com/2008/fbml"><head id="ctl00_m_Head1"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script type="text/javascript" src="./Unchecking References in VBA using Macro [SOLVED] - Toolbox for IT Groups_files/get" charset="UTF-8" async=""></script><script type="text/javascript" src="./Unchecking References in VBA using Macro [SOLVED] - Toolbox for IT Groups_files/get(1)" charset="UTF-8" async=""></script><title>
+	Unchecking References in VBA using Macro [SOLVED] - Toolbox for IT Groups
+</title><link rel="shortcut icon" href="http://images.ittoolbox.com/favicon.ico"><script async="" src="./Unchecking References in VBA using Macro [SOLVED] - Toolbox for IT Groups_files/beacon.js"></script><script src="./Unchecking References in VBA using Macro [SOLVED] - Toolbox for IT Groups_files/linksmart_2.3.0.min.js" async=""></script><script type="text/javascript" async="" src="./Unchecking References in VBA using Macro [SOLVED] - Toolbox for IT Groups_files/ga.js"></script><script src="./Unchecking References in VBA using Macro [SOLVED] - Toolbox for IT Groups_files/jquery.min.js" type="text/javascript"></script><link rel="Stylesheet" type="text/css" href="./Unchecking References in VBA using Macro [SOLVED] - Toolbox for IT Groups_files/master.css"><link href="./Unchecking References in VBA using Macro [SOLVED] - Toolbox for IT Groups_files/css" rel="stylesheet" type="text/css">
+    
+    <meta id="ctl00_m_headerContent_headerContent_pageMetaReloader" http-equiv="refresh" content="480">
+
+    
+
+    <style type="text/css">
+        a, .link { color:#0a5ca3 }
+        .grp_messageattrib a{font-family:Verdana;font-size:8pt}
+    </style>
+    <script language="javascript">
+        $(document).ready(function(){
+            $($(".breadcrumb-linkbox")[0]).css("display","none");
+            $($(".breadcrumb-separator")[0]).css("display","none");
+            $(".replyboxbutton").click(function() {
+              $(".textarea-reply").css("background-color","lightyellow");
+            });
+        });
+    </script>
+    <script language="javascript" type="text/javascript" src="./Unchecking References in VBA using Macro [SOLVED] - Toolbox for IT Groups_files/jquery.tinymce.js"></script>
+
+
+<script type="text/javascript">
+    (function () {
+        var useSSL = 'https:' == document.location.protocol;
+        var src = (useSSL ? 'https:' : 'http:') +
+ 	'//www.googletagservices.com/tag/js/gpt.js';
+        document.write('<scr' + 'ipt src="' + src + '"></scr' + 'ipt>');
+    })();
+</script><script src="./Unchecking References in VBA using Macro [SOLVED] - Toolbox for IT Groups_files/gpt.js"></script>
+<script src="./Unchecking References in VBA using Macro [SOLVED] - Toolbox for IT Groups_files/522310735.js"></script>
+<script type="text/javascript" src="./Unchecking References in VBA using Macro [SOLVED] - Toolbox for IT Groups_files/amzn_ads.js"></script>
+<script type="text/javascript">
+    try {
+        amznads.getAds('3101');
+    } catch(e) { /*ignore*/}
+</script><script type="text/javascript" src="./Unchecking References in VBA using Macro [SOLVED] - Toolbox for IT Groups_files/bid"></script>
+<script type="text/javascript">
+try {
+    amznads.setTargetingForGPTAsync('amznslots');
+} catch(e) { /*ignore*/}
+</script>
+ <script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-45137848-1']);
+  _gaq.push(['_setDomainName', 'ittoolbox.com']);
+  _gaq.push(['_setCustomVar', 1,'Community','Toolbox for IT',3]);
+  _gaq.push(['_setCustomVar', 2,'SubCommunity','Visual Basic',3]);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' :
+		'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0];
+		s.parentNode.insertBefore(ga, s);
+  })();
+ </script><link rel="canonical" href="./Unchecking References in VBA using Macro [SOLVED] - Toolbox for IT Groups_files/Unchecking References in VBA using Macro [SOLVED] - Toolbox for IT Groups.htm"><meta name="zdid" content="groupsmessage:4735351"><meta name="keywords" content="vba,macro"><meta name="description" content="Hi
+I made some woorkbook with vba macros which use references:
+- Visual Basic for Applications
+- Microsoft Excel 14.0 Object ..."><script type="text/javascript">
+googletag.cmd.push(function () {
+	googletag.defineSlot("/4585/zd.toolbox/VisualBasic_Section", [728, 90], "div-gpt-ad-2082848930-0")
+		.addService(googletag.pubads())
+		.setCollapseEmptyDiv(true);
+	googletag.defineSlot("/4585/zd.toolbox/VisualBasic_Section", [[300, 250], [300, 600]], "div-gpt-ad-2082848930-1")
+		.addService(googletag.pubads())
+		.setCollapseEmptyDiv(true);
+	googletag.defineSlot("/4585/zd.toolbox/VisualBasic_Section", [[300, 250], [300, 600]], "div-gpt-ad-2082848930-2")
+		.addService(googletag.pubads())
+		.setCollapseEmptyDiv(true);
+	googletag.pubads().setTargeting("zdid", "groupsmessage:4735351");
+	googletag.pubads().setTargeting("ref", "toolbox.com");
+	googletag.pubads().setTargeting("cmn", "zd");
+	googletag.pubads().setTargeting("zdtopic", ["vba","macro"]);
+	googletag.pubads().enableSingleRequest();
+	googletag.pubads().collapseEmptyDivs();
+	googletag.enableServices();
+});
+</script><script async="" type="text/javascript" src="./Unchecking References in VBA using Macro [SOLVED] - Toolbox for IT Groups_files/pubads_impl_46.js"></script><script>window["_GOOG_TRANS_EXT_VER"] = "1";</script><script async="" src="./Unchecking References in VBA using Macro [SOLVED] - Toolbox for IT Groups_files/data"></script><style type="text/css">.ob-tcolor{color:rgb(102, 102, 102)} .ob-lcolor{color:rgb(10, 92, 163)} .ob-bgtcolor{background-color:rgb(102, 102, 102)} .item-link-container:hover .ob-tcolor{border-color:rgb(102, 102, 102)}</style><script type="text/javascript" src="./Unchecking References in VBA using Macro [SOLVED] - Toolbox for IT Groups_files/osd.js"></script><script>window["_GOOG_TRANS_EXT_VER"] = "1";</script></head>
+<body style=""> 
+ <script type="text/javascript">	
+    var isCorpSite = false;
+    var signinURL = 'https://login.toolbox.com/';            
+    var vertBaseURL = 'http://it.toolbox.com/';
+    var CDNImageURL = 'http://cdn.toolbox.com/BUILD_2872/';
+    var CurrentVerticalName = 'Toolbox for IT';
+    var siteCookieDomain = '.ittoolbox.com';
+
+    function setCookie(name, value, exdays) {  var exdate = new Date();  exdate.setTime(exdate.getTime());  if (exdays) {  exdays = exdays * 1000 * 60 * 60 * 24;  }  var expires_date = new Date(exdate.getTime() + (exdays));   var domain = "";  if ( siteCookieDomain )  domain = ";domain=" + siteCookieDomain;   document.cookie = name + "=" + escape(value) + ((exdays) ? ";expires=" + expires_date.toGMTString() : "") + ";path=/" + domain;  }   
+    function getCookie(check_name) {  var ca = document.cookie.split(";");  var tc = '';  var cn = '';  var cf = false;   for (var i = 0; i < ca.length; i++) {  tc = ca[i].substr(0, ca[i].indexOf("="));  cn = ca[i].substr(ca[i].indexOf("=") + 1);  tc = tc.replace(/^\s+|\s+$/g, "");  if (tc == check_name) {  cf = true;  return unescape(cn);  break;  }  }  if (!cf) {  return null;  } }
+    </script>
+<div id="lightbox-panel"></div>
+<x-bbskip>
+
+
+<form name="aspnetForm" method="post" action="./Unchecking References in VBA using Macro [SOLVED] - Toolbox for IT Groups_files/Unchecking References in VBA using Macro [SOLVED] - Toolbox for IT Groups.htm" id="aspnetForm">
+<div>
+<input type="hidden" name="rbFlag" id="rbFlag" value="0">
+<input type="hidden" name="baId" id="baId" value="4735427">
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="">
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="">
+
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['aspnetForm'];
+if (!theForm) {
+    theForm = document.aspnetForm;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script type="text/javascript">$(function () { $('img[groupchamp|="true"]').attr('src', 'http://cdn.toolbox.com/BUILD_2872/rds/groupchamp.png'); });</script>
+<div id="header" style="display:none">
+<div id="ctl00_m_logoandads" class="header-normal">
+
+<a href="http://www.toolbox.com/" class="header-logolink"></a>
+</div>
+</div>
+
+
+
+    
+    <div id="zd-header">
+        <div id="zd-headerinner">
+            <a href="http://www.ziffdavis.com/" class="ZDlogo"></a>
+        </div>
+    </div>
+   
+    <div class="dynaheader-logobar">
+        <div class="dynaheader-logoinner">
+            <div class="dynaheader-logoleft">
+                <a href="http://it.toolbox.com/"><img src="./Unchecking References in VBA using Macro [SOLVED] - Toolbox for IT Groups_files/dynaheader-sprite.png" border="0"></a>
+            </div>
+            <div class="dynaheader-logoright">
+                <table border="0" width="100%" cellpadding="0" cellspacing="0">
+                    <tbody><tr>
+                        <td align="center" width="500">
+                            
+
+<script type="text/javascript">
+    var _action = 'http://it.toolbox.com/home/search/';
+    var _mainArgumentName = 'r';
+    var _additionalArgumentName = null;
+    var _additionalArgumentName = '';
+    var _additionalArgumentValue = '';
+</script>
+<div id="dynaheader-searchbox"></div>
+
+
+                        </td>
+                        <td valign="middle" align="right">                
+                            
+                                <div class="dynaheader-signinbox">
+                                    <div class="dynaheader-triggersignin dynaheader-header" style="display:inline">Log In</div>
+                                        <div id="ctl00_m_GN_signin_form" class="dynaheader-panel dn-panel dynaheader-signingpanel">
+                                            <div id="signin_message"></div>
+                                            <div style="padding:10px">
+                                                E-mail or User ID<br>
+                                                <input type="text" style="width:180px; height:20px" id="signin_form_username" name="u" tabindex="900">
+                                            </div>
+                                            <div style="padding:10px">
+                                                Password<br>
+                                                <input type="password" style="width:180px; height:20px" id="signin_form_password" name="p" tabindex="901">
+                                            </div>
+                                            <div style="padding:10px">
+                                                <input type="checkbox" name="keepMeSignedIn" id="kmsiCB" value="true" tabindex="903" checked="">&nbsp;
+                                                <span style="font-family:&#39;Open Sans&#39;; color:white">Keep me signed in</span>
+                                                
+                                            </div>
+                                            <div style="padding:10px">
+                                                <input type="button" id="btnSignIn" value="" tabindex="905" class="signinbuttonbig">
+                                            </div>
+                                            <a id="ctl00_m_GN_ltbSignin_RecoverPassword" href="http://it.toolbox.com/home/recover-password">Recover Password</a>
+                                        </div>
+                                        <a href="http://it.toolbox.com//home/register" class="dynaheader-header" style="white-space:nowrap; display:inline" hpx="createaccount">Create an Account</a>
+                                    
+                                </div>
+                               
+                            
+                        </td>
+                    </tr>
+                </tbody></table>
+                </div>
+            </div>
+        </div>
+
+     
+    <div class="dynaheader-navbar dynaheader-fixednav">
+        <div class="dynaheader-navinner">
+        <table border="0" cellpadding="0" cellspacing="0" width="940" height="41"><tbody><tr><td class="dynaheader-navleft" width="504">
+            <div>
+
+                <div class="dynaheader-vertrule"></div>
+                <a href="http://it.toolbox.com/" class="dynaheader-home dynaheader-homecollapsed"></a>
+                <div class="dynaheader-vertrule"></div>
+                <a href="http://it.toolbox.com/blogs/" class="dynaheader-tabbutton">Blogs</a>
+                <div class="dynaheader-vertrule"></div>
+                <div class="dynaheader-trigger dynaheader-tabbuttondropdown">Discussions</div>
+                <div id="dynaheader-discusspanel" class="dn-panel dynaheader-panel">
+                    <div id="animationholder" style="width:2000px; height:290px">
+                        <div id="topiclist" class="dynaheader-bucket">
+                            <div class="dynaheader-panelhed">CHOOSE A TOPIC</div>
+							
+									<div class="dynaheader-dispanel">
+								
+									<a class="dynaheader-dirtopics" href="javascript:discussionPaneHandler("showGroups", 17)">Business Intelligence</a>
+																									
+								
+									<a class="dynaheader-dirtopics" href="javascript:discussionPaneHandler("showGroups", 19)">C Languages</a>
+																									
+								
+									<a class="dynaheader-dirtopics" href="javascript:discussionPaneHandler("showGroups", 78)">Cloud Computing</a>
+																									
+								
+									<a class="dynaheader-dirtopics" href="javascript:discussionPaneHandler("showGroups", 75)">Communications Technology</a>
+																									
+								
+									<a class="dynaheader-dirtopics" href="javascript:discussionPaneHandler("showGroups", 1)">CRM</a>
+																									
+								
+									<a class="dynaheader-dirtopics" href="javascript:discussionPaneHandler("showGroups", 76)">Data Center</a>
+																									
+								
+									<a class="dynaheader-dirtopics" href="javascript:discussionPaneHandler("showGroups", 15)">Data Warehouse</a>
+																									
+								
+									<a class="dynaheader-dirtopics" href="javascript:discussionPaneHandler("showGroups", 25)">Database</a>
+																									
+								
+									<a class="dynaheader-dirtopics" href="javascript:discussionPaneHandler("showGroups", 28)">Emerging Technology and Trends</a>
+																									
+								
+									<a class="dynaheader-dirtopics" href="javascript:discussionPaneHandler("showGroups", 2)">Enterprise Architecture and EAI</a>
+									</div><div class="dynaheader-panelvertrule" style="height:270px; margin-top:0px; "></div><div class="dynaheader-dispanel" style="padding-left:15px">																
+								
+									<a class="dynaheader-dirtopics" href="javascript:discussionPaneHandler("showGroups", 4)">ERP</a>
+																									
+								
+									<a class="dynaheader-dirtopics" href="javascript:discussionPaneHandler("showGroups", 31)">Hardware</a>
+																									
+								
+									<a class="dynaheader-dirtopics" href="javascript:discussionPaneHandler("showGroups", 32)">IT Management and Strategy</a>
+																									
+								
+									<a class="dynaheader-dirtopics" href="javascript:discussionPaneHandler("showGroups", 18)">Java</a>
+																									
+								
+									<a class="dynaheader-dirtopics" href="javascript:discussionPaneHandler("showGroups", 13)">Knowledge Management</a>
+																									
+								
+									<a class="dynaheader-dirtopics" href="javascript:discussionPaneHandler("showGroups", 12)">Linux</a>
+																									
+								
+									<a class="dynaheader-dirtopics" href="javascript:discussionPaneHandler("showGroups", 10)">Networking</a>
+																									
+								
+									<a class="dynaheader-dirtopics" href="javascript:discussionPaneHandler("showGroups", 9)">Oracle</a>
+																									
+								
+									<a class="dynaheader-dirtopics" href="javascript:discussionPaneHandler("showGroups", 8)">PeopleSoft</a>
+																									
+								
+									<a class="dynaheader-dirtopics" href="javascript:discussionPaneHandler("showGroups", 29)">Project and Portfolio Management</a>
+									</div><div class="dynaheader-panelvertrule" style="height:270px; margin-top:0px; "></div><div class="dynaheader-dispanel" style="padding-left:15px">																
+								
+									<a class="dynaheader-dirtopics" href="javascript:discussionPaneHandler("showGroups", 6)">SAP</a>
+																									
+								
+									<a class="dynaheader-dirtopics" href="javascript:discussionPaneHandler("showGroups", 7)">SCM</a>
+																									
+								
+									<a class="dynaheader-dirtopics" href="javascript:discussionPaneHandler("showGroups", 24)">Security</a>
+																									
+								
+									<a class="dynaheader-dirtopics" href="javascript:discussionPaneHandler("showGroups", 23)">Siebel</a>
+																									
+								
+									<a class="dynaheader-dirtopics" href="javascript:discussionPaneHandler("showGroups", 22)">Storage</a>
+																									
+								
+									<a class="dynaheader-dirtopics" href="javascript:discussionPaneHandler("showGroups", 14)">UNIX</a>
+																									
+								
+									<a class="dynaheader-dirtopics" href="javascript:discussionPaneHandler("showGroups", 21)">Visual Basic</a>
+																									
+								
+									<a class="dynaheader-dirtopics" href="javascript:discussionPaneHandler("showGroups", 11)">Web Design and Development</a>
+																									
+								
+									<a class="dynaheader-dirtopics" href="javascript:discussionPaneHandler("showGroups", 26)">Windows</a>
+																									
+								
+									</div>
+								
+                        </div> 
+                        <div id="groupslistbox" class="dynaheader-bucket">
+                            <a class="dynaheader-backlink" href="javascript:discussionPaneHandler('showTopics')">&lt; Back</a>
+                            <a id="dynaheader-backbutton" href="javascript:discussionPaneHandler('showTopics')"></a>
+                            <div class="dynaheader-panelhed">
+                                CHOOSE A DISCUSSION GROUP
+                            </div>
+                            <div id="groupslist" style="height:250px"></div>
+                        </div>
+                    </div> 
+                </div>    
+                <div class="dynaheader-vertrule"></div>
+                <a href="http://it.toolbox.com/companies/white-papers/" class="dynaheader-tabbutton">Research</a>
+                <div class="dynaheader-vertrule"></div>
+                <div class="dynaheader-trigger dynaheader-tabbuttondropdown">Directory</div>
+                <div id="dynaheader-directorypanel" class="dn-panel dynaheader-panel">
+                    <div class="dynaheader-dirpanel">
+                        <a href="http://it.toolbox.com/topics" class="dynaheader-panelhed">TOPICS</a>
+                        <div class="dn-dirTopics">
+						
+                            <a class="dynaheader-dirtopics" href="http://database.ittoolbox.com/">Database</a>
+                            <a class="dynaheader-dirtopics" href="http://hardware.ittoolbox.com/">Hardware</a>
+                            <a class="dynaheader-dirtopics" href="http://networking.ittoolbox.com/">Networking</a>
+                            <a class="dynaheader-dirtopics" href="http://sap.ittoolbox.com/">SAP</a>
+                            <a class="dynaheader-dirtopics" href="http://security.ittoolbox.com/">Security</a>
+                            <a class="dynaheader-dirtopics" href="http://webdesign.ittoolbox.com/">Web Design</a>
+						
+                        </div>
+                    </div>
+                    <div class="dynaheader-panelvertrule"></div>
+                    <div class="dynaheader-dirpanel">
+                        <a href="http://it.toolbox.com/people" class="dynaheader-panelhed">MEMBERS</a>
+                        <div id="memberSlideDisplay"><div class="memberSlide"><div class="member"><div class="floatleft"><img src="./Unchecking References in VBA using Macro [SOLVED] - Toolbox for IT Groups_files/s_2376890.jpg" class="post-pic"></div><div class="floatleft" style="padding-left:10px"><a href="http://it.toolbox.com/people/mabeleira/" class="dynaheader-dirtopics memberLinkbox">mabeleira </a></div></div></div><div class="memberSlide"><div class="member"><div class="floatleft"><img src="./Unchecking References in VBA using Macro [SOLVED] - Toolbox for IT Groups_files/s_381083.jpg" class="post-pic"></div><div class="floatleft" style="padding-left:10px"><a href="http://it.toolbox.com/people/taliesinuk/" class="dynaheader-dirtopics memberLinkbox">RichardChan </a></div></div></div><div class="memberSlide"><div class="member"><div class="floatleft"><img src="./Unchecking References in VBA using Macro [SOLVED] - Toolbox for IT Groups_files/s_2684131.jpg" class="post-pic"></div><div class="floatleft" style="padding-left:10px"><a href="http://it.toolbox.com/people/mohammadmoini/" class="dynaheader-dirtopics memberLinkbox">mohammadmoini </a></div></div></div><div class="memberSlide"><div class="member"><div class="floatleft"><img src="./Unchecking References in VBA using Macro [SOLVED] - Toolbox for IT Groups_files/s_5079344.jpg" class="post-pic"></div><div class="floatleft" style="padding-left:10px"><a href="http://it.toolbox.com/people/devds/" class="dynaheader-dirtopics memberLinkbox">vishal_chaudhar </a></div></div></div></div>
+                        <div id="memberSlideHolder" style="display:none">
+							<div class="memberSlide"><div class="member"><div class="floatleft"><img src="./Unchecking References in VBA using Macro [SOLVED] - Toolbox for IT Groups_files/s_1368155.jpg" class="post-pic"></div><div class="floatleft" style="padding-left:10px"><a href="http://it.toolbox.com/people/dacree/" class="dynaheader-dirtopics memberLinkbox">DACREE </a></div></div></div><div class="memberSlide"><div class="member"><div class="floatleft"><img src="./Unchecking References in VBA using Macro [SOLVED] - Toolbox for IT Groups_files/s_1681012.jpg" class="post-pic"></div><div class="floatleft" style="padding-left:10px"><a href="http://it.toolbox.com/people/achang01/" class="dynaheader-dirtopics memberLinkbox">achang </a></div></div></div><div class="memberSlide"><div class="member"><div class="floatleft"><img src="./Unchecking References in VBA using Macro [SOLVED] - Toolbox for IT Groups_files/s_1124303.jpg" class="post-pic"></div><div class="floatleft" style="padding-left:10px"><a href="http://it.toolbox.com/people/mikemj/" class="dynaheader-dirtopics memberLinkbox">Michael Meyers-Jouan </a></div></div></div><div class="memberSlide"><div class="member"><div class="floatleft"><img src="./Unchecking References in VBA using Macro [SOLVED] - Toolbox for IT Groups_files/s_2192756.jpg" class="post-pic"></div><div class="floatleft" style="padding-left:10px"><a href="http://it.toolbox.com/people/paul_pedant/" class="dynaheader-dirtopics memberLinkbox">Paul_Pedant </a></div></div></div><div class="memberSlide"><div class="member"><div class="floatleft"><img src="./Unchecking References in VBA using Macro [SOLVED] - Toolbox for IT Groups_files/s_888180.jpg" class="post-pic"></div><div class="floatleft" style="padding-left:10px"><a href="http://it.toolbox.com/people/jalal-hajigholamali/" class="dynaheader-dirtopics memberLinkbox">jalal.hajighola </a></div></div></div><div class="memberSlide"><div class="member"><div class="floatleft"><img src="./Unchecking References in VBA using Macro [SOLVED] - Toolbox for IT Groups_files/s_518961.jpg" class="post-pic"></div><div class="floatleft" style="padding-left:10px"><a href="http://it.toolbox.com/people/rasilon/" class="dynaheader-dirtopics memberLinkbox">Hank Arnold </a></div></div></div><div class="memberSlide"><div class="member"><div class="floatleft"><img src="./Unchecking References in VBA using Macro [SOLVED] - Toolbox for IT Groups_files/s_27549.jpg" class="post-pic"></div><div class="floatleft" style="padding-left:10px"><a href="http://it.toolbox.com/people/caddickd/" class="dynaheader-dirtopics memberLinkbox">D. Caddick </a></div></div></div><div class="memberSlide"><div class="member"><div class="floatleft"><img src="./Unchecking References in VBA using Macro [SOLVED] - Toolbox for IT Groups_files/s_1135016.jpg" class="post-pic"></div><div class="floatleft" style="padding-left:10px"><a href="http://it.toolbox.com/people/andrew_s_baker/" class="dynaheader-dirtopics memberLinkbox">Andrew.S.Baker </a></div></div></div><div class="memberSlide"><div class="member"><div class="floatleft"><img src="./Unchecking References in VBA using Macro [SOLVED] - Toolbox for IT Groups_files/s_4625720.jpg" class="post-pic"></div><div class="floatleft" style="padding-left:10px"><a href="http://it.toolbox.com/people/marvinm80/" class="dynaheader-dirtopics memberLinkbox">MarvinM80 </a></div></div></div><div class="memberSlide"><div class="member"><div class="floatleft"><img src="./Unchecking References in VBA using Macro [SOLVED] - Toolbox for IT Groups_files/s_4038162.jpg" class="post-pic"></div><div class="floatleft" style="padding-left:10px"><a href="http://it.toolbox.com/people/voip_news/" class="dynaheader-dirtopics memberLinkbox">VoIP_News </a></div></div></div><div class="memberSlide"><div class="member"><div class="floatleft"><img src="./Unchecking References in VBA using Macro [SOLVED] - Toolbox for IT Groups_files/s_3370762.jpg" class="post-pic"></div><div class="floatleft" style="padding-left:10px"><a href="http://it.toolbox.com/people/insidecrm/" class="dynaheader-dirtopics memberLinkbox">Inside-CRM </a></div></div></div><div class="memberSlide"><div class="member"><div class="floatleft"><img src="./Unchecking References in VBA using Macro [SOLVED] - Toolbox for IT Groups_files/s_4152210.jpg" class="post-pic"></div><div class="floatleft" style="padding-left:10px"><a href="http://it.toolbox.com/people/inside_erp/" class="dynaheader-dirtopics memberLinkbox">Inside-ERP </a></div></div></div><div class="memberSlide"><div class="member"><div class="floatleft"><img src="./Unchecking References in VBA using Macro [SOLVED] - Toolbox for IT Groups_files/s_1503836.jpg" class="post-pic"></div><div class="floatleft" style="padding-left:10px"><a href="http://it.toolbox.com/people/infinate_loop/" class="dynaheader-dirtopics memberLinkbox">JoeTorre </a></div></div></div><div class="memberSlide"><div class="member"><div class="floatleft"><img src="./Unchecking References in VBA using Macro [SOLVED] - Toolbox for IT Groups_files/s_5239837.jpg" class="post-pic"></div><div class="floatleft" style="padding-left:10px"><a href="http://it.toolbox.com/people/bluesguyaz59/" class="dynaheader-dirtopics memberLinkbox">bluesguyAZ59 </a></div></div></div><div class="memberSlide"><div class="member"><div class="floatleft"><img src="./Unchecking References in VBA using Macro [SOLVED] - Toolbox for IT Groups_files/s_6348.jpg" class="post-pic"></div><div class="floatleft" style="padding-left:10px"><a href="http://it.toolbox.com/people/romeo_ninov/" class="dynaheader-dirtopics memberLinkbox">RomeoNinov </a></div></div></div><div class="memberSlide"><div class="member"><div class="floatleft"><img src="./Unchecking References in VBA using Macro [SOLVED] - Toolbox for IT Groups_files/s_393140.jpg" class="post-pic"></div><div class="floatleft" style="padding-left:10px"><a href="http://it.toolbox.com/people/chrisdaypinkyltd/" class="dynaheader-dirtopics memberLinkbox">Chris_Day </a></div></div></div><div class="memberSlide"><div class="member"><div class="floatleft"><img src="./Unchecking References in VBA using Macro [SOLVED] - Toolbox for IT Groups_files/s_694229.jpg" class="post-pic"></div><div class="floatleft" style="padding-left:10px"><a href="http://it.toolbox.com/people/rtlinton/" class="dynaheader-dirtopics memberLinkbox">Richard </a></div></div></div><div class="memberSlide"><div class="member"><div class="floatleft"><img src="./Unchecking References in VBA using Macro [SOLVED] - Toolbox for IT Groups_files/s_4031004.jpg" class="post-pic"></div><div class="floatleft" style="padding-left:10px"><a href="http://it.toolbox.com/people/it-management/" class="dynaheader-dirtopics memberLinkbox">IT-Management </a></div></div></div><div class="memberSlide"><div class="member"><div class="floatleft"><img src="./Unchecking References in VBA using Macro [SOLVED] - Toolbox for IT Groups_files/s_638431.jpg" class="post-pic"></div><div class="floatleft" style="padding-left:10px"><a href="http://it.toolbox.com/people/terrycurran999/" class="dynaheader-dirtopics memberLinkbox">Terence Curran </a></div></div></div><div class="memberSlide"><div class="member"><div class="floatleft"><img src="./Unchecking References in VBA using Macro [SOLVED] - Toolbox for IT Groups_files/s_607652.jpg" class="post-pic"></div><div class="floatleft" style="padding-left:10px"><a href="http://it.toolbox.com/people/dwildsch/" class="dynaheader-dirtopics memberLinkbox">David </a></div></div></div><div class="memberSlide"><div class="member"><div class="floatleft"><img src="./Unchecking References in VBA using Macro [SOLVED] - Toolbox for IT Groups_files/s_1941714.jpg" class="post-pic"></div><div class="floatleft" style="padding-left:10px"><a href="http://it.toolbox.com/people/applemcg/" class="dynaheader-dirtopics memberLinkbox">applemcg </a></div></div></div><div class="memberSlide"><div class="member"><div class="floatleft"><img src="./Unchecking References in VBA using Macro [SOLVED] - Toolbox for IT Groups_files/s_1683877.jpg" class="post-pic"></div><div class="floatleft" style="padding-left:10px"><a href="http://it.toolbox.com/people/lcc352/" class="dynaheader-dirtopics memberLinkbox">LCC352 </a></div></div></div><div class="memberSlide"><div class="member"><div class="floatleft"><img src="./Unchecking References in VBA using Macro [SOLVED] - Toolbox for IT Groups_files/s_853189.jpg" class="post-pic"></div><div class="floatleft" style="padding-left:10px"><a href="http://it.toolbox.com/people/rdwilson2/" class="dynaheader-dirtopics memberLinkbox">Ralph D. Wilson II </a></div></div></div><div class="memberSlide"><div class="member"><div class="floatleft"><img src="./Unchecking References in VBA using Macro [SOLVED] - Toolbox for IT Groups_files/s_1047415.jpg" class="post-pic"></div><div class="floatleft" style="padding-left:10px"><a href="http://it.toolbox.com/people/donbarclay/" class="dynaheader-dirtopics memberLinkbox">donbarclay </a></div></div></div><div class="memberSlide"><div class="member"><div class="floatleft"><img src="./Unchecking References in VBA using Macro [SOLVED] - Toolbox for IT Groups_files/s_710629.jpg" class="post-pic"></div><div class="floatleft" style="padding-left:10px"><a href="http://it.toolbox.com/people/vasco4it/" class="dynaheader-dirtopics memberLinkbox">Vasco </a></div></div></div><div class="memberSlide"><div class="member"><div class="floatleft"><img src="./Unchecking References in VBA using Macro [SOLVED] - Toolbox for IT Groups_files/s_1565747.jpg" class="post-pic"></div><div class="floatleft" style="padding-left:10px"><a href="http://it.toolbox.com/people/sd007/" class="dynaheader-dirtopics memberLinkbox">Bond </a></div></div></div>
+                        </div>
+                    </div>
+                    <div class="dynaheader-panelvertrule"></div>
+                    <div class="dynaheader-dirpanel">
+                        <a href="http://it.toolbox.com/companies" class="dynaheader-panelhed">COMPANIES</a>
+                        
+                                <div class="member">         
+                                    <div class="floatleft"><a href="http://it.toolbox.com/companies/ManageEngine"><div class="userimage-defaultbadge" style="background:url(&#39;http://userimages.ittoolbox.com/vendor/9/1/8/b_2280819.jpg&#39;) center center;undefined"></div></a>
+</div>
+                                    <div class="floatleft">
+<a href="http://it.toolbox.com/companies/ManageEngine" class="dynaheader-dircomps">ZOHO Corporation</a></div>
+                                    <div class="clear"></div>                   
+                                </div>
+                            
+                                <div class="member">         
+                                    <div class="floatleft"><a href="http://it.toolbox.com/companies/alfresco"><div class="userimage-defaultbadge" style="background:url(&#39;http://userimages.ittoolbox.com/vendor/0/1/1/b_1274110.jpg&#39;) center center;undefined"></div></a>
+</div>
+                                    <div class="floatleft">
+<a href="http://it.toolbox.com/companies/alfresco" class="dynaheader-dircomps">Alfresco Software, Inc.</a></div>
+                                    <div class="clear"></div>                   
+                                </div>
+                            
+                                <div class="member">         
+                                    <div class="floatleft"><a href="http://it.toolbox.com/companies/avaya"><div class="userimage-defaultbadge" style="background:url(&#39;http://userimages.ittoolbox.com/vendor/3/3/3/b_1255333.jpg&#39;) center center;undefined"></div></a>
+</div>
+                                    <div class="floatleft">
+<a href="http://it.toolbox.com/companies/avaya" class="dynaheader-dircomps">Avaya</a></div>
+                                    <div class="clear"></div>                   
+                                </div>
+                            
+                                <div class="member">         
+                                    <div class="floatleft"><a href="http://it.toolbox.com/companies/edgewave"><div class="userimage-defaultbadge" style="background:url(&#39;http://userimages.ittoolbox.com/vendor/9/9/1/b_2700199.jpg&#39;) center center;undefined"></div></a>
+</div>
+                                    <div class="floatleft">
+<a href="http://it.toolbox.com/companies/edgewave" class="dynaheader-dircomps">EdgeWave</a></div>
+                                    <div class="clear"></div>                   
+                                </div>
+                            
+                    </div>
+                    <div class="clear"></div>
+                    <div style="height:20px">
+                        <div class="dynaheader-dirpanel dynaheader-dirpanelshort">
+                            <a href="http://it.toolbox.com/topics" class="dynaheader-panellink">View All Topics</a>
+                        </div> 
+                        <div class="dynaheader-dirpanel dynaheader-dirpanelshort">
+                            <a href="http://it.toolbox.com/people" class="dynaheader-panellink">View All Members</a>
+                        </div>
+                        <div class="dynaheader-dirpanel dynaheader-dirpanelshort">
+                             <a href="http://it.toolbox.com/companies" class="dynaheader-panellink">View All Companies</a>
+                        </div>
+                    </div>    
+                </div>
+
+            </div>
+            </td>
+            <td valign="top">
+            <div class="dynaheader-navright">
+
+                <div class="dynaheader-vertrule" style="float:right"></div>
+                <a href="http://it.toolbox.com/blogs/start-new-blog.aspx" id="ctl00_m_GN_posticon" class="dynaheader-post" title="Write a Blog Post"></a>
+                <a href="http://it.toolbox.com/ask-a-question/" class="dynaheader-askq" title="Ask a Question"></a>
+                <div class="dynaheader-triggersearch" id="dynaheader-searchbutton" title="Search" style="display: block;"></div>
+                <div class="dynaheader-panel" id="dynaheader-searchpanel">
+    <input id="query" type="text" defaultbutton="btnGlobalSearch" class="dynaheader-search watermark" watermark="Search Toolbox.com">            
+    <input id="btnGlobalSearch" class="dynaheader-searchexbutton" type="button" onclick="GlobalSearch()">
+</div>
+
+            </div>
+            </td></tr></tbody></table>
+
+        </div>
+    </div>
+
+ 
+
+
+
+<div id="content">		
+    <div>
+<div>
+<div align="center" style="margin-top:inherit;margin-bottom:20px">
+	
+	<div id="div-gpt-ad-2082848930-0">
+		<script type="text/javascript">
+			googletag.cmd.push(function() {
+			  googletag.display("div-gpt-ad-2082848930-0");
+		});
+		</script>
+	<div id="google_ads_iframe_/4585/zd.toolbox/VisualBasic_Section_0__container__" style="border: 0pt none;"><iframe id="google_ads_iframe_/4585/zd.toolbox/VisualBasic_Section_0" name="google_ads_iframe_/4585/zd.toolbox/VisualBasic_Section_0" width="728" height="90" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" src="javascript:"<html><body style='background:transparent'></body></html>"" style="border: 0px; vertical-align: bottom;"></iframe></div><iframe id="google_ads_iframe_/4585/zd.toolbox/VisualBasic_Section_0__hidden__" name="google_ads_iframe_/4585/zd.toolbox/VisualBasic_Section_0__hidden__" width="0" height="0" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" src="javascript:"<html><body style='background:transparent'></body></html>"" style="border: 0px; vertical-align: bottom; visibility: hidden; display: none;"></iframe></div>
+
+</div>
+        </div>
+        
+            
+    </div> 
+    
+    <div><script src="./Unchecking References in VBA using Macro [SOLVED] - Toolbox for IT Groups_files/topad_tb.js"></script><div id="hintad" style="height: 60px; overflow: hidden; width: 820px; display: block;"><iframe height="60" width="820" frameborder="0" marginheight="0" scrolling="no" marginwidth="0"></iframe></div></div>
+
+
+	<div class="content-leftcol">
+	
+    <div style="padding:0px 0px 0px 10px">
+        <div style="width:535px; padding:4px; border-bottom:1px solid #ccc; background-color:#f1f0f0; margin-bottom:15px; padding-bottom:5px">
+            <div>
+	
+			<div class="breadcrumb-linkbox size11" style="display: none;">
+				<a href="http://it.toolbox.com/" class="gray">
+				Toolbox for IT</a>
+			</div>
+		
+			<div class="breadcrumb-separator" style="display: none;"></div>
+		
+			<div class="breadcrumb-linkbox size11">
+				<a href="http://it.toolbox.com/topics" class="gray">
+				Topics</a>
+			</div>
+		
+			<div class="breadcrumb-separator"></div>
+		
+			<div class="breadcrumb-linkbox size11">
+				<a href="http://visualbasic.ittoolbox.com/" class="gray">
+				Visual Basic</a>
+			</div>
+		
+			<div class="breadcrumb-separator"></div>
+		
+			<div class="breadcrumb-linkbox size11">
+				<a href="http://visualbasic.ittoolbox.com/groups" class="gray">
+				Groups</a>
+			</div>
+		
+			<span class="breadcrumb-separator"></span>
+		
+	<div class="clear"></div>
+	<div class="spacer-ittybitty"></div>
+</div>
+<span class="gray size17"></span>
+
+            
+
+
+            <div class="floatright" style="margin-top:-10px; margin-right:5px">
+                <table class="button-outergreen" cellpadding="0" cellspacing="0">
+	<tbody><tr>
+		<td class="button-innergreen">
+            
+            <a class="button" hpx="G:Expanded:AAQ" href="http://it.toolbox.com/ask-a-question/vb-vba-l">Ask a New Question</a>
+        </td>
+	</tr>
+</tbody></table>
+
+
+                <div style="display:none"></div>
+            </div>
+
+
+            <div class="group-about floatleft">
+	            <table cellpadding="0" cellspacing="0">
+		            <tbody><tr>
+			            <td valign="top">
+				            
+<a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/" class="size17 group-name darkgray bold">Visual Basic for Applications</a>
+				            
+			            </td>
+			            <td valign="top" style="display:none">
+				            <div class="link-arrowdropdown" id="group_info">
+				            </div>
+				
+			            </td>
+		            </tr>
+		            <tr>
+			            <td colspan="2">
+				            <div id="aboutpanel" class="panel-small" style="display: none">
+					            <div class="button-close">
+					            </div>
+					            <span>A forum where peers share technical expertise, solve problems, and discuss issues related to the use of Visual Basic for Applications (VBA).</span>
+					            
+					            <div class="spacer-small">
+					            </div>
+					            <div class="darkgray">
+						            <a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/">Home</a>
+						            <span class="slash">|</span>
+						            <a href="http://it.toolbox.com/home/invite?t=1003536">Invite Peers</a>
+						            <span class="slash">|</span>
+						            <a href="http://visualbasic.ittoolbox.com/groups">More Visual Basic Groups</a>
+					            </div>
+				            </div>
+			            </td>
+		            </tr>
+	            </tbody></table>
+            </div>        
+
+            
+
+
+
+<div class="clear"></div>
+
+
+<script type="text/javascript" language="javascript">
+    var about_visible = false;
+
+    function showAbout() {
+        $('#group_info').attr('src', 'http://images.ittoolbox.com/vt/uc/uc_uparrow.png');
+        $('#aboutpanel').fadeIn('fast', function() {
+            about_visible = true;
+
+        });
+    }
+
+    function hideAbout() {
+        $('#group_info').attr('src', 'http://images.ittoolbox.com/vt/uc/uc_downarrow.png');
+        $('#aboutpanel').fadeOut('fast', function() {
+            about_visible = false;
+        });
+    }
+
+    $(document).ready(function() {
+        $('#group_info').click(function() {
+            if (!about_visible) {
+                showAbout();
+            }
+            else {
+                hideAbout();
+            }
+        });
+
+        $('.button-close').click(function () {
+            hideAbout();
+        });
+    });
+        
+</script>
+        </div>
+        <div class="spacer"></div>
+        
+    
+
+<div style="position:relative; z-index:700">
+    <div id="OnPageRegistration">
+        <div class="button-close" style="margin:0 7px 0 0; height: 15px"></div>
+        
+<div id="confirmation" style="display: none; padding: 0 35px 0 20px">
+    <div class="confirm-ok">Your account is ready.<span id="OnPageRegConfirmMessage" class="anthracite"></span></div>
+    <div style="float:left;"><img src="./Unchecking References in VBA using Macro [SOLVED] - Toolbox for IT Groups_files/icon-refresh.gif" alt="Loading"></div>
+    <div class="anthracite" style="float:left; padding: 0 0 0 5px;">You're now being signed in.</div>
+</div>
+<div id="mainRegForm" class="clear">
+	
+	
+	
+	
+	
+	
+    <div class="clear" style="padding: 0 30px 10px 30px">
+		<div id="joinheader" class="spacer">
+            <h2 style="font-size: 26px; line-height: 26px;" class="blue normal">Solve problems - It's Free</h2>
+            <div class="size12 anthracite regular">Create your account in seconds</div>
+            <div class="clear"></div>
+		</div>
+        <div id="reg-signin" class="clear"></div>
+		
+                
+<div style="width: 310px">
+    <div id="ctl00_m_m_i_o_r_s_v_validationSummary" class="confirm-error" style="display:none;">
+    <ul id="ctl00_m_m_i_o_r_s_v_errorsList" class="spacer-small"></ul>
+    <span id="ctl00_m_m_i_o_r_s_v_EmailDuplicateErrorMessage" style="display: none;">
+        E-mail address is taken 
+        <br>
+        <br>        
+        <span class="bold anthracite">If this is your account,</span><br><a href="https://login.toolbox.com/1/signin?u=" class="bold">sign in here</a>
+    </span>
+</div>
+
+</div>
+<div class="anthracite size12 bold">
+    Email address</div>
+<div class="spacer-small">
+    <input name="ctl00$m$m$i$o$r$s$txtEmail" type="text" id="ctl00_m_m_i_o_r_s_txtEmail" tabindex="1003" class="textbox310 onPageRegEmail" defaultbutton="onPageRegJoin">
+</div>
+<div class="anthracite size12 bold">
+    Username</div>
+<div class="spacer-small">
+    <input name="ctl00$m$m$i$o$r$s$txtProfileName" type="text" id="ctl00_m_m_i_o_r_s_txtProfileName" class="textbox310" tabindex="1004" onfocus="hideProfileNameSuggestBox();" defaultbutton="onPageRegJoin">
+    <br>
+    <span class="gray size10">Between 5 and 30 characters. No spaces please</span>
+    <div id="ProfileInUseErrorMessage" class="confirm-error" style="display: none">
+        The Profile Name is already in use</div>
+    <div id="availableUserNames" class="suggestor"></div>
+</div>
+<div class="anthracite size12 bold">
+    Password</div>
+<div class="spacer">
+    <input name="ctl00$m$m$i$o$r$s$txtPassword" type="password" id="ctl00_m_m_i_o_r_s_txtPassword" tabindex="1005" class="textbox310" defaultbutton="onPageRegJoin">
+</div>
+<div class="bold anthracite spacer-tiny">
+    Notify me of new activity in this group:</div>
+<table class="form-label spacer" border="0" cellpadding="0" cellspacing="0">
+    <tbody><tr>
+        <td style="width: 100px">
+            <input type="radio" id="radReal" name="mailfrequency" checked="checked" value="mail" tabindex="1006">
+            <label class="size10 anthracite" for="radReal">Real Time</label>
+        </td>
+        <td style="width: 100px">
+            <input type="radio" id="radDaily" name="mailfrequency" value="summary" tabindex="1007">
+            <label class="size10 anthracite" for="radDaily">Daily</label>
+        </td>
+        <td style="width: 100px">
+            <input type="radio" id="radNoMail" name="mailfrequency" value="nomail" tabindex="1008">
+            <label class="size10 anthracite" for="radNoMail">Never</label>
+        </td>
+    </tr>
+</tbody></table>
+<div class="anthracite bold spacer-tiny">
+    Keep me informed of the latest:</div>
+<table class="form-label spacer" border="0" cellpadding="0" cellspacing="0">
+    <tbody><tr>
+        <td style="width: 100px">
+            <input id="ctl00_m_m_i_o_r_s_chkWhitePapers" type="checkbox" name="ctl00$m$m$i$o$r$s$chkWhitePapers" checked="checked" tabindex="1009">
+            <label class="size10 anthracite" for="ctl00_m_m_i_o_r_s_chkWhitePapers">White Papers</label>
+        </td>
+        <td style="width: 100px">
+            <input id="ctl00_m_m_i_o_r_s_chkNewsletter" type="checkbox" name="ctl00$m$m$i$o$r$s$chkNewsletter" checked="checked" tabindex="1010">
+            <label class="size10 anthracite" for="ctl00_m_m_i_o_r_s_chkNewsletter">Newsletter</label>
+        </td>
+        <td style="width: 100px">
+            <input id="ctl00_m_m_i_o_r_s_chkJobs" type="checkbox" name="ctl00$m$m$i$o$r$s$chkJobs" checked="checked" tabindex="1011">
+            <label class="size10 anthracite" for="ctl00_m_m_i_o_r_s_chkJobs">Jobs</label>
+        </td>
+    </tr>
+</tbody></table>
+<div id="register-buttonbox" class="floatleft">
+    <table cellspacing="0" cellpadding="0" class="button-outerblue spacer-small">
+        <tbody>
+            <tr>
+                <td class="button-innerblue">
+                    <input type="button" class="button" id="onPageRegJoin" onclick="Register()" value="JOIN NOW" name="onPageRegJoin" tabindex="1012">
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<img id="reg-loading" src="./Unchecking References in VBA using Macro [SOLVED] - Toolbox for IT Groups_files/icon-refresh.gif" alt="Loading" class="floatleft" style="display: none; padding-top: 3px; padding-left: 10px">
+<div class="clear"></div>
+<span class="gray size10">By clicking "Join Now", you agree to Toolbox for Technology    
+    <a href="http://www.ziffdavis.com/terms-of-use" target="_blank" class="size10">terms of use</a>, and have read and understand our <a href="http://www.toolbox.com/privacypolicy.aspx" target="_blank" class="size10">privacy policy</a>.</span>
+
+<div class="displaynone">
+    <input id="bEmail" type="text" name="email" value="">
+</div>
+
+            
+        
+        
+        <div class="clear"></div>
+    </div>
+</div>
+<input id="regOptions" type="hidden" value="">
+<script type="text/javascript" language="javascript">
+    var isAjax = true;
+    var useRecaptcha = false;
+    var requireFullName = false;
+    var profileNameClientId = 'ctl00_m_m_i_o_r_s_txtProfileName';
+    var emailClientId = 'ctl00_m_m_i_o_r_s_txtEmail';
+    var emailDuplicateMessageClientId = 'ctl00_m_m_i_o_r_s_v_EmailDuplicateErrorMessage';
+    var validationSummaryClientId = 'ctl00_m_m_i_o_r_s_v_validationSummary';
+    var fnameboxId = '';
+	var lnameboxId = '';
+    var aoiClientId = '';
+    var siteId = '21';
+    var passwordClientId = 'ctl00_m_m_i_o_r_s_txtPassword';
+    var provider = '0';
+    var providerId = '';
+
+    function checkEmailValid()
+    {
+        
+            var emailBox = document.getElementById(emailClientId);
+            if ( emailBox != null && emailBox.value.length > 0 ) {
+                $.ajax({ 
+                    type: "POST", 
+                    url:"/api/home/register/email/1/",
+                    data:"email=" + emailBox.value,
+                    dataType: "json",
+                    success: function(msg) {handleEmailAvailResult(msg);}
+                });
+            }
+            else {
+                $('#' + emailDuplicateMessageClientId).hide();
+            }
+        
+    }
+        
+        
+
+    function handleValidation(response, vFirstName, vLastName, vAoi) {
+        if (response == null || response.message == "failed") {
+            $('#ctl00_m_m_i_o_r_s_v_validationSummary').show();
+
+            $('#ctl00_m_m_i_o_r_s_v_errorsList').html('');
+                
+            for (var error in response.errors) {
+                // need a new captcha
+                if(useRecaptcha && response.errors[error] == "The response does not match"){
+                    Recaptcha.reload();
+                }
+                $('#ctl00_m_m_i_o_r_s_v_errorsList').append('<div><strong>' + response.errors[error] + '</strong></div>');
+            }
+        }
+        else{
+            doReg(vFirstName, vLastName, vAoi, response.code);
+        }
+    }
+        
+    $(document).ready(function() {
+        var fnamebox = document.getElementById(fnameboxId);
+        try 
+        {
+    	    fnamebox.focus();            
+        } 
+        catch(e) { }
+
+        $('#' + profileNameClientId).blur(function() {
+            checkProfileValid();
+        });
+
+        $('#' + emailClientId).blur(function() {
+            checkEmailValid();
+        });
+            
+        $('#onPageRegJoin').click(function(e) {
+			return submitReg();
+        });
+    });
+        
+	function submitReg(){
+		validate();
+        setWatermarks();
+        return false;
+	}
+
+    var pendingConnections = '[{"Mailing":1,"Name":"vb-vba-l","ConnectionType":2}]';
+    function doReg(rFirstName, rLastName, rAoi, code){
+            
+        if(loadingFlag) return;
+        loading();
+
+        $.ajax({
+            type: "POST",
+            url: '/api/home/register/process/1/?ajax=' + isAjax + "&section=technical-functional&group=vb-vba-l&messageID=4735351&",
+            dataType: 'json',
+            data: {
+                Email: $("#ctl00_m_m_i_o_r_s_txtEmail").val(),
+                ProfileName: $("#ctl00_m_m_i_o_r_s_txtProfileName").val(),
+                refinfo: '{"SubProductID":0,"ProductID":8,"Stimulus":1,"UserLocalID":0,"SourceInfo":{"FullURL":"https://www.google.com.br/","Host":"","Product":"","SubProduct":"","SubProductName":"","KBID":0,"SiteID":0,"PathSegments":[]},"ExternalReferrer":null}',
+                Password: $("#ctl00_m_m_i_o_r_s_txtPassword").val(),
+                MainAOIID: rAoi,
+                miscfwdcontext: '{}',
+                pendcon: pendingConnections,
+                googledata: '{"email":null,"groupName":null,"campaign":null,"googleuid":null,"area":null,"TargetEntityID":0}',
+                premember: 'False',
+                FirstName: rFirstName,
+                LastName: rLastName,
+                ValidatedCode: code,
+                require_fullname: requireFullName,
+                subweekly: $("#ctl00_m_m_i_o_r_s_chkNewsletter").attr("checked"),
+                subjobs: $("#ctl00_m_m_i_o_r_s_chkJobs").attr("checked"),
+                subwp: $("#ctl00_m_m_i_o_r_s_chkWhitePapers").attr("checked"),
+                options: 'groupEID=1003536|regSubProd=0',
+                requestemail: '',
+				ProviderEnum: '0',
+				ProviderID: '',
+                onpageredirect: 'http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/unchecking-references-in-vba-using-macro-4735351',
+                mailfrequency: getMailFrequency(),
+                markHelpfulMessageId: $("#regOptions").val()
+            },
+            success: function(data){
+                if(data == null) handleProcessFail(data);
+                if(data.Error) handleProcessFail(data);
+                if(data.RedirectURL == null) {
+                    handleProcessFail(data);
+                }
+                else {
+                    if(!isAjax){
+                        onRegSuccess(data);
+                    } else {
+                        var s = s_gi(s_account);
+                        s.linkTrackVars = 'prop33,eVar33,events';
+                        s.linkTrackEvents = 'event13';
+                        s.eVar33 = "onpage-registration";
+                        s.prop33 = "onpage-registration";
+                        s.events = 'event13';
+                        s.tl(this, 'o', "onpage-registration"); 
+
+                        var mrf = $("#mainRegForm");
+                        mrf.slideUp(600);
+                        $("#confirmation").slideDown(600);
+						if (data.Message != "")
+                        {
+                            $('#OnPageRegConfirmMessage').html(data.Message);
+                        }
+                        setTimeout(function(){ onRegSuccess(data);}, 3000);
+                    }
+                }
+                    
+            },
+            error: function(data, err){
+                    
+                handleProcessFail(err);
+                    
+            }
+        });
+        
+    }
+    function onRegSuccess(pdata){            
+        $.post("/api/signin",
+	        {
+		        username: $("#ctl00_m_m_i_o_r_s_txtProfileName").val(),
+		        password: $("#ctl00_m_m_i_o_r_s_txtPassword").val(),
+				provider: "0",
+                contenttype: "json",
+				r: pdata.RedirectURL
+	        },
+
+	        function (data, status) {
+				if (data.success)
+				{
+                    window.location = data.message;
+				}
+				else
+				{
+					$('#reg-signin').html(data.message);
+				}
+	        });
+
+            
+    }
+	
+</script>
+    
+    </div>
+</div>
+<script language="javascript" type="text/javascript">
+    $('.button-close').click(function () {
+        CloseRegistration();
+    });
+</script>
+    
+       
+    
+    
+    
+    
+
+    <a name="mTop"></a>    
+    <table cellpadding="0" cellspacing="0" border="0" class="fullwidth">
+        <tbody><tr>
+            <td>
+                <div class="group-message-header floatleft">
+                    <div valign="top" class="content-listimage">
+    
+			
+            <h1 class="anthracite size24 bold content-title" style="margin-bottom:15px; visibility:visible; display:block">Unchecking References in VBA using Macro</h1>             
+    
+    <div class="spacer-small"></div>
+
+    <div id="ctl00_m_m_i_cimh_divCus1" class="size12 darkgray content-meta">
+        <div class="floatleft" style="margin-top:-2px; margin-right:15px"><a href="http://it.toolbox.com/people/pyniu/"><div class="userimage-defaulttiny"></div></a>
+</div>
+
+	    
+		    <a href="http://it.toolbox.com/people/pyniu/" class="size12">pyniu</a>
+		    
+        <span class="size11">asked </span> 
+        <!---->
+
+		        <span id="ctl00_m_m_i_cimh_spnCus1" class="pubdate size12 darkgray" title="&lt;%= PublishDate.ToString(&quot;u&quot;) %&gt;"> Apr 12, 2012</span>
+                
+                <span id="ctl00_m_m_i_cimh_spnCus2" class="size12 darkgray"> | Replies </span>
+                
+        <a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/unchecking-references-in-vba-using-macro-4735351#ThreadReplies">(1)</a>
+                
+
+    </div>
+     
+    <div class="clear"></div>
+    <div id="ctl00_m_m_i_cimh_blgArticleSnippet" style="margin-top:10px">
+    
+    </div>
+</div>
+                   
+                    <div class="spacer"></div>
+                </div>
+            </td>
+            <td class="alignright">
+                
+            </td>
+        </tr>
+    </tbody></table>
+
+    <!-- Main Message Body -->
+    <div id="kb" class="clear spacer message-body" popupanchor="center">
+        Hi <br>
+I made some woorkbook with vba macros which use references: <br>
+- Visual Basic for Applications <br>
+- Microsoft Excel 14.0 Object Library <br>
+- OLE Automation <br>
+- Microsoft Office 14.0 Object Library <br>
+ <br>
+But after installing MS silverlight on OS, reference is automatically adding to list and is active then. This completely break down some objects and macros are useless. <br>
+ <br>
+ <br>
+Is there any way to strictly define which references needs to be used? <br>
+Or how to unselect 'MS silverlight' reference from list using macro? <br>
+(i'm beginner:)
+		
+        <div style="margin-top:15px" class="small">
+             
+              
+             <div id="ctl00_m_m_i_joinlink" class="floatleft"><a href="javascript:ShowRegistration('registercollapse')">Join this group</a></div>
+        </div>
+        <div class="clear"></div>
+    </div>
+    
+    <div id="ctl00_m_m_i_ba">
+	
+        
+
+<script type="text/javascript">
+
+    function setupEdit(msgID, userstate)
+    {
+    	if(userstate == 0)	{
+		    $("#joinheader").children("h1").html("Sign up to improve this answer");
+		    $('#regOptions').val(msgID);
+		    ShowRegistration("VoteUp");
+	    } else {
+    
+            $("#bestAnswerEdit").show();
+		    $("#messagetext").hide();
+            $("#contribs").hide();
+		    $(".editbuttonpanel").hide();
+		    $("#baTitle").html("Improve this Answer")
+		    $("#lestedit").hide();
+
+            if ($('#ctl00_m_m_i_bAnsw_bestanswereditbody').val() == 'Your response here') {
+                $('#ctl00_m_m_i_bAnsw_bestanswereditbody').val('');
+            };
+            InitTinyMCECallback('ctl00_m_m_i_bAnsw_bestanswereditbody', '', '', 'http://cdn.toolbox.com/BUILD_2872/js/',
+			    function () {
+				    //formatLoading.hide();
+				    $("#ctl00_m_m_i_bAnsw_bestanswereditbody_ifr").attr('tabindex', $("#ctl00_m_m_i_bAnsw_bestanswereditbody").attr('tabindex')); 
+			    });
+            $('#postreplyouterbox').addClass('group-reply-boxFormatting');
+            $('#isFormatting').val('true');
+            SiteCatalystLinkTracking('Groups:Message:Formatting:Show');
+
+        }
+    }
+
+
+</script>
+<a name="bestansweranchor" id="bestansweranchor"></a>
+<div class="groups-bestanswerbox">
+    <div id="ctl00_m_m_i_bAnsw_ex">
+        <div class="spacer-small"></div>
+        <div>
+            <!-- Mark Helpful -->
+            <div class="group-reply-container" style="margin-bottom:-7px">
+                <div class="vote bold floatright">
+                    <table cellpadding="0" cellspacing="0" border="0" class="ach_votebox">
+                        <tbody><tr>
+                        </tr>
+                    </tbody></table>
+                </div>
+            
+            <!-- /Mark Helpful -->
+                <div class="floatleft icons-bestanswer-smallgreenbg" title="pyniu marked this as answered on Apr 13, 2012"></div>
+                <div class="floatleft size17 anthracite bold" id="baTitle">
+                    Best Answer
+                </div>
+                <div class="floatleft" id="lastedit">
+                    Updated Aug 14, 2012
+                </div>
+                <div id="saveloading" style="display: none" class="floatleft">
+                    <img src="./Unchecking References in VBA using Macro [SOLVED] - Toolbox for IT Groups_files/icon-refresh(1).gif" alt="Working" class="floatleft">
+                </div>
+
+                <div class="clear"></div>
+                <div id="htmlerror" style="display:none; font-size:13px; font-weight:bold" class="error">html error</div>
+                <div class="spacer-small"></div>
+                <div class="message-body">
+					<div id="messagetext">
+                        In order to remove a specified reference from your project, you can use  <br>
+the following procedure: <br>
+'-- <br>
+Sub RemoveSpecifiedReference() <br>
+' This example removes 'PowerPoint' reference <br>
+' from ThisWorkbook.VBProject . <br>
+' Instead of 'ThisWorkbook' you can work with ActiveWorkbook. <br>
+'-- <br>
+    Dim ref As Variant <br>
+    Dim i As Integer <br>
+    '-- <br>
+    With ThisWorkbook.VBProject <br>
+        For i = .References.Count To 1 Step -1 <br>
+            Set ref = .References(i) <br>
+            If Not ref.BuiltIn Then <br>
+                'MsgBox <a href="http://ref.name/" rel="nofollow" target="_blank">ref.Name</a> <br>
+                ' Customize Reference name <br>
+  <br>
+                If <a href="http://ref.name/" rel="nofollow" target="_blank">ref.Name</a> = "PowerPoint" Then <br>
+                    MsgBox <a href="http://ref.name/" rel="nofollow" target="_blank">ref.Name</a> <br>
+                    ' uncomment the following code line <br>
+                    '.References.Remove ref <br>
+                End If <br>
+            End If <br>
+        Next i <br>
+    End With <br>
+End Sub <br>
+'-- <br>
+Because you don't know the name of reference to be deleted, here is a  <br>
+simple procedure thet list all references from your vb project in  <br>
+worksheet named 'References'.  <br>
+<span class="goog_qs-tidbit goog_qs-tidbit-0">(add worksheet 'References' in your workbook and run the following</span>  <br>
+procedure: <br>
+'-- <br>
+Sub ListReferencePaths() <br>
+' <span class="goog_qs-tidbit goog_qs-tidbit-1">Purpose: This SAMPLE routine determines full path and Globally Unique</span>  <br>
+Identifier (GUID) <br>
+'to each referenced library. <br>
+'-- <br>
+    On Error Resume Next <br>
+    Dim i As Long <br>
+    With ThisWorkbook.Worksheets("References") <br>
+        .Cells.Clear <br>
+        .Range("A1") = "Reference name" <br>
+        .Range("B1") = "Full path to reference" <br>
+        .Range("C1") = "Reference GUID" <br>
+    End With <br>
+    For i = 1 To ThisWorkbook.VBProject.References.Count <br>
+        With ThisWorkbook.VBProject.References(i) <br>
+ ThisWorkbook.Sheets("References").Range(   "A65536").End(xlUp).Offset(1, 0)  <br>
+= .Name <br>
+ ThisWorkbook.Sheets("References").Range(   "A65536").End(xlUp).Offset(0, 1)  <br>
+= .FullPath <br>
+ ThisWorkbook.Sheets("References").Range(   "A65536").End(xlUp).Offset(0, 2)  <br>
+= .GUID <br>
+        End With <br>
+    Next i <br>
+    On Error GoTo 0 <br>
+End Sub <br>
+'-- <br>
+If you want ro remove broken references from your project, here is a  <br>
+procedure that will do it: <br>
+'-- <br>
+Sub RemoveBrokenReferences() <br>
+' Purpose: This example ilustrates how to remove all broken references  <br>
+from the VBA project <br>
+'-- <br>
+    Dim ref As Variant <br>
+    Dim i As Integer <br>
+    '-- <br>
+    With ThisWorkbook.VBProject <br>
+        For i = .References.Count To 1 Step -1 <br>
+            Set ref = .References(i) <br>
+            If Not ref.BuiltIn Then <br>
+                If ref.IsBroken Then <br>
+                    .References.Remove ref <br>
+                End If <br>
+            End If <br>
+        Next i <br>
+    End With <br>
+End Sub <br>
+'-- <br>
+ <br>
+Best Regards <br>
+Andrija Vrcan
+                    </div>
+
+                     <div id="bestAnswerEdit" style="display: none">
+
+                        <h3 class="anthracite" style="margin-top:10px; font-weight:normal; font-size:11px">
+                            <b style="font-size:11px">Help the community</b> by fixing grammatical or spelling errors, summarizing or clarifying the solution, and adding supporting information or resources. Always respect the original author. 
+                        </h3>
+
+
+                        <textarea name="ctl00$m$m$i$bAnsw$bestanswereditbody" rows="2" cols="20" id="ctl00_m_m_i_bAnsw_bestanswereditbody" class="textarea-bestanswerEDIT" editbodyid="">In order to remove a specified reference from your project, you can use  &lt;br /&gt;
+the following procedure: &lt;br /&gt;
+'-- &lt;br /&gt;
+Sub RemoveSpecifiedReference() &lt;br /&gt;
+' This example removes 'PowerPoint' reference &lt;br /&gt;
+' from ThisWorkbook.VBProject . &lt;br /&gt;
+' Instead of 'ThisWorkbook' you can work with ActiveWorkbook. &lt;br /&gt;
+'-- &lt;br /&gt;
+    Dim ref As Variant &lt;br /&gt;
+    Dim i As Integer &lt;br /&gt;
+    '-- &lt;br /&gt;
+    With ThisWorkbook.VBProject &lt;br /&gt;
+        For i = .References.Count To 1 Step -1 &lt;br /&gt;
+            Set ref = .References(i) &lt;br /&gt;
+            If Not ref.BuiltIn Then &lt;br /&gt;
+                'MsgBox &lt;a href="http://ref.Name" rel="nofollow" target="_blank"&gt;ref.Name&lt;/a&gt; &lt;br /&gt;
+                ' Customize Reference name &lt;br /&gt;
+  &lt;br /&gt;
+                If &lt;a href="http://ref.Name" rel="nofollow" target="_blank"&gt;ref.Name&lt;/a&gt; = &amp;quot;PowerPoint&amp;quot; Then &lt;br /&gt;
+                    MsgBox &lt;a href="http://ref.Name" rel="nofollow" target="_blank"&gt;ref.Name&lt;/a&gt; &lt;br /&gt;
+                    ' uncomment the following code line &lt;br /&gt;
+                    '.References.Remove ref &lt;br /&gt;
+                End If &lt;br /&gt;
+            End If &lt;br /&gt;
+        Next i &lt;br /&gt;
+    End With &lt;br /&gt;
+End Sub &lt;br /&gt;
+'-- &lt;br /&gt;
+Because you don't know the name of reference to be deleted, here is a  &lt;br /&gt;
+simple procedure thet list all references from your vb project in  &lt;br /&gt;
+worksheet named 'References'.  &lt;br /&gt;
+(add worksheet 'References' in your workbook and run the following  &lt;br /&gt;
+procedure: &lt;br /&gt;
+'-- &lt;br /&gt;
+Sub ListReferencePaths() &lt;br /&gt;
+' Purpose: This SAMPLE routine determines full path and Globally Unique  &lt;br /&gt;
+Identifier (GUID) &lt;br /&gt;
+'to each referenced library. &lt;br /&gt;
+'-- &lt;br /&gt;
+    On Error Resume Next &lt;br /&gt;
+    Dim i As Long &lt;br /&gt;
+    With ThisWorkbook.Worksheets(&amp;quot;References&amp;quot;) &lt;br /&gt;
+        .Cells.Clear &lt;br /&gt;
+        .Range(&amp;quot;A1&amp;quot;) = &amp;quot;Reference name&amp;quot; &lt;br /&gt;
+        .Range(&amp;quot;B1&amp;quot;) = &amp;quot;Full path to reference&amp;quot; &lt;br /&gt;
+        .Range(&amp;quot;C1&amp;quot;) = &amp;quot;Reference GUID&amp;quot; &lt;br /&gt;
+    End With &lt;br /&gt;
+    For i = 1 To ThisWorkbook.VBProject.References.Count &lt;br /&gt;
+        With ThisWorkbook.VBProject.References(i) &lt;br /&gt;
+ ThisWorkbook.Sheets(&amp;quot;References&amp;quot;).Range(   &amp;quot;A65536&amp;quot;).End(xlUp).Offset(1, 0)  &lt;br /&gt;
+= .Name &lt;br /&gt;
+ ThisWorkbook.Sheets(&amp;quot;References&amp;quot;).Range(   &amp;quot;A65536&amp;quot;).End(xlUp).Offset(0, 1)  &lt;br /&gt;
+= .FullPath &lt;br /&gt;
+ ThisWorkbook.Sheets(&amp;quot;References&amp;quot;).Range(   &amp;quot;A65536&amp;quot;).End(xlUp).Offset(0, 2)  &lt;br /&gt;
+= .GUID &lt;br /&gt;
+        End With &lt;br /&gt;
+    Next i &lt;br /&gt;
+    On Error GoTo 0 &lt;br /&gt;
+End Sub &lt;br /&gt;
+'-- &lt;br /&gt;
+If you want ro remove broken references from your project, here is a  &lt;br /&gt;
+procedure that will do it: &lt;br /&gt;
+'-- &lt;br /&gt;
+Sub RemoveBrokenReferences() &lt;br /&gt;
+' Purpose: This example ilustrates how to remove all broken references  &lt;br /&gt;
+from the VBA project &lt;br /&gt;
+'-- &lt;br /&gt;
+    Dim ref As Variant &lt;br /&gt;
+    Dim i As Integer &lt;br /&gt;
+    '-- &lt;br /&gt;
+    With ThisWorkbook.VBProject &lt;br /&gt;
+        For i = .References.Count To 1 Step -1 &lt;br /&gt;
+            Set ref = .References(i) &lt;br /&gt;
+            If Not ref.BuiltIn Then &lt;br /&gt;
+                If ref.IsBroken Then &lt;br /&gt;
+                    .References.Remove ref &lt;br /&gt;
+                End If &lt;br /&gt;
+            End If &lt;br /&gt;
+        Next i &lt;br /&gt;
+    End With &lt;br /&gt;
+End Sub &lt;br /&gt;
+'-- &lt;br /&gt;
+ &lt;br /&gt;
+Best Regards &lt;br /&gt;
+Andrija Vrcan</textarea>
+
+
+
+                        <div class="floatleft" style="padding-top:3px; font-size:11px; color:#666">
+                            Edits are subject to review by community moderators. 
+                        </div>
+                        <div class="floatright">
+                            <div class="floatright"><table id="ctl00_m_m_i_bAnsw_saveeditWiki_tbCt" class="button-outerblue" cellpadding="0" cellspacing="0">
+		<tbody><tr>
+			<td id="ctl00_m_m_i_bAnsw_saveeditWiki_tdCt" class="button-innerblue">
+            <input type="submit" name="ctl00$m$m$i$bAnsw$saveeditWiki$btnCTA" value="Save Edits" id="ctl00_m_m_i_bAnsw_saveeditWiki_btnCTA" class="button">
+            
+        </td>
+		</tr>
+	</tbody></table>
+	
+</div>
+                            <div class="floatright" style="padding-top:4px; margin-right:10px"><a href="javascript:closeWikiEdit()" style="font-size:11px">Cancel</a></div>             
+                        </div>
+                    </div>
+				</div>
+                <div id="ctl00_m_m_i_bAnsw_editbuttonpanel" style="border-top:1px solid #ccc; margin-top:25px; height:10px; padding-top:5px" class="editbuttonpanel">
+                    <div class="floatleft" style="width:380px">
+                        <span style="font-size:11px; color:#666">
+                            <a id="ctl00_m_m_i_bAnsw_answerlink" href="javascript:scrollToElement($("#M4735427"))" style="font-size:11px">Original answer</a> by <a id="ctl00_m_m_i_bAnsw_authorURL" href="http://it.toolbox.com/people/andrijaxl/" style="font-size:11px">Andrija Vrcan</a>
+                            
+                            
+
+                            <span id="ctl00_m_m_i_bAnsw_lbl2" style="font-size:11px">Apr 12, 2012</span>
+
+                        </span>
+
+                    </div>
+                    <div class="floatright">
+                        <a id="ctl00_m_m_i_bAnsw_editAnswer" href="javascript:setupEdit(4735427, 0)" style="font-size:11px">Improve this Answer</a>
+                    </div>
+                </div>
+                <div class="clear"></div>
+
+                <div style="margin-top:10px; font-size:11px; color:#666" id="contribs">Contributors: 
+                    
+
+                 </div> 
+            </div>
+        </div>
+        <div class="clear"></div>
+        <div id="replyPlacementCell" class="mid-thread-reply"></div>
+        <div class="group-thread-options">
+		    <div id="replyLinkSection" class="floatright" style="display:none;"><a href="javascript:void(0)" rel="nofollow"><div class="toolbar-reply"></div></a></div>
+		    <div id="toTopLink" style="display:none" class="floatleft"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/unchecking-references-in-vba-using-macro-4735351#mTop" title="Top of page" class="hoverM">Top</a></div>
+        </div>
+        <div class="clear"></div>
+    </div>
+    
+    <div id="ctl00_m_m_i_bAnsw_co" class="groups-bestanswer-box" style="display:none;">
+        <div class="floatright vote">
+            <div class="vote-count floatleft">1</div>
+            <div class="floatleft gray bold member-votes">member<br>vote</div> 
+        </div>
+        <div class="spacer-small"></div>
+        <div class="floatleft paddingright5">
+            <a><div class="userimage-defaulttiny badgePopup" bid="1674523" badgeentityid="1674523" style="background:url(&#39;http://userimages.ittoolbox.com/user/3/2/5/t_1674523.jpg&#39;) center center;undefined"></div></a>
+
+        </div>
+        <div class="floatleft reply-message-container">
+            <div class="group-message-row">
+                <a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/unchecking-references-in-vba-using-macro-4735427" id="ctl00_m_m_i_bAnsw_hm" style="text-decoration: underline" class="size13">
+                    In order to remove a specified reference from your project...</a>
+                        
+                
+            </div>
+            <div>
+                <div class="size11 gray clear floatleft">
+                    <span id="ctl00_m_m_i_bAnsw_ab" class="size11">Reply from</span>
+<a class=" size11" href="http://it.toolbox.com/people/andrijaxl/">Andrija Vrcan</a>
+                    <span class="size11 gray">|
+                        Apr 12, 2012</span>
+                
+                </div>
+                
+            </div>
+        </div>
+        <div class="clear"></div>
+     </div>
+    <div class="clear"></div>
+</div>
+
+
+    
+</div>
+    
+    <!-- End Main Message Body -->
+    
+
+<div class="related-white-papers">
+    <h2 class="anthracite size12 bold">Popular White Paper On This Topic</h2>
+    
+        <ul>
+    
+		<li class="link-indent"><img class="link-image-carat" src="./Unchecking References in VBA using Macro [SOLVED] - Toolbox for IT Groups_files/carat-blue.png" style="border-width:0px;">
+<a title="Business intelligence (BI) technologies afford enterprises and small-to-midsize businesses (SMBs) the opportunity to gain greater insights into their businesses. Mining data gleaned from day-to..." hpx="G:Expanded:PopWP" href="http://www.inside-erp.com/research/taking-business-intelligence-to-the-next-level-26490?sp=cm">Taking Business Intelligence to the Next Level</a></li>
+	
+        </ul>
+    
+
+    <div class="clear"></div>
+</div>
+    
+    
+    
+        <div class="spacer-large"></div>
+        <div class="group-replies spacer-tiny">
+            <a name="ThreadReplies"></a><span class="size14 anthracite bold paddingright20">
+                All Replies (1)</span>
+            <input type="hidden" value="1" id="replyCount" name="replyCount">
+            <div class="clear"></div>
+        </div>
+        <div class="group-message-content clear">
+    
+        <a id="M4735427"></a>
+        <div id="GRB4735427" class="rule-gray group-replies group-replies-box" onmouseover="SetActiveMessge(this,4735427,3,&#39;True&#39;);" onmouseout="MakeNormal(this,4735427,3,&#39;True&#39;);">
+            <div class="marginbottom15">
+            </div>
+            <div id="replyBox3">
+                <!-- Mark Helpful -->
+                <div class="group-reply-container">
+                    <div class="vote bold floatright" style="margin-top:-5px">
+                        <table cellpadding="0" cellspacing="0" border="0" style="height: 25px">
+                            <tbody><tr>
+                                <td nowrap="nowrap" style="width: 95px; padding-right: 5px" align="right">
+                                    <div id="B4735427" style="display: block; visibility: visible;">
+                                        <div title="pyniu marked this as answered on Apr 13, 2012" class="icons-bestanswer-smallgreenbg">
+                                        </div>
+                                        <div style="padding-top: 1px; margin-left: -5px; text-align: left" class="anthracite bold">
+                                            Best Answer</div>
+                                    </div>
+                                    <div id="T0" style="margin-top: 1px; display: none; visibility: hidden;" class="groups-bestanswerbutton" title="Select this as the best answer" onclick="openConfirm(4735427);">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div id="ctl00_m_m_i_ctl00_gr_ctl01_Div1" class="ach_vote" title="Mark this as helpful" onclick="rateHandler(4735427,0,1);">
+                                    </div>
+                                </td>
+                                <td class="ach_votecount background-lightblue">
+                                    <div id="S4735427">
+                                        <span class="bold">1</span></div>
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <div id="cBest4735427" class="bestanswer-editpanel">
+                            <div class="floatleft anthracite" style="font-weight:normal">Mark this reply as the best answer?<br>(Choose carefully, this can't be changed)</div>
+                            <div class="clear spacer-small"></div>
+                            <input name="ctl00$m$m$i$ctl00$gr$ctl01$bestanswerbody" type="text" value="In order to remove a specified reference from your project, you can use  &lt;br /&gt;
+the following procedure: &lt;br /&gt;
+&#39;-- &lt;br /&gt;
+Sub RemoveSpecifiedReference() &lt;br /&gt;
+&#39; This example removes &#39;PowerPoint&#39; reference &lt;br /&gt;
+&#39; from ThisWorkbook.VBProject . &lt;br /&gt;
+&#39; Instead of &#39;ThisWorkbook&#39; you can work with ActiveWorkbook. &lt;br /&gt;
+&#39;-- &lt;br /&gt;
+    Dim ref As Variant &lt;br /&gt;
+    Dim i As Integer &lt;br /&gt;
+    &#39;-- &lt;br /&gt;
+    With ThisWorkbook.VBProject &lt;br /&gt;
+        For i = .References.Count To 1 Step -1 &lt;br /&gt;
+            Set ref = .References(i) &lt;br /&gt;
+            If Not ref.BuiltIn Then &lt;br /&gt;
+                &#39;MsgBox &lt;a href=&quot;http://ref.Name&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot;&gt;ref.Name&lt;/a&gt; &lt;br /&gt;
+                &#39; Customize Reference name &lt;br /&gt;
+  &lt;br /&gt;
+                If &lt;a href=&quot;http://ref.Name&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot;&gt;ref.Name&lt;/a&gt; = &amp;quot;PowerPoint&amp;quot; Then &lt;br /&gt;
+                    MsgBox &lt;a href=&quot;http://ref.Name&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot;&gt;ref.Name&lt;/a&gt; &lt;br /&gt;
+                    &#39; uncomment the following code line &lt;br /&gt;
+                    &#39;.References.Remove ref &lt;br /&gt;
+                End If &lt;br /&gt;
+            End If &lt;br /&gt;
+        Next i &lt;br /&gt;
+    End With &lt;br /&gt;
+End Sub &lt;br /&gt;
+&#39;-- &lt;br /&gt;
+Because you don&#39;t know the name of reference to be deleted, here is a  &lt;br /&gt;
+simple procedure thet list all references from your vb project in  &lt;br /&gt;
+worksheet named &#39;References&#39;.  &lt;br /&gt;
+(add worksheet &#39;References&#39; in your workbook and run the following  &lt;br /&gt;
+procedure: &lt;br /&gt;
+&#39;-- &lt;br /&gt;
+Sub ListReferencePaths() &lt;br /&gt;
+&#39; Purpose: This SAMPLE routine determines full path and Globally Unique  &lt;br /&gt;
+Identifier (GUID) &lt;br /&gt;
+&#39;to each referenced library. &lt;br /&gt;
+&#39;-- &lt;br /&gt;
+    On Error Resume Next &lt;br /&gt;
+    Dim i As Long &lt;br /&gt;
+    With ThisWorkbook.Worksheets(&amp;quot;References&amp;quot;) &lt;br /&gt;
+        .Cells.Clear &lt;br /&gt;
+        .Range(&amp;quot;A1&amp;quot;) = &amp;quot;Reference name&amp;quot; &lt;br /&gt;
+        .Range(&amp;quot;B1&amp;quot;) = &amp;quot;Full path to reference&amp;quot; &lt;br /&gt;
+        .Range(&amp;quot;C1&amp;quot;) = &amp;quot;Reference GUID&amp;quot; &lt;br /&gt;
+    End With &lt;br /&gt;
+    For i = 1 To ThisWorkbook.VBProject.References.Count &lt;br /&gt;
+        With ThisWorkbook.VBProject.References(i) &lt;br /&gt;
+ ThisWorkbook.Sheets(&amp;quot;References&amp;quot;).Range(   &amp;quot;A65536&amp;quot;).End(xlUp).Offset(1, 0)  &lt;br /&gt;
+= .Name &lt;br /&gt;
+ ThisWorkbook.Sheets(&amp;quot;References&amp;quot;).Range(   &amp;quot;A65536&amp;quot;).End(xlUp).Offset(0, 1)  &lt;br /&gt;
+= .FullPath &lt;br /&gt;
+ ThisWorkbook.Sheets(&amp;quot;References&amp;quot;).Range(   &amp;quot;A65536&amp;quot;).End(xlUp).Offset(0, 2)  &lt;br /&gt;
+= .GUID &lt;br /&gt;
+        End With &lt;br /&gt;
+    Next i &lt;br /&gt;
+    On Error GoTo 0 &lt;br /&gt;
+End Sub &lt;br /&gt;
+&#39;-- &lt;br /&gt;
+If you want ro remove broken references from your project, here is a  &lt;br /&gt;
+procedure that will do it: &lt;br /&gt;
+&#39;-- &lt;br /&gt;
+Sub RemoveBrokenReferences() &lt;br /&gt;
+&#39; Purpose: This example ilustrates how to remove all broken references  &lt;br /&gt;
+from the VBA project &lt;br /&gt;
+&#39;-- &lt;br /&gt;
+    Dim ref As Variant &lt;br /&gt;
+    Dim i As Integer &lt;br /&gt;
+    &#39;-- &lt;br /&gt;
+    With ThisWorkbook.VBProject &lt;br /&gt;
+        For i = .References.Count To 1 Step -1 &lt;br /&gt;
+            Set ref = .References(i) &lt;br /&gt;
+            If Not ref.BuiltIn Then &lt;br /&gt;
+                If ref.IsBroken Then &lt;br /&gt;
+                    .References.Remove ref &lt;br /&gt;
+                End If &lt;br /&gt;
+            End If &lt;br /&gt;
+        Next i &lt;br /&gt;
+    End With &lt;br /&gt;
+End Sub &lt;br /&gt;
+&#39;-- &lt;br /&gt;
+ &lt;br /&gt;
+Best Regards &lt;br /&gt;
+Andrija Vrcan" id="ctl00_m_m_i_ctl00_gr_ctl01_bestanswerbody" class="textarea-bestanswerhidden" answerbodyid="4735427">
+                            
+                            
+<a href="javascript:rateBest(4735427,1,$("[answerbodyId=4735427]").val(),11111);">Yes</a>
+
+                            &nbsp;|&nbsp;
+                            
+<a href="javascript:closeConfirm(4735427);">No</a>
+                        </div>                        
+                        <div id="rateMsg4735427" style="display: none;" class="ach_confirm normal"></div>                        
+                        <div id="loading4735427" style="display: none;" class="ach_confirm">
+                            <img src="./Unchecking References in VBA using Macro [SOLVED] - Toolbox for IT Groups_files/icon-refresh.gif" alt="Working" class="floatleft">Saving...
+                        </div>
+                    </div>
+                    <!-- /Mark Helpful -->
+                    <div class="floatleft paddingright5" style="margin-top:-3px">
+                        <a href="http://it.toolbox.com/people/andrijaxl/"><div class="userimage-defaulttiny" style="background:url(&#39;http://userimages.ittoolbox.com/user/3/2/5/t_1674523.jpg&#39;) center center;undefined"></div></a>
+
+                    </div>
+                    <span class="size11 darkgray">
+                        
+<a class=" size11" href="http://it.toolbox.com/people/andrijaxl/">Andrija Vrcan</a>
+                        
+                        
+                        <span id="ctl00_m_m_i_ctl00_gr_ctl01_Label1" class="size11 darkgray">replied Apr 12, 2012</span>
+                        
+
+                    </span>
+                    <div class="spacer-small clear"></div>
+                    <div id="reply_3" class="message-body">
+                        In order to remove a specified reference from your project, you can use  <br>
+the following procedure: <br>
+'-- <br>
+Sub RemoveSpecifiedReference() <br>
+' This example removes 'PowerPoint' reference <br>
+' from ThisWorkbook.VBProject . <br>
+' Instead of 'ThisWorkbook' you can work with ActiveWorkbook. <br>
+'-- <br>
+    Dim ref As Variant <br>
+    Dim i As Integer <br>
+    '-- <br>
+    With ThisWorkbook.VBProject <br>
+        For i = .References.Count To 1 Step -1 <br>
+            Set ref = .References(i) <br>
+            If Not ref.BuiltIn Then <br>
+                'MsgBox <a href="http://ref.name/" rel="nofollow" target="_blank">ref.Name</a> <br>
+                ' Customize Reference name <br>
+  <br>
+                If <a href="http://ref.name/" rel="nofollow" target="_blank">ref.Name</a> = "PowerPoint" Then <br>
+                    MsgBox <a href="http://ref.name/" rel="nofollow" target="_blank">ref.Name</a> <br>
+                    ' uncomment the following code line <br>
+                    '.References.Remove ref <br>
+                End If <br>
+            End If <br>
+        Next i <br>
+    End With <br>
+End Sub <br>
+'-- <br>
+Because you don't know the name of reference to be deleted, here is a  <br>
+simple procedure thet list all references from your vb project in  <br>
+worksheet named 'References'.  <br>
+(add worksheet 'References' in your workbook and run the following  <br>
+procedure: <br>
+'-- <br>
+Sub ListReferencePaths() <br>
+' Purpose: This SAMPLE routine determines full path and Globally Unique  <br>
+Identifier (GUID) <br>
+'to each referenced library. <br>
+'-- <br>
+    On Error Resume Next <br>
+    Dim i As Long <br>
+    With ThisWorkbook.Worksheets("References") <br>
+        .Cells.Clear <br>
+        .Range("A1") = "Reference name" <br>
+        .Range("B1") = "Full path to reference" <br>
+        .Range("C1") = "Reference GUID" <br>
+    End With <br>
+    For i = 1 To ThisWorkbook.VBProject.References.Count <br>
+        With ThisWorkbook.VBProject.References(i) <br>
+ ThisWorkbook.Sheets("References").Range(   "A65536").End(xlUp).Offset(1, 0)  <br>
+= .Name <br>
+ ThisWorkbook.Sheets("References").Range(   "A65536").End(xlUp).Offset(0, 1)  <br>
+= .FullPath <br>
+ ThisWorkbook.Sheets("References").Range(   "A65536").End(xlUp).Offset(0, 2)  <br>
+= .GUID <br>
+        End With <br>
+    Next i <br>
+    On Error GoTo 0 <br>
+End Sub <br>
+'-- <br>
+If you want ro remove broken references from your project, here is a  <br>
+procedure that will do it: <br>
+'-- <br>
+Sub RemoveBrokenReferences() <br>
+' Purpose: This example ilustrates how to remove all broken references  <br>
+from the VBA project <br>
+'-- <br>
+    Dim ref As Variant <br>
+    Dim i As Integer <br>
+    '-- <br>
+    With ThisWorkbook.VBProject <br>
+        For i = .References.Count To 1 Step -1 <br>
+            Set ref = .References(i) <br>
+            If Not ref.BuiltIn Then <br>
+                If ref.IsBroken Then <br>
+                    .References.Remove ref <br>
+                End If <br>
+            End If <br>
+        Next i <br>
+    End With <br>
+End Sub <br>
+'-- <br>
+ <br>
+Best Regards <br>
+Andrija Vrcan
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="clear"></div>
+            <div class="group-thread-options">
+                
+                <div id="toTopLink3" style="display: none" class="floatleft">
+                    <a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/unchecking-references-in-vba-using-macro-4735351#mTop" title="Top of page" class="hoverM">Top</a></div>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div id="replyPlacementCell3" class="mid-thread-reply" style="margin-left: -41px;">
+        </div>
+    
+        <div class="rule-gray"></div>
+        </div>
+  
+     
+    
+<div id="secondarydiv" style="background-color:#eeeeee;margin:20px 0px 20px 0px">
+    
+    
+    <div id="ctl00_m_m_i_CTASecondary_divctaInlineOld" class="black bold size17 spacer-small" style="padding:10px; width:520px; text-align:center; line-height:26pt;">                
+        This thread has been closed due to inactivity.<br> <a class="size17 bold" hpx="G:SecondaryAskInlineOld" href="http://it.toolbox.com/ask-a-question/vb-vba-l">Start a new thread here</a>            
+    </div>  
+</div>
+<div class="clear"></div>
+
+<script language="javascript" type="text/javascript">
+    $(document).ready(function () {
+        var displayContent = 'G:CTA-InlineOld';
+        //SCImpressionTracking(displayContent);
+       });    
+</script> 
+
+     
+    <!-- This is the generic reply box that shows up for both expanded and collapsed view -->
+    <div class="clear">
+        
+    </div>
+
+
+    <div id="selectedMessageID" style="display: none;">4735351</div>
+    <script type="text/javascript" language="javascript" src="./Unchecking References in VBA using Macro [SOLVED] - Toolbox for IT Groups_files/groupsallfunctions.js"></script>
+     <script language="javascript" type="text/javascript">
+        var rbId = parseInt($('#rbId').val());
+        if (rbId > 0) {
+            openConfirm(rbId);
+        }
+        var baId = parseInt($('#baId').val());
+        if (baId > 0) {
+            setBestAnswerStyle(baId);
+        }
+    </script>
+
+    
+        
+
+<style type="text/css">
+    .popupvariant {display:none;}
+</style>
+
+<div id="popupdiv" class="ctapopup-groupvariant" style="display: block;">
+    <div class="ctapopup-groupvariant-topslice"></div>
+    <div class="ctapopup-groupvariant-midslice">
+        <div class="popupvariant" id="divVariantB" variantname="join" style="display: block;">
+            <div id="ctl00_m_m_CTAVariants1_Div1" class="size20 white ctapopup-header">
+                <div class="ctapopup-closebutton">X</div>
+                Get Answers - It's Free
+            </div>           
+            <div class="black size13 spacer-small">If you're looking for <span class="black bold">Visual Basic for Applications</span> help, sign up and take advantage of <span class="black bold">8,792  </span> Visual Basic professionals who are here to help you.</div>
+            <div style="margin-top:8px"> 
+                <input name="ctl00$m$m$CTAVariants1$txtEmailB" type="text" id="ctl00_m_m_CTAVariants1_txtEmailB" tabindex="2000" class="floatleft textboxrightcol watermark" watermark="Your email address" defaultbutton="ctl00_m_m_CTAVariants1_btnJoin_btnCTA" style="width: 275px;">                
+  		        <div class="floatright">
+			        <table id="ctl00_m_m_CTAVariants1_btnJoin_tbCt" class="button-outerblue" cellpadding="0" cellspacing="0">
+	<tbody><tr>
+		<td id="ctl00_m_m_CTAVariants1_btnJoin_tdCt" class="button-innerblue">
+            <input type="button" name="ctl00$m$m$CTAVariants1$btnJoin$btnCTA" value="JOIN" onclick="return false;__doPostBack(&#39;ctl00$m$m$CTAVariants1$btnJoin$btnCTA&#39;,&#39;&#39;)" id="ctl00_m_m_CTAVariants1_btnJoin_btnCTA" tabindex="2001" class="button">
+            
+        </td>
+	</tr>
+</tbody></table>
+
+                    
+		        </div>
+            </div>
+            <div class="clear"></div>
+            
+            
+        </div>
+    </div>
+    <div class="ctapopup-groupvariant-bottomslice"></div>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        $('.ctapopup-closebutton').click(function () {
+            $('#popupdiv').hide('fast');
+        });
+
+        $('#ctl00_m_m_CTAVariants1_btnJoin_btnCTA').click(function () {
+            var email = $('#ctl00_m_m_CTAVariants1_txtEmailB').val();
+            if (CtaEmailIsValid(email)) {
+                $('#popupdiv').hide();
+                $('input[class*="onPageRegEmail"]').val(email);
+                ShowRegistration('ctaVariantB');
+            }
+            return false;
+        });
+    });
+
+    // check the cookie to see if we should show this...
+    var varCookie = 'grpVariant';
+    if (!getCookie(varCookie)) {
+        // find the variants
+        var variants = $('#popupdiv .popupvariant');
+        if (variants.length) {
+            var variant = variants[0];
+            samplecontentversion = "joingroup-" + $(variant).attr('variantname');
+            // make the variant visible
+            $(variant).show();
+            // set the cookie.
+            setCookie(varCookie, '1', 1);
+            // make the popup fade in.
+            $('#popupdiv').show('fast');
+        }
+    }
+
+</script>
+
+
+    </div>
+
+    <div id="ctl00_m_Outbrain_OutbrainAd" class="outbrainpanel" style="width:530px;">
+	
+        <div id="ctl00_m_Outbrain_OutBrainAdThumb">
+		
+	        <div id="ob_holder" style="display: none;"><iframe id="ob_iframe" src="./Unchecking References in VBA using Macro [SOLVED] - Toolbox for IT Groups_files/comScore.htm" style="display: none; width: 1px; height: 1px;"></iframe></div><div class="OUTBRAIN" data-src="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/unchecking-references-in-vba-using-macro-4735351" data-widget-id="AR_4" data-ob-template="toolbox" data-ob-mark="true" data-browser="chrome" data-os="win32" data-dynload="" id="outbrain_widget_0" style=""><div class="ob_strip_container AR_4">
+	<span class="ob_empty"><wbr></span>
+<style type="text/css">
+.voterDiv .ob_bctrl{display:none;}
+.ob_pdesc IMG{border:none;}
+.AR_4 .ob_what{direction:ltr;text-align:right;clear:both;padding:5px 10px 0px;}
+.AR_4 .ob_what a{color:#999;font-size:10px;font-family:arial;text-decoration: none;}
+.AR_4 .ob_what.ob-hover:hover a{text-decoration: underline;}
+.AR_4 .ob_clear{clear:both;}
+.AR_4 .ob_amelia,
+.AR_4 .ob_logo,
+.AR_4 .ob_text_logo
+{display:inline-block;vertical-align:text-bottom;padding:0px 5px;box-sizing:content-box;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;}
+.AR_4 .ob_amelia{background:url('http://widgets.outbrain.com/images/widgetIcons/ob_logo_16x16.png') no-repeat center top;width:16px;height:16px;margin-bottom:-2px;}
+.AR_4 .ob_logo{background:url('http://widgets.outbrain.com/images/widgetIcons/ob_logo_67x12.png') no-repeat center top;width:67px;height:12px;}
+.AR_4 .ob_text_logo{background:url('http://widgets.outbrain.com/images/widgetIcons/ob_text_logo_66x23.png') no-repeat center top;width:66px;height:23px;}
+.AR_4:hover .ob_amelia,
+.AR_4:hover .ob_logo,
+.AR_4:hover .ob_text_logo{background-position:center bottom;}
+	.AR_4 .ob_container{width:100%;position:relative;overflow:hidden;}
+.AR_4 .strip-img{width:124px;height:80px;border:none !important;margin:0px !important;display:block;padding:0px !important;}
+.AR_4 .item-link-container{text-decoration:none;}
+.AR_4 .strip-rec-link-title{font-size:13px;font-weight:normal;line-height:16px;}
+.AR_4 .strip-rec-link-source{font-size:12px;line-height:16px}
+.AR_4 .strip-like{padding-bottom:4px;font-size:14px;line-height:16px;height:20px;font-weight:bold;}
+.AR_4 .item-container a,.AR_4 .item-container a:hover,.AR_4 .item-container a:visited{border:medium none;text-decoration:none;}
+.AR_4 .ob_video{border:medium none;position:absolute;top:5px;left:5px}
+.AR_4 .ob-rec-link-img{position:relative;}
+.AR_4 .wbr:before {content: \"\200B\"}
+.AR_4 .ob_container_recs{width:100%;position:absolute;}
+.AR_4 .ob_container_recs A{display:inline;direction:ltr;text-align:left;}
+.AR_4 .ob-text-content A{width:100%;padding:0px 0px;}
+.AR_4 .ob-text-content{padding-top:6px;}
+.AR_4 .item-container A.ob-text-content{display:block;}
+.AR_4 .ob_container_recs .item-container{float:left;direction:ltr;width:126px;margin-bottom:300px;padding-right:10px;}
+.AR_4 .ob_container_recs .ob-last{padding-right:0px;}
+.AR_4 .ob_container_shadow_outer{position:static;width:100%;}
+.AR_4 .ob_container_shadow .item-container-shadow{position:static;overflow-x:hidden;width:0px;float:left;direction:ltr;}
+.AR_4 .ob_container_shadow .item-container{width:126px;visibility:hidden;float:left}
+	</style>
+<style type="text/css" class="ob-custom-css">
+.AR_4 .ob_container_recs .item-container {margin-bottom: 0 !important; width: 150px;}
+
+.AR_4 .ob_container_recs {
+    position: relative !important;
+    width: 660px !important;}
+
+.AR_4 .ob_container_recs .item-container {
+    direction: ltr;
+    float: left;
+    height: 180px;
+    margin-bottom: 300px;
+    padding-right: 12px;
+    width: 141px;
+padding-top: 10px;}
+
+.AR_2 .ob_what {
+    clear: both;
+    direction: ltr;
+    padding: 5px 10px 10px !important;
+    text-align: right;}
+
+.AR_4 .ob_org_header {
+    color: #000000;
+    font: bold 18px/23px arial;}
+
+.AR_4 {margin-bottom: 35px;}
+
+.AR_4 .ob-text-content {
+    width: 122px;
+}
+
+.AR_4 .ob_container_recs .item-container {
+  padding-right: 0 !important;
+}
+
+.AR_4 .strip-rec-link-title {
+  font-size: 12px !important;
+}
+
+.AR_4 .rec-src-link {
+  font-size: 11px;
+}
+
+.AR_4 .ob_org_header h4, .AR_2 .ob_org_header h4, .AR_2 .obpd_header h4 {
+  font: bold 18px/23px arial;
+}
+
+.AR_4 .ob_container {height: 387px;}
+</style>
+	<span class="ob_org_header">
+<h4>From Around The Web</h4>
+</span>		    <div class="ob_container">
+	<div class="ob_container_recs">
+                        <a class="item-link-container ob-odd" href="http://decider.com/2014/08/11/robin-williams-decider-essentials/" data-redirect="http://paid.outbrain.com/network/redir?key=a7abef9172889c701fc43ab368eb0e19&amp;rdid=444553750&amp;type=ONT_d/NA_la&amp;in-site=false&amp;idx=0&amp;pc_id=27659674&amp;req_id=8370ba7ec857920cce24774fa73a4c64&amp;agent=blog_JS_rec&amp;recMode=11&amp;reqType=1&amp;wid=124&amp;imgType=0&amp;adsCats=1403,-1,-1&amp;refPub=2986&amp;scp=false&amp;reqIdx=0&amp;fcapElementId=61171&amp;origSrc=4768599&amp;did=820628968&amp;uuid=28aa6647-b5b2-4bc5-86d1-690811f304eb" onclick="" onmousedown="outbrain.recClicked(event,this);" target="_blank" rel="nofollow">
+    <div class="item-container ob-recIdx-0  item-container-obpd ">
+        <div class="ob-rec-link-img ob-tcolor">
+    <img onload="this.style.visibility=&#39;&#39;" width="124" height="80" title="O Captain, My Captain: Where To Stream The Career-Defining Roles Of Robin Williams" class="strip-img" alt="O Captain, My Captain: Where To Stream The Career-Defining Roles Of Robin Williams" src="./Unchecking References in VBA using Macro [SOLVED] - Toolbox for IT Groups_files/tXH56-WHI-124x80.jpg" onerror="outbrain.imageError(this)">
+    </div>
+	<div class="ob-text-content">
+            <div class="strip-rec-link-title ob-tcolor">O Captain, My Captain: Where To Stream The Career-Defining Roles Of Robin Williams</div>
+        <div class="strip-rec-link-source ob-lcolor">
+        <span class="ob_source"> <span class="rec-src-link">(Decider)</span></span>    </div>
+    </div>
+        </div>
+</a>                    <a class="item-link-container ob-even" href="http://learni.st/users/Discovery/boards/13281-animal-planet-river-monsters" data-redirect="http://paid.outbrain.com/network/redir?key=9f1f959014b00f77acd99532e3a68479&amp;rdid=444553750&amp;type=ONT_d/NA_la&amp;in-site=false&amp;idx=1&amp;pc_id=23703630&amp;req_id=8370ba7ec857920cce24774fa73a4c64&amp;agent=blog_JS_rec&amp;recMode=11&amp;reqType=1&amp;wid=124&amp;imgType=0&amp;adsCats=1806,-1,-1&amp;refPub=2986&amp;scp=false&amp;reqIdx=0&amp;fcapElementId=27139&amp;origSrc=4768599&amp;did=768134028&amp;uuid=28aa6647-b5b2-4bc5-86d1-690811f304eb" onclick="" onmousedown="outbrain.recClicked(event,this);" target="_blank" rel="nofollow">
+    <div class="item-container ob-recIdx-1  item-container-obpd ">
+        <div class="ob-rec-link-img ob-tcolor">
+    <img onload="this.style.visibility=&#39;&#39;" width="124" height="80" title="Animal Planet: River Monsters" class="strip-img" alt="Animal Planet: River Monsters" src="./Unchecking References in VBA using Macro [SOLVED] - Toolbox for IT Groups_files/pz0kW-WHI-124x80.jpg" onerror="outbrain.imageError(this)">
+    </div>
+	<div class="ob-text-content">
+            <div class="strip-rec-link-title ob-tcolor">Animal Planet: River Monsters</div>
+        <div class="strip-rec-link-source ob-lcolor">
+        <span class="ob_source"> <span class="rec-src-link">(Learnist)</span></span>    </div>
+    </div>
+        </div>
+</a>                    <a class="item-link-container ob-odd" href="http://www.fantasyalarm.com/draftguide_article_item.php?authorId=jeffmans&id=18811" data-redirect="http://paid.outbrain.com/network/redir?key=114dea269729c862ea90f6748e058250&amp;rdid=444553750&amp;type=ONT_d/NA_la&amp;in-site=false&amp;idx=2&amp;pc_id=27656963&amp;req_id=8370ba7ec857920cce24774fa73a4c64&amp;agent=blog_JS_rec&amp;recMode=11&amp;reqType=1&amp;wid=124&amp;imgType=0&amp;adsCats=1907,-1,-1&amp;refPub=2986&amp;scp=false&amp;reqIdx=0&amp;fcapElementId=61153&amp;origSrc=4768599&amp;did=822366169&amp;uuid=28aa6647-b5b2-4bc5-86d1-690811f304eb" onclick="" onmousedown="outbrain.recClicked(event,this);" target="_blank" rel="nofollow">
+    <div class="item-container ob-recIdx-2  item-container-obpd ">
+        <div class="ob-rec-link-img ob-tcolor">
+    <img onload="this.style.visibility=&#39;&#39;" width="124" height="80" title="Cover Story: Who&#39;s On Top : Jeff Mans" class="strip-img" alt="Cover Story: Who&#39;s On Top : Jeff Mans" src="./Unchecking References in VBA using Macro [SOLVED] - Toolbox for IT Groups_files/teZ0T-WHI-124x80.jpg" onerror="outbrain.imageError(this)">
+    </div>
+	<div class="ob-text-content">
+            <div class="strip-rec-link-title ob-tcolor">Cover Story: Who's On Top : Jeff Mans</div>
+        <div class="strip-rec-link-source ob-lcolor">
+        <span class="ob_source"> <span class="rec-src-link">(Fantasy Alarm)</span></span>    </div>
+    </div>
+        </div>
+</a>                    <a class="item-link-container ob-even" href="http://robbreport.com/luxury-travel/eye-tiger" data-redirect="http://paid.outbrain.com/network/redir?key=57bcdf4d65d9ddd8c7a265fc058e6175&amp;rdid=444553750&amp;type=ONT_d/NA_la&amp;in-site=false&amp;idx=3&amp;pc_id=18110470&amp;req_id=8370ba7ec857920cce24774fa73a4c64&amp;agent=blog_JS_rec&amp;recMode=11&amp;reqType=1&amp;wid=124&amp;imgType=0&amp;adsCats=1802,-1,-1&amp;refPub=2986&amp;scp=false&amp;reqIdx=0&amp;fcapElementId=14635&amp;origSrc=4768599&amp;did=608456897&amp;uuid=28aa6647-b5b2-4bc5-86d1-690811f304eb" onclick="" onmousedown="outbrain.recClicked(event,this);" target="_blank" rel="nofollow">
+    <div class="item-container ob-recIdx-3  item-container-obpd ">
+        <div class="ob-rec-link-img ob-tcolor">
+    <img onload="this.style.visibility=&#39;&#39;" width="124" height="80" title="Eye on the Tiger" class="strip-img" alt="Eye on the Tiger" src="./Unchecking References in VBA using Macro [SOLVED] - Toolbox for IT Groups_files/fB1Qv-WHI-124x80.jpg" onerror="outbrain.imageError(this)">
+    </div>
+	<div class="ob-text-content">
+            <div class="strip-rec-link-title ob-tcolor">Eye on the Tiger</div>
+        <div class="strip-rec-link-source ob-lcolor">
+        <span class="ob_source"> <span class="rec-src-link">(Robb Report)</span></span>    </div>
+    </div>
+        </div>
+</a>                    <a class="item-link-container ob-odd" href="http://learni.st/users/jacobrwheeler/boards/30108-controversial-magazine-covers" data-redirect="http://paid.outbrain.com/network/redir?key=05f08e71ef5dfcf5f4e390ad97c159ac&amp;rdid=444553750&amp;type=ONT_d/NA_la&amp;in-site=false&amp;idx=4&amp;pc_id=24882337&amp;req_id=8370ba7ec857920cce24774fa73a4c64&amp;agent=blog_JS_rec&amp;recMode=11&amp;reqType=1&amp;wid=124&amp;imgType=0&amp;adsCats=1402,-1,-1&amp;refPub=2986&amp;scp=false&amp;reqIdx=0&amp;fcapElementId=48169&amp;origSrc=4768599&amp;did=582146302&amp;uuid=28aa6647-b5b2-4bc5-86d1-690811f304eb" onclick="" onmousedown="outbrain.recClicked(event,this);" target="_blank" rel="nofollow">
+    <div class="item-container ob-recIdx-4  item-container-obpd ">
+        <div class="ob-rec-link-img ob-tcolor">
+    <img onload="this.style.visibility=&#39;&#39;" width="124" height="80" title="Controversial Magazine Covers" class="strip-img" alt="Controversial Magazine Covers" src="./Unchecking References in VBA using Macro [SOLVED] - Toolbox for IT Groups_files/dOcqU-WHI-124x80.jpg" onerror="outbrain.imageError(this)">
+    </div>
+	<div class="ob-text-content">
+            <div class="strip-rec-link-title ob-tcolor">Controversial Magazine Covers</div>
+        <div class="strip-rec-link-source ob-lcolor">
+        <span class="ob_source"> <span class="rec-src-link">(Learnist)</span></span>    </div>
+    </div>
+        </div>
+</a>                    <a class="item-link-container ob-even" href="http://www.lifespan.com/5-habits-lead-depression/" data-redirect="http://paid.outbrain.com/network/redir?key=e4deff1455ce3d35bfa3d3a9c75d2b74&amp;rdid=444553750&amp;type=ONT_d/NA_la&amp;in-site=false&amp;idx=5&amp;pc_id=26035780&amp;req_id=8370ba7ec857920cce24774fa73a4c64&amp;agent=blog_JS_rec&amp;recMode=11&amp;reqType=1&amp;wid=124&amp;imgType=0&amp;adsCats=1512,-1,-1&amp;refPub=2986&amp;scp=false&amp;reqIdx=0&amp;fcapElementId=53457&amp;origSrc=4768599&amp;did=750170253&amp;uuid=28aa6647-b5b2-4bc5-86d1-690811f304eb" onclick="" onmousedown="outbrain.recClicked(event,this);" target="_blank" rel="nofollow">
+    <div class="item-container ob-recIdx-5  item-container-obpd ">
+        <div class="ob-rec-link-img ob-tcolor">
+    <img onload="this.style.visibility=&#39;&#39;" width="124" height="80" title="5 Habits That Lead To Depression" class="strip-img" alt="5 Habits That Lead To Depression" src="./Unchecking References in VBA using Macro [SOLVED] - Toolbox for IT Groups_files/oldYD-WHI-124x80.jpg" onerror="outbrain.imageError(this)">
+    </div>
+	<div class="ob-text-content">
+            <div class="strip-rec-link-title ob-tcolor">5 Habits That Lead To Depression</div>
+        <div class="strip-rec-link-source ob-lcolor">
+        <span class="ob_source"> <span class="rec-src-link">(Lifespan)</span></span>    </div>
+    </div>
+        </div>
+</a>                    <a class="item-link-container ob-odd" href="http://learni.st/users/emily.dingmann.7/boards/14637-why-you-should-be-drinking-lemon-water-in-the-morning" data-redirect="http://paid.outbrain.com/network/redir?key=b575647b36ae08f288e76b8d1f8d1d8c&amp;rdid=444553750&amp;type=ONT_d/NA_la&amp;in-site=false&amp;idx=6&amp;pc_id=24882336&amp;req_id=8370ba7ec857920cce24774fa73a4c64&amp;agent=blog_JS_rec&amp;recMode=11&amp;reqType=1&amp;wid=124&amp;imgType=0&amp;adsCats=1513,-1,-1&amp;refPub=2986&amp;scp=false&amp;reqIdx=0&amp;fcapElementId=48169&amp;origSrc=4768599&amp;did=503482368&amp;uuid=28aa6647-b5b2-4bc5-86d1-690811f304eb" onclick="" onmousedown="outbrain.recClicked(event,this);" target="_blank" rel="nofollow">
+    <div class="item-container ob-recIdx-6  item-container-obpd ">
+        <div class="ob-rec-link-img ob-tcolor">
+    <img onload="this.style.visibility=&#39;&#39;" width="124" height="80" title="Why You Should Be Drinking Lemon Water in the Morning" class="strip-img" alt="Why You Should Be Drinking Lemon Water in the Morning" src="./Unchecking References in VBA using Macro [SOLVED] - Toolbox for IT Groups_files/Y4YlM-WHI-124x80.jpg" onerror="outbrain.imageError(this)">
+    </div>
+	<div class="ob-text-content">
+            <div class="strip-rec-link-title ob-tcolor">Why You Should Be Drinking Lemon Water in the Morning</div>
+        <div class="strip-rec-link-source ob-lcolor">
+        <span class="ob_source"> <span class="rec-src-link">(Learnist)</span></span>    </div>
+    </div>
+        </div>
+</a>                    <a class="item-link-container ob-even" href="http://www.travelmagma.com/travel-forum-general-discussion/most-intelligent-animals/?utm_content=animals" data-redirect="http://paid.outbrain.com/network/redir?key=234b89b50b3cc8d808c264e20a7caec9&amp;rdid=444553750&amp;type=ONT_d/NA_la&amp;in-site=false&amp;idx=7&amp;pc_id=27287795&amp;req_id=8370ba7ec857920cce24774fa73a4c64&amp;agent=blog_JS_rec&amp;recMode=11&amp;reqType=1&amp;wid=124&amp;imgType=0&amp;adsCats=1805,-1,-1&amp;refPub=2986&amp;scp=false&amp;reqIdx=0&amp;fcapElementId=54825&amp;origSrc=4768599&amp;did=816708315&amp;uuid=28aa6647-b5b2-4bc5-86d1-690811f304eb" onclick="" onmousedown="outbrain.recClicked(event,this);" target="_blank" rel="nofollow">
+    <div class="item-container ob-recIdx-7  item-container-obpd  ob-last ">
+        <div class="ob-rec-link-img ob-tcolor">
+    <img onload="this.style.visibility=&#39;&#39;" width="124" height="80" title="Most Intelligent Animals" class="strip-img" alt="Most Intelligent Animals" src="./Unchecking References in VBA using Macro [SOLVED] - Toolbox for IT Groups_files/tGp8l-WHI-124x80.jpg" onerror="outbrain.imageError(this)">
+    </div>
+	<div class="ob-text-content">
+            <div class="strip-rec-link-title ob-tcolor">Most Intelligent Animals</div>
+        <div class="strip-rec-link-source ob-lcolor">
+        <span class="ob_source"> <span class="rec-src-link">(TravelMagma)</span></span>    </div>
+    </div>
+        </div>
+</a>            </div>
+<div class="ob_container_shadow_outer">
+    <div class="ob_container_shadow">
+                                    <div class="item-container-shadow ob-recIdx-0   ob-odd">
+    <div class="item-container ob-recIdx-0  item-container-obpd ">
+        <div class="ob-rec-link-img ob-tcolor">
+    <img onload="this.style.visibility=&#39;&#39;" width="124" height="80" title="O Captain, My Captain: Where To Stream The Career-Defining Roles Of Robin Williams" class="strip-img" alt="O Captain, My Captain: Where To Stream The Career-Defining Roles Of Robin Williams" src="./Unchecking References in VBA using Macro [SOLVED] - Toolbox for IT Groups_files/tXH56-WHI-124x80.jpg" onerror="outbrain.imageError(this)">
+    </div>
+	<div class="ob-text-content">
+            <div class="strip-rec-link-title ob-tcolor">O Captain, My Captain: Where To Stream The Career-Defining Roles Of Robin Williams</div>
+        <div class="strip-rec-link-source ob-lcolor">
+        <span class="ob_source"> <span class="rec-src-link">(Decider)</span></span>    </div>
+    </div>
+        </div>
+</div>                            <div class="item-container-shadow ob-recIdx-1  ob-even">
+    <div class="item-container ob-recIdx-1  item-container-obpd ">
+        <div class="ob-rec-link-img ob-tcolor">
+    <img onload="this.style.visibility=&#39;&#39;" width="124" height="80" title="Animal Planet: River Monsters" class="strip-img" alt="Animal Planet: River Monsters" src="./Unchecking References in VBA using Macro [SOLVED] - Toolbox for IT Groups_files/pz0kW-WHI-124x80.jpg" onerror="outbrain.imageError(this)">
+    </div>
+	<div class="ob-text-content">
+            <div class="strip-rec-link-title ob-tcolor">Animal Planet: River Monsters</div>
+        <div class="strip-rec-link-source ob-lcolor">
+        <span class="ob_source"> <span class="rec-src-link">(Learnist)</span></span>    </div>
+    </div>
+        </div>
+</div>                            <div class="item-container-shadow ob-recIdx-2   ob-odd">
+    <div class="item-container ob-recIdx-2  item-container-obpd ">
+        <div class="ob-rec-link-img ob-tcolor">
+    <img onload="this.style.visibility=&#39;&#39;" width="124" height="80" title="Cover Story: Who&#39;s On Top : Jeff Mans" class="strip-img" alt="Cover Story: Who&#39;s On Top : Jeff Mans" src="./Unchecking References in VBA using Macro [SOLVED] - Toolbox for IT Groups_files/teZ0T-WHI-124x80.jpg" onerror="outbrain.imageError(this)">
+    </div>
+	<div class="ob-text-content">
+            <div class="strip-rec-link-title ob-tcolor">Cover Story: Who's On Top : Jeff Mans</div>
+        <div class="strip-rec-link-source ob-lcolor">
+        <span class="ob_source"> <span class="rec-src-link">(Fantasy Alarm)</span></span>    </div>
+    </div>
+        </div>
+</div>                            <div class="item-container-shadow ob-recIdx-3  ob-even">
+    <div class="item-container ob-recIdx-3  item-container-obpd ">
+        <div class="ob-rec-link-img ob-tcolor">
+    <img onload="this.style.visibility=&#39;&#39;" width="124" height="80" title="Eye on the Tiger" class="strip-img" alt="Eye on the Tiger" src="./Unchecking References in VBA using Macro [SOLVED] - Toolbox for IT Groups_files/fB1Qv-WHI-124x80.jpg" onerror="outbrain.imageError(this)">
+    </div>
+	<div class="ob-text-content">
+            <div class="strip-rec-link-title ob-tcolor">Eye on the Tiger</div>
+        <div class="strip-rec-link-source ob-lcolor">
+        <span class="ob_source"> <span class="rec-src-link">(Robb Report)</span></span>    </div>
+    </div>
+        </div>
+</div>                            <div class="item-container-shadow ob-recIdx-4   ob-odd">
+    <div class="item-container ob-recIdx-4  item-container-obpd ">
+        <div class="ob-rec-link-img ob-tcolor">
+    <img onload="this.style.visibility=&#39;&#39;" width="124" height="80" title="Controversial Magazine Covers" class="strip-img" alt="Controversial Magazine Covers" src="./Unchecking References in VBA using Macro [SOLVED] - Toolbox for IT Groups_files/dOcqU-WHI-124x80.jpg" onerror="outbrain.imageError(this)">
+    </div>
+	<div class="ob-text-content">
+            <div class="strip-rec-link-title ob-tcolor">Controversial Magazine Covers</div>
+        <div class="strip-rec-link-source ob-lcolor">
+        <span class="ob_source"> <span class="rec-src-link">(Learnist)</span></span>    </div>
+    </div>
+        </div>
+</div>                            <div class="item-container-shadow ob-recIdx-5  ob-even">
+    <div class="item-container ob-recIdx-5  item-container-obpd ">
+        <div class="ob-rec-link-img ob-tcolor">
+    <img onload="this.style.visibility=&#39;&#39;" width="124" height="80" title="5 Habits That Lead To Depression" class="strip-img" alt="5 Habits That Lead To Depression" src="./Unchecking References in VBA using Macro [SOLVED] - Toolbox for IT Groups_files/oldYD-WHI-124x80.jpg" onerror="outbrain.imageError(this)">
+    </div>
+	<div class="ob-text-content">
+            <div class="strip-rec-link-title ob-tcolor">5 Habits That Lead To Depression</div>
+        <div class="strip-rec-link-source ob-lcolor">
+        <span class="ob_source"> <span class="rec-src-link">(Lifespan)</span></span>    </div>
+    </div>
+        </div>
+</div>                            <div class="item-container-shadow ob-recIdx-6   ob-odd">
+    <div class="item-container ob-recIdx-6  item-container-obpd ">
+        <div class="ob-rec-link-img ob-tcolor">
+    <img onload="this.style.visibility=&#39;&#39;" width="124" height="80" title="Why You Should Be Drinking Lemon Water in the Morning" class="strip-img" alt="Why You Should Be Drinking Lemon Water in the Morning" src="./Unchecking References in VBA using Macro [SOLVED] - Toolbox for IT Groups_files/Y4YlM-WHI-124x80.jpg" onerror="outbrain.imageError(this)">
+    </div>
+	<div class="ob-text-content">
+            <div class="strip-rec-link-title ob-tcolor">Why You Should Be Drinking Lemon Water in the Morning</div>
+        <div class="strip-rec-link-source ob-lcolor">
+        <span class="ob_source"> <span class="rec-src-link">(Learnist)</span></span>    </div>
+    </div>
+        </div>
+</div>                            <div class="item-container-shadow ob-recIdx-7  ob-even">
+    <div class="item-container ob-recIdx-7  item-container-obpd  ob-last ">
+        <div class="ob-rec-link-img ob-tcolor">
+    <img onload="this.style.visibility=&#39;&#39;" width="124" height="80" title="Most Intelligent Animals" class="strip-img" alt="Most Intelligent Animals" src="./Unchecking References in VBA using Macro [SOLVED] - Toolbox for IT Groups_files/tGp8l-WHI-124x80.jpg" onerror="outbrain.imageError(this)">
+    </div>
+	<div class="ob-text-content">
+            <div class="strip-rec-link-title ob-tcolor">Most Intelligent Animals</div>
+        <div class="strip-rec-link-source ob-lcolor">
+        <span class="ob_source"> <span class="rec-src-link">(TravelMagma)</span></span>    </div>
+    </div>
+        </div>
+</div>                        </div>
+</div>	</div>
+				<div class="ob_what">
+	
+	<a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/unchecking-references-in-vba-using-macro-4735351#" onmousedown="" onclick="OBR.extern.callWhatIs(&#39;http://www.outbrain.com/what-is/default/en&#39;,&#39;&#39;,-1,-1,true ,null);return false">
+		Recommended by<span class="ob_amelia" title="Outbrain"></span>
+	</a>
+</div>
+	
+</div></div>
+	        <script type="text/javascript" async="async" src="./Unchecking References in VBA using Macro [SOLVED] - Toolbox for IT Groups_files/outbrain.js"></script>            
+	    
+	</div>
+	    <div id="ctl00_m_Outbrain_OutBrainAdText">
+		
+	        <div class="OUTBRAIN" data-src="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/unchecking-references-in-vba-using-macro-4735351" data-widget-id="AR_2" data-ob-template="toolbox" data-ob-mark="true" data-browser="chrome" data-os="win32" data-dynload="" id="outbrain_widget_1" style=""><div class="ob_dual_container AR_2">
+<span class="ob_empty"><wbr></span>
+<style type="text/css">
+.voterDiv .ob_bctrl{display:none;}
+.ob_pdesc IMG{border:none;}
+.AR_2 .ob_what{direction:ltr;text-align:right;clear:both;padding:5px 10px 0px;}
+.AR_2 .ob_what a{color:#999;font-size:10px;font-family:arial;text-decoration: none;}
+.AR_2 .ob_what.ob-hover:hover a{text-decoration: underline;}
+.AR_2 .ob_clear{clear:both;}
+.AR_2 .ob_amelia,
+.AR_2 .ob_logo,
+.AR_2 .ob_text_logo
+{display:inline-block;vertical-align:text-bottom;padding:0px 5px;box-sizing:content-box;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;}
+.AR_2 .ob_amelia{background:url('http://widgets.outbrain.com/images/widgetIcons/ob_logo_16x16.png') no-repeat center top;width:16px;height:16px;margin-bottom:-2px;}
+.AR_2 .ob_logo{background:url('http://widgets.outbrain.com/images/widgetIcons/ob_logo_67x12.png') no-repeat center top;width:67px;height:12px;}
+.AR_2 .ob_text_logo{background:url('http://widgets.outbrain.com/images/widgetIcons/ob_text_logo_66x23.png') no-repeat center top;width:66px;height:23px;}
+.AR_2:hover .ob_amelia,
+.AR_2:hover .ob_logo,
+.AR_2:hover .ob_text_logo{background-position:center bottom;}
+.AR_2 .ob_dual_container{clear:both;}
+.AR_2 .ob_dual_left,.AR_2 .ob_dual_right {float:left;width:46%;padding:0 2%;}
+.AR_2 .ob_empty{display:none;}</style>
+<style type="text/css" class="ob-custom-css">
+.AR_2 .ob_org_header {
+    color: #000000;
+    font: bold 18px/23px arial;}
+.AR_2 .obpd_header{color: #000000;
+    font: bold 18px/23px arial;}
+.AR_2 li {
+    padding-bottom: 10px;
+}
+
+.AR_2 .ob_org_header h4 {
+    border-bottom: medium solid #999999;}
+
+.AR_2 .obpd_header h4 {
+    border-bottom: medium solid #999999;}
+.AR_2 .ob-text-content {
+    padding-top: 10px;}
+
+.AR_2 .rec-link {
+    color: #033666;
+    font: bold 12px/17px arial;}
+
+
+</style>
+	<div class="ob_dual_left">
+	<span class="ob_org_header"><h4>We Recommend</h4></span>	<ul>
+			<li class="odb_li ob-recIdx-0  ob-odd">
+    	
+<div class="ob-text-content">
+          <a target="_self" onclick="" href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/how-can-i-program-a-userform-to-navigate-records-forwards-or-backwards-with-command-button-excell-vba-2003-3375121" onmousedown="this.href=&#39;http://traffic.outbrain.com/network/redir?key=4fd11152444dc4c8a2581ae0d3a9269a&amp;rdid=444553750&amp;type=MV_/NA_la&amp;in-site=true&amp;idx=0&amp;req_id=a52d150a39f36d6da67ce30366a03e5d&amp;agent=blog_JS_rec&amp;recMode=7&amp;reqType=1&amp;wid=101&amp;imgType=0&amp;refPub=2986&amp;scp=false&amp;reqIdx=1&amp;origSrc=4768599&amp;did=443978676&amp;pv_id=8370ba7ec857920cce24774fa73a4c64&amp;uuid=28aa6647-b5b2-4bc5-86d1-690811f304eb&#39;;" rel="" class="rec-link">How can I program a userform to navigate records forwards or backwards with command button Excell VBA 2003</a>
+    		<span class="ob_source"></span>         </div>
+	
+</li>			<li class="odb_li ob-recIdx-1  ob-even">
+    	
+<div class="ob-text-content">
+          <a target="_self" onclick="" href="http://visualbasic.ittoolbox.com/groups/technical-functional/visualbasic-l/schtasks-to-call-bat-file-that-contains-sql-1372075" onmousedown="this.href=&#39;http://traffic.outbrain.com/network/redir?key=0d4f3603b9768a45d3b62f36a18a0fa6&amp;rdid=444553750&amp;type=SYLD_/NA_la&amp;in-site=true&amp;idx=1&amp;req_id=a52d150a39f36d6da67ce30366a03e5d&amp;agent=blog_JS_rec&amp;recMode=7&amp;reqType=1&amp;wid=101&amp;imgType=0&amp;refPub=2986&amp;scp=false&amp;reqIdx=1&amp;origSrc=4768599&amp;did=448872308&amp;pv_id=8370ba7ec857920cce24774fa73a4c64&amp;uuid=28aa6647-b5b2-4bc5-86d1-690811f304eb&#39;;" rel="" class="rec-link">Schtasks to call .bat file that contains .sql</a>
+    		<span class="ob_source"></span>         </div>
+	
+</li>			<li class="odb_li ob-recIdx-2  ob-odd">
+    	
+<div class="ob-text-content">
+          <a target="_self" onclick="" href="http://visualbasic.ittoolbox.com/groups/technical-functional/visualbasic-l/restoring-corrupt-access-database-4697090" onmousedown="this.href=&#39;http://traffic.outbrain.com/network/redir?key=8b18a69c4520efbbc67d72f66ee8733e&amp;rdid=444553750&amp;type=MV_/NA_la&amp;in-site=true&amp;idx=2&amp;req_id=a52d150a39f36d6da67ce30366a03e5d&amp;agent=blog_JS_rec&amp;recMode=7&amp;reqType=1&amp;wid=101&amp;imgType=0&amp;refPub=2986&amp;scp=false&amp;reqIdx=1&amp;origSrc=4768599&amp;did=446128158&amp;pv_id=8370ba7ec857920cce24774fa73a4c64&amp;uuid=28aa6647-b5b2-4bc5-86d1-690811f304eb&#39;;" rel="" class="rec-link">Restoring Corrupt ACCESS Database</a>
+    		<span class="ob_source"></span>         </div>
+	
+</li>			<li class="odb_li ob-recIdx-3  ob-even">
+    	
+<div class="ob-text-content">
+          <a target="_self" onclick="" href="http://visualbasic.ittoolbox.com/groups/technical-functional/visualbasic-l/add-check-box-on-flexgrid-1738562" onmousedown="this.href=&#39;http://traffic.outbrain.com/network/redir?key=92f8fe549752b0c7261bc332b0326a11&amp;rdid=444553750&amp;type=MV_/NA_la&amp;in-site=true&amp;idx=3&amp;req_id=a52d150a39f36d6da67ce30366a03e5d&amp;agent=blog_JS_rec&amp;recMode=7&amp;reqType=1&amp;wid=101&amp;imgType=0&amp;refPub=2986&amp;scp=false&amp;reqIdx=1&amp;origSrc=4768599&amp;did=443404993&amp;pv_id=8370ba7ec857920cce24774fa73a4c64&amp;uuid=28aa6647-b5b2-4bc5-86d1-690811f304eb&#39;;" rel="" class="rec-link">Add check box on Flexgrid</a>
+    		<span class="ob_source"></span>         </div>
+	
+</li>			<li class="odb_li ob-recIdx-4  ob-odd">
+    	
+<div class="ob-text-content">
+          <a target="_self" onclick="" href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-dotnet-l/syntax-error-in-insert-into-sql-statement-5566600" onmousedown="this.href=&#39;http://traffic.outbrain.com/network/redir?key=b7e88e58fef67ad9a58f42c30ae0ef15&amp;rdid=444553750&amp;type=MRD_/NA_la&amp;in-site=true&amp;idx=4&amp;req_id=a52d150a39f36d6da67ce30366a03e5d&amp;agent=blog_JS_rec&amp;recMode=7&amp;reqType=1&amp;wid=101&amp;imgType=0&amp;refPub=2986&amp;scp=false&amp;reqIdx=1&amp;origSrc=4768599&amp;did=823076630&amp;pv_id=8370ba7ec857920cce24774fa73a4c64&amp;uuid=28aa6647-b5b2-4bc5-86d1-690811f304eb&#39;;" rel="" class="rec-link">Syntax Error in (insert into) SQL Statement</a>
+    		<span class="ob_source"></span>         </div>
+	
+</li>			<li class="odb_li ob-recIdx-5  ob-even">
+    	
+<div class="ob-text-content">
+          <a target="_self" onclick="" href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/auto-mscomct2ocx-in-syswow64-5563796" onmousedown="this.href=&#39;http://traffic.outbrain.com/network/redir?key=743bff02937299ed74e13a9ac8609ff8&amp;rdid=444553750&amp;type=MRD_/NA_la&amp;in-site=true&amp;idx=5&amp;req_id=a52d150a39f36d6da67ce30366a03e5d&amp;agent=blog_JS_rec&amp;recMode=7&amp;reqType=1&amp;wid=101&amp;imgType=0&amp;refPub=2986&amp;scp=false&amp;reqIdx=1&amp;origSrc=4768599&amp;did=821313982&amp;pv_id=8370ba7ec857920cce24774fa73a4c64&amp;uuid=28aa6647-b5b2-4bc5-86d1-690811f304eb&#39;;" rel="" class="rec-link">Auto MSCOMCT2.OCX in SYSWOW64</a>
+    		<span class="ob_source"></span>         </div>
+	
+</li>		</ul>
+	</div>
+	<div class="ob_dual_right">
+	<span class="obpd_header"><h4>From Around The Web</h4></span>		<ul>
+			<li class="odb_li ob-recIdx-0  ob-odd">
+    	
+<div class="ob-text-content">
+          <a target="_blank" onclick="" href="http://www.strategicdatacenter.com/133/another-company-rolls-out-solar-panels" onmousedown="this.href=&#39;http://paid.outbrain.com/network/redir?key=5d9273a083a36f1ee14c7217587cfdab&amp;rdid=444553750&amp;type=ONT_d/NA_la&amp;in-site=false&amp;idx=0&amp;pc_id=27345093&amp;req_id=a52d150a39f36d6da67ce30366a03e5d&amp;agent=blog_JS_rec&amp;recMode=7&amp;reqType=1&amp;wid=101&amp;adsCats=2004,1702,-1&amp;refPub=2986&amp;scp=false&amp;reqIdx=1&amp;fcapElementId=59444&amp;origSrc=4768599&amp;did=786102540&amp;pv_id=8370ba7ec857920cce24774fa73a4c64&amp;uuid=28aa6647-b5b2-4bc5-86d1-690811f304eb&#39;;" rel="nofollow" class="rec-link">Another Company Rolls Out Solar Panels</a>
+    		<span class="ob_source"> <span class="rec-src-link">(Strategic Data Center)</span></span>         </div>
+	
+</li>			<li class="odb_li ob-recIdx-1  ob-even">
+    	
+<div class="ob-text-content">
+          <a target="_blank" onclick="" href="http://learni.st/users/58/boards/38012-how-to-communicate-with-your-cat" onmousedown="this.href=&#39;http://paid.outbrain.com/network/redir?key=e43a6aa546d3b210b6eab98686da65fb&amp;rdid=444553750&amp;type=ONT_d/NA_la&amp;in-site=false&amp;idx=1&amp;pc_id=19537060&amp;req_id=a52d150a39f36d6da67ce30366a03e5d&amp;agent=blog_JS_rec&amp;recMode=7&amp;reqType=1&amp;wid=101&amp;adsCats=1805,-1,-1&amp;refPub=2986&amp;scp=false&amp;reqIdx=1&amp;fcapElementId=27132&amp;origSrc=4768599&amp;did=616522464&amp;pv_id=8370ba7ec857920cce24774fa73a4c64&amp;uuid=28aa6647-b5b2-4bc5-86d1-690811f304eb&#39;;" rel="nofollow" class="rec-link">How to Communicate with Your Cat</a>
+    		<span class="ob_source"> <span class="rec-src-link">(Learnist)</span></span>         </div>
+	
+</li>			<li class="odb_li ob-recIdx-2  ob-odd">
+    	
+<div class="ob-text-content">
+          <a target="_blank" onclick="" href="http://learni.st/users/dulcie.wilcox/boards/81298-why-you-should-avoid-farmed-fish" onmousedown="this.href=&#39;http://paid.outbrain.com/network/redir?key=2c3c770898e89dc15321dc9601625248&amp;rdid=444553750&amp;type=ONT_d/NA_la&amp;in-site=false&amp;idx=2&amp;pc_id=23847753&amp;req_id=a52d150a39f36d6da67ce30366a03e5d&amp;agent=blog_JS_rec&amp;recMode=7&amp;reqType=1&amp;wid=101&amp;adsCats=1513,1703,-1&amp;refPub=2986&amp;scp=false&amp;reqIdx=1&amp;fcapElementId=27310&amp;origSrc=4768599&amp;did=770097907&amp;pv_id=8370ba7ec857920cce24774fa73a4c64&amp;uuid=28aa6647-b5b2-4bc5-86d1-690811f304eb&#39;;" rel="nofollow" class="rec-link">Why You Should Avoid Farmed Fish</a>
+    		<span class="ob_source"> <span class="rec-src-link">(Learnist)</span></span>         </div>
+	
+</li>			<li class="odb_li ob-recIdx-3  ob-even">
+    	
+<div class="ob-text-content">
+          <a target="_blank" onclick="" href="http://subscribe.fico.com/Bad-Debt-Ruining-Your-Balance-Sheet-Look-at-Bust-Out-Fraud" onmousedown="this.href=&#39;http://paid.outbrain.com/network/redir?key=e98c515bc1a996f79245e099e2ee2b15&amp;rdid=444553750&amp;type=ONT_d/NA_la&amp;in-site=false&amp;idx=3&amp;pc_id=24834068&amp;req_id=a52d150a39f36d6da67ce30366a03e5d&amp;agent=blog_JS_rec&amp;recMode=7&amp;reqType=1&amp;wid=101&amp;adsCats=1202,-1,-1&amp;refPub=2986&amp;scp=false&amp;reqIdx=1&amp;fcapElementId=47975&amp;origSrc=4768599&amp;did=783306781&amp;pv_id=8370ba7ec857920cce24774fa73a4c64&amp;uuid=28aa6647-b5b2-4bc5-86d1-690811f304eb&#39;;" rel="nofollow" class="rec-link">Analysts estimate 10% and 15% of all banks’ unsecured bad debt is actually bust-out fraud</a>
+    		<span class="ob_source"> <span class="rec-src-link">(FICO)</span></span>         </div>
+	
+</li>			<li class="odb_li ob-recIdx-4  ob-odd">
+    	
+<div class="ob-text-content">
+          <a target="_blank" onclick="" href="http://about.mapmyfitness.com/2014/07/insights-and-trends-in-connected-fitness/" onmousedown="this.href=&#39;http://paid.outbrain.com/network/redir?key=68549064bc11b8dc08c4f484c819298e&amp;rdid=444553750&amp;type=ONT_d/NA_la&amp;in-site=false&amp;idx=4&amp;pc_id=27434904&amp;req_id=a52d150a39f36d6da67ce30366a03e5d&amp;agent=blog_JS_rec&amp;recMode=7&amp;reqType=1&amp;wid=101&amp;adsCats=1510,-1,-1&amp;refPub=2986&amp;scp=false&amp;reqIdx=1&amp;fcapElementId=59668&amp;origSrc=4768599&amp;did=811891869&amp;pv_id=8370ba7ec857920cce24774fa73a4c64&amp;uuid=28aa6647-b5b2-4bc5-86d1-690811f304eb&#39;;" rel="nofollow" class="rec-link">Insights and Trends in Connected Fitness</a>
+    		<span class="ob_source"> <span class="rec-src-link">(MapMyFitness)</span></span>         </div>
+	
+</li>		</ul>
+	</div>
+		<div class="ob_what">
+	
+	<a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/unchecking-references-in-vba-using-macro-4735351#" onmousedown="" onclick="OBR.extern.callWhatIs(&#39;http://www.outbrain.com/what-is/default/en&#39;,&#39;&#39;,-1,-1,true ,null);return false">
+		Recommended by<span class="ob_amelia" title="Outbrain"></span>
+	</a>
+</div>
+	<div class="ob_clear"></div>
+</div></div>
+	        <script type="text/javascript" async="async" src="./Unchecking References in VBA using Macro [SOLVED] - Toolbox for IT Groups_files/outbrain.js"></script>           
+	    
+	</div>
+    
+</div>
+ 
+	<div class="sponsoredlinks clear">
+	    <div id="ctl00_m_marchexAd">
+	
+		
+ 
+	    
+</div>
+	    
+	</div>
+    </div>
+    <div class="content-rightcol">
+        
+            
+
+    
+    
+    <div class="clear"></div>   
+    
+    <div align="center" style="margin-top:inherit;margin-bottom:20px">
+	
+	<div id="div-gpt-ad-2082848930-1">
+		<script type="text/javascript">
+			googletag.cmd.push(function() {
+			  googletag.display("div-gpt-ad-2082848930-1");
+		});
+		</script>
+	<div id="google_ads_iframe_/4585/zd.toolbox/VisualBasic_Section_1__container__" style="border: 0pt none;"><iframe id="google_ads_iframe_/4585/zd.toolbox/VisualBasic_Section_1" name="google_ads_iframe_/4585/zd.toolbox/VisualBasic_Section_1" width="300" height="250" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" src="javascript:"<html><body style='background:transparent'></body></html>"" style="border: 0px; vertical-align: bottom;"></iframe></div></div>
+
+</div>
+    
+    <div class="box-standardtitlebase box-standard">
+    <span class="bold anthracite size12 floatleft">Related</span>
+    <div class="floatright">
+        
+    </div>
+    <div style="clear:both"></div>
+</div>
+<div class="box-containerbase">
+    
+        
+<a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/" style="font-weight: bold">Discussions</a>
+
+        <ul>
+    
+		<li class="link-indent"><img class="link-image-carat" src="./Unchecking References in VBA using Macro [SOLVED] - Toolbox for IT Groups_files/carat-blue.png" style="border-width:0px;">
+<a title="I&#39;m using Excel 2003. I have a spreadsheet that is used to keep weekly attendance at a meeting. This is done by simply entering an &quot;x&quot; in the cell under that column / row. Simple, right?
+
+What I&#39;m..." class="darkgray" hpx="G:Expanded:RelDiscussion" href="http://database.ittoolbox.com/groups/technical-functional/excel-l/automated-email-list-from-certain-spreadsheet-entries-4711366">Automated Email List from Certain Spreadsheet Entries?</a></li>
+	
+	<div class="clear spacer-ittybitty"></div>
+	
+		<li class="link-indent"><img class="link-image-carat" src="./Unchecking References in VBA using Macro [SOLVED] - Toolbox for IT Groups_files/carat-blue.png" style="border-width:0px;">
+<a title="I am using the below code however when i try to execute it it gives me an error. can anyone tell the reason for it .
+
+
+Sub Button1_Click()
+&#39;
+&#39; Button1_Click Macro
+&#39;
+&amp;lt;pre&amp;gt;
+
+
+Public Sub SendWorkSheets()
+
+Dim..." class="darkgray" hpx="G:Expanded:RelDiscussion" href="http://database.ittoolbox.com/groups/technical-functional/excel-l/error-while-auto-sending-excel-files-through-outlook-4705900">Error While Auto Sending Excel Files Through Outlook</a></li>
+	
+	<div class="clear spacer-ittybitty"></div>
+	
+		<li class="link-indent"><img class="link-image-carat" src="./Unchecking References in VBA using Macro [SOLVED] - Toolbox for IT Groups_files/carat-blue.png" style="border-width:0px;">
+<a title="I am new to VBA, I know many people say this, but please bear with me! 
+ 
+I run several reports from SAP HR system and compile an offline staff directory for people to use when away from the office..." class="darkgray" hpx="G:Expanded:RelDiscussion" href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/excel-vba-inserting-columns-from-a-different-workbook-4421457">Excel VBA - Inserting Columns from a Different Workbook</a></li>
+	
+	<div class="clear spacer-ittybitty"></div>
+	
+		<li class="link-indent"><img class="link-image-carat" src="./Unchecking References in VBA using Macro [SOLVED] - Toolbox for IT Groups_files/carat-blue.png" style="border-width:0px;">
+<a title="I have an excel with data in each line/column: user name, email addres, Purchase order and in the last column a phrase with the previous data and I wish to do something for sending the emails in..." class="darkgray" hpx="G:Expanded:RelDiscussion" href="http://database.ittoolbox.com/groups/technical-functional/excel-l/sending-automatic-emails-4930185">Sending Automatic Emails</a></li>
+	
+	<div class="clear spacer-ittybitty"></div>
+	
+		<li class="link-indent"><img class="link-image-carat" src="./Unchecking References in VBA using Macro [SOLVED] - Toolbox for IT Groups_files/carat-blue.png" style="border-width:0px;">
+<a title="Hi all, I have created a spreadsheet where employees record expenses and have created a macro that copys and pastes the data entered into a master expenses worksheet in a different workbook.
+
+-The..." class="darkgray" hpx="G:Expanded:RelDiscussion" href="http://database.ittoolbox.com/groups/technical-functional/excel-l/excel-macro-to-copy-data-to-another-workbook-4641931">Excel macro to copy data to another workbook</a></li>
+	
+	<div class="clear spacer-ittybitty"></div>
+	
+		<li class="link-indent"><img class="link-image-carat" src="./Unchecking References in VBA using Macro [SOLVED] - Toolbox for IT Groups_files/carat-blue.png" style="border-width:0px;">
+<a title="Thanks, Mr John via vb-vba-l.
+Your advice was helpful to solve my problem.
+I achieve my goal: to collect data from a lot of drawings (*.dwg from AutoCAD) and generate a tab-separated file with information..." class="darkgray" hpx="G:Expanded:RelDiscussion" href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/recognize-if-a-text-string-is-a-legal-file-name-4013959">" Recognize if a text string is a legal file name"</a></li>
+	
+	<div class="clear spacer-ittybitty"></div>
+	
+		<li class="link-indent"><img class="link-image-carat" src="./Unchecking References in VBA using Macro [SOLVED] - Toolbox for IT Groups_files/carat-blue.png" style="border-width:0px;">
+<a title="I m using excel 2003. I required email alert massage (microsoft outlook express 2003) at my mail id &amp; also copy mark to our higher officials. Excel sheet name is : Sheet1. mail sending through vba..." class="darkgray" hpx="G:Expanded:RelDiscussion" href="http://database.ittoolbox.com/groups/technical-functional/excel-l/before-due-date-email-alert-notification-sending-3431461">Before due date E-mail alert notification sending</a></li>
+	
+	<div class="clear spacer-ittybitty"></div>
+	
+		<li class="link-indent"><img class="link-image-carat" src="./Unchecking References in VBA using Macro [SOLVED] - Toolbox for IT Groups_files/carat-blue.png" style="border-width:0px;">
+<a title="Sir
+I want to lock top three rows of work sheet and all columns of the worksheet except A. Column A will be open to be edited by users. When I try to lock it through excel 2007 I get a error 1004..." class="darkgray" hpx="G:Expanded:RelDiscussion" href="http://database.ittoolbox.com/groups/technical-functional/excel-l/lock-cells-and-also-run-a-vba-3496629">Lock cells and also run a vba</a></li>
+	
+        </ul>
+    
+    
+
+        <div class="marginbottom15"></div>
+        
+<a href="http://visualbasic.ittoolbox.com/research" style="font-weight: bold">White Papers &amp; Webcasts</a>
+
+        <ul>
+    
+		<li class="link-indent"><img class="link-image-carat" src="./Unchecking References in VBA using Macro [SOLVED] - Toolbox for IT Groups_files/carat-blue.png" style="border-width:0px;">
+<a title="What is your email data telling you? When you analyze your email marketing program, what is your email data telling you? Measuring your data can be difficult, but knowing what to do to next is even..." class="darkgray" hpx="G:Expanded:RelWP" href="http://emergingtech.ittoolbox.com/research/return-path-email-metrics-troubleshooter-26441?sp=cm">Return Path Email Metrics Troubleshooter</a></li>
+	
+	<div class="clear spacer-ittybitty"></div>
+	
+		<li class="link-indent"><img class="link-image-carat" src="./Unchecking References in VBA using Macro [SOLVED] - Toolbox for IT Groups_files/carat-blue.png" style="border-width:0px;">
+<a title="The end of Windows XP support is only one reason to move to Windows 7 or Windows 8.1. Find out the compelling benefits of moving to modern operating systems — and get a quick list of actions you..." class="darkgray" hpx="G:Expanded:RelWP" href="http://windows.ittoolbox.com/research/6-benefits-of-upgrading-to-modern-operating-systems-28977?sp=cm">6 Benefits of Upgrading to Modern Operating Systems</a></li>
+	
+	<div class="clear spacer-ittybitty"></div>
+	
+		<li class="link-indent"><img class="link-image-carat" src="./Unchecking References in VBA using Macro [SOLVED] - Toolbox for IT Groups_files/carat-blue.png" style="border-width:0px;">
+<a title="For over a decade only a minority of marketers practice regular optimization practices that improve email marketing campaigns. The need for marketers to improve their optimization practices has..." class="darkgray" hpx="G:Expanded:RelWP" href="http://emergingtech.ittoolbox.com/research/return-path-email-marketing-measurement-imperative-26439?sp=cm">Return Path Email Marketing Measurement Imperative</a></li>
+	
+	<div class="clear spacer-ittybitty"></div>
+	
+		<li class="link-indent"><img class="link-image-carat" src="./Unchecking References in VBA using Macro [SOLVED] - Toolbox for IT Groups_files/carat-blue.png" style="border-width:0px;">
+<a title="No data center can afford unscheduled downtime with the manic pace of today&#39;s always-available business operations. Without the right tools, ensuring that mission-critical systems perform efficiently..." class="darkgray" hpx="G:Expanded:RelWP" href="http://datacenter.ittoolbox.com/research/the-quick-path-for-fault-identification-25476?sp=cm">The Quick Path for Fault Identification</a></li>
+	
+        </ul>
+    
+
+        <div class="marginbottom15"></div>
+        
+<a href="http://visualbasic.ittoolbox.com/blogs" style="font-weight: bold">Blog Articles</a>
+
+        <ul>
+    
+		<li class="link-indent"><img class="link-image-carat" src="./Unchecking References in VBA using Macro [SOLVED] - Toolbox for IT Groups_files/carat-blue.png" style="border-width:0px;">
+<a title="There are a number of common spreadsheet errors that trip most people up at one stage or another. Keep a watch out for these.
+
+They are . . . . . . . 
+" class="darkgray" hpx="G:Expanded:RelBlogs" href="http://it.toolbox.com/blogs/spreadsheets/12-common-spreadsheet-errors-948">12 COMMON ''SPREADSHEET ERRORS''</a></li>
+	
+	<div class="clear spacer-ittybitty"></div>
+	
+		<li class="link-indent"><img class="link-image-carat" src="./Unchecking References in VBA using Macro [SOLVED] - Toolbox for IT Groups_files/carat-blue.png" style="border-width:0px;">
+<a title="In the previous entry I added an image of the old form. The new form has been cleaned up significantly however as part of our new form I included additional checkboxes for sub-zip zones as required..." class="darkgray" hpx="G:Expanded:RelBlogs" href="http://it.toolbox.com/blogs/app-tech-bytes/clean-up-the-forms-user-interface-38216">Clean up the Forms User Interface</a></li>
+	
+	<div class="clear spacer-ittybitty"></div>
+	
+		<li class="link-indent"><img class="link-image-carat" src="./Unchecking References in VBA using Macro [SOLVED] - Toolbox for IT Groups_files/carat-blue.png" style="border-width:0px;">
+<a title="Technorati Tags: Excel 2007,VBA  About four weeks ago I was tasked to update an internal form. The form was originally developed in Excel 2000 and When I started this project I felt like I could..." class="darkgray" hpx="G:Expanded:RelBlogs" href="http://it.toolbox.com/blogs/app-tech-bytes/excel-2007-and-vba-38100">Excel 2007 and VBA</a></li>
+	
+        </ul>
+    
+
+        <div id="ctl00_m_r_r_rB_ctl00_rpMargin" class="marginbottom15"></div>
+        
+        
+        
+    
+    <div style="clear:both"></div>
+</div>
+
+
+    
+                   
+    <div align="center" style="margin-top:inherit;margin-bottom:20px">
+	
+	<div id="div-gpt-ad-2082848930-2" style="display: none;">
+		<script type="text/javascript">
+			googletag.cmd.push(function() {
+			  googletag.display("div-gpt-ad-2082848930-2");
+		});
+		</script>
+	<div id="google_ads_iframe_/4585/zd.toolbox/VisualBasic_Section_2__container__" style="border: 0pt none;"><iframe id="google_ads_iframe_/4585/zd.toolbox/VisualBasic_Section_2" name="google_ads_iframe_/4585/zd.toolbox/VisualBasic_Section_2" width="300" height="250" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" src="javascript:"<html><body style='background:transparent'></body></html>"" style="border: 0px; vertical-align: bottom;"></iframe></div></div>
+
+</div>
+
+        
+
+    </div>
+    <div class="clear"></div>
+</div>
+
+
+<x-bbskip>
+<div>
+	
+ <div id="footer">
+ <div id="footer-inner">
+ <div>
+ <div>
+		
+  <div class="footer-colsmall">
+   
+<div class="footer-header lightgray spacer-small">Toolbox for IT</div>
+<a class="footer-link" href="http://it.toolbox.com/home/">My Home</a>
+<a class="footer-link" href="http://it.toolbox.com/topics/">Topics</a>
+<a class="footer-link" href="http://it.toolbox.com/people/">People</a>
+<a class="footer-link" href="http://it.toolbox.com/companies/">Companies</a>
+<a class="footer-link" href="http://it.toolbox.com/jobs/">Jobs</a>
+<a class="footer-link" href="http://it.toolbox.com/companies/white-papers/">White Paper Library</a>
+   <br>
+   
+<div class="footer-colsmall spacer-small">
+<div>
+			
+ <div class="footer-header lightgray">Collaboration Tools</div>
+ <a href="http://it.toolbox.com/groups/" class="footer-link">Discussion Groups</a>
+ <a href="http://it.toolbox.com/blogs/" class="footer-link">Blogs</a>
+ <a href="http://it.toolbox.com/wiki/" class="footer-link">Wiki</a>  
+
+		</div>
+
+
+</div>
+   
+<div class="footer-header lightgray">Follow Toolbox.com</div>
+
+<a href="http://twitter.com/toolboxforit" class="footer-link" target="_blank">Toolbox for IT on Twitter</a>  
+
+<a href="http://twitter.com/toolboxdotcom" class="footer-link" target="_blank">Toolbox.com on Twitter</a>  
+<a href="http://www.facebook.com/pages/Toolboxcom/117012708708" class="footer-link" target="_blank">Toolbox.com on Facebook</a>  
+
+  </div>
+  <div class="footer-colwide">
+<div class="footer-header lightgray spacer-small">Topics on Toolbox for IT</div>
+<div>
+ <div class="footer-topicsbox">
+ <div class="footer-header lightgray">Data Center</div>
+    <a href="http://datacenter.ittoolbox.com/" class="footer-link">Data Center</a>
+ <div class="spacer"></div>
+ <div class="footer-header lightgray">Development</div>
+    <a href="http://c.ittoolbox.com/" class="footer-link">C Languages</a>
+    <a href="http://java.ittoolbox.com/" class="footer-link">Java</a>
+    <a href="http://visualbasic.ittoolbox.com/" class="footer-link">Visual Basic</a>
+    <a href="http://webdesign.ittoolbox.com/" class="footer-link">Web Design &amp; Development</a>
+ <div class="spacer"></div>
+ <div class="footer-header lightgray">Enterprise Applications</div>
+    <a href="http://crm.ittoolbox.com/" class="footer-link">CRM</a>
+    <a href="http://erp.ittoolbox.com/" class="footer-link">ERP</a>
+    <a href="http://peoplesoft.ittoolbox.com/" class="footer-link">PeopleSoft</a>
+    <a href="http://sap.ittoolbox.com/" class="footer-link">SAP</a>
+    <a href="http://supplychain.ittoolbox.com/" class="footer-link">SCM</a>
+    <a href="http://siebel.ittoolbox.com/" class="footer-link">Siebel</a>
+ </div>
+ <div class="footer-topicsbox">
+ <div class="footer-header lightgray">Enterprise Architecture &amp; EAI</div>
+    <a href="http://eai.ittoolbox.com/" class="footer-link">Enterprise Architecture &amp; EAI</a>
+ <div class="spacer"></div>
+ <div class="footer-header lightgray"> Information Management</div>
+    <a href="http://businessintelligence.ittoolbox.com/" class="footer-link">Business Intelligence</a>
+    <a href="http://database.ittoolbox.com/" class="footer-link">Database</a>
+    <a href="http://datawarehouse.ittoolbox.com/" class="footer-link">Data Warehouse</a>
+    <a href="http://knowledgemanagement.ittoolbox.com/" class="footer-link">Knowledge Management</a>
+    <a href="http://oracle.ittoolbox.com/" class="footer-link">Oracle</a>
+ <div class="spacer"></div>
+ <div class="footer-header lightgray">IT Management &amp; Strategy</div>
+    <a href="http://emergingtech.ittoolbox.com/" class="footer-link">Emerging Technology &amp; Trends</a>
+    <a href="http://cio.ittoolbox.com/" class="footer-link">IT Management &amp; Strategy</a>
+    <a href="http://projectmanagement.ittoolbox.com/" class="footer-link">Project &amp; Portfolio Management</a>
+
+ <div class="spacer"></div>
+ <div class="footer-header lightgray">Cloud Computing</div>
+    <a href="http://cloud.ittoolbox.com/" class="footer-link">Cloud Computing</a>
+ </div>
+
+ <div class="footer-topicsbox">
+ <div class="footer-header lightgray">Networking &amp; Infrastructure</div>
+    <a href="http://hardware.ittoolbox.com/" class="footer-link">Hardware</a>
+    <a href="http://networking.ittoolbox.com/" class="footer-link">Networking</a>
+    <a href="http://telephony.ittoolbox.com/" class="footer-link">Communications Technology</a>
+ <div class="spacer"></div>
+ <div class="footer-header lightgray">Operating Systems</div>
+    <a href="http://linux.ittoolbox.com/" class="footer-link">Linux</a>
+    <a href="http://unix.ittoolbox.com/" class="footer-link">UNIX</a>
+    <a href="http://windows.ittoolbox.com/" class="footer-link">Windows</a>
+ <div class="spacer"></div>
+ <div class="footer-header lightgray">Security</div>
+    <a href="http://security.ittoolbox.com/" class="footer-link">Security</a>
+ <div class="spacer"></div>
+ <div class="footer-header lightgray">Storage</div>
+    <a href="http://storage.ittoolbox.com/" class="footer-link">Storage</a>
+ </div>
+ </div>    
+
+
+</div>
+
+  
+<div class="footer-colsmall">
+<div class="footer-header gray spacer-small">Toolbox.com</div>
+<a href="http://www.toolbox.com/about/" class="footer-link-gray">About</a>
+<a href="http://www.toolbox.com/news/" class="footer-link-gray">News</a>
+<a href="http://www.toolbox.com/PrivacyPolicy.aspx" class="footer-link-gray">Privacy</a>
+<a href="http://www.ziffdavis.com/terms-of-use" class="footer-link-gray">Terms of Use</a>
+<a href="http://www.toolbox.com/careers/" class="footer-link-gray">Work at Toolbox.com</a>
+<a href="http://www.toolbox.com/it/advertising/" class="footer-link-gray">Advertise</a>
+<a href="http://www.toolbox.com/contact/" class="footer-link-gray">Contact us</a>
+<a href="http://www.toolbox.com/Feedback.aspx" class="footer-link-gray">Provide Feedback</a>
+
+<br>
+<a href="http://www.toolbox.com/help" class="footer-link-gray">Help Topics</a>
+<a href="http://www.toolbox.com/Feedback.aspx" class="footer-link-gray">Technical Support</a>
+<div class="gray" style="padding: 0px 0px 0px 12px;">PCMag Digital Group</div>
+    <!--
+  Evidon tag
+  cid: 660
+  pid: 8
+-->
+<script type="text/javascript" language="javascript">
+
+    document.write("<a id=\"_bapw-link\" class=\"SiteFooterNavItem\" style=\"cursor:pointer !important; display:none;\"><img id=\"_bapw-icon\" style=\"display:inline !important;border:0px!important;outline:0px!important;vertical-align:middle !important\"\/> <span style=\"vertical-align:middle !important\">AdChoices<\/span><\/a>");
+
+    document.write("<a id=\"_bapw-link\" href=\"#\" target=\"_blank\" style=\"text-decoration:none !important; display:none;\"><span style=\"vertical-align:middle !important\">Cookie Consent<\/span><\/a>");
+
+    //Call out to Akamai and lookup the country
+    var NOTICE_ID;
+    var callback = { 'done': false };
+
+    var s = document.createElement('script');
+    s.type = 'text/javascript';
+    s.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'c.betrad.com/geo/c.js';
+    s.async = false;
+
+    s.onreadystatechange = s.onload = function () {
+
+        var state = s.readyState;
+
+        if (!callback.done && (!state || /loaded|complete/.test(state))) {
+            callback.done = true;
+            if (window._bap_p_country === 'at') {
+                NOTICE_ID = showImplied(2757);
+            } else if (window._bap_p_country === 'be') {
+                NOTICE_ID = showImplied(2758);
+            } else if (window._bap_p_country === 'bg') {
+                NOTICE_ID = showImplied(2759);
+            } else if (window._bap_p_country === 'ca') {
+                NOTICE_ID = showInPage(2718);
+            } else if (window._bap_p_country === 'ch') {
+                NOTICE_ID = showImplied(2792);
+            } else if (window._bap_p_country === 'cz') {
+                NOTICE_ID = showImplied(2760);
+            } else if (window._bap_p_country === 'de') {
+                NOTICE_ID = showImplied(2764);
+            } else if (window._bap_p_country === 'ee') {
+                NOTICE_ID = showImplied(2761);
+            } else if (window._bap_p_country === 'es') {
+                NOTICE_ID = showImplied(2790);
+            } else if (window._bap_p_country === 'fi') {
+                NOTICE_ID = showImplied(2762);
+            } else if (window._bap_p_country === 'fr') {
+                NOTICE_ID = showImplied(2763);
+            } else if (window._bap_p_country === 'gb') {
+                NOTICE_ID = showImplied(2753);
+            } else if (window._bap_p_country === 'gr') {
+                NOTICE_ID = showImplied(2765);
+            } else if (window._bap_p_country === 'hu') {
+                NOTICE_ID = showImplied(2766);
+            } else if (window._bap_p_country === 'ie') {
+                NOTICE_ID = showImplied(2767);
+            } else if (window._bap_p_country === 'it') {
+                NOTICE_ID = showImplied(2778);
+            } else if (window._bap_p_country === 'lt') {
+                NOTICE_ID = showImplied(2780);
+            } else if (window._bap_p_country === 'lu') {
+                NOTICE_ID = showImplied(2781);
+            } else if (window._bap_p_country === 'lv') {
+                NOTICE_ID = showImplied(2779);
+            } else if (window._bap_p_country === 'nl') {
+                NOTICE_ID = showImplied(2782);
+            } else if (window._bap_p_country === 'no') {
+                NOTICE_ID = showImplied(2783);
+            } else if (window._bap_p_country === 'pl') {
+                NOTICE_ID = showImplied(2785);
+            } else if (window._bap_p_country === 'pt') {
+                NOTICE_ID = showImplied(2786);
+            } else if (window._bap_p_country === 'ro') {
+                NOTICE_ID = showImplied(2787);
+            } else if (window._bap_p_country === 'se') {
+                NOTICE_ID = showImplied(2791);
+            } else if (window._bap_p_country === 'si') {
+                NOTICE_ID = showImplied(2789);
+            } else if (window._bap_p_country === 'sk') {
+                NOTICE_ID = showImplied(2788);
+            } else if (window._bap_p_country === 'us') {
+                NOTICE_ID = showInPage(2752);
+            } else {
+                NOTICE_ID = showInPage(2752);
+            }
+        }
+    };
+
+    // use body if available. more safe in IE
+    (document.body || head).appendChild(s);
+
+
+    function showInPage(NOTICE_ID) {
+        document.getElementById("_bapw-link").style.display = 'inline';
+        (function () {
+            var e = document, b, a = (e.location.protocol == "https:" ? "https" : "http"), c = (a == "https" ? "https://info.evidon.com/c/betrad/pub/" : "http://cdn.betrad.com/pub/");
+            e.getElementById("_bapw-icon").src = c + "icon1.png";
+            e.getElementById("_bapw-link").onclick = function () {
+                var f = this;
+                function d(i, l) {
+                    var j = e.getElementsByTagName("head")[0] || e.documentElement, h = false, g = e.createElement("script");
+                    function k() {
+                        g.onload = g.onreadystatechange = null;
+                        j.removeChild(g);
+                        l()
+                    }
+                    g.src = i;
+                    g.onreadystatechange = function () {
+                        if (!h && (this.readyState == "loaded" || this.readyState == "complete")) {
+                            h = true;
+                            k()
+                        }
+                    };
+                    g.onload = k;
+                    j.insertBefore(g, j.firstChild)
+                }
+                this.onclick = "return false";
+                d(a + "://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js", function () {
+                    d(c + "pub1.js", function () {
+                        BAPW.i(f, { pid: NOTICE_ID, ocid: 660 }, false)
+                    })
+                });
+                return false
+            };
+            b = e.createElement("img");
+            b.src = a + "://l.betrad.com/pub/p.gif?pid=" + NOTICE_ID + "&ocid=660&ii=1&r=" + Math.random();
+            b.height = "1";
+            b.width = "1";
+            e.body.appendChild(b);
+        })();
+    }
+
+
+    function showImplied(NOTICE_ID) {
+        document.getElementById("_bapw-link").style.display = 'inline';
+        (function () {
+            var ev = document.createElement('script');
+            ev.type = 'text/javascript';
+            ev.async = true;
+            ev.setAttribute('data-ev-tag-pid', NOTICE_ID);
+            ev.setAttribute('data-ev-tag-ocid', 660);
+            ev.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'c.betrad.com/pub/tag.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(ev, s);
+        })();
+
+        (function () {
+            var hn = document.createElement('script');
+            hn.type = 'text/javascript';
+            hn.async = true;
+            hn.setAttribute('data-ev-hover-pid', NOTICE_ID);
+            hn.setAttribute('data-ev-hover-ocid', 660);
+            hn.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'c.betrad.com/geo/h1.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(hn, s);
+        })();
+    }
+
+
+</script><a id="_bapw-link" class="SiteFooterNavItem" style="display: inline; cursor: pointer !important;"><img id="_bapw-icon" style="display:inline !important;border:0px!important;outline:0px!important;vertical-align:middle !important" src="./Unchecking References in VBA using Macro [SOLVED] - Toolbox for IT Groups_files/icon1.png"> <span style="vertical-align:middle !important">AdChoices</span></a><a id="_bapw-link" href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/unchecking-references-in-vba-using-macro-4735351#" target="_blank" style="text-decoration:none !important; display:none;"><span style="vertical-align:middle !important">Cookie Consent</span></a> 
+<br>
+<br>
+<div>
+			
+ <div class="footer-header gray spacer-small">Other Communities</div>
+ 
+ <span>
+    <a href="http://hr.toolbox.com/" class="footer-link-gray">Toolbox for HR</a> 
+ </span>
+ <span>
+    <a href="http://finance.toolbox.com/" class="footer-link-gray">Toolbox for Finance</a> 
+ </span>
+
+		</div>
+
+</div>
+ 
+	</div>                
+ </div>
+ 
+ 
+<div style="clear:both"></div>
+<div id="footer-disclaimer">
+    Copyright 1998-2014 Ziff Davis, LLC (Toolbox.com). All rights reserved. All product names are trademarks of their respective companies.  Toolbox.com is not<br>
+    affiliated with or endorsed by any company listed at this site.
+</div>
+<br><br>
+</div>
+</div>
+
+</div>
+
+
+</x-bbskip>
+
+
+
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKMTE5MzA3Nzc4MGQYAQUeX19Db250cm9sc1JlcXVpcmVQb3N0QmFja0tleV9fFgMFIGN0bDAwJG0kbSRpJG8kciRzJGNoa1doaXRlUGFwZXJzBR9jdGwwMCRtJG0kaSRvJHIkcyRjaGtOZXdzbGV0dGVyBRljdGwwMCRtJG0kaSRvJHIkcyRjaGtKb2JzVEEbRryTnY92s3uZ19+wpY7ie7M="></form>
+
+
+<script src="./Unchecking References in VBA using Macro [SOLVED] - Toolbox for IT Groups_files/toolbox.common.js" language="javascript" type="text/javascript"></script> 
+<script type="text/javascript">
+    InitCodeHighlighting('http://cdn.toolbox.com/BUILD_2872/', 'http://it.toolbox.com/');
+</script>
+
+<!-- popunder window -->
+
+<script type="text/javascript">
+    var popundercookie = getCookie("PopunderState");
+    if (popundercookie == "pagetwo") {
+        //Added Condition to check Popular-research page calling Master page - TND-5006
+        if (window.location.href.indexOf("api/popular-research") < 0) {
+            popunder = window.open("/api/popular-research/", "", "height=600, scrollbars=yes, width=970");
+            popunder.blur();
+            window.focus();
+        }
+    } 
+</script>
+
+<!-- begin zdbb -->
+<script type="text/javascript" src="./Unchecking References in VBA using Macro [SOLVED] - Toolbox for IT Groups_files/9nCgMGobEeGubBIxORg8RQ.js">
+</script>
+<!-- end zdbb -->
+<script language="JavaScript1.1" src="./Unchecking References in VBA using Macro [SOLVED] - Toolbox for IT Groups_files/js"></script>
+
+<script>$.get('/api/t/2/rt/?u=http%3a%2f%2fvisualbasic.ittoolbox.com%2fgroups%2ftechnical-functional%2fvb-vba-l%2funchecking-references-in-vba-using-macro-4735351&r=' + escape(document.referrer));</script>
+
+<!-- Start of Content Template Javascript include -->
+<!-- Start LinkSmart -->
+<script type="text/javascript">
+            // <![CDATA[
+                var _mb_site_guid =
+ "dbedee453f5c0a0873ebad72c5676a482568b3f1b4c6b497c614e97a3719a33e";
+                (function (d, t) {
+                    var mb = d.createElement(t), s = d.getElementsByTagName(t)[0];
+                    mb.async = mb.src = '//cdn.linksmart.com/linksmart_2.3.0.min.js';
+                    s.parentNode.insertBefore(mb, s);
+                } (document, 'script'));
+            // ]]>
+            </script>
+<!-- End LinkSmart -->
+
+<!-- Begin comScore Tag -->
+<script>
+var _comscore = _comscore || [];
+_comscore.push(
+{ c1: "2", c2: "6036202" }
+);
+(function ()
+{ var s = document.createElement("script"), el = document.getElementsByTagName("script")[0]; s.async = true; s.src = (document.location.protocol == "https:" ? "https://sb" : "http://b") + ".scorecardresearch.com/beacon.js"; el.parentNode.insertBefore(s, el); }
+)();
+</script>
+<noscript>
+&lt;img src="http://b.scorecardresearch.com/p?c1=2&amp;c2=6036202&amp;cv=2.0&amp;cj=1" /&gt;
+</noscript>
+<!-- End comScore Tag -->
+
+<!-- START Nielsen Online SiteCensus V6.0 -->
+<!-- COPYRIGHT 2012 Nielsen Online -->
+<script type="text/javascript">
+(function () {
+var d = new Image(1, 1);
+d.onerror = d.onload = function ()
+{ d.onerror = d.onload = null; };
+d.src = ["//secure-us.imrworldwide.com/cgi-bin/m?ci=us-806031h&cg=0&cc=1&si=", escape(window.location.href), "&rp=", escape(document.referrer), "&ts=compact&rnd=", (new Date()).getTime()].join('');
+})();
+</script>
+<noscript>
+&lt;div&gt;
+&lt;img src="//secure-us.imrworldwide.com/cgi-bin/m?ci=us-806031h&amp;cg=0&amp;cc=1&amp;ts=noscript"
+width="1" height="1" alt="" /&gt;
+&lt;/div&gt;
+</noscript>
+<!-- END Nielsen Online SiteCensus V6.0 -->
+<!-- End of Content Template Javascript include -->
+
+
+
+</x-bbskip><script type="text/javascript" src="./Unchecking References in VBA using Macro [SOLVED] - Toolbox for IT Groups_files/c.js"></script><script src="./Unchecking References in VBA using Macro [SOLVED] - Toolbox for IT Groups_files/js(1)"></script><img src="./Unchecking References in VBA using Macro [SOLVED] - Toolbox for IT Groups_files/p.gif" height="1" width="1"><div id="goog_qs_tidbit_box" class="notranslate goog_qs-slideup"><div id="goog_qs-wrapper"><div id="goog_qs-box-toggle" title="Minimizar" style="background-image: url(chrome-extension://okanipcmceoeemlbjnmnbdibhgpbllgc/images/minimize.png);"></div><div id="goog_qs-box-help" title="Abrir a página de opções e a ajuda" style="background-image: url(chrome-extension://okanipcmceoeemlbjnmnbdibhgpbllgc/images/help.png);"></div><div id="goog_qs-box-info" style="background-image: url(chrome-extension://okanipcmceoeemlbjnmnbdibhgpbllgc/images/icon16x16.png);"><span class="goog_qs-nowrap">C<img>orrespondências</span> <span class="goog_qs-nowrap">n<img>a</span> <span class="goog_qs-nowrap">p<img>ágina</span> <span class="goog_qs-nowrap">p<img>ara</span> <span class="goog_qs-query"><span class="goog_qs-nowrap">a<img>dd</span> <span class="goog_qs-nowrap">r<img>efence</span> <span class="goog_qs-nowrap">f<img>rom</span> <span class="goog_qs-nowrap">p<img>ath</span> <span class="goog_qs-nowrap">v<img>ba</span></span></div><div id="goog_qs-box-tidbits"><div class="goog_qs-box-tidbit" title="Clique para ver este texto na página">(<wbr><em><span class="goog_qs-nowrap">a<img>dd</span></em> <span class="goog_qs-nowrap">w<img>orksheet</span> '<em><span class="goog_qs-nowrap">R<img>eferences</span></em>' <span class="goog_qs-nowrap">i<img>n</span> <span class="goog_qs-nowrap">y<img>our</span> <span class="goog_qs-nowrap">w<img>orkbook</span> <span class="goog_qs-nowrap">a<img>nd</span> <span class="goog_qs-nowrap">r<img>un</span> <span class="goog_qs-nowrap">t<img>he</span> <span class="goog_qs-nowrap">f<img>ollowing...</span> <span class="goog_qs-go">»</span></div><div class="goog_qs-box-tidbit" title="Clique para ver este texto na página"><span class="goog_qs-nowrap">P<img>urpose:</span> <span class="goog_qs-nowrap">T<img>his</span> <span class="goog_qs-nowrap">S<img>AMPLE</span> <span class="goog_qs-nowrap">r<img>outine</span> <span class="goog_qs-nowrap">d<img>etermines</span> <span class="goog_qs-nowrap">f<img>ull</span> <em><span class="goog_qs-nowrap">p<img>ath</span></em> <span class="goog_qs-nowrap">a<img>nd</span> <span class="goog_qs-nowrap">G<img>lobally</span> <span class="goog_qs-nowrap">U<img>nique...</span> <span class="goog_qs-go">»</span></div></div><div id="goog_qs-box-bottom"><div class="goog_qs-more-matches" id="goog_qs-box-more-tidbits"><span class="goog_qs-nowrap">M<img>ais</span> <span class="goog_qs-nowrap">c<img>orrespondências</span> <span class="goog_qs-go">»</span></div><div class="goog_qs-more-matches" id="goog_qs-box-fewer-tidbits" style="display:none"><span class="goog_qs-go">«</span>  <span class="goog_qs-nowrap">M<img>enos</span> <span class="goog_qs-nowrap">c<img>orrespondências</span></div><div id="goog_qs-box-feedback-link"><span class="goog_qs-nowrap">F<img>eedback</span></div> <div id="goog_qs-box-new-bug"><span class="goog_qs-nowrap">B<img>ug</span></div></div><div style="clear:both"></div></div></div><iframe id="google_osd_static_frame_1316960365511" name="google_osd_static_frame" style="display: none; width: 0px; height: 0px;"></iframe></body></html>

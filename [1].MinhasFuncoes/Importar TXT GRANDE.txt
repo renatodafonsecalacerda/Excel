@@ -1,0 +1,36 @@
+' http://excel.tips.net/T002533_Importing_Huge_Data_Files.html
+'importa arquivos grandes em txt
+
+Public Sub LoadFile()
+    Dim strLine As String
+    Dim I As Long
+    Dim J As Long
+    Dim iLen As Integer
+    Dim iSh As Integer
+    Dim lL As Long
+    Dim sDelim As String
+    Dim MaxSize As Long
+
+    sDelim = Chr(9)
+    MaxSize = 65000
+    I = 0
+    Open "C:\MyDir\MyFile.txt" For Input As #5
+    Do While Not EOF(5)
+        iSh = (I / MaxSize) + 1
+        lL = I Mod MaxSize
+        Line Input #5, strLine
+        If Right(strLine, 1) <> sDelim Then
+           strLine = Trim(strLine) & sDelim
+        End If
+        J = 0
+        Do While Len(strLine) > 1
+            iLen = InStr(strLine, sDelim)
+            Worksheets("Sheet" & iSh).Offset(lL, J).Value = _
+              Trim(Left(strLine, iLen - 1))
+            strLine = Trim(Right(strLine, Len(strLine) - iLen))
+            J = J + 1
+        Loop
+        I = I + 1
+    Loop
+    Close #5
+End Sub

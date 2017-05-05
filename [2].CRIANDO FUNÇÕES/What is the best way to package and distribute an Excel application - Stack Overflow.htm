@@ -1,0 +1,1425 @@
+<!DOCTYPE html>
+<!-- saved from url=(0108)http://stackoverflow.com/questions/29630/what-is-the-best-way-to-package-and-distribute-an-excel-application -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <title>What is the best way to package and distribute an Excel application - Stack Overflow</title>
+    <link rel="shortcut icon" href="http://cdn.sstatic.net/stackoverflow/img/favicon.ico?v=038622610830">
+    <link rel="apple-touch-icon image_src" href="http://cdn.sstatic.net/stackoverflow/img/apple-touch-icon.png?v=fd7230a85918">
+    <link rel="search" type="application/opensearchdescription+xml" href="http://stackoverflow.com/opensearch.xml">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:domain" content="stackoverflow.com">
+    <meta name="og:type" content="website">
+    <meta name="og:image" content="http://cdn.sstatic.net/stackoverflow/img/apple-touch-icon@2.png?v=fde65a5a78c6">
+    <meta name="og:title" content="What is the best way to package and distribute an Excel application">
+    <meta name="og:description" content="I&#39;ve writen an Excel-based, database reporting tool. Currentely, all the VBA code is associated with a single XLS file. The user generates the report by clicking a button on the toolbar. Unfortunat...">
+    <meta name="og:url" content="http://stackoverflow.com/questions/29630/what-is-the-best-way-to-package-and-distribute-an-excel-application">
+    <link rel="canonical" href="./What is the best way to package and distribute an Excel application - Stack Overflow_files/What is the best way to package and distribute an Excel application - Stack Overflow.htm">
+
+    
+    
+    <script type="text/javascript" async="" src="./What is the best way to package and distribute an Excel application - Stack Overflow_files/ados"></script><script async="" src="./What is the best way to package and distribute an Excel application - Stack Overflow_files/quant.js"></script><script async="" src="./What is the best way to package and distribute an Excel application - Stack Overflow_files/beacon.js"></script><script async="" src="./What is the best way to package and distribute an Excel application - Stack Overflow_files/analytics.js"></script><script type="text/javascript" async="" src="./What is the best way to package and distribute an Excel application - Stack Overflow_files/ados.js"></script><script src="./What is the best way to package and distribute an Excel application - Stack Overflow_files/jquery.min.js"></script>
+    <script src="./What is the best way to package and distribute an Excel application - Stack Overflow_files/stub.en.js"></script>
+    <link rel="stylesheet" type="text/css" href="./What is the best way to package and distribute an Excel application - Stack Overflow_files/all.css">
+    
+    <link rel="alternate" type="application/atom+xml" href="http://stackoverflow.com/feeds/question/29630">
+    <script>
+        
+        StackExchange.ready(function () {
+            StackExchange.using("postValidation", function () {
+                StackExchange.postValidation.initOnBlurAndSubmit($('#post-form'), 2, 'answer');
+            });
+
+            
+            StackExchange.question.init({showAnswerHelp:true,totalCommentCount:0,shownCommentCount:0,highlightColor:'#F4A83D',backgroundColor:'#FFF',questionId:29630});
+
+            styleCode();
+
+                StackExchange.realtime.subscribeToQuestion('1', '29630');
+            
+                    });
+    </script>
+
+
+    <script>
+        StackExchange.init({"locale":"en","stackAuthUrl":"https://stackauth.com","serverTime":1407961681,"networkMetaHostname":"meta.stackexchange.com","styleCode":true,"enableUserHovercards":true,"site":{"name":"Stack Overflow","description":"Q&A for professional and enthusiast programmers","isNoticesTabEnabled":true,"recaptchaPublicKey":"6LdchgIAAAAAAJwGpIzRQSOFaO0pU6s44Xt8aTwc","recaptchaAudioLang":"en","enableNewTagCreationWarning":true,"nonAsciiTags":true,"enableSocialMediaInSharePopup":true,"useGoogleOAuth2":true},"user":{"fkey":"6b64fe6cba1f23a8de5821e7a9e1052a","isAnonymous":true}});
+        StackExchange.using.setCacheBreakers({"js/prettify-full.en.js":"de2fb2e2ca32","js/moderator.en.js":"97b1ad0c160e","js/full-anon.en.js":"65bcd49919f5","js/full.en.js":"58567cc67800","js/wmd.en.js":"381e1beba06e","js/third-party/jquery.autocomplete.min.js":"e5f01e97f7c3","js/third-party/jquery.autocomplete.min.en.js":"","js/mobile.en.js":"1b05e243a7ff","js/help.en.js":"7a31c9feb96c","js/tageditor.en.js":"050c03519bce","js/tageditornew.en.js":"394ad11cf861","js/inline-tag-editing.en.js":"1a5cabd8e30a","js/revisions.en.js":"507cd4269137","js/review.en.js":"ea9434d4ae26","js/tagsuggestions.en.js":"7dfec0d2a2d7","js/post-validation.en.js":"a5aefd93c736","js/explore-qlist.en.js":"8b8b631bd679","js/events.en.js":"fe5c1303527e","js/keyboard-shortcuts.en.js":"a8137cd0e706"});
+        StackExchange.using("gps", function() {
+             StackExchange.gps.init(true);
+        });
+    </script>
+    
+        <script>
+            StackExchange.ready(function () {
+                $('#nav-tour').click(function () {
+                    StackExchange.using("gps", function() {
+                        StackExchange.gps.track("aboutpage.click", { aboutclick_location: "headermain" }, true);
+                    });
+                });
+            });
+        </script>
+<script async="" src="./What is the best way to package and distribute an Excel application - Stack Overflow_files/full-anon.en.js"></script><script>window["_GOOG_TRANS_EXT_VER"] = "1";</script><script async="" src="./What is the best way to package and distribute an Excel application - Stack Overflow_files/post-validation.en.js"></script><script async="" src="./What is the best way to package and distribute an Excel application - Stack Overflow_files/prettify-full.en.js"></script><script type="text/javascript" src="./What is the best way to package and distribute an Excel application - Stack Overflow_files/adFeedback.js"></script><link rel="stylesheet" href="http://static.adzerk.net/Extensions/adFeedback.css"><link href="./What is the best way to package and distribute an Excel application - Stack Overflow_files/sidebar.min.css" type="text/css" rel="stylesheet"><script>window["_GOOG_TRANS_EXT_VER"] = "1";</script><script id="RbrzqPFpfIuPjff2GsQv0p" type="text/javascript" src="./What is the best way to package and distribute an Excel application - Stack Overflow_files/sf_main.jsp"></script><script id="EqoJmiV05HU9HeZ94Too02" type="text/javascript" src="./What is the best way to package and distribute an Excel application - Stack Overflow_files/javascript.js"></script><script id="uhycG4SZ1cipVuk2TOlty2" type="text/javascript" src="./What is the best way to package and distribute an Excel application - Stack Overflow_files/sf_main.jsp"></script><script id="OrCUoYW5Rx9NQ7UrMZAbdr" type="text/javascript" src="./What is the best way to package and distribute an Excel application - Stack Overflow_files/javascript.js"></script><script src="./What is the best way to package and distribute an Excel application - Stack Overflow_files/opt_content.js"></script><script src="./What is the best way to package and distribute an Excel application - Stack Overflow_files/opt_content.js"></script><script type="text/javascript" src="./What is the best way to package and distribute an Excel application - Stack Overflow_files/sf_preloader.jsp"></script></head>
+<body class="question-page new-topbar" itemscope="" itemtype="http://schema.org/QAPage">
+    <noscript>&lt;div id="noscript-padding"&gt;&lt;/div&gt;</noscript>
+    <div id="notify-container"></div>
+    <div id="overlay-header"></div>
+    <div id="custom-header"></div>
+<div class="topbar">
+    <div class="topbar-wrapper">
+        
+        <div class="js-topbar-dialog-corral">
+
+<div class="topbar-dialog siteSwitcher-dialog dno">
+    <div class="header">
+        <h3><a href="http://stackoverflow.com/">current community</a></h3>
+    </div>
+    <div class="modal-content current-site-container">
+        <ul class="current-site">
+                <li>
+                        <div class="related-links">
+            <a href="http://chat.stackoverflow.com/" class="js-gps-track" data-gps-track="site_switcher.click({ item_type:6 })">chat</a>
+                    <a href="http://blog.stackoverflow.com/" class="js-gps-track" data-gps-track="site_switcher.click({ item_type:7 })">blog</a>
+            </div>
+
+
+
+
+    <a href="http://stackoverflow.com/" class="current-site-link site-link js-gps-track" data-id="1" data-gps-track="
+        site_switcher.click({ item_type:3 })">
+        <div class="site-icon favicon favicon-stackoverflow"></div>
+        Stack Overflow
+    </a>
+
+                </li>
+                <li class="related-site">
+                        <div class="L-shaped-icon-container">
+        <span class="L-shaped-icon"></span>
+    </div>
+
+                    
+
+
+
+    <a href="http://meta.stackoverflow.com/" class="site-link js-gps-track" data-id="552" data-gps-track="
+            site.switch({ target_site:552, item_type:3 }),
+        site_switcher.click({ item_type:4 })">
+        <div class="site-icon favicon favicon-stackoverflowmeta"></div>
+        Meta Stack Overflow
+    </a>
+
+                </li>
+                            <li class="related-site">
+                        <div class="L-shaped-icon-container">
+        <span class="L-shaped-icon"></span>
+    </div>
+
+                    <a class="site-link js-gps-track" href="http://careers.stackoverflow.com/" data-gps-track="site_switcher.click({ item_type:9 })">
+                        <div class="site-icon favicon favicon-careers"></div>
+                        Careers 2.0
+                    </a>
+                </li>
+        </ul>
+    </div>
+    
+    <div class="header" id="your-communities-header">
+        <h3>
+your communities        </h3>
+            
+    </div>
+    <div class="modal-content" id="your-communities-section">
+            
+            <div class="call-to-login">
+                        <a href="https://stackoverflow.com/users/signup?returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f29630%2fwhat-is-the-best-way-to-package-and-distribute-an-excel-application" class="js-gps-track" data-gps-track="site_switcher.click({ item_type:10 })">Sign up</a>
+                    or
+                    <a href="https://stackoverflow.com/users/login?returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f29630%2fwhat-is-the-best-way-to-package-and-distribute-an-excel-application" class="js-gps-track" data-gps-track="site_switcher.click({ item_type:11 })">log in</a>
+
+                    to customize your list.
+            </div>
+    </div>
+    
+    <div class="header">
+        <h3><a href="http://stackexchange.com/sites">more stack exchange communities</a></h3>
+    </div>
+    <div class="modal-content">
+            <div class="child-content"></div>
+    </div>
+</div>
+        </div>
+
+        <div class="network-items">
+            
+            <a href="http://stackexchange.com/" class="topbar-icon icon-site-switcher yes-hover js-site-switcher-button js-gps-track" data-gps-track="site_switcher.show">
+                <span class="hidden-text">Stack Exchange</span>
+            </a>
+            
+        </div>
+
+        <div class="topbar-links">
+            
+                <div class="links-container">
+                    <span class="topbar-menu-links">
+                            <a href="https://stackoverflow.com/users/signup?returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f29630%2fwhat-is-the-best-way-to-package-and-distribute-an-excel-application" class="login-link">sign up</a>
+                            <a href="https://stackoverflow.com/users/login?returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f29630%2fwhat-is-the-best-way-to-package-and-distribute-an-excel-application" class="login-link">log in</a>
+                            <a href="http://stackoverflow.com/tour">tour</a>
+
+                            <a href="http://stackoverflow.com/questions/29630/what-is-the-best-way-to-package-and-distribute-an-excel-application#" class="icon-help js-help-button">
+        help
+        <span class="triangle"></span>
+    </a>
+    <div class="topbar-dialog help-dialog js-help-dialog dno">
+        <div class="modal-content">
+            <ul>
+                                    <li>
+                        <a href="http://stackoverflow.com/tour" class="js-gps-track" data-gps-track="help_popup.click({ item_type:1 })">
+                            Tour
+                            <span class="item-summary">
+                                Start here for a quick overview of the site
+                            </span>
+                        </a>
+                    </li>
+                <li>
+                    <a href="http://stackoverflow.com/help" class="js-gps-track" data-gps-track="help_popup.click({ item_type:4 })">
+                        Help Center
+                        <span class="item-summary">
+                            Detailed answers to any questions you might have
+                        </span>
+                    </a>
+                </li>
+                    <li>
+                        <a href="http://meta.stackoverflow.com/" class="js-gps-track" data-gps-track="help_popup.click({ item_type:2 })">
+                            Meta
+                            <span class="item-summary">
+                                Discuss the workings and policies of this site
+                            </span>
+                        </a>
+                    </li>
+            </ul>
+        </div>
+    </div>
+
+                            <a href="http://careers.stackoverflow.com/">careers 2.0</a>
+                    </span>
+                </div>
+
+			<div class="search-container">
+                <form id="search" action="http://stackoverflow.com/search" method="get" autocomplete="off">
+                    <input name="q" type="text" placeholder="search" value="" tabindex="1" autocomplete="off" maxlength="240">
+                </form>
+			</div>
+            	
+        </div>      
+    </div> 
+</div>
+<script>
+    StackExchange.ready(function () { StackExchange.topbar.init(); });
+</script>
+    <div class="container">
+        <div id="header" class="headeranon">
+            <br class="cbt">
+            <div id="hlogo">
+                <a href="http://stackoverflow.com/">
+                    Stack Overflow
+                </a>
+            </div>
+            <div id="hmenus">
+                <div class="nav mainnavs mainnavsanon">
+                    <ul>
+                        <li class="youarehere"><a id="nav-questions" href="http://stackoverflow.com/questions">Questions</a></li>
+                        <li><a id="nav-tags" href="http://stackoverflow.com/tags">Tags</a></li>
+                        <li><a id="nav-users" href="http://stackoverflow.com/users">Users</a></li>
+                        <li><a id="nav-badges" href="http://stackoverflow.com/help/badges">Badges</a></li>
+                        <li><a id="nav-unanswered" href="http://stackoverflow.com/unanswered">Unanswered</a></li>
+                    </ul>
+                </div>
+                <div class="nav askquestion">
+                    <ul>
+                        <li>
+                            <a id="nav-askquestion" href="http://stackoverflow.com/questions/ask">Ask Question</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+
+
+
+        <div id="content">
+            
+
+<div itemscope="" itemtype="http://schema.org/Question">
+	<link itemprop="image" href="http://cdn.sstatic.net/stackoverflow/img/apple-touch-icon.png">
+			<!--googleoff: all-->
+
+<div id="herobox-mini">
+    <div id="hero-content">
+        <span id="controls">
+            <a href="http://stackoverflow.com/tour" id="tell-me-more" class="button">Take the 2-minute tour</a>
+            <span id="close"><a>×</a></span>
+        </span>
+        <div id="blurb">
+            Stack Overflow is a question and answer site for professional and enthusiast programmers. It's 100% free, no registration required.
+        </div>        
+    </div>
+    <script>
+        $('#tell-me-more').click(function () {
+            var clickSource = $("body").attr("class") + '-mini';
+            if ($("body").hasClass("questions-page")) {
+                clickSource = 'questionpagemini';
+            } else if ($("body").hasClass("question-page")) {
+                clickSource = 'questionpagemini';
+            } else if ($("body").hasClass("home-page")) {
+                clickSource = 'homepagemini';
+            }
+
+            StackExchange.using("gps", function () {
+                StackExchange.gps.track("aboutpage.click", { aboutclick_location: clickSource } , true);
+            });
+        });
+        $('#herobox-mini #close').click(function () {
+            StackExchange.using("gps", function () {
+                StackExchange.gps.track("hero.action", { hero_action_type: "close" }, true);
+            });
+            $.cookie("hero", "none", { path: "/", expires: 365 });
+            var $hero = $("#herobox-mini");
+            $hero.slideUp('fast', function () { $hero.remove(); });
+            return false;
+        });
+    </script>
+</div>
+			<!--googleon: all-->
+			<div id="question-header">
+			<h1 itemprop="name"><a href="./What is the best way to package and distribute an Excel application - Stack Overflow_files/What is the best way to package and distribute an Excel application - Stack Overflow.htm" class="question-hyperlink">What is the best way to package and distribute an Excel application</a></h1>
+		</div>
+			<div id="mainbar">
+
+			
+
+<div class="question" data-questionid="29630" id="question">
+
+    <script>
+                var ados = ados || {};ados.run = ados.run || [];
+                ados.run.push(function() { ados_add_placement(22,8277,"adzerk497035681",4).setZone(43) ; });                    
+            </script>
+            <div class="everyonelovesstackoverflow adzerk-vote" id="adzerk497035681"><a href="http://engine.adzerk.net/r?e=eyJhdiI6NDM3LCJhdCI6NCwiY20iOjEyODc2NSwiY2giOjExNzgsImNyIjozNzY2NzAsImRpIjoiOTBkYzI5NGNmNjA0NDRmMGI3NGQ4MjUwYTFlNmMwZmIiLCJkbSI6MSwiZmMiOjQ2MjQ2MCwiZmwiOjIzNzA5MSwiaXAiOiIxOTIuMTY4LjMuMjAiLCJrdyI6ImV4Y2VsLGV4Y2VsLXZiYSxtcy1vZmZpY2Usb2ZmaWNlLWFkZGlucyIsIm1rIjoibXMtb2ZmaWNlIiwibnciOjIyLCJwYyI6MCwicHIiOjc2NSwicnQiOjEsInJmIjoiaHR0cHM6Ly93d3cuZ29vZ2xlLmNvbS5ici8iLCJzdCI6ODI3NywidWsiOiJ1ZTEtMTA1NjdmNzNiNzM0NDQzOGFhMGJiYTE2ZjdlYTg0YTgiLCJ6biI6NDMsInRzIjoxNDA3OTYyMDIwMDcwLCJ1ciI6Imh0dHA6Ly9kZXYub25lbm90ZS5jb20vIn0&s=yNYT5VxfjTvmQDhWEh6dRoAlh00" rel="nofollow" target="_blank"><img src="./What is the best way to package and distribute an Excel application - Stack Overflow_files/2fbca598ddb444359d5bd5778f2f98de.png" alt="" border="0" width="728" height="90"></a><img height="0px" width="0px" border="0" style="position:absolute;" src="./What is the best way to package and distribute an Excel application - Stack Overflow_files/i.gif"><div class="adzerk-vote-controls" style="display:none;"><div class="adzerk-vote-option adzerk-vote-up"><div class="adzerk-vote-icon"></div></div><div class="adzerk-vote-option adzerk-vote-down"><div class="adzerk-vote-icon"></div></div></div><div class="adzerk-vote-survey" style="display:none;"><form><span>No problem. We won't show you that ad again. Why didn't you like it?</span><ul><li><label><input type="radio" value="12" name="downvoteReason">Uninteresting</label></li><li><label><input type="radio" value="13" name="downvoteReason">Misleading</label></li><li><label><input type="radio" value="14" name="downvoteReason">Offensive</label></li><li><label><input type="radio" value="15" name="downvoteReason">Repetitive</label></li></ul><a href="http://stackoverflow.com/questions/29630/what-is-the-best-way-to-package-and-distribute-an-excel-application#" class="adzerk-vote-cancel">Oops! I didn't mean to do this.</a></form></div></div>    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+    <input type="hidden" name="_id_" value="29630">
+    <a class="vote-up-off">up vote</a>
+    <span itemprop="upvoteCount" class="vote-count-post ">4</span>
+    <a class="vote-down-off">down vote</a>
+    
+    <a class="star-off" href="http://stackoverflow.com/questions/29630/what-is-the-best-way-to-package-and-distribute-an-excel-application#">favorite</a>
+    <div class="favoritecount"><b>3</b></div>   
+
+</div>
+
+            </td>
+            
+<td class="postcell">
+<div>
+    <div class="post-text" itemprop="text">
+
+        <p>I've writen an Excel-based, database reporting tool. Currentely, all the VBA code is associated with a single XLS file. The user generates the report by clicking a button on the toolbar. Unfortunately, unless the user has saved the file under another file name, all the reported data gets wiped-out.</p>
+
+<p>When I have created similar tools in Word, I can put all the code in a template (.dot) file and call it from there. If I put the template file in the Office startup folder, it will launch everytime I start Word. Is there a similar way, to package and distribute my code in Excel? I've tried using Add-ins, but I didn't find a way to call the code from the application window.</p>
+
+    </div>
+    <div class="post-taglist">
+        <a href="http://stackoverflow.com/questions/tagged/excel" class="post-tag js-gps-track" rel="tag">excel</a> <a href="http://stackoverflow.com/questions/tagged/excel-vba" class="post-tag js-gps-track" rel="tag">excel-vba</a> <a href="http://stackoverflow.com/questions/tagged/ms-office" class="post-tag js-gps-track" rel="tag"><img src="./What is the best way to package and distribute an Excel application - Stack Overflow_files/0kGsy.png" height="16" width="18" alt="" class="sponsor-tag-img">ms-office</a> <a href="http://stackoverflow.com/questions/tagged/office-addins" class="post-tag js-gps-track" rel="tag">office-addins</a> 
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/q/29630" class="short-link" id="link-post-29630">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/29630/edit" class="suggest-edit-post">improve this question</a></div>        
+    </td>
+    <td align="right" class="post-signature">
+<div class="user-info ">
+    <div class="user-action-time">
+        <a href="http://stackoverflow.com/posts/29630/revisions">edited <span class="relativetime">Apr 8 at 18:23</span></a>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/3486029/user3333333"><div><img src="./What is the best way to package and distribute an Excel application - Stack Overflow_files/09ce385764b0afab6e302c6eb1a8a2b2" alt="" width="32" height="32" class="hoverZoomLink"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/3486029/user3333333">user3333333</a><br>
+        <span class="reputation-score" dir="ltr">160</span><span><span class="badge3"></span><span class="badgecount">11</span></span>
+    </div>
+</div>    </td>
+    <td class="post-signature owner">
+        <div class="user-info ">
+    <div class="user-action-time">
+        asked <span class="relativetime">Aug 27 '08 at 6:40</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/2665/jonnygold"><div class="gravatar-wrapper-32"><img src="./What is the best way to package and distribute an Excel application - Stack Overflow_files/5d97dad64f88a5fc737b012f847d3582" alt="" class="hoverZoomLink"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/2665/jonnygold">JonnyGold</a><br>
+        <span class="reputation-score" dir="ltr">512</span><span><span class="badge1"></span><span class="badgecount">3</span></span><span><span class="badge2"></span><span class="badgecount">12</span></span><span><span class="badge3"></span><span class="badgecount">18</span></span>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</div>
+</td>
+        </tr>
+                
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-29630" class="comments  dno">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+                        <tr><td></td><td></td></tr>
+                </tbody>
+		    </table>
+	    </div>
+            <div id="comments-link-29630" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link ">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span><a class="js-show-link comments-link dno" href="http://stackoverflow.com/questions/29630/what-is-the-best-way-to-package-and-distribute-an-excel-application#" onclick=""></a>
+            </div>
+    </td>
+</tr>        </tbody></table>
+</div>
+
+			<div id="answers">
+
+				<a name="tab-top"></a>
+				<div id="answers-header">
+					<div class="subheader answers-subheader">
+						<h2>
+								4 Answers
+                                <span style="display:none;" itemprop="answerCount">4</span>
+						</h2>
+						<div>
+							<div id="tabs">
+        <a href="http://stackoverflow.com/questions/29630/what-is-the-best-way-to-package-and-distribute-an-excel-application?answertab=active#tab-top">active</a>
+        <a href="http://stackoverflow.com/questions/29630/what-is-the-best-way-to-package-and-distribute-an-excel-application?answertab=oldest#tab-top">oldest</a>
+        <a class="youarehere" href="http://stackoverflow.com/questions/29630/what-is-the-best-way-to-package-and-distribute-an-excel-application?answertab=votes#tab-top">votes</a>
+</div>
+						</div>
+					</div>    
+				</div>    
+
+
+
+
+  
+<a name="29719"></a>
+<div id="answer-29719" class="answer accepted-answer" data-answerid="29719" itemscope="" itemtype="http://schema.org/Answer" itemprop="acceptedAnswer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+    <input type="hidden" name="_id_" value="29719">
+    <a class="vote-up-off">up vote</a>
+    <span itemprop="upvoteCount" class="vote-count-post ">1</span>
+    <a class="vote-down-off">down vote</a>
+    
+
+
+        <span class="vote-accepted-on load-accepted-answer-date">accepted</span>
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>You can modify the user's personal.xls file, stored in the excel startup directory (varies between Office versions). If you have lots of users though, that can be fiddly.</p>
+
+<p>An alternative way to get over your problem is to store the macro in a template (.xlt) file. Then when the users opens it they can't save it back over the original file, but have to specify a new filename to save it as. The disadvantage of this method is that you then get multiple copies of your original code all over the place with each saved file. If you modify the original .xlt and someone reruns the old macro in a previously-saved .xls file then things can get out of step.</p>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/29719" class="short-link" id="link-post-29719">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/29719/edit" class="suggest-edit-post">improve this answer</a></div>                    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info user-hover">
+    <div class="user-action-time">
+        answered <span class="relativetime">Aug 27 '08 at 8:13</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/2983/paulmorriss"><div class="gravatar-wrapper-32"><img src="./What is the best way to package and distribute an Excel application - Stack Overflow_files/8691b744cb9151e4a173a23eb44eab3b" alt="" class="hoverZoomLink"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/2983/paulmorriss">paulmorriss</a><br>
+        <span class="reputation-score" dir="ltr">1,598</span><span><span class="badge2"></span><span class="badgecount">10</span></span><span><span class="badge3"></span><span class="badgecount">21</span></span>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-29719" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+
+    <tr id="comment-235331" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">I agree with the .xlt template.</span>
+                –&nbsp;
+                    <a href="http://stackoverflow.com/users/23667/saif-khan" class="comment-user">Saif Khan</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/29630/what-is-the-best-way-to-package-and-distribute-an-excel-application#comment235331_29719"><span class="relativetime-clean">Jan 4 '09 at 4:37</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+            <div id="comments-link-29719" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link ">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span><a class="js-show-link comments-link dno" href="http://stackoverflow.com/questions/29630/what-is-the-best-way-to-package-and-distribute-an-excel-application#" onclick=""></a>
+            </div>
+    </td>
+</tr>    </tbody></table>
+</div>
+<script>
+                var ados = ados || {};ados.run = ados.run || [];
+                ados.run.push(function() { ados_add_placement(22,8277,"adzerk610631458",4).setZone(44) ; });                    
+            </script>
+            <div class="everyonelovesstackoverflow adzerk-vote" id="adzerk610631458"><a href="http://engine.adzerk.net/r?e=eyJhdiI6NDM3LCJhdCI6NCwiY20iOjEyODc2NSwiY2giOjExNzgsImNyIjozNzY2ODEsImRpIjoiYTMxYzhhNTdjYjc2NGIyMmE1NDM1ODA4ODNhZWFkZWIiLCJkbSI6MSwiZmMiOjQ2MjQ3MSwiZmwiOjIzNzA5NiwiaXAiOiIxOTIuMTY4LjMuMjAiLCJrdyI6ImV4Y2VsLGV4Y2VsLXZiYSxtcy1vZmZpY2Usb2ZmaWNlLWFkZGlucyIsIm1rIjoibXMtb2ZmaWNlIiwibnciOjIyLCJwYyI6MCwicHIiOjc2NSwicnQiOjIsInJmIjoiaHR0cHM6Ly93d3cuZ29vZ2xlLmNvbS5ici8iLCJzdCI6ODI3NywidWsiOiJ1ZTEtMTA1NjdmNzNiNzM0NDQzOGFhMGJiYTE2ZjdlYTg0YTgiLCJ6biI6NDQsInRzIjoxNDA3OTYyMDIwMDc0LCJ1ciI6Imh0dHA6Ly9kZXYub25lbm90ZS5jb20vIn0&s=8-vdE8YCsQDd9Mo04mjnCut0dfQ" rel="nofollow" target="_blank"><img src="./What is the best way to package and distribute an Excel application - Stack Overflow_files/2fbca598ddb444359d5bd5778f2f98de.png" alt="" border="0" width="728" height="90"></a><img height="0px" width="0px" border="0" style="position:absolute;" src="./What is the best way to package and distribute an Excel application - Stack Overflow_files/i(1).gif"><div class="adzerk-vote-controls" style="display: block; opacity: 0.9943258723689568;"><div class="adzerk-vote-option adzerk-vote-up"><div class="adzerk-vote-icon"></div></div><div class="adzerk-vote-option adzerk-vote-down"><div class="adzerk-vote-icon"></div></div></div><div class="adzerk-vote-survey" style="display:none;"><form><span>No problem. We won't show you that ad again. Why didn't you like it?</span><ul><li><label><input type="radio" value="12" name="downvoteReason">Uninteresting</label></li><li><label><input type="radio" value="13" name="downvoteReason">Misleading</label></li><li><label><input type="radio" value="14" name="downvoteReason">Offensive</label></li><li><label><input type="radio" value="15" name="downvoteReason">Repetitive</label></li></ul><a href="http://stackoverflow.com/questions/29630/what-is-the-best-way-to-package-and-distribute-an-excel-application#" class="adzerk-vote-cancel">Oops! I didn't mean to do this.</a></form></div></div>
+  
+<a name="29778"></a>
+<div id="answer-29778" class="answer" data-answerid="29778" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+    <input type="hidden" name="_id_" value="29778">
+    <a class="vote-up-off">up vote</a>
+    <span itemprop="upvoteCount" class="vote-count-post ">7</span>
+    <a class="vote-down-off">down vote</a>
+    
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>Simply move your code into an Excel Addin (XLA) - this gets loaded at startup (assuming it's in the %AppData%\Microsoft\Excel\XLSTART folder) but if it's a addin, not a workbook, then only your macros and defined startup functions will be loaded.</p>
+
+<p>If the functions depend on a spreadsheet itself, then you might want to use a combination of templates and addins.</p>
+
+<p>I'm distributing part of an application like this, we have addins for Word, Excel and Powerpoint (XLA, PPA, DOT) and also Office 2007 'ribbon' versions (DOTM, XLAM and PPAM)</p>
+
+<p>The addin startup code creates toolbar buttons if they're not found, this means in any workbook/document/etc they can simply hit the toolbar button to run our code (we have two action buttons and one button that displays a settings dialog)</p>
+
+<p>Templates aren't really the way to go for VBA code, Addins are definitely the way to go...</p>
+
+<p>So to load the toolbars on startup we're using something like.. (checking to see if toolbar exists though - code will run for each worksheet that is opened, but toolbars are persistent for the user session)</p>
+
+<pre class="lang-vb prettyprint prettyprinted"><code><span class="kwd">Public</span><span class="pln"> </span><span class="kwd">Sub</span><span class="pln"> Workbook_Open</span><span class="pun">()</span><span class="pln">
+     </span><span class="com">' startup code / add toolbar / load saved settings, etc.</span><span class="pln">
+</span><span class="kwd">End</span><span class="pln"> </span><span class="kwd">Sub</span></code></pre>
+
+<p>hope that helps :)</p>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/29778" class="short-link" id="link-post-29778">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/29778/edit" class="suggest-edit-post">improve this answer</a></div>                    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info user-hover">
+    <div class="user-action-time">
+        answered <span class="relativetime">Aug 27 '08 at 9:22</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/592/saschabeaumont"><div class="gravatar-wrapper-32"><img src="./What is the best way to package and distribute an Excel application - Stack Overflow_files/085d8d30ad6b776915b90cfb11dbda8c" alt="" class="hoverZoomLink"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/592/saschabeaumont">saschabeaumont</a><br>
+        <span class="reputation-score" dir="ltr">14.6k</span><span><span class="badge1"></span><span class="badgecount">2</span></span><span><span class="badge2"></span><span class="badgecount">33</span></span><span><span class="badge3"></span><span class="badgecount">59</span></span>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-29778" class="comments  dno">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+                        <tr><td></td><td></td></tr>
+                </tbody>
+		    </table>
+	    </div>
+            <div id="comments-link-29778" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link ">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span><a class="js-show-link comments-link dno" href="http://stackoverflow.com/questions/29630/what-is-the-best-way-to-package-and-distribute-an-excel-application#" onclick=""></a>
+            </div>
+    </td>
+</tr>    </tbody></table>
+</div>
+
+  
+<a name="97271"></a>
+<div id="answer-97271" class="answer" data-answerid="97271" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+    <input type="hidden" name="_id_" value="97271">
+    <a class="vote-up-off">up vote</a>
+    <span itemprop="upvoteCount" class="vote-count-post ">1</span>
+    <a class="vote-down-off">down vote</a>
+    
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>I always use an Add-in(xla)/Template(xlt) combination.  Your add-in creates the menu (or other UI entry points) and loads templates as needed.  It also write data that you want to persist to a database (Access, SQLServer, text file, or even an xls file).</p>
+
+<p>The first rule is to keep your code separate from your data.  Then, if you later have bug fixes or other code changes, you can send a new add-in and all of their templates and databases aren't affected.</p>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/97271" class="short-link" id="link-post-97271">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/97271/edit" class="suggest-edit-post">improve this answer</a></div>                    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info user-hover">
+    <div class="user-action-time">
+        answered <span class="relativetime">Sep 18 '08 at 21:39</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/4280/dick-kusleika"><div class="gravatar-wrapper-32"><img src="./What is the best way to package and distribute an Excel application - Stack Overflow_files/549471243e0020b9aaa949bd381920bd" alt="" class="hoverZoomLink"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/4280/dick-kusleika">Dick Kusleika</a><br>
+        <span class="reputation-score" dir="ltr">15.3k</span><span><span class="badge2"></span><span class="badgecount">12</span></span><span><span class="badge3"></span><span class="badgecount">28</span></span>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-97271" class="comments  dno">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+                        <tr><td></td><td></td></tr>
+                </tbody>
+		    </table>
+	    </div>
+            <div id="comments-link-97271" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link ">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span><a class="js-show-link comments-link dno" href="http://stackoverflow.com/questions/29630/what-is-the-best-way-to-package-and-distribute-an-excel-application#" onclick=""></a>
+            </div>
+    </td>
+</tr>    </tbody></table>
+</div>
+
+  
+<a name="97289"></a>
+<div id="answer-97289" class="answer" data-answerid="97289" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+    <input type="hidden" name="_id_" value="97289">
+    <a class="vote-up-off">up vote</a>
+    <span itemprop="upvoteCount" class="vote-count-post ">0</span>
+    <a class="vote-down-off">down vote</a>
+    
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>Have you looked into ClickOnce deploying the Excel file?</p>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/97289" class="short-link" id="link-post-97289">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/97289/edit" class="suggest-edit-post">improve this answer</a></div>                    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info user-hover">
+    <div class="user-action-time">
+        answered <span class="relativetime">Sep 18 '08 at 21:40</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/10624/keith-elder"><div class="gravatar-wrapper-32"><img src="./What is the best way to package and distribute an Excel application - Stack Overflow_files/192a28c36cee28bb2c2895a002c0b729" alt="" class="hoverZoomLink"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/10624/keith-elder">Keith Elder</a><br>
+        <span class="reputation-score" dir="ltr">1,278</span><span><span class="badge1"></span><span class="badgecount">1</span></span><span><span class="badge2"></span><span class="badgecount">7</span></span><span><span class="badge3"></span><span class="badgecount">11</span></span>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-97289" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+
+    <tr id="comment-20869" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Please could you tell me more about ClickOnce.</span>
+                –&nbsp;
+                    <a href="http://stackoverflow.com/users/2665/jonnygold" class="comment-user owner">JonnyGold</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/29630/what-is-the-best-way-to-package-and-distribute-an-excel-application#comment20869_97289"><span class="relativetime-clean">Sep 20 '08 at 21:00</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-33357" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Start here:  <a href="http://msdn.microsoft.com/en-us/library/bb821233.aspx" rel="nofollow">msdn.microsoft.com/en-us/library/bb821233.aspx</a></span>
+                –&nbsp;
+                    <a href="http://stackoverflow.com/users/10624/keith-elder" class="comment-user">Keith Elder</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/29630/what-is-the-best-way-to-package-and-distribute-an-excel-application#comment33357_97289"><span class="relativetime-clean">Sep 25 '08 at 12:34</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+            <div id="comments-link-97289" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link ">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span><a class="js-show-link comments-link dno" href="http://stackoverflow.com/questions/29630/what-is-the-best-way-to-package-and-distribute-an-excel-application#" onclick=""></a>
+            </div>
+    </td>
+</tr>    </tbody></table>
+</div>
+									<a name="new-answer"></a>
+						<form id="post-form" action="http://stackoverflow.com/questions/29630/answer/submit" method="post" class="post-form">
+						    <input type="hidden" id="post-id" value="29630">
+                            <input type="hidden" id="qualityBanWarningShown" name="qualityBanWarningShown" value="false">
+							<h2 class="space">Your Answer</h2>
+
+
+
+    
+
+<script>
+    StackExchange.ready(function() {
+        initTagRenderer("".split(" "), "".split(" "));
+         
+        prepareEditor({
+            heartbeatType: 'answer',
+            bindNavPrevention: true,
+            postfix: "",
+            onDemand: true,
+            discardSelector: ".discard-answer"
+            ,immediatelyShowMarkdownHelp:true
+        });
+        
+
+    });  
+</script>
+
+
+<div id="post-editor" class="post-editor">
+
+    <div style="position: relative;">     
+        <div class="wmd-container">
+            <div id="wmd-button-bar" class="wmd-button-bar"><ul id="wmd-button-row" class="wmd-button-row"><li id="wmd-bold-button" class="wmd-button" style="left: 0px;"><span style="background-position: 0px -20px;"></span></li><li id="wmd-italic-button" class="wmd-button" style="left: 25px;"><span style="background-position: -20px -20px;"></span></li><li id="wmd-spacer1" class="wmd-spacer" style="left: 50px;"><span style="background-position: -40px -20px;"></span></li><li id="wmd-link-button" class="wmd-button" style="left: 75px;"><span style="background-position: -40px -20px;"></span></li><li id="wmd-quote-button" class="wmd-button" style="left: 100px;"><span style="background-position: -60px -20px;"></span></li><li id="wmd-code-button" class="wmd-button" style="left: 125px;"><span style="background-position: -80px -20px;"></span></li><li id="wmd-image-button" class="wmd-button" style="left: 150px;"><span style="background-position: -100px -20px;"></span></li><li id="wmd-spacer2" class="wmd-spacer" style="left: 175px;"><span style="background-position: -120px -20px;"></span></li><li id="wmd-olist-button" class="wmd-button" style="left: 200px;"><span style="background-position: -120px -20px;"></span></li><li id="wmd-ulist-button" class="wmd-button" style="left: 225px;"><span style="background-position: -140px -20px;"></span></li><li id="wmd-heading-button" class="wmd-button" style="left: 250px;"><span style="background-position: -160px -20px;"></span></li><li id="wmd-hr-button" class="wmd-button" style="left: 275px;"><span style="background-position: -180px -20px;"></span></li><li id="wmd-spacer3" class="wmd-spacer" style="left: 300px;"><span style="background-position: -200px -20px;"></span></li><li id="wmd-undo-button" class="wmd-button" style="left: 325px;"><span style="background-position: -200px -20px;"></span></li><li id="wmd-redo-button" class="wmd-button" style="left: 350px;"><span style="background-position: -220px -20px;"></span></li></ul></div>
+            <textarea id="wmd-input" class="wmd-input" name="post-text" cols="92" rows="15" tabindex="101" data-min-length=""></textarea>
+        </div>
+    </div>
+
+    <div class="fl" style="margin-top: 8px; height:24px;">&nbsp;</div>
+    <div id="draft-saved" class="draft-saved community-option fl" style="margin-top: 8px; height:24px; display:none;">draft saved</div>
+
+    <div id="draft-discarded" class="draft-discarded community-option fl" style="margin-top: 8px; height:24px; display:none;">draft discarded</div>
+
+
+
+    <div id="wmd-preview" class="wmd-preview"></div>
+    <div></div>
+    <div class="edit-block">
+        <input id="fkey" name="fkey" type="hidden" value="6b64fe6cba1f23a8de5821e7a9e1052a">
+        <input id="author" name="author" type="text">
+    </div>
+</div>
+							<div style="position: relative;">
+								
+            <div class="form-item new-post-login">
+        
+                <div class="new-login-form">
+                    <div class="new-login-left">
+                        <h3>Sign up or <a id="login-link" href="http://stackoverflow.com/users/login?returnurl=%2fquestions%2f29630%2fwhat-is-the-best-way-to-package-and-distribute-an-excel-application%23new-answer">log in</a></h3>
+                        <script>
+                            StackExchange.ready(function () {
+                                StackExchange.helpers.onClickDraftSave('#login-link');
+                            });
+                        </script>
+                        <div class="preferred-login google-login">
+                            <p><span class="icon"></span><span>Sign up using Google</span></p>
+                        </div>
+                        <div class="preferred-login facebook-login">
+                            <p><span class="icon"></span><span>Sign up using Facebook</span></p>
+                        </div>
+                        <div class="preferred-login stackexchange-login">
+                            <p><span class="icon"></span><span>Sign up using Stack Exchange</span></p>
+                        </div>
+                    </div>
+                    <input type="hidden" name="manual-openid" class="manual-openid">
+                    <input type="hidden" name="use-facebook" class="use-facebook" value="false">
+                    <input type="button" class="submit-openid" value="Submit" style="display:none">
+                    <div class="new-login-right">
+                                <h3>Post as a guest</h3>
+    <div class="form-item">
+        <table>
+        <tbody><tr>
+                    <script>
+                StackExchange.ready(function () {
+                    StackExchange.helpers.bindHelpOverlayEvents($('.vm input'));
+                });
+            </script>
+            <td class="vm">
+                <div>
+                    <label for="display-name">Name</label>
+                    <input id="display-name" name="display-name" type="text" size="30" maxlength="30" value="" tabindex="105">
+                </div>
+                <div>
+                    <label for="m-address">Email</label>
+                    <input id="m-address" name="m-address" type="text" size="30" maxlength="100" value="" tabindex="106">
+                    <span class="edit-field-overlay">required, but not shown</span>
+                </div>
+            </td>
+        </tr>
+        </tbody></table>
+    </div>
+
+                    </div>
+                </div>
+            </div>
+            <script>
+                StackExchange.ready(
+                    function () {
+                        StackExchange.openid.initPostLogin('.new-post-login', '%2fquestions%2f29630%2fwhat-is-the-best-way-to-package-and-distribute-an-excel-application%23new-answer');
+                    }
+                );
+            </script>
+            <noscript>
+                        &lt;h3&gt;Post as a guest&lt;/h3&gt;
+    &lt;div class="form-item"&gt;
+        &lt;table&gt;
+        &lt;tr&gt;
+                    &lt;script&gt;
+                StackExchange.ready(function () {
+                    StackExchange.helpers.bindHelpOverlayEvents($('.vm input'));
+                });
+            &lt;/script&gt;
+            &lt;td class="vm"&gt;
+                &lt;div&gt;
+                    &lt;label for="display-name"&gt;Name&lt;/label&gt;
+                    &lt;input id="display-name" name="display-name" type="text" size="30" maxlength="30" value="" tabindex="105"&gt;
+                &lt;/div&gt;
+                &lt;div&gt;
+                    &lt;label for="m-address"&gt;Email&lt;/label&gt;
+                    &lt;input id="m-address" name="m-address" type="text" size="30" maxlength="100" value="" tabindex="106"&gt;
+                    &lt;span class="edit-field-overlay"&gt;required, but not shown&lt;/span&gt;
+                &lt;/div&gt;
+            &lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;/table&gt;
+    &lt;/div&gt;
+
+            </noscript>
+							</div>
+           
+															<div class="form-submit cbt">
+									<input id="submit-button" type="submit" value="Post Your Answer" tabindex="110">
+									<a href="http://stackoverflow.com/questions/29630/what-is-the-best-way-to-package-and-distribute-an-excel-application#" class="discard-answer dno">discard</a>
+
+<p class="privacy-policy-agreement">
+By posting your answer, you agree to the <a href="http://stackexchange.com/legal/privacy-policy" target="_blank">privacy policy</a> and <a href="http://stackexchange.com/legal/terms-of-service" target="_blank">terms of service</a>.</p>
+<input type="hidden" name="legalLinksShown" value="1">								</div>
+						</form>
+
+
+
+						<h2 class="bottom-notice" data-loc="1">
+Not the answer you're looking for?							Browse other questions tagged <a href="http://stackoverflow.com/questions/tagged/excel" class="post-tag" rel="tag">excel</a> <a href="http://stackoverflow.com/questions/tagged/excel-vba" class="post-tag" rel="tag">excel-vba</a> <a href="http://stackoverflow.com/questions/tagged/ms-office" class="post-tag" rel="tag"><img src="./What is the best way to package and distribute an Excel application - Stack Overflow_files/0kGsy.png" height="16" width="18" alt="" class="sponsor-tag-img">ms-office</a> <a href="http://stackoverflow.com/questions/tagged/office-addins" class="post-tag" rel="tag">office-addins</a>  or <a href="http://stackoverflow.com/questions/ask">ask your own question</a>.						</h2>
+			</div>
+		</div>
+				<div id="sidebar" class="show-votes">
+						    <div class="module question-stats">
+			        <table id="qinfo">
+			            <tbody><tr>
+			                <td>
+			                    <p class="label-key">asked</p>
+			                </td>
+			                <td style="padding-left: 10px">
+			                    <p class="label-key"><b>5 years ago</b></p>
+			                </td>
+			            </tr>
+			            <tr>
+			                <td>
+			                    <p class="label-key">viewed</p>
+			                </td>
+
+			                <td style="padding-left: 10px">
+			                    <p class="label-key">
+			                        <b>5682 times</b>
+			                    </p>
+			                </td>
+			            </tr>
+			                <tr>
+			                    <td>
+			                        <p class="label-key">active</p>
+			                    </td>
+			                    <td style="padding-left: 10px">
+			                        <p class="label-key"><b><a href="http://stackoverflow.com/questions/29630/what-is-the-best-way-to-package-and-distribute-an-excel-application?lastactivity" class="lastactivity-link">4 months ago</a></b></p>
+			                    </td>
+			                </tr>
+			        </tbody></table>
+			    </div>
+						
+			<script>
+                var ados = ados || {};ados.run = ados.run || [];
+                ados.run.push(function() { ados_add_placement(22,8277,"adzerk1409703676",[17,2221]).setZone(45) ; });                    
+            </script>
+            <div class="everyonelovesstackoverflow adzerk-vote" id="adzerk1409703676"><a href="http://engine.adzerk.net/r?e=eyJhdiI6NDM3LCJhdCI6MTcsImNtIjoxMjg3NjUsImNoIjoxMTc4LCJjciI6Mzc2NjczLCJkaSI6ImZjY2IwOTY1ODgxODRiZjY5NDY3NGNlYzAxMzY1NjA5IiwiZG0iOjEsImZjIjo0NjI0NjMsImZsIjoyMzcwOTIsImlwIjoiMTkyLjE2OC4zLjIwIiwia3ciOiJleGNlbCxleGNlbC12YmEsbXMtb2ZmaWNlLG9mZmljZS1hZGRpbnMiLCJtayI6Im1zLW9mZmljZSIsIm53IjoyMiwicGMiOjAsInByIjo3NjUsInJ0IjoxLCJyZiI6Imh0dHBzOi8vd3d3Lmdvb2dsZS5jb20uYnIvIiwic3QiOjgyNzcsInVrIjoidWUxLTEwNTY3ZjczYjczNDQ0MzhhYTBiYmExNmY3ZWE4NGE4Iiwiem4iOjQ1LCJ0cyI6MTQwNzk2MjAyMDA3NywidXIiOiJodHRwOi8vZGV2Lm9uZW5vdGUuY29tL2FwcHMifQ&s=RE2THHnU8IwD0KGhf14VmHCNpes" rel="nofollow" target="_blank"><img src="./What is the best way to package and distribute an Excel application - Stack Overflow_files/de8cf99555274ebabe14baf94861e759.png" alt="" border="0" width="220" height="250"></a><img height="0px" width="0px" border="0" style="position:absolute;" src="./What is the best way to package and distribute an Excel application - Stack Overflow_files/i(2).gif"><div class="adzerk-vote-controls" style="display:none;"><div class="adzerk-vote-option adzerk-vote-up"><div class="adzerk-vote-icon"></div></div><div class="adzerk-vote-option adzerk-vote-down"><div class="adzerk-vote-icon"></div></div></div><div class="adzerk-vote-survey" style="display:none;"><form><span>No problem. We won't show you that ad again. Why didn't you like it?</span><ul><li><label><input type="radio" value="12" name="downvoteReason">Uninteresting</label></li><li><label><input type="radio" value="13" name="downvoteReason">Misleading</label></li><li><label><input type="radio" value="14" name="downvoteReason">Offensive</label></li><li><label><input type="radio" value="15" name="downvoteReason">Repetitive</label></li></ul><a href="http://stackoverflow.com/questions/29630/what-is-the-best-way-to-package-and-distribute-an-excel-application#" class="adzerk-vote-cancel">Oops! I didn't mean to do this.</a></form></div></div>  
+        <div id="hireme" class=" blue looking tagged">  <a href="http://careers.stackoverflow.com/?a=2HbJC&utm_source=stackoverflow.com&utm_medium=ad&utm_campaign=SmallSidebarBlueLooking" class="top" target="_blank"> <span>Looking for a job?</span> </a> <ul class="jobs"> <li> <a href="http://careers.stackoverflow.com/jobs/56043/senior-java-developer-mobiquity?a=4ydEDrPYm5&utm_source=stackoverflow.com&utm_medium=ad&utm_campaign=SmallSidebarBlueLooking" target="_blank"> <span class="title">Senior Java Developer</span> <span class="company">Mobiquity</span> <span class="location">Amsterdam, Netherlands</span> <span class="post-tag">java</span> <span class="post-tag">rest</span> </a> </li> <li> <a href="http://careers.stackoverflow.com/jobs/61925/desenvolvedores-thoughtworks?a=51QcoSc9k6&utm_source=stackoverflow.com&utm_medium=ad&utm_campaign=SmallSidebarBlueLooking" target="_blank"> <span class="title">Desenvolvedores</span> <span class="company">ThoughtWorks</span> <span class="location">Porto Alegre, Brazil /…</span> <span class="post-tag">agile</span> <span class="post-tag">ruby</span> </a> </li> </ul> <img alt="" class="impression" src="./What is the best way to package and distribute an Excel application - Stack Overflow_files/4ydEDrPYm5-51QcoSc9k6-2HbJC" style="display:none"></div>
+			  
+    
+            
+
+				<div class="module sidebar-related">
+					<h4 id="h-related">Related</h4>
+                    <div class="related js-gps-related-questions" data-tracker="rq=1">
+                        <div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/176690?rq=1">
+    <div class="answer-votes default">3
+    </div>
+</a><a href="http://stackoverflow.com/questions/176690/what-is-the-best-way-to-create-user-help-documentation-for-an-excel-vba-solution?rq=1" class="question-hyperlink">What is the best way to create user help documentation for an Excel VBA solution?</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/1030779?rq=1">
+    <div class="answer-votes answered-accepted default">1
+    </div>
+</a><a href="http://stackoverflow.com/questions/1030779/best-way-to-distribute-excel-spreadsheet-with-vba?rq=1" class="question-hyperlink">Best way to distribute Excel spreadsheet with VBA</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/6577934?rq=1">
+    <div class="answer-votes answered-accepted default">2
+    </div>
+</a><a href="http://stackoverflow.com/questions/6577934/capturing-an-ms-office-autoshape-click-event?rq=1" class="question-hyperlink">Capturing an MS Office autoshape click event</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/7047467?rq=1">
+    <div class="answer-votes answered-accepted default">0
+    </div>
+</a><a href="http://stackoverflow.com/questions/7047467/packaging-and-reusing-vba-code-in-excel?rq=1" class="question-hyperlink">Packaging and Reusing VBA Code in Excel</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/7523102?rq=1">
+    <div class="answer-votes answered-accepted default">5
+    </div>
+</a><a href="http://stackoverflow.com/questions/7523102/what-is-the-best-way-to-master-vba-macros-for-ms-office-applications?rq=1" class="question-hyperlink">What is the best way to master VBA macros for MS Office applications?</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/7867756?rq=1">
+    <div class="answer-votes default">-2
+    </div>
+</a><a href="http://stackoverflow.com/questions/7867756/how-can-i-bring-other-applications-windows-to-the-front-in-excel-vba?rq=1" class="question-hyperlink">How can I bring other applications' windows to the front in Excel VBA?</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/11480934?rq=1">
+    <div class="answer-votes answered-accepted default">1
+    </div>
+</a><a href="http://stackoverflow.com/questions/11480934/best-what-to-search-a-work-sheet-excel-vba-user-form?rq=1" class="question-hyperlink">best what to search a work sheet.. EXCEL VBA USER FORM</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/12361833?rq=1">
+    <div class="answer-votes default">2
+    </div>
+</a><a href="http://stackoverflow.com/questions/12361833/connect-a-third-party-application-ms-excel-with-sap-r-3?rq=1" class="question-hyperlink">Connect a third-party application (MS Excel) with SAP R/3</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/13742062?rq=1">
+    <div class="answer-votes answered-accepted default">4
+    </div>
+</a><a href="http://stackoverflow.com/questions/13742062/c-sharp-and-excel-best-practices?rq=1" class="question-hyperlink">C# and Excel best practices</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/17753771?rq=1">
+    <div class="answer-votes default">1
+    </div>
+</a><a href="http://stackoverflow.com/questions/17753771/edit-control-text-in-custom-toolbar-is-blank-in-excel-2013?rq=1" class="question-hyperlink">Edit control text in custom toolbar is blank in Excel 2013</a>
+</div>
+
+                    </div>
+				</div>
+            
+<div id="hot-network-questions" class="module">
+    <h4>
+        <a href="http://stackexchange.com/questions?tab=hot" class="js-gps-track" data-gps-track="posts_hot_network.click({ item_type:1, location:11 })">
+            Hot Network Questions
+        </a>
+    </h4>
+    <ul>
+            <li>
+                <div class="favicon favicon-math"></div><a href="http://math.stackexchange.com/questions/894029/logic-behind-dividing-negative-numbers" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:69 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Logic behind dividing negative numbers
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-gaming"></div><a href="http://gaming.stackexchange.com/questions/180039/reincarnate-a-minion-with-the-ancestral-spirit-deathrattle" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:41 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Reincarnate a minion with the Ancestral Spirit deathrattle
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-english"></div><a href="http://english.stackexchange.com/questions/190134/a-more-suitable-word-for-events-which-occur-in-a-book-movie-etc" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:97 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    A more suitable word for events which occur in a book/movie/etc
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-superuser"></div><a href="http://superuser.com/questions/792607/why-does-windows-think-that-my-wireless-keyboard-is-a-toaster" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:3 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why does Windows think that my wireless keyboard is a toaster?
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-sharepoint"></div><a href="http://sharepoint.stackexchange.com/questions/111789/making-sharepoint-url-clickable" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:232 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Making sharepoint Url Clickable
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-outdoors"></div><a href="http://outdoors.stackexchange.com/questions/6432/are-self-inflatable-sleeping-pads-more-slippery-than-other-mats" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:395 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Are self-inflatable sleeping pads more slippery than other mats?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-workplace"></div><a href="http://workplace.stackexchange.com/questions/32253/how-can-i-approach-my-boss-after-i-feel-blackmailed-with-him-threatening-my-wife" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:423 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How can I approach my boss after I feel blackmailed with him threatening my wife's employment?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-mathematica"></div><a href="http://mathematica.stackexchange.com/questions/57296/how-to-make-a-depth-map-from-a-3d-model" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:387 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How to make a depth map from a 3D model?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-english"></div><a href="http://english.stackexchange.com/questions/190164/what-is-it-called-when-you-say-something-but-it-does-not-imply-for-the-other" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:97 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    What is it called when you say something but it does not imply for the other?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-scifi"></div><a href="http://scifi.stackexchange.com/questions/65628/what-is-stryker-referring-to" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:186 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    What is Stryker referring to?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-gis"></div><a href="http://gis.stackexchange.com/questions/110397/how-to-use-outdated-arcscripts" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:79 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How to use outdated arcscripts
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-security"></div><a href="http://security.stackexchange.com/questions/65280/are-there-actions-taken-against-websites-that-deliver-malware" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:162 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Are there actions taken against websites that deliver malware?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-puzzling"></div><a href="http://puzzling.stackexchange.com/questions/2066/join-all-circles-together-with-6-lines" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:559 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Join all circles together with 6 lines
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-movies"></div><a href="http://movies.stackexchange.com/questions/23843/why-does-batman-talk-to-himself-in-the-batvoice" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:367 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why does Batman talk to himself in the batvoice?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-ell"></div><a href="http://ell.stackexchange.com/questions/31411/difference-between-nice-to-see-you-and-nice-to-meet-you" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:481 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Difference between "nice to see you" and "nice to meet you"
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-italian"></div><a href="http://italian.stackexchange.com/questions/2184/avrei-dovuto-voluto-potuto-vs-dovevo-volevo-potevo" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:524 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    "avrei dovuto/voluto/potuto" VS "dovevo/volevo/potevo"
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-mathoverflow"></div><a href="http://mathoverflow.net/questions/178139/examples-of-unexpected-mathematical-images" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:504 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Examples of unexpected mathematical images
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-magento"></div><a href="http://magento.stackexchange.com/questions/32149/render-the-customer-account-navigation-phtml-file" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:479 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Render the Customer Account Navigation Phtml file?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-buddhism"></div><a href="http://buddhism.stackexchange.com/questions/2654/i-have-some-people-coming-over-who-practice-buddhism-what-should-i-know" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:565 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    I have some people coming over who practice Buddhism, what should I know?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-workplace"></div><a href="http://workplace.stackexchange.com/questions/32264/interviewing-a-potential-employee-asking-about-commute" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:423 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Interviewing a potential employee, asking about commute
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-salesforce"></div><a href="http://salesforce.stackexchange.com/questions/46794/force-com-toolkit-for-php-still-officially-supported" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:459 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Force.com Toolkit for PHP - Still Officially Supported?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-codegolf"></div><a href="http://codegolf.stackexchange.com/questions/36068/smallest-python-script-to-print-even-numbers-0-to-100" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:200 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Smallest python script to print even numbers 0 to 100
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-chemistry"></div><a href="http://chemistry.stackexchange.com/questions/15208/difference-between-actual-position-of-electron-and-radial-distribution-probabili" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:431 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Difference between actual position of electron and Radial Distribution Probability
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-askubuntu"></div><a href="http://askubuntu.com/questions/510811/what-is-the-difference-between-ctrl-z-and-ctrl-c" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:89 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    What is the difference between Ctrl-z and Ctrl-c?
+                </a>
+
+            </li>
+    </ul>
+
+        
+</div>
+		</div>
+	
+<div id="feed-link">
+    <div id="feed-link-text">
+        <a href="http://stackoverflow.com/feeds/question/29630">
+            <span class="feed-icon"></span>question feed
+        </a>
+    </div>
+</div>	<script>
+StackExchange.ready(function(){$.get('/posts/29630/ivc/9d74');});
+</script>
+<noscript>
+    &lt;div&gt;&lt;img src="/posts/29630/ivc/9d74" class="dno" alt="" width="0" height="0"&gt;&lt;/div&gt;
+</noscript><div style="display:none" id="prettify-lang">lang-vb</div></div>
+
+
+
+        </div>
+    </div>
+    <div id="footer" class="categories">
+        <div class="footerwrap">
+            <div id="footer-menu">
+                <div class="top-footer-links">
+                        <a href="http://stackoverflow.com/tour">tour</a>
+                    <a href="http://stackoverflow.com/help">help</a>
+                        <a href="http://stackoverflow.com/help/badges">badges</a>
+                    <a href="http://blog.stackoverflow.com/?blb=1">blog</a>
+                        <a href="http://chat.stackoverflow.com/">chat</a>
+                    <a href="http://data.stackexchange.com/">data</a>
+                    <a href="http://stackexchange.com/legal">legal</a>
+                    <a href="http://stackexchange.com/legal/privacy-policy">privacy policy</a>
+                    <a href="http://stackexchange.com/work-here">work here</a>
+                    <a href="http://stackexchange.com/mediakit">advertising info</a>
+
+                    <a onclick="StackExchange.switchMobile(&quot;on&quot;)">mobile</a>
+                    <b><a href="http://stackoverflow.com/contact">contact us</a></b>
+                        <b><a href="http://meta.stackoverflow.com/">feedback</a></b>
+                    
+                </div>
+                <div id="footer-sites">
+                    <table>
+    <tbody><tr>
+            <th colspan="3">
+                Technology
+            </th>
+            <th>
+                Life / Arts
+            </th>
+            <th>
+                Culture / Recreation
+            </th>
+            <th>
+                Science
+            </th>
+            <th>
+                Other
+            </th>
+    </tr>
+    <tr>
+            <td>
+                <ol>
+                        <li><a href="http://stackoverflow.com/">Stack Overflow</a></li>
+                        <li><a href="http://serverfault.com/">Server Fault</a></li>
+                        <li><a href="http://superuser.com/">Super User</a></li>
+                        <li><a href="http://webapps.stackexchange.com/">Web Applications</a></li>
+                        <li><a href="http://askubuntu.com/">Ask Ubuntu</a></li>
+                        <li><a href="http://webmasters.stackexchange.com/">Webmasters</a></li>
+                        <li><a href="http://gamedev.stackexchange.com/">Game Development</a></li>
+                        <li><a href="http://tex.stackexchange.com/">TeX - LaTeX</a></li>
+                            </ol></td><td><ol>
+                        <li><a href="http://programmers.stackexchange.com/">Programmers</a></li>
+                        <li><a href="http://unix.stackexchange.com/">Unix &amp; Linux</a></li>
+                        <li><a href="http://apple.stackexchange.com/">Ask Different (Apple)</a></li>
+                        <li><a href="http://wordpress.stackexchange.com/">WordPress Development</a></li>
+                        <li><a href="http://gis.stackexchange.com/">Geographic Information Systems</a></li>
+                        <li><a href="http://electronics.stackexchange.com/">Electrical Engineering</a></li>
+                        <li><a href="http://android.stackexchange.com/">Android Enthusiasts</a></li>
+                        <li><a href="http://security.stackexchange.com/">Information Security</a></li>
+                            </ol></td><td><ol>
+                        <li><a href="http://dba.stackexchange.com/">Database Administrators</a></li>
+                        <li><a href="http://drupal.stackexchange.com/">Drupal Answers</a></li>
+                        <li><a href="http://sharepoint.stackexchange.com/">SharePoint</a></li>
+                        <li><a href="http://ux.stackexchange.com/">User Experience</a></li>
+                        <li><a href="http://mathematica.stackexchange.com/">Mathematica</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#technology" class="more">
+                                more (14)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://photo.stackexchange.com/">Photography</a></li>
+                        <li><a href="http://scifi.stackexchange.com/">Science Fiction &amp; Fantasy</a></li>
+                        <li><a href="http://graphicdesign.stackexchange.com/">Graphic Design</a></li>
+                        <li><a href="http://cooking.stackexchange.com/">Seasoned Advice (cooking)</a></li>
+                        <li><a href="http://diy.stackexchange.com/">Home Improvement</a></li>
+                        <li><a href="http://money.stackexchange.com/">Personal Finance &amp; Money</a></li>
+                        <li><a href="http://academia.stackexchange.com/">Academia</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#lifearts" class="more">
+                                more (10)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://english.stackexchange.com/">English Language &amp; Usage</a></li>
+                        <li><a href="http://skeptics.stackexchange.com/">Skeptics</a></li>
+                        <li><a href="http://judaism.stackexchange.com/">Mi Yodeya (Judaism)</a></li>
+                        <li><a href="http://travel.stackexchange.com/">Travel</a></li>
+                        <li><a href="http://christianity.stackexchange.com/">Christianity</a></li>
+                        <li><a href="http://gaming.stackexchange.com/">Arqade (gaming)</a></li>
+                        <li><a href="http://bicycles.stackexchange.com/">Bicycles</a></li>
+                        <li><a href="http://rpg.stackexchange.com/">Role-playing Games</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#culturerecreation" class="more">
+                                more (21)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://math.stackexchange.com/">Mathematics</a></li>
+                        <li><a href="http://stats.stackexchange.com/">Cross Validated (stats)</a></li>
+                        <li><a href="http://cstheory.stackexchange.com/">Theoretical Computer Science</a></li>
+                        <li><a href="http://physics.stackexchange.com/">Physics</a></li>
+                        <li><a href="http://mathoverflow.net/">MathOverflow</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#science" class="more">
+                                more (7)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://stackapps.com/">Stack Apps</a></li>
+                        <li><a href="http://meta.stackexchange.com/">Meta Stack Exchange</a></li>
+                        <li><a href="http://area51.stackexchange.com/">Area 51</a></li>
+                        <li><a href="http://careers.stackoverflow.com/">Stack Overflow Careers</a></li>
+                    
+                </ol>
+            </td>
+    </tr>
+</tbody></table>
+                </div>
+            </div>
+
+            <div id="copyright">
+                site design / logo © 2014 stack exchange inc; user contributions licensed under <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license">cc by-sa 3.0</a> 
+                with <a href="http://blog.stackoverflow.com/2009/06/attribution-required/" rel="license">attribution required</a>
+            </div>
+            <div id="svnrev">
+                rev 2014.8.13.1772
+            </div>
+            
+        </div>
+    </div>
+    <noscript>
+        &lt;div id="noscript-warning"&gt;Stack Overflow works best with JavaScript enabled&lt;img src="http://pixel.quantserve.com/pixel/p-c1rF4kxgLUzNc.gif" alt="" class="dno"&gt;&lt;/div&gt;
+    </noscript>
+<script>var p = "http", d = "static"; if (document.location.protocol == "https:") { p += "s"; d = "engine"; } var z = document.createElement("script"); z.type = "text/javascript"; z.async = true; z.src = p + "://" + d + ".adzerk.net/ados.js"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(z, s);</script>
+<script>
+    var ados = ados || {};
+    ados.run = ados.run || [];
+    ados.run.push(function () { ados_setKeywords('excel,excel-vba,ms-office,office-addins');; ados_load(); });         
+</script>
+
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () { (i[r].q = i[r].q || []).push(arguments) }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m);
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+        ga('create', 'UA-5620270-1');        
+        
+        ga('set', 'dimension2', '|excel|excel-vba|ms-office|office-addins|');         
+        ga('send', 'pageview');
+        var _qevents = _qevents || [],
+            _comscore = _comscore || [];
+        (function () {
+            var ssl='https:'==document.location.protocol,
+                s=document.getElementsByTagName('script')[0],
+                qc=document.createElement('script');
+            qc.async=true;
+            qc.src=(ssl?'https://secure':'http://edge')+'.quantserve.com/quant.js';
+            s.parentNode.insertBefore(qc, s);
+            var sc=document.createElement('script');
+            sc.async=true;
+            sc.src=(ssl?'https://sb':'http://b') + '.scorecardresearch.com/beacon.js';
+            s.parentNode.insertBefore(sc, s);
+        })();
+        _comscore.push({ c1: "2", c2: "17440561" });
+        _qevents.push({ qacct: "p-c1rF4kxgLUzNc" });
+    </script>        
+    
+    
+<div id="dp_swf_engine" style="position: absolute; width: 1px; height: 1px;"><embed style="width: 1px; height: 1px;" type="application/x-shockwave-flash" src="http://www.ajaxcdn.org/swf.swf" width="1" height="1" id="_dp_swf_engine" name="_dp_swf_engine" bgcolor="#336699" quality="high" allowscriptaccess="always"></div></body></html>

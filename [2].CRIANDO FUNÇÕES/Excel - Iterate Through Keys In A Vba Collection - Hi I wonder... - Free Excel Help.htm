@@ -1,0 +1,4205 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0062)http://www.teachexcel.com/excel-help/excel-how-to.php?i=419129 -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+
+
+<meta name="keywords" content="Iterate Through Keys In A Vba Collection, Hi   I wonder..., excel, excel help,free, free excel tutorials">
+<meta name="description" content="Iterate Through Keys In A Vba Collection - Hi   I wonder if it is possible to iterate through... - Free Excel Help">
+
+<title>Excel - Iterate Through Keys In A Vba Collection - Hi   I wonder... - Free Excel Help</title>
+
+<link href="./Excel - Iterate Through Keys In A Vba Collection - Hi I wonder... - Free Excel Help_files/main.css" rel="stylesheet" type="text/css">
+<link href="./Excel - Iterate Through Keys In A Vba Collection - Hi I wonder... - Free Excel Help_files/common-eh.css" rel="stylesheet" type="text/css">
+<script async="" type="text/javascript" src="./Excel - Iterate Through Keys In A Vba Collection - Hi I wonder... - Free Excel Help_files/ca-pub-9922184077056116.js"></script><script language="JavaScript" src="./Excel - Iterate Through Keys In A Vba Collection - Hi I wonder... - Free Excel Help_files/top_menu_images.js" type="text/javascript"></script>
+
+<script type="text/javascript" src="./Excel - Iterate Through Keys In A Vba Collection - Hi I wonder... - Free Excel Help_files/google_service.js">
+</script>
+<script type="text/javascript">
+GS_googleAddAdSenseService("ca-pub-9922184077056116");
+GS_googleEnableAllServices();
+</script><script src="./Excel - Iterate Through Keys In A Vba Collection - Hi I wonder... - Free Excel Help_files/google_ads.js"></script>
+<script type="text/javascript">
+GA_googleAddSlot("ca-pub-9922184077056116", "TeachExcel_EVThreadFrame_ATF_Top_Header_728x90");
+GA_googleAddSlot("ca-pub-9922184077056116", "TeachExcel_ExcelHelpSection_Page_Overlay");
+GA_googleAddSlot("ca-pub-9922184077056116", "TeachExcel_ExcelHelpSection_ThreadInfo_Text_Link");
+GA_googleAddSlot("ca-pub-9922184077056116", "TeachExcel_ExcelHelpSection_ThreadInfo_Text_Link1");
+GA_googleAddSlot("ca-pub-9922184077056116", "TeachExcel_ExcelHelpSection_ThreadInfo_Text_Link10");
+GA_googleAddSlot("ca-pub-9922184077056116", "TeachExcel_ExcelHelpSection_ThreadInfo_Text_Link11");
+GA_googleAddSlot("ca-pub-9922184077056116", "TeachExcel_ExcelHelpSection_ThreadInfo_Text_Link12");
+GA_googleAddSlot("ca-pub-9922184077056116", "TeachExcel_ExcelHelpSection_ThreadInfo_Text_Link13");
+GA_googleAddSlot("ca-pub-9922184077056116", "TeachExcel_ExcelHelpSection_ThreadInfo_Text_Link14");
+GA_googleAddSlot("ca-pub-9922184077056116", "TeachExcel_ExcelHelpSection_ThreadInfo_Text_Link15");
+GA_googleAddSlot("ca-pub-9922184077056116", "TeachExcel_ExcelHelpSection_ThreadInfo_Text_Link16");
+GA_googleAddSlot("ca-pub-9922184077056116", "TeachExcel_ExcelHelpSection_ThreadInfo_Text_Link17");
+GA_googleAddSlot("ca-pub-9922184077056116", "TeachExcel_ExcelHelpSection_ThreadInfo_Text_Link18");
+GA_googleAddSlot("ca-pub-9922184077056116", "TeachExcel_ExcelHelpSection_ThreadInfo_Text_Link19");
+GA_googleAddSlot("ca-pub-9922184077056116", "TeachExcel_ExcelHelpSection_ThreadInfo_Text_Link2");
+GA_googleAddSlot("ca-pub-9922184077056116", "TeachExcel_ExcelHelpSection_ThreadInfo_Text_Link20");
+GA_googleAddSlot("ca-pub-9922184077056116", "TeachExcel_ExcelHelpSection_ThreadInfo_Text_Link21");
+GA_googleAddSlot("ca-pub-9922184077056116", "TeachExcel_ExcelHelpSection_ThreadInfo_Text_Link22");
+GA_googleAddSlot("ca-pub-9922184077056116", "TeachExcel_ExcelHelpSection_ThreadInfo_Text_Link23");
+GA_googleAddSlot("ca-pub-9922184077056116", "TeachExcel_ExcelHelpSection_ThreadInfo_Text_Link24");
+GA_googleAddSlot("ca-pub-9922184077056116", "TeachExcel_ExcelHelpSection_ThreadInfo_Text_Link25");
+GA_googleAddSlot("ca-pub-9922184077056116", "TeachExcel_ExcelHelpSection_ThreadInfo_Text_Link3");
+GA_googleAddSlot("ca-pub-9922184077056116", "TeachExcel_ExcelHelpSection_ThreadInfo_Text_Link4");
+GA_googleAddSlot("ca-pub-9922184077056116", "TeachExcel_ExcelHelpSection_ThreadInfo_Text_Link5");
+GA_googleAddSlot("ca-pub-9922184077056116", "TeachExcel_ExcelHelpSection_ThreadInfo_Text_Link6");
+GA_googleAddSlot("ca-pub-9922184077056116", "TeachExcel_ExcelHelpSection_ThreadInfo_Text_Link7");
+GA_googleAddSlot("ca-pub-9922184077056116", "TeachExcel_ExcelHelpSection_ThreadInfo_Text_Link8");
+GA_googleAddSlot("ca-pub-9922184077056116", "TeachExcel_ExcelHelpSection_ThreadInfo_Text_Link9");
+GA_googleAddSlot("ca-pub-9922184077056116", "TeachExcel_LeftColumn_BelowMenu_BTF_160x600");
+GA_googleAddSlot("ca-pub-9922184077056116", "TeachExcel_LeftColumn_BelowMenu_Partial_ATF_160x600");
+</script>
+<script type="text/javascript">
+GA_googleFetchAds();
+</script>
+<script type="text/javascript" language="javascript">
+
+window.onload=startPop;
+
+
+
+function startPop(){
+//setTimeout("showAdPopUp()",2000);
+//showAdPopUp();
+constantmargintop = 50;
+topMargin = $(window).scrollTop() + constantmargintop;
+document.getElementById("adpopupContent").style.top = topMargin+"px";
+document.getElementById("adpopupBack").style.display = "block";
+document.getElementById("adpopupContent").style.display = "block";
+ $(window).scroll(function() {
+ 	constantmargintop = 50;
+	topMargin = $(window).scrollTop() + constantmargintop;
+    document.getElementById("adpopupContent").style.top = topMargin+"px";
+ });
+}
+
+
+function hideAdPopUp(){
+	document.getElementById("adpopupBack").style.display = "none";
+	document.getElementById("adpopupContent").style.display = "none";
+}
+
+</script>
+<script type="text/javascript" src="./Excel - Iterate Through Keys In A Vba Collection - Hi I wonder... - Free Excel Help_files/osd.js"></script><link rel="stylesheet" type="text/css" href="./Excel - Iterate Through Keys In A Vba Collection - Hi I wonder... - Free Excel Help_files/widget005.old.css" media="all"><script type="text/javascript" src="./Excel - Iterate Through Keys In A Vba Collection - Hi I wonder... - Free Excel Help_files/beacon.js"></script><script type="text/javascript" src="./Excel - Iterate Through Keys In A Vba Collection - Hi I wonder... - Free Excel Help_files/saved_resource"></script><script type="text/javascript" src="./Excel - Iterate Through Keys In A Vba Collection - Hi I wonder... - Free Excel Help_files/bk-static.js"></script></head>
+
+<body onload="MM_preloadImages(&#39;http://www.teachexcel.com/images/v5/topmenu_r2_c2_f2.jpg&#39;,&#39;http://www.teachexcel.com/images/v5/topmenu_r2_c4_f2.jpg&#39;,&#39;http://www.teachexcel.com/images/v5/topmenu_r2_c9_f2.jpg&#39;,&#39;http://www.teachexcel.com/images/v5/topmenu_r2_c17_f2.jpg&#39;,&#39;http://www.teachexcel.com/images/v5/topmenu_r4_c5_f2.jpg&#39;,&#39;http://www.teachexcel.com/images/v5/topmenu_r4_c7_f2.jpg&#39;,&#39;http://www.teachexcel.com/images/v5/topmenu_r4_c11_f2.jpg&#39;,&#39;http://www.teachexcel.com/images/v5/topmenu_r4_c13_f2.jpg&#39;,&#39;http://www.teachexcel.com/images/v5/topmenu_r4_c15_f2.jpg&#39;);"> 
+
+
+  <div id="all">
+    <table width="992" height="100%" border="0" cellpadding="0" cellspacing="0">
+      
+      <tbody><tr>
+        <td width="992" height="0" valign="top">
+		
+		<div id="login_bar_top_place_holder"></div>
+<div id="login_bar_top_wrap" class="konafilter float_bar_top">
+
+	
+
+	<div id="login_bar_top_register"><a href="https://www.teachexcel.com/register/single_user.php?src=top_bar_blue&bill=no&redir=submit">Register and Submit a Tip or Tutorial</a></div>
+
+	<div id="login_bar_top_form">
+		<form id="login_form" method="post" action="http://www.teachexcel.com/login/">
+			<input type="hidden" name="curpage" value="http://www.teachexcel.com/excel-help/excel-how-to.php?i=419129">
+			Email: <input style="margin:0px; font-size:11px;" size="23" name="email" type="text">
+			&nbsp;&nbsp;&nbsp;&nbsp;
+			Pass: <input style="margin:0px; font-size:11px;" size="23" name="password" type="password">
+			<input style="padding-top:2px; padding-bottom:2px; padding-left:3px; padding-right:3px; font-size:11px;" type="submit" value="Login">
+			&nbsp;&nbsp;
+			<a href="http://www.teachexcel.com/gen.php?l=forgot_pass">Pass?</a>
+		</form>
+	</div>
+
+	
+	
+	
+	
+</div>
+		
+		<div id="top_logo_links_area_wrap">
+		<div id="top_logo_links_area">
+          <table width="992" height="100%" border="0" cellpadding="0" cellspacing="0" id="logo_main_nav">
+              
+              <tbody><tr>
+                <td width="992" height="0" align="left" valign="top">
+				
+				<div id="top_header_search_container" style="">
+	<div id="header_search_text">
+		Search TeachExcel.com
+	</div>
+	<div id="search_header_search_box">
+	
+		<form action="http://www.teachexcel.com/search.php" id="cse-search-box">
+  <div>
+    <input type="hidden" name="cx" value="partner-pub-9922184077056116:7675514625">
+    <input type="hidden" name="cof" value="FORID:10">
+    <input type="hidden" name="ie" value="UTF-8">
+    <input type="text" name="q" size="30" style="border: 1px solid rgb(126, 157, 185); padding: 2px; background: url(http://www.google.com/cse/intl/en/images/google_custom_search_watermark.gif) 0% 50% no-repeat rgb(255, 255, 255);">
+    <input type="submit" name="sa" value="Search">
+  </div>
+<input name="siteurl" type="hidden" value="www.teachexcel.com/excel-help/excel-how-to.php?i=419129"><input name="ref" type="hidden" value="www.google.com.br/"><input name="ss" type="hidden" value=""><input name="siteurl" type="hidden" value="www.teachexcel.com/excel-help/excel-how-to.php?i=419129"><input name="ref" type="hidden" value="www.google.com.br/"><input name="ss" type="hidden" value=""></form>
+
+<script type="text/javascript" src="./Excel - Iterate Through Keys In A Vba Collection - Hi I wonder... - Free Excel Help_files/brand"></script>
+
+
+	</div>
+</div>
+
+
+<div id="logo_url">
+
+<img src="./Excel - Iterate Through Keys In A Vba Collection - Hi I wonder... - Free Excel Help_files/teachexcel.gif" alt="TeachExcel.com">
+
+</div>
+
+
+
+	
+
+<div id="advertise_with_us_top_button" style="font-size:18px; padding-top:0px; ">
+<a href="http://www.teachexcel.com/advertise.php"><img src="./Excel - Iterate Through Keys In A Vba Collection - Hi I wonder... - Free Excel Help_files/advertise_with_us.gif" alt="Advertise With Us" border="0"></a>
+</div>
+
+	
+
+
+
+
+
+<!--<div id="logo">
+  <div id="logo_text"><img src="http://www.teachexcel.com/images/free-stuff-header-title.gif" alt="Video Tutorials, Macros, Shortcuts, and More..." /></div>
+</div>-->
+
+                  <div id="logo_img"><img src="./Excel - Iterate Through Keys In A Vba Collection - Hi I wonder... - Free Excel Help_files/teachexcel_logo.gif" alt="TE"></div>
+				  
+				  
+<div id="main_links_container">
+
+
+<table border="0" cellpadding="0" cellspacing="0" width="980">
+<!-- fwtable fwsrc="V5 - Final.png" fwbase="topmenu.jpg" fwstyle="Dreamweaver" fwdocid = "2027893629" fwnested="0" -->
+  <tbody><tr>
+   <td><img src="./Excel - Iterate Through Keys In A Vba Collection - Hi I wonder... - Free Excel Help_files/spacer.gif" width="6" height="1" border="0" alt=""></td>
+   <td><img src="./Excel - Iterate Through Keys In A Vba Collection - Hi I wonder... - Free Excel Help_files/spacer.gif" width="151" height="1" border="0" alt=""></td>
+   <td><img src="./Excel - Iterate Through Keys In A Vba Collection - Hi I wonder... - Free Excel Help_files/spacer.gif" width="2" height="1" border="0" alt=""></td>
+   <td><img src="./Excel - Iterate Through Keys In A Vba Collection - Hi I wonder... - Free Excel Help_files/spacer.gif" width="56" height="1" border="0" alt=""></td>
+   <td><img src="./Excel - Iterate Through Keys In A Vba Collection - Hi I wonder... - Free Excel Help_files/spacer.gif" width="140" height="1" border="0" alt=""></td>
+   <td><img src="./Excel - Iterate Through Keys In A Vba Collection - Hi I wonder... - Free Excel Help_files/spacer.gif" width="16" height="1" border="0" alt=""></td>
+   <td><img src="./Excel - Iterate Through Keys In A Vba Collection - Hi I wonder... - Free Excel Help_files/spacer.gif" width="72" height="1" border="0" alt=""></td>
+   <td><img src="./Excel - Iterate Through Keys In A Vba Collection - Hi I wonder... - Free Excel Help_files/spacer.gif" width="2" height="1" border="0" alt=""></td>
+   <td><img src="./Excel - Iterate Through Keys In A Vba Collection - Hi I wonder... - Free Excel Help_files/spacer.gif" width="6" height="1" border="0" alt=""></td>
+   <td><img src="./Excel - Iterate Through Keys In A Vba Collection - Hi I wonder... - Free Excel Help_files/spacer.gif" width="16" height="1" border="0" alt=""></td>
+   <td><img src="./Excel - Iterate Through Keys In A Vba Collection - Hi I wonder... - Free Excel Help_files/spacer.gif" width="100" height="1" border="0" alt=""></td>
+   <td><img src="./Excel - Iterate Through Keys In A Vba Collection - Hi I wonder... - Free Excel Help_files/spacer.gif" width="18" height="1" border="0" alt=""></td>
+   <td><img src="./Excel - Iterate Through Keys In A Vba Collection - Hi I wonder... - Free Excel Help_files/spacer.gif" width="120" height="1" border="0" alt=""></td>
+   <td><img src="./Excel - Iterate Through Keys In A Vba Collection - Hi I wonder... - Free Excel Help_files/spacer.gif" width="12" height="1" border="0" alt=""></td>
+   <td><img src="./Excel - Iterate Through Keys In A Vba Collection - Hi I wonder... - Free Excel Help_files/spacer.gif" width="53" height="1" border="0" alt=""></td>
+   <td><img src="./Excel - Iterate Through Keys In A Vba Collection - Hi I wonder... - Free Excel Help_files/spacer.gif" width="2" height="1" border="0" alt=""></td>
+   <td><img src="./Excel - Iterate Through Keys In A Vba Collection - Hi I wonder... - Free Excel Help_files/spacer.gif" width="15" height="1" border="0" alt=""></td>
+   <td><img src="./Excel - Iterate Through Keys In A Vba Collection - Hi I wonder... - Free Excel Help_files/spacer.gif" width="187" height="1" border="0" alt=""></td>
+   <td><img src="./Excel - Iterate Through Keys In A Vba Collection - Hi I wonder... - Free Excel Help_files/spacer.gif" width="6" height="1" border="0" alt=""></td>
+   <td><img src="./Excel - Iterate Through Keys In A Vba Collection - Hi I wonder... - Free Excel Help_files/spacer.gif" width="1" height="1" border="0" alt=""></td>
+  </tr>
+
+  <tr>
+   <td colspan="19"><img name="topmenu_r1_c1" src="./Excel - Iterate Through Keys In A Vba Collection - Hi I wonder... - Free Excel Help_files/topmenu_r1_c1.jpg" width="980" height="8" border="0" alt=""></td>
+   <td><img src="./Excel - Iterate Through Keys In A Vba Collection - Hi I wonder... - Free Excel Help_files/spacer.gif" width="1" height="8" border="0" alt=""></td>
+  </tr>
+  <tr>
+   <td rowspan="4"><img name="topmenu_r2_c1" src="./Excel - Iterate Through Keys In A Vba Collection - Hi I wonder... - Free Excel Help_files/topmenu_r2_c1.jpg" width="6" height="53" border="0" alt=""></td>
+   <td><a href="http://www.teachexcel.com/" onmouseout="MM_swapImgRestore();" onmouseover="MM_swapImage(&#39;topmenu_r2_c2&#39;,&#39;&#39;,&#39;http://www.teachexcel.com/images/v5/topmenu_r2_c2_f2.jpg&#39;,1);"><img name="topmenu_r2_c2" src="./Excel - Iterate Through Keys In A Vba Collection - Hi I wonder... - Free Excel Help_files/topmenu_r2_c2.jpg" width="151" height="24" border="0" alt="Teach Excel"></a></td>
+   <td rowspan="4"><img name="topmenu_r2_c3" src="./Excel - Iterate Through Keys In A Vba Collection - Hi I wonder... - Free Excel Help_files/topmenu_r2_c3.jpg" width="2" height="53" border="0" alt=""></td>
+   <td colspan="4"><a rel="nofollow" href="http://www.teachmsoffice.com/" onmouseout="MM_swapImgRestore();" onmouseover="MM_swapImage(&#39;topmenu_r2_c4&#39;,&#39;&#39;,&#39;http://www.teachexcel.com/images/v5/topmenu_r2_c4_f2.jpg&#39;,1);"><img name="topmenu_r2_c4" src="./Excel - Iterate Through Keys In A Vba Collection - Hi I wonder... - Free Excel Help_files/topmenu_r2_c4.jpg" width="284" height="24" border="0" alt="MS Office Tutorials"></a></td>
+   <td rowspan="2"><img name="topmenu_r2_c8" src="./Excel - Iterate Through Keys In A Vba Collection - Hi I wonder... - Free Excel Help_files/topmenu_r2_c8.jpg" width="2" height="27" border="0" alt=""></td>
+   <td colspan="7"><a href="http://www.teachexcel.com/consulting/" onmouseout="MM_swapImgRestore();" onmouseover="MM_swapImage(&#39;topmenu_r2_c9&#39;,&#39;&#39;,&#39;http://www.teachexcel.com/images/v5/topmenu_r2_c9_f2.jpg&#39;,1);"><img name="topmenu_r2_c9" src="./Excel - Iterate Through Keys In A Vba Collection - Hi I wonder... - Free Excel Help_files/topmenu_r2_c9.jpg" width="325" height="24" border="0" alt="Excel Consulting Services"></a></td>
+   <td rowspan="2"><img name="topmenu_r2_c16" src="./Excel - Iterate Through Keys In A Vba Collection - Hi I wonder... - Free Excel Help_files/topmenu_r2_c16.jpg" width="2" height="27" border="0" alt=""></td>
+   <td colspan="2"><a href="http://www.excelkey.com/forum/?src=topmenu" rel="nofollow" onmouseout="MM_swapImgRestore();" onmouseover="MM_swapImage(&#39;topmenu_r2_c17&#39;,&#39;&#39;,&#39;http://www.teachexcel.com/images/v5/topmenu_r2_c17_f2.jpg&#39;,1);"><img name="topmenu_r2_c17" src="./Excel - Iterate Through Keys In A Vba Collection - Hi I wonder... - Free Excel Help_files/topmenu_r2_c17.jpg" width="202" height="24" border="0" alt="Excel Forum"></a></td>
+   <td rowspan="4"><img name="topmenu_r2_c19" src="./Excel - Iterate Through Keys In A Vba Collection - Hi I wonder... - Free Excel Help_files/topmenu_r2_c19.jpg" width="6" height="53" border="0" alt=""></td>
+   <td><img src="./Excel - Iterate Through Keys In A Vba Collection - Hi I wonder... - Free Excel Help_files/spacer.gif" width="1" height="24" border="0" alt=""></td>
+  </tr>
+  <tr>
+   <td rowspan="3"><img name="topmenu_r3_c2" src="./Excel - Iterate Through Keys In A Vba Collection - Hi I wonder... - Free Excel Help_files/topmenu_r3_c2.jpg" width="151" height="29" border="0" alt=""></td>
+   <td colspan="4"><img name="topmenu_r3_c4" src="./Excel - Iterate Through Keys In A Vba Collection - Hi I wonder... - Free Excel Help_files/topmenu_r3_c4.jpg" width="284" height="3" border="0" alt=""></td>
+   <td colspan="7"><img name="topmenu_r3_c9" src="./Excel - Iterate Through Keys In A Vba Collection - Hi I wonder... - Free Excel Help_files/topmenu_r3_c9.jpg" width="325" height="3" border="0" alt=""></td>
+   <td colspan="2"><img name="topmenu_r3_c17" src="./Excel - Iterate Through Keys In A Vba Collection - Hi I wonder... - Free Excel Help_files/topmenu_r3_c17.jpg" width="202" height="3" border="0" alt=""></td>
+   <td><img src="./Excel - Iterate Through Keys In A Vba Collection - Hi I wonder... - Free Excel Help_files/spacer.gif" width="1" height="3" border="0" alt=""></td>
+  </tr>
+  <tr>
+   <td rowspan="2"><img name="topmenu_r4_c4" src="./Excel - Iterate Through Keys In A Vba Collection - Hi I wonder... - Free Excel Help_files/topmenu_r4_c4.jpg" width="56" height="26" border="0" alt=""></td>
+   <td><a href="http://www.teachexcel.com/excel-tutorials/" onmouseout="MM_swapImgRestore();" onmouseover="MM_swapImage(&#39;topmenu_r4_c5&#39;,&#39;&#39;,&#39;http://www.teachexcel.com/images/v5/topmenu_r4_c5_f2.jpg&#39;,1);"><img name="topmenu_r4_c5" src="./Excel - Iterate Through Keys In A Vba Collection - Hi I wonder... - Free Excel Help_files/topmenu_r4_c5.jpg" width="140" height="17" border="0" alt="Excel Video Tutorials"></a></td>
+   <td rowspan="2"><img name="topmenu_r4_c6" src="./Excel - Iterate Through Keys In A Vba Collection - Hi I wonder... - Free Excel Help_files/topmenu_r4_c6.jpg" width="16" height="26" border="0" alt=""></td>
+   <td colspan="3"><a href="http://www.teachexcel.com/exceltips/" onmouseout="MM_swapImgRestore();" onmouseover="MM_swapImage(&#39;topmenu_r4_c7&#39;,&#39;&#39;,&#39;http://www.teachexcel.com/images/v5/topmenu_r4_c7_f2.jpg&#39;,1);"><img name="topmenu_r4_c7" src="./Excel - Iterate Through Keys In A Vba Collection - Hi I wonder... - Free Excel Help_files/topmenu_r4_c7.jpg" width="80" height="17" border="0" alt="Excel Tips"></a></td>
+   <td rowspan="2"><img name="topmenu_r4_c10" src="./Excel - Iterate Through Keys In A Vba Collection - Hi I wonder... - Free Excel Help_files/topmenu_r4_c10.jpg" width="16" height="26" border="0" alt=""></td>
+   <td><a href="http://www.teachexcel.com/free-excel-macros/" onmouseout="MM_swapImgRestore();" onmouseover="MM_swapImage(&#39;topmenu_r4_c11&#39;,&#39;&#39;,&#39;http://www.teachexcel.com/images/v5/topmenu_r4_c11_f2.jpg&#39;,1);"><img name="topmenu_r4_c11" src="./Excel - Iterate Through Keys In A Vba Collection - Hi I wonder... - Free Excel Help_files/topmenu_r4_c11.jpg" width="100" height="17" border="0" alt="Free Excel Macros"></a></td>
+   <td rowspan="2"><img name="topmenu_r4_c12" src="./Excel - Iterate Through Keys In A Vba Collection - Hi I wonder... - Free Excel Help_files/topmenu_r4_c12.jpg" width="18" height="26" border="0" alt=""></td>
+   <td><a href="http://www.teachexcel.com/excel-help/" onmouseout="MM_swapImgRestore();" onmouseover="MM_swapImage(&#39;topmenu_r4_c13&#39;,&#39;&#39;,&#39;http://www.teachexcel.com/images/v5/topmenu_r4_c13_f2.jpg&#39;,1);"><img name="topmenu_r4_c13" src="./Excel - Iterate Through Keys In A Vba Collection - Hi I wonder... - Free Excel Help_files/topmenu_r4_c13.jpg" width="120" height="17" border="0" alt="Excel Help Resources"></a></td>
+   <td rowspan="2"><img name="topmenu_r4_c14" src="./Excel - Iterate Through Keys In A Vba Collection - Hi I wonder... - Free Excel Help_files/topmenu_r4_c14.jpg" width="12" height="26" border="0" alt=""></td>
+   <td colspan="3"><a href="http://www.teachexcel.com/contact/contact.php" onmouseout="MM_swapImgRestore();" onmouseover="MM_swapImage(&#39;topmenu_r4_c15&#39;,&#39;&#39;,&#39;http://www.teachexcel.com/images/v5/topmenu_r4_c15_f2.jpg&#39;,1);"><img name="topmenu_r4_c15" src="./Excel - Iterate Through Keys In A Vba Collection - Hi I wonder... - Free Excel Help_files/topmenu_r4_c15.jpg" width="70" height="17" border="0" alt="Contact TeachExcel"></a></td>
+   <td rowspan="2"><img name="topmenu_r4_c18" src="./Excel - Iterate Through Keys In A Vba Collection - Hi I wonder... - Free Excel Help_files/topmenu_r4_c18.jpg" width="187" height="26" border="0" alt=""></td>
+   <td><img src="./Excel - Iterate Through Keys In A Vba Collection - Hi I wonder... - Free Excel Help_files/spacer.gif" width="1" height="17" border="0" alt=""></td>
+  </tr>
+  <tr>
+   <td><img name="topmenu_r5_c5" src="./Excel - Iterate Through Keys In A Vba Collection - Hi I wonder... - Free Excel Help_files/topmenu_r5_c5.jpg" width="140" height="9" border="0" alt=""></td>
+   <td colspan="3"><img name="topmenu_r5_c7" src="./Excel - Iterate Through Keys In A Vba Collection - Hi I wonder... - Free Excel Help_files/topmenu_r5_c7.jpg" width="80" height="9" border="0" alt=""></td>
+   <td><img name="topmenu_r5_c11" src="./Excel - Iterate Through Keys In A Vba Collection - Hi I wonder... - Free Excel Help_files/topmenu_r5_c11.jpg" width="100" height="9" border="0" alt=""></td>
+   <td><img name="topmenu_r5_c13" src="./Excel - Iterate Through Keys In A Vba Collection - Hi I wonder... - Free Excel Help_files/topmenu_r5_c13.jpg" width="120" height="9" border="0" alt=""></td>
+   <td colspan="3"><img name="topmenu_r5_c15" src="./Excel - Iterate Through Keys In A Vba Collection - Hi I wonder... - Free Excel Help_files/topmenu_r5_c15.jpg" width="70" height="9" border="0" alt=""></td>
+   <td><img src="./Excel - Iterate Through Keys In A Vba Collection - Hi I wonder... - Free Excel Help_files/spacer.gif" width="1" height="9" border="0" alt=""></td>
+  </tr>
+</tbody></table>
+
+</div>
+			  
+				  	  
+
+
+				
+				
+				</td>
+              </tr>
+          </tbody></table>
+        </div>		
+		</div>
+		
+		</td>
+      </tr>
+      <tr>
+        <td height="283" valign="top">          
+		
+		<div id="complete_area_under_logo_links-wrap">
+		<div id="complete_area_under_logo_links">
+
+
+
+
+
+<table width="100%" height="100%" border="0" cellpadding="0" cellspacing="0">
+  <tbody><tr>
+	<td width="205px" height="283" valign="top">
+	
+	<div id="container_left_menu">
+                  <div id="left_column_header"><div id="left_column_header_text"><a href="http://www.teachexcel.com/excel-tutorials/">Video Tutorials</a></div></div>
+				  <div id="container_left_menu_inner">
+				  <div id="center_left_menu">
+                  <ul id="nav">
+                      
+                   <li> <a href="http://www.teachexcel.com/free-excel-macros/" class="span" onclick="menuexpand(&#39;m4&#39;);return false;">Free Macros</a>
+                          <ul id="m4">
+                          </ul>
+                    </li>
+					<li> <a href="http://www.teachexcel.com/excel-help/" class="span">Excel Help Directory</a>
+                    </li>
+					<li> <a href="http://www.teachexcel.com/winxp/" class="span">WinXP Help Directory</a>
+                    </li>
+					<li> <a href="http://www.teachexcel.com/excel2007/excel2007.php" class="span" onclick="menuexpand(&#39;m5&#39;);return false;">Excel 2007 Resources</a>
+                          <ul id="m5">
+                          </ul>
+                    </li>
+                    <li> <a href="http://www.teachexcel.com/shortcuts/shortcuts.php" class="span" onclick="menuexpand(&#39;m6&#39;);return false;">Keyboard Shortcuts</a>
+                          <ul id="m6">
+                          </ul>
+                    </li>
+                    <li> <a href="http://www.excelkey.com/forum/?src=leftmenu" rel="nofollow" class="span" onclick="menuexpand(&#39;m7&#39;);return false;">Excel Forum</a>
+                          <ul id="m7">
+                          </ul>
+                    </li>
+                    <li> <a href="http://www.teachexcel.com/contact/contact.php" class="span" onclick="menuexpand(&#39;m8&#39;);return false;">Contact</a>
+                          <ul id="m8">
+                          </ul>
+                    </li>
+                  </ul>
+				  </div>
+				  </div>
+				  <div id="left_menu_bottom">
+				  </div>
+                </div>
+				
+				
+				
+	
+				
+				
+				
+				
+		<div id="container_left_menu">
+		  <div id="left_column_header"></div>
+		  <div id="container_left_menu_inner">
+		  <div style="margin-left:5px;">
+		  
+		  <b>Advertisements</b><br><br>
+		
+			<script type="text/javascript"><!--
+			google_ad_client = "ca-pub-9922184077056116";
+			/* te - left menu - most pages in site - link unit - 180 */
+			google_ad_slot = "7240951464";
+			google_ad_width = 180;
+			google_ad_height = 90;
+			//-->
+			</script>
+			<script type="text/javascript" src="./Excel - Iterate Through Keys In A Vba Collection - Hi I wonder... - Free Excel Help_files/show_ads.js">
+			</script><ins id="aswift_0_expand" style="display:inline-table;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:180px;background-color:transparent"><ins id="aswift_0_anchor" style="display:block;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:180px;background-color:transparent"><iframe width="180" height="90" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;"></iframe></ins></ins>
+		
+		  </div>
+		  </div>
+		  <div id="left_menu_bottom">
+		  </div>
+		</div>	
+		
+	
+	
+	
+	<br>
+	
+	
+	
+	<div id="container_left_menu">
+		<center>
+			<a href="http://www.excelkey.com/forum/" rel="nofollow"><img src="./Excel - Iterate Through Keys In A Vba Collection - Hi I wonder... - Free Excel Help_files/ask_q_forum_box.jpg" alt="Free Excel Forum" border="0"></a>
+					</center>
+	</div>
+	
+	
+	<center>
+	<script type="text/javascript"><!--
+google_ad_client = "ca-pub-9922184077056116";
+/* te - eh - right side sky scraper wide */
+google_ad_slot = "3463767875";
+google_ad_width = 160;
+google_ad_height = 600;
+//-->
+</script>
+<script type="text/javascript" src="./Excel - Iterate Through Keys In A Vba Collection - Hi I wonder... - Free Excel Help_files/show_ads.js">
+</script><ins id="aswift_1_expand" style="display:inline-table;border:none;height:600px;margin:0;padding:0;position:relative;visibility:visible;width:160px;background-color:transparent"><ins id="aswift_1_anchor" style="display:block;border:none;height:600px;margin:0;padding:0;position:relative;visibility:visible;width:160px;background-color:transparent"><iframe width="160" height="600" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_1" name="aswift_1" style="left:0;position:absolute;top:0;"></iframe></ins></ins>	</center>
+	
+	<br>
+	
+	<div id="container_left_menu">
+		<center>
+			<a rel="nofollow" href="http://www.teachmsoffice.com/list-of-tutorials.php?src=tebnnrv1lmen"><img src="./Excel - Iterate Through Keys In A Vba Collection - Hi I wonder... - Free Excel Help_files/160x600-excel-oriented-V1-static.jpg" border="0"></a>
+					</center>
+	</div>
+	
+	
+	
+
+
+	
+
+	<center></center>		
+	
+<!--		<br />
+
+
+
+		<div id="container_left_menu">
+			<center>
+							</center>
+		</div>
+		
+		
+		<div id="container_left_menu">
+			<center>
+							</center>
+		</div>
+-->		
+		
+	
+
+
+	
+	</td>
+	<td width="100%" valign="top">				
+		<div id="main_body_area">
+			
+			<div class="KonaBody">
+			<div id="eh_section_title">
+				<table width="100%">
+					<tbody><tr>
+						<td>
+							<h1 class="h1_section_title">Iterate Through Keys In A Vba Collection</h1>
+						</td>
+						<td width="240px;">
+						
+	
+							<div style="display:none;">
+								<a href="http://www.excelkey.com/forum/ucp.php?mode=register&src=topbttnblue"><img border="0" src="./Excel - Iterate Through Keys In A Vba Collection - Hi I wonder... - Free Excel Help_files/register_button_big_blue_w.jpg" alt="Forum Register"></a>
+							</div>
+
+						</td>
+					</tr>
+				</tbody></table>
+			</div>
+			</div>
+			
+
+
+	
+			
+			<!--<div class="search_box_eh_how_to">
+							</div>-->
+			
+			
+			<script type="text/javascript"><!--
+google_ad_client = "ca-pub-9922184077056116";
+/* te - eh - above top tut wide banner */
+google_ad_slot = "2672981563";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript" src="./Excel - Iterate Through Keys In A Vba Collection - Hi I wonder... - Free Excel Help_files/show_ads.js">
+</script><ins id="aswift_2_expand" style="display:inline-table;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent"><ins id="aswift_2_anchor" style="display:block;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent"><iframe width="728" height="90" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_2" name="aswift_2" style="left:0;position:absolute;top:0;"></iframe></ins></ins>			
+			<!--<div style="text-align:center;">
+				<a href="http://www.teachexcel.com/forum/index.php?from=topbannerv1"><img border="0" alt="Excel Help Forum" src="http://www.teachexcel.com/images/forum_banner_ad_v1.gif" /></a>
+			</div>-->
+			
+	   		
+	   
+	   		<table width="100%">
+				<tbody><tr>
+					<!--<td>
+					<a href="http://www.teachmsoffice.com/list-of-tutorials.php?src=tepgebttn" rel="nofollow"><img src="http://www.teachexcel.com/excel-help/images/view_excel_tutorials-white-back.jpg" border="0" alt="View Excel Tutorials" /></a>
+					</td>-->
+				</tr>
+			</tbody></table>
+			
+			
+			<div>
+							</div>
+
+	
+
+			
+
+		
+			<div style="text-align:center; margin-top:15px; margin-bottom:10px; display:none;">
+				<div style="font-size:14px; font-weight:bold; margin-bottom:5px;">Search Excel Forum Posts, Tutorials, Macros, Tips, and More</div>
+				<form action="http://www.teachexcel.com/search.php" id="cse-search-box">
+  <div>
+    <input type="hidden" name="cx" value="partner-pub-9922184077056116:3645155870">
+    <input type="hidden" name="cof" value="FORID:10">
+    <input type="hidden" name="ie" value="UTF-8">
+    <input type="text" name="q" size="60">
+    <input type="submit" name="sa" value="Search">
+  </div>
+</form>
+
+<script type="text/javascript" src="./Excel - Iterate Through Keys In A Vba Collection - Hi I wonder... - Free Excel Help_files/brand"></script>
+			
+			</div>
+			
+			
+			<div></div>
+			<br>
+			
+
+
+	   
+	   		<table width="100%">
+	<tbody><tr>
+		<td>
+			<div style="line-height:2;">
+				<a href="http://www.teachexcel.com/excel-help/excel-how-to.php?i=419129#similar_topics">Similar Topics</a>
+								<br>
+				<a href="http://www.teachexcel.com/excel-help/excel-how-to.php?i=419129#similar-excel-video-tutorials">Similar Excel Video Tutorials</a> | 
+				<a href="http://www.teachexcel.com/excel-help/excel-how-to.php?i=419129#helpful-excel-macros">Helpful Excel Macros</a>
+			</div>
+		</td>
+		<td>
+		
+	
+			<!--<div style="font-weight:bold; font-size:20px;">
+				<a href="http://www.teachmsoffice.com/land/excel-tutorials-4_1.php?src=ehelptextTop" rel="nofollow">Excel Tutorials</a>
+			</div>-->
+	
+
+		</td>
+		<td align="right">
+			<div id="sharing_sharethis_howto">
+				<!-- AddThis Button BEGIN -->
+<a class="addthis_button" href="http://www.addthis.com/bookmark.php?v=250&pubid=teachexcel"><img src="./Excel - Iterate Through Keys In A Vba Collection - Hi I wonder... - Free Excel Help_files/lg-share-en.gif" width="125" height="16" alt="Bookmark and Share" style="border:0"></a>
+<script type="text/javascript" src="./Excel - Iterate Through Keys In A Vba Collection - Hi I wonder... - Free Excel Help_files/addthis_widget.js"></script><div id="_atssh" style="visibility: hidden; height: 1px; width: 1px; position: absolute; z-index: 100000;"><iframe id="_atssh368" title="AddThis utility frame" src="./Excel - Iterate Through Keys In A Vba Collection - Hi I wonder... - Free Excel Help_files/sh172.htm" style="height: 1px; width: 1px; position: absolute; z-index: 100000; border: 0px; left: 0px; top: 0px;"></iframe></div><script type="text/javascript" src="./Excel - Iterate Through Keys In A Vba Collection - Hi I wonder... - Free Excel Help_files/core155.js"></script>
+<!-- AddThis Button END -->			</div>
+		</td>
+	</tr>
+</tbody></table>
+
+
+
+<table width="100%">
+	<tbody><tr>
+		<td align="left">
+			<div>
+							</div>
+		</td>
+		<td align="right">
+			<div>
+							</div>
+		</td>
+	</tr>
+</tbody></table>
+
+<!--<br /><br />-->
+
+	
+
+
+
+
+<div class="page_content_container" style=" border: 2px solid #000000; padding:10px;">
+	<div class="page_title_content">
+		<table width="100%">
+			<tbody><tr>
+				<td class="link_page_title">
+					<!--<a href="http://www.teachexcel.com/excel-help/ev.php?i=419129" rel="nofollow" target="_blank">Iterate Through Keys In A Vba Collection - Excel</a>-->
+					<h2 class="page_content_topic">Iterate Through Keys In A Vba Collection - Excel</h2>
+				</td>
+				<td class="link_page_view_content" width="150px;" align="right">
+					<a href="http://www.teachexcel.com/excel-help/interstitial.php?i=419129&src=textlink" rel="nofollow" target="_blank">View Answers</a>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2" class="link_page_view_content" width="150px;" align="right">
+
+
+					<!--<a href="http://www.excelkey.com/forum/?src=ehelptextTop" rel="nofollow">Free Excel Help</a>-->
+					<!--<a href="http://www.teachmsoffice.com/list-of-tutorials.php?src=tepgebttn" rel="nofollow"><img src="http://www.teachexcel.com/excel-help/images/view_tutorial-large-white-back.jpg" border="0" alt="View Excel Tutorials" /></a>-->
+						
+
+
+				</td>
+			</tr>
+		</tbody></table>
+	</div>
+	<div class="KonaBody" style="max-height:500px; overflow:auto; margin-left:10px; margin-top:10px;">Hi<br>
+ <br>
+I wonder if it is possible to iterate through the keys in a collection. Something like this:<br>
+ <br>
+ 
+	 Code:<br><br>
+	
+<pre class="code_block_container"> 
+    Dim col As New Collection
+ 
+    col.Add "value1", "key1"
+    col.Add "value2", "key2"
+    col.Add "value3", "key3"
+ 
+    For Each key In col.keySet
+        MsgBox (key)
+    Next
+</pre>
+<br><br>I want the result to be "key1", "key2" and "key3"
+		<br><br></div>
+	
+	<div style="margin-top:10px;">
+		<a href="http://www.teachexcel.com/excel-help/interstitial.php?i=419129&src=button" rel="nofollow" target="_blank">
+			<img alt="View Answers" border="0" src="./Excel - Iterate Through Keys In A Vba Collection - Hi I wonder... - Free Excel Help_files/view_answers.gif">
+		</a>
+	</div>
+	
+</div>
+
+
+
+<div style="margin-bottom:10px;">
+	<center><script type="text/javascript"><!--
+google_ad_client = "ca-pub-9922184077056116";
+/* te - eh - wide banner */
+google_ad_slot = "6715459282";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript" src="./Excel - Iterate Through Keys In A Vba Collection - Hi I wonder... - Free Excel Help_files/show_ads.js">
+</script><ins id="aswift_3_expand" style="display:inline-table;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent"><ins id="aswift_3_anchor" style="display:block;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent"><iframe width="728" height="90" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_3" name="aswift_3" style="left:0;position:absolute;top:0;"></iframe></ins></ins></center>
+</div>
+
+	
+<hr>
+
+
+
+	
+	
+
+
+<div style="display:block;">
+	<a name="similar-excel-video-tutorials"></a>
+	<h2>Similar Excel Video Tutorials</h2>
+	
+	
+	
+	<div class="top_link_container">
+	<a href="http://www.teachexcel.com/excel-tutorials/n-1298,YTLE-94--Excel--39-s-Best-Keyboard-Shortcut----------------.html">Excel's Best Keyboard Shortcut</a>
+	
+	 - See how to use Ctrl + Shift + Arrow Keys (Home &amp; End too!) to do 8 different tricks. ... 	 <br><br>
+</div><div class="top_link_container">
+	<a href="http://www.teachexcel.com/excel-tutorials/n-685,Excel-Magic-Trick-375--Keyboard-Shortcut-For-Copying-Columns.html">Keyboard Shortcut For Copying Columns</a>
+	
+	 - See how to copy non-contiguous columns of data and then paste all the columns at once. See how to use the Shift and Ctrl Keys for an amazing copy and  ... 	 <br><br>
+</div><div class="top_link_container">
+	<a href="http://www.teachexcel.com/excel-tutorials/n-565,Excel-Magic-Trick-463--4-ways-to-Add-New-Data-To-A-Chart.html">4 ways to Add New Data To A Chart</a>
+	
+	 - See how to add data to a chart after the chart has already been created: 4 methods:<br>1) Copy data, click on chart, Paste<br>2) Click on chart, d ... 	 <br><br>
+</div><div class="top_link_container">
+	<a href="http://www.teachexcel.com/excel-tutorials/n-1161,Excel-Basics--3--Formulas-w-Cell-References----------------.html">Formulas w Cell References</a>
+	
+	 - The Excel Basics Series shows a systematic description of what Excel can do from beginning to end.<br>#3 Video topics:<br>1)Formulas<br>2)Equal  ... 	 <br><br>
+</div></div>
+
+
+
+
+<div>
+	<a name="helpful-excel-macros"></a>
+	<h2>Helpful Excel Macros</h2>
+	
+	<div style="margin-left:10px; margin-right:10px;">
+		<div id="tut_newB" style="border-bottom:none;">
+	<font class="tutsubtitleB"><a href="http://www.teachexcel.com/free-excel-macros/m-13,close-workbook-time-limit.html">Close a Workbook after a Time Limit is Reached</a></font>
+	<br>
+	<font class="macro_explain_stxt">- This macro will automatically close the workbook in which it is located after that workbook has been opened for a certai</font>
+</div><div id="tut_newB" style="border-bottom:none;">
+	<font class="tutsubtitleB"><a href="http://www.teachexcel.com/free-excel-macros/m-16,msg-box-cell-contains-value.html">Pop-Up Message Box When a Cell Reaches a Certain Value or Contains Certain Text</a></font>
+	<br>
+	<font class="macro_explain_stxt">- This macro will display a message box in excel when a cell reaches a certain value or contains certain text.  This means</font>
+</div><div id="tut_newB" style="border-bottom:none;">
+	<font class="tutsubtitleB"><a href="http://www.teachexcel.com/free-excel-macros/m-24,delete-rows-based-on-criteria.html">Delete Entire Rows Based on Predefined Criteria (Text)</a></font>
+	<br>
+	<font class="macro_explain_stxt">- This macro will allow you to specify certain criteria and then to delete rows based upon that criteria.  You will choose</font>
+</div><div id="tut_newB" style="border-bottom:none;">
+	<font class="tutsubtitleB"><a href="http://www.teachexcel.com/free-excel-macros/m-136,reverse-cell-contents-udf-excel-free-macro.html">Reverse the Contents of a Cell in Excel - UDF</a></font>
+	<br>
+	<font class="macro_explain_stxt">- Reverse cell contents with this free Excel UDF (user defined function).  This will mirror all cell contents regardless o</font>
+</div><div id="tut_newB" style="border-bottom:none;">
+	<font class="tutsubtitleB"><a href="http://www.teachexcel.com/free-excel-macros/m-126,udf-iso-year-excel-first-monday-free.html">Return the ISO Standards Start of the Year in Excel - First Monday of the Year - UDF</a></font>
+	<br>
+	<font class="macro_explain_stxt">- Return the date of the first Monday of any year with this UDF ISO Year function in Excel.  This is a really simple and e</font>
+</div>	</div>
+	
+</div>
+
+
+
+	
+
+<center></center>
+
+
+
+
+<!--<h2>Free Excel Help Forum</h2>-->
+
+<!--<h2><a href="http://www.excelkey.com/forum/">Free Excel Help Forum</a></h2> - Ask any question about Excel and have it answered in no time.
+<br /><br />-->
+
+<br>
+
+
+<a name="similar_topics"></a>
+<h2>Similar Topics</h2>
+
+
+
+<div class="top_link_container">
+	<a href="http://www.teachexcel.com/excel-help/excel-how-to.php?i=419129#1">Pivottables: Would Like To Improve Efficiency - Excel</a>
+</div><div class="top_link_container">
+	<a href="http://www.teachexcel.com/excel-help/excel-how-to.php?i=419129#2">Treeview Control Displays Items Not Hierachically - Excel</a>
+</div><div class="top_link_container">
+	<a href="http://www.teachexcel.com/excel-help/excel-how-to.php?i=419129#3">Loop, Matching Data Between Ws - Excel</a>
+</div><div class="top_link_container">
+	<a href="http://www.teachexcel.com/excel-help/excel-how-to.php?i=419129#4">How Do I Use Enums As Parameters? - Excel</a>
+</div><div class="top_link_container">
+	<a href="http://www.teachexcel.com/excel-help/excel-how-to.php?i=419129#5">Vba Dictionary Of Dictionaries - Excel</a>
+</div><div class="top_link_container">
+	<a href="http://www.teachexcel.com/excel-help/excel-how-to.php?i=419129#6">Collection Vs Array - Excel</a>
+</div><div class="top_link_container">
+	<a href="http://www.teachexcel.com/excel-help/excel-how-to.php?i=419129#7">Pivottables: Row Header Field: Managing Long Lists - Excel</a>
+</div><div class="top_link_container">
+	<a href="http://www.teachexcel.com/excel-help/excel-how-to.php?i=419129#8">Deleting Keys From A Collection? - Excel</a>
+</div><div class="top_link_container">
+	<a href="http://www.teachexcel.com/excel-help/excel-how-to.php?i=419129#9">Deleting Keys From A Collection? - Excel</a>
+</div><div class="top_link_container">
+	<a href="http://www.teachexcel.com/excel-help/excel-how-to.php?i=419129#10">Comparing Values In Collections - Excel</a>
+</div><div class="top_link_container">
+	<a href="http://www.teachexcel.com/excel-help/excel-how-to.php?i=419129#11">Sort Using Keys Not In Range - Excel</a>
+</div><div class="top_link_container">
+	<a href="http://www.teachexcel.com/excel-help/excel-how-to.php?i=419129#12">Calling Sub Gens Compile Error - Excel</a>
+</div><div class="top_link_container">
+	<a href="http://www.teachexcel.com/excel-help/excel-how-to.php?i=419129#13">For Each Structure... - Excel</a>
+</div><div class="top_link_container">
+	<a href="http://www.teachexcel.com/excel-help/excel-how-to.php?i=419129#14">Clear A Collection - Excel</a>
+</div><div class="top_link_container">
+	<a href="http://www.teachexcel.com/excel-help/excel-how-to.php?i=419129#15">Vba Code Is Not Sorting As Desired - Excel</a>
+</div><div class="top_link_container">
+	<a href="http://www.teachexcel.com/excel-help/excel-how-to.php?i=419129#16">Multiple Column Vlookup - Not Sumproduct - Excel</a>
+</div><div class="top_link_container">
+	<a href="http://www.teachexcel.com/excel-help/excel-how-to.php?i=419129#17">Example Equivalent Hash Of Hashes - Excel</a>
+</div><div class="top_link_container">
+	<a href="http://www.teachexcel.com/excel-help/excel-how-to.php?i=419129#18">Sorting Data - Excel</a>
+</div><div class="top_link_container">
+	<a href="http://www.teachexcel.com/excel-help/excel-how-to.php?i=419129#19">Have  To Add More Rows Bases In A Column Content - Excel</a>
+</div><div class="top_link_container">
+	<a href="http://www.teachexcel.com/excel-help/excel-how-to.php?i=419129#20">Custom Collection - Excel</a>
+</div><div class="top_link_container">
+	<a href="http://www.teachexcel.com/excel-help/excel-how-to.php?i=419129#21">Building A Sort String - Excel</a>
+</div><div class="top_link_container">
+	<a href="http://www.teachexcel.com/excel-help/excel-how-to.php?i=419129#22">Excel Macro To Sort More Than 3 Keys - Excel</a>
+</div><div class="top_link_container">
+	<a href="http://www.teachexcel.com/excel-help/excel-how-to.php?i=419129#23">Sort By More Than 3 Columns? - Excel</a>
+</div><div class="top_link_container">
+	<a href="http://www.teachexcel.com/excel-help/excel-how-to.php?i=419129#24">Data Sort - Excel</a>
+</div><div class="top_link_container">
+	<a href="http://www.teachexcel.com/excel-help/excel-how-to.php?i=419129#25">How Do I Remove Duplicates From A Collection? - Excel</a>
+</div><br><br><hr><hr><br><br><div class="page_content_container">
+	<div class="page_title_content">
+		<table width="100%">
+			<tbody><tr>
+				<td class="link_page_title">
+					<div style="float:left; padding-right:10px;">
+					<div class="KonaBody">
+						<a name="1"></a>
+						<h2 class="page_content_topic"><a href="http://www.teachexcel.com/excel-help/excel-how-to.php?i=32116">Pivottables: Would Like To Improve Efficiency - Excel</a></h2>					</div>
+					</div>
+				</td>
+				<td class="link_page_view_content" width="150px;" align="right">
+									</td>
+				<td class="link_page_view_content" width="150px;" align="right">
+					<!--<a href="http://www.teachexcel.com/excel-help/interstitial.php?i=32116&src=textlink" rel="nofollow" target="_blank">View Answers</a>-->
+
+
+	
+						<a href="http://www.excelkey.com/forum/?src=ehelptext" rel="nofollow">Excel Forum</a>
+
+				</td>
+			</tr>
+			<tr>
+				<td class="link_page_view_content" align="right" colspan="3">
+				
+				
+	
+					<!--<div style="float:left; padding-top:3px;">
+						<a href="http://www.teachmsoffice.com/list-of-tutorials.php?src=tepgecontentbttn" rel="nofollow"><img src="http://www.teachexcel.com/excel-help/images/view_tutorials-white-back.gif" border="0" alt="View Tutorial" /></a>
+					</div>-->
+					<!--<div style="margin-right:40px;">
+						<a href="http://www.teachexcel.com/forum/">Free Excel Help Forum</a>
+					</div>-->
+
+
+				</td>
+			</tr>
+			<tr>
+				<td colspan="3">
+				
+				
+	
+				
+
+				</td>
+			</tr>
+			<tr>
+				<td class="link_page_view_content" align="right" colspan="3">
+					<div style="margin-right:40px; display:none;">
+					
+					
+	
+						
+
+					</div>
+				</td>
+			</tr>
+		</tbody></table>
+	</div>
+	<div class="KonaBody"><div style="max-height:500px; overflow:auto;">Hello,<br>
+<br>
+I like pivot tables and use them very often.<br>
+However, I recently found a difficulty for an application involving a rather large amount of data residing on a sqlserver database.<br>
+<br>
+The structure of the table to be analysed by pivoting is very simple:<br>
+<br>
+ key1 | key2| key3 | key4 | .... | quantity1 | quantity2 | quantity3| ... <br>
+<br>
+The different keys (key1, key2, ...) can be looked up in several small tables to get their meaning in full text:<br>
+<br>
+key1 -&gt; txt1<br>
+key2 -&gt; txt2<br>
+....<br>
+<br>
+The problem is related to these keys:<br>
+The end-user typically doesn't remember the keys to be used because there are many of them.<br>
+Therefore, I need to provide both in the pivot table record source ...<br>
+... and this make the amount of data transferred much larger and unacceptable.<br>
+The view prepared on the server for this purpose looks like this:<br>
+<br>
+ key1 | txt1 | key2| txt2 | key3 | txt3 | .... | quantity1 | quantity2 | quantity3| ... <br>
+<br>
+The repetition of the additional texts (txt1, ...) grow the size of the data transferred enormously and I cannot continue with pivottables unfortunately.<br>
+<br>
+I know that keys can be "replaced" dynamically in an excel table (just by overwriting them).<br>
+But since this is a totally manual procedure, it is impractical. This would mean too much work and it would be difficult to keep this configuration up-to-date.<br>
+<br>
+How could I reduce the amount of data transferred, and still offer the keys and their meaning to the end-user?<br>
+<br>
+Thanks a lot for any suggestion. 
+		<br><br></div></div>	
+	<div style="display:block; margin-top:10px;">
+		<a href="http://www.teachexcel.com/excel-help/interstitial.php?i=32116&src=button" rel="nofollow" target="_blank">
+			<img alt="View Answers" border="0" src="./Excel - Iterate Through Keys In A Vba Collection - Hi I wonder... - Free Excel Help_files/view_answers.gif">
+		</a>
+		
+		<div style="margin-top:5px; margin-left:5px; margin-bottom:15px;">
+		
+		
+	
+			<span style="font-size:14px; font-weight:bold;"><a href="http://www.excelkey.com/forum/?src=ehelptextnextbutton" rel="nofollow">Ask Your Own Question</a></span>
+
+
+		</div>
+	</div>
+	
+	<div style="margin-top:10px; display:none;">
+	<table width="100%">
+		<tbody><tr>
+			<td>
+			
+				<div style="float:left;">
+					<a href="http://www.teachexcel.com/excel-help/interstitial.php?i=32116&src=button" rel="nofollow" target="_blank">
+						<img alt="View Answers" border="0" src="./Excel - Iterate Through Keys In A Vba Collection - Hi I wonder... - Free Excel Help_files/view_answers.gif">
+					</a>
+				</div>
+	
+				
+				<div style="float:right;">
+					<a href="http://www.excelkey.com/forum/?src=ehelptextimgbutton" rel="nofollow">
+						<img alt="Ask Your Question in the Excel Forum" border="0" src="./Excel - Iterate Through Keys In A Vba Collection - Hi I wonder... - Free Excel Help_files/askquestionforum.jpg">
+					</a>
+				</div>
+
+				
+			</td>
+		</tr>
+	</tbody></table>
+	</div>
+	
+<hr>
+	
+</div><div class="page_content_container">
+	<div class="page_title_content">
+		<table width="100%">
+			<tbody><tr>
+				<td class="link_page_title">
+					<div style="float:left; padding-right:10px;">
+					<div class="KonaBody">
+						<a name="2"></a>
+						<h2 class="page_content_topic"><a href="http://www.teachexcel.com/excel-help/excel-how-to.php?i=116212">Treeview Control Displays Items Not Hierachically - Excel</a></h2>					</div>
+					</div>
+				</td>
+				<td class="link_page_view_content" width="150px;" align="right">
+									</td>
+				<td class="link_page_view_content" width="150px;" align="right">
+					<!--<a href="http://www.teachexcel.com/excel-help/interstitial.php?i=116212&src=textlink" rel="nofollow" target="_blank">View Answers</a>-->
+
+
+	
+						<a href="http://www.excelkey.com/forum/?src=ehelptext" rel="nofollow">Excel Forum</a>
+
+				</td>
+			</tr>
+			<tr>
+				<td class="link_page_view_content" align="right" colspan="3">
+				
+				
+	
+					<!--<div style="float:left; padding-top:3px;">
+						<a href="http://www.teachmsoffice.com/list-of-tutorials.php?src=tepgecontentbttn" rel="nofollow"><img src="http://www.teachexcel.com/excel-help/images/view_tutorials-white-back.gif" border="0" alt="View Tutorial" /></a>
+					</div>-->
+					<!--<div style="margin-right:40px;">
+						<a href="http://www.teachexcel.com/forum/">Free Excel Help Forum</a>
+					</div>-->
+
+
+				</td>
+			</tr>
+			<tr>
+				<td colspan="3">
+				
+				
+	
+				
+
+				</td>
+			</tr>
+			<tr>
+				<td class="link_page_view_content" align="right" colspan="3">
+					<div style="margin-right:40px; display:none;">
+					
+					
+	
+						
+
+					</div>
+				</td>
+			</tr>
+		</tbody></table>
+	</div>
+	<div class="KonaBody"><div style="max-height:500px; overflow:auto;">Hi there<br>
+<br>
+I've added a user control in Excel2007. Within this control is a MS TreeView Control 6.0.<br>
+During the user control intialization, nodes are added to the treeview:<br>
+<br>
+ 
+ 
+
+
+	
+ Code:<br><br>
+
+ 
+
+	
+<pre class="code_block_container">Me.TreeView_Audituniverse.Nodes.Clear
+
+Me.TreeView_Audituniverse.Nodes.Add Key:="Key1", Text:="Key1"
+Me.TreeView_Audituniverse.Nodes.Add relative:="Key1", relationship:=tvwChild, Key:="Key2", Text:="Key2"
+Me.TreeView_Audituniverse.Nodes.Add relative:="Key2", relationship:=tvwChild, Key:="Key3", Text:="Key3"
+Me.TreeView_Audituniverse.Nodes.Add relative:="Key2", relationship:=tvwChild, Key:="Key4", Text:="Key4"
+</pre>
+<br><br>
+ I expected to display to be like this:<br>
+Key1
+-Key2
+
+
+-Key3<br>
+-Key4
+
+But when I try it, no hierarchy is displayed and the control looks like:<br>
+Key4<br>
+Key3<br>
+Key2<br>
+Key1<br>
+<br>
+Does anybody has an idea what I'm missing???<br>
+<br>
+Thanks, Pi 
+		<br><br></div></div>	
+	<div style="display:block; margin-top:10px;">
+		<a href="http://www.teachexcel.com/excel-help/interstitial.php?i=116212&src=button" rel="nofollow" target="_blank">
+			<img alt="View Answers" border="0" src="./Excel - Iterate Through Keys In A Vba Collection - Hi I wonder... - Free Excel Help_files/view_answers.gif">
+		</a>
+		
+		<div style="margin-top:5px; margin-left:5px; margin-bottom:15px;">
+		
+		
+	
+			<span style="font-size:14px; font-weight:bold;"><a href="http://www.excelkey.com/forum/?src=ehelptextnextbutton" rel="nofollow">Ask Your Own Question</a></span>
+
+
+		</div>
+	</div>
+	
+	<div style="margin-top:10px; display:none;">
+	<table width="100%">
+		<tbody><tr>
+			<td>
+			
+				<div style="float:left;">
+					<a href="http://www.teachexcel.com/excel-help/interstitial.php?i=116212&src=button" rel="nofollow" target="_blank">
+						<img alt="View Answers" border="0" src="./Excel - Iterate Through Keys In A Vba Collection - Hi I wonder... - Free Excel Help_files/view_answers.gif">
+					</a>
+				</div>
+	
+				
+				<div style="float:right;">
+					<a href="http://www.excelkey.com/forum/?src=ehelptextimgbutton" rel="nofollow">
+						<img alt="Ask Your Question in the Excel Forum" border="0" src="./Excel - Iterate Through Keys In A Vba Collection - Hi I wonder... - Free Excel Help_files/askquestionforum.jpg">
+					</a>
+				</div>
+
+				
+			</td>
+		</tr>
+	</tbody></table>
+	</div>
+	
+<hr>
+	
+</div><div class="page_content_container">
+	<div class="page_title_content">
+		<table width="100%">
+			<tbody><tr>
+				<td class="link_page_title">
+					<div style="float:left; padding-right:10px;">
+					<div class="KonaBody">
+						<a name="3"></a>
+						<h2 class="page_content_topic"><a href="http://www.teachexcel.com/excel-help/excel-how-to.php?i=314108">Loop, Matching Data Between Ws - Excel</a></h2>					</div>
+					</div>
+				</td>
+				<td class="link_page_view_content" width="150px;" align="right">
+									</td>
+				<td class="link_page_view_content" width="150px;" align="right">
+					<!--<a href="http://www.teachexcel.com/excel-help/interstitial.php?i=314108&src=textlink" rel="nofollow" target="_blank">View Answers</a>-->
+
+
+	
+						<a href="http://www.excelkey.com/forum/?src=ehelptext" rel="nofollow">Excel Forum</a>
+
+				</td>
+			</tr>
+			<tr>
+				<td class="link_page_view_content" align="right" colspan="3">
+				
+				
+	
+					<!--<div style="float:left; padding-top:3px;">
+						<a href="http://www.teachmsoffice.com/list-of-tutorials.php?src=tepgecontentbttn" rel="nofollow"><img src="http://www.teachexcel.com/excel-help/images/view_tutorials-white-back.gif" border="0" alt="View Tutorial" /></a>
+					</div>-->
+					<!--<div style="margin-right:40px;">
+						<a href="http://www.teachexcel.com/forum/">Free Excel Help Forum</a>
+					</div>-->
+
+
+				</td>
+			</tr>
+			<tr>
+				<td colspan="3">
+				
+				
+	
+				
+
+				</td>
+			</tr>
+			<tr>
+				<td class="link_page_view_content" align="right" colspan="3">
+					<div style="margin-right:40px; display:none;">
+					
+					
+	
+						
+
+					</div>
+				</td>
+			</tr>
+		</tbody></table>
+	</div>
+	<div class="KonaBody"><div style="max-height:500px; overflow:auto;">Hi all!  I'm trying to get data from one ws to another with corresponding keys, and wondering what the best and most efficient way would be to accomplish this.<br>
+<br>
+INDEX...MATCH ?<br>
+Do While Not IsEmpty(ActiveCell)...ActiveCell.Offset(1, 0).Select...Loop?<br>
+<br>
+Here's the setup:
+
+2 worksheets: source and target
+
+
+source ws has 2 relevant col: A and K which are key/val pairs
+
+
+target ws has x number of col
+
+
+val from source ws are to be written in 1st avail blank col on target ws
+
+
+some of the keys will exist in both ws, some only in one
+
+
+if a key from source ws is not present in target ws, it will need to be added along with its val
+
+
+<br>
+The # of the first avail col is targetCol:<br>
+targetCol = Cells(1, Columns.Count).End(xlToLeft).Column + 1<br>
+<br>
+ 
+ 
+
+
+	
+ Code:<br><br>
+
+ 
+
+	
+<pre class="code_block_container"> Source Worksheet 
+colA | colK
+-----------
+key1 | val1
+key3 | val3
+
+ Target Worksheet 
+colA | colX | colY
+------------------
+key1 | val1 |
+key2 | val2 |
+
+ Target Worksheet (FINAL) 
+colA | colX | colY
+------------------
+key1 | val1 | val1
+key2 | val2 |
+key3 |      | val3
+</pre>
+<br><br>
+  
+		<br><br></div></div>	
+	<div style="display:block; margin-top:10px;">
+		<a href="http://www.teachexcel.com/excel-help/interstitial.php?i=314108&src=button" rel="nofollow" target="_blank">
+			<img alt="View Answers" border="0" src="./Excel - Iterate Through Keys In A Vba Collection - Hi I wonder... - Free Excel Help_files/view_answers.gif">
+		</a>
+		
+		<div style="margin-top:5px; margin-left:5px; margin-bottom:15px;">
+		
+		
+	
+			<span style="font-size:14px; font-weight:bold;"><a href="http://www.excelkey.com/forum/?src=ehelptextnextbutton" rel="nofollow">Ask Your Own Question</a></span>
+
+
+		</div>
+	</div>
+	
+	<div style="margin-top:10px; display:none;">
+	<table width="100%">
+		<tbody><tr>
+			<td>
+			
+				<div style="float:left;">
+					<a href="http://www.teachexcel.com/excel-help/interstitial.php?i=314108&src=button" rel="nofollow" target="_blank">
+						<img alt="View Answers" border="0" src="./Excel - Iterate Through Keys In A Vba Collection - Hi I wonder... - Free Excel Help_files/view_answers.gif">
+					</a>
+				</div>
+	
+				
+				<div style="float:right;">
+					<a href="http://www.excelkey.com/forum/?src=ehelptextimgbutton" rel="nofollow">
+						<img alt="Ask Your Question in the Excel Forum" border="0" src="./Excel - Iterate Through Keys In A Vba Collection - Hi I wonder... - Free Excel Help_files/askquestionforum.jpg">
+					</a>
+				</div>
+
+				
+			</td>
+		</tr>
+	</tbody></table>
+	</div>
+	
+<hr>
+	
+</div><div class="page_content_container">
+	<div class="page_title_content">
+		<table width="100%">
+			<tbody><tr>
+				<td class="link_page_title">
+					<div style="float:left; padding-right:10px;">
+					<div class="KonaBody">
+						<a name="4"></a>
+						<h2 class="page_content_topic"><a href="http://www.teachexcel.com/excel-help/excel-how-to.php?i=474769">How Do I Use Enums As Parameters? - Excel</a></h2>					</div>
+					</div>
+				</td>
+				<td class="link_page_view_content" width="150px;" align="right">
+									</td>
+				<td class="link_page_view_content" width="150px;" align="right">
+					<!--<a href="http://www.teachexcel.com/excel-help/interstitial.php?i=474769&src=textlink" rel="nofollow" target="_blank">View Answers</a>-->
+
+
+	
+						<a href="http://www.excelkey.com/forum/?src=ehelptext" rel="nofollow">Excel Forum</a>
+
+				</td>
+			</tr>
+			<tr>
+				<td class="link_page_view_content" align="right" colspan="3">
+				
+				
+	
+					<!--<div style="float:left; padding-top:3px;">
+						<a href="http://www.teachmsoffice.com/list-of-tutorials.php?src=tepgecontentbttn" rel="nofollow"><img src="http://www.teachexcel.com/excel-help/images/view_tutorials-white-back.gif" border="0" alt="View Tutorial" /></a>
+					</div>-->
+					<!--<div style="margin-right:40px;">
+						<a href="http://www.teachexcel.com/forum/">Free Excel Help Forum</a>
+					</div>-->
+
+
+				</td>
+			</tr>
+			<tr>
+				<td colspan="3">
+				
+				
+	
+				
+
+				</td>
+			</tr>
+			<tr>
+				<td class="link_page_view_content" align="right" colspan="3">
+					<div style="margin-right:40px; display:none;">
+					
+					
+	
+						
+
+					</div>
+				</td>
+			</tr>
+		</tbody></table>
+	</div>
+	<div class="KonaBody"><div style="max-height:500px; overflow:auto;">Hello I was wondering how in a class module go about about using a enum parameter.  I keep getting a type mismatch error.  I am using Office 2003 VBA.<br>
+ <br>
+Below is my code for the Enum<br>
+ <br>
+ 
+ 
+	 VB:<br><br>
+	
+<pre class="code_block_container">Private Enum orderType 
+    Ascending = xlAscending 
+    Descending = xlDescending 
+End Enum 
+
+
+</pre> If you like these VB formatting tags please consider sponsoring me in support of injured Royal Marines<br><br>
+<br><br>
+ Below is the code that accepts the enum as a parameter<br>
+ <br>
+ 
+ 
+	 VB:<br><br>
+	
+<pre class="code_block_container">Private Sub DataSort(ByVal Range As String, ByVal key1 As String, ByVal orderType1 As orderType) 
+     
+    Rows(Range).Select 
+    Selection.Sort key1:=Range(key1), Order1:=orderType1, Header:= _ 
+    xlGuess, OrderCustom:=1, MatchCase:=False, Orientation:=xlTopToBottom, _ 
+    DataOption1:=xlSortNormal, DataOption2:=xlSortNormal, DataOption3:= _ 
+    xlSortNormal 
+
+
+</pre> If you like these VB formatting tags please consider sponsoring me in support of injured Royal Marines<br><br>
+<br><br>
+ it seems to throw the error during compilation of the DataSort sub routine not during run time.<br>
+ <br>
+below is the code that calls the sub routine<br>
+ <br>
+ 
+ 
+	 VB:<br><br>
+	
+<pre class="code_block_container">Public Sub SortColumns(ByRef aCollection As Collection) 
+    Dim columnName As Variant 
+    Dim headerName As String 
+    Dim address As String 
+    Dim newAddress As String 
+    Dim tempKey As String 
+    Dim tempCol As String 
+    Dim key1 As String 
+    Dim oldKey1 As String 
+    Dim key2 As String 
+    Dim key3 As String 
+    Dim sortRange As String 
+    key1 = "" 
+    key2 = "" 
+    key3 = "" 
+    For Each columnName In aCollection 
+        address = "" 
+        newAddress = "" 
+        tempKey = "" 
+        headerName = columnName 
+        address = GetAddressByHeaderName(headerName) 
+         ' newAddress = Replace(address, "$", "")
+        If key1 = "" Then 
+            tempKey = address 
+            oldKey1 = tempKey 
+            key1 = AdjustRow(tempKey, 1) 
+        ElseIf (key1 &lt;&gt; "") And (key2 = "") Then 
+            tempKey = address 
+            key2 = AdjustRow(tempKey, 1) 
+        ElseIf (key1 &lt;&gt; "") And (key2 &lt;&gt; "") Then 
+            tempKey = address 
+            key3 = AdjustRow(tempKey, 1) 
+        End If 
+         
+    Next columnName 
+     
+    sortRange = GetSortRange(oldKey1) 
+     
+    If sortRange &lt;&gt; "" Then 
+        Call DataSort(sortRange, key1, Descending) 
+    End If 
+     
+End Sub 
+
+
+</pre> If you like these VB formatting tags please consider sponsoring me in support of injured Royal Marines<br><br>
+<br><br></div></div>	
+	<div style="display:block; margin-top:10px;">
+		<a href="http://www.teachexcel.com/excel-help/interstitial.php?i=474769&src=button" rel="nofollow" target="_blank">
+			<img alt="View Answers" border="0" src="./Excel - Iterate Through Keys In A Vba Collection - Hi I wonder... - Free Excel Help_files/view_answers.gif">
+		</a>
+		
+		<div style="margin-top:5px; margin-left:5px; margin-bottom:15px;">
+		
+		
+	
+			<span style="font-size:14px; font-weight:bold;"><a href="http://www.excelkey.com/forum/?src=ehelptextnextbutton" rel="nofollow">Ask Your Own Question</a></span>
+
+
+		</div>
+	</div>
+	
+	<div style="margin-top:10px; display:none;">
+	<table width="100%">
+		<tbody><tr>
+			<td>
+			
+				<div style="float:left;">
+					<a href="http://www.teachexcel.com/excel-help/interstitial.php?i=474769&src=button" rel="nofollow" target="_blank">
+						<img alt="View Answers" border="0" src="./Excel - Iterate Through Keys In A Vba Collection - Hi I wonder... - Free Excel Help_files/view_answers.gif">
+					</a>
+				</div>
+	
+				
+				<div style="float:right;">
+					<a href="http://www.excelkey.com/forum/?src=ehelptextimgbutton" rel="nofollow">
+						<img alt="Ask Your Question in the Excel Forum" border="0" src="./Excel - Iterate Through Keys In A Vba Collection - Hi I wonder... - Free Excel Help_files/askquestionforum.jpg">
+					</a>
+				</div>
+
+				
+			</td>
+		</tr>
+	</tbody></table>
+	</div>
+	
+<hr>
+	
+</div><div class="page_content_container">
+	<div class="page_title_content">
+		<table width="100%">
+			<tbody><tr>
+				<td class="link_page_title">
+					<div style="float:left; padding-right:10px;">
+					<div class="KonaBody">
+						<a name="5"></a>
+						<h2 class="page_content_topic"><a href="http://www.teachexcel.com/excel-help/excel-how-to.php?i=433912">Vba Dictionary Of Dictionaries - Excel</a></h2>					</div>
+					</div>
+				</td>
+				<td class="link_page_view_content" width="150px;" align="right">
+									</td>
+				<td class="link_page_view_content" width="150px;" align="right">
+					<!--<a href="http://www.teachexcel.com/excel-help/interstitial.php?i=433912&src=textlink" rel="nofollow" target="_blank">View Answers</a>-->
+
+
+	
+						<a href="http://www.excelkey.com/forum/?src=ehelptext" rel="nofollow">Excel Forum</a>
+
+				</td>
+			</tr>
+			<tr>
+				<td class="link_page_view_content" align="right" colspan="3">
+				
+				
+	
+					<!--<div style="float:left; padding-top:3px;">
+						<a href="http://www.teachmsoffice.com/list-of-tutorials.php?src=tepgecontentbttn" rel="nofollow"><img src="http://www.teachexcel.com/excel-help/images/view_tutorials-white-back.gif" border="0" alt="View Tutorial" /></a>
+					</div>-->
+					<!--<div style="margin-right:40px;">
+						<a href="http://www.teachexcel.com/forum/">Free Excel Help Forum</a>
+					</div>-->
+
+
+				</td>
+			</tr>
+			<tr>
+				<td colspan="3">
+				
+				
+	
+				
+
+				</td>
+			</tr>
+			<tr>
+				<td class="link_page_view_content" align="right" colspan="3">
+					<div style="margin-right:40px; display:none;">
+					
+					
+	
+						
+
+					</div>
+				</td>
+			</tr>
+		</tbody></table>
+	</div>
+	<div class="KonaBody"><div style="max-height:500px; overflow:auto;">Hi all, apologies in advance if there is a solution to this somewhere - I have been unable to find it either on these boards or the internet at large.<br>
+ <br>
+I am trying to create a dictionary (Dictionary object in reference Microsoft Scripting Runtime) where the values to the keys are themselves dictionaries. I have a loop which populates the sub-dictionary, writes the sub-dictionary to the main dictionary, then goes back generates a new sub-dictionary writes it back, etcetera. What I get is a dictionary with the correct keys, but all the values are identical dictionaries (the last one to be added). I guess that the sub-dictionary is being added to the main dictionary by reference, so when the loop goes to create the next one it's overwriting all previous keys too.<br>
+ <br>
+This code replicates my problem:<br>
+ 
+	 Code:<br><br>
+	
+<pre class="code_block_container">' output:
+'First dictionary,First dictionary,1
+'-----
+'First dictionary,Second dictionary,2
+'Second dictionary,Second dictionary,2
+Function test()
+    Dim d As New Dictionary
+    Dim e As New Dictionary
+ 
+    e.Add "Key1", "First dictionary"
+    e.Add "Key2", "1"
+    d.Add e("Key1"), e
+    For i = 0 To d.Count - 1
+        Debug.Print d.keys(i) &amp; "," &amp; d.Items(i).Item("Key1") &amp; "," &amp; d.Items(i).Item("Key2")
+    Next
+    Debug.Print "-----"
+ 
+    e.RemoveAll
+    e.Add "Key1", "Second dictionary"
+    e.Add "Key2", "2"
+    d.Add e("Key1"), e
+    For i = 0 To d.Count - 1
+        Debug.Print d.keys(i) &amp; "," &amp; d.Items(i).Item("Key1") &amp; "," &amp; d.Items(i).Item("Key2")
+    Next
+End Function
+</pre>
+<br><br>...and this seems to overcome the problem but perhaps there's a better solution?<br>
+ 
+	 Code:<br><br>
+	
+<pre class="code_block_container">Function addict(dict As Dictionary, subdict As Dictionary, k As String) As Dictionary
+    dict.Add k, New Dictionary
+    For i = 0 To subdict.Count - 1
+        dict.Item(k).Add subdict.keys(i), subdict.Items(i)
+    Next
+    Set addict = dict
+End Function
+' output:
+'First dictionary,First dictionary,1
+'-----
+'First dictionary,First dictionary,1
+'Second dictionary,Second dictionary,2
+Function test2()
+    Dim d As New Dictionary
+    Dim e As New Dictionary
+ 
+    e.Add "Key1", "First dictionary"
+    e.Add "Key2", "1"
+    Set d = addict(d, e, e("Key1"))
+    For i = 0 To d.Count - 1
+        Debug.Print d.keys(i) &amp; "," &amp; d.Items(i).Item("Key1") &amp; "," &amp; d.Items(i).Item("Key2")
+    Next
+    Debug.Print "-----"
+ 
+    e.RemoveAll
+    e.Add "Key1", "Second dictionary"
+    e.Add "Key2", "2"
+    Set d = addict(d, e, e("Key1"))
+    For i = 0 To d.Count - 1
+        Debug.Print d.keys(i) &amp; "," &amp; d.Items(i).Item("Key1") &amp; "," &amp; d.Items(i).Item("Key2")
+    Next
+End Function
+</pre>
+<br><br>Perhaps this is the wrong approach entirely - it grew out of a dictionary of collections, and I decided to recode the collections in favour of dictionaries for ease of use.
+		<br><br></div></div>	
+	<div style="display:block; margin-top:10px;">
+		<a href="http://www.teachexcel.com/excel-help/interstitial.php?i=433912&src=button" rel="nofollow" target="_blank">
+			<img alt="View Answers" border="0" src="./Excel - Iterate Through Keys In A Vba Collection - Hi I wonder... - Free Excel Help_files/view_answers.gif">
+		</a>
+		
+		<div style="margin-top:5px; margin-left:5px; margin-bottom:15px;">
+		
+		
+	
+			<span style="font-size:14px; font-weight:bold;"><a href="http://www.excelkey.com/forum/?src=ehelptextnextbutton" rel="nofollow">Ask Your Own Question</a></span>
+
+
+		</div>
+	</div>
+	
+	<div style="margin-top:10px; display:none;">
+	<table width="100%">
+		<tbody><tr>
+			<td>
+			
+				<div style="float:left;">
+					<a href="http://www.teachexcel.com/excel-help/interstitial.php?i=433912&src=button" rel="nofollow" target="_blank">
+						<img alt="View Answers" border="0" src="./Excel - Iterate Through Keys In A Vba Collection - Hi I wonder... - Free Excel Help_files/view_answers.gif">
+					</a>
+				</div>
+	
+				
+				<div style="float:right;">
+					<a href="http://www.excelkey.com/forum/?src=ehelptextimgbutton" rel="nofollow">
+						<img alt="Ask Your Question in the Excel Forum" border="0" src="./Excel - Iterate Through Keys In A Vba Collection - Hi I wonder... - Free Excel Help_files/askquestionforum.jpg">
+					</a>
+				</div>
+
+				
+			</td>
+		</tr>
+	</tbody></table>
+	</div>
+	
+<hr>
+	
+</div><div class="page_content_container">
+	<div class="page_title_content">
+		<table width="100%">
+			<tbody><tr>
+				<td class="link_page_title">
+					<div style="float:left; padding-right:10px;">
+					<div class="KonaBody">
+						<a name="6"></a>
+						<h2 class="page_content_topic"><a href="http://www.teachexcel.com/excel-help/excel-how-to.php?i=165816">Collection Vs Array - Excel</a></h2>					</div>
+					</div>
+				</td>
+				<td class="link_page_view_content" width="150px;" align="right">
+									</td>
+				<td class="link_page_view_content" width="150px;" align="right">
+					<!--<a href="http://www.teachexcel.com/excel-help/interstitial.php?i=165816&src=textlink" rel="nofollow" target="_blank">View Answers</a>-->
+
+
+	
+						<a href="http://www.excelkey.com/forum/?src=ehelptext" rel="nofollow">Excel Forum</a>
+
+				</td>
+			</tr>
+			<tr>
+				<td class="link_page_view_content" align="right" colspan="3">
+				
+				
+	
+					<!--<div style="float:left; padding-top:3px;">
+						<a href="http://www.teachmsoffice.com/list-of-tutorials.php?src=tepgecontentbttn" rel="nofollow"><img src="http://www.teachexcel.com/excel-help/images/view_tutorials-white-back.gif" border="0" alt="View Tutorial" /></a>
+					</div>-->
+					<!--<div style="margin-right:40px;">
+						<a href="http://www.teachexcel.com/forum/">Free Excel Help Forum</a>
+					</div>-->
+
+
+				</td>
+			</tr>
+			<tr>
+				<td colspan="3">
+				
+				
+	
+				
+
+				</td>
+			</tr>
+			<tr>
+				<td class="link_page_view_content" align="right" colspan="3">
+					<div style="margin-right:40px; display:none;">
+					
+					
+	
+						
+
+					</div>
+				</td>
+			</tr>
+		</tbody></table>
+	</div>
+	<div style="max-height:500px; overflow:auto;">Hi all,<br>
+<br>
+I've created the function below to create a collection of primes which is based on the Sieve of Erastothenes. The function creates the list fairly quickly; it can produce all primes under one million in less than a second on my PC. Using the collection, I want to be able to A) Test a given number for primality, and B) Iterate through the prime numbers. Collections are able to handle both of these requirements because I can use both keys and indices, however, accessing a large collection with an index is much too slow for my purposes.<br>
+<br>
+Instead of using a collection, I could:<br>
+A) Create an array of 1 to n Booleans<br>
+This would let me test for primality quickly but would be more slow at iterating through prime numbers.<br>
+B) Create an exclusive array of Long type primes<br>
+This would let me iterate through primes quickly but would be more slow at determining primality.<br>
+<br>
+Can any of you think of a way to satisfy both requirements in one solution that isn't too slow?<br>
+<br>
+ 
+	 Code:<br><br>
+	
+<pre class="code_block_container">Function PrimesUpTo(n As Long, Optional primes As Collection) As Collection
+'Uses Sieve of Erastothenes to create collection of all primes</pre></div>	
+	<div style="display:block; margin-top:10px;">
+		<a href="http://www.teachexcel.com/excel-help/interstitial.php?i=165816&src=button" rel="nofollow" target="_blank">
+			<img alt="View Answers" border="0" src="./Excel - Iterate Through Keys In A Vba Collection - Hi I wonder... - Free Excel Help_files/view_answers.gif">
+		</a>
+		
+		<div style="margin-top:5px; margin-left:5px; margin-bottom:15px;">
+		
+		
+	
+			<span style="font-size:14px; font-weight:bold;"><a href="http://www.excelkey.com/forum/?src=ehelptextnextbutton" rel="nofollow">Ask Your Own Question</a></span>
+
+
+		</div>
+	</div>
+	
+	<div style="margin-top:10px; display:none;">
+	<table width="100%">
+		<tbody><tr>
+			<td>
+			
+				<div style="float:left;">
+					<a href="http://www.teachexcel.com/excel-help/interstitial.php?i=165816&src=button" rel="nofollow" target="_blank">
+						<img alt="View Answers" border="0" src="./Excel - Iterate Through Keys In A Vba Collection - Hi I wonder... - Free Excel Help_files/view_answers.gif">
+					</a>
+				</div>
+	
+				
+				<div style="float:right;">
+					<a href="http://www.excelkey.com/forum/?src=ehelptextimgbutton" rel="nofollow">
+						<img alt="Ask Your Question in the Excel Forum" border="0" src="./Excel - Iterate Through Keys In A Vba Collection - Hi I wonder... - Free Excel Help_files/askquestionforum.jpg">
+					</a>
+				</div>
+
+				
+			</td>
+		</tr>
+	</tbody></table>
+	</div>
+	
+<hr>
+	
+</div><div class="page_content_container">
+	<div class="page_title_content">
+		<table width="100%">
+			<tbody><tr>
+				<td class="link_page_title">
+					<div style="float:left; padding-right:10px;">
+					<div class="KonaBody">
+						<a name="7"></a>
+						<h2 class="page_content_topic"><a href="http://www.teachexcel.com/excel-help/excel-how-to.php?i=532816">Pivottables: Row Header Field: Managing Long Lists - Excel</a></h2>					</div>
+					</div>
+				</td>
+				<td class="link_page_view_content" width="150px;" align="right">
+									</td>
+				<td class="link_page_view_content" width="150px;" align="right">
+					<!--<a href="http://www.teachexcel.com/excel-help/interstitial.php?i=532816&src=textlink" rel="nofollow" target="_blank">View Answers</a>-->
+
+
+	
+						<a href="http://www.excelkey.com/forum/?src=ehelptext" rel="nofollow">Excel Forum</a>
+
+				</td>
+			</tr>
+			<tr>
+				<td class="link_page_view_content" align="right" colspan="3">
+				
+				
+	
+					<!--<div style="float:left; padding-top:3px;">
+						<a href="http://www.teachmsoffice.com/list-of-tutorials.php?src=tepgecontentbttn" rel="nofollow"><img src="http://www.teachexcel.com/excel-help/images/view_tutorials-white-back.gif" border="0" alt="View Tutorial" /></a>
+					</div>-->
+					<!--<div style="margin-right:40px;">
+						<a href="http://www.teachexcel.com/forum/">Free Excel Help Forum</a>
+					</div>-->
+
+
+				</td>
+			</tr>
+			<tr>
+				<td colspan="3">
+				
+				
+	
+				
+
+				</td>
+			</tr>
+			<tr>
+				<td class="link_page_view_content" align="right" colspan="3">
+					<div style="margin-right:40px; display:none;">
+					
+					
+	
+						
+
+					</div>
+				</td>
+			</tr>
+		</tbody></table>
+	</div>
+	<div style="max-height:500px; overflow:auto;">Hello, I would like to be more comfortable with some of my pivot tables.<br>
+Here is the typical layout of these tables:<br>
+<br>
+ key1 | key2 | key3 | ... | sum1 | sum2 | ... <br>
+<br>
+where key1 ... are string keys from a remote table<br>
+and sum1 ... are summed numerical values<br>
+I usually have only row header fields (key1 ...)<br>
+<br>
+My problem explained<br>
+Each of the keys have a long list of possible values: fom 50 to 300 items.<br>
+For most combinaition of keys there are no numerical data available.<br>
+Therefore, when chosing one item for one key (key1, say) only a few of the items of the other keys will be useful for me.<br>
+Unfortunately, the list of items for the other keys remain very long, their content is not updated according the the choices already made and the data available.<br>
+<br>
+my hope and my question<br>
+I would like to find a way to make browsing of the data much easier.<br>
+Idealy, I would like to see items for a given key only if they can lead to existing data.<br>
+(excel filters work like that)<br>
+<br>
+Would you have some suggestion for doing that within pivottables?<br>
+<br>
+I already did something similar with MSQuery and also with MSAccess.<br>
+However, a solution based on pivottables would be by far the most suitable for me.
+		<br><br></div>	
+	<div style="display:block; margin-top:10px;">
+		<a href="http://www.teachexcel.com/excel-help/interstitial.php?i=532816&src=button" rel="nofollow" target="_blank">
+			<img alt="View Answers" border="0" src="./Excel - Iterate Through Keys In A Vba Collection - Hi I wonder... - Free Excel Help_files/view_answers.gif">
+		</a>
+		
+		<div style="margin-top:5px; margin-left:5px; margin-bottom:15px;">
+		
+		
+	
+			<span style="font-size:14px; font-weight:bold;"><a href="http://www.excelkey.com/forum/?src=ehelptextnextbutton" rel="nofollow">Ask Your Own Question</a></span>
+
+
+		</div>
+	</div>
+	
+	<div style="margin-top:10px; display:none;">
+	<table width="100%">
+		<tbody><tr>
+			<td>
+			
+				<div style="float:left;">
+					<a href="http://www.teachexcel.com/excel-help/interstitial.php?i=532816&src=button" rel="nofollow" target="_blank">
+						<img alt="View Answers" border="0" src="./Excel - Iterate Through Keys In A Vba Collection - Hi I wonder... - Free Excel Help_files/view_answers.gif">
+					</a>
+				</div>
+	
+				
+				<div style="float:right;">
+					<a href="http://www.excelkey.com/forum/?src=ehelptextimgbutton" rel="nofollow">
+						<img alt="Ask Your Question in the Excel Forum" border="0" src="./Excel - Iterate Through Keys In A Vba Collection - Hi I wonder... - Free Excel Help_files/askquestionforum.jpg">
+					</a>
+				</div>
+
+				
+			</td>
+		</tr>
+	</tbody></table>
+	</div>
+	
+<hr>
+	
+</div><div class="page_content_container">
+	<div class="page_title_content">
+		<table width="100%">
+			<tbody><tr>
+				<td class="link_page_title">
+					<div style="float:left; padding-right:10px;">
+					<div class="KonaBody">
+						<a name="8"></a>
+						<h2 class="page_content_topic"><a href="http://www.teachexcel.com/excel-help/excel-how-to.php?i=217304">Deleting Keys From A Collection? - Excel</a></h2>					</div>
+					</div>
+				</td>
+				<td class="link_page_view_content" width="150px;" align="right">
+									</td>
+				<td class="link_page_view_content" width="150px;" align="right">
+					<!--<a href="http://www.teachexcel.com/excel-help/interstitial.php?i=217304&src=textlink" rel="nofollow" target="_blank">View Answers</a>-->
+
+
+	
+						<a href="http://www.excelkey.com/forum/?src=ehelptext" rel="nofollow">Excel Forum</a>
+
+				</td>
+			</tr>
+			<tr>
+				<td class="link_page_view_content" align="right" colspan="3">
+				
+				
+	
+					<!--<div style="float:left; padding-top:3px;">
+						<a href="http://www.teachmsoffice.com/list-of-tutorials.php?src=tepgecontentbttn" rel="nofollow"><img src="http://www.teachexcel.com/excel-help/images/view_tutorials-white-back.gif" border="0" alt="View Tutorial" /></a>
+					</div>-->
+					<!--<div style="margin-right:40px;">
+						<a href="http://www.teachexcel.com/forum/">Free Excel Help Forum</a>
+					</div>-->
+
+
+				</td>
+			</tr>
+			<tr>
+				<td colspan="3">
+				
+				
+	
+				
+
+				</td>
+			</tr>
+			<tr>
+				<td class="link_page_view_content" align="right" colspan="3">
+					<div style="margin-right:40px; display:none;">
+					
+					
+	
+						
+
+					</div>
+				</td>
+			</tr>
+		</tbody></table>
+	</div>
+	<div style="max-height:500px; overflow:auto;">Is there a way to remove a value from a collection after I've added it.<br>
+<br>
+I have simplified the code I'm using to highlight what I'm trying to do.  Basically I'm adding 10 keys to a collection and want to remove the last one. There is a reason for this.<br>
+<br>
+ 
+ 
+
+
+	
+ Code:<br><br>
+
+ 
+
+	
+<pre class="code_block_container">Dim collector as new collection
+for i = 1 to 10 step 1
+collector.add MyArray(i), cstr(MyArray(i))
+next i
+</pre>
+<br><br>
+ This code works fine by the way.  Just say I want to remove the last value I added. That is, I want to remove MyArray(10) from the collection so I don't get an error if I add another value equal to MyArray(10).  How do I do this?<br>
+<br>
+Thanks<br>
+Danny2000<br>
+ 
+		<br><br></div>	
+	<div style="display:block; margin-top:10px;">
+		<a href="http://www.teachexcel.com/excel-help/interstitial.php?i=217304&src=button" rel="nofollow" target="_blank">
+			<img alt="View Answers" border="0" src="./Excel - Iterate Through Keys In A Vba Collection - Hi I wonder... - Free Excel Help_files/view_answers.gif">
+		</a>
+		
+		<div style="margin-top:5px; margin-left:5px; margin-bottom:15px;">
+		
+		
+	
+			<span style="font-size:14px; font-weight:bold;"><a href="http://www.excelkey.com/forum/?src=ehelptextnextbutton" rel="nofollow">Ask Your Own Question</a></span>
+
+
+		</div>
+	</div>
+	
+	<div style="margin-top:10px; display:none;">
+	<table width="100%">
+		<tbody><tr>
+			<td>
+			
+				<div style="float:left;">
+					<a href="http://www.teachexcel.com/excel-help/interstitial.php?i=217304&src=button" rel="nofollow" target="_blank">
+						<img alt="View Answers" border="0" src="./Excel - Iterate Through Keys In A Vba Collection - Hi I wonder... - Free Excel Help_files/view_answers.gif">
+					</a>
+				</div>
+	
+				
+				<div style="float:right;">
+					<a href="http://www.excelkey.com/forum/?src=ehelptextimgbutton" rel="nofollow">
+						<img alt="Ask Your Question in the Excel Forum" border="0" src="./Excel - Iterate Through Keys In A Vba Collection - Hi I wonder... - Free Excel Help_files/askquestionforum.jpg">
+					</a>
+				</div>
+
+				
+			</td>
+		</tr>
+	</tbody></table>
+	</div>
+	
+<hr>
+	
+</div><div class="page_content_container">
+	<div class="page_title_content">
+		<table width="100%">
+			<tbody><tr>
+				<td class="link_page_title">
+					<div style="float:left; padding-right:10px;">
+					<div class="KonaBody">
+						<a name="9"></a>
+						<h2 class="page_content_topic"><a href="http://www.teachexcel.com/excel-help/excel-how-to.php?i=407244">Deleting Keys From A Collection? - Excel</a></h2>					</div>
+					</div>
+				</td>
+				<td class="link_page_view_content" width="150px;" align="right">
+									</td>
+				<td class="link_page_view_content" width="150px;" align="right">
+					<!--<a href="http://www.teachexcel.com/excel-help/interstitial.php?i=407244&src=textlink" rel="nofollow" target="_blank">View Answers</a>-->
+
+
+	
+						<a href="http://www.excelkey.com/forum/?src=ehelptext" rel="nofollow">Excel Forum</a>
+
+				</td>
+			</tr>
+			<tr>
+				<td class="link_page_view_content" align="right" colspan="3">
+				
+				
+	
+					<!--<div style="float:left; padding-top:3px;">
+						<a href="http://www.teachmsoffice.com/list-of-tutorials.php?src=tepgecontentbttn" rel="nofollow"><img src="http://www.teachexcel.com/excel-help/images/view_tutorials-white-back.gif" border="0" alt="View Tutorial" /></a>
+					</div>-->
+					<!--<div style="margin-right:40px;">
+						<a href="http://www.teachexcel.com/forum/">Free Excel Help Forum</a>
+					</div>-->
+
+
+				</td>
+			</tr>
+			<tr>
+				<td colspan="3">
+				
+				
+	
+				
+
+				</td>
+			</tr>
+			<tr>
+				<td class="link_page_view_content" align="right" colspan="3">
+					<div style="margin-right:40px; display:none;">
+					
+					
+	
+						
+
+					</div>
+				</td>
+			</tr>
+		</tbody></table>
+	</div>
+	<div style="max-height:500px; overflow:auto;">Is there a way to remove a value from a collection after I've added it.<br>
+<br>
+I have simplified the code I'm using to highlight what I'm trying to do.  Basically I'm adding 10 keys to a collection and want to remove the last one. There is a reason for this.<br>
+<br>
+ 
+	 Code:<br><br>
+	
+<pre class="code_block_container">Dim collector as new collection
+for i = 1 to 10 step 1
+collector.add myarray(i), cstr(myarray(i))
+next i
+</pre>
+<br><br>This code works fine by the way.  Just say I want to remove the last value I added. That is, I want to remove MyArray(10) from the collection so I don't get an error if I add another value equal to MyArray(10).  How do I do this?<br>
+<br>
+Thanks<br>
+Danny2000<br>
+
+		<br><br></div>	
+	<div style="display:block; margin-top:10px;">
+		<a href="http://www.teachexcel.com/excel-help/interstitial.php?i=407244&src=button" rel="nofollow" target="_blank">
+			<img alt="View Answers" border="0" src="./Excel - Iterate Through Keys In A Vba Collection - Hi I wonder... - Free Excel Help_files/view_answers.gif">
+		</a>
+		
+		<div style="margin-top:5px; margin-left:5px; margin-bottom:15px;">
+		
+		
+	
+			<span style="font-size:14px; font-weight:bold;"><a href="http://www.excelkey.com/forum/?src=ehelptextnextbutton" rel="nofollow">Ask Your Own Question</a></span>
+
+
+		</div>
+	</div>
+	
+	<div style="margin-top:10px; display:none;">
+	<table width="100%">
+		<tbody><tr>
+			<td>
+			
+				<div style="float:left;">
+					<a href="http://www.teachexcel.com/excel-help/interstitial.php?i=407244&src=button" rel="nofollow" target="_blank">
+						<img alt="View Answers" border="0" src="./Excel - Iterate Through Keys In A Vba Collection - Hi I wonder... - Free Excel Help_files/view_answers.gif">
+					</a>
+				</div>
+	
+				
+				<div style="float:right;">
+					<a href="http://www.excelkey.com/forum/?src=ehelptextimgbutton" rel="nofollow">
+						<img alt="Ask Your Question in the Excel Forum" border="0" src="./Excel - Iterate Through Keys In A Vba Collection - Hi I wonder... - Free Excel Help_files/askquestionforum.jpg">
+					</a>
+				</div>
+
+				
+			</td>
+		</tr>
+	</tbody></table>
+	</div>
+	
+<hr>
+	
+</div><div class="page_content_container">
+	<div class="page_title_content">
+		<table width="100%">
+			<tbody><tr>
+				<td class="link_page_title">
+					<div style="float:left; padding-right:10px;">
+					<div class="KonaBody">
+						<a name="10"></a>
+						<h2 class="page_content_topic"><a href="http://www.teachexcel.com/excel-help/excel-how-to.php?i=590270">Comparing Values In Collections - Excel</a></h2>					</div>
+					</div>
+				</td>
+				<td class="link_page_view_content" width="150px;" align="right">
+									</td>
+				<td class="link_page_view_content" width="150px;" align="right">
+					<!--<a href="http://www.teachexcel.com/excel-help/interstitial.php?i=590270&src=textlink" rel="nofollow" target="_blank">View Answers</a>-->
+
+
+	
+						<a href="http://www.excelkey.com/forum/?src=ehelptext" rel="nofollow">Excel Forum</a>
+
+				</td>
+			</tr>
+			<tr>
+				<td class="link_page_view_content" align="right" colspan="3">
+				
+				
+	
+					<!--<div style="float:left; padding-top:3px;">
+						<a href="http://www.teachmsoffice.com/list-of-tutorials.php?src=tepgecontentbttn" rel="nofollow"><img src="http://www.teachexcel.com/excel-help/images/view_tutorials-white-back.gif" border="0" alt="View Tutorial" /></a>
+					</div>-->
+					<!--<div style="margin-right:40px;">
+						<a href="http://www.teachexcel.com/forum/">Free Excel Help Forum</a>
+					</div>-->
+
+
+				</td>
+			</tr>
+			<tr>
+				<td colspan="3">
+				
+				
+	
+				
+
+				</td>
+			</tr>
+			<tr>
+				<td class="link_page_view_content" align="right" colspan="3">
+					<div style="margin-right:40px; display:none;">
+					
+					
+	
+						
+
+					</div>
+				</td>
+			</tr>
+		</tbody></table>
+	</div>
+	<div style="max-height:500px; overflow:auto;"><br><br>
+
+
+
+
+							This is probably a stupid question but got some writers block or something.<br>
+<br>
+Got two collections:<br>
+colPrices has share prices and the key of the collection is a share code.<br>
+colShares has a number of shares held and the key of the collection is also the share code.<br>
+<br>
+The two collections might not be in the same order (although they probable will be) but they will have the same number of elements. So each share code will be in each collection.<br>
+<br>
+Want to iterate through the Prices collection and find any entries with a 0 price then look in the Shares collection if there is a value &gt; 0 there for the same share. How do I get the value of the key from one collection so I can use it to look in the other collection for the same key (code)?</div>	
+	<div style="display:block; margin-top:10px;">
+		<a href="http://www.teachexcel.com/excel-help/interstitial.php?i=590270&src=button" rel="nofollow" target="_blank">
+			<img alt="View Answers" border="0" src="./Excel - Iterate Through Keys In A Vba Collection - Hi I wonder... - Free Excel Help_files/view_answers.gif">
+		</a>
+		
+		<div style="margin-top:5px; margin-left:5px; margin-bottom:15px;">
+		
+		
+	
+			<span style="font-size:14px; font-weight:bold;"><a href="http://www.excelkey.com/forum/?src=ehelptextnextbutton" rel="nofollow">Ask Your Own Question</a></span>
+
+
+		</div>
+	</div>
+	
+	<div style="margin-top:10px; display:none;">
+	<table width="100%">
+		<tbody><tr>
+			<td>
+			
+				<div style="float:left;">
+					<a href="http://www.teachexcel.com/excel-help/interstitial.php?i=590270&src=button" rel="nofollow" target="_blank">
+						<img alt="View Answers" border="0" src="./Excel - Iterate Through Keys In A Vba Collection - Hi I wonder... - Free Excel Help_files/view_answers.gif">
+					</a>
+				</div>
+	
+				
+				<div style="float:right;">
+					<a href="http://www.excelkey.com/forum/?src=ehelptextimgbutton" rel="nofollow">
+						<img alt="Ask Your Question in the Excel Forum" border="0" src="./Excel - Iterate Through Keys In A Vba Collection - Hi I wonder... - Free Excel Help_files/askquestionforum.jpg">
+					</a>
+				</div>
+
+				
+			</td>
+		</tr>
+	</tbody></table>
+	</div>
+	
+<hr>
+	
+</div><div class="page_content_container">
+	<div class="page_title_content">
+		<table width="100%">
+			<tbody><tr>
+				<td class="link_page_title">
+					<div style="float:left; padding-right:10px;">
+					<div class="KonaBody">
+						<a name="11"></a>
+						<h2 class="page_content_topic"><a href="http://www.teachexcel.com/excel-help/excel-how-to.php?i=263360">Sort Using Keys Not In Range - Excel</a></h2>					</div>
+					</div>
+				</td>
+				<td class="link_page_view_content" width="150px;" align="right">
+									</td>
+				<td class="link_page_view_content" width="150px;" align="right">
+					<!--<a href="http://www.teachexcel.com/excel-help/interstitial.php?i=263360&src=textlink" rel="nofollow" target="_blank">View Answers</a>-->
+
+
+	
+						<a href="http://www.excelkey.com/forum/?src=ehelptext" rel="nofollow">Excel Forum</a>
+
+				</td>
+			</tr>
+			<tr>
+				<td class="link_page_view_content" align="right" colspan="3">
+				
+				
+	
+					<!--<div style="float:left; padding-top:3px;">
+						<a href="http://www.teachmsoffice.com/list-of-tutorials.php?src=tepgecontentbttn" rel="nofollow"><img src="http://www.teachexcel.com/excel-help/images/view_tutorials-white-back.gif" border="0" alt="View Tutorial" /></a>
+					</div>-->
+					<!--<div style="margin-right:40px;">
+						<a href="http://www.teachexcel.com/forum/">Free Excel Help Forum</a>
+					</div>-->
+
+
+				</td>
+			</tr>
+			<tr>
+				<td colspan="3">
+				
+				
+	
+				
+
+				</td>
+			</tr>
+			<tr>
+				<td class="link_page_view_content" align="right" colspan="3">
+					<div style="margin-right:40px; display:none;">
+					
+					
+	
+						
+
+					</div>
+				</td>
+			</tr>
+		</tbody></table>
+	</div>
+	<div style="max-height:500px; overflow:auto;">Hello, I am trying to sort a column without sorting two other column but using those columns as keys for the sort. But I keep getting a 'Key not in Range' error. Am I trying to do the impossible?<br>
+<br>
+ 
+ 
+
+
+	
+ Code:<br><br>
+
+ 
+
+	
+<pre class="code_block_container">range(cells(1,3),cells(50,3)).sort key1:=range(cells(1,1)), key2:= range(cells(1,2)), key3:=range(cells(1,3)), Header:=xlYes
+</pre>
+<br><br>
+ Cheers!<br>
+Please use code tags when you are using VBA code 
+		<br><br></div>	
+	<div style="display:block; margin-top:10px;">
+		<a href="http://www.teachexcel.com/excel-help/interstitial.php?i=263360&src=button" rel="nofollow" target="_blank">
+			<img alt="View Answers" border="0" src="./Excel - Iterate Through Keys In A Vba Collection - Hi I wonder... - Free Excel Help_files/view_answers.gif">
+		</a>
+		
+		<div style="margin-top:5px; margin-left:5px; margin-bottom:15px;">
+		
+		
+	
+			<span style="font-size:14px; font-weight:bold;"><a href="http://www.excelkey.com/forum/?src=ehelptextnextbutton" rel="nofollow">Ask Your Own Question</a></span>
+
+
+		</div>
+	</div>
+	
+	<div style="margin-top:10px; display:none;">
+	<table width="100%">
+		<tbody><tr>
+			<td>
+			
+				<div style="float:left;">
+					<a href="http://www.teachexcel.com/excel-help/interstitial.php?i=263360&src=button" rel="nofollow" target="_blank">
+						<img alt="View Answers" border="0" src="./Excel - Iterate Through Keys In A Vba Collection - Hi I wonder... - Free Excel Help_files/view_answers.gif">
+					</a>
+				</div>
+	
+				
+				<div style="float:right;">
+					<a href="http://www.excelkey.com/forum/?src=ehelptextimgbutton" rel="nofollow">
+						<img alt="Ask Your Question in the Excel Forum" border="0" src="./Excel - Iterate Through Keys In A Vba Collection - Hi I wonder... - Free Excel Help_files/askquestionforum.jpg">
+					</a>
+				</div>
+
+				
+			</td>
+		</tr>
+	</tbody></table>
+	</div>
+	
+<hr>
+	
+</div><div class="page_content_container">
+	<div class="page_title_content">
+		<table width="100%">
+			<tbody><tr>
+				<td class="link_page_title">
+					<div style="float:left; padding-right:10px;">
+					<div class="KonaBody">
+						<a name="12"></a>
+						<h2 class="page_content_topic"><a href="http://www.teachexcel.com/excel-help/excel-how-to.php?i=141430">Calling Sub Gens Compile Error - Excel</a></h2>					</div>
+					</div>
+				</td>
+				<td class="link_page_view_content" width="150px;" align="right">
+									</td>
+				<td class="link_page_view_content" width="150px;" align="right">
+					<!--<a href="http://www.teachexcel.com/excel-help/interstitial.php?i=141430&src=textlink" rel="nofollow" target="_blank">View Answers</a>-->
+
+
+	
+						<a href="http://www.excelkey.com/forum/?src=ehelptext" rel="nofollow">Excel Forum</a>
+
+				</td>
+			</tr>
+			<tr>
+				<td class="link_page_view_content" align="right" colspan="3">
+				
+				
+	
+					<!--<div style="float:left; padding-top:3px;">
+						<a href="http://www.teachmsoffice.com/list-of-tutorials.php?src=tepgecontentbttn" rel="nofollow"><img src="http://www.teachexcel.com/excel-help/images/view_tutorials-white-back.gif" border="0" alt="View Tutorial" /></a>
+					</div>-->
+					<!--<div style="margin-right:40px;">
+						<a href="http://www.teachexcel.com/forum/">Free Excel Help Forum</a>
+					</div>-->
+
+
+				</td>
+			</tr>
+			<tr>
+				<td colspan="3">
+				
+				
+	
+				
+
+				</td>
+			</tr>
+			<tr>
+				<td class="link_page_view_content" align="right" colspan="3">
+					<div style="margin-right:40px; display:none;">
+					
+					
+	
+						
+
+					</div>
+				</td>
+			</tr>
+		</tbody></table>
+	</div>
+	<div style="max-height:500px; overflow:auto;">I'm trying to call a sub which I do successfully in another routine in my module. This one generates a compile error and I do not understand. Can someone tell me why I am getting this error?<br>
+<br>
+ 
+ 
+
+
+	
+ Code:<br><br>
+
+ 
+
+	
+<pre class="code_block_container">Sub SortItemXX()
+
+    dosort("Item","Level","")      'compile error here
+    
+End Sub
+</pre>
+<br><br>
+  
+ 
+
+
+	
+ Code:<br><br>
+
+ 
+
+	
+<pre class="code_block_container">Sub DoSort(key1, key2, key3)
+
+    Workbooks("cooking.xlsm").Activate
+    With ActiveWorkbook.Worksheets("Sheet1").Sort
+        With .SortFields
+            .Clear
+            .Add Key:=Range(key1), SortOn:=xlSortOnValues, Order:=xlAscending, DataOption:=xlSortNormal
+            .Add Key:=Range(key2), SortOn:=xlSortOnValues, Order:=xlAscending, DataOption:=xlSortNormal
+            If key3 &lt;&gt; "" Then
+                .Add Key:=Range(key3), SortOn:=xlSortOnValues, Order:=xlAscending, DataOption:=xlSortNormal
+            End If
+        End With
+        .SetRange Range("DB")
+        .Header = xlYes
+        .MatchCase = False
+        .Orientation = xlTopToBottom
+        .SortMethod = xlPinYin
+        .Apply
+    End With
+
+End Sub
+</pre>
+<br><br>
+ Please note: Both subs reside in the same module. 
+		<br><br></div>	
+	<div style="display:block; margin-top:10px;">
+		<a href="http://www.teachexcel.com/excel-help/interstitial.php?i=141430&src=button" rel="nofollow" target="_blank">
+			<img alt="View Answers" border="0" src="./Excel - Iterate Through Keys In A Vba Collection - Hi I wonder... - Free Excel Help_files/view_answers.gif">
+		</a>
+		
+		<div style="margin-top:5px; margin-left:5px; margin-bottom:15px;">
+		
+		
+	
+			<span style="font-size:14px; font-weight:bold;"><a href="http://www.excelkey.com/forum/?src=ehelptextnextbutton" rel="nofollow">Ask Your Own Question</a></span>
+
+
+		</div>
+	</div>
+	
+	<div style="margin-top:10px; display:none;">
+	<table width="100%">
+		<tbody><tr>
+			<td>
+			
+				<div style="float:left;">
+					<a href="http://www.teachexcel.com/excel-help/interstitial.php?i=141430&src=button" rel="nofollow" target="_blank">
+						<img alt="View Answers" border="0" src="./Excel - Iterate Through Keys In A Vba Collection - Hi I wonder... - Free Excel Help_files/view_answers.gif">
+					</a>
+				</div>
+	
+				
+				<div style="float:right;">
+					<a href="http://www.excelkey.com/forum/?src=ehelptextimgbutton" rel="nofollow">
+						<img alt="Ask Your Question in the Excel Forum" border="0" src="./Excel - Iterate Through Keys In A Vba Collection - Hi I wonder... - Free Excel Help_files/askquestionforum.jpg">
+					</a>
+				</div>
+
+				
+			</td>
+		</tr>
+	</tbody></table>
+	</div>
+	
+<hr>
+	
+</div><div class="page_content_container">
+	<div class="page_title_content">
+		<table width="100%">
+			<tbody><tr>
+				<td class="link_page_title">
+					<div style="float:left; padding-right:10px;">
+					<div class="KonaBody">
+						<a name="13"></a>
+						<h2 class="page_content_topic"><a href="http://www.teachexcel.com/excel-help/excel-how-to.php?i=83132">For Each Structure... - Excel</a></h2>					</div>
+					</div>
+				</td>
+				<td class="link_page_view_content" width="150px;" align="right">
+									</td>
+				<td class="link_page_view_content" width="150px;" align="right">
+					<!--<a href="http://www.teachexcel.com/excel-help/interstitial.php?i=83132&src=textlink" rel="nofollow" target="_blank">View Answers</a>-->
+
+
+	
+						<a href="http://www.excelkey.com/forum/?src=ehelptext" rel="nofollow">Excel Forum</a>
+
+				</td>
+			</tr>
+			<tr>
+				<td class="link_page_view_content" align="right" colspan="3">
+				
+				
+	
+					<!--<div style="float:left; padding-top:3px;">
+						<a href="http://www.teachmsoffice.com/list-of-tutorials.php?src=tepgecontentbttn" rel="nofollow"><img src="http://www.teachexcel.com/excel-help/images/view_tutorials-white-back.gif" border="0" alt="View Tutorial" /></a>
+					</div>-->
+					<!--<div style="margin-right:40px;">
+						<a href="http://www.teachexcel.com/forum/">Free Excel Help Forum</a>
+					</div>-->
+
+
+				</td>
+			</tr>
+			<tr>
+				<td colspan="3">
+				
+				
+	
+				
+
+				</td>
+			</tr>
+			<tr>
+				<td class="link_page_view_content" align="right" colspan="3">
+					<div style="margin-right:40px; display:none;">
+					
+					
+	
+						
+
+					</div>
+				</td>
+			</tr>
+		</tbody></table>
+	</div>
+	<div style="max-height:500px; overflow:auto;">Reading more on that article, found this:<br>
+<br>
+ 
+	 Quote:<br><br>
+	
+
+	
+		
+
+			
+				Note   The Comments collection, like many of the subsidiary collection classes in Excel, doesn't provide a default enumerator. In other words, you won't be able to use a For Each loop to visit all the elements of the collection. For collections like the Comment collection, you must use an indexed loop to iterate through the collection. 
+			
+		
+
+	
+	
+
+<br><br>which is NOT true, at least not as of 2002.  In fact, there are very little collections in which you cannot use the For Each structure...  In that example they use:<br>
+<br>
+ 
+	 Code:<br><br>
+	
+<pre class="code_block_container">    Dim i As Integer
+    For i = 1 To ws.Comments.Count
+        ws.Comments(i).Visible = Show
+    Next
+</pre>
+<br><br>Now, we could just use:<br>
+<br>
+ <br>
+Sub HideComment()<br>
+****Dim C As Comment<br>
+****For Each C In ActiveSheet.Comments<br>
+********C.Visible = False<br>
+****Next C<br>
+End Sub<br>
+ <br>
+so, is this another change ??
+		<br><br></div>	
+	<div style="display:block; margin-top:10px;">
+		<a href="http://www.teachexcel.com/excel-help/interstitial.php?i=83132&src=button" rel="nofollow" target="_blank">
+			<img alt="View Answers" border="0" src="./Excel - Iterate Through Keys In A Vba Collection - Hi I wonder... - Free Excel Help_files/view_answers.gif">
+		</a>
+		
+		<div style="margin-top:5px; margin-left:5px; margin-bottom:15px;">
+		
+		
+	
+			<span style="font-size:14px; font-weight:bold;"><a href="http://www.excelkey.com/forum/?src=ehelptextnextbutton" rel="nofollow">Ask Your Own Question</a></span>
+
+
+		</div>
+	</div>
+	
+	<div style="margin-top:10px; display:none;">
+	<table width="100%">
+		<tbody><tr>
+			<td>
+			
+				<div style="float:left;">
+					<a href="http://www.teachexcel.com/excel-help/interstitial.php?i=83132&src=button" rel="nofollow" target="_blank">
+						<img alt="View Answers" border="0" src="./Excel - Iterate Through Keys In A Vba Collection - Hi I wonder... - Free Excel Help_files/view_answers.gif">
+					</a>
+				</div>
+	
+				
+				<div style="float:right;">
+					<a href="http://www.excelkey.com/forum/?src=ehelptextimgbutton" rel="nofollow">
+						<img alt="Ask Your Question in the Excel Forum" border="0" src="./Excel - Iterate Through Keys In A Vba Collection - Hi I wonder... - Free Excel Help_files/askquestionforum.jpg">
+					</a>
+				</div>
+
+				
+			</td>
+		</tr>
+	</tbody></table>
+	</div>
+	
+<hr>
+	
+</div><div class="page_content_container">
+	<div class="page_title_content">
+		<table width="100%">
+			<tbody><tr>
+				<td class="link_page_title">
+					<div style="float:left; padding-right:10px;">
+					<div class="KonaBody">
+						<a name="14"></a>
+						<h2 class="page_content_topic"><a href="http://www.teachexcel.com/excel-help/excel-how-to.php?i=283854">Clear A Collection - Excel</a></h2>					</div>
+					</div>
+				</td>
+				<td class="link_page_view_content" width="150px;" align="right">
+									</td>
+				<td class="link_page_view_content" width="150px;" align="right">
+					<!--<a href="http://www.teachexcel.com/excel-help/interstitial.php?i=283854&src=textlink" rel="nofollow" target="_blank">View Answers</a>-->
+
+
+	
+						<a href="http://www.excelkey.com/forum/?src=ehelptext" rel="nofollow">Excel Forum</a>
+
+				</td>
+			</tr>
+			<tr>
+				<td class="link_page_view_content" align="right" colspan="3">
+				
+				
+	
+					<!--<div style="float:left; padding-top:3px;">
+						<a href="http://www.teachmsoffice.com/list-of-tutorials.php?src=tepgecontentbttn" rel="nofollow"><img src="http://www.teachexcel.com/excel-help/images/view_tutorials-white-back.gif" border="0" alt="View Tutorial" /></a>
+					</div>-->
+					<!--<div style="margin-right:40px;">
+						<a href="http://www.teachexcel.com/forum/">Free Excel Help Forum</a>
+					</div>-->
+
+
+				</td>
+			</tr>
+			<tr>
+				<td colspan="3">
+				
+				
+	
+				
+
+				</td>
+			</tr>
+			<tr>
+				<td class="link_page_view_content" align="right" colspan="3">
+					<div style="margin-right:40px; display:none;">
+					
+					
+	
+						
+
+					</div>
+				</td>
+			</tr>
+		</tbody></table>
+	</div>
+	<div style="max-height:500px; overflow:auto;">Hi<br>
+<br>
+Does anyone know a fast way of emptying the contents of a collection.<br>
+If I add a collection as a new collection and then add so many keys to it, can I then clear them and start fresh?<br>
+<br>
+Thanks. 
+		<br><br></div>	
+	<div style="display:block; margin-top:10px;">
+		<a href="http://www.teachexcel.com/excel-help/interstitial.php?i=283854&src=button" rel="nofollow" target="_blank">
+			<img alt="View Answers" border="0" src="./Excel - Iterate Through Keys In A Vba Collection - Hi I wonder... - Free Excel Help_files/view_answers.gif">
+		</a>
+		
+		<div style="margin-top:5px; margin-left:5px; margin-bottom:15px;">
+		
+		
+	
+			<span style="font-size:14px; font-weight:bold;"><a href="http://www.excelkey.com/forum/?src=ehelptextnextbutton" rel="nofollow">Ask Your Own Question</a></span>
+
+
+		</div>
+	</div>
+	
+	<div style="margin-top:10px; display:none;">
+	<table width="100%">
+		<tbody><tr>
+			<td>
+			
+				<div style="float:left;">
+					<a href="http://www.teachexcel.com/excel-help/interstitial.php?i=283854&src=button" rel="nofollow" target="_blank">
+						<img alt="View Answers" border="0" src="./Excel - Iterate Through Keys In A Vba Collection - Hi I wonder... - Free Excel Help_files/view_answers.gif">
+					</a>
+				</div>
+	
+				
+				<div style="float:right;">
+					<a href="http://www.excelkey.com/forum/?src=ehelptextimgbutton" rel="nofollow">
+						<img alt="Ask Your Question in the Excel Forum" border="0" src="./Excel - Iterate Through Keys In A Vba Collection - Hi I wonder... - Free Excel Help_files/askquestionforum.jpg">
+					</a>
+				</div>
+
+				
+			</td>
+		</tr>
+	</tbody></table>
+	</div>
+	
+<hr>
+	
+</div><div class="page_content_container">
+	<div class="page_title_content">
+		<table width="100%">
+			<tbody><tr>
+				<td class="link_page_title">
+					<div style="float:left; padding-right:10px;">
+					<div class="KonaBody">
+						<a name="15"></a>
+						<h2 class="page_content_topic"><a href="http://www.teachexcel.com/excel-help/excel-how-to.php?i=559515">Vba Code Is Not Sorting As Desired - Excel</a></h2>					</div>
+					</div>
+				</td>
+				<td class="link_page_view_content" width="150px;" align="right">
+									</td>
+				<td class="link_page_view_content" width="150px;" align="right">
+					<!--<a href="http://www.teachexcel.com/excel-help/interstitial.php?i=559515&src=textlink" rel="nofollow" target="_blank">View Answers</a>-->
+
+
+	
+						<a href="http://www.excelkey.com/forum/?src=ehelptext" rel="nofollow">Excel Forum</a>
+
+				</td>
+			</tr>
+			<tr>
+				<td class="link_page_view_content" align="right" colspan="3">
+				
+				
+	
+					<!--<div style="float:left; padding-top:3px;">
+						<a href="http://www.teachmsoffice.com/list-of-tutorials.php?src=tepgecontentbttn" rel="nofollow"><img src="http://www.teachexcel.com/excel-help/images/view_tutorials-white-back.gif" border="0" alt="View Tutorial" /></a>
+					</div>-->
+					<!--<div style="margin-right:40px;">
+						<a href="http://www.teachexcel.com/forum/">Free Excel Help Forum</a>
+					</div>-->
+
+
+				</td>
+			</tr>
+			<tr>
+				<td colspan="3">
+				
+				
+	
+				
+
+				</td>
+			</tr>
+			<tr>
+				<td class="link_page_view_content" align="right" colspan="3">
+					<div style="margin-right:40px; display:none;">
+					
+					
+	
+						
+
+					</div>
+				</td>
+			</tr>
+		</tbody></table>
+	</div>
+	<div style="max-height:500px; overflow:auto;">I'm sorting a range of data based on the following:<br>
+<br>
+Column H10 is Key1. Data is entered using a drop-down list. The two choices are In Progress and Complete.<br>
+<br>
+Column B10 is Key2. Data is entered using a drop-down list. The three choices are Low, Medium and High.<br>
+<br>
+Columun F10 is Key3. The date is entered using a pop-up calendar in the format mm/dd/yy.<br>
+<br>
+Here is my code:<br>
+<br>
+Sub Sort_by_Status_Priority()<br>
+    Range("A9:L109").Sort _<br>
+    Key1:=Range("H10"), Order1:=xlDescending, _<br>
+    Key2:=Range("B10"), Order2:=xlAscending, _<br>
+    Key3:=Range("F10"), Order3:=xlAscending, _<br>
+    Header:=xlYes, OrderCustom:=1, MatchCase:=False, Orientation:=xlTopToBottom, _<br>
+    DataOption1:=xlSortNormal, DataOption2:=xlSortNormal, DataOption3:=xlSortNormal<br>
+End Sub<br>
+<br>
+The Key1 sort works as desired. All rows with "Complete" in Column H10 are moved to the bottom of the sheet.<br>
+<br>
+The Key2 sort does not work as desired. I want it to sort from "High" to "Low" and it does not do that. I suspect Excel is sorting the field alphabetically.<br>
+<br>
+The Key3 sort does not work as desired. It sorts dates correctly within a month but does not put an earlier month before a later month. For example, March is preceding February.<br>
+<br>
+Is there a way to make the code sort as desired without changing the entries to 1, 2, 3 or A, B, C? I want to keep the current words because they have more meaning.<br>
+<br>
+I'm a VBA novice so any help is appreciated. Thank you.
+		<br><br></div>	
+	<div style="display:block; margin-top:10px;">
+		<a href="http://www.teachexcel.com/excel-help/interstitial.php?i=559515&src=button" rel="nofollow" target="_blank">
+			<img alt="View Answers" border="0" src="./Excel - Iterate Through Keys In A Vba Collection - Hi I wonder... - Free Excel Help_files/view_answers.gif">
+		</a>
+		
+		<div style="margin-top:5px; margin-left:5px; margin-bottom:15px;">
+		
+		
+	
+			<span style="font-size:14px; font-weight:bold;"><a href="http://www.excelkey.com/forum/?src=ehelptextnextbutton" rel="nofollow">Ask Your Own Question</a></span>
+
+
+		</div>
+	</div>
+	
+	<div style="margin-top:10px; display:none;">
+	<table width="100%">
+		<tbody><tr>
+			<td>
+			
+				<div style="float:left;">
+					<a href="http://www.teachexcel.com/excel-help/interstitial.php?i=559515&src=button" rel="nofollow" target="_blank">
+						<img alt="View Answers" border="0" src="./Excel - Iterate Through Keys In A Vba Collection - Hi I wonder... - Free Excel Help_files/view_answers.gif">
+					</a>
+				</div>
+	
+				
+				<div style="float:right;">
+					<a href="http://www.excelkey.com/forum/?src=ehelptextimgbutton" rel="nofollow">
+						<img alt="Ask Your Question in the Excel Forum" border="0" src="./Excel - Iterate Through Keys In A Vba Collection - Hi I wonder... - Free Excel Help_files/askquestionforum.jpg">
+					</a>
+				</div>
+
+				
+			</td>
+		</tr>
+	</tbody></table>
+	</div>
+	
+<hr>
+	
+</div><div class="page_content_container">
+	<div class="page_title_content">
+		<table width="100%">
+			<tbody><tr>
+				<td class="link_page_title">
+					<div style="float:left; padding-right:10px;">
+					<div class="KonaBody">
+						<a name="16"></a>
+						<h2 class="page_content_topic"><a href="http://www.teachexcel.com/excel-help/excel-how-to.php?i=288573">Multiple Column Vlookup - Not Sumproduct - Excel</a></h2>					</div>
+					</div>
+				</td>
+				<td class="link_page_view_content" width="150px;" align="right">
+									</td>
+				<td class="link_page_view_content" width="150px;" align="right">
+					<!--<a href="http://www.teachexcel.com/excel-help/interstitial.php?i=288573&src=textlink" rel="nofollow" target="_blank">View Answers</a>-->
+
+
+	
+						<a href="http://www.excelkey.com/forum/?src=ehelptext" rel="nofollow">Excel Forum</a>
+
+				</td>
+			</tr>
+			<tr>
+				<td class="link_page_view_content" align="right" colspan="3">
+				
+				
+	
+					<!--<div style="float:left; padding-top:3px;">
+						<a href="http://www.teachmsoffice.com/list-of-tutorials.php?src=tepgecontentbttn" rel="nofollow"><img src="http://www.teachexcel.com/excel-help/images/view_tutorials-white-back.gif" border="0" alt="View Tutorial" /></a>
+					</div>-->
+					<!--<div style="margin-right:40px;">
+						<a href="http://www.teachexcel.com/forum/">Free Excel Help Forum</a>
+					</div>-->
+
+
+				</td>
+			</tr>
+			<tr>
+				<td colspan="3">
+				
+				
+	
+				
+
+				</td>
+			</tr>
+			<tr>
+				<td class="link_page_view_content" align="right" colspan="3">
+					<div style="margin-right:40px; display:none;">
+					
+					
+	
+						
+
+					</div>
+				</td>
+			</tr>
+		</tbody></table>
+	</div>
+	<div style="max-height:500px; overflow:auto;">Hi All,<br>
+<br>
+In have the following table, which has 2 keys and a CODE that relates to them.<br>
+<br>
+
+ 
+&nbsp;
+
+R
+
+S
+
+T
+
+1
+
+key1
+
+key2
+
+CODE
+
+2
+
+2
+
+001339ABC
+
+xyz123
+
+3
+
+3
+
+020001ABC
+
+xyz125
+
+4
+
+4
+
+020001ABC
+
+xyz126
+
+ <br><br>Excel tables to the web &gt;&gt;  Excel Jeanie HTML 4 <br>
+<br>
+<br>
+If I want to do a 2-column lookup, i.e. on Key1 and Key2 and return the first MATCH, as shown below, how would I do it?<br>
+<br>
+
+ 
+&nbsp;
+
+V
+
+W
+
+X
+
+1
+
+key1
+
+key2
+
+Answer
+
+2
+
+3
+
+020001ABC
+
+xyz125
+
+ <br><br>Excel tables to the web &gt;&gt;  Excel Jeanie HTML 4 <br>
+<br>
+Any help appreciated.
+		<br><br></div>	
+	<div style="display:block; margin-top:10px;">
+		<a href="http://www.teachexcel.com/excel-help/interstitial.php?i=288573&src=button" rel="nofollow" target="_blank">
+			<img alt="View Answers" border="0" src="./Excel - Iterate Through Keys In A Vba Collection - Hi I wonder... - Free Excel Help_files/view_answers.gif">
+		</a>
+		
+		<div style="margin-top:5px; margin-left:5px; margin-bottom:15px;">
+		
+		
+	
+			<span style="font-size:14px; font-weight:bold;"><a href="http://www.excelkey.com/forum/?src=ehelptextnextbutton" rel="nofollow">Ask Your Own Question</a></span>
+
+
+		</div>
+	</div>
+	
+	<div style="margin-top:10px; display:none;">
+	<table width="100%">
+		<tbody><tr>
+			<td>
+			
+				<div style="float:left;">
+					<a href="http://www.teachexcel.com/excel-help/interstitial.php?i=288573&src=button" rel="nofollow" target="_blank">
+						<img alt="View Answers" border="0" src="./Excel - Iterate Through Keys In A Vba Collection - Hi I wonder... - Free Excel Help_files/view_answers.gif">
+					</a>
+				</div>
+	
+				
+				<div style="float:right;">
+					<a href="http://www.excelkey.com/forum/?src=ehelptextimgbutton" rel="nofollow">
+						<img alt="Ask Your Question in the Excel Forum" border="0" src="./Excel - Iterate Through Keys In A Vba Collection - Hi I wonder... - Free Excel Help_files/askquestionforum.jpg">
+					</a>
+				</div>
+
+				
+			</td>
+		</tr>
+	</tbody></table>
+	</div>
+	
+<hr>
+	
+</div><div class="page_content_container">
+	<div class="page_title_content">
+		<table width="100%">
+			<tbody><tr>
+				<td class="link_page_title">
+					<div style="float:left; padding-right:10px;">
+					<div class="KonaBody">
+						<a name="17"></a>
+						<h2 class="page_content_topic"><a href="http://www.teachexcel.com/excel-help/excel-how-to.php?i=258543">Example Equivalent Hash Of Hashes - Excel</a></h2>					</div>
+					</div>
+				</td>
+				<td class="link_page_view_content" width="150px;" align="right">
+									</td>
+				<td class="link_page_view_content" width="150px;" align="right">
+					<!--<a href="http://www.teachexcel.com/excel-help/interstitial.php?i=258543&src=textlink" rel="nofollow" target="_blank">View Answers</a>-->
+
+
+	
+						<a href="http://www.excelkey.com/forum/?src=ehelptext" rel="nofollow">Excel Forum</a>
+
+				</td>
+			</tr>
+			<tr>
+				<td class="link_page_view_content" align="right" colspan="3">
+				
+				
+	
+					<!--<div style="float:left; padding-top:3px;">
+						<a href="http://www.teachmsoffice.com/list-of-tutorials.php?src=tepgecontentbttn" rel="nofollow"><img src="http://www.teachexcel.com/excel-help/images/view_tutorials-white-back.gif" border="0" alt="View Tutorial" /></a>
+					</div>-->
+					<!--<div style="margin-right:40px;">
+						<a href="http://www.teachexcel.com/forum/">Free Excel Help Forum</a>
+					</div>-->
+
+
+				</td>
+			</tr>
+			<tr>
+				<td colspan="3">
+				
+				
+	
+				
+
+				</td>
+			</tr>
+			<tr>
+				<td class="link_page_view_content" align="right" colspan="3">
+					<div style="margin-right:40px; display:none;">
+					
+					
+	
+						
+
+					</div>
+				</td>
+			</tr>
+		</tbody></table>
+	</div>
+	<div style="max-height:500px; overflow:auto;">I googled around for some info. about dictionary objects used to simulate Perl's Hash of Hashes and found nothing.  So I hacked a while and here is a subroutine to demonstrate what I learned.<br>
+<br>
+ 
+ 
+
+
+	
+ Code:<br><br>
+
+ 
+
+	
+<pre class="code_block_container">Sub TestHoH()
+    'Example equivalent of a hash of hashes
+    Dim Dict1 As Object
+    Dim Key1, Key2
+    Dim Str As String
+    
+    Set Dict1 = CreateObject("Scripting.Dictionary")
+    
+    Dict1.Add "A", CreateObject("Scripting.Dictionary") 'Set item value to be another dictionary object (hash)
+    Dict1.Item("A").Item("A") = "A1" 'Demonstrate autovivification
+    Dict1.Item("A").Add "B", "B1"
+    
+    Dict1.Add "B", CreateObject("Scripting.Dictionary")
+    Dict1.Item("B").Add "A", "A2" 'Instead of autovivification
+    Dict1.Item("B").Add "B", "B2"
+    
+    For Each Key1 In Dict1
+        For Each Key2 In Dict1.Item(Key1)
+            Str = Str &amp; Key1 &amp; Key2 &amp; "=" &amp; Dict1.Item(Key1).Item(Key2) &amp; Chr(13)
+        Next Key2
+    Next Key1
+    MsgBox Str
+    
+    'And, a little more Perlish
+    
+    'Add another hash to the parent hash
+    Set Dict1("C") = CreateObject("Scripting.Dictionary")
+    
+    Dict1("C")("A") = "C1" 'This looks a little more like Perl
+    Dict1("C")("B") = "C2"
+    Str = ""
+    For Each Key1 In Dict1
+        For Each Key2 In Dict1.Item(Key1)
+            Str = Str &amp; Key1 &amp; Key2 &amp; "=" &amp; Dict1(Key1)(Key2) &amp; Chr(13)
+        Next Key2
+    Next Key1
+    MsgBox Str
+    
+    'Test the Exists method, using this Perlish style
+    If Dict1("C").Exists("B") Then
+        MsgBox Dict1("C")("B")
+    Else
+        MsgBox "Dict(C)(B) does not exist"
+    End If
+    If Dict1("C").Exists("C") Then
+        MsgBox Dict1("C")("C")
+    Else
+        MsgBox "Dict(C)(C) does not exist"
+    End If
+End Sub
+</pre>
+<br><br>
+ I love programming using VBA Excel and Perl. Comments are, of course, welcome. 
+		<br><br></div>	
+	<div style="display:block; margin-top:10px;">
+		<a href="http://www.teachexcel.com/excel-help/interstitial.php?i=258543&src=button" rel="nofollow" target="_blank">
+			<img alt="View Answers" border="0" src="./Excel - Iterate Through Keys In A Vba Collection - Hi I wonder... - Free Excel Help_files/view_answers.gif">
+		</a>
+		
+		<div style="margin-top:5px; margin-left:5px; margin-bottom:15px;">
+		
+		
+	
+			<span style="font-size:14px; font-weight:bold;"><a href="http://www.excelkey.com/forum/?src=ehelptextnextbutton" rel="nofollow">Ask Your Own Question</a></span>
+
+
+		</div>
+	</div>
+	
+	<div style="margin-top:10px; display:none;">
+	<table width="100%">
+		<tbody><tr>
+			<td>
+			
+				<div style="float:left;">
+					<a href="http://www.teachexcel.com/excel-help/interstitial.php?i=258543&src=button" rel="nofollow" target="_blank">
+						<img alt="View Answers" border="0" src="./Excel - Iterate Through Keys In A Vba Collection - Hi I wonder... - Free Excel Help_files/view_answers.gif">
+					</a>
+				</div>
+	
+				
+				<div style="float:right;">
+					<a href="http://www.excelkey.com/forum/?src=ehelptextimgbutton" rel="nofollow">
+						<img alt="Ask Your Question in the Excel Forum" border="0" src="./Excel - Iterate Through Keys In A Vba Collection - Hi I wonder... - Free Excel Help_files/askquestionforum.jpg">
+					</a>
+				</div>
+
+				
+			</td>
+		</tr>
+	</tbody></table>
+	</div>
+	
+<hr>
+	
+</div><div class="page_content_container">
+	<div class="page_title_content">
+		<table width="100%">
+			<tbody><tr>
+				<td class="link_page_title">
+					<div style="float:left; padding-right:10px;">
+					<div class="KonaBody">
+						<a name="18"></a>
+						<h2 class="page_content_topic"><a href="http://www.teachexcel.com/excel-help/excel-how-to.php?i=312422">Sorting Data - Excel</a></h2>					</div>
+					</div>
+				</td>
+				<td class="link_page_view_content" width="150px;" align="right">
+									</td>
+				<td class="link_page_view_content" width="150px;" align="right">
+					<!--<a href="http://www.teachexcel.com/excel-help/interstitial.php?i=312422&src=textlink" rel="nofollow" target="_blank">View Answers</a>-->
+
+
+	
+						<a href="http://www.excelkey.com/forum/?src=ehelptext" rel="nofollow">Excel Forum</a>
+
+				</td>
+			</tr>
+			<tr>
+				<td class="link_page_view_content" align="right" colspan="3">
+				
+				
+	
+					<!--<div style="float:left; padding-top:3px;">
+						<a href="http://www.teachmsoffice.com/list-of-tutorials.php?src=tepgecontentbttn" rel="nofollow"><img src="http://www.teachexcel.com/excel-help/images/view_tutorials-white-back.gif" border="0" alt="View Tutorial" /></a>
+					</div>-->
+					<!--<div style="margin-right:40px;">
+						<a href="http://www.teachexcel.com/forum/">Free Excel Help Forum</a>
+					</div>-->
+
+
+				</td>
+			</tr>
+			<tr>
+				<td colspan="3">
+				
+				
+	
+				
+
+				</td>
+			</tr>
+			<tr>
+				<td class="link_page_view_content" align="right" colspan="3">
+					<div style="margin-right:40px; display:none;">
+					
+					
+	
+						
+
+					</div>
+				</td>
+			</tr>
+		</tbody></table>
+	</div>
+	<div style="max-height:500px; overflow:auto;">Hi, I have 4 groups of data on a sheet (first group rows 4-10, second 11-15, etc...) and about 9 columns of data.<br>
+ <br>
+3 of the columns contain dates, what I am trying to do is sort by these dates. I have: Due Date, Revised Due Date, Completion Date.<br>
+ <br>
+Basically what I want to do is sort within each GROUP by the "highest priority" date that is filled in. So if there is a Completion Date, use that date for the sort. If there isn't, use the Revised Due Date (if there is one), if there isn't a Revised Due Date, use Due Date (all will have Due Date).<br>
+ <br>
+Here is my code but of course this is not sorting properly...<br>
+ <br>
+ 
+	 Code:<br><br>
+	
+<pre class="code_block_container">x = 4
+ 
+    Range(x &amp; ":" &amp; totalred + x - 1).Sort Key1:=Range("H4"), Order1:=xlAscending, Key2:=Range("G4") _
+        , Order2:=xlAscending, Key3:=Range("F4"), Order3:=xlAscending, Header:= _
+        xlGuess, OrderCustom:=1, MatchCase:=False, Orientation:=xlTopToBottom
+ 
+ 
+     x = x + totalred
+ 
+    Range(x &amp; ":" &amp; totalyellow + x - 1).Sort Key1:=Range("H4"), Order1:=xlAscending, Key2:=Range("G4") _
+        , Order2:=xlAscending, Key3:=Range("F4"), Order3:=xlAscending, Header:= _
+        xlGuess, OrderCustom:=1, MatchCase:=False, Orientation:=xlTopToBottom
+ 
+    x = x + totalyellow
+ 
+    Range(x &amp; ":" &amp; totalwhite + x - 1).Sort Key1:=Range("H4"), Order1:=xlAscending, Key2:=Range("G4") _
+        , Order2:=xlAscending, Key3:=Range("F4"), Order3:=xlAscending, Header:= _
+        xlGuess, OrderCustom:=1, MatchCase:=False, Orientation:=xlTopToBottom
+ 
+    x = x + totalwhite
+ 
+    Range(x &amp; ":" &amp; totalgreen + x - 1).Sort Key1:=Range("H4"), Order1:=xlAscending, Key2:=Range("G4") _
+        , Order2:=xlAscending, Key3:=Range("F4"), Order3:=xlAscending, Header:= _
+        xlGuess, OrderCustom:=1, MatchCase:=False, Orientation:=xlTopToBottom
+</pre>
+<br><br> <br>
+ <br>
+ <br>
+ <br>
+ <br>
+ <br>
+ <br>
+ <br>
+ <br>
+ <br>
+ <br>
+ <br>
+Any suggestions?<br>
+ <br>
+ <br>
+ <br>
+Thanks!<br>
+Ryan
+		<br><br></div>	
+	<div style="display:block; margin-top:10px;">
+		<a href="http://www.teachexcel.com/excel-help/interstitial.php?i=312422&src=button" rel="nofollow" target="_blank">
+			<img alt="View Answers" border="0" src="./Excel - Iterate Through Keys In A Vba Collection - Hi I wonder... - Free Excel Help_files/view_answers.gif">
+		</a>
+		
+		<div style="margin-top:5px; margin-left:5px; margin-bottom:15px;">
+		
+		
+	
+			<span style="font-size:14px; font-weight:bold;"><a href="http://www.excelkey.com/forum/?src=ehelptextnextbutton" rel="nofollow">Ask Your Own Question</a></span>
+
+
+		</div>
+	</div>
+	
+	<div style="margin-top:10px; display:none;">
+	<table width="100%">
+		<tbody><tr>
+			<td>
+			
+				<div style="float:left;">
+					<a href="http://www.teachexcel.com/excel-help/interstitial.php?i=312422&src=button" rel="nofollow" target="_blank">
+						<img alt="View Answers" border="0" src="./Excel - Iterate Through Keys In A Vba Collection - Hi I wonder... - Free Excel Help_files/view_answers.gif">
+					</a>
+				</div>
+	
+				
+				<div style="float:right;">
+					<a href="http://www.excelkey.com/forum/?src=ehelptextimgbutton" rel="nofollow">
+						<img alt="Ask Your Question in the Excel Forum" border="0" src="./Excel - Iterate Through Keys In A Vba Collection - Hi I wonder... - Free Excel Help_files/askquestionforum.jpg">
+					</a>
+				</div>
+
+				
+			</td>
+		</tr>
+	</tbody></table>
+	</div>
+	
+<hr>
+	
+</div><div class="page_content_container">
+	<div class="page_title_content">
+		<table width="100%">
+			<tbody><tr>
+				<td class="link_page_title">
+					<div style="float:left; padding-right:10px;">
+					<div class="KonaBody">
+						<a name="19"></a>
+						<h2 class="page_content_topic"><a href="http://www.teachexcel.com/excel-help/excel-how-to.php?i=298118">Have  To Add More Rows Bases In A Column Content - Excel</a></h2>					</div>
+					</div>
+				</td>
+				<td class="link_page_view_content" width="150px;" align="right">
+									</td>
+				<td class="link_page_view_content" width="150px;" align="right">
+					<!--<a href="http://www.teachexcel.com/excel-help/interstitial.php?i=298118&src=textlink" rel="nofollow" target="_blank">View Answers</a>-->
+
+
+	
+						<a href="http://www.excelkey.com/forum/?src=ehelptext" rel="nofollow">Excel Forum</a>
+
+				</td>
+			</tr>
+			<tr>
+				<td class="link_page_view_content" align="right" colspan="3">
+				
+				
+	
+					<!--<div style="float:left; padding-top:3px;">
+						<a href="http://www.teachmsoffice.com/list-of-tutorials.php?src=tepgecontentbttn" rel="nofollow"><img src="http://www.teachexcel.com/excel-help/images/view_tutorials-white-back.gif" border="0" alt="View Tutorial" /></a>
+					</div>-->
+					<!--<div style="margin-right:40px;">
+						<a href="http://www.teachexcel.com/forum/">Free Excel Help Forum</a>
+					</div>-->
+
+
+				</td>
+			</tr>
+			<tr>
+				<td colspan="3">
+				
+				
+	
+				
+
+				</td>
+			</tr>
+			<tr>
+				<td class="link_page_view_content" align="right" colspan="3">
+					<div style="margin-right:40px; display:none;">
+					
+					
+	
+						
+
+					</div>
+				</td>
+			</tr>
+		</tbody></table>
+	</div>
+	<div style="max-height:500px; overflow:auto;">Ho all.<br>
+I am new here and I have no visualbasic experience at all. I am using excel 2000 and I have a lot of records (like 5000) having this strictu <br>
+<br>
+codenumber1 | key1,key2,key3,key4,...,keyn<br>
+codenumber2 | ke1,ke2,k3,...,k3n<br>
+<br>
+I need to split those records in some like<br>
+<br>
+codenumber1 | key1<br>
+codenumber1 | key2<br>
+...<br>
+codenumber1 | keyn<br>
+codenumber2 | ke1<br>
+codenumber2 | ke2<br>
+...<br>
+codenumber2 | ken<br>
+<br>
+<br>
+I am not sure is this is possible or not or how to do this. I guess some programming is needed but I really don't know how to start<br>
+<br>
+Any help is really appreciated,<br>
+<br>
+Regards and thanks for your time 
+		<br><br></div>	
+	<div style="display:block; margin-top:10px;">
+		<a href="http://www.teachexcel.com/excel-help/interstitial.php?i=298118&src=button" rel="nofollow" target="_blank">
+			<img alt="View Answers" border="0" src="./Excel - Iterate Through Keys In A Vba Collection - Hi I wonder... - Free Excel Help_files/view_answers.gif">
+		</a>
+		
+		<div style="margin-top:5px; margin-left:5px; margin-bottom:15px;">
+		
+		
+	
+			<span style="font-size:14px; font-weight:bold;"><a href="http://www.excelkey.com/forum/?src=ehelptextnextbutton" rel="nofollow">Ask Your Own Question</a></span>
+
+
+		</div>
+	</div>
+	
+	<div style="margin-top:10px; display:none;">
+	<table width="100%">
+		<tbody><tr>
+			<td>
+			
+				<div style="float:left;">
+					<a href="http://www.teachexcel.com/excel-help/interstitial.php?i=298118&src=button" rel="nofollow" target="_blank">
+						<img alt="View Answers" border="0" src="./Excel - Iterate Through Keys In A Vba Collection - Hi I wonder... - Free Excel Help_files/view_answers.gif">
+					</a>
+				</div>
+	
+				
+				<div style="float:right;">
+					<a href="http://www.excelkey.com/forum/?src=ehelptextimgbutton" rel="nofollow">
+						<img alt="Ask Your Question in the Excel Forum" border="0" src="./Excel - Iterate Through Keys In A Vba Collection - Hi I wonder... - Free Excel Help_files/askquestionforum.jpg">
+					</a>
+				</div>
+
+				
+			</td>
+		</tr>
+	</tbody></table>
+	</div>
+	
+<hr>
+	
+</div><div class="page_content_container">
+	<div class="page_title_content">
+		<table width="100%">
+			<tbody><tr>
+				<td class="link_page_title">
+					<div style="float:left; padding-right:10px;">
+					<div class="KonaBody">
+						<a name="20"></a>
+						<h2 class="page_content_topic"><a href="http://www.teachexcel.com/excel-help/excel-how-to.php?i=554957">Custom Collection - Excel</a></h2>					</div>
+					</div>
+				</td>
+				<td class="link_page_view_content" width="150px;" align="right">
+									</td>
+				<td class="link_page_view_content" width="150px;" align="right">
+					<!--<a href="http://www.teachexcel.com/excel-help/interstitial.php?i=554957&src=textlink" rel="nofollow" target="_blank">View Answers</a>-->
+
+
+	
+						<a href="http://www.excelkey.com/forum/?src=ehelptext" rel="nofollow">Excel Forum</a>
+
+				</td>
+			</tr>
+			<tr>
+				<td class="link_page_view_content" align="right" colspan="3">
+				
+				
+	
+					<!--<div style="float:left; padding-top:3px;">
+						<a href="http://www.teachmsoffice.com/list-of-tutorials.php?src=tepgecontentbttn" rel="nofollow"><img src="http://www.teachexcel.com/excel-help/images/view_tutorials-white-back.gif" border="0" alt="View Tutorial" /></a>
+					</div>-->
+					<!--<div style="margin-right:40px;">
+						<a href="http://www.teachexcel.com/forum/">Free Excel Help Forum</a>
+					</div>-->
+
+
+				</td>
+			</tr>
+			<tr>
+				<td colspan="3">
+				
+				
+	
+				
+
+				</td>
+			</tr>
+			<tr>
+				<td class="link_page_view_content" align="right" colspan="3">
+					<div style="margin-right:40px; display:none;">
+					
+					
+	
+						
+
+					</div>
+				</td>
+			</tr>
+		</tbody></table>
+	</div>
+	<div style="max-height:500px; overflow:auto;">Hi guys,<br>
+<br>
+I am curious if it is possible to create a custom collection.<br>
+<br>
+For instance, the normal Collection object only contains a few methods, and there are a few more I'd like to add to it directly, such as a Clear() function and a few Sort() functions.<br>
+<br>
+Now I see that VBA/Excel already has a few custom type collection objects that contain more than the standard Add, Remove, Count methods. Things like the Workbooks Collection or Sheets Collection.<br>
+<br>
+Is it possible to create my own Class/Collection hybrid?<br>
+<br>
+I can create the Class to handle all of the additional functions but by doing that cannot implement the Item syntax:<br>
+<br>
+ 
+	 Code:<br><br>
+	
+<pre class="code_block_container">Dim C As New Collection
+C.Add "ABC", "Letters"
+
+Dim S As String
+S = C("Letters")</pre></div>	
+	<div style="display:block; margin-top:10px;">
+		<a href="http://www.teachexcel.com/excel-help/interstitial.php?i=554957&src=button" rel="nofollow" target="_blank">
+			<img alt="View Answers" border="0" src="./Excel - Iterate Through Keys In A Vba Collection - Hi I wonder... - Free Excel Help_files/view_answers.gif">
+		</a>
+		
+		<div style="margin-top:5px; margin-left:5px; margin-bottom:15px;">
+		
+		
+	
+			<span style="font-size:14px; font-weight:bold;"><a href="http://www.excelkey.com/forum/?src=ehelptextnextbutton" rel="nofollow">Ask Your Own Question</a></span>
+
+
+		</div>
+	</div>
+	
+	<div style="margin-top:10px; display:none;">
+	<table width="100%">
+		<tbody><tr>
+			<td>
+			
+				<div style="float:left;">
+					<a href="http://www.teachexcel.com/excel-help/interstitial.php?i=554957&src=button" rel="nofollow" target="_blank">
+						<img alt="View Answers" border="0" src="./Excel - Iterate Through Keys In A Vba Collection - Hi I wonder... - Free Excel Help_files/view_answers.gif">
+					</a>
+				</div>
+	
+				
+				<div style="float:right;">
+					<a href="http://www.excelkey.com/forum/?src=ehelptextimgbutton" rel="nofollow">
+						<img alt="Ask Your Question in the Excel Forum" border="0" src="./Excel - Iterate Through Keys In A Vba Collection - Hi I wonder... - Free Excel Help_files/askquestionforum.jpg">
+					</a>
+				</div>
+
+				
+			</td>
+		</tr>
+	</tbody></table>
+	</div>
+	
+<hr>
+	
+</div><div class="page_content_container">
+	<div class="page_title_content">
+		<table width="100%">
+			<tbody><tr>
+				<td class="link_page_title">
+					<div style="float:left; padding-right:10px;">
+					<div class="KonaBody">
+						<a name="21"></a>
+						<h2 class="page_content_topic"><a href="http://www.teachexcel.com/excel-help/excel-how-to.php?i=309480">Building A Sort String - Excel</a></h2>					</div>
+					</div>
+				</td>
+				<td class="link_page_view_content" width="150px;" align="right">
+									</td>
+				<td class="link_page_view_content" width="150px;" align="right">
+					<!--<a href="http://www.teachexcel.com/excel-help/interstitial.php?i=309480&src=textlink" rel="nofollow" target="_blank">View Answers</a>-->
+
+
+	
+						<a href="http://www.excelkey.com/forum/?src=ehelptext" rel="nofollow">Excel Forum</a>
+
+				</td>
+			</tr>
+			<tr>
+				<td class="link_page_view_content" align="right" colspan="3">
+				
+				
+	
+					<!--<div style="float:left; padding-top:3px;">
+						<a href="http://www.teachmsoffice.com/list-of-tutorials.php?src=tepgecontentbttn" rel="nofollow"><img src="http://www.teachexcel.com/excel-help/images/view_tutorials-white-back.gif" border="0" alt="View Tutorial" /></a>
+					</div>-->
+					<!--<div style="margin-right:40px;">
+						<a href="http://www.teachexcel.com/forum/">Free Excel Help Forum</a>
+					</div>-->
+
+
+				</td>
+			</tr>
+			<tr>
+				<td colspan="3">
+				
+				
+	
+				
+
+				</td>
+			</tr>
+			<tr>
+				<td class="link_page_view_content" align="right" colspan="3">
+					<div style="margin-right:40px; display:none;">
+					
+					
+	
+						
+
+					</div>
+				</td>
+			</tr>
+		</tbody></table>
+	</div>
+	<div style="max-height:500px; overflow:auto;">I have set up a userform for a context sensitive sort routine which selects the relevant sort keys (up to 3)  and sets ascending/descending order. However. from this I need to be able to "build" the sort. I know the basic syntax eg <br>
+<br>
+  
+ 
+
+
+	
+ Code:<br><br>
+
+ 
+
+	
+<pre class="code_block_container">    Range("AI8:AM12").Select
+    Selection.Sort Key1:=Range("AI9"), Order1:=xlAscending, Key2:=Range("AJ9" _
+        ), Order2:=xlAscending, Key3:=Range("AL9"), Order3:=xlAscending, Header _
+        :=xlGuess, OrderCustom:=1, MatchCase:=False, Orientation:=xlTopToBottom _
+        , DataOption1:=xlSortNormal, DataOption2:=xlSortNormal, DataOption3:= _
+        xlSortNormal
+</pre>
+<br><br>
+ <br>
+I can vary the ranges to what I want (using Range (cells(x,y),cells(w,z))notation) but I need to be able to set the order for each sort key to either ascending or descending, and I need to be able to set up up to 3 sort keys. I can build up a suitable string to define the sort that I want but don't know how to "attach" the result to the sort statement. eg if I build <br>
+  
+ 
+
+
+	
+ Code:<br><br>
+
+ 
+
+	
+<pre class="code_block_container">sort$= 
+"key1:=Range (cells(5,12),cells(23,17)),Order1="&amp;order$&amp;"Header:=.
+</pre>
+<br><br>
+ ...etcetc"<br>
+<br>
+<br>
+I can't simply type selection.sort sort$. How can I do it<br>
+<br>
+Any help greatly appreciated 
+		<br><br></div>	
+	<div style="display:block; margin-top:10px;">
+		<a href="http://www.teachexcel.com/excel-help/interstitial.php?i=309480&src=button" rel="nofollow" target="_blank">
+			<img alt="View Answers" border="0" src="./Excel - Iterate Through Keys In A Vba Collection - Hi I wonder... - Free Excel Help_files/view_answers.gif">
+		</a>
+		
+		<div style="margin-top:5px; margin-left:5px; margin-bottom:15px;">
+		
+		
+	
+			<span style="font-size:14px; font-weight:bold;"><a href="http://www.excelkey.com/forum/?src=ehelptextnextbutton" rel="nofollow">Ask Your Own Question</a></span>
+
+
+		</div>
+	</div>
+	
+	<div style="margin-top:10px; display:none;">
+	<table width="100%">
+		<tbody><tr>
+			<td>
+			
+				<div style="float:left;">
+					<a href="http://www.teachexcel.com/excel-help/interstitial.php?i=309480&src=button" rel="nofollow" target="_blank">
+						<img alt="View Answers" border="0" src="./Excel - Iterate Through Keys In A Vba Collection - Hi I wonder... - Free Excel Help_files/view_answers.gif">
+					</a>
+				</div>
+	
+				
+				<div style="float:right;">
+					<a href="http://www.excelkey.com/forum/?src=ehelptextimgbutton" rel="nofollow">
+						<img alt="Ask Your Question in the Excel Forum" border="0" src="./Excel - Iterate Through Keys In A Vba Collection - Hi I wonder... - Free Excel Help_files/askquestionforum.jpg">
+					</a>
+				</div>
+
+				
+			</td>
+		</tr>
+	</tbody></table>
+	</div>
+	
+<hr>
+	
+</div><div class="page_content_container">
+	<div class="page_title_content">
+		<table width="100%">
+			<tbody><tr>
+				<td class="link_page_title">
+					<div style="float:left; padding-right:10px;">
+					<div class="KonaBody">
+						<a name="22"></a>
+						<h2 class="page_content_topic"><a href="http://www.teachexcel.com/excel-help/excel-how-to.php?i=544020">Excel Macro To Sort More Than 3 Keys - Excel</a></h2>					</div>
+					</div>
+				</td>
+				<td class="link_page_view_content" width="150px;" align="right">
+									</td>
+				<td class="link_page_view_content" width="150px;" align="right">
+					<!--<a href="http://www.teachexcel.com/excel-help/interstitial.php?i=544020&src=textlink" rel="nofollow" target="_blank">View Answers</a>-->
+
+
+	
+						<a href="http://www.excelkey.com/forum/?src=ehelptext" rel="nofollow">Excel Forum</a>
+
+				</td>
+			</tr>
+			<tr>
+				<td class="link_page_view_content" align="right" colspan="3">
+				
+				
+	
+					<!--<div style="float:left; padding-top:3px;">
+						<a href="http://www.teachmsoffice.com/list-of-tutorials.php?src=tepgecontentbttn" rel="nofollow"><img src="http://www.teachexcel.com/excel-help/images/view_tutorials-white-back.gif" border="0" alt="View Tutorial" /></a>
+					</div>-->
+					<!--<div style="margin-right:40px;">
+						<a href="http://www.teachexcel.com/forum/">Free Excel Help Forum</a>
+					</div>-->
+
+
+				</td>
+			</tr>
+			<tr>
+				<td colspan="3">
+				
+				
+	
+				
+
+				</td>
+			</tr>
+			<tr>
+				<td class="link_page_view_content" align="right" colspan="3">
+					<div style="margin-right:40px; display:none;">
+					
+					
+	
+						
+
+					</div>
+				</td>
+			</tr>
+		</tbody></table>
+	</div>
+	<div style="max-height:500px; overflow:auto;">I have a macro that I need to sort on 5 different columns. Problem is from what I can see is Excel has a maximum of 3 Keys to sort. Has anyone know of a way to do this with more than 3 keys?  I am in urgent need of help.  Please help!<br>
+<br>
+I am using Excel 2000 and if I try to add more than 3 keys the macro gets an error.<br>
+<br>
+Sub SortData()<br>
+    <br>
+' SortData Macro<br>
+' This macro sorts the imported data by<br>
+' Column B - Location<br>
+' Column F - PartNumber<br>
+' Column G - Rev Number<br>
+' Column H - Lot Number<br>
+' Column I - Production Number<br>
+' in ascending order.<br>
+    <br>
+    Sheets("Sheet2").Select<br>
+    Cells.Select<br>
+    Selection.Sort Key1:=Range("F1"), Order1:=xlAscending _<br>
+                   , Key2:=Range("G1"), Order2:=xlAscending _<br>
+                   , Key3:=Range("H1"), Order3:=xlAscending _<br>
+                   , Header:= _<br>
+        xlGuess, OrderCustom:=1, MatchCase:=False, Orientation:=xlTopToBottom<br>
+    Sheets("Sheet1").Select<br>
+End Sub
+		<br><br></div>	
+	<div style="display:block; margin-top:10px;">
+		<a href="http://www.teachexcel.com/excel-help/interstitial.php?i=544020&src=button" rel="nofollow" target="_blank">
+			<img alt="View Answers" border="0" src="./Excel - Iterate Through Keys In A Vba Collection - Hi I wonder... - Free Excel Help_files/view_answers.gif">
+		</a>
+		
+		<div style="margin-top:5px; margin-left:5px; margin-bottom:15px;">
+		
+		
+	
+			<span style="font-size:14px; font-weight:bold;"><a href="http://www.excelkey.com/forum/?src=ehelptextnextbutton" rel="nofollow">Ask Your Own Question</a></span>
+
+
+		</div>
+	</div>
+	
+	<div style="margin-top:10px; display:none;">
+	<table width="100%">
+		<tbody><tr>
+			<td>
+			
+				<div style="float:left;">
+					<a href="http://www.teachexcel.com/excel-help/interstitial.php?i=544020&src=button" rel="nofollow" target="_blank">
+						<img alt="View Answers" border="0" src="./Excel - Iterate Through Keys In A Vba Collection - Hi I wonder... - Free Excel Help_files/view_answers.gif">
+					</a>
+				</div>
+	
+				
+				<div style="float:right;">
+					<a href="http://www.excelkey.com/forum/?src=ehelptextimgbutton" rel="nofollow">
+						<img alt="Ask Your Question in the Excel Forum" border="0" src="./Excel - Iterate Through Keys In A Vba Collection - Hi I wonder... - Free Excel Help_files/askquestionforum.jpg">
+					</a>
+				</div>
+
+				
+			</td>
+		</tr>
+	</tbody></table>
+	</div>
+	
+<hr>
+	
+</div><div class="page_content_container">
+	<div class="page_title_content">
+		<table width="100%">
+			<tbody><tr>
+				<td class="link_page_title">
+					<div style="float:left; padding-right:10px;">
+					<div class="KonaBody">
+						<a name="23"></a>
+						<h2 class="page_content_topic"><a href="http://www.teachexcel.com/excel-help/excel-how-to.php?i=556610">Sort By More Than 3 Columns? - Excel</a></h2>					</div>
+					</div>
+				</td>
+				<td class="link_page_view_content" width="150px;" align="right">
+									</td>
+				<td class="link_page_view_content" width="150px;" align="right">
+					<!--<a href="http://www.teachexcel.com/excel-help/interstitial.php?i=556610&src=textlink" rel="nofollow" target="_blank">View Answers</a>-->
+
+
+	
+						<a href="http://www.excelkey.com/forum/?src=ehelptext" rel="nofollow">Excel Forum</a>
+
+				</td>
+			</tr>
+			<tr>
+				<td class="link_page_view_content" align="right" colspan="3">
+				
+				
+	
+					<!--<div style="float:left; padding-top:3px;">
+						<a href="http://www.teachmsoffice.com/list-of-tutorials.php?src=tepgecontentbttn" rel="nofollow"><img src="http://www.teachexcel.com/excel-help/images/view_tutorials-white-back.gif" border="0" alt="View Tutorial" /></a>
+					</div>-->
+					<!--<div style="margin-right:40px;">
+						<a href="http://www.teachexcel.com/forum/">Free Excel Help Forum</a>
+					</div>-->
+
+
+				</td>
+			</tr>
+			<tr>
+				<td colspan="3">
+				
+				
+	
+				
+
+				</td>
+			</tr>
+			<tr>
+				<td class="link_page_view_content" align="right" colspan="3">
+					<div style="margin-right:40px; display:none;">
+					
+					
+	
+						
+
+					</div>
+				</td>
+			</tr>
+		</tbody></table>
+	</div>
+	<div style="max-height:500px; overflow:auto;">Is there a way to complete a sort with more than 3 column keys  in VBA?<br>
+<br>
+I have a sheet where there are 5 rows that could be used to describe a sample.  I would like to sort them using all 5.<br>
+<br>
+Basically this (but it does not work):<br>
+ 
+	 Code:<br><br>
+	
+<pre class="code_block_container">Worksheets("Table").Range("B10:z299").Sort _
+        Key1:=Worksheets("Table").Range("E10"), _
+        Key2:=Worksheets("Table").Range("D10"), _
+        Key3:=Worksheets("Table").Range("C10"), _
+        Key4:=Worksheets("Table").Range("B10"), _
+        Key5:=Worksheets("Table").Range("G10")
+</pre>
+<br><br>
+		<br><br></div>	
+	<div style="display:block; margin-top:10px;">
+		<a href="http://www.teachexcel.com/excel-help/interstitial.php?i=556610&src=button" rel="nofollow" target="_blank">
+			<img alt="View Answers" border="0" src="./Excel - Iterate Through Keys In A Vba Collection - Hi I wonder... - Free Excel Help_files/view_answers.gif">
+		</a>
+		
+		<div style="margin-top:5px; margin-left:5px; margin-bottom:15px;">
+		
+		
+	
+			<span style="font-size:14px; font-weight:bold;"><a href="http://www.excelkey.com/forum/?src=ehelptextnextbutton" rel="nofollow">Ask Your Own Question</a></span>
+
+
+		</div>
+	</div>
+	
+	<div style="margin-top:10px; display:none;">
+	<table width="100%">
+		<tbody><tr>
+			<td>
+			
+				<div style="float:left;">
+					<a href="http://www.teachexcel.com/excel-help/interstitial.php?i=556610&src=button" rel="nofollow" target="_blank">
+						<img alt="View Answers" border="0" src="./Excel - Iterate Through Keys In A Vba Collection - Hi I wonder... - Free Excel Help_files/view_answers.gif">
+					</a>
+				</div>
+	
+				
+				<div style="float:right;">
+					<a href="http://www.excelkey.com/forum/?src=ehelptextimgbutton" rel="nofollow">
+						<img alt="Ask Your Question in the Excel Forum" border="0" src="./Excel - Iterate Through Keys In A Vba Collection - Hi I wonder... - Free Excel Help_files/askquestionforum.jpg">
+					</a>
+				</div>
+
+				
+			</td>
+		</tr>
+	</tbody></table>
+	</div>
+	
+<hr>
+	
+</div><div class="page_content_container">
+	<div class="page_title_content">
+		<table width="100%">
+			<tbody><tr>
+				<td class="link_page_title">
+					<div style="float:left; padding-right:10px;">
+					<div class="KonaBody">
+						<a name="24"></a>
+						<h2 class="page_content_topic"><a href="http://www.teachexcel.com/excel-help/excel-how-to.php?i=358793">Data Sort - Excel</a></h2>					</div>
+					</div>
+				</td>
+				<td class="link_page_view_content" width="150px;" align="right">
+									</td>
+				<td class="link_page_view_content" width="150px;" align="right">
+					<!--<a href="http://www.teachexcel.com/excel-help/interstitial.php?i=358793&src=textlink" rel="nofollow" target="_blank">View Answers</a>-->
+
+
+	
+						<a href="http://www.excelkey.com/forum/?src=ehelptext" rel="nofollow">Excel Forum</a>
+
+				</td>
+			</tr>
+			<tr>
+				<td class="link_page_view_content" align="right" colspan="3">
+				
+				
+	
+					<!--<div style="float:left; padding-top:3px;">
+						<a href="http://www.teachmsoffice.com/list-of-tutorials.php?src=tepgecontentbttn" rel="nofollow"><img src="http://www.teachexcel.com/excel-help/images/view_tutorials-white-back.gif" border="0" alt="View Tutorial" /></a>
+					</div>-->
+					<!--<div style="margin-right:40px;">
+						<a href="http://www.teachexcel.com/forum/">Free Excel Help Forum</a>
+					</div>-->
+
+
+				</td>
+			</tr>
+			<tr>
+				<td colspan="3">
+				
+				
+	
+				
+
+				</td>
+			</tr>
+			<tr>
+				<td class="link_page_view_content" align="right" colspan="3">
+					<div style="margin-right:40px; display:none;">
+					
+					
+	
+						
+
+					</div>
+				</td>
+			</tr>
+		</tbody></table>
+	</div>
+	<div style="max-height:500px; overflow:auto;">Is it possible to sort a worksheet with more than 3 keys?<br>
+<br>
+I tried to do a macro like this:<br>
+<br>
+Cells.Select<br>
+Selection.Sort Key1:=Range("E2"), Key2:=Range("A2") _<br>
+    , Key3:=Range("G2"), Key4:=Range("I2")<br>
+<br>
+but I obtain a run-time error 1004  <br>
+<br>
+Thanx in advance,<br>
+<br>
+Ivan 
+		<br><br></div>	
+	<div style="display:block; margin-top:10px;">
+		<a href="http://www.teachexcel.com/excel-help/interstitial.php?i=358793&src=button" rel="nofollow" target="_blank">
+			<img alt="View Answers" border="0" src="./Excel - Iterate Through Keys In A Vba Collection - Hi I wonder... - Free Excel Help_files/view_answers.gif">
+		</a>
+		
+		<div style="margin-top:5px; margin-left:5px; margin-bottom:15px;">
+		
+		
+	
+			<span style="font-size:14px; font-weight:bold;"><a href="http://www.excelkey.com/forum/?src=ehelptextnextbutton" rel="nofollow">Ask Your Own Question</a></span>
+
+
+		</div>
+	</div>
+	
+	<div style="margin-top:10px; display:none;">
+	<table width="100%">
+		<tbody><tr>
+			<td>
+			
+				<div style="float:left;">
+					<a href="http://www.teachexcel.com/excel-help/interstitial.php?i=358793&src=button" rel="nofollow" target="_blank">
+						<img alt="View Answers" border="0" src="./Excel - Iterate Through Keys In A Vba Collection - Hi I wonder... - Free Excel Help_files/view_answers.gif">
+					</a>
+				</div>
+	
+				
+				<div style="float:right;">
+					<a href="http://www.excelkey.com/forum/?src=ehelptextimgbutton" rel="nofollow">
+						<img alt="Ask Your Question in the Excel Forum" border="0" src="./Excel - Iterate Through Keys In A Vba Collection - Hi I wonder... - Free Excel Help_files/askquestionforum.jpg">
+					</a>
+				</div>
+
+				
+			</td>
+		</tr>
+	</tbody></table>
+	</div>
+	
+<hr>
+	
+</div><div class="page_content_container">
+	<div class="page_title_content">
+		<table width="100%">
+			<tbody><tr>
+				<td class="link_page_title">
+					<div style="float:left; padding-right:10px;">
+					<div class="KonaBody">
+						<a name="25"></a>
+						<h2 class="page_content_topic"><a href="http://www.teachexcel.com/excel-help/excel-how-to.php?i=525062">How Do I Remove Duplicates From A Collection? - Excel</a></h2>					</div>
+					</div>
+				</td>
+				<td class="link_page_view_content" width="150px;" align="right">
+									</td>
+				<td class="link_page_view_content" width="150px;" align="right">
+					<!--<a href="http://www.teachexcel.com/excel-help/interstitial.php?i=525062&src=textlink" rel="nofollow" target="_blank">View Answers</a>-->
+
+
+	
+						<a href="http://www.excelkey.com/forum/?src=ehelptext" rel="nofollow">Excel Forum</a>
+
+				</td>
+			</tr>
+			<tr>
+				<td class="link_page_view_content" align="right" colspan="3">
+				
+				
+	
+					<!--<div style="float:left; padding-top:3px;">
+						<a href="http://www.teachmsoffice.com/list-of-tutorials.php?src=tepgecontentbttn" rel="nofollow"><img src="http://www.teachexcel.com/excel-help/images/view_tutorials-white-back.gif" border="0" alt="View Tutorial" /></a>
+					</div>-->
+					<!--<div style="margin-right:40px;">
+						<a href="http://www.teachexcel.com/forum/">Free Excel Help Forum</a>
+					</div>-->
+
+
+				</td>
+			</tr>
+			<tr>
+				<td colspan="3">
+				
+				
+	
+				
+
+				</td>
+			</tr>
+			<tr>
+				<td class="link_page_view_content" align="right" colspan="3">
+					<div style="margin-right:40px; display:none;">
+					
+					
+	
+						
+
+					</div>
+				</td>
+			</tr>
+		</tbody></table>
+	</div>
+	<div style="max-height:500px; overflow:auto;">Hello,<br>
+<br>
+I need to end up with a collection of UNIQUE values, and I need to figure out how to do one of two things...<br>
+<br>
+1) Remove duplicate values from a collection<br>
+<br>
+or<br>
+<br>
+2) compare a new value to all items in my collection before I add it to my collection.<br>
+<br>
+I have searched the archives and found examples that dealt with values in a RANGE, but this particular collection has nothing to do with a range. This collection is built over time, and can contain hundreds of string values.<br>
+<br>
+I first thought that I could loop through the collection to see if a new value exists within it before I add each new value, but thought that that might be a slow method if the collection were to become large (&gt;1000 items).<br>
+<br>
+Is there a fast way to check if a particular value exists in a collection?<br>
+<br>
+Thanks
+		<br><br></div>	
+	<div style="display:block; margin-top:10px;">
+		<a href="http://www.teachexcel.com/excel-help/interstitial.php?i=525062&src=button" rel="nofollow" target="_blank">
+			<img alt="View Answers" border="0" src="./Excel - Iterate Through Keys In A Vba Collection - Hi I wonder... - Free Excel Help_files/view_answers.gif">
+		</a>
+		
+		<div style="margin-top:5px; margin-left:5px; margin-bottom:15px;">
+		
+		
+	
+			<span style="font-size:14px; font-weight:bold;"><a href="http://www.excelkey.com/forum/?src=ehelptextnextbutton" rel="nofollow">Ask Your Own Question</a></span>
+
+
+		</div>
+	</div>
+	
+	<div style="margin-top:10px; display:none;">
+	<table width="100%">
+		<tbody><tr>
+			<td>
+			
+				<div style="float:left;">
+					<a href="http://www.teachexcel.com/excel-help/interstitial.php?i=525062&src=button" rel="nofollow" target="_blank">
+						<img alt="View Answers" border="0" src="./Excel - Iterate Through Keys In A Vba Collection - Hi I wonder... - Free Excel Help_files/view_answers.gif">
+					</a>
+				</div>
+	
+				
+				<div style="float:right;">
+					<a href="http://www.excelkey.com/forum/?src=ehelptextimgbutton" rel="nofollow">
+						<img alt="Ask Your Question in the Excel Forum" border="0" src="./Excel - Iterate Through Keys In A Vba Collection - Hi I wonder... - Free Excel Help_files/askquestionforum.jpg">
+					</a>
+				</div>
+
+				
+			</td>
+		</tr>
+	</tbody></table>
+	</div>
+	
+<hr>
+	
+</div>		  
+		</div>		   
+	</td>
+  </tr>
+</tbody></table>
+
+
+
+        </div>
+		</div>
+		</td>
+      </tr>
+  </tbody></table>
+  <div id="footer">
+<div id="footer_text">
+<a href="http://www.teachexcel.com/contact/contact.php">Contact</a> | <a href="http://www.teachexcel.com/privacy/privacy.php">Privacy Policy</a> | <a href="http://www.teachexcel.com/disclaimer/disclaimer.php">Disclaimer</a> | <a href="http://www.teachexcel.com/tos.php">Tos</a>
+<br>
+Copyright© 2012 TeachExcel.com
+</div>
+</div>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script><script src="./Excel - Iterate Through Keys In A Vba Collection - Hi I wonder... - Free Excel Help_files/ga.js" type="text/javascript"></script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-10131311-1");
+pageTracker._trackPageview();
+} catch(err) {}</script></div>
+
+<!-- Kontera(TM);-->
+<script type="text/javascript">
+var dc_AdLinkColor = 'blue' ; 
+var dc_PublisherID = 180379 ; 
+ 
+</script>
+<script type="text/javascript" src="./Excel - Iterate Through Keys In A Vba Collection - Hi I wonder... - Free Excel Help_files/KonaLibInline.js">
+</script><script language="JavaScript" src="./Excel - Iterate Through Keys In A Vba Collection - Hi I wonder... - Free Excel Help_files/KonaFlashBase.js"></script><a href="http://www.teachexcel.com/excel-help/excel-how-to.php?i=419129#" target="_top" id="AdLinkLayerClick"></a>
+<span id="konasapn0"><script type="text/javascript" src="./Excel - Iterate Through Keys In A Vba Collection - Hi I wonder... - Free Excel Help_files/KonaGet.js"></script></span>
+
+<!-- end Kontera(TM) --> 
+
+
+<iframe name="__bkframe" height="0" width="0" frameborder="0" src="javascript:void(0)"></iframe><style></style><style></style><div id="goog_qs_tidbit_box" style="display:none"><div id="goog_qs-wrapper"><div id="goog_qs-box-toggle" style="background-image: url(chrome-extension://okanipcmceoeemlbjnmnbdibhgpbllgc/images/close.png);"></div><div id="goog_qs-box-info" class="goog_qs-box-title" style="background-image: url(chrome-extension://okanipcmceoeemlbjnmnbdibhgpbllgc/images/icon16x16.png);"><span class="goog_qs-nowrap">R<img>olagem</span> <span class="goog_qs-nowrap">r<img>ápida</span> <span class="goog_qs-nowrap">d<img>o</span> <span class="goog_qs-nowrap">G<img>oogle</span></div><div id="goog_qs-box-tidbits"><div id="goog_qs-box-msg"><span class="goog_qs-nowrap">E<img>sta</span> <span class="goog_qs-nowrap">p<img>ágina</span> <span class="goog_qs-nowrap">i<img>nteira</span> <span class="goog_qs-nowrap">p<img>arece</span> <span class="goog_qs-nowrap">s<img>er</span> <span class="goog_qs-nowrap">s<img>obre</span> <span class="goog_qs-query"><span class="goog_qs-nowrap">c<img>ollection</span> <span class="goog_qs-nowrap">v<img>ba</span> <span class="goog_qs-nowrap">e<img>xcel</span> <span class="goog_qs-nowrap">f<img>or</span> <span class="goog_qs-nowrap">e<img>ach</span> <span class="goog_qs-nowrap">k<img>ey</span></span>. A <span class="goog_qs-nowrap">R<img>olagem</span> <span class="goog_qs-nowrap">r<img>ápida</span> <span class="goog_qs-nowrap">a<img>parece</span> <span class="goog_qs-nowrap">q<img>uando</span> <span class="goog_qs-nowrap">a<img>penas</span> <span class="goog_qs-nowrap">a<img>lgumas</span> <span class="goog_qs-nowrap">p<img>artes</span> <span class="goog_qs-nowrap">d<img>a</span> <span class="goog_qs-nowrap">p<img>ágina</span> <span class="goog_qs-nowrap">s<img>ão</span> <span class="goog_qs-nowrap">r<img>elevantes.</span> <span class="goog_qs-learn-more"><span class="goog_qs-nowrap">S<img>aiba</span> <span class="goog_qs-nowrap">m<img>ais.</span></span></div></div></div></div><iframe id="google_osd_static_frame_5442914240993" name="google_osd_static_frame" style="display: none; width: 0px; height: 0px;"></iframe></body></html>

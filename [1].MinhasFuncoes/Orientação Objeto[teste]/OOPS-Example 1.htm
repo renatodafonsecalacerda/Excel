@@ -1,0 +1,1273 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0054)http://www.tushar-mehta.com/excel/vba/vba_oops_eg1.htm -->
+<html dir="ltr" xmlns="http://www.w3.org/1999/xhtml" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word"><!-- #BeginTemplate "../../testdwt/master.dwt" --><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<!-- #BeginEditable "doctitle" -->
+<title>OOPS-Example 1</title>
+
+<style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+h2
+	{mso-style-next:Normal;
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:2;
+	font-size:14.0pt;
+	font-family:Arial;
+	font-style:italic;}
+h3
+	{mso-style-next:Normal;
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:3;
+	font-size:13.0pt;
+	font-family:Arial;}
+p.MsoCaption, li.MsoCaption, div.MsoCaption
+	{mso-style-noshow:yes;
+	mso-style-next:Normal;
+	margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	font-weight:bold;}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;
+	text-underline:single;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:purple;
+	text-decoration:underline;
+	text-underline:single;}
+p.Code, li.Code, div.Code
+	{mso-style-name:Code;
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	background:#F3F3F3;
+	font-size:10.0pt;
+	mso-bidi-font-size:12.0pt;
+	font-family:"Courier New";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.CaptionedCode, li.CaptionedCode, div.CaptionedCode
+	{mso-style-name:"Captioned Code";
+	margin:0in;
+	margin-bottom:.0001pt;
+	text-align:center;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+span.SpellE
+	{mso-style-name:"";
+	mso-spl-e:yes;}
+span.GramE
+	{mso-style-name:"";
+	mso-gram-e:yes;}
+@page Section1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.0in 1.0in 1.0in;
+	mso-header-margin:.5in;
+	mso-footer-margin:.5in;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+-->
+</style>
+
+<!-- #EndEditable -->
+<script type="text/javascript" src="./OOPS-Example 1_files/myads_common.js">
+	</script>
+<link rel="stylesheet" type="text/css" href="./OOPS-Example 1_files/site_style.css">
+<style type="text/css">
+
+.TopItem{
+	float:left;
+	margin-right:5px;margin-bottom:4px;
+	padding:2px;
+	background-color:#0000FF;
+	font-family:Arial, Helvetica, sans-serif;font-size:small;
+	color:white
+}
+.TopLink{
+	
+}
+a.TopLink:link,a.TopLink:visited{
+	color:white
+}
+a.TopOps:visited{
+	color:blue
+}
+a.TopSims:visited{
+	color:green
+}
+a.NoUnderline:link,a.NoUnderline:visited{
+	text-decoration:none;color:white
+}
+.LeftBottomBorder{
+	border-left:thin solid blue; border-bottom:thin solid blue;
+}
+.TopRightBottomBorder{
+	border-top:thin solid blue; border-bottom:thin solid blue;border-right:thin solid blue;
+}
+
+.googleSearchText{
+	text-align:left;font-size:x-small
+}
+p.small{
+	font-size:small
+}
+</style>
+<style type="text/css">.fb_hidden{position:absolute;top:-10000px;z-index:10001}.fb_invisible{display:none}.fb_reset{background:none;border:0;border-spacing:0;color:#000;cursor:auto;direction:ltr;font-family:"lucida grande", tahoma, verdana, arial, sans-serif;font-size:11px;font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}.fb_reset>div{overflow:hidden}.fb_link img{border:none}
+.fb_dialog{background:rgba(82, 82, 82, .7);position:absolute;top:-10000px;z-index:10001}.fb_reset .fb_dialog_legacy{overflow:visible}.fb_dialog_advanced{padding:10px;-moz-border-radius:8px;-webkit-border-radius:8px;border-radius:8px}.fb_dialog_content{background:#fff;color:#333}.fb_dialog_close_icon{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;_background-image:url(http://static.ak.fbcdn.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif);cursor:pointer;display:block;height:15px;position:absolute;right:18px;top:17px;width:15px}.fb_dialog_mobile .fb_dialog_close_icon{top:5px;left:5px;right:auto}.fb_dialog_padding{background-color:transparent;position:absolute;width:1px;z-index:-1}.fb_dialog_close_icon:hover{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent;_background-image:url(http://static.ak.fbcdn.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif)}.fb_dialog_close_icon:active{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent;_background-image:url(http://static.ak.fbcdn.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif)}.fb_dialog_loader{background-color:#f2f2f2;border:1px solid #606060;font-size:24px;padding:20px}.fb_dialog_top_left,.fb_dialog_top_right,.fb_dialog_bottom_left,.fb_dialog_bottom_right{height:10px;width:10px;overflow:hidden;position:absolute}.fb_dialog_top_left{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 0;left:-10px;top:-10px}.fb_dialog_top_right{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -10px;right:-10px;top:-10px}.fb_dialog_bottom_left{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -20px;bottom:-10px;left:-10px}.fb_dialog_bottom_right{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -30px;right:-10px;bottom:-10px}.fb_dialog_vert_left,.fb_dialog_vert_right,.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{position:absolute;background:#525252;filter:alpha(opacity=70);opacity:.7}.fb_dialog_vert_left,.fb_dialog_vert_right{width:10px;height:100%}.fb_dialog_vert_left{margin-left:-10px}.fb_dialog_vert_right{right:0;margin-right:-10px}.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{width:100%;height:10px}.fb_dialog_horiz_top{margin-top:-10px}.fb_dialog_horiz_bottom{bottom:0;margin-bottom:-10px}.fb_dialog_iframe{line-height:0}.fb_dialog_content .dialog_title{background:#6d84b4;border:1px solid #3b5998;color:#fff;font-size:14px;font-weight:bold;margin:0}.fb_dialog_content .dialog_title>span{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yd/r/Cou7n-nqK52.gif) no-repeat 5px 50%;float:left;padding:5px 0 7px 26px}body.fb_hidden{-webkit-transform:none;height:100%;margin:0;overflow:visible;position:absolute;top:-10000px;left:0;width:100%}.fb_dialog.fb_dialog_mobile.loading{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ya/r/3rhSv5V8j3o.gif) white no-repeat 50% 50%;min-height:100%;min-width:100%;overflow:hidden;position:absolute;top:0;z-index:10001}.fb_dialog.fb_dialog_mobile.loading.centered{max-height:590px;min-height:590px;max-width:500px;min-width:500px}#fb-root #fb_dialog_ipad_overlay{background:rgba(0, 0, 0, .45);position:absolute;left:0;top:0;width:100%;min-height:100%;z-index:10000}#fb-root #fb_dialog_ipad_overlay.hidden{display:none}.fb_dialog.fb_dialog_mobile.loading iframe{visibility:hidden}.fb_dialog_content .dialog_header{-webkit-box-shadow:white 0 1px 1px -1px inset;background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#738ABA), to(#2C4987));border-bottom:1px solid;border-color:#1d4088;color:#fff;font:14px Helvetica, sans-serif;font-weight:bold;text-overflow:ellipsis;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0;vertical-align:middle;white-space:nowrap}.fb_dialog_content .dialog_header table{-webkit-font-smoothing:subpixel-antialiased;height:43px;width:100%}.fb_dialog_content .dialog_header td.header_left{font-size:12px;padding-left:5px;vertical-align:middle;width:60px}.fb_dialog_content .dialog_header td.header_right{font-size:12px;padding-right:5px;vertical-align:middle;width:60px}.fb_dialog_content .touchable_button{background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#4966A6), color-stop(.5, #355492), to(#2A4887));border:1px solid #29447e;-webkit-background-clip:padding-box;-webkit-border-radius:3px;-webkit-box-shadow:rgba(0, 0, 0, .117188) 0 1px 1px inset, rgba(255, 255, 255, .167969) 0 1px 0;display:inline-block;margin-top:3px;max-width:85px;line-height:18px;padding:4px 12px;position:relative}.fb_dialog_content .dialog_header .touchable_button input{border:none;background:none;color:#fff;font:12px Helvetica, sans-serif;font-weight:bold;margin:2px -12px;padding:2px 6px 3px 6px;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog_content .dialog_header .header_center{color:#fff;font-size:16px;font-weight:bold;line-height:18px;text-align:center;vertical-align:middle}.fb_dialog_content .dialog_content{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/y9/r/jKEcVPZFk-2.gif) no-repeat 50% 50%;border:1px solid #555;border-bottom:0;border-top:0;height:150px}.fb_dialog_content .dialog_footer{background:#f2f2f2;border:1px solid #555;border-top-color:#ccc;height:40px}#fb_dialog_loader_close{float:left}.fb_dialog.fb_dialog_mobile .fb_dialog_close_button{text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog.fb_dialog_mobile .fb_dialog_close_icon{visibility:hidden}
+.fb_iframe_widget{display:inline-block;position:relative}.fb_iframe_widget span{display:inline-block;position:relative;text-align:justify}.fb_iframe_widget iframe{position:absolute}.fb_iframe_widget_lift{z-index:1}.fb_hide_iframes iframe{position:relative;left:-10000px}.fb_iframe_widget_loader{position:relative;display:inline-block}.fb_iframe_widget_fluid{display:inline}.fb_iframe_widget_fluid span{width:100%}.fb_iframe_widget_loader iframe{min-height:32px;z-index:2;zoom:1}.fb_iframe_widget_loader .FB_Loader{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/y9/r/jKEcVPZFk-2.gif) no-repeat;height:32px;width:32px;margin-left:-16px;position:absolute;left:50%;z-index:4}
+.fbpluginrecommendationsbarleft,.fbpluginrecommendationsbarright{position:fixed !important;bottom:0;z-index:999}.fbpluginrecommendationsbarleft{left:10px}.fbpluginrecommendationsbarright{right:10px}</style></head>
+
+<body style="margin: 2px; border: thin solid rgb(0, 0, 255); background-image: url(http://www.tushar-mehta.com/images/bkgnd-2011-08-12.png); background-attachment: fixed;">
+<!--w e b bot bot="Include" U-Include="../_borders/top_copy(1).htm" TAG="BODY" -->
+<div id="topheader" style="float:left;padding-bottom:2px;background-color:#EAEAFF;width:100%; background-image: url(&#39;../../images/bkgnd4.png&#39;);">
+	<div id="topheaderLeft" style="width:65%;float:left">
+		<div id="tmbanner" style="float:left;">
+			<a href="http://www.tushar-mehta.com/index.html">
+			<img alt="" src="./OOPS-Example 1_files/imgB.png" style="border:none;margin-right:10px" height="101" width="57"></a>
+			</div>
+		<div id="hdrad1" style="font-family: Arial, Helvetica, sans-serif;
+				font-size:18px;color:blue;
+				float:left;margin-right:10px;padding-top:5px">
+			<a class="TopOps" href="http://www.tushar-mehta.com/consulting/software.htm" style="color: white;">
+			MS Excel and Office Consulting</a>
+			<div style="height:2px;background-color:black;visibility:hidden">&nbsp;</div>
+			<a class="TopOps" href="http://www.tushar-mehta.com/consulting/operations_strategy.htm" style="color: white;">Business Process and Operations Strategy</a></div>
+		<div id="TM_ads" style="width:20%; float:left; background-color:#DDFFDD;font-family:Arial, Helvetica, sans-serif;
+				font-size: small; padding-bottom: 5px;padding-left:5px">
+			<div style="text-align: left;"><!--<script type="text/javascript" src="../this_site/myads.js"></script>-->
+				<script type="text/javascript">document.write(showTMAds(1))</script><div style="float:left; background-color:#DDFFDD;font-family:Arial, Helvetica, sans-serif; text-align:left;border-top:solid #000088 1px; font-size: small; padding: 5px;"><a href="http://www.tushar-mehta.com/excel/software/dirlist/index.html" target="_blank">TM Directory</a><br>List files and folders in a disk folder with a degree of customization</div>
+				</div>
+			</div>
+		<div id="hdrLinks" style="clear:both;width:100%">
+			<div class="TopItem"><a class="TopLink" href="http://www.tushar-mehta.com/publish_train">Books and Articles</a></div>
+			<div class="TopItem">Add-ins: 
+				<a class="TopLink" href="http://www.tushar-mehta.com/excel/software/">Excel</a> 
+				<a class="TopLink" href="http://www.tushar-mehta.com/powerpoint/">PowerPoint</a></div>
+			<div class="TopItem">Tutorials: 
+				<a class="TopLink" href="http://www.tushar-mehta.com/excel/newsgroups/">Excel</a>
+				<a class="TopLink" href="http://www.tushar-mehta.com/excel/vba/">VBA</a>
+				<a class="TopLink" href="http://www.tushar-mehta.com/excel/tips/">Tips</a> 
+				<a class="TopLink" href="http://www.tushar-mehta.com/excel/charts/">Charts</a></div>
+			<div class="TopItem"><a class="TopLink" href="http://www.tushar-mehta.com/misc_tutorials">Miscellanea</a></div>
+			<div class="TopItem">
+				<a class="TopLink" href="http://www.tushar-mehta.com/consulting/software.htm">
+				Custom Consulting</a></div>
+			</div>
+	
+		</div>
+	<div id="topHeaderRight" style="float:right;width:35%">
+		<div id="hdrad2" class="LeftBottomBorder" style="float:right;margin-left:10px">
+			<script type="text/javascript"><!--
+				amazon_ad_tag = "tusharmehtaco-20"; amazon_ad_width = "468"; 
+				amazon_ad_height = "60"; amazon_ad_logo = "hide"; 
+				amazon_ad_product_images = "show"; amazon_ad_link_target = "new"; 
+				amazon_ad_border = "hide"; amazon_color_border = "FFFFDD"; 
+				amazon_color_background = "FFFFDD";
+				amazon_color_link="000000";//--></script>
+			<script type="text/javascript" src="./OOPS-Example 1_files/ads.js"></script><script src="./OOPS-Example 1_files/ads-common.js" type="text/javascript"></script><iframe src="./OOPS-Example 1_files/cm.htm" marginwidth="0" marginheight="0" width="468" height="60" border="0" frameborder="0" style="border:none;" scrolling="no"></iframe>
+			</div>
+		<div style="clear:both;display:none">
+			<div id="MA_ads1" style="width:45%;float:right; background-color:#FFCC99;font-family:Arial, Helvetica, sans-serif;
+				font-size: small; padding-left:5px; padding-right:5px;margin-left:2px">
+				<div style="text-align: left;">
+					<script type="text/javascript" src="./OOPS-Example 1_files/ma_ads1.js"></script><a href="http://juliesmarket.com/" target="_blank"><b>Julie's Market</b></a><br>Your One-Stop Online Shop with Great Ca$hback and 1000s of Partner Stores</div>
+				</div>
+			<div id="MA_ads2" style="width:45%;float:right; background-color:#FFCC99;font-family:Arial, Helvetica, sans-serif;
+				font-size: small; padding-left:5px; padding-right:5px;margin-left:2px">
+				<div style="text-align: left;">
+					<script type="text/javascript" src="./OOPS-Example 1_files/ma_ads2.js"></script><a href="http://w.mawebcenters.com/TotalWebSolution/build.html" target="_blank"><b>Total Web Solution</b></a><br>Take control of your E-Commerce web site! See a FREE demo.</div>
+				</div>
+			</div>
+		</div>
+
+	
+	</div>
+<div>
+<div id="TMBreadCrumb" style="clear:both;background-color: #A0FFA0; 
+			font-family:Arial, Helvetica, sans-serif;
+			width:100%">
+    	<!-- The technology to create this breadcrumb trail is Copyright (c) 1999 Tushar Mehta -->
+    <!-- #BeginEditable "TMBreadCrumb" -->
+	
+		You are on the <a href="http://www.tushar-mehta.com/index.html">Home</a>/<a href="http://www.tushar-mehta.com/excel/index.html">Excel</a>/<a href="http://www.tushar-mehta.com/excel/vba/index.htm">VBA</a>/OOPS 
+		Example 1 page
+
+		<!-- #EndEditable -->
+		</div>
+	<div class="LeftBottomBorder" id="TM_sidebar_right" style="float:right; text-align: center;
+			width:125px; font-family: Arial, Helvetica, sans-serif;">
+	<div id="TM_blog_ref" style="text-align: center;
+		font-size: small; font-family: Arial, Helvetica, sans-serif;padding-top: 5px; padding-bottom: 5px;">
+		<img alt="" src="./OOPS-Example 1_files/imgA.png"><br>
+	<!-- #BeginEditable "TMReviews" -->
+			
+		<a href="http://www.tmehta.com/tmblog/">Share Your<br>
+		Comments </a>
+		<!-- #EndEditable -->
+			
+		</div>
+	<div id="aboutSite" style="text-align:center; 
+		border-style: solid; border-width: 0; background-color: #DDFFDD;
+		padding-top: 5px; padding-bottom: 5px;font-size:small">
+    	<a href="http://www.tushar-mehta.com/this_site/index.html">About this site</a>
+    	</div>
+   
+	<!--w e b bot bot="Include" U-Include="../_borders/border_excel.htm" TAG="BODY" -->
+<div id="siteSearch" style="background-color:#FFFFDD; padding-bottom:5px">
+	    <!-- SiteSearch Google -->
+    <form method="get" action="http://www.google.com/custom" target="google_window">
+          <div>
+          <a href="http://www.google.com/">
+          <img src="./OOPS-Example 1_files/Logo_25wht.gif" border="0" alt="Google"></a>
+          <br>
+          <input type="hidden" name="domains" value="tushar-mehta.com">
+          <input style="background-color:#FFFFFF" type="text" name="q" size="12" maxlength="255" value="">
+          <input type="radio" name="sitesearch" value=""><span class="googleSearchText">Web</span>
+          <input type="radio" name="sitesearch" value="tushar-mehta.com" checked="checked"> 
+          <span class="googleSearchText">This Site</span> 
+          <input type="submit" name="sa" value="Search">
+          <input type="hidden" name="client" value="pub-7357132323339685">
+          <input type="hidden" name="forid" value="1">
+          <input type="hidden" name="ie" value="ISO-8859-1">
+          <input type="hidden" name="oe" value="ISO-8859-1">
+          <input type="hidden" name="cof" value="GALT:#008000;GL:1;DIV:#336699;VLC:663399;AH:center;BGC:FFFFFF;LBGC:336699;ALC:0000FF;LC:0000FF;T:000000;GFNT:0000FF;GIMP:0000FF;FORID:1;">
+          <input type="hidden" name="hl" value="en">
+    	  </div>
+    </form>
+    <!-- SiteSearch Google -->
+	</div>
+	
+	
+		<div id="sideAd" style="padding-left:0px;background-color:#FFFFDD">
+		<!--<script type="text/javascript">
+		google_ad_client = "pub-7357132323339685";
+		/* 120x600, created 11/3/08 */
+		google_ad_slot = "9100382465";
+		google_ad_width = 120;
+		google_ad_height = 600;
+		//
+		</script>
+		<script type="text/javascript"
+		src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+		</script>-->
+		<script type="text/javascript">
+			document.write(showTMAds(3))
+			</script><div style="float:left; background-color:#DDFFDD;font-family:Arial, Helvetica, sans-serif; text-align:left;border-top:solid #000088 1px; font-size: small; padding: 5px;"><a href="http://www.tushar-mehta.com/excel/software/autochart/index.html" target="_blank"><img alt="" style="float:left;margin-right:10px;border:0px" src="./OOPS-Example 1_files/autochart-32x32.png">TM AutoChart</a><br>Link chart axis values to worksheet cells</div><div style="float:left; background-color:#DDFFDD;font-family:Arial, Helvetica, sans-serif; text-align:left;border-top:solid #000088 1px; font-size: small; padding: 5px;"><a href="http://www.tushar-mehta.com/excel/software/dirlist/index.html" target="_blank">TM Directory</a><br>List files and folders in a disk folder with a degree of customization</div><div style="float:left; background-color:#DDFFDD;font-family:Arial, Helvetica, sans-serif; text-align:left;border-top:solid #000088 1px; font-size: small; padding: 5px;"><a href="http://www.tushar-mehta.com/excel/software/plot_manager/index.html" target="_blank"><img alt="" style="float:left;margin-right:10px;border:0px" src="./OOPS-Example 1_files/plot_manager-32x32.png">TM Plot</a><br>Create a chart from any cell with a formula</div>
+		</div> 	
+		
+		</div>
+	<div id="TM_body" style="padding-left:5px;padding-right:5px;">
+	<!-- #BeginEditable "body" -->
+
+<div class="Section1">
+
+<h2>Object Oriented Programming – An example</h2>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal">The solution to the problem described below was provided by 
+Jay <span class="SpellE">Petrulis</span> in a posting at <a href="http://www.mrexcel.com/board2/viewtopic.php?p=355022#355022" target="_blank">http://www.mrexcel.com/board2/viewtopic.php?p=355022#355022</a>.<span style="mso-spacerun:yes">&nbsp; </span>In this write up, the procedural 
+programming solution is redone from an object oriented perspective. <span style="mso-spacerun:yes">&nbsp;</span>The reader should not interpret this to mean 
+that OOP solutions are written in the conventional manner and subsequently 
+translated into OOP. <span style="mso-spacerun:yes">&nbsp;</span><span class="GramE">Quite 
+the contrary.</span><span style="mso-spacerun:yes">&nbsp; </span>The OOP 
+paradigm is so different from that of procedural programming that translation 
+from one to the other is definitely not recommended! <span style="mso-spacerun:yes">
+&nbsp;</span>The solution below was designed from scratch while, of course, sharing 
+the underlying mathematics and trigonometry analysis with Jay’s solution.</p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal">The problem at hand is to find the coordinates of the center 
+of the circle given two points on the circumference and the radius.<span style="mso-spacerun:yes">&nbsp; </span>Basically, in <span style="mso-field-code:
+&quot; REF _Ref62478499 \\h &quot;">Figure <span style="mso-no-proof:yes">1</span><!--[if gte mso 9]><xml>
+ <w:data>08D0C9EA79F9BACE118C8200AA004BA90B02000000080000000D0000005F00520065006600360032003400370038003400390039000000</w:data>
+</xml><![endif]--></span>, given the location of points P0 and P1 and the radius 
+R, what is the location of point C?<span style="mso-spacerun:yes">&nbsp;
+</span>Of course, this chapter is not about geometry and trigonometry.<span style="mso-spacerun:yes">&nbsp; </span>The focus is on developing an object 
+oriented solution; the underlying mathematics will be taken as given.</p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal" align="center" style="text-align:center;page-break-after:avoid"><!--[if gte vml 1]><v:shapetype id="_x0000_t75"
+ coordsize="21600,21600" o:spt="75" o:preferrelative="t" path="m@4@5l@4@11@9@11@9@5xe"
+ filled="f" stroked="f">
+ <v:stroke joinstyle="miter"/>
+ <v:formulas>
+  <v:f eqn="if lineDrawn pixelLineWidth 0"/>
+  <v:f eqn="sum @0 1 0"/>
+  <v:f eqn="sum 0 0 @1"/>
+  <v:f eqn="prod @2 1 2"/>
+  <v:f eqn="prod @3 21600 pixelWidth"/>
+  <v:f eqn="prod @3 21600 pixelHeight"/>
+  <v:f eqn="sum @0 0 1"/>
+  <v:f eqn="prod @6 1 2"/>
+  <v:f eqn="prod @7 21600 pixelWidth"/>
+  <v:f eqn="sum @8 21600 0"/>
+  <v:f eqn="prod @7 21600 pixelHeight"/>
+  <v:f eqn="sum @10 21600 0"/>
+ </v:formulas>
+ <v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"/>
+ <o:lock v:ext="edit" aspectratio="t"/>
+</v:shapetype><v:shape id="_x0000_s1031" type="#_x0000_t75" style='width:257.25pt;
+ height:257.25pt'>
+ <v:imagedata src="vba_oops_eg1_files/image001.emz" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img border="0" width="343" height="343" src="./OOPS-Example 1_files/image002.gif" v:shapes="_x0000_s1031"><!--[endif]--></p>
+
+<p class="MsoCaption" align="center" style="text-align:center"><a name="_Ref62478499" target="_blank">Figure </a><!--[if supportFields]><span style='mso-bookmark:
+_Ref62478499'></span><span style='mso-element:field-begin'></span><![endif]-->
+<span style="mso-bookmark:_Ref62478499"><span style="mso-no-proof:yes">1</span></span><!--[if supportFields]><span
+style='mso-bookmark:_Ref62478499'></span><span style='mso-element:field-end'></span><![endif]--><span style="mso-bookmark:_Ref62478499"></span></p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal">A point is a type of object, and hence should be a class of 
+its own.<span style="mso-spacerun:yes">&nbsp; </span>However, Excel already has 
+an object named point – it is part of a series in a chart.<span style="mso-spacerun:yes">&nbsp; </span>Rather than use a name that will conflict 
+with Excel’s Point, we will call this object a <span class="SpellE">GeoPoint</span>
+(for Geometric Point).</p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal">What are the key properties of a point?<span style="mso-spacerun:yes">&nbsp; </span>Absolutely critical would be the 
+coordinates – given by a point’s x and its y values.<span style="mso-spacerun:yes">&nbsp;
+</span>In addition, other properties that will be of use are distance of another 
+point from this point, the coordinate of the midpoint between this point and 
+another point, and the slope of the line connecting this point with another 
+point.</p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal">Create a class module, name it <span class="SpellE">GeoPoint</span>, 
+and add the code in <span style="mso-field-code:&quot; REF _Ref62559573 \\h &quot;">Figure
+<span style="mso-no-proof:yes">2</span><!--[if gte mso 9]><xml>
+ <w:data>08D0C9EA79F9BACE118C8200AA004BA90B02000000080000000D0000005F00520065006600360032003500350039003500370033000000</w:data>
+</xml><![endif]--></span>.</p>
+
+<p class="CaptionedCode"><!--[if gte vml 1]><v:shapetype
+ id="_x0000_t202" coordsize="21600,21600" o:spt="202" path="m,l,21600r21600,l21600,xe">
+ <v:stroke joinstyle="miter"/>
+ <v:path gradientshapeok="t" o:connecttype="rect"/>
+</v:shapetype><v:shape id="_x0000_s1030" type="#_x0000_t202" style='width:356.25pt;
+ height:367.5pt;mso-wrap-style:none;mso-position-horizontal-relative:char;
+ mso-position-vertical:absolute;mso-position-vertical-relative:line' stroked="f">
+ <v:textbox style='mso-fit-shape-to-text:t'>
+<![if !mso]>
+<table cellpadding="0" cellspacing="0" width="100%">
+  <tr>
+    <td><![endif]>
+    <div>
+      <p class="Code">Option Explicit</p>
+      <p class="Code">
+      <o:p>&nbsp;</o:p></p>
+      <p class="Code">Private <span class="SpellE"><span class="GramE">dblX</span></span> 
+      As Double, <span class="SpellE">dblY</span> As Double</p>
+      <p class="Code">
+      <o:p>&nbsp;</o:p></p>
+      <p class="Code">Property Let <span class="GramE">x(</span><span class="SpellE">uX</span> 
+      As Double): <span class="SpellE">dblX</span> = <span class="SpellE">uX</span>: 
+	  End Property</p>
+      <p class="Code">Property Get <span class="GramE">x(</span>) As Double: x =
+      <span class="SpellE">dblX</span>: End Property</p>
+      <p class="Code">
+      <o:p>&nbsp;</o:p></p>
+      <p class="Code">Property Let <span class="GramE">y(</span><span class="SpellE">uY</span> 
+      As Double): <span class="SpellE">dblY</span> = <span class="SpellE">uY</span>: 
+	  End Property</p>
+      <p class="Code">Property Get <span class="GramE">y(</span>) As Double: y =
+      <span class="SpellE">dblY</span>: End Property</p>
+      <p class="Code">
+      <o:p>&nbsp;</o:p></p>
+      <p class="Code">Function <span class="GramE">Distance(</span>P0 As
+      <span class="SpellE">GeoPoint</span>) As Double</p>
+      <p class="Code"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>
+	  Distance =
+      <span class="SpellE"><span class="GramE">Sqr</span></span><span class="GramE">(</span>(<span class="SpellE">Me.x</span> 
+      - P0.x) ^ 2 + (<span class="SpellE">Me.y</span> - P0.y) ^ 2)</p>
+      <p class="Code"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>
+	  End Function</p>
+      <p class="Code">
+      <o:p>&nbsp;</o:p></p>
+      <p class="Code">Function <span class="GramE">Slope(</span>P0 As
+      <span class="SpellE">GeoPoint</span>) As Double</p>
+      <p class="Code"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>
+	  If
+      <span class="SpellE">Me.x</span> = P0.x Then</p>
+      <p class="Code"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+	  Slope = 3E+100</p>
+      <p class="Code"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>
+	  Else</p>
+      <p class="Code"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+	  Slope = (<span class="SpellE">Me.y</span> 
+      - P0.y) / (<span class="SpellE">Me.x</span> - P0.x)</p>
+      <p class="Code"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+	  End If</p>
+      <p class="Code"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>
+	  End Function</p>
+      <p class="Code">
+      <o:p>&nbsp;</o:p></p>
+      <p class="Code">Function <span class="GramE">Midpoint(</span>P0 As
+      <span class="SpellE">GeoPoint</span>) As <span class="SpellE">GeoPoint</span></p>
+      <p class="Code"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>
+	  Set Midpoint = New <span class="SpellE">GeoPoint</span></p>
+      <p class="Code"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>
+	  With Midpoint</p>
+      <p class="Code"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>
+	  .x = (P0.x +
+      <span class="SpellE">Me.x</span>) / 2</p>
+      <p class="Code"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>
+	  .y = (P0.y +
+      <span class="SpellE">Me.y</span>) / 2</p>
+      <p class="Code"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+	  End With</p>
+      <p class="Code"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>
+	  End Function</p>
+      <p class="Code">
+      <o:p>&nbsp;</o:p></p>
+    </div>
+    <![if !mso]></td>
+  </tr>
+</table>
+<![endif]></v:textbox>
+</v:shape><![endif]--><!--[if !vml]--><img border="0" width="479" height="494" src="./OOPS-Example 1_files/image003.gif" alt="Text Box: Option Explicit
+ 
+Private dblX As Double, dblY As Double
+ 
+Property Let x(uX As Double): dblX = uX: End Property
+Property Get x() As Double: x = dblX: End Property
+ 
+Property Let y(uY As Double): dblY = uY: End Property
+Property Get y() As Double: y = dblY: End Property
+ 
+Function Distance(P0 As GeoPoint) As Double
+    Distance = Sqr((Me.x - P0.x) ^ 2 + (Me.y - P0.y) ^ 2)
+    End Function
+ 
+Function Slope(P0 As GeoPoint) As Double
+    If Me.x = P0.x Then
+        Slope = 3E+100
+    Else
+        Slope = (Me.y - P0.y) / (Me.x - P0.x)
+        End If
+    End Function
+ 
+Function Midpoint(P0 As GeoPoint) As GeoPoint
+    Set Midpoint = New GeoPoint
+    With Midpoint
+    .x = (P0.x + Me.x) / 2
+    .y = (P0.y + Me.y) / 2
+        End With
+    End Function
+ 
+" v:shapes="_x0000_s1030"><!--[endif]--></p>
+
+<p class="MsoCaption" align="center" style="text-align:center"><a name="_Ref62559573" target="_blank">Figure</a><!--[if supportFields]><span style='mso-element:field-begin'></span><span
+style='mso-bookmark:_Ref62559573'><span style='mso-spacerun:yes'>&nbsp;</span></span><![endif]--><span style="mso-bookmark:_Ref62559573"><span style="mso-no-proof:yes">2</span></span><!--[if supportFields]><span
+style='mso-bookmark:_Ref62559573'></span><span style='mso-element:field-end'></span><![endif]--><span style="mso-bookmark:_Ref62559573"></span></p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal">The next object to create is a circle.<span style="mso-spacerun:yes">&nbsp; </span>The two critical definitional elements of 
+a circle are its center and its radius.<span style="mso-spacerun:yes">&nbsp; </span>
+Of course, the center, itself, is a point.<span style="mso-spacerun:yes">&nbsp;
+</span>Create a Class module, name it <span class="SpellE">GeoCircle</span>, and 
+add the code in <span style="mso-field-code:&quot; REF _Ref62788192 \\h &quot;">Figure <span style="mso-no-proof:yes">3</span><!--[if gte mso 9]><xml>
+ <w:data>08D0C9EA79F9BACE118C8200AA004BA90B02000000080000000D0000005F00520065006600360032003700380038003100390032000000</w:data>
+</xml><![endif]--></span>.<span style="mso-spacerun:yes">&nbsp; </span>While the 
+area and the circumference of a circle are not needed for this example, they are 
+very common properties, and are included in the code.</p>
+
+<p class="CaptionedCode"><!--[if gte vml 1]><v:shape id="_x0000_s1029"
+ type="#_x0000_t202" style='width:452.25pt;height:247.5pt;mso-wrap-style:none;
+ mso-position-horizontal-relative:char;mso-position-vertical:absolute;
+ mso-position-vertical-relative:line' stroked="f">
+ <v:textbox style='mso-fit-shape-to-text:t'>
+<![if !mso]>
+<table cellpadding="0" cellspacing="0" width="100%">
+  <tr>
+    <td><![endif]>
+    <div>
+      <p class="Code">Option Explicit</p>
+      <p class="Code">
+      <o:p>&nbsp;</o:p></p>
+      <p class="Code">Private <span class="SpellE"><span class="GramE">
+      pt_Center_Coord</span></span> As <span class="SpellE">GeoPoint</span></p>
+      <p class="Code">Private <span class="SpellE"><span class="GramE">dblRadius</span></span> 
+      As Double</p>
+      <p class="Code">
+      <o:p>&nbsp;</o:p></p>
+      <p class="Code">Property Get <span class="SpellE">Center_<span class="GramE">Coord</span></span><span class="GramE">(</span>) 
+	  As <span class="SpellE">GeoPoint</span></p>
+      <p class="Code"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>
+	  Set
+      <span class="SpellE">Center_Coord</span> = <span class="SpellE">
+      pt_Center_Coord</span></p>
+      <p class="Code"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>
+	  End Property</p>
+      <p class="Code">Property Set <span class="SpellE">Center_<span class="GramE">Coord</span></span><span class="GramE">(</span><span class="SpellE">uCenter_Coord</span> 
+      As <span class="SpellE">GeoPoint</span>)</p>
+      <p class="Code"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>
+	  Set
+      <span class="SpellE">pt_Center_Coord</span> = <span class="SpellE">
+      uCenter_Coord</span></p>
+      <p class="Code"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>
+	  End Property</p>
+      <p class="Code">
+      <o:p>&nbsp;</o:p></p>
+      <p class="Code">Property Get <span class="GramE">Radius(</span>) As 
+	  Double: Radius = <span class="SpellE">dblRadius</span>: End Property</p>
+      <p class="Code">Property Let <span class="GramE">Radius(</span><span class="SpellE">uRadius</span> 
+      As Double): <span class="SpellE">dblRadius</span> = <span class="SpellE">
+      uRadius</span>: End Property</p>
+      <p class="Code">Property Get <span class="GramE">Area(</span>) As Double</p>
+      <p class="Code"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>
+	  Area =
+      <span class="SpellE"><span class="GramE">Application.WorksheetFunction.Pi</span></span><span class="GramE">(</span>) 
+	  * Radius ^ 2</p>
+      <p class="Code"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>
+	  End Property</p>
+      <p class="Code">Property Get <span class="GramE">Circumference(</span>) As 
+	  Double</p>
+      <p class="Code"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>
+	  Circumference = 2 * <span class="SpellE"><span class="GramE">
+      Application.WorksheetFunction.Pi</span></span><span class="GramE">(</span>) 
+	  * Radius</p>
+      <p class="Code"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>
+	  End Property</p>
+    </div>
+    <![if !mso]></td>
+  </tr>
+</table>
+<![endif]></v:textbox>
+</v:shape><![endif]--><!--[if !vml]--><img border="0" width="607" height="334" src="./OOPS-Example 1_files/image004.gif" alt="Text Box: Option Explicit
+ 
+Private pt_Center_Coord As GeoPoint
+Private dblRadius As Double
+ 
+Property Get Center_Coord() As GeoPoint
+    Set Center_Coord = pt_Center_Coord
+    End Property
+Property Set Center_Coord(uCenter_Coord As GeoPoint)
+    Set pt_Center_Coord = uCenter_Coord
+    End Property
+ 
+Property Get Radius() As Double: Radius = dblRadius: End Property
+Property Let Radius(uRadius As Double): dblRadius = uRadius: End Property
+Property Get Area() As Double
+    Area = Application.WorksheetFunction.Pi() * Radius ^ 2
+    End Property
+Property Get Circumference() As Double
+    Circumference = 2 * Application.WorksheetFunction.Pi() * Radius
+    End Property
+" v:shapes="_x0000_s1029"><!--[endif]--></p>
+
+<p class="MsoCaption" align="center" style="text-align:center"><a name="_Ref62788192" target="_blank">Figure </a><!--[if supportFields]><span style='mso-bookmark:
+_Ref62788192'></span><span style='mso-element:field-begin'></span><![endif]-->
+<span style="mso-bookmark:_Ref62788192"><span style="mso-no-proof:yes">3</span></span><!--[if supportFields]><span
+style='mso-bookmark:_Ref62788192'></span><span style='mso-element:field-end'></span><![endif]--><span style="mso-bookmark:_Ref62788192"></span></p>
+
+<p class="MsoNormal">The only other property that needs to be added is setting the 
+coordinates of the center given two points, P0 and P1.<span style="mso-spacerun:yes">&nbsp; </span><span style="mso-field-code:&quot; REF _Ref62788341 \\h &quot;">
+Figure
+<span style="mso-no-proof:yes">4</span><!--[if gte mso 9]><xml>
+ <w:data>08D0C9EA79F9BACE118C8200AA004BA90B02000000080000000D0000005F00520065006600360032003700380038003300340031000000</w:data>
+</xml><![endif]--></span> contains that code and it too goes into the <span class="SpellE">GeoCircle</span> class module.<span style="mso-spacerun:yes">&nbsp;
+</span>Don’t worry about the mathematics in it.<span style="mso-spacerun:yes">&nbsp;
+</span>The key element to note is that the function has two arguments, each of 
+which is a <span class="SpellE">GeoPoint</span>.<span style="mso-spacerun:yes">&nbsp;
+</span>In addition, it uses the properties of the <span class="SpellE">GeoPoint</span>
+object to calculate midpoints, distances, and slopes of lines as needed.<span style="mso-spacerun:yes">&nbsp; </span>Finally, if there is an error it returns 
+the error as a string message.</p>
+
+<p class="CaptionedCode"><!--[if gte vml 1]><v:shape id="_x0000_s1028"
+ type="#_x0000_t202" style='width:434.25pt;height:547.5pt;mso-wrap-style:none;
+ mso-position-horizontal-relative:char;mso-position-vertical:absolute;
+ mso-position-vertical-relative:line' stroked="f">
+ <v:textbox style='mso-fit-shape-to-text:t'>
+<![if !mso]>
+<table cellpadding="0" cellspacing="0" width="100%">
+  <tr>
+    <td><![endif]>
+    <div>
+      <p class="Code">Function <span class="GramE">CenterCoordfrom2Pts(</span>P0 
+	  As <span class="SpellE">GeoPoint</span>, P1 As <span class="SpellE">
+      GeoPoint</span>) As String</p>
+      <p class="Code"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>
+	  Dim
+      <span class="SpellE">MidptDist</span> <span class="GramE">As</span> 
+      Double, <span class="SpellE">MidPt</span> As <span class="SpellE">GeoPoint</span>, 
+	  _</p>
+      <p class="Code"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+      <span class="SpellE">Triangle_Height</span> <span class="GramE">As</span> 
+      Double, _</p>
+      <p class="Code"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+      <span class="SpellE">Slope_Test</span> <span class="GramE">As</span> 
+      Double, <span class="SpellE">Orthogonal_Slope</span> As Double, _</p>
+      <p class="Code"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+	  Theta
+      <span class="GramE">As</span> Double</p>
+      <p class="Code"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span></p>
+      <p class="Code"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>
+      <span class="SpellE">MidptDist</span> = <span class="GramE">P0.Distance(</span>P1) 
+	  / 2</p>
+      <p class="Code"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>
+	  Set
+      <span class="SpellE">MidPt</span> = <span class="GramE">P0.Midpoint(</span>P1)</p>
+      <p class="Code"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span></p>
+      <p class="Code"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>
+	  If
+      <span class="SpellE">MidptDist</span> &gt; Radius Then</p>
+      <p class="Code"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+      CenterCoordfrom2Pts = &quot;no solution&quot;</p>
+      <p class="Code"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+	  Exit Function<span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+	  '&lt;&lt;&lt;&lt;&lt;</p>
+      <p class="Code"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>
+      <span class="SpellE">ElseIf</span> <span class="SpellE">MidptDist</span> = 
+	  Radius Then</p>
+      <p class="Code"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+	  Set
+      <span class="SpellE">Center_Coord</span> = <span class="SpellE">MidPt</span></p>
+      <p class="Code"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+	  Exit Function<span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+	  '&lt;&lt;&lt;&lt;&lt;</p>
+      <p class="Code"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>
+      <span class="SpellE">ElseIf</span> <span class="SpellE">MidptDist</span> = 
+	  0 Then</p>
+      <p class="Code"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+      CenterCoordfrom2Pts = &quot;infinite solutions&quot;</p>
+      <p class="Code"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+	  Exit Function<span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+	  &nbsp;</span>'&lt;&lt;&lt;&lt;&lt;</p>
+      <p class="Code"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+	  End If</p>
+      <p class="Code">
+      <o:p>&nbsp;</o:p></p>
+      <p class="Code"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>
+      <span class="SpellE">Triangle_Height</span> = <span class="SpellE">
+      <span class="GramE">Sqr</span></span><span class="GramE">(</span>Radius ^ 
+	  2 - <span class="SpellE">MidptDist</span> ^ 2)</p>
+      <p class="Code"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>
+	  Set
+      <span class="SpellE">Center_Coord</span> = New <span class="SpellE">
+      GeoPoint</span></p>
+      <p class="Code"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>
+	  If P0.x = P1.x Then</p>
+      <p class="Code"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+	  With
+      <span class="SpellE">Center_Coord</span></p>
+      <p class="Code"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+	  .x = P0.x +
+      <span class="SpellE">Triangle_Height</span></p>
+      <p class="Code"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+	  .y =
+      <span class="SpellE">MidPt.y</span></p>
+      <p class="Code"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+	  End With</p>
+      <p class="Code"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+	  Exit Function<span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+	  '&lt;&lt;&lt;&lt;&lt;</p>
+      <p class="Code"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+	  End If</p>
+      <p class="Code"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>
+      <span class="SpellE">Slope_Test</span> = <span class="GramE">P0.Slope(</span>P1)</p>
+      <p class="Code"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>
+	  If
+      <span class="SpellE">Slope_Test</span> = 0 Then</p>
+      <p class="Code"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+	  With
+      <span class="SpellE">Center_Coord</span></p>
+      <p class="Code"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+	  .x =
+      <span class="SpellE">MidPt.x</span></p>
+      <p class="Code"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+	  .y =
+      <span class="SpellE">MidPt.y</span> + <span class="SpellE">Triangle_Height</span></p>
+      <p class="Code"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+	  End With</p>
+      <p class="Code"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>
+	  Else</p>
+      <p class="Code"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+      <span class="SpellE">Orthogonal_Slope</span> = -1 / <span class="SpellE">
+      Slope_Test</span></p>
+      <p class="Code"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;</span>Theta 
+	  =
+      <span class="SpellE"><span class="GramE">Atn</span></span><span class="GramE">(</span><span class="SpellE">Orthogonal_Slope</span>)</p>
+      <p class="Code"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+	  With
+      <span class="SpellE">Center_Coord</span></p>
+      <p class="Code"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+	  .x =
+      <span class="SpellE">MidPt.x</span> + <span class="SpellE">Triangle_Height</span> 
+      * <span class="SpellE"><span class="GramE">Cos</span></span><span class="GramE">(</span>Theta)</p>
+      <p class="Code"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+	  .y =
+      <span class="SpellE">MidPt.y</span> + <span class="SpellE">Triangle_Height</span> 
+      * <span class="GramE">Sin(</span>Theta)</p>
+      <p class="Code"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+	  End With</p>
+      <p class="Code"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+	  End If</p>
+      <p class="Code"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>
+	  End Function</p>
+      <p class="Code">
+      <o:p>&nbsp;</o:p></p>
+    </div>
+    <![if !mso]></td>
+  </tr>
+</table>
+<![endif]></v:textbox>
+</v:shape><![endif]--><!--[if !vml]--><img border="0" width="583" height="734" src="./OOPS-Example 1_files/image005.gif" alt="Text Box: Function CenterCoordfrom2Pts(P0 As GeoPoint, P1 As GeoPoint) As String
+    Dim MidptDist As Double, MidPt As GeoPoint, _
+        Triangle_Height As Double, _
+        Slope_Test As Double, Orthogonal_Slope As Double, _
+        Theta As Double
+    
+    MidptDist = P0.Distance(P1) / 2
+    Set MidPt = P0.Midpoint(P1)
+    
+    If MidptDist &gt; Radius Then
+        CenterCoordfrom2Pts = &quot;no solution&quot;
+        Exit Function       &#39;&lt;&lt;&lt;&lt;&lt;
+    ElseIf MidptDist = Radius Then
+        Set Center_Coord = MidPt
+        Exit Function       &#39;&lt;&lt;&lt;&lt;&lt;
+    ElseIf MidptDist = 0 Then
+        CenterCoordfrom2Pts = &quot;infinite solutions&quot;
+        Exit Function       &#39;&lt;&lt;&lt;&lt;&lt;
+        End If
+ 
+    Triangle_Height = Sqr(Radius ^ 2 - MidptDist ^ 2)
+    Set Center_Coord = New GeoPoint
+    If P0.x = P1.x Then
+        With Center_Coord
+        .x = P0.x + Triangle_Height
+        .y = MidPt.y
+            End With
+        Exit Function       &#39;&lt;&lt;&lt;&lt;&lt;
+        End If
+    Slope_Test = P0.Slope(P1)
+    If Slope_Test = 0 Then
+        With Center_Coord
+        .x = MidPt.x
+        .y = MidPt.y + Triangle_Height
+            End With
+    Else
+        Orthogonal_Slope = -1 / Slope_Test
+        Theta = Atn(Orthogonal_Slope)
+        With Center_Coord
+        .x = MidPt.x + Triangle_Height * Cos(Theta)
+        .y = MidPt.y + Triangle_Height * Sin(Theta)
+            End With
+        End If
+    End Function
+ 
+" v:shapes="_x0000_s1028"><!--[endif]--></p>
+
+<p class="MsoCaption" align="center" style="text-align:center"><a name="_Ref62788341" target="_blank">Figure </a><!--[if supportFields]><span style='mso-bookmark:
+_Ref62788341'></span><span style='mso-element:field-begin'></span><![endif]-->
+<span style="mso-bookmark:_Ref62788341"><span style="mso-no-proof:yes">4</span></span><!--[if supportFields]><span
+style='mso-bookmark:_Ref62788341'></span><span style='mso-element:field-end'></span><![endif]--><span style="mso-bookmark:_Ref62788341"></span></p>
+
+<p class="MsoNormal">The above code yields some very easy to use capability that 
+is available both from VBA and from Excel.<span style="mso-spacerun:yes">&nbsp;
+</span>In VBA, one can establish the center of a circle from its radius and two 
+points with the code in <span style="mso-field-code:&quot; REF _Ref73692266 \\h &quot;">
+Figure
+<span style="mso-no-proof:yes">5</span><!--[if gte mso 9]><xml>
+ <w:data>08D0C9EA79F9BACE118C8200AA004BA90B02000000080000000D0000005F00520065006600370033003600390032003200360036000000</w:data>
+</xml><![endif]--></span>.</p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="CaptionedCode"><!--[if gte vml 1]><v:shape id="_x0000_s1027"
+ type="#_x0000_t202" style='width:374.25pt;height:235.5pt;mso-wrap-style:none;
+ mso-position-horizontal-relative:char;mso-position-vertical:absolute;
+ mso-position-vertical-relative:line' stroked="f">
+ <v:textbox style='mso-fit-shape-to-text:t'>
+<![if !mso]>
+<table cellpadding="0" cellspacing="0" width="100%">
+  <tr>
+    <td><![endif]>
+    <div>
+      <p class="Code">Sub <span class="GramE">VBACenterFrom2Points()</span></p>
+      <p class="Code"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span></p>
+      <p class="Code"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>
+	  Dim P0
+      <span class="GramE">As</span> New <span class="SpellE">GeoPoint</span>, P1 
+	  As New <span class="SpellE">GeoPoint</span></p>
+      <p class="Code"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span></p>
+      <p class="Code"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>
+	  P0.x = 1 /
+      <span class="SpellE"><span class="GramE">Sqr</span></span><span class="GramE">(</span>2): 
+	  P0.y = 1 / <span class="SpellE">Sqr</span>(2)</p>
+      <p class="Code"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>
+	  P1.x = -1 /
+      <span class="SpellE"><span class="GramE">Sqr</span></span><span class="GramE">(</span>2): 
+	  P1.y = 1 / <span class="SpellE">Sqr</span>(2)</p>
+      <p class="Code"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span></p>
+      <p class="Code"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>
+	  Dim
+      <span class="SpellE">aCircle</span> As New <span class="SpellE">GeoCircle</span>,
+      <span class="SpellE">Rslt</span> <span class="GramE">As</span> String</p>
+      <p class="Code"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span></p>
+      <p class="Code"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>
+      <span class="SpellE">aCircle.Radius</span> = 1</p>
+      <p class="Code"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>
+      <span class="SpellE">Rslt</span> = <span class="GramE">
+      aCircle.CenterCoordfrom2Pts(</span>P0, P1)</p>
+      <p class="Code"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>
+	  If
+      <span class="SpellE">Rslt</span> &lt;&gt; &quot;&quot; Then</p>
+      <p class="Code"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+      <span class="SpellE">MsgBox</span> &quot;CenterCoordfrom2Pts returned error: &quot; 
+	  &amp; <span class="SpellE">Rslt</span></p>
+      <p class="Code"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>
+	  Else</p>
+      <p class="Code"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+	  With
+      <span class="SpellE">aCircle.Center_Coord</span></p>
+      <p class="Code"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+      <span class="SpellE">MsgBox</span> .x &amp; &quot;, &quot; &amp; .y</p>
+      <p class="Code"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+	  End With</p>
+      <p class="Code"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+	  End If</p>
+      <p class="Code"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>
+	  End Sub</p>
+    </div>
+    <![if !mso]></td>
+  </tr>
+</table>
+<![endif]></v:textbox>
+</v:shape><![endif]--><!--[if !vml]--><img border="0" width="503" height="318" src="./OOPS-Example 1_files/image006.gif" alt="Text Box: Sub VBACenterFrom2Points()
+    
+    Dim P0 As New GeoPoint, P1 As New GeoPoint
+    
+    P0.x = 1 / Sqr(2): P0.y = 1 / Sqr(2)
+    P1.x = -1 / Sqr(2): P1.y = 1 / Sqr(2)
+    
+    Dim aCircle As New GeoCircle, Rslt As String
+    
+    aCircle.Radius = 1
+    Rslt = aCircle.CenterCoordfrom2Pts(P0, P1)
+    If Rslt &lt;&gt; &quot;&quot; Then
+        MsgBox &quot;CenterCoordfrom2Pts returned error: &quot; &amp; Rslt
+    Else
+        With aCircle.Center_Coord
+        MsgBox .x &amp; &quot;, &quot; &amp; .y
+            End With
+        End If
+    End Sub
+" v:shapes="_x0000_s1027"><!--[endif]--></p>
+
+<p class="MsoCaption" align="center" style="text-align:center"><a name="_Ref73692266" target="_blank">Figure </a><!--[if supportFields]><span style='mso-bookmark:
+_Ref73692266'></span><span style='mso-element:field-begin'></span><![endif]-->
+<span style="mso-bookmark:_Ref73692266"><span style="mso-no-proof:yes">5</span></span><!--[if supportFields]><span
+style='mso-bookmark:_Ref73692266'></span><span style='mso-element:field-end'></span><![endif]--><span style="mso-bookmark:_Ref73692266"></span></p>
+
+<p class="MsoNormal">To use this new capability from an Excel worksheet, one needs 
+a user-defined function.<span style="mso-spacerun:yes">&nbsp; </span>This will 
+also serve as an interface between the Excel worksheet, which deals with cells 
+laid out in a tabular fashion, and the custom classes used to solve the problem.<span style="mso-spacerun:yes">&nbsp; </span>
+In a standard module, enter the code in <span style="mso-field-code:&quot; REF _Ref62791963 \\h &quot;">
+Figure <span style="mso-no-proof:yes">6</span><!--[if gte mso 9]><xml>
+ <w:data>08D0C9EA79F9BACE118C8200AA004BA90B02000000080000000D0000005F00520065006600360032003700390031003900360033000000</w:data>
+</xml><![endif]--></span>.</p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="CaptionedCode"><!--[if gte vml 1]><v:shape id="_x0000_s1026"
+ type="#_x0000_t202" style='width:452.25pt;height:307.5pt;mso-wrap-style:none;
+ mso-position-horizontal-relative:char;mso-position-vertical:absolute;
+ mso-position-vertical-relative:line' stroked="f">
+ <v:textbox style='mso-fit-shape-to-text:t'>
+<![if !mso]>
+<table cellpadding="0" cellspacing="0" width="100%">
+  <tr>
+    <td><![endif]>
+    <div>
+      <p class="Code">Function <span class="GramE">CenterFrom2Points(</span>Radius 
+	  As Double, _</p>
+      <p class="Code"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+      <span class="GramE">x0</span> As Double, y0 As Double, x1 As Double, y1 As 
+	  Double)</p>
+      <p class="Code"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>
+	  Dim P0
+      <span class="GramE">As</span> <span class="SpellE">GeoPoint</span>, P1 As
+      <span class="SpellE">GeoPoint</span>, _</p>
+      <p class="Code"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+      <span class="SpellE"><span class="GramE">aCircle</span></span> As
+      <span class="SpellE">GeoCircle</span>, _</p>
+      <p class="Code"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+      <span class="SpellE">ErrMsg</span> As String, <span class="SpellE">
+      <span class="GramE">Rslt</span></span><span class="GramE">(</span>1) As 
+	  Double</p>
+      <p class="Code"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>
+	  Set P0 = New
+      <span class="SpellE">GeoPoint</span>: Set P1 = New <span class="SpellE">
+      GeoPoint</span></p>
+      <p class="Code"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>
+	  Set
+      <span class="SpellE">aCircle</span> = New <span class="SpellE">GeoCircle</span></p>
+      <p class="Code"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>
+	  P0.x = x0: P0.y = y0: P1.x = x1: P1.y = y1</p>
+      <p class="Code"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>
+      <span class="SpellE">aCircle.Radius</span> = Radius</p>
+      <p class="Code"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>
+      <span class="SpellE">ErrMsg</span> = <span class="GramE">
+      aCircle.CenterCoordfrom2Pts(</span>P0, P1)</p>
+      <p class="Code"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>
+	  If
+      <span class="SpellE">ErrMsg</span> &lt;&gt; &quot;&quot; Then</p>
+      <p class="Code"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+      CenterFrom2Points = <span class="SpellE">ErrMsg</span></p>
+      <p class="Code"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+	  Exit Function</p>
+      <p class="Code"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+	  End If</p>
+      <p class="Code"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>
+      <span class="SpellE"><span class="GramE">Rslt</span></span><span class="GramE">(</span>0) 
+	  = <span class="SpellE">aCircle.Center_Coord.x</span></p>
+      <p class="Code"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>
+      <span class="SpellE"><span class="GramE">Rslt</span></span><span class="GramE">(</span>1) 
+	  = <span class="SpellE">aCircle.Center_Coord.y</span></p>
+      <p class="Code"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>
+	  If Not
+      <span class="SpellE">TypeOf</span> <span class="SpellE">Application.Caller</span> 
+      Is Range Then</p>
+      <p class="Code"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+      CenterFrom2Points = <span class="SpellE">Rslt</span></p>
+      <p class="Code"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>
+      <span class="SpellE">ElseIf</span> <span class="SpellE">
+      Application.Caller.Columns.Count</span> &gt; 1 Then</p>
+      <p class="Code"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+      CenterFrom2Points = <span class="SpellE">Rslt</span></p>
+      <p class="Code"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>
+	  Else</p>
+      <p class="Code"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+      CenterFrom2Points = <span class="SpellE"><span class="GramE">
+      Application.WorksheetFunction.Transpose</span></span><span class="GramE">(</span><span class="SpellE">Rslt</span>)</p>
+      <p class="Code"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+	  End If</p>
+      <p class="Code"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>
+	  End Function</p>
+      <p class="Code">
+      <o:p>&nbsp;</o:p></p>
+    </div>
+    <![if !mso]></td>
+  </tr>
+</table>
+<![endif]></v:textbox>
+</v:shape><![endif]--><!--[if !vml]--><img border="0" width="607" height="414" src="./OOPS-Example 1_files/image007.gif" alt="Text Box: Function CenterFrom2Points(Radius As Double, _
+        x0 As Double, y0 As Double, x1 As Double, y1 As Double)
+    Dim P0 As GeoPoint, P1 As GeoPoint, _
+        aCircle As GeoCircle, _
+        ErrMsg As String, Rslt(1) As Double
+    Set P0 = New GeoPoint: Set P1 = New GeoPoint
+    Set aCircle = New GeoCircle
+    P0.x = x0: P0.y = y0: P1.x = x1: P1.y = y1
+    aCircle.Radius = Radius
+    ErrMsg = aCircle.CenterCoordfrom2Pts(P0, P1)
+    If ErrMsg &lt;&gt; &quot;&quot; Then
+        CenterFrom2Points = ErrMsg
+        Exit Function
+        End If
+    Rslt(0) = aCircle.Center_Coord.x
+    Rslt(1) = aCircle.Center_Coord.y
+    If Not TypeOf Application.Caller Is Range Then
+        CenterFrom2Points = Rslt
+    ElseIf Application.Caller.Columns.Count &gt; 1 Then
+        CenterFrom2Points = Rslt
+    Else
+        CenterFrom2Points = Application.WorksheetFunction.Transpose(Rslt)
+        End If
+    End Function
+ 
+" v:shapes="_x0000_s1026"><!--[endif]--></p>
+
+<p class="MsoCaption" align="center" style="text-align:center"><a name="_Ref62791963" target="_blank">Figure </a><!--[if supportFields]><span style='mso-bookmark:
+_Ref62791963'></span><span style='mso-element:field-begin'></span><![endif]-->
+<span style="mso-bookmark:_Ref62791963"><span style="mso-no-proof:yes">6</span></span><!--[if supportFields]><span
+style='mso-bookmark:_Ref62791963'></span><span style='mso-element:field-end'></span><![endif]--><span style="mso-bookmark:_Ref62791963"></span></p>
+
+<p class="MsoNormal">This function, CenterFrom2Points is array-entered in two 
+cells in a worksheet.<span style="mso-spacerun:yes">&nbsp; </span>These can be 
+in the same row or in the same column as in <span style="mso-field-code:&quot; REF _Ref62792787 \\h &quot;">
+Figure
+<span style="mso-no-proof:yes">7</span><!--[if gte mso 9]><xml>
+ <w:data>08D0C9EA79F9BACE118C8200AA004BA90B02000000080000000D0000005F00520065006600360032003700390032003700380037000000</w:data>
+</xml><![endif]--></span>.</p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal" align="center" style="text-align:center;page-break-after:avoid"><!--[if gte vml 1]><v:shape id="_x0000_s1025"
+ type="#_x0000_t75" style='width:417.75pt;height:138pt'>
+ <v:imagedata src="vba_oops_eg1_files/image008.png" o:title="" croptop="9257f"
+  cropbottom="40632f" cropleft="-45f" cropright="30294f"/>
+</v:shape><![endif]--><!--[if !vml]--><img border="0" width="557" height="184" src="./OOPS-Example 1_files/image009.jpg" v:shapes="_x0000_s1025"><!--[endif]--></p>
+
+<p class="MsoCaption" align="center" style="text-align:center"><a name="_Ref62792787" target="_blank">Figure </a><!--[if supportFields]><span style='mso-bookmark:
+_Ref62792787'></span><span style='mso-element:field-begin'></span><![endif]-->
+<span style="mso-bookmark:_Ref62792787"><span style="mso-no-proof:yes">7</span></span><!--[if supportFields]><span
+style='mso-bookmark:_Ref62792787'></span><span style='mso-element:field-end'></span><![endif]--><span style="mso-bookmark:_Ref62792787"></span></p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+</div>
+
+		<!-- #EndEditable -->
+		</div>
+	</div>
+
+<div id="Footer" style="clear:both">
+	<div id="tm_fb"><div id="fb-root" class=" fb_reset"><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div><iframe name="fb_xdm_frame_http" frameborder="0" allowtransparency="true" scrolling="no" id="fb_xdm_frame_http" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tabindex="-1" src="./OOPS-Example 1_files/ZEbdHPQfV3x.htm" style="border: none;"></iframe><iframe name="fb_xdm_frame_https" frameborder="0" allowtransparency="true" scrolling="no" id="fb_xdm_frame_https" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tabindex="-1" src="./OOPS-Example 1_files/ZEbdHPQfV3x(1).htm" style="border: none;"></iframe></div></div><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div><iframe name="f174712c9" frameborder="0" allowtransparency="true" scrolling="no" src="./OOPS-Example 1_files/ping.htm" style="display: none;"></iframe></div></div></div>
+	    <!--<script language="javascript">
+	      window.fbAsyncInit = function() {
+	        FB.init({appId: '113682738669600', status: true, cookie: true,
+	                 xfbml: true});
+	      };
+	      (function() {
+	        var e = document.createElement('script');
+	        e.type = 'text/javascript';
+	        e.src = document.location.protocol +
+	          '//connect.facebook.net/en_US/all.js';
+	        e.async = true;
+	        document.getElementById('fb-root').appendChild(e);
+	      }());
+	    </script>-->
+	    <script type="text/javascript" src="./OOPS-Example 1_files/all.js"></script>
+		<script type="text/javascript">
+	    FB.init({appId: '113682738669600', status: true, cookie: true, xfbml: true});
+		</script>
+		<!--<div style="float:left;"><fb:login-button autologoutlink="true"></fb:login-button></div>-->
+		<div style="float:left;margin-left:10px"><fb:like class=" fb_iframe_widget" fb-xfbml-state="rendered" fb-iframe-plugin-query="app_id=113682738669600&amp;href=http%3A%2F%2Fwww.tushar-mehta.com%2Fexcel%2Fvba%2Fvba_oops_eg1.htm&amp;locale=en_US&amp;sdk=joey"><span style="vertical-align: bottom; width: 450px; height: 20px;"><iframe name="f3aa12190" width="1000px" height="1000px" frameborder="0" allowtransparency="true" scrolling="no" title="fb:like Facebook Social Plugin" src="./OOPS-Example 1_files/like.htm" style="border: none; visibility: visible; width: 450px; height: 20px;" class=""></iframe></span></fb:like></div>
+		<div style="clear:both"></div>
+		</div>
+	
+	<div id="ftMarquee" style="margin-right:10px;
+			background-image:url(&#39;../../images/header3.gif&#39;);
+			height:75px;width:100%;">
+		
+		<marquee style="font-family:Arial, Helvetica, sans-serif;font-size:36px;color:white" scrollamount="5" scrolldelay="10">Infinite opportunities? Endless problems? Limited resources? Talk to us! Email web-underscore-contact@tushar-hyphen-mehta-dot-cee-oh-em
+			</marquee>
+		</div>
+	<div id="FooterLinks">
+		<p style="font-size:small">By accessing any page or link on this web site other than this 
+			page, you agree to the
+			<a href="http://www.tushar-mehta.com/this_site/disclaimer.html">terms and conditions.</a></p>
+			<p><a name="Reviews"></a></p>
+	<div id="ftAmazonAds">
+	<div id="x1" style="float:left;margin-left:10px">
+		<script type="text/javascript"><!--
+			amazon_ad_tag = "tusharmehtaco-20"; amazon_ad_width = "180"; 
+			amazon_ad_height = "150"; amazon_ad_logo = "hide"; 
+			amazon_ad_product_images = "show"; amazon_ad_link_target = "new"; 
+			amazon_ad_border = "hide"; amazon_color_border = "FFFFFF"; //amazon_color_border = "FFFFDD"; 
+			amazon_color_background = "FFFFFF";
+			amazon_color_link="000000";//--></script>
+		<script type="text/javascript" src="./OOPS-Example 1_files/ads.js"></script><script src="./OOPS-Example 1_files/ads-common.js" type="text/javascript"></script><iframe src="./OOPS-Example 1_files/cm(1).htm" marginwidth="0" marginheight="0" width="180" height="150" border="0" frameborder="0" style="border:none;" scrolling="no"></iframe>
+		</div>
+	<div style="float:left">
+	<script language="javascript" type="text/javascript">
+	var amzn_wdgt={widget:'Carousel'};
+	amzn_wdgt.tag='tusharmehtaco-20';
+	switch (Math.floor(Math.random()*5)+1){
+	case 1:amzn_wdgt.widgetType='Bestsellers';amzn_wdgt.title='Bestsellers ';break;
+	case 2:amzn_wdgt.widgetType='NewReleases';amzn_wdgt.title='New releases ';break;
+	case 3:amzn_wdgt.widgetType='MostWishedFor';amzn_wdgt.title='Most wished for ';break;
+	case 4:amzn_wdgt.widgetType='MostGifted';amzn_wdgt.title='Most gifted ';break;
+	case 5:amzn_wdgt.widgetType='SearchAndAdd';amzn_wdgt.title='Search and add ';keywords='pc computer camera accessory hardware iphone kindle netbook software';
+		break;
+		}
+	/*if (Math.random()<0.5){amzn_wdgt.widgetType='Bestsellers';amzn_wdgt.title='Bestsellers ';}
+	else {amzn_wdgt.widgetType='NewReleases';amzn_wdgt.title='New releases ';}*/
+	amzn_wdgt.searchIndex='All';
+	if (Math.random()<0.5){
+	  switch (Math.floor(Math.random()*8)+1){
+	    case 1:amzn_wdgt.searchIndex='Books';amzn_wdgt.title+='Books';break;
+	    case 2:amzn_wdgt.searchIndex='DigitalMusic';amzn_wdgt.title+='Digital Music';break;
+	    case 3:amzn_wdgt.searchIndex='DVD';amzn_wdgt.title+='DVD';break;
+	    case 4:amzn_wdgt.searchIndex='Electronics';amzn_wdgt.title+='Electronics';break;
+	    case 5:amzn_wdgt.searchIndex='Music';amzn_wdgt.title+='Music';break;
+	    case 6:amzn_wdgt.searchIndex='Software';amzn_wdgt.title+='Software';break;
+	    case 7:amzn_wdgt.searchIndex='VideoGames';amzn_wdgt.title+='Video Games';break;
+	    case 8:amzn_wdgt.searchIndex='PCHardware';amzn_wdgt.title+='PC Hardware';break;
+	    default:break;
+		  }
+		}
+	//amzn_wdgt.browseNode='51550011';
+	//amzn_wdgt.title='BestSellers';
+	amzn_wdgt.width='400';
+	amzn_wdgt.height='150';
+	//amzn_wdgt.marketPlace='US';
+	amzn_wdgt.shuffleProducts=true;
+	
+		</script>
+	<script type="text/javascript" src="./OOPS-Example 1_files/swfobject_1_5.js">
+		</script><embed type="application/x-shockwave-flash" src="//ws-na.amazon-adsystem.com/widgets/q?MarketPlace=US&amp;Operation=GetDisplayTemplate&amp;ServiceVersion=20070822&amp;WS=1&amp;ID=Carousel" width="400" height="150" style="undefined" id="amzn_widget" name="amzn_widget" quality="high" bgcolor="#FFFFFF" allowscriptaccess="always" flashvars="MarketPlace=US&amp;Operation=GetDisplayTemplate&amp;ServiceVersion=20070822&amp;WS=1&amp;ID=Carousel&amp;Tag=tusharmehtaco-20&amp;WidgetType=Bestsellers&amp;Title=Bestsellers%20Electronics&amp;SearchIndex=Electronics&amp;Width=400&amp;Height=150&amp;ShuffleProducts=true">
+		</div>
+	<div id="x2" style="float:left;">
+		<script type="text/javascript"><!--
+			amazon_ad_tag = "tusharmehtaco-20"; amazon_ad_width = "180"; 
+			amazon_ad_height = "150"; amazon_ad_logo = "hide"; 
+			amazon_ad_product_images = "show"; amazon_ad_link_target = "new"; 
+			amazon_ad_border = "hide"; amazon_color_border = "FFFFFF"; 
+			amazon_color_background = "FFFFFF";
+			amazon_color_link="000000";//--></script>
+		<script type="text/javascript" src="./OOPS-Example 1_files/ads.js"></script><script src="./OOPS-Example 1_files/ads-common.js" type="text/javascript"></script><iframe src="./OOPS-Example 1_files/cm(1).htm" marginwidth="0" marginheight="0" width="180" height="150" border="0" frameborder="0" style="border:none;" scrolling="no"></iframe>
+		</div>
+	</div>
+	<div style="clear:both"></div>
+		</div>
+	<div id="TwoFloatingEles">
+		<div id="ftFeedbackComment" style="float:left;">
+		<div id="ftFeedback" class="TopRightBottomBorder">
+			<p class="small">
+			<strong>Optional</strong> If you will take a moment to 
+			provide your comments, it will help improve the site both 
+			for you, and for other visitors.</p>
+		<script language="javascript" type="text/javascript">
+		function showI1(){
+			//alert("In showI1");
+			with (document.getElementById("I1")){
+			//alert(escape(location.href))
+			src="http://www.tmehta.com/recaptcha/index.asp?q=" + escape(location.href)
+			style.display='block';
+						
+				}
+			}
+		var foo='bar';
+		document.write("<a href='#' onclick='javascript:showI1();return(false)'> Rate, and comment on, this page and site</a>");
+		</script><a href="http://www.tushar-mehta.com/excel/vba/vba_oops_eg1.htm#" onclick="javascript:showI1();return(false)"> Rate, and comment on, this page and site</a>
+		<iframe id="I1" name="I1" style="display:none" height="500px" width="70%">Your browser does not support inline frames or is currently configured not to display inline frames.
+			aaaaa</iframe>
+		<noscript>Rate this page&lt;iframe id="I1" name="I1" src="http://www.tmehta.com/recaptcha/index.asp" height="500px" width="70%"&gt;Your browser does not support inline frames or is currently configured not to display inline frames.
+			&lt;/iframe&gt;</noscript>
+
+					
+			<!-- End Feedback, Change Detection, and random comment Cell-->
+			
+	</div>
+	<div id="ftComment">
+		<p><font color="#008000">A comment selected at random:<br>
+		<script src="./OOPS-Example 1_files/comments.js"> 
+        </script>Outstanding!!!<br>
+		</font>
+		</p>
+		</div>
+	</div>
+		<div id="MonitorAndComment" style="float:left;margin-left:10px">
+			<div id="ftMonitor" style="clear:both">
+					<!-- Begin ChangeDetection.com Panel HTML -->
+					<!-- ChangeDetection.com id=6l4sqs9rrb -->
+					<form action="http://www.changedetection.com/detect.html" method="get" target="ChangeDetectionWiz">
+						<table border="1" cellpadding="0" cellspacing="0">
+							<tbody><tr>
+								<td align="center" bgcolor="#486591">
+								<font color="white" face="arial,helvetica" size="2">
+								<b>Monitor page<br>for changes</b></font> </td>
+							</tr>
+							<tr>
+								<td align="center" valign="top">
+								<input name="email" size="12" type="TEXT" value="enter email"><br>
+								<small>
+								<input name="enter" onclick="window.open(&#39;&#39;,&#39;ChangeDetectionWiz&#39;,
+											&#39;resizable=yes,scrollbars=yes,width=624,height=460&#39;);return true" type="submit" value="OK">
+								</small></td>
+							</tr>
+							<tr>
+								<td align="center" valign="top">
+								<font face="Arial, Helvetica" size="1">
+								<a href="http://www.changedetection.com/privacy.html" onclick="window.open(&#39;http://www.ChangeDetection.com/privacy.html&#39;,
+										&#39;ChangeDetectionPrivacy&#39;,
+										&#39;resizable=yes,scrollbars=yes,width=624,height=400&#39;);return false" target="ChangeDetectionPrivacy">
+								it's private</a><br>by
+								<a href="http://www.changedetection.com/" target="_blank">
+								ChangeDetection</a></font> </td>
+							</tr>
+						</tbody></table>
+					</form>
+					<!-- End ChangeDetection.com Panel HTML -->
+				</div>
+			
+			</div>
+		</div>
+		<div id="ftCopyright" style="clear:both;background-color:#EAEAFF">
+		<p>Copyright © 2000-2009 Tushar Mehta.<br>
+			Send comments and suggestions about the web site to web-underscore-contact@tushar-hyphen-mehta-dot-cee-oh-em
+			<br>Last edited
+			<!--webbot bot="Timestamp" s-format="%B %d, %Y" s-type="EDITED" startspan -->December 27, 2012<!--webbot bot="Timestamp" i-checksum="39620" endspan -->
+			<br>
+			<script src="./OOPS-Example 1_files/urchin.js" type="text/javascript"></script>
+			<script type="text/javascript">
+				_uacct = "UA-521995-1";
+				urchinTracker();
+				</script>
+			</p>
+			</div>
+<!--w e b bot bot="Include" U-Include="../_borders/bottom.htm" TAG="BODY" -->
+	</div>
+
+<!-- #EndTemplate -->
+
+</body></html>

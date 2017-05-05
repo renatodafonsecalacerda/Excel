@@ -1,0 +1,3518 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html dir='ltr'>
+<head>
+<meta content='text/html; charset=UTF-8' http-equiv='Content-Type'/>
+<script type="text/javascript">(function() { var b=window,f="chrome",g="tick",k="jstiming";(function(){function d(a){this.t={};this.tick=function(a,d,c){var e=void 0!=c?c:(new Date).getTime();this.t[a]=[e,d];if(void 0==c)try{b.console.timeStamp("CSI/"+a)}catch(h){}};this[g]("start",null,a)}var a;b.performance&&(a=b.performance.timing);var n=a?new d(a.responseStart):new d;b.jstiming={Timer:d,load:n};if(a){var c=a.navigationStart,h=a.responseStart;0<c&&h>=c&&(b[k].srt=h-c)}if(a){var e=b[k].load;0<c&&h>=c&&(e[g]("_wtsrt",void 0,c),e[g]("wtsrt_","_wtsrt",h),e[g]("tbsd_","wtsrt_"))}try{a=null,
+b[f]&&b[f].csi&&(a=Math.floor(b[f].csi().pageT),e&&0<c&&(e[g]("_tbnd",void 0,b[f].csi().startE),e[g]("tbnd_","_tbnd",c))),null==a&&b.gtbExternal&&(a=b.gtbExternal.pageT()),null==a&&b.external&&(a=b.external.pageT,e&&0<c&&(e[g]("_tbnd",void 0,b.external.startE),e[g]("tbnd_","_tbnd",c))),a&&(b[k].pt=a)}catch(p){}})();b.tickAboveFold=function(d){var a=0;if(d.offsetParent){do a+=d.offsetTop;while(d=d.offsetParent)}d=a;750>=d&&b[k].load[g]("aft")};var l=!1;function m(){l||(l=!0,b[k].load[g]("firstScrollTime"))}b.addEventListener?b.addEventListener("scroll",m,!1):b.attachEvent("onscroll",m);
+ })();</script>
+<meta content='blogger' name='generator'/>
+<link href='http://brzexceldeveloper.blogspot.com.br/favicon.ico' rel='icon' type='image/x-icon'/>
+<link href='http://brzexceldeveloper.blogspot.com/2012/01/vba-excel-manipulando-tabela-dinamica.html' rel='canonical'/>
+<link rel="alternate" type="application/atom+xml" title="Microsoft Office Specialist Excel - Automation, VBA, Macros, Dashboards, Scorecards, Data Analyse - Atom" href="http://brzexceldeveloper.blogspot.com/feeds/posts/default" />
+<link rel="alternate" type="application/rss+xml" title="Microsoft Office Specialist Excel - Automation, VBA, Macros, Dashboards, Scorecards, Data Analyse - RSS" href="http://brzexceldeveloper.blogspot.com/feeds/posts/default?alt=rss" />
+<link rel="service.post" type="application/atom+xml" title="Microsoft Office Specialist Excel - Automation, VBA, Macros, Dashboards, Scorecards, Data Analyse - Atom" href="http://www.blogger.com/feeds/3597984963077620070/posts/default" />
+
+<link rel="alternate" type="application/atom+xml" title="Microsoft Office Specialist Excel - Automation, VBA, Macros, Dashboards, Scorecards, Data Analyse - Atom" href="http://brzexceldeveloper.blogspot.com/feeds/8725625180242469757/comments/default" />
+<link href='http://2.bp.blogspot.com/-Y1pvoWnYgmA/Tx5SRwQmfSI/AAAAAAAAAEE/41q-3Is7MHk/s320/bernardes_Ciclo_Dashboard_Pivot_Table-706646.png' rel='image_src'/>
+<!--[if IE]> <script> (function() { var html5 = ("abbr,article,aside,audio,canvas,datalist,details," + "figure,footer,header,hgroup,mark,menu,meter,nav,output," + "progress,section,time,video").split(','); for (var i = 0; i < html5.length; i++) { document.createElement(html5[i]); } try { document.execCommand('BackgroundImageCache', false, true); } catch(e) {} })(); </script> <![endif]-->
+<title>Microsoft Office Specialist Excel - Automation, VBA, Macros, Dashboards, Scorecards, Data Analyse: VBA Excel - Manipulando Tabela Dinâmica - Refresh Pivot Table</title>
+<link type='text/css' rel='stylesheet' href='https://www.blogger.com/static/v1/widgets/3841957138-widget_css_bundle.css' />
+<link type='text/css' rel='stylesheet' href='https://www.blogger.com/dyn-css/authorization.css?targetBlogID=3597984963077620070&zx=68245c6e-5d9b-4e61-ba14-7bfda7c69280' />
+<style id='page-skin-1' type='text/css'><!--
+/*
+-----------------------------------------------
+Blogger Template Style
+Name:     Minima Lefty Stretch
+Date:     14 Jul 2006
+----------------------------------------------- */
+/* Variable definitions
+====================
+<Variable name="bgcolor" description="Page Background Color"
+type="color" default="#fff">
+<Variable name="textcolor" description="Text Color"
+type="color" default="#333">
+<Variable name="linkcolor" description="Link Color"
+type="color" default="#58a">
+<Variable name="pagetitlecolor" description="Blog Title Color"
+type="color" default="#666">
+<Variable name="descriptioncolor" description="Blog Description Color"
+type="color" default="#999">
+<Variable name="titlecolor" description="Post Title Color"
+type="color" default="#c60">
+<Variable name="bordercolor" description="Border Color"
+type="color" default="#ccc">
+<Variable name="sidebarcolor" description="Sidebar Title Color"
+type="color" default="#999">
+<Variable name="sidebartextcolor" description="Sidebar Text Color"
+type="color" default="#666">
+<Variable name="visitedlinkcolor" description="Visited Link Color"
+type="color" default="#999">
+<Variable name="bodyfont" description="Text Font"
+type="font" default="normal normal 100% Georgia, Serif">
+<Variable name="headerfont" description="Sidebar Title Font"
+type="font"
+default="normal normal 78% 'Trebuchet MS',Trebuchet,Arial,Verdana,Sans-serif">
+<Variable name="pagetitlefont" description="Blog Title Font"
+type="font"
+default="normal normal 200% Georgia, Serif">
+<Variable name="descriptionfont" description="Blog Description Font"
+type="font"
+default="normal normal 78% 'Trebuchet MS', Trebuchet, Arial, Verdana, Sans-serif">
+<Variable name="postfooterfont" description="Post Footer Font"
+type="font"
+default="normal normal 78% 'Trebuchet MS', Trebuchet, Arial, Verdana, Sans-serif">
+<Variable name="startSide" description="Start side in blog language"
+type="automatic" default="left">
+<Variable name="endSide" description="End side in blog language"
+type="automatic" default="right">
+*/
+/* Use this with templates/template-twocol.html */
+body {
+background:#ffffff;
+margin:0;
+color:#215670;
+font:x-small Georgia Serif;
+font-size/* */:/**/small;
+font-size: /**/small;
+text-align: center;
+}
+a:link {
+color:#5588aa;
+text-decoration:none;
+}
+a:visited {
+color:#72179D;
+text-decoration:none;
+}
+a:hover {
+color:#3D81EE;
+text-decoration:underline;
+}
+a img {
+border-width:0;
+}
+/* Header
+-----------------------------------------------
+*/
+#header-wrapper {
+margin:0 2% 10px;
+border:1px solid #C3D9FF;
+}
+#header-inner {
+background-position: center;
+margin-left: auto;
+margin-right: auto;
+}
+#header {
+margin: 5px;
+border: 1px solid #C3D9FF;
+text-align: center;
+color:#215670;
+}
+#header h1 {
+margin:5px 5px 0;
+padding:15px 20px .25em;
+line-height:1.2em;
+text-transform:uppercase;
+letter-spacing:.2em;
+font: normal normal 200% Arial, sans-serif;
+}
+#header a {
+color:#215670;
+text-decoration:none;
+}
+#header a:hover {
+color:#215670;
+}
+#header .description {
+margin:0 5px 5px;
+padding:0 20px 15px;
+text-transform:uppercase;
+letter-spacing:.2em;
+line-height: 1.4em;
+font: normal bold 78% Arial, sans-serif;
+color: #0066CC;
+}
+#header img {
+margin-left: auto;
+margin-right: auto;
+}
+/* Outer-Wrapper
+----------------------------------------------- */
+#outer-wrapper {
+margin:0;
+padding:10px;
+text-align:left;
+font: normal normal 99% Verdana, sans-serif;
+}
+#main-wrapper {
+margin-right: 2%;
+width: 67%;
+float: right;
+display: inline;       /* fix for doubling margin in IE */
+word-wrap: break-word; /* fix for long text breaking sidebar float in IE */
+overflow: hidden;      /* fix for long non-text content breaking IE sidebar float */
+}
+#sidebar-wrapper {
+margin-left: 2%;
+width: 25%;
+float: left;
+display: inline;       /* fix for doubling margin in IE */
+word-wrap: break-word; /* fix for long text breaking sidebar float in IE */
+overflow: hidden;      /* fix for long non-text content breaking IE sidebar float */
+}
+/* Headings
+----------------------------------------------- */
+h2 {
+margin:1.5em 0 .75em;
+font:normal normal 78% Arial, sans-serif;
+line-height: 1.4em;
+text-transform:uppercase;
+letter-spacing:.2em;
+color:#C3D9FF;
+}
+/* Posts
+-----------------------------------------------
+*/
+h2.date-header {
+margin:1.5em 0 .5em;
+}
+.post {
+margin:.5em 0 1.5em;
+border-bottom:1px dotted #C3D9FF;
+padding-bottom:1.5em;
+}
+.post h3 {
+margin:.25em 0 0;
+padding:0 0 4px;
+font-size:140%;
+font-weight:normal;
+line-height:1.4em;
+color:#3D81EE;
+}
+.post h3 a, .post h3 a:visited, .post h3 strong {
+display:block;
+text-decoration:none;
+color:#3D81EE;
+font-weight:normal;
+}
+.post h3 strong, .post h3 a:hover {
+color:#215670;
+}
+.post-body {
+margin:0 0 .75em;
+line-height:1.6em;
+}
+.post-body blockquote {
+line-height:1.3em;
+}
+.post-footer {
+margin: .75em 0;
+color:#C3D9FF;
+text-transform:uppercase;
+letter-spacing:.1em;
+font: normal normal 70% Arial, sans-serif;
+line-height: 1.4em;
+}
+.comment-link {
+margin-left:.6em;
+}
+.post img, table.tr-caption-container {
+padding:4px;
+border:1px solid #C3D9FF;
+}
+.tr-caption-container img {
+border: none;
+padding: 0;
+}
+.post blockquote {
+margin:1em 20px;
+}
+.post blockquote p {
+margin:.75em 0;
+}
+/* Comments
+----------------------------------------------- */
+#comments h4 {
+margin:1em 0;
+font-weight: bold;
+line-height: 1.4em;
+text-transform:uppercase;
+letter-spacing:.2em;
+color: #C3D9FF;
+}
+#comments-block {
+margin:1em 0 1.5em;
+line-height:1.6em;
+}
+#comments-block .comment-author {
+margin:.5em 0;
+}
+#comments-block .comment-body {
+margin:.25em 0 0;
+}
+#comments-block .comment-footer {
+margin:-.25em 0 2em;
+line-height: 1.4em;
+text-transform:uppercase;
+letter-spacing:.1em;
+}
+#comments-block .comment-body p {
+margin:0 0 .75em;
+}
+.deleted-comment {
+font-style:italic;
+color:gray;
+}
+.feed-links {
+clear: both;
+line-height: 2.5em;
+}
+#blog-pager-newer-link {
+float: left;
+}
+#blog-pager-older-link {
+float: right;
+}
+#blog-pager {
+text-align: center;
+}
+/* Sidebar Content
+----------------------------------------------- */
+.sidebar {
+color: #215670;
+line-height: 1.5em;
+}
+.sidebar ul {
+list-style:none;
+margin:0 0 0;
+padding:0 0 0;
+}
+.sidebar li {
+margin:0;
+padding-top:0;
+padding-right:0;
+padding-bottom:.25em;
+padding-left:15px;
+text-indent:-15px;
+line-height:1.5em;
+}
+.sidebar .widget, .main .widget {
+border-bottom:1px dotted #C3D9FF;
+margin:0 0 1.5em;
+padding:0 0 1.5em;
+}
+.main .Blog {
+border-bottom-width: 0;
+}
+/* Profile
+----------------------------------------------- */
+.profile-img {
+float: left;
+margin-top: 0;
+margin-right: 5px;
+margin-bottom: 5px;
+margin-left: 0;
+padding: 4px;
+border: 1px solid #C3D9FF;
+}
+.profile-data {
+margin:0;
+text-transform:uppercase;
+letter-spacing:.1em;
+font: normal normal 70% Arial, sans-serif;
+color: #C3D9FF;
+font-weight: bold;
+line-height: 1.6em;
+}
+.profile-datablock {
+margin:.5em 0 .5em;
+}
+.profile-textblock {
+margin: 0.5em 0;
+line-height: 1.6em;
+}
+.profile-link {
+font: normal normal 70% Arial, sans-serif;
+text-transform: uppercase;
+letter-spacing: .1em;
+}
+/* Footer
+----------------------------------------------- */
+#footer {
+width:660px;
+clear:both;
+margin:0 auto;
+padding-top:15px;
+line-height: 1.6em;
+text-transform:uppercase;
+letter-spacing:.1em;
+text-align: center;
+}
+
+--></style>
+<script type="text/javascript">var a="indexOf",b="&m=1",e="(^|&)m=",f="?",g="?m=1";function h(){var c=window.location.href,d=c.split(f);switch(d.length){case 1:return c+g;case 2:return 0<=d[1].search(e)?null:c+b;default:return null}}var k=navigator.userAgent;if(-1!=k[a]("Mobile")&&-1!=k[a]("WebKit")&&-1==k[a]("iPad")||-1!=k[a]("Opera Mini")||-1!=k[a]("IEMobile")){var l=h();l&&window.location.replace(l)};
+</script><script type="text/javascript">
+if (window.jstiming) window.jstiming.load.tick('headEnd');
+</script></head>
+<body>
+<div class='navbar section' id='navbar'><div class='widget Navbar' id='Navbar1'><script type="text/javascript">
+    function setAttributeOnload(object, attribute, val) {
+      if(window.addEventListener) {
+        window.addEventListener('load',
+          function(){ object[attribute] = val; }, false);
+      } else {
+        window.attachEvent('onload', function(){ object[attribute] = val; });
+      }
+    }
+  </script>
+<div id="navbar-iframe-container"></div>
+<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+<script type="text/javascript">
+        gapi.load("gapi.iframes:gapi.iframes.style.bubble", function() {
+          if (gapi.iframes && gapi.iframes.getContext) {
+            gapi.iframes.getContext().openChild({
+                url: 'https://www.blogger.com/navbar.g?targetBlogID\0753597984963077620070\46blogName\75Microsoft+Office+Specialist+Excel+-+A...\46publishMode\75PUBLISH_MODE_BLOGSPOT\46navbarType\75SILVER\46layoutType\75LAYOUTS\46searchRoot\75http://brzexceldeveloper.blogspot.com/search\46blogLocale\75pt_BR\46v\0752\46homepageUrl\75http://brzexceldeveloper.blogspot.com/\46targetPostID\758725625180242469757\46blogPostOrPageUrl\75http://brzexceldeveloper.blogspot.com/2012/01/vba-excel-manipulando-tabela-dinamica.html\46blogFollowUrl\75https://plus.google.com/115267726362791775700\46vt\758876849236402621263',
+                where: document.getElementById("navbar-iframe-container"),
+                id: "navbar-iframe"
+            });
+          }
+        });
+      </script><script type="text/javascript">
+(function() {
+var script = document.createElement('script');
+script.type = 'text/javascript';
+script.src = '//pagead2.googlesyndication.com/pagead/js/google_top_exp.js';
+var head = document.getElementsByTagName('head')[0];
+if (head) {
+head.appendChild(script);
+}})();
+</script>
+</div></div>
+<div id='outer-wrapper'><div id='wrap2'>
+<!-- skip links for text browsers -->
+<span id='skiplinks' style='display:none;'>
+<a href='#main'>skip to main </a> |
+      <a href='#sidebar'>skip to sidebar</a>
+</span>
+<div id='header-wrapper'>
+<div class='header section' id='header'><div class='widget Header' id='Header1'>
+<div id='header-inner'>
+<a href='http://brzexceldeveloper.blogspot.com.br/' style='display: block'>
+<img alt='Microsoft Office Specialist Excel - Automation, VBA, Macros, Dashboards, Scorecards, Data Analyse' height='229px; ' id='Header1_headerimg' src='http://4.bp.blogspot.com/-3GFj-VB8OFc/UMNIEurclpI/AAAAAAAACTE/qpYHjwyvnYw/s1600/VBA_Top_Andre_Luiz_Bernardes_008.png' style='display: block' width='989px; '/>
+</a>
+<div class='descriptionwrapper'>
+<p class='description'><span>ATENÇÃO: Quaisquer consultas em busca de soluções e esclarecimentos sobre opções, artigos, códigos e scripts que não constem nos meus Blogs, serão tratados como consultoria freelance. Caso deseje alterar suas aplicações pessoais, ou as da sua empresa, queira contatar-me por e-mail para obter um orçamento prévio. | email:bernardess@gmail.com | Twitter: @bernardess |</span></p>
+</div>
+</div>
+</div></div>
+</div>
+<div id='content-wrapper'>
+<div id='crosscol-wrapper' style='text-align:center'>
+<div class='crosscol section' id='crosscol'></div>
+</div>
+<div id='main-wrapper'>
+<div class='main section' id='main'><div class='widget Blog' id='Blog1'>
+<div class='blog-posts hfeed'>
+<!-- google_ad_section_start(name=default) -->
+
+          <div class="date-outer">
+        
+
+          <div class="date-posts">
+        
+<div class='post-outer'>
+<div class='post hentry uncustomized-post-template' itemprop='blogPost' itemscope='itemscope' itemtype='http://schema.org/BlogPosting'>
+<meta content='http://2.bp.blogspot.com/-Y1pvoWnYgmA/Tx5SRwQmfSI/AAAAAAAAAEE/41q-3Is7MHk/s320/bernardes_Ciclo_Dashboard_Pivot_Table-706646.png' itemprop='image_url'/>
+<meta content='3597984963077620070' itemprop='blogId'/>
+<meta content='8725625180242469757' itemprop='postId'/>
+<a name='8725625180242469757'></a>
+<h3 class='post-title entry-title' itemprop='name'>
+VBA Excel - Manipulando Tabela Dinâmica - Refresh Pivot Table
+</h3>
+<div class='post-header'>
+<div class='post-header-line-1'></div>
+</div>
+<div class='post-body entry-content' id='post-body-8725625180242469757' itemprop='description articleBody'>
+Quando estamos efetuando nossas implementações em <a href="https://sites.google.com/site/andreluizbernardesarticles/home/dashboard_scorecard/dashboard_scorecard_00" target="_blank">Dashboards</a> e preocupados com a performance das suas atualizações, também passa por nossas cabeças a necessidade de que sejam dinâmicos. Para isso torna-se imprescindível saber atualizar as nossas <b>Pivot Tables</b> (Tabelas Dinâmicas) utilizando o VBA. <b>Como fazê-lo?</b><br clear="all">   <div><br></div><div style="text-align:center"><a href="http://2.bp.blogspot.com/-Y1pvoWnYgmA/Tx5SRwQmfSI/AAAAAAAAAEE/41q-3Is7MHk/s1600/bernardes_Ciclo_Dashboard_Pivot_Table-706646.png"><img src="http://2.bp.blogspot.com/-Y1pvoWnYgmA/Tx5SRwQmfSI/AAAAAAAAAEE/41q-3Is7MHk/s320/bernardes_Ciclo_Dashboard_Pivot_Table-706646.png"  border="0" alt="" id="BLOGGER_PHOTO_ID_5701084643263413538" /></a><br></div><div><br></div><blockquote style="margin:0 0 0 40px;border:none;padding:0px">   <div>Quando a planilha for aberta ela pode automaticamente evocar um código que atualize todas as <b>PT</b> (Pivot Table) da nossa planilha</div><div><br></div><div><span style="font-family:&#39;Courier New&#39;;font-size:13px;line-height:13px;white-space:pre-wrap"><b><font color="#000099">Sub Worksheet_Activate()</font></b></span></div>   <div><span style="font-family:arial,helvetica,palatino;font-size:12px"><pre style="font-size:13px;font-family:&#39;Courier New&#39;;text-align:left;line-height:13px"><font color="#000099">    Run &quot;PT_Refresh&quot; </font></pre></span></div><div><span style="font-family:arial,helvetica,palatino;font-size:12px"><pre style="font-size:13px;font-family:&#39;Courier New&#39;;text-align:left;line-height:13px"><font color="#000099">End Sub</font></pre>   </span></div></blockquote><div><span style="font-family:arial,helvetica,palatino;font-size:12px"><pre style="font-size:13px;font-family:&#39;Courier New&#39;;color:rgb(0,0,128);text-align:left;line-height:13px"><b></b></pre>  </span></div><blockquote style="margin:0 0 0 40px;border:none;padding:0px"><div><a href="http://2.bp.blogspot.com/-tnMTWGzgbjw/Tx5SSF6tLaI/AAAAAAAAAEQ/GWWlyeKLf_M/s1600/bernardes_Ciclo_Dashboard_Pivot_Table_2-708299.png"><img src="http://2.bp.blogspot.com/-tnMTWGzgbjw/Tx5SSF6tLaI/AAAAAAAAAEQ/GWWlyeKLf_M/s320/bernardes_Ciclo_Dashboard_Pivot_Table_2-708299.png"  border="0" alt="" id="BLOGGER_PHOTO_ID_5701084649077157282" /></a><br>   </div><div><br></div><div><b>Atualizando uma PT simples</b>:</div></blockquote><div><br></div><blockquote style="margin:0 0 0 40px;border:none;padding:0px"><div><div><font color="#000099">Sub <b>PT_Refresh</b>()</font></div>   </div><div><div><font color="#000099"><br></font></div></div><div><div><font color="#000099">&#160;&#160; &#160;Dim pt As PivotTable</font></div></div><div><div><font color="#000099"><br> </font></div></div><div><div><font color="#000099">&#160;&#160; &#160;Set pt = ActiveSheet.PivotTables(&quot;MyPivot&quot;)</font></div></div><div><div><font color="#000099"><br></font></div> </div><div><div><font color="#000099">&#160;&#160; &#160;pt.RefreshTable</font></div></div><div><div><font color="#000099"><br></font></div></div><div><div><font color="#000099">End Sub</font></div> </div></blockquote><div><br></div><blockquote style="margin:0 0 0 40px;border:none;padding:0px"><div><b>Atualizando várias PTs:</b></div><div><br></div><div><div><font color="#000099">Sub AllWorksheetPTs()</font></div> <div><font color="#000099"><br></font></div><div><font color="#000099">&#160;&#160; &#160;Dim pt As PivotTable</font></div><div><font color="#000099"><br></font></div> <div><font color="#000099">&#160;&#160; &#160;For Each pt In ActiveSheet.PivotTables</font></div><div><font color="#000099"><br></font></div><div><font color="#000099">&#160;&#160; &#160; &#160; &#160;pt.RefreshTable</font></div> <div><font color="#000099"><br></font></div><div><font color="#000099">&#160;&#160; &#160;Next pt</font></div><div><font color="#000099"><br></font></div><div><font color="#000099">End Sub</font></div> </div></blockquote><div><br></div><blockquote style="margin:0 0 0 40px;border:none;padding:0px"><div><b>Atualiza todas as&#160;PTs selecionadas na worksheet:</b></div></blockquote><blockquote style="margin:0 0 0 40px;border:none;padding:0px">   <br><font color="#000099">Sub <b>ChosenPTs</b>()<br><br>&#160;&#160; &#160;Dim pt As PivotTable<br><br>&#160;&#160; &#160;For Each pt In ActiveSheet.PivotTables &#160; &#160;<br><br>&#160;&#160; &#160; &#160; &#160;Select Case pt.Name<br><br>&#160;&#160; &#160; &#160; &#160; &#160; &#160;Case &quot;PivotTable1&quot;, &quot;PivotTable4&quot;, &quot;PivotTable8&quot;<br>   <br>&#160;&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160;pt.RefreshTable<br><br>&#160;&#160; &#160; &#160; &#160; &#160; &#160;Case Else<br><br>&#160;&#160; &#160; &#160; &#160;End Select<br><br>&#160;&#160; &#160;Next pt<br><br>End Sub</font><br><br><b>Atualizando&#160;PTs&#160;selecionadas previamente na planilha:</b><br><br><font color="#000099">Sub <b>AllWorkbookPTs</b>() &#160; &#160;<br>   &#160;&#160; &#160;Dim pt As PivotTable<br>&#160;&#160; &#160;Dim ws As Worksheet<br><br>&#160;&#160; &#160;For Each ws In ActiveWorkbook.Worksheets<br><br>&#160;&#160; &#160; &#160; &#160;For Each pt In ws.PivotTables<br><br>&#160;&#160; &#160; &#160; &#160; &#160; &#160;pt.RefreshTable<br>&#160;&#160; &#160; &#160; &#160;Next pt<br><br>&#160;&#160; &#160;Next ws<br>   End Sub</font><br></blockquote><div><br></div><div style="text-align:center"><img src="https://mail.google.com/mail/?ui=2&amp;ik=73675a9669&amp;view=att&amp;th=1350a6cffd390b0c&amp;attid=0.1&amp;disp=safe&amp;realattid=ii_1350a6cffd390b0c&amp;zw" alt="bernardes_Ciclo_Dashboard_Pivot_Table_3.png" title="bernardes_Ciclo_Dashboard_Pivot_Table_3.png"><br>   </div><br><blockquote style="margin:0 0 0 40px;border:none;padding:0px"></blockquote> <div>Talvez você deseja executar um procedimento após a atualização de um PT, como por exemplo enviar por e-mail, atualizar uma base de dados externa, etc...Como automatizar isso?</div><div><br></div><blockquote style="margin:0 0 0 40px;border:none;padding:0px">   <div><div><font color="#000099">Sub Worksheet_PivotTableUpdate(ByVal Target As PivotTable)</font></div></div><div><div><font color="#000099">&#160;&#160; &#160; Call <b>ClonaPivot</b></font></div> </div><div><div><font color="#000099">End Sub</font></div></div></blockquote><div><br></div><div><font color="#C0C0C0"><span style="font-size:x-small"><b>Tags</b>: VBA, PT, Pivot Table, Tabela Dinâmica, refresh, table, workbook, worksheet, automation</span></font></div>   <div><font color="#999999" face="&#39;Times New Roman&#39;"><span style="font-size:x-small"><b><font color="#000000" face="arial"><span style="font-weight:normal;font-size:small"><br> </span></font></b></span></font></div><div><p style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px;font-family:&#39;Times New Roman&#39;;font-size:medium"><b style="font-family:arial;font-size:large"></b></p>  <div><div><div><div><p style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px"><b style="font-size:large"><b><font size="1"><font size="3" style="font-weight:normal"><b><font size="5"><font size="3" style="font-weight:normal"><b><font size="5"><font color="#990000">André Luiz Bernardes</font></font></b></font></font></b></font></font></b></b></p>  </div><b style="font-size:large"><b><font size="1"><font size="3" style="font-weight:normal"><b><font size="5"></font></b><b><font color="#990000">A&amp;A</font></b><font face="verdana, sans-serif"><font><font color="#990000">&#174;</font></font></font><font color="#990000">&#160;-&#160;</font><b><font color="#990000">Work smart, not hard.</font></b><p style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">  </p></font></font></b></b></div><b style="font-size:large"><b><font size="1"><font size="3" style="font-weight:normal"><div style="text-align:left"><p style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">  <font size="1"><font style="font-weight:900"><font color="#990000"><br></font></font></font></p></div><div style="font-size:small"><div><div><div><p style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">  <font color="#990000"><img height="89" src="http://al-bernardes.sites.uol.com.br/Photos/InAnyPlace03.gif" width="200"></font></p></div><div><p style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px"><b><font size="5"></font></b></p>  <div><p style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px"><b><font size="5"><font size="3"><b></b></font></font></b></p><div><p style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">  <b><font size="5"><font size="3"><b><b><font size="5"></font></b></b></font></font></b></p><div style="display:inline!important"><p style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px"><b><font size="5"><font size="3"><b><b><font size="5"><font size="3"><b><font style="font-size:13px"><strong></strong></font></b></font></font></b></b></font></font></b></p>  <div style="display:inline!important"><p style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px"><b><font size="5"><font size="3"><b><b><font size="5"><font size="3"><b><font style="font-size:13px"><strong><font face="Arial, &#39;Lucida Sans&#39;, Verdana, Arial, sans-serif"></font></strong></font></b></font></font></b></b></font></font></b></p>  <div style="display:inline!important;text-align:left"><p style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px"><b><font size="5"><font size="3"><b><b><font size="5"><font size="3"><b><font style="font-size:13px"><strong><font face="Arial, &#39;Lucida Sans&#39;, Verdana, Arial, sans-serif"><font size="1"><font style="font-size:13px"><b></b></font></font></font></strong></font></b></font></font></b></b></font></font></b></p>  <div style="display:inline!important"><p style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px"><b><font size="5"><font size="3"><b><b><font size="5"><font size="3"><b><font style="font-size:13px"><strong><font face="Arial, &#39;Lucida Sans&#39;, Verdana, Arial, sans-serif"><font size="1"><font style="font-size:13px"><b><font size="1"><b><font style="font-size:13px"><strong><font style="padding-bottom:2px;padding-left:2px;padding-right:2px;padding-top:2px;text-decoration:none"><font><b></b></font></font></strong></font></b></font></b></font></font></font></strong></font></b></font></font></b></b></font></font></b></p>  <div style="display:inline!important"><p style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px"><b><font size="5"><font size="3"><b><b><font size="5"><font size="3"><b><font style="font-size:13px"><strong><font face="Arial, &#39;Lucida Sans&#39;, Verdana, Arial, sans-serif"><font size="1"><font style="font-size:13px"><b><font size="1"><b><font style="font-size:13px"><strong><font style="padding-bottom:2px;padding-left:2px;padding-right:2px;padding-top:2px;text-decoration:none"><font><b><font face="arial"></font></b></font></font></strong></font></b></font></b></font></font></font></strong></font></b></font></font></b></b></font></font></b></p>  <div style="display:inline!important"><div style="display:inline!important"><div style="display:inline!important"><div style="display:inline!important"><p style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">  <b><font size="5"><font size="3"><b><b><font size="5"><font size="3"><b><font style="font-size:13px"><strong><font face="Arial, &#39;Lucida Sans&#39;, Verdana, Arial, sans-serif"><font size="1"><font style="font-size:13px"><b><font size="1"><b><font style="font-size:13px"><strong><font style="padding-bottom:2px;padding-left:2px;padding-right:2px;padding-top:2px;text-decoration:none"><font><b><font face="arial"><font face="Arial"><font face="Arial, &#39;Lucida Sans&#39;, Verdana, Arial, sans-serif"><font style="border-right-color:rgb(255,255,255);border-right-style:solid"><font style="border-right-style:none"><a href="https://sites.google.com/site/vbabernardes/blogs" title="Dicas, truques de programação VBA para toda a suíte MS Office" style="background-color:initial;padding-bottom:2px;padding-left:2px;padding-right:2px;padding-top:2px;text-decoration:none" target="_blank"><font size="3"><font color="#990000">VBA Blogs</font></font></a></font></font></font></font></font></b></font></font></strong></font></b></font></b></font></font></font></strong></font></b></font></font></b></b></font></font></b></p>  </div></div></div></div><b><font size="5"><font size="3"><b><b><font size="5"><font size="3"><b><font style="font-size:13px"><strong><font face="Arial, &#39;Lucida Sans&#39;, Verdana, Arial, sans-serif"><font size="1"><font style="font-size:13px"><b><font size="1"><b><font style="font-size:13px"><strong><font style="padding-bottom:2px;padding-left:2px;padding-right:2px;padding-top:2px;text-decoration:none"><font><b><a href="http://twitter.com/#%21/bernardess" rel="nofollow" style="background-color:initial;font-weight:normal;padding-bottom:2px;padding-left:2px;padding-right:2px;padding-top:2px" target="_blank"><font><font color="#990000"><img border="0" src="http://t1.gstatic.com/images?q=tbn:ANd9GcT2BU-OGzuo25wIAcNBJCPzkBFbK_2ZmEyU1WhDIkPBvi0_fudX" style="border-bottom-width:0px;border-color:initial;border-color:initial;border-color:initial;border-color:initial;border-color:initial;border-color:initial;border-color:initial;border-left-width:0px;border-right-width:0px;border-style:initial;border-style:initial;border-style:initial;border-style:initial;border-style:initial;border-style:initial;border-style:initial;border-top-width:0px;padding-bottom:0px;padding-left:0px;padding-right:0px;padding-top:0px"></font></font></a><font style="font-weight:normal"><font><font color="#990000">&#160;</font></font></font><a href="http://www.skype.com/inanyplace" rel="nofollow" style="background-color:initial;font-weight:normal;padding-bottom:2px;padding-left:2px;padding-right:2px;padding-top:2px" target="_blank"><font><font color="#990000"><img src="http://t1.gstatic.com/images?q=tbn:ANd9GcQ6RcaGh50OyZPSiKZEc-_DBF1QL_bJq-xNDoTHnCsZcw1O4uftPQ" style="border-bottom-width:0px;border-color:initial;border-left-width:0px;border-right-width:0px;border-style:initial;border-top-width:0px;padding-bottom:0px;padding-left:0px;padding-right:0px;padding-top:0px"></font></font></a><font style="font-weight:normal"><font><font color="#990000">&#160;</font></font></font><font face="arial" style="font-weight:normal"><div style="display:inline!important">  <p style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px"><font face="Arial, &#39;Lucida Sans&#39;, Verdana, Arial, sans-serif"></font></p><div style="display:inline!important"><div style="display:inline!important">  <p style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px"><font face="Arial, &#39;Lucida Sans&#39;, Verdana, Arial, sans-serif"><font style="padding-bottom:2px;padding-left:2px;padding-right:2px;padding-top:2px;text-decoration:none"></font></font></p>  <div style="display:inline!important"><p style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px"><font face="Arial, &#39;Lucida Sans&#39;, Verdana, Arial, sans-serif"><font style="padding-bottom:2px;padding-left:2px;padding-right:2px;padding-top:2px;text-decoration:none"><font size="3"><font color="#990000"><a href="mailto:bernardes@gmail.com" style="background-color:rgb(231,231,231);padding-bottom:2px;padding-left:2px;padding-right:2px;padding-top:2px;background-repeat:repeat no-repeat" target="_blank">bernardes@<img src="http://t3.gstatic.com/images?q=tbn:ANd9GcRUIIVth0oVua5mjXeyzkGAwQAgC-tjXLF9-_hIWWR6tkXZRGPO" style="border-bottom-width:0px;border-color:initial;border-color:initial;border-left-width:0px;border-right-width:0px;border-style:initial;border-style:initial;border-top-width:0px;padding-bottom:0px;padding-left:0px;padding-right:0px;padding-top:0px">.com</a></font></font></font></font></p>  <div><font face="Arial, &#39;Lucida Sans&#39;, Verdana, Arial, sans-serif"><font style="padding-bottom:2px;padding-left:2px;padding-right:2px;padding-top:2px;text-decoration:none"><font size="3"><br></font></font></font></div>  </div></div></div></div></font></b></font></font></strong></font></b></font></b></font></font></font></strong></font></b></font></font></b></b></font></font></b></div></div></div></div></div></div></div></div></div></div>  </div></font></font></b></b></div></div></div> 
+<div style='clear: both;'></div>
+</div>
+<div class='post-footer'>
+<div class='post-footer-line post-footer-line-1'>
+<span class='post-author vcard'>
+</span>
+<span class='post-timestamp'>
+</span>
+<span class='reaction-buttons'>
+</span>
+<span class='star-ratings'>
+</span>
+<span class='post-comment-link'>
+</span>
+<span class='post-backlinks post-comment-link'>
+</span>
+<span class='post-icons'>
+</span>
+<div class='post-share-buttons goog-inline-block'>
+<a class='goog-inline-block share-button sb-email' href='http://www.blogger.com/share-post.g?blogID=3597984963077620070&postID=8725625180242469757&target=email' target='_blank' title='Enviar por e-mail'><span class='share-button-link-text'>Enviar por e-mail</span></a><a class='goog-inline-block share-button sb-blog' href='http://www.blogger.com/share-post.g?blogID=3597984963077620070&postID=8725625180242469757&target=blog' onclick='window.open(this.href, "_blank", "height=270,width=475"); return false;' target='_blank' title='BlogThis!'><span class='share-button-link-text'>BlogThis!</span></a><a class='goog-inline-block share-button sb-twitter' href='http://www.blogger.com/share-post.g?blogID=3597984963077620070&postID=8725625180242469757&target=twitter' target='_blank' title='Compartilhar no Twitter'><span class='share-button-link-text'>Compartilhar no Twitter</span></a><a class='goog-inline-block share-button sb-facebook' href='http://www.blogger.com/share-post.g?blogID=3597984963077620070&postID=8725625180242469757&target=facebook' onclick='window.open(this.href, "_blank", "height=430,width=640"); return false;' target='_blank' title='Compartilhar no Facebook'><span class='share-button-link-text'>Compartilhar no Facebook</span></a><a class='goog-inline-block share-button sb-orkut' href='http://www.blogger.com/share-post.g?blogID=3597984963077620070&postID=8725625180242469757&target=orkut' target='_blank' title='Compartilhar no Orkut'><span class='share-button-link-text'>Compartilhar no Orkut</span></a><a class='goog-inline-block share-button sb-pinterest' href='http://www.blogger.com/share-post.g?blogID=3597984963077620070&postID=8725625180242469757&target=pinterest' target='_blank' title='Compartilhar com o Pinterest'><span class='share-button-link-text'>Compartilhar com o Pinterest</span></a><div class='goog-inline-block dummy-container'><g:plusone source='blogger:blog:plusone' href='http://brzexceldeveloper.blogspot.com/2012/01/vba-excel-manipulando-tabela-dinamica.html' size='medium' width='300' annotation='inline'/></div>
+</div>
+</div>
+<div class='post-footer-line post-footer-line-2'>
+<span class='post-labels'>
+</span>
+</div>
+<div class='post-footer-line post-footer-line-3'>
+<span class='post-location'>
+</span>
+</div>
+</div>
+</div>
+<div class='comments' id='comments'>
+<a name='comments'></a>
+<div id='backlinks-container'>
+<div id='Blog1_backlinks-container'>
+</div>
+</div>
+</div>
+</div>
+
+        </div></div>
+      
+<!-- google_ad_section_end -->
+</div>
+<div class='blog-pager' id='blog-pager'>
+<span id='blog-pager-newer-link'>
+<a class='blog-pager-newer-link' href='http://brzexceldeveloper.blogspot.com.br/2012/01/solucoes-vba.html' id='Blog1_blog-pager-newer-link' title='Postagem mais recente'>Postagem mais recente</a>
+</span>
+<span id='blog-pager-older-link'>
+<a class='blog-pager-older-link' href='http://brzexceldeveloper.blogspot.com.br/2012/01/vba-excel-preenchendo-lacunas-vazias.html' id='Blog1_blog-pager-older-link' title='Postagem mais antiga'>Postagem mais antiga</a>
+</span>
+<a class='home-link' href='http://brzexceldeveloper.blogspot.com.br/'>Início</a>
+</div>
+<div class='clear'></div>
+<div class='post-feeds'>
+</div>
+<script type="text/javascript">window.___gcfg = {'lang': 'pt_BR'};</script>
+</div></div>
+</div>
+<div id='sidebar-wrapper'>
+<div class='sidebar section' id='sidebar'><div class='widget HTML' id='HTML2'>
+<h2 class='title'>...</h2>
+<div class='widget-content'>
+<script language=javascript>
+<!--
+//Disable right mouse click Script
+var message="Copyright 2014-94 Andre Luiz Bernardes. All Rights Reserved.";
+///////////////////////////////////
+function clickIE4(){
+if (event.button==2){
+alert(message);
+return false;
+}
+}
+function clickNS4(e){
+if (document.layers||document.getElementById&&!document.all){
+if (e.which==2||e.which==3){
+alert(message);
+return false;
+}
+}
+}
+if (document.layers){
+document.captureEvents(Event.MOUSEDOWN);
+document.onmousedown=clickNS4;
+}
+else if (document.all&&!document.getElementById){
+document.onmousedown=clickIE4;
+}
+document.oncontextmenu=new Function("alert(message);return false")
+// -->
+</script>
+</div>
+<div class='clear'></div>
+<span class='widget-item-control'>
+<span class='item-control blog-admin'>
+<a class='quickedit' href='//www.blogger.com/rearrange?blogID=3597984963077620070&widgetType=HTML&widgetId=HTML2&action=editWidget&sectionId=sidebar' onclick='return _WidgetManager._PopupConfig(document.getElementById("HTML2"));' target='configHTML2' title='Editar'>
+<img alt='' height='18' src='http://img1.blogblog.com/img/icon18_wrench_allbkg.png' width='18'/>
+</a>
+</span>
+</span>
+<div class='clear'></div>
+</div><div class='widget Stats' id='Stats1'>
+<h2>Visualizações</h2>
+<div class='widget-content'>
+<div id='Stats1_content' style='display: none;'>
+<span class='counter-wrapper text-counter-wrapper' id='Stats1_totalCount'></span>
+<div class='clear'></div>
+<span class='widget-item-control'>
+<span class='item-control blog-admin'>
+<a class='quickedit' href='//www.blogger.com/rearrange?blogID=3597984963077620070&widgetType=Stats&widgetId=Stats1&action=editWidget&sectionId=sidebar' onclick='return _WidgetManager._PopupConfig(document.getElementById("Stats1"));' target='configStats1' title='Editar'>
+<img alt='' height='18' src='http://img1.blogblog.com/img/icon18_wrench_allbkg.png' width='18'/>
+</a>
+</span>
+</span>
+<div class='clear'></div>
+</div>
+</div>
+</div><div class='widget Label' id='Label1'>
+<h2>Tags</h2>
+<div class='widget-content cloud-label-widget-content'>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/.NET%20Framework%203.5'>.NET Framework 3.5</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/2011'>2011</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/2013'>2013</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/2014'>2014</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/25%20anos'>25 anos</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/7%20bits'>7 bits</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/8%20bits'>8 bits</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/Access'>Access</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/Access%202010'>Access 2010</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/acelerar'>acelerar</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/acelerate'>acelerate</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/acento'>acento</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/acentuado'>acentuado</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/active'>active</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/Active%20Directory'>Active Directory</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/active%20workbook'>active workbook</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/ADABAS'>ADABAS</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/Add-in'>Add-in</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/additional'>additional</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-2'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/Advanced'>Advanced</a>
+<span class='label-count' dir='ltr'>(2)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/aleatoriamente'>aleatoriamente</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/aleat%C3%B3rio'>aleatório</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/All%20Records'>All Records</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/altera%C3%A7%C3%A3o'>alteração</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/American%20Standard%20Code%20for%20Information%20Interchange'>American Standard Code for Information Interchange</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/Analysis'>Analysis</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/Analytics'>Analytics</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/Andy%20Pope'>Andy Pope</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/anexar'>anexar</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/animar'>animar</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/animated'>animated</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-2'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/An%C3%A1lise'>Análise</a>
+<span class='label-count' dir='ltr'>(3)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/apagar'>apagar</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-2'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/API'>API</a>
+<span class='label-count' dir='ltr'>(5)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/Aplica%C3%A7%C3%A3o'>Aplicação</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/Application'>Application</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/apps'>apps</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/arrow'>arrow</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-2'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/Arrows'>Arrows</a>
+<span class='label-count' dir='ltr'>(6)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/ASCII'>ASCII</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/atach'>atach</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/authenticode'>authenticode</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/auto-documentar'>auto-documentar</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/autodocumentar'>autodocumentar</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-3'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/Autofilter'>Autofilter</a>
+<span class='label-count' dir='ltr'>(20)</span>
+</span>
+<span class='label-size label-size-3'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/AutoFiltro'>AutoFiltro</a>
+<span class='label-count' dir='ltr'>(20)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/automatically'>automatically</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-5'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/Automation'>Automation</a>
+<span class='label-count' dir='ltr'>(110)</span>
+</span>
+<span class='label-size label-size-5'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/Automa%C3%A7%C3%A3o'>Automação</a>
+<span class='label-count' dir='ltr'>(109)</span>
+</span>
+<span class='label-size label-size-2'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/autom%C3%A1tico'>automático</a>
+<span class='label-count' dir='ltr'>(4)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/Azure'>Azure</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-2'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/balan%C3%A7o'>balanço</a>
+<span class='label-count' dir='ltr'>(3)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/Banco%20de%20Dados'>Banco de Dados</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/Barra%20de%20Status'>Barra de Status</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-2'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/Basic'>Basic</a>
+<span class='label-count' dir='ltr'>(2)</span>
+</span>
+<span class='label-size label-size-2'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/Basics'>Basics</a>
+<span class='label-count' dir='ltr'>(4)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/Ben%20Chinowsky'>Ben Chinowsky</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-5'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/Bernardes'>Bernardes</a>
+<span class='label-count' dir='ltr'>(110)</span>
+</span>
+<span class='label-size label-size-2'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/BI'>BI</a>
+<span class='label-count' dir='ltr'>(4)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/Binding'>Binding</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/blank'>blank</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/Blogs'>Blogs</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/Bonavista'>Bonavista</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/bot%C3%B5es'>botões</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/box'>box</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/boxes'>boxes</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/Brasil'>Brasil</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-2'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/Brazil'>Brazil</a>
+<span class='label-count' dir='ltr'>(2)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/broke'>broke</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/Browser'>Browser</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-2'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/BSC'>BSC</a>
+<span class='label-count' dir='ltr'>(3)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/Business'>Business</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/Business%20English'>Business English</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/buttons'>buttons</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/caixa%20de%20mensagens'>caixa de mensagens</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/calc'>calc</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/calendar'>calendar</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/calend%C3%A1rio'>calendário</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/caracter'>caracter</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-2'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/caracter%C3%ADstica'>característica</a>
+<span class='label-count' dir='ltr'>(2)</span>
+</span>
+<span class='label-size label-size-2'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/Cart%C3%A3o%20de%20Refer%C3%AAncia%20R%C3%A1pida'>Cartão de Referência Rápida</a>
+<span class='label-count' dir='ltr'>(3)</span>
+</span>
+<span class='label-size label-size-2'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/cell'>cell</a>
+<span class='label-count' dir='ltr'>(2)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/certificado'>certificado</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-2'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/change'>change</a>
+<span class='label-count' dir='ltr'>(2)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/character'>character</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-2'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/chart'>chart</a>
+<span class='label-count' dir='ltr'>(5)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/charting'>charting</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-2'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/Charts'>Charts</a>
+<span class='label-count' dir='ltr'>(5)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/CheckBinding'>CheckBinding</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/checkbox'>checkbox</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/Clean'>Clean</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-2'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/close'>close</a>
+<span class='label-count' dir='ltr'>(7)</span>
+</span>
+<span class='label-size label-size-2'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/CNPJ'>CNPJ</a>
+<span class='label-count' dir='ltr'>(2)</span>
+</span>
+<span class='label-size label-size-2'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/code'>code</a>
+<span class='label-count' dir='ltr'>(2)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/coding'>coding</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/cole%C3%A7%C3%A3o'>coleção</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-2'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/collection'>collection</a>
+<span class='label-count' dir='ltr'>(2)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/color'>color</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-2'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/column'>column</a>
+<span class='label-count' dir='ltr'>(2)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/coluna'>coluna</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/combobox'>combobox</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/concatenar'>concatenar</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/concatenate'>concatenate</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-2'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/Connection'>Connection</a>
+<span class='label-count' dir='ltr'>(2)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/contar'>contar</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/Control%20Painel'>Control Painel</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/convention'>convention</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/convert'>convert</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/convertendo'>convertendo</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-2'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/copiar'>copiar</a>
+<span class='label-count' dir='ltr'>(3)</span>
+</span>
+<span class='label-size label-size-2'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/copy'>copy</a>
+<span class='label-count' dir='ltr'>(5)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/cor'>cor</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-2'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/count'>count</a>
+<span class='label-count' dir='ltr'>(4)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/CPF'>CPF</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-2'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/Create'>Create</a>
+<span class='label-count' dir='ltr'>(2)</span>
+</span>
+<span class='label-size label-size-2'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/CreateObject'>CreateObject</a>
+<span class='label-count' dir='ltr'>(2)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/criptografia'>criptografia</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-2'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/CRM'>CRM</a>
+<span class='label-count' dir='ltr'>(3)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/currently'>currently</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/c%C3%A1lculo'>cálculo</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/c%C3%A9lula'>célula</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/c%C3%B3digo'>código</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-2'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/dados'>dados</a>
+<span class='label-count' dir='ltr'>(4)</span>
+</span>
+<span class='label-size label-size-2'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/Dashboard'>Dashboard</a>
+<span class='label-count' dir='ltr'>(7)</span>
+</span>
+<span class='label-size label-size-2'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/Dashboards'>Dashboards</a>
+<span class='label-count' dir='ltr'>(2)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/Dashmap'>Dashmap</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-2'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/Data'>Data</a>
+<span class='label-count' dir='ltr'>(4)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/Data%20Explorer'>Data Explorer</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/Database'>Database</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/DATAFLEX'>DATAFLEX</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/David%20Seah'>David Seah</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/defined'>defined</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/deletar'>deletar</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-2'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/delete'>delete</a>
+<span class='label-count' dir='ltr'>(3)</span>
+</span>
+<span class='label-size label-size-2'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/desligar'>desligar</a>
+<span class='label-count' dir='ltr'>(4)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/development'>development</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/diacr%C3%ADtico'>diacrítico</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/dialog'>dialog</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/dica'>dica</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/Dicas'>Dicas</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/Dir'>Dir</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/directory'>directory</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/dirty%20area'>dirty area</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/discurso'>discurso</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/Display'>Display</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/distance'>distance</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/dist%C3%A2ncia'>distância</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/di%C3%A1logo'>diálogo</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-2'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/DLL'>DLL</a>
+<span class='label-count' dir='ltr'>(2)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/DLook'>DLook</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/doc'>doc</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/document'>document</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/documentar'>documentar</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/download'>download</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/Early'>Early</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/Early%20Binding'>Early Binding</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/EBCDIC'>EBCDIC</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/Edge'>Edge</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-2'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/eight'>eight</a>
+<span class='label-count' dir='ltr'>(2)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/EN'>EN</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/english'>english</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/enhance'>enhance</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/EntireRow'>EntireRow</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/erase'>erase</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/esconder'>esconder</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-2'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/Example'>Example</a>
+<span class='label-count' dir='ltr'>(2)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/examples'>examples</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-5'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/Excel'>Excel</a>
+<span class='label-count' dir='ltr'>(175)</span>
+</span>
+<span class='label-size label-size-2'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/Excel%202010'>Excel 2010</a>
+<span class='label-count' dir='ltr'>(3)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/Excel%20Basic'>Excel Basic</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/Excel%20Worksheet%20Name'>Excel Worksheet Name</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/excluir'>excluir</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-2'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/executiva'>executiva</a>
+<span class='label-count' dir='ltr'>(3)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/exist'>exist</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-2'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/export'>export</a>
+<span class='label-count' dir='ltr'>(2)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/ExportAsFixed'>ExportAsFixed</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/extract'>extract</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/extrair'>extrair</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/falar'>falar</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-2'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/faturamento'>faturamento</a>
+<span class='label-count' dir='ltr'>(3)</span>
+</span>
+<span class='label-size label-size-2'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/feature'>feature</a>
+<span class='label-count' dir='ltr'>(2)</span>
+</span>
+<span class='label-size label-size-2'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/fechar'>fechar</a>
+<span class='label-count' dir='ltr'>(5)</span>
+</span>
+<span class='label-size label-size-2'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/file'>file</a>
+<span class='label-count' dir='ltr'>(3)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/files'>files</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-2'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/filtered'>filtered</a>
+<span class='label-count' dir='ltr'>(7)</span>
+</span>
+<span class='label-size label-size-2'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/filtrada'>filtrada</a>
+<span class='label-count' dir='ltr'>(2)</span>
+</span>
+<span class='label-size label-size-3'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/filtro'>filtro</a>
+<span class='label-count' dir='ltr'>(10)</span>
+</span>
+<span class='label-size label-size-2'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/financeira'>financeira</a>
+<span class='label-count' dir='ltr'>(3)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/First%20Post'>First Post</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-2'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/folder'>folder</a>
+<span class='label-count' dir='ltr'>(2)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/Ford'>Ford</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/Ford%20Fusion%202013'>Ford Fusion 2013</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-2'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/form'>form</a>
+<span class='label-count' dir='ltr'>(2)</span>
+</span>
+<span class='label-size label-size-2'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/format'>format</a>
+<span class='label-count' dir='ltr'>(3)</span>
+</span>
+<span class='label-size label-size-2'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/formula'>formula</a>
+<span class='label-count' dir='ltr'>(3)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/formul%C3%A1rio'>formulário</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/Full%20File%20Path'>Full File Path</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-2'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/function'>function</a>
+<span class='label-count' dir='ltr'>(3)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/functions'>functions</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/fun%C3%A7%C3%B5es'>funções</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/Fusion'>Fusion</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/f%C3%B3rmula'>fórmula</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-2'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/gerencial'>gerencial</a>
+<span class='label-count' dir='ltr'>(3)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/gerenciar'>gerenciar</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/Get'>Get</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/GetObject'>GetObject</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/Getz'>Getz</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/glow'>glow</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/GMAPS'>GMAPS</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-2'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/Google'>Google</a>
+<span class='label-count' dir='ltr'>(4)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/Google%20Books'>Google Books</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/Google%20Maps'>Google Maps</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/Google%20Translate'>Google Translate</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/graph'>graph</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/Groups'>Groups</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/grupos'>grupos</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-3'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/gr%C3%A1fico'>gráfico</a>
+<span class='label-count' dir='ltr'>(8)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/Hadoop'>Hadoop</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/hard-coding'>hard-coding</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-2'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/hide'>hide</a>
+<span class='label-count' dir='ltr'>(2)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/history'>history</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/hist%C3%B3rico'>histórico</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/hlookup'>hlookup</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/h%C3%BAngara'>húngara</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-2'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/icon'>icon</a>
+<span class='label-count' dir='ltr'>(4)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/Icons'>Icons</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/IE'>IE</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-2'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/image'>image</a>
+<span class='label-count' dir='ltr'>(3)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/imagem'>imagem</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/impress%C3%A3o'>impressão</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/imprimindo'>imprimindo</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-2'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/imprimir'>imprimir</a>
+<span class='label-count' dir='ltr'>(3)</span>
+</span>
+<span class='label-size label-size-2'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/index'>index</a>
+<span class='label-count' dir='ltr'>(2)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/indire%C3%A7%C3%A3o'>indireção</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/influ%C3%AAncia'>influência</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/Info'>Info</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-2'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/infochart'>infochart</a>
+<span class='label-count' dir='ltr'>(2)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/Infographic'>Infographic</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/Infogr%C3%A1fico'>Infográfico</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-2'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/Information'>Information</a>
+<span class='label-count' dir='ltr'>(3)</span>
+</span>
+<span class='label-size label-size-2'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/Informa%C3%A7%C3%A3o'>Informação</a>
+<span class='label-count' dir='ltr'>(3)</span>
+</span>
+<span class='label-size label-size-2'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/ingl%C3%AAs'>inglês</a>
+<span class='label-count' dir='ltr'>(2)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/iniciantes'>iniciantes</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/input'>input</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/inputbox'>inputbox</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/inspire'>inspire</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/Instance'>Instance</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/Intelligence'>Intelligence</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-2'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/Internet'>Internet</a>
+<span class='label-count' dir='ltr'>(2)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/Internet%20Explorer'>Internet Explorer</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/ISBN'>ISBN</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/jarg%C3%A3o'>jargão</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/jarg%C3%B5es'>jargões</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-2'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/KPI'>KPI</a>
+<span class='label-count' dir='ltr'>(3)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/language'>language</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/Language-integrated%20query'>Language-integrated query</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/Late%20Binding'>Late Binding</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/Late-Bound'>Late-Bound</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/la%C3%A7o'>laço</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/learning'>learning</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/LED'>LED</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/Leszynski'>Leszynski</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/letra'>letra</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/letter'>letter</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/LIB'>LIB</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/line'>line</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/lines'>lines</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/lingo'>lingo</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-2'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/linha'>linha</a>
+<span class='label-count' dir='ltr'>(2)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/LINQ'>LINQ</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-3'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/list'>list</a>
+<span class='label-count' dir='ltr'>(12)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/listsheet'>listsheet</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/Litwin'>Litwin</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/Log'>Log</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/logo'>logo</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/logomarca'>logomarca</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/Loop'>Loop</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/Lotus'>Lotus</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/Lotus%20Notes'>Lotus Notes</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/LucidEra'>LucidEra</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/macro'>macro</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/Mahendra%20Dassanayake'>Mahendra Dassanayake</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/Manage'>Manage</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/maps'>maps</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/MCS'>MCS</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/memory'>memory</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/mensagem'>mensagem</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-2'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/message'>message</a>
+<span class='label-count' dir='ltr'>(2)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/Method'>Method</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/Michael%20Arbaugh'>Michael Arbaugh</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/Michigan%20State%20University'>Michigan State University</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-5'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/Microsoft'>Microsoft</a>
+<span class='label-count' dir='ltr'>(114)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/Microsoft%20.NET%20Framework'>Microsoft .NET Framework</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/Microsoft%20Consulting%20Services'>Microsoft Consulting Services</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/Microsoft%20Excel'>Microsoft Excel</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/Microsoft%20Outlook%209.0%20Object%20Library'>Microsoft Outlook 9.0 Object Library</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/Microstrategy'>Microstrategy</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/Migration%20Guide'>Migration Guide</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/milisecond'>milisecond</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/milisegundo'>milisegundo</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/milissegundo'>milissegundo</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/milliseconds'>milliseconds</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/mind'>mind</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/mindmaps'>mindmaps</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-2'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/MIS'>MIS</a>
+<span class='label-count' dir='ltr'>(3)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/month'>month</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-5'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/MS'>MS</a>
+<span class='label-count' dir='ltr'>(109)</span>
+</span>
+<span class='label-size label-size-2'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/MS%20Office'>MS Office</a>
+<span class='label-count' dir='ltr'>(2)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/MS%20Outlook'>MS Outlook</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/msoutl9.olb'>msoutl9.olb</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/MSXML'>MSXML</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/mudar'>mudar</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/multipage'>multipage</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-2'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/MySQL'>MySQL</a>
+<span class='label-count' dir='ltr'>(2)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/m%C3%AAs'>mês</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/Name%20of%20Excel%20Workbooks'>Name of Excel Workbooks</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/naming'>naming</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/neg%C3%B3cios'>negócios</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/Network'>Network</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-2'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/not%20save'>not save</a>
+<span class='label-count' dir='ltr'>(2)</span>
+</span>
+<span class='label-size label-size-2'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/Object'>Object</a>
+<span class='label-count' dir='ltr'>(3)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/Object%20Library'>Object Library</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/Object%20Model'>Object Model</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/objeto'>objeto</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/objetos'>objetos</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/OData'>OData</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/ODBC'>ODBC</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-5'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/Office'>Office</a>
+<span class='label-count' dir='ltr'>(114)</span>
+</span>
+<span class='label-size label-size-2'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/Office%202010'>Office 2010</a>
+<span class='label-count' dir='ltr'>(4)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/Office%202011'>Office 2011</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-2'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/oito'>oito</a>
+<span class='label-count' dir='ltr'>(2)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/OLB'>OLB</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/OneNote%202010'>OneNote 2010</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/open'>open</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/optimize'>optimize</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/ORACLE'>ORACLE</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/otimizar'>otimizar</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-2'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/Outlook'>Outlook</a>
+<span class='label-count' dir='ltr'>(2)</span>
+</span>
+<span class='label-size label-size-2'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/Outlook%202010'>Outlook 2010</a>
+<span class='label-count' dir='ltr'>(2)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/OUT%7C12'>OUT|12</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/page'>page</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/Painel%20de%20Controle'>Painel de Controle</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/palestra'>palestra</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-2'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/pasta'>pasta</a>
+<span class='label-count' dir='ltr'>(5)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/path'>path</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/PDF'>PDF</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/peixes'>peixes</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/Pentaho'>Pentaho</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/Percent'>Percent</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/performance'>performance</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/pescadores%20desenvolvedores'>pescadores desenvolvedores</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/PHP'>PHP</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/Pivot%20Table'>Pivot Table</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-2'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/planilha'>planilha</a>
+<span class='label-count' dir='ltr'>(3)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/PointClass'>PointClass</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/portugu%C3%AAs'>português</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/POSTGRESQL'>POSTGRESQL</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/Powerpoint'>Powerpoint</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-2'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/PowerPoint%202010'>PowerPoint 2010</a>
+<span class='label-count' dir='ltr'>(3)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/primeira'>primeira</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-2'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/print'>print</a>
+<span class='label-count' dir='ltr'>(3)</span>
+</span>
+<span class='label-size label-size-2'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/print%20sheet'>print sheet</a>
+<span class='label-count' dir='ltr'>(3)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/printer'>printer</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/process'>process</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/processador'>processador</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/processo'>processo</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/programador'>programador</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/Programmatically'>Programmatically</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/PROGRESS'>PROGRESS</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/protected'>protected</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-2'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/protegida'>protegida</a>
+<span class='label-count' dir='ltr'>(4)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/PT'>PT</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/QlikView'>QlikView</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-2'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/QRC'>QRC</a>
+<span class='label-count' dir='ltr'>(3)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/Quantivo'>Quantivo</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/quebra%20linha'>quebra linha</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/Query'>Query</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-2'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/quick'>quick</a>
+<span class='label-count' dir='ltr'>(2)</span>
+</span>
+<span class='label-size label-size-2'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/Quick%20Reference%20Card'>Quick Reference Card</a>
+<span class='label-count' dir='ltr'>(3)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/QuickAnalysis'>QuickAnalysis</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/quit'>quit</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/randomly'>randomly</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-2'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/range'>range</a>
+<span class='label-count' dir='ltr'>(3)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/Ranges'>Ranges</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/rapid'>rapid</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/rdes'>rdes</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/recordset'>recordset</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/Reddick'>Reddick</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/refactoring'>refactoring</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/refatora%C3%A7%C3%A3o'>refatoração</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-2'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/reference'>reference</a>
+<span class='label-count' dir='ltr'>(7)</span>
+</span>
+<span class='label-size label-size-2'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/referenciando'>referenciando</a>
+<span class='label-count' dir='ltr'>(6)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/Refer%C3%AAncia'>Referência</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/reflection'>reflection</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/reflex%C3%A3o'>reflexão</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/registro'>registro</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-2'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/relat%C3%B3rio'>relatório</a>
+<span class='label-count' dir='ltr'>(3)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/removing'>removing</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-2'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/rename'>rename</a>
+<span class='label-count' dir='ltr'>(3)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/renomear'>renomear</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/Report'>Report</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-2'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/reports'>reports</a>
+<span class='label-count' dir='ltr'>(3)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/REST'>REST</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/resumo'>resumo</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/retirar'>retirar</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/Retrieve'>Retrieve</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/Return'>Return</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/RoamBI'>RoamBI</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-2'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/row'>row</a>
+<span class='label-count' dir='ltr'>(5)</span>
+</span>
+<span class='label-size label-size-2'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/rows'>rows</a>
+<span class='label-count' dir='ltr'>(4)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/rundll32.exe'>rundll32.exe</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/RVBA'>RVBA</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/r%C3%A1pido'>rápido</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/salvar'>salvar</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/sample'>sample</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/samples'>samples</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/save'>save</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/saved'>saved</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-2'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/SCM'>SCM</a>
+<span class='label-count' dir='ltr'>(3)</span>
+</span>
+<span class='label-size label-size-2'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/Scorecard'>Scorecard</a>
+<span class='label-count' dir='ltr'>(5)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/security'>security</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/seguran%C3%A7a'>segurança</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-2'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/selecionada'>selecionada</a>
+<span class='label-count' dir='ltr'>(2)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/select'>select</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-2'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/selected'>selected</a>
+<span class='label-count' dir='ltr'>(2)</span>
+</span>
+<span class='label-size label-size-2'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/sem%20salvar'>sem salvar</a>
+<span class='label-count' dir='ltr'>(2)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/SendMessage'>SendMessage</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-2'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/senha'>senha</a>
+<span class='label-count' dir='ltr'>(4)</span>
+</span>
+<span class='label-size label-size-2'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/Series'>Series</a>
+<span class='label-count' dir='ltr'>(6)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/service.%20FILTERXML'>service. FILTERXML</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/seta'>seta</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/shape'>shape</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-2'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/Sheet'>Sheet</a>
+<span class='label-count' dir='ltr'>(2)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/SHELL'>SHELL</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/SHELL32.DLL'>SHELL32.DLL</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-3'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/Show'>Show</a>
+<span class='label-count' dir='ltr'>(10)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/show%20all'>show all</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/Simonyi'>Simonyi</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-2'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/Specific%20Columns'>Specific Columns</a>
+<span class='label-count' dir='ltr'>(6)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/Spreadsheets'>Spreadsheets</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-2'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/SQL'>SQL</a>
+<span class='label-count' dir='ltr'>(2)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/Status'>Status</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/Status%20Bar'>Status Bar</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/Structure'>Structure</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/Tabela%20ASCII'>Tabela ASCII</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/Tabela%20Din%C3%A2mica'>Tabela Dinâmica</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/Tableau'>Tableau</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/Task'>Task</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/textbox'>textbox</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-2'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/thisworkbook'>thisworkbook</a>
+<span class='label-count' dir='ltr'>(2)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/through'>through</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/timer'>timer</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-2'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/tip'>tip</a>
+<span class='label-count' dir='ltr'>(3)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/tipo'>tipo</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-3'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/Tips'>Tips</a>
+<span class='label-count' dir='ltr'>(21)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/Top%20Ten'>Top Ten</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/traduzidas'>traduzidas</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/Training'>Training</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/translate'>translate</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/transport'>transport</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/trick'>trick</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/truques'>truques</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-2'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/turn%20off'>turn off</a>
+<span class='label-count' dir='ltr'>(2)</span>
+</span>
+<span class='label-size label-size-2'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/turn%20on'>turn on</a>
+<span class='label-count' dir='ltr'>(4)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/tutorial'>tutorial</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/Type'>Type</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/UDF'>UDF</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/UI'>UI</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/UNICODE'>UNICODE</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/unload'>unload</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-2'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/user'>user</a>
+<span class='label-count' dir='ltr'>(2)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/USER32.DLL'>USER32.DLL</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-2'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/userform'>userform</a>
+<span class='label-count' dir='ltr'>(2)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/validate'>validate</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-5'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/VBA'>VBA</a>
+<span class='label-count' dir='ltr'>(191)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/VBA%20close'>VBA close</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/VbMsgBoxStyle'>VbMsgBoxStyle</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/version'>version</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-2'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/visible'>visible</a>
+<span class='label-count' dir='ltr'>(2)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/Visual%20Studio'>Visual Studio</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/visualization'>visualization</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/vlookallbooks'>vlookallbooks</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/vlookup'>vlookup</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/VSTO'>VSTO</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/W%20H%20Smith'>W H Smith</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/WCF'>WCF</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/Web'>Web</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/WEBSERVICE'>WEBSERVICE</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/window'>window</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/Windows%20Communications%20Foundation'>Windows Communications Foundation</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/Windows%20Presentation%20Foundation'>Windows Presentation Foundation</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/wininet.dll'>wininet.dll</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-2'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/With%20Headings'>With Headings</a>
+<span class='label-count' dir='ltr'>(2)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/Without%20Headings'>Without Headings</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-2'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/Word%202010'>Word 2010</a>
+<span class='label-count' dir='ltr'>(2)</span>
+</span>
+<span class='label-size label-size-3'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/workbook'>workbook</a>
+<span class='label-count' dir='ltr'>(15)</span>
+</span>
+<span class='label-size label-size-4'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/worksheet'>worksheet</a>
+<span class='label-count' dir='ltr'>(29)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/WPF'>WPF</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/xltx'>xltx</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-2'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/XML'>XML</a>
+<span class='label-count' dir='ltr'>(3)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/XPath'>XPath</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/XPS'>XPS</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-2'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/%C3%ADcone'>ícone</a>
+<span class='label-count' dir='ltr'>(4)</span>
+</span>
+<span class='label-size label-size-1'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/%C3%ADcones'>ícones</a>
+<span class='label-count' dir='ltr'>(1)</span>
+</span>
+<span class='label-size label-size-2'>
+<a dir='ltr' href='http://brzexceldeveloper.blogspot.com.br/search/label/%C3%ADndice'>índice</a>
+<span class='label-count' dir='ltr'>(2)</span>
+</span>
+<div class='clear'></div>
+<span class='widget-item-control'>
+<span class='item-control blog-admin'>
+<a class='quickedit' href='//www.blogger.com/rearrange?blogID=3597984963077620070&widgetType=Label&widgetId=Label1&action=editWidget&sectionId=sidebar' onclick='return _WidgetManager._PopupConfig(document.getElementById("Label1"));' target='configLabel1' title='Editar'>
+<img alt='' height='18' src='http://img1.blogblog.com/img/icon18_wrench_allbkg.png' width='18'/>
+</a>
+</span>
+</span>
+<div class='clear'></div>
+</div>
+</div><div class='widget PopularPosts' id='PopularPosts1'>
+<h2>Postagens populares</h2>
+<div class='widget-content popular-posts'>
+<ul>
+<li>
+<div class='item-content'>
+<div class='item-title'><a href='http://brzexceldeveloper.blogspot.com.br/2011/07/vba-funcao-format-e-exemplos.html'>VBA - Função Format e exemplos.</a></div>
+<div class='item-snippet'>Eu sei, eu sei, isso é superfácil todo mundo sabe, não precisa ser um post. Mas a v erdade indica que muita gente ainda não domina a utiliza...</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+<li>
+<div class='item-content'>
+<div class='item-title'><a href='http://brzexceldeveloper.blogspot.com.br/2010/03/vba-excel-como-fechar-as-planilhas-ou.html'>VBA Excel - Como fechar as planilhas ou pastas do MS Excel com VBA</a></div>
+<div class='item-snippet'>Veja também :  |  Blog Office VBA  |  Blog Excel  |  Blog Access &#160;&#160;&#160;  | Existem algumas formas de fecharmos a aplicação MS Excel que estiver...</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+<li>
+<div class='item-content'>
+<div class='item-title'><a href='http://brzexceldeveloper.blogspot.com.br/2012/03/vba-excel-excluir-linhas-com.html'>VBA Excel - Excluir linhas com determinada palavra - Delete Row With Specific Word</a></div>
+<div class='item-snippet'>Termo de Responsabilidade     Aqui está um código para o MS Excel que irá excluir todas as linhas que contenham a palavra especificada na co...</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+<li>
+<div class='item-content'>
+<div class='item-title'><a href='http://brzexceldeveloper.blogspot.com.br/2011/11/dicas-excel-como-comprimir-arquivos.html'>Dicas Excel - Como comprimir arquivos XLSX para arquivos ainda menores - How to Compress xlsx Files to the Smallest Possible Size</a></div>
+<div class='item-snippet'>   Hello folks!         Há muitos posts atrás indiquei como era possível compactarmos o conteúdo de planilhas por simplesmente:         - Ex...</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+<li>
+<div class='item-content'>
+<div class='item-title'><a href='http://brzexceldeveloper.blogspot.com.br/2012/04/vba-excel-protege-e-desprotege-todas-as.html'>VBA Excel - Protege e Desprotege todas as planilhas - Protect and Unprotect all Worksheets</a></div>
+<div class='item-snippet'>Termo de Responsabilidade &#160;    Quando entregamos alguns dos nossos trabalhos, desejamos fazê-lo de um modo que permaneçam intactos até que e...</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+<li>
+<div class='item-content'>
+<div class='item-thumbnail'>
+<a href='http://brzexceldeveloper.blogspot.com.br/2012/02/vba-excel-criando-graficos-com-vba.html' target='_blank'>
+<img alt='' border='0' height='72' src='http://3.bp.blogspot.com/-A3EKaQU5PbI/TykzPzs0vDI/AAAAAAAAAEc/ySjeVDU2Yyc/s72-c/Bernardes_BA_Chart_Automation_001-759392.jpg' width='72'/>
+</a>
+</div>
+<div class='item-title'><a href='http://brzexceldeveloper.blogspot.com.br/2012/02/vba-excel-criando-graficos-com-vba.html'>VBA Excel: Criando gráficos com VBA</a></div>
+<div class='item-snippet'>Talvez deseje aprender a criar gráficos automaticamente através de codificação VBA   Considere o seguinte RANGE abaixo :     Copie e cole o ...</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+<li>
+<div class='item-content'>
+<div class='item-title'><a href='http://brzexceldeveloper.blogspot.com.br/2010/01/vba-excel-funcao-que-tira-os-acentos.html'>VBA Excel - Função que tira os acentos</a></div>
+<div class='item-snippet'>Às vezes é necessário... Function TiraAcento(Palavra) CAcento = &quot;àáâãäèéêëìíîïòóôõöùúûüÀÁÂÃÄÈÉÊËÌÍÎÒÓÔÕÖÙÚÛÜçÇñÑ&quot; SAcento = &quot;...</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+<li>
+<div class='item-content'>
+<div class='item-title'><a href='http://brzexceldeveloper.blogspot.com.br/2009/08/vba-excel-fechando-planilha-sem-salvar.html'>VBA Excel - Fechando planilha sem Salvar</a></div>
+<div class='item-snippet'>Segue mais uma dica preciosa do amigo Denis Ostorero. Como fechamos uma planilha sem que ela pergunte se desejo salvar? Suponhamos que a ver...</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+<li>
+<div class='item-content'>
+<div class='item-title'><a href='http://brzexceldeveloper.blogspot.com.br/2011/07/vba-excel-imprimindo-planilhas.html'>VBA Excel - Imprimindo planilhas selecionadas ou não.</a></div>
+<div class='item-snippet'>  Olá pessoal!  Nossas planilhas, e neste caso refiro-me as inúmeras &#39;sheets&#39; ou pastas dentro de uma única planilha (workbook). Com...</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+<li>
+<div class='item-content'>
+<div class='item-thumbnail'>
+<a href='http://brzexceldeveloper.blogspot.com.br/2012/01/vba-excel-manipulando-tabela-dinamica.html' target='_blank'>
+<img alt='' border='0' height='72' src='http://2.bp.blogspot.com/-Y1pvoWnYgmA/Tx5SRwQmfSI/AAAAAAAAAEE/41q-3Is7MHk/s72-c/bernardes_Ciclo_Dashboard_Pivot_Table-706646.png' width='72'/>
+</a>
+</div>
+<div class='item-title'><a href='http://brzexceldeveloper.blogspot.com.br/2012/01/vba-excel-manipulando-tabela-dinamica.html'>VBA Excel - Manipulando Tabela Dinâmica - Refresh Pivot Table</a></div>
+<div class='item-snippet'>Quando estamos efetuando nossas implementações em Dashboards  e preocupados com a performance das suas atualizações, também passa por nossas...</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+</ul>
+<div class='clear'></div>
+<span class='widget-item-control'>
+<span class='item-control blog-admin'>
+<a class='quickedit' href='//www.blogger.com/rearrange?blogID=3597984963077620070&widgetType=PopularPosts&widgetId=PopularPosts1&action=editWidget&sectionId=sidebar' onclick='return _WidgetManager._PopupConfig(document.getElementById("PopularPosts1"));' target='configPopularPosts1' title='Editar'>
+<img alt='' height='18' src='http://img1.blogblog.com/img/icon18_wrench_allbkg.png' width='18'/>
+</a>
+</span>
+</span>
+<div class='clear'></div>
+</div>
+</div><div class='widget BlogArchive' id='BlogArchive1'>
+<h2>Arquivo:</h2>
+<div class='widget-content'>
+<div id='ArchiveList'>
+<div id='BlogArchive1_ArchiveList'>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://brzexceldeveloper.blogspot.com.br/search?updated-min=2014-01-01T00:00:00-08:00&amp;updated-max=2015-01-01T00:00:00-08:00&amp;max-results=11'>2014</a>
+<span class='post-count' dir='ltr'>(11)</span>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://brzexceldeveloper.blogspot.com.br/2014_07_01_archive.html'>Julho</a>
+<span class='post-count' dir='ltr'>(1)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://brzexceldeveloper.blogspot.com.br/2014_04_01_archive.html'>Abril</a>
+<span class='post-count' dir='ltr'>(3)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://brzexceldeveloper.blogspot.com.br/2014_03_01_archive.html'>Março</a>
+<span class='post-count' dir='ltr'>(3)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://brzexceldeveloper.blogspot.com.br/2014_01_01_archive.html'>Janeiro</a>
+<span class='post-count' dir='ltr'>(4)</span>
+</li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://brzexceldeveloper.blogspot.com.br/search?updated-min=2013-01-01T00:00:00-08:00&amp;updated-max=2014-01-01T00:00:00-08:00&amp;max-results=50'>2013</a>
+<span class='post-count' dir='ltr'>(302)</span>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://brzexceldeveloper.blogspot.com.br/2013_12_01_archive.html'>Dezembro</a>
+<span class='post-count' dir='ltr'>(27)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://brzexceldeveloper.blogspot.com.br/2013_11_01_archive.html'>Novembro</a>
+<span class='post-count' dir='ltr'>(42)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://brzexceldeveloper.blogspot.com.br/2013_10_01_archive.html'>Outubro</a>
+<span class='post-count' dir='ltr'>(30)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://brzexceldeveloper.blogspot.com.br/2013_09_01_archive.html'>Setembro</a>
+<span class='post-count' dir='ltr'>(20)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://brzexceldeveloper.blogspot.com.br/2013_08_01_archive.html'>Agosto</a>
+<span class='post-count' dir='ltr'>(24)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://brzexceldeveloper.blogspot.com.br/2013_07_01_archive.html'>Julho</a>
+<span class='post-count' dir='ltr'>(16)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://brzexceldeveloper.blogspot.com.br/2013_06_01_archive.html'>Junho</a>
+<span class='post-count' dir='ltr'>(23)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://brzexceldeveloper.blogspot.com.br/2013_05_01_archive.html'>Maio</a>
+<span class='post-count' dir='ltr'>(16)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://brzexceldeveloper.blogspot.com.br/2013_04_01_archive.html'>Abril</a>
+<span class='post-count' dir='ltr'>(27)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://brzexceldeveloper.blogspot.com.br/2013_03_01_archive.html'>Março</a>
+<span class='post-count' dir='ltr'>(26)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://brzexceldeveloper.blogspot.com.br/2013_02_01_archive.html'>Fevereiro</a>
+<span class='post-count' dir='ltr'>(29)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://brzexceldeveloper.blogspot.com.br/2013_01_01_archive.html'>Janeiro</a>
+<span class='post-count' dir='ltr'>(22)</span>
+</li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate expanded'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy toggle-open'>&#9660;&#160;</span>
+</a>
+<a class='post-count-link' href='http://brzexceldeveloper.blogspot.com.br/search?updated-min=2012-01-01T00:00:00-08:00&amp;updated-max=2013-01-01T00:00:00-08:00&amp;max-results=50'>2012</a>
+<span class='post-count' dir='ltr'>(272)</span>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://brzexceldeveloper.blogspot.com.br/2012_12_01_archive.html'>Dezembro</a>
+<span class='post-count' dir='ltr'>(26)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://brzexceldeveloper.blogspot.com.br/2012_11_01_archive.html'>Novembro</a>
+<span class='post-count' dir='ltr'>(26)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://brzexceldeveloper.blogspot.com.br/2012_10_01_archive.html'>Outubro</a>
+<span class='post-count' dir='ltr'>(20)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://brzexceldeveloper.blogspot.com.br/2012_09_01_archive.html'>Setembro</a>
+<span class='post-count' dir='ltr'>(26)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://brzexceldeveloper.blogspot.com.br/2012_08_01_archive.html'>Agosto</a>
+<span class='post-count' dir='ltr'>(20)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://brzexceldeveloper.blogspot.com.br/2012_07_01_archive.html'>Julho</a>
+<span class='post-count' dir='ltr'>(25)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://brzexceldeveloper.blogspot.com.br/2012_06_01_archive.html'>Junho</a>
+<span class='post-count' dir='ltr'>(27)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://brzexceldeveloper.blogspot.com.br/2012_05_01_archive.html'>Maio</a>
+<span class='post-count' dir='ltr'>(25)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://brzexceldeveloper.blogspot.com.br/2012_04_01_archive.html'>Abril</a>
+<span class='post-count' dir='ltr'>(27)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://brzexceldeveloper.blogspot.com.br/2012_03_01_archive.html'>Março</a>
+<span class='post-count' dir='ltr'>(28)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://brzexceldeveloper.blogspot.com.br/2012_02_01_archive.html'>Fevereiro</a>
+<span class='post-count' dir='ltr'>(14)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate expanded'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy toggle-open'>&#9660;&#160;</span>
+</a>
+<a class='post-count-link' href='http://brzexceldeveloper.blogspot.com.br/2012_01_01_archive.html'>Janeiro</a>
+<span class='post-count' dir='ltr'>(8)</span>
+<ul class='posts'>
+<li><a href='http://brzexceldeveloper.blogspot.com.br/2012/01/microsoft-office-excel-10-percepcoes-de.html'>Microsoft Office Excel - 10 percepções de utilizaç...</a></li>
+<li><a href='http://brzexceldeveloper.blogspot.com.br/2012/01/vba-excel-como-deixar-suas-planilhas.html'>VBA Excel - Como deixar suas planilhas enxutas</a></li>
+<li><a href='http://brzexceldeveloper.blogspot.com.br/2012/01/solucoes-vba.html'>SOLUÇÕES VBA</a></li>
+<li><a href='http://brzexceldeveloper.blogspot.com.br/2012/01/vba-excel-manipulando-tabela-dinamica.html'>VBA Excel - Manipulando Tabela Dinâmica - Refresh ...</a></li>
+<li><a href='http://brzexceldeveloper.blogspot.com.br/2012/01/vba-excel-preenchendo-lacunas-vazias.html'>VBA Excel - Preenchendo lacunas vazias com dados.</a></li>
+<li><a href='http://brzexceldeveloper.blogspot.com.br/2012/01/vba-excel-como-selecionar-um-range-de.html'>VBA Excel - Como selecionar um range de tamanho va...</a></li>
+<li><a href='http://brzexceldeveloper.blogspot.com.br/2012/01/vba-excel-selecionar-dados-numa-tabela.html'>VBA Excel - Selecionar dados numa Tabela Dinâmica ...</a></li>
+<li><a href='http://brzexceldeveloper.blogspot.com.br/2012/01/vba-evocando-chamada-ao-painel-de.html'>VBA Tips - Evocando chamada ao Painel de Controle</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://brzexceldeveloper.blogspot.com.br/search?updated-min=2011-01-01T00:00:00-08:00&amp;updated-max=2012-01-01T00:00:00-08:00&amp;max-results=45'>2011</a>
+<span class='post-count' dir='ltr'>(45)</span>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://brzexceldeveloper.blogspot.com.br/2011_12_01_archive.html'>Dezembro</a>
+<span class='post-count' dir='ltr'>(2)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://brzexceldeveloper.blogspot.com.br/2011_11_01_archive.html'>Novembro</a>
+<span class='post-count' dir='ltr'>(19)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://brzexceldeveloper.blogspot.com.br/2011_10_01_archive.html'>Outubro</a>
+<span class='post-count' dir='ltr'>(4)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://brzexceldeveloper.blogspot.com.br/2011_09_01_archive.html'>Setembro</a>
+<span class='post-count' dir='ltr'>(1)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://brzexceldeveloper.blogspot.com.br/2011_08_01_archive.html'>Agosto</a>
+<span class='post-count' dir='ltr'>(1)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://brzexceldeveloper.blogspot.com.br/2011_07_01_archive.html'>Julho</a>
+<span class='post-count' dir='ltr'>(5)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://brzexceldeveloper.blogspot.com.br/2011_06_01_archive.html'>Junho</a>
+<span class='post-count' dir='ltr'>(5)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://brzexceldeveloper.blogspot.com.br/2011_05_01_archive.html'>Maio</a>
+<span class='post-count' dir='ltr'>(1)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://brzexceldeveloper.blogspot.com.br/2011_04_01_archive.html'>Abril</a>
+<span class='post-count' dir='ltr'>(1)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://brzexceldeveloper.blogspot.com.br/2011_03_01_archive.html'>Março</a>
+<span class='post-count' dir='ltr'>(1)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://brzexceldeveloper.blogspot.com.br/2011_02_01_archive.html'>Fevereiro</a>
+<span class='post-count' dir='ltr'>(1)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://brzexceldeveloper.blogspot.com.br/2011_01_01_archive.html'>Janeiro</a>
+<span class='post-count' dir='ltr'>(4)</span>
+</li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://brzexceldeveloper.blogspot.com.br/search?updated-min=2010-01-01T00:00:00-08:00&amp;updated-max=2011-01-01T00:00:00-08:00&amp;max-results=50'>2010</a>
+<span class='post-count' dir='ltr'>(61)</span>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://brzexceldeveloper.blogspot.com.br/2010_11_01_archive.html'>Novembro</a>
+<span class='post-count' dir='ltr'>(2)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://brzexceldeveloper.blogspot.com.br/2010_09_01_archive.html'>Setembro</a>
+<span class='post-count' dir='ltr'>(4)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://brzexceldeveloper.blogspot.com.br/2010_08_01_archive.html'>Agosto</a>
+<span class='post-count' dir='ltr'>(3)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://brzexceldeveloper.blogspot.com.br/2010_05_01_archive.html'>Maio</a>
+<span class='post-count' dir='ltr'>(1)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://brzexceldeveloper.blogspot.com.br/2010_04_01_archive.html'>Abril</a>
+<span class='post-count' dir='ltr'>(9)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://brzexceldeveloper.blogspot.com.br/2010_03_01_archive.html'>Março</a>
+<span class='post-count' dir='ltr'>(12)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://brzexceldeveloper.blogspot.com.br/2010_02_01_archive.html'>Fevereiro</a>
+<span class='post-count' dir='ltr'>(18)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://brzexceldeveloper.blogspot.com.br/2010_01_01_archive.html'>Janeiro</a>
+<span class='post-count' dir='ltr'>(12)</span>
+</li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://brzexceldeveloper.blogspot.com.br/search?updated-min=2009-01-01T00:00:00-08:00&amp;updated-max=2010-01-01T00:00:00-08:00&amp;max-results=30'>2009</a>
+<span class='post-count' dir='ltr'>(30)</span>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://brzexceldeveloper.blogspot.com.br/2009_12_01_archive.html'>Dezembro</a>
+<span class='post-count' dir='ltr'>(3)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://brzexceldeveloper.blogspot.com.br/2009_11_01_archive.html'>Novembro</a>
+<span class='post-count' dir='ltr'>(5)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://brzexceldeveloper.blogspot.com.br/2009_10_01_archive.html'>Outubro</a>
+<span class='post-count' dir='ltr'>(1)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://brzexceldeveloper.blogspot.com.br/2009_09_01_archive.html'>Setembro</a>
+<span class='post-count' dir='ltr'>(13)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://brzexceldeveloper.blogspot.com.br/2009_08_01_archive.html'>Agosto</a>
+<span class='post-count' dir='ltr'>(8)</span>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class='clear'></div>
+<span class='widget-item-control'>
+<span class='item-control blog-admin'>
+<a class='quickedit' href='//www.blogger.com/rearrange?blogID=3597984963077620070&widgetType=BlogArchive&widgetId=BlogArchive1&action=editWidget&sectionId=sidebar' onclick='return _WidgetManager._PopupConfig(document.getElementById("BlogArchive1"));' target='configBlogArchive1' title='Editar'>
+<img alt='' height='18' src='http://img1.blogblog.com/img/icon18_wrench_allbkg.png' width='18'/>
+</a>
+</span>
+</span>
+<div class='clear'></div>
+</div>
+</div></div>
+</div>
+<!-- spacer for skins that want sidebar and main to be the same height-->
+<div class='clear'>&#160;</div>
+</div>
+<!-- end content-wrapper -->
+<div id='footer-wrapper'>
+<div class='footer section' id='footer'><div class='widget HTML' id='HTML1'>
+<h2 class='title'>:::</h2>
+<div class='widget-content'>
+<script>
+var linkwithin_site_id = 1612383;
+</script>
+<script src="http://www.linkwithin.com/widget.js"></script>
+<a href="http://www.linkwithin.com/"><img src="http://www.linkwithin.com/pixel.png" alt="Related Posts Plugin for WordPress, Blogger..." style="border: 0" /></a>
+</div>
+<div class='clear'></div>
+<span class='widget-item-control'>
+<span class='item-control blog-admin'>
+<a class='quickedit' href='//www.blogger.com/rearrange?blogID=3597984963077620070&widgetType=HTML&widgetId=HTML1&action=editWidget&sectionId=footer' onclick='return _WidgetManager._PopupConfig(document.getElementById("HTML1"));' target='configHTML1' title='Editar'>
+<img alt='' height='18' src='http://img1.blogblog.com/img/icon18_wrench_allbkg.png' width='18'/>
+</a>
+</span>
+</span>
+<div class='clear'></div>
+</div></div>
+</div>
+</div></div>
+<!-- end outer-wrapper -->
+<script type="text/javascript">
+if (window.jstiming) window.jstiming.load.tick('widgetJsBefore');
+</script><script type="text/javascript" src="https://www.blogger.com/static/v1/widgets/3394219502-widgets.js"></script>
+<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+<script type='text/javascript'>
+if (typeof(BLOG_attachCsiOnload) != 'undefined' && BLOG_attachCsiOnload != null) { window['blogger_templates_experiment_id'] = "templatesV1";window['blogger_blog_id'] = '3597984963077620070';BLOG_attachCsiOnload('item_'); }_WidgetManager._Init('//www.blogger.com/rearrange?blogID\x3d3597984963077620070','//brzexceldeveloper.blogspot.com.br/2012/01/vba-excel-manipulando-tabela-dinamica.html','3597984963077620070');
+_WidgetManager._SetDataContext([{'name': 'blog', 'data': {'blogId': '3597984963077620070', 'bloggerUrl': 'http://www.blogger.com', 'title': 'Microsoft Office Specialist Excel - Automation, VBA, Macros, Dashboards, Scorecards, Data Analyse', 'pageType': 'item', 'postId': '8725625180242469757', 'url': 'http://brzexceldeveloper.blogspot.com.br/2012/01/vba-excel-manipulando-tabela-dinamica.html', 'canonicalUrl': 'http://brzexceldeveloper.blogspot.com/2012/01/vba-excel-manipulando-tabela-dinamica.html', 'canonicalHomepageUrl': 'http://brzexceldeveloper.blogspot.com/', 'homepageUrl': 'http://brzexceldeveloper.blogspot.com.br/', 'blogspotFaviconUrl': 'http://brzexceldeveloper.blogspot.com.br/favicon.ico', 'enabledCommentProfileImages': true, 'adultContent': false, 'disableAdSenseWidget': false, 'analyticsAccountNumber': '', 'searchLabel': '', 'searchQuery': '', 'pageName': 'VBA Excel - Manipulando Tabela Dinâmica - Refresh Pivot Table', 'pageTitle': 'Microsoft Office Specialist Excel - Automation, VBA, Macros, Dashboards, Scorecards, Data Analyse: VBA Excel - Manipulando Tabela Dinâmica - Refresh Pivot Table', 'encoding': 'UTF-8', 'locale': 'pt_BR', 'localeUnderscoreDelimited': 'pt_br', 'isPrivate': false, 'isMobile': false, 'isMobileRequest': false, 'mobileClass': '', 'isPrivateBlog': false, 'languageDirection': 'ltr', 'feedLinks': '\74link rel\75\42alternate\42 type\75\42application/atom+xml\42 title\75\42Microsoft Office Specialist Excel - Automation, VBA, Macros, Dashboards, Scorecards, Data Analyse - Atom\42 href\75\42http://brzexceldeveloper.blogspot.com/feeds/posts/default\42 /\76\n\74link rel\75\42alternate\42 type\75\42application/rss+xml\42 title\75\42Microsoft Office Specialist Excel - Automation, VBA, Macros, Dashboards, Scorecards, Data Analyse - RSS\42 href\75\42http://brzexceldeveloper.blogspot.com/feeds/posts/default?alt\75rss\42 /\76\n\74link rel\75\42service.post\42 type\75\42application/atom+xml\42 title\75\42Microsoft Office Specialist Excel - Automation, VBA, Macros, Dashboards, Scorecards, Data Analyse - Atom\42 href\75\42http://www.blogger.com/feeds/3597984963077620070/posts/default\42 /\76\n\n\74link rel\75\42alternate\42 type\75\42application/atom+xml\42 title\75\42Microsoft Office Specialist Excel - Automation, VBA, Macros, Dashboards, Scorecards, Data Analyse - Atom\42 href\75\42http://brzexceldeveloper.blogspot.com/feeds/8725625180242469757/comments/default\42 /\76\n', 'meTag': '', 'openIdOpTag': '', 'postImageThumbnailUrl': 'http://2.bp.blogspot.com/-Y1pvoWnYgmA/Tx5SRwQmfSI/AAAAAAAAAEE/41q-3Is7MHk/s72-c/bernardes_Ciclo_Dashboard_Pivot_Table-706646.png', 'postImageUrl': 'http://2.bp.blogspot.com/-Y1pvoWnYgmA/Tx5SRwQmfSI/AAAAAAAAAEE/41q-3Is7MHk/s320/bernardes_Ciclo_Dashboard_Pivot_Table-706646.png', 'latencyHeadScript': '\74script type\75\42text/javascript\42\76(function() { var b\75window,f\75\42chrome\42,g\75\42tick\42,k\75\42jstiming\42;(function(){function d(a){this.t\75{};this.tick\75function(a,d,c){var e\75void 0!\75c?c:(new Date).getTime();this.t[a]\75[e,d];if(void 0\75\75c)try{b.console.timeStamp(\42CSI/\42+a)}catch(h){}};this[g](\42start\42,null,a)}var a;b.performance\46\46(a\75b.performance.timing);var n\75a?new d(a.responseStart):new d;b.jstiming\75{Timer:d,load:n};if(a){var c\75a.navigationStart,h\75a.responseStart;0\74c\46\46h\76\75c\46\46(b[k].srt\75h-c)}if(a){var e\75b[k].load;0\74c\46\46h\76\75c\46\46(e[g](\42_wtsrt\42,void 0,c),e[g](\42wtsrt_\42,\42_wtsrt\42,h),e[g](\42tbsd_\42,\42wtsrt_\42))}try{a\75null,\nb[f]\46\46b[f].csi\46\46(a\75Math.floor(b[f].csi().pageT),e\46\0460\74c\46\46(e[g](\42_tbnd\42,void 0,b[f].csi().startE),e[g](\42tbnd_\42,\42_tbnd\42,c))),null\75\75a\46\46b.gtbExternal\46\46(a\75b.gtbExternal.pageT()),null\75\75a\46\46b.external\46\46(a\75b.external.pageT,e\46\0460\74c\46\46(e[g](\42_tbnd\42,void 0,b.external.startE),e[g](\42tbnd_\42,\42_tbnd\42,c))),a\46\46(b[k].pt\75a)}catch(p){}})();b.tickAboveFold\75function(d){var a\0750;if(d.offsetParent){do a+\75d.offsetTop;while(d\75d.offsetParent)}d\75a;750\76\75d\46\46b[k].load[g](\42aft\42)};var l\75!1;function m(){l||(l\75!0,b[k].load[g](\42firstScrollTime\42))}b.addEventListener?b.addEventListener(\42scroll\42,m,!1):b.attachEvent(\42onscroll\42,m);\n })();\74/script\076', 'mobileHeadScript': '', 'view': '', 'dynamicViewsCommentsSrc': '//www.blogblog.com/dynamicviews/4224c15c4e7c9321/js/comments.js', 'dynamicViewsScriptSrc': '//www.blogblog.com/dynamicviews/76f25a6f2e06af76', 'plusOneApiSrc': 'https://apis.google.com/js/plusone.js', 'sf': 'n', 'tf': ''}}, {'name': 'skin', 'data': {'vars': {'sidebartextcolor': '#215670', 'linkcolor': '#5588aa', 'visitedlinkcolor': '#72179D', 'textcolor': '#215670', 'headerfont': 'normal normal 78% Arial, sans-serif', 'pagetitlefont': 'normal normal 200% Arial, sans-serif', 'bgcolor': '#ffffff', 'descriptioncolor': '#0066CC', 'titlecolor': '#3D81EE', 'bordercolor': '#C3D9FF', 'postfooterfont': 'normal normal 70% Arial, sans-serif', 'pagetitlecolor': '#215670', 'bodyfont': 'normal normal 99% Verdana, sans-serif', 'endSide': 'right', 'startSide': 'left', 'descriptionfont': 'normal bold 78% Arial, sans-serif', 'sidebarcolor': '#C3D9FF'}, 'override': ''}}, {'name': 'view', 'data': {'classic': {'name': 'classic', 'url': '?view\75classic'}, 'flipcard': {'name': 'flipcard', 'url': '?view\75flipcard'}, 'magazine': {'name': 'magazine', 'url': '?view\75magazine'}, 'mosaic': {'name': 'mosaic', 'url': '?view\75mosaic'}, 'sidebar': {'name': 'sidebar', 'url': '?view\75sidebar'}, 'snapshot': {'name': 'snapshot', 'url': '?view\75snapshot'}, 'timeslide': {'name': 'timeslide', 'url': '?view\75timeslide'}}}]);
+_WidgetManager._RegisterWidget('_HTMLView', new _WidgetInfo('HTML1', 'footer', null, document.getElementById('HTML1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_HTMLView', new _WidgetInfo('HTML2', 'sidebar', null, document.getElementById('HTML2'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_StatsView', new _WidgetInfo('Stats1', 'sidebar', null, document.getElementById('Stats1'), {'title': 'Visualizações', 'showGraphicalCounter': false, 'showAnimatedCounter': false, 'showSparkline': false, 'statsUrl': '//brzexceldeveloper.blogspot.com.br/b/stats?style\75BLACK_TRANSPARENT\46timeRange\75ALL_TIME\46token\75SZ-O3EcBAAA.KDzNqIgUES9v9vVZozyjSzg1WKRscPfhD3fyXsDo_mI.bL7sHS3jPk5uERX7RRqIMg'}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_LabelView', new _WidgetInfo('Label1', 'sidebar', null, document.getElementById('Label1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_PopularPostsView', new _WidgetInfo('PopularPosts1', 'sidebar', null, document.getElementById('PopularPosts1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_BlogArchiveView', new _WidgetInfo('BlogArchive1', 'sidebar', null, document.getElementById('BlogArchive1'), {'languageDirection': 'ltr'}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_HeaderView', new _WidgetInfo('Header1', 'header', null, document.getElementById('Header1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_NavbarView', new _WidgetInfo('Navbar1', 'navbar', null, document.getElementById('Navbar1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_BlogView', new _WidgetInfo('Blog1', 'main', null, document.getElementById('Blog1'), {'cmtInteractionsEnabled': false, 'lightboxEnabled': true, 'lightboxModuleUrl': 'https://www.blogger.com/static/v1/jsbin/1835455398-lbx__pt_br.js', 'lightboxCssUrl': 'https://www.blogger.com/static/v1/v-css/2392111094-lightbox_bundle.css'}, 'displayModeFull'));
+</script>
+</body>
+</html>

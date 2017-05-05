@@ -1,0 +1,1000 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0167)http://www.globaliconnect.com/excel/index.php?option=com_content&view=article&id=160:excel-vba-custom-classes-a-objects-class-modules-custom-events&catid=79&Itemid=475 -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-gb" lang="en-gb" slick-uniqueid="3"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="designer" content="Juergen Koller - http://www.lernvid.com">
+<meta name="licence" content="Creative Commons 3.0">
+<link href="http://www.globaliconnect.com/excel/templates/allrounder-j1.6/favicon.ico" rel="shortcut icon" type="image/x-icon">
+
+
+<!--- ADD CSS Files -->
+
+
+
+	<link href="./Excel VBA Custom Classes & Objects, Class Modules, Custom Events_files/template.css" rel="stylesheet" type="text/css" media="all">
+	<link href="./Excel VBA Custom Classes & Objects, Class Modules, Custom Events_files/joomla.css" rel="stylesheet" type="text/css" media="all">
+	<link href="./Excel VBA Custom Classes & Objects, Class Modules, Custom Events_files/colors.css" rel="stylesheet" type="text/css" media="all">
+	<link href="./Excel VBA Custom Classes & Objects, Class Modules, Custom Events_files/lvdropdown.css" rel="stylesheet" type="text/css" media="all">
+	<link href="./Excel VBA Custom Classes & Objects, Class Modules, Custom Events_files/typo.css" rel="stylesheet" type="text/css" media="all">
+	<link href="./Excel VBA Custom Classes & Objects, Class Modules, Custom Events_files/modules.css" rel="stylesheet" type="text/css" media="all">
+	
+<!--- Older Browser CSS -->
+<!--[if IE 7]>
+	<link href="/excel/templates/allrounder-j1.6/css/ie7.css" rel="stylesheet" type="text/css" media="all" />
+<![endif]-->
+<!--[if lt IE 7]>
+	<link href="/excel/templates/allrounder-j1.6/css/ie5x6x.css" rel="stylesheet" type="text/css" media="all" />
+<![endif]-->
+
+
+<!--- ADD JavaScript Files -->
+
+	<script async="" type="text/javascript" src="./Excel VBA Custom Classes & Objects, Class Modules, Custom Events_files/ca-pub-1689026553887445.js"></script><script type="text/javascript" async="" src="./Excel VBA Custom Classes & Objects, Class Modules, Custom Events_files/ga.js"></script><script type="text/javascript" src="./Excel VBA Custom Classes & Objects, Class Modules, Custom Events_files/jquery-1.6.2.min.js"></script>
+	<script type="text/javascript">
+		var jq = jQuery.noConflict();
+	</script>
+	<script type="text/javascript" src="./Excel VBA Custom Classes & Objects, Class Modules, Custom Events_files/lv-dropdown.js"></script>
+	<script type="text/javascript" src="./Excel VBA Custom Classes & Objects, Class Modules, Custom Events_files/jq.easy-tooltip.min.js"></script>
+	<script type="text/javascript" src="./Excel VBA Custom Classes & Objects, Class Modules, Custom Events_files/jq.easy-caption.min.js"></script>
+	<script type="text/javascript" src="./Excel VBA Custom Classes & Objects, Class Modules, Custom Events_files/jq.corner.packed.js"></script>
+	<script type="text/javascript" src="./Excel VBA Custom Classes & Objects, Class Modules, Custom Events_files/reflection.js"></script>
+	<script type="text/javascript" src="./Excel VBA Custom Classes & Objects, Class Modules, Custom Events_files/effects.js"></script>
+
+
+<!-- Layout parameters -->
+	<style type="text/css">
+
+	/* Template layout parameters */
+	
+
+	#wrapper {
+		margin-top:10px;
+	}
+	#foot_container {
+		margin-bottom:0px;
+	}
+	#topmenu ul.menu, #topmenu ul.menu li a, #topmenu ul.menu li span.separator {
+		background-image: url('/excel/templates/allrounder-j1.6/images/dropdown-smooth.png');
+	}
+	
+</style>
+<!-- Define fonts -->
+	<style type="text/css">
+
+	/* Template fonts */
+	
+	body {
+		font-size:14px;
+
+					font-family:Arial, Helvetica, Sans-Serif;
+						line-height:1.3em;
+	}
+
+</style>
+<!-- ADD own template colors -->
+	<style type="text/css">
+
+	/* Template colors */
+
+	body {
+		background-color: #DEDEDE;
+		color: #555555;
+	}
+	span#copy a {
+		color: #555555;
+	}
+	a, a:link, a:visited, a:active, a:focus {
+		color: #066BB4;
+	}
+
+	#wrapper, #foot_container {
+		background-color: #EFEFEF;
+		border: 1px solid #FFFFFF;
+	}
+
+	
+	#header {
+		background-color: #FFFFFF;
+		border-top:1px solid #FFFFFF;
+		border-left:1px solid #FFFFFF;	
+		border-right:1px solid #FFFFFF;	
+	}
+	.heckl, .heckr {  
+		border-top: 10px solid #222222;
+	}
+
+	#footer {
+		background-color: #066BB4;
+		border:1px solid #FFFFFF;
+		border-bottom:2px solid #FFFFFF;
+	}
+	.feckl, .feckr {  
+		border-bottom: 10px solid #222222;
+	}
+	#footer a#gotop {
+		color: #FFFFFF;
+	}
+	#footermodule1234, #footermodule1234 a, #footermodule1234 ul.menu, #footermodule5, #footermodule5 a {
+		color: #FFFFFF;
+	}
+	#subfoot {
+		background-color: #EFEFEF;
+		border-top:1px solid #FFFFFF;
+		border-bottom:1px solid #FFFFFF;
+	}
+	.copytext {
+		color: #5B6C71;
+	}
+
+	#maincontent {
+		background-color: #F9F9F9;
+		border: 3px double #E9E9E9;
+	}
+	
+	.item-page, .item, .leading-0, .leading-1, .leading-2, .leading-3, .leading-4, .leading-5 {
+		background-color:#FFFFFF;
+		border: 1px solid #E9E9E9;
+	}
+
+	.contentheading, .contentheading a {
+		color: #484848 !important;
+	}
+	div.item-separator {
+		border-bottom:3px double #EEEEEE !important;
+	}
+
+	#wrapper #leftcol h3.moduleh3, #wrapper #rightcol h3.moduleh3	 {
+		background-color: #066BB4;
+		border-top:	1px solid #FFFFFF;
+		color: #FFFFFF;
+	}
+	#wrapper #leftcol h3.moduleh3	 {
+		border-left: 1px solid #FFFFFF;
+		border-right: 1px solid #FFFFFF;
+	}
+	#wrapper #rightcol h3.moduleh3	 {
+		border-right: 1px solid #FFFFFF;
+		border-left: 1px solid #FFFFFF;
+	}
+	.h3eckl, .h3eckr {  
+		border-top: 10px solid #222222;
+	}
+
+	#leftcol .module div.lvround-inner, #leftcol .module_menu div.lvround-inner, #leftcol .module_text div.lvround-inner, 
+	#rightcol .module div.lvround-inner, #rightcol .module_menu div.lvround-inner, #rightcol .module_text div.lvround-inner {
+		background-color: #F9F9F9;
+		border: 1px solid #DDDDDD;
+		color: #505050;
+	}
+	#subhead {
+		background-color: #F9F9F9;
+		border: 1px solid #FFFFFF;
+	}
+	.breadcrumbs, .breadcrumbs span {
+		color: #555555;
+	}
+	#leftcol .module div div, #leftcol .module_menu div div, #leftcol .module_text div div, 
+	#rightcol .module div div, #rightcol .module_menu div div, #rightcol .module_text div div {
+		border: 1px solid #FFFFFF;
+	}
+
+	/**** Global Modules ****/
+
+	div.module {
+		color:#505050;
+		background-color:#FFFFFF;
+		border:1px solid #DDDDDD;
+	}
+	div.module h3.moduleh3 {
+		background-color:#EFEFEF;
+		border:1px solid #DDDDDD;
+	}
+
+
+	.input, .inputbox {
+		color: #555555;
+		background-color: #EFEFEF;
+		border-top: 1px solid #CCCCCC;
+		border-left: 1px solid #CCCCCC;
+		border-right: 1px solid #FFFFFF;
+		border-bottom: 1px solid #FFFFFF;
+	}
+	.input:hover, .inputbox:hover {
+		color: #555555;
+		background-color: #F9F9F9;
+	}
+
+	input.button, button.button, button.validate, .pagenav, ul.pagenav li a {
+		color: #555;
+		background-color: #efefef;
+		color: #555555;
+		background-color: #EFEFEF;
+		border-top: 1px solid #CCCCCC;
+		border-left: 1px solid #CCCCCC;
+		border-right: 1px solid #FFFFFF;
+		border-bottom: 1px solid #FFFFFF;
+	}
+	input.button:hover, button.button:hover, button.validate:hover, .pagenav, ul.pagenav li a:hover {
+		color: #000000;
+		background-color: #FFFFFF;
+	}
+
+	/**** Mainmenu with suffix: _menu ****/
+	
+	.module_menu ul.menu li a, .module_menu ul.menu li span.separator {
+		color: #066BB4;
+		border-bottom:1px dotted #222222;
+	}
+	.module_menu ul.menu li a:hover, .module_menu ul.menu li a:active, .module_menu ul.menu li a:focus {
+		color: #000000!important;
+	}
+	.module_menu ul.menu li.current a {
+		color: #751378;
+	}
+	.module_menu ul.menu li.current ul li a {
+		color: #BA1FBF;
+	}
+
+	/**** Default Tooltips ****/
+
+	.easy-tooltip-default {
+		border: 1px solid #A6A7AB; 
+		background-color: #F2F3F5; 
+		color: #066BB4;
+	}
+
+
+</style>
+<!-- ADD own dropdown-menu colors -->
+
+	<style type="text/css">
+
+	/* Ribbons off */
+	
+	#header, #footer, #wrapper #leftcol h3.moduleh3, #wrapper #rightcol h3.moduleh3 {
+		margin:0;
+	}
+	#header {
+		padding:0;
+}
+	.heckl, .heckr, .feckl, .feckr, .h3eckl, .h3eckr {  
+		display:none;
+	}
+
+</style>
+
+
+
+<!-- math the width of the 3 columns -->
+<style type="text/css">
+	#leftcol {width: 20%;}
+	#rightcol {width: 20%;}
+	#content_outmiddle {width: 58%;}
+	#content_outright {width: 79%;}
+	#content_outleft {width: 79%;}
+</style>	  
+  <meta name="keywords" content="Excel, Excel VBA, Excel VBA Tutorials, custom classes, custom objects, class modules, custom events, objects, properties, methods, class object, class objects, custom class events, property procedures, Microsoft Excel">
+  <meta name="rights" content="GlobaliConnect.com">
+  <meta name="author" content="Amit Tandon">
+  <meta name="description" content="In vba you can create your own custom objects by defining classes &amp; inserting class modules. You can also create your own custom class events, in addition to Excel&#39;s own inbuilt event procedures.">
+  <meta name="generator" content="Joomla! - Open Source Content Management">
+  <title>Excel VBA Custom Classes &amp; Objects, Class Modules, Custom Events</title>
+  <link href="http://www.globaliconnect.com/excel/templates/allrounder-j1.6/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon">
+  <link href="http://www.globaliconnect.com/excel/index.php?option=com_search&view=article&id=160:excel-vba-custom-classes-a-objects-class-modules-custom-events&catid=79&Itemid=475&format=opensearch" rel="search" title="Search http://www.globaliconnect.com/" type="application/opensearchdescription+xml">
+  <link rel="stylesheet" href="./Excel VBA Custom Classes & Objects, Class Modules, Custom Events_files/captchaStyle.css" type="text/css">
+  <script src="./Excel VBA Custom Classes & Objects, Class Modules, Custom Events_files/mootools-core.js" type="text/javascript"></script>
+  <script src="./Excel VBA Custom Classes & Objects, Class Modules, Custom Events_files/core.js" type="text/javascript"></script>
+  <script src="./Excel VBA Custom Classes & Objects, Class Modules, Custom Events_files/caption.js" type="text/javascript"></script>
+  <script type="text/javascript">
+
+		   
+		   				function reloadCapthcha(instanceNo)
+						{
+							var captchaSrc = "http://www.globaliconnect.com/excel/index.php?showCaptcha=True&instanceNo="+instanceNo+"&time="+ new Date().getTime();
+							//alert(captachaSrc);
+							//alert(document.getElementById('captchaCode'+instanceNo));
+							document.getElementById('captchaCode'+instanceNo).src = captchaSrc ;
+							//alert(document.getElementById('captchaCode'+instanceNo).src);
+						} 
+						
+window.addEvent('load', function() {
+				new JCaption('img.caption');
+			});
+function keepAlive() {	var myAjax = new Request({method: "get", url: "index.php"}).send();} window.addEvent("domready", function(){ keepAlive.periodical(840000); });
+  </script>
+ 
+<script type="text/javascript"></script>
+</head>
+<body>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-37411762-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+			<div id="wrapper" style="max-width:1180px;">
+							
+		
+			<div id="header_container">
+				
+				<div id="header">
+								
+											<div id="banner_outer">
+							<div id="banner">
+					             
+<div style="text-align:none; width:100%; margin: 0px 0px 0px 0px">
+<script type="text/javascript"><!--
+google_ad_client = "pub-1689026553887445";
+google_ad_slot = "3666360859";
+google_ad_width = "468";
+google_ad_height = "60";
+//-->
+</script>
+<script type="text/javascript" src="./Excel VBA Custom Classes & Objects, Class Modules, Custom Events_files/show_ads.js">
+</script><ins id="aswift_0_expand" style="display:inline-table;border:none;height:60px;margin:0;padding:0;position:relative;visibility:visible;width:468px;background-color:transparent"><ins id="aswift_0_anchor" style="display:block;border:none;height:60px;margin:0;padding:0;position:relative;visibility:visible;width:468px;background-color:transparent"><iframe width="468" height="60" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;"></iframe></ins></ins>
+</div>
+
+
+							</div>
+						</div>
+								
+					<div id="logo">
+										
+							<a class="imglogo" href="http://www.globaliconnect.com/excel/index.php"><img alt="Logo" src="./Excel VBA Custom Classes & Objects, Class Modules, Custom Events_files/global_logo.jpg"></a>
+																												
+							<div style="color:#EB1F10;" class="slogan">Excel and VBA Solutions</div>
+											</div>	
+								
+					<span class="heckl">&nbsp;</span>
+					<span class="heckr">&nbsp;</span>
+				</div>
+						
+				
+		
+								<div id="topmenu_container">
+					<div id="topmenu">
+			             
+<ul class="menu">
+<li class="item-435"><a href="http://www.globaliconnect.com/excel/index.php?option=com_content&view=article&id=182&Itemid=435">Home</a></li><li class="item-599"><a href="http://www.globaliconnect.com/excel/index.php?option=com_content&view=article&id=322&Itemid=599">Excel VBA Online Tutorial</a></li><li class="item-476"><a href="http://www.globaliconnect.com/excel_models.php">Excel Models</a></li><li class="item-477"><a href="http://www.globaliconnect.com/excel/index.php?option=com_content&view=article&id=181&Itemid=477">Services</a></li><li class="item-480"><a href="http://www.globaliconnect.com/excel/index.php?option=com_contact&view=contact&id=9&Itemid=480">Feedback</a></li></ul>
+
+					</div>
+					<div class="clr"></div>
+				</div>
+								</div>
+					<div id="subhead">
+					            	
+<div class="breadcrumbs">
+<span class="showHere">You are here: </span><a href="http://www.globaliconnect.com/excel/index.php?option=com_content&view=category&id=79&Itemid=475" class="pathway">Excel VBA</a> <img src="./Excel VBA Custom Classes & Objects, Class Modules, Custom Events_files/arrow.png" alt=""> <span>Excel VBA Custom Classes &amp; Objects, Class Modules, Custom Events</span></div>
+
+													<div id="search" style="display: block;">
+			             <form action="http://www.globaliconnect.com/excel/index.php?option=com_content&view=category&id=79&Itemid=475" method="post">
+	<div class="search">
+		<label for="mod-search-searchword">Search...</label><input name="searchword" id="mod-search-searchword" maxlength="20" class="inputbox" type="text" size="20" value="Search..." onblur="if (this.value==&#39;&#39;) this.value=&#39;Search...&#39;;" onfocus="if (this.value==&#39;Search...&#39;) this.value=&#39;&#39;;">	<input type="hidden" name="task" value="search">
+	<input type="hidden" name="option" value="com_search">
+	<input type="hidden" name="Itemid" value="475">
+	</div>
+</form>
+
+					</div>
+							</div>
+				<div id="container">
+							
+		
+							<div id="leftcol">
+		             	<div class="module-outer_menu">
+					<h3 class="moduleh3" style="border-top-right-radius: 10px;"><strong>Excel &amp; VBA</strong>
+				<span class="h3eckl">&nbsp;</span>
+			</h3>
+				<div class="module_menu">
+			<div>
+				<div>
+					<div class="lvround-inner">
+						
+<ul class="menu">
+<li class="item-473"><a href="http://www.globaliconnect.com/excel/index.php?option=com_content&view=category&id=77&Itemid=473">Excel Tips</a></li><li class="item-474"><a href="http://www.globaliconnect.com/excel/index.php?option=com_content&view=category&id=78&Itemid=474">Excel Functions</a></li><li class="item-475 current active"><a href="http://www.globaliconnect.com/excel/index.php?option=com_content&view=category&id=79&Itemid=475">Excel VBA</a></li><li class="item-486"><a href="http://www.globaliconnect.com/excel/index.php?option=com_content&view=category&id=81&Itemid=486">Excel Pivot Tables</a></li></ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="clr"></div>
+		<span class="shadow-left">&nbsp;</span>
+		<span class="shadow-right">&nbsp;</span>
+	</div>
+		<div class="module-outer">
+					<h3 class="moduleh3" style="border-top-right-radius: 10px;"><strong>VBA Tutorial Login</strong>
+				<span class="h3eckl">&nbsp;</span>
+			</h3>
+				<div class="module">
+			<div>
+				<div>
+					<div class="lvround-inner">
+						<form action="http://www.globaliconnect.com/excel/index.php?option=com_content&view=category&id=79&Itemid=475" method="post" id="login-form">
+			<div class="pretext">
+		<strong><font color="#FF0000">Free! Excel VBA Online Tutorial</font></strong>
+		</div>
+		<fieldset class="userdata" style="background-color: aliceblue;margin-top: 5px;">
+	<p id="form-login-username">
+		<label for="modlgn-username">Email Id</label>
+		<input id="modlgn-username" type="text" name="username" class="inputbox" size="18">
+	</p>
+	<p id="form-login-password">
+		<label for="modlgn-passwd">Password</label>
+		<input id="modlgn-passwd" type="password" name="password" class="inputbox" size="18">
+	</p>
+		<p id="form-login-remember" style="margin-right:25px;">
+		<label for="modlgn-remember">Remember Me</label>
+		<input id="modlgn-remember" type="checkbox" name="remember" class="inputbox" value="yes">
+	</p>
+		<div style="margin-right:22px;"><input type="submit" name="Submit" class="button" value="Log in"></div>
+	<input type="hidden" name="option" value="com_users">
+	<input type="hidden" name="task" value="user.login">
+	<input type="hidden" name="return" value="aW5kZXgucGhwP29wdGlvbj1jb21fY29udGVudCZ2aWV3PWFydGljbGUmaWQ9MjAwJkl0ZW1pZD01MTA=">
+	<input type="hidden" name="f9eb067f6df884539d1dde26a2dba1e4" value="1">	</fieldset>
+	<ul>
+		<li>
+			<a href="http://www.globaliconnect.com/excel/index.php?option=com_users&view=reset">
+			Forgot your password?</a>
+		</li>
+		<!--<li>
+			<a href="">
+			</a>
+		</li>!-->
+				<li>
+			<a href="http://www.globaliconnect.com/excel/index.php?option=com_users&view=registration">
+				Create an account</a>
+		</li>
+			</ul>
+	</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="clr"></div>
+		<span class="shadow-left">&nbsp;</span>
+		<span class="shadow-right">&nbsp;</span>
+	</div>
+	
+				  	
+				
+		           
+					
+				</div>
+				  
+					
+		    <div id="content_outleft">
+					
+		
+				<div id="maincontent">
+					
+<div id="system-message-container">
+</div>						
+					<div class="item-page">
+<h1 class="componentheading">
+	Excel VBA</h1>
+
+
+		<ul class="actions">
+										<li class="print-icon">
+						<a href="http://www.globaliconnect.com/excel/index.php?option=com_content&view=article&id=160:excel-vba-custom-classes-a-objects-class-modules-custom-events&catid=79&Itemid=475&tmpl=component&print=1&layout=default&page=" title="Print" onclick="window.open(this.href,&#39;win2&#39;,&#39;status=no,toolbar=no,scrollbars=yes,titlebar=no,menubar=no,resizable=yes,width=640,height=480,directories=no,location=no&#39;); return false;" rel="nofollow"><img src="./Excel VBA Custom Classes & Objects, Class Modules, Custom Events_files/printButton.png" alt="Print"></a>				</li>
+				
+								<li class="email-icon">
+						<a href="http://www.globaliconnect.com/excel/index.php?option=com_mailto&tmpl=component&template=allrounder-j1.6&link=6b0b255cd276de64927da64b00128b9e01d386cf" title="Email" onclick="window.open(this.href,&#39;win2&#39;,&#39;width=400,height=350,menubar=yes,resizable=yes&#39;); return false;"><img src="./Excel VBA Custom Classes & Objects, Class Modules, Custom Events_files/emailButton.png" alt="Email"></a>				</li>
+												</ul>
+
+	
+	<span class="content_rating">User Rating:&nbsp;<img src="./Excel VBA Custom Classes & Objects, Class Modules, Custom Events_files/rating_star.png" alt=""><img src="./Excel VBA Custom Classes & Objects, Class Modules, Custom Events_files/rating_star.png" alt=""><img src="./Excel VBA Custom Classes & Objects, Class Modules, Custom Events_files/rating_star.png" alt=""><img src="./Excel VBA Custom Classes & Objects, Class Modules, Custom Events_files/rating_star.png" alt=""><img src="./Excel VBA Custom Classes & Objects, Class Modules, Custom Events_files/rating_star_blank.png" alt="">&nbsp;/&nbsp;7</span>
+<br>
+<form method="post" action="http://www.globaliconnect.com/excel/index.php?option=com_content&view=article&id=160:excel-vba-custom-classes-a-objects-class-modules-custom-events&catid=79&Itemid=475&hitcount=0"><div class="content_vote">Poor<input type="radio" title="Vote 1" name="user_rating" value="1"><input type="radio" title="Vote 2" name="user_rating" value="2"><input type="radio" title="Vote 3" name="user_rating" value="3"><input type="radio" title="Vote 4" name="user_rating" value="4"><input type="radio" title="Vote 5" name="user_rating" value="5" checked="checked">Best&nbsp;<input class="button" type="submit" name="submit_vote" value="Rate"><input type="hidden" name="task" value="article.vote"><input type="hidden" name="hitcount" value="0"><input type="hidden" name="url" value="http://www.globaliconnect.com/excel/index.php?option=com_content&amp;view=article&amp;id=160:excel-vba-custom-classes-a-objects-class-modules-custom-events&amp;catid=79&amp;Itemid=475&amp;hitcount=0"><input type="hidden" name="f9eb067f6df884539d1dde26a2dba1e4" value="1"></div></form>
+
+<a class="article-detailer">Details</a>
+<dl class="article-info" style="display: none;">
+	 <dt class="article-info-term">Details</dt>
+						<dd class="category-name">
+													Category: Excel VBA							</dd>
+						
+		</dl>
+
+	
+	<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;">&nbsp;</p>
+<p style="font-size: medium; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;"><span style="color: #ff0000;"><strong>Excel VBA Custom Classes &amp; Objects, Class Modules, Custom Events<br></strong></span></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;">&nbsp;</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;">&nbsp;</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;">In vba you can create your own custom objects by defining classes &amp; inserting class modules. You can also create your own custom class events, in addition to Excel's own inbuilt event procedures. In this section we explain how to create custom objects by inserting a class module and how to create your own custom events in a class.</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;">&nbsp;</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;">&nbsp;</p>
+<p style="font-size: medium; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;"><span style="color: #0000ff;"><strong>Custom Classes and Objects</strong></span></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;">&nbsp;</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;">In vba you can create your own custom objects by defining classes. Classes act as templates for new objects. The custom object is used to store, process and make data available. A Class contains data and code - data can be accessed with properties (viz. Name property) and the code is referred to as methods (which are defined as Subs and Functions in VBA). Classes are integral to the Object-Oriented Programming (OOP) language. A class is created by inserting a Class Module (in your VBA project) to which you give a name. A Class Module allows you to create your own objects having their own properties and methods much like other objects such as range, worksheet, chart, etc. The Class Module has its own set of vba code (which includes variables, constants and procedures), which defines its properties and methods. The properties of the class object are manipulated in a Class Module with Property procedures which use the Property Let, Property Get, and Property Set statements. To access the properties and methods of the class object from a procedure in a code module, you declare an object variable of the class's type in that procedure.</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;">&nbsp;</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;">You can do all vba programming without creating custom objects which do not really increase code functionality. However, using custom objects makes complex coding look simpler by having related code in one place, makes coding self-documenting with appropriately named classes, properties &amp; methods, and this helps in debugging and reusing code.</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;">&nbsp;</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;">&nbsp;</p>
+<p style="font-size: medium; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;"><strong>Insert a Class Module:</strong></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;">&nbsp;</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;">In Visual Basic Editor (VBE), click Insert in the menu bar and then click Class Module. Alternatively, in the Project Explorer in VBE, right click on the VBA Project name or any object or item under it, click Insert and then click Class Module. Or, on the Standard Tool bar in VBE, click the Insert button and then click Class Module. This creates a blank class with the name Class1. To remove or delete a Class Module, right click after selecting it in the Project Explorer in VBE, and then click on Remove.</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;">&nbsp;</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;">&nbsp;</p>
+<p style="font-size: medium; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;"><strong>Name a Class Module:</strong></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;">&nbsp;</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;">The name of the selected Class Module appears to the right of (Name) in the Properties Window in VBE, and can be changed therein.</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;">&nbsp;</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;">&nbsp;</p>
+<p style="font-size: medium; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;"><strong>Instancing Property of a Class Module:</strong></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;">&nbsp;</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;">The Instancing property of a Class Module is set to Private by default which does not allow an external project from working with and using instances of that class. Set the Instancing property to PublicNotCreatable to allow external projects, with a reference set to the project containing the defined class, to access and use instances of the defined class. Note that the setting of PublicNotCreatable still does not allow the external project to instantiate (ie. create or call into existence) the class object or an instance of the class, which can be instantiated only by the project which contains the definition of the class. Note that the external project can use an instance of the defined class if the referenced project has already created that instance.</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;">&nbsp;</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;">&nbsp;</p>
+<p style="font-size: medium; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;"><strong>Instantiate a Class Object:</strong></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;">&nbsp;</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;">As already mentioned, in vba you can create your own custom objects by defining classes. A class is created by inserting a Class Module. To access the properties and methods of the class object from a procedure in a code module, you need to create a new instance of the class object ie. instantiate&nbsp; (ie. create or call into existence) an instance of the class. Note that multiple number of instances of a class object can be created. There are two ways of doing this, one with a two-line code or alternatively with a single-line code.</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;">&nbsp;</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;"><strong>Two-line code to instantiate an instance of a class:</strong></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;">&nbsp;</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;">Use the Dim statement to create a variable (iStudent) and define it as a reference to the class (clsStudent):</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;"><em>Dim iStudent As clsStudent</em></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;">&nbsp;</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;">Create a new object reference by using the New keyword. Mention the name of the class (clsStudent) you want to instantiate, after the New keyword:</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;"><em>Set iStudent = New clsStudent</em></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;">&nbsp;</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;"><strong>Alternate single-line code to instantiate an instance of a class:</strong></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;">&nbsp;</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;">In this case the clsStudent object gets instantiated only when the class method is first called ie. iStudent gets instantiated only when first used.</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;"><em>Dim iStudent As New clsStudent</em></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;">&nbsp;</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;">&nbsp;</p>
+<p style="font-size: medium; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;"><strong>Create Class Properties:</strong></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;">&nbsp;</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;">One way to create a class property is by declaring a Public Variable in the Class Module, and this property will be read-write. The other way to create a class property is by using Property Procedures ie. create a private variable to hold values and use property statements (viz. Property Let, Property Set and Property Get). Creating properties using a Public Variable, though simple, may not usually be preferable because it is not flexible. Using property statements will enable to set a read-only or write-only property in addition to read-write, whereas using a public variable will create only read-write properties. Further, using property statements you can execute code to calculate values as properties whereas using a public variable will not allow use of code to set or return the value of a property. For example, in case of an Area property, the area of a rectangle changes per its length-width and in case the length-width is dynamic it should not be stored as a fixed value.</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;">&nbsp;</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;"><strong>Create methods in a Class Module:</strong> In addition to properties, objects can also have one or more methods. A method is defined as Subs and Functions in VBA and is created with Sub-routine and Function procedures. A method is a sub-procedure containing a set of codes which perform an action or an operation on the data within the class, or a function containing a set of codes which returns a value after performing an operation. In a Class Module, only if the method is declared Public can it be called from an instance of this class, else if a method is declared Private it can be called only from other methods within the class. Note, that by default a procedure is Public if the Private or Public keywords are not specified.</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;">&nbsp;</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;">&nbsp;</p>
+<p style="font-size: medium; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;"><strong>Using Property Procedures to Create Properties:</strong></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;">&nbsp;</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;">Property Procedure is a set of vba codes that creates and manipulates custom properties for a class module. A Property procedure is declared by a Property Let,&nbsp; Property Get or Property Set statement and ends with an End Property statement. Property Let (write-only property) is used to assign a value to a property and Property Get (read-only property - which can only be returned but not set) returns or retrieves the value of a property. Property Set (write-only property) is used to set a reference to an object. Property procedures are usually defined in pairs, Property Let and Property Get OR Property Set and Property Get. A Property Let procedure is created to allow the user to change or set the value of a property, whereas the user cannot set or change the value of a read-only property (viz. Property Get).</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;">&nbsp;</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;">A property procedure can do whatever can be done within a vba procedure like performing an action or calculation on data. A Property Let (or Property Set) procedure is an independent procedure which can pass arguments, perform actions as per a set of codes and change the value of its arguments like a Property Get procedure or a Function but does not return a value like them. A Property Get procedure is also an independent procedure which can pass arguments, perform actions as per a set of codes and change the value of its arguments like a Property Let (or Property Set) procedure, and can be used similar to a Function to return the value of a property.</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;">&nbsp;</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;">A Property Get declaration takes one argument less than in the associated Property Let or Property Set declaration and the Property Get declaration should be of the same data type as the data type of the last argument in the associated Property Let or Property Set declaration. The Property Get declaration will use the same property name as used in the associated Property Let or Property Set declaration.</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;">&nbsp;</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;">A Property Let procedure can accept multiple arguments, and in this case the last argument contains the value to be assigned to the property. This last argument in the argument list is the property value set by the calling procedure. The name and data type of each argument in a Property Let procedure and its corresponding Property Get procedure should be the same, except for the last argument in the Property Let procedure which is additional. All arguments before the last argument are passed to the Property Let procedure. In the case of a Property Let procedure with a single argument (at least one argument is required to be defined), this argument contains the value to be assigned to the property and is the value set by the calling procedure. In this case the Property Get procedure will have no argument. It is not a usual practice to pass multiple arguments in property procedures and sub-procedures or Functions are used for this.</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;">&nbsp;</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;">A Property Set procedure can accept multiple arguments, and in this case the last argument contains the actual object reference for the property. All arguments before the last argument are passed to the Property Set procedure. In the case of a Property Set procedure with a single argument (at least one argument is required to be defined), this argument contains the object reference for the property. The data type of the last argument or the single argument must be an Object type or a Variant.</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;">&nbsp;</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;">The Property Set procedure is similar to and a variation of the Property Let procedure and both are used to set values. A Property Set procedure is used to create object properties which are actually pointers to other objects, whereas a Property Let procedure sets or assigns values to scalar properties like string, integer, date, etc. Using the Property Set statement enables Properties to be represented as objects.</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;">&nbsp;</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;">Below is the syntax for the 3 property procedure declarations.</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;">&nbsp;</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;"><strong>Property Get:</strong></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;">Property Get PropertyName(argument_1, argument_2, …, argument_n) As Type</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;">&nbsp;</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;"><strong>Property Let:</strong></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;">Property Let PropertyName(argument_1, argument_2, …, argument_n+1)</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;">&nbsp;</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;"><strong>Property Set:</strong></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;">Property Set PropertyName(argument_1, argument_2, …, argument_n+1)</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;">&nbsp;</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;">&nbsp;</p>
+<p style="font-size: medium; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;"><span style="text-decoration: underline;"><strong>Examples</strong></span></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;">&nbsp;</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;">&nbsp;</p>
+<p style="font-size: medium; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;"><strong>Example 1 - Create Class Properties by using Property Procedures. Refer Images 1a &amp; 1b. For live code, <a href="http://www.globaliconnect.com/excel/downloadfiles/VBA/CustomClasses/CustomClasses1.xlsm">click to download excel file.</a></strong></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;">&nbsp;</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;"><em><strong>Insert Code in Class Module named clsStudent:</strong></em></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;">&nbsp;</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 30px; margin: 0px;"><span style="color: #008000;">'Example - Create Class Properties by using Property Procedures:</span><br>Private strStuName As String<br>Private dblStuMarks As Double<br><br><strong>Public Property Let Name(strN As String)</strong><br><span style="color: #008000;">'declare the property procedure Public so that it can be called from an instance of this class in another module.</span><br><span style="color: #008000;">'In the case of a Property Let procedure with a single argument (at least one argument is required to be defined), this argument contains the value to be assigned to the property and is the value set by the calling procedure. In this case the Property Get procedure will have no argument. A Property Let procedure is created to allow the user to change or set the value of a property, whereas the user cannot set or change the value of a read-only property (viz. Property Get).</span></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 60px; margin: 0px;"><br>strStuName = strN</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 30px; margin: 0px;"><br><strong>End Property</strong><br><br><strong>Public Property Get Name() As String</strong><br><span style="color: #008000;">'returns the Name property</span></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 60px; margin: 0px;"><br>Name = strStuName</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 30px; margin: 0px;"><br><strong>End Property</strong><br><br><strong>Public Property Let Marks(iMarks As Double)</strong><br><span style="color: #008000;">'assigns the Marks property</span></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 60px; margin: 0px;"><br>dblStuMarks = (iMarks / 80) * 100</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 30px; margin: 0px;"><br><strong>End Property</strong><br><br><strong>Public Property Get Marks() As Double</strong><br><span style="color: #008000;">'returns the Marks property</span></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 60px; margin: 0px;"><br>Marks = dblStuMarks</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 30px; margin: 0px;"><br><strong>End Property</strong><br><br><strong>Public Function Grade() As String</strong><br><span style="color: #008000;">'Create a Method within a Class - declare the method Public so that it can be called from an instance of this class in another module.</span></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 60px; margin: 0px;"><br>Dim strGrade As String<br><br><span style="color: #000000;">If dblStuMarks &gt;= 80 Then</span></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 90px; margin: 0px;"><span style="color: #000000;">strGrade = <span style="color: #333333;">"A"</span></span></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 60px; margin: 0px;"><span style="color: #000000;">ElseIf dblStuMarks &gt;= 60 Then</span></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 90px; margin: 0px;"><span style="color: #000000;">strGrade = <span style="color: #333333;">"B"</span></span></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 60px; margin: 0px;"><span style="color: #000000;">ElseIf dblStuMarks &gt;= 40 Then</span></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 90px; margin: 0px;"><span style="color: #000000;">strGrade = <span style="color: #333333;">"C"</span></span></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 60px; margin: 0px;"><span style="color: #000000;">Else</span></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 90px; margin: 0px;"><span style="color: #000000;">strGrade = <span style="color: #333333;">"Fail"</span></span></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 60px; margin: 0px;"><span style="color: #000000;">End If</span></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 60px; margin: 0px;">&nbsp;</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 60px; margin: 0px;">Grade = strGrade</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 30px; margin: 0px;">&nbsp;</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 30px; margin: 0px;"><strong>End Function</strong></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;">&nbsp;</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;">&nbsp;</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;"><em><strong>Insert Code in a Standard Code Module:</strong></em></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;">&nbsp;</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 30px; margin: 0px;"><strong>Sub clsStudentRun()</strong><br><span style="color: #008000;">'this procedure instantiates an instance of a class, sets and calls class properties:</span></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 60px; margin: 0px;"><br><span style="color: #008000;">'use the Dim statement to create a variable and define it as a reference to the class.</span><br>Dim iStudent As clsStudent<br><br><span style="color: #008000;">'a new object reference is created by using the New keyword. Mention the name of the class you want to instantiate, after the New keyword.</span><br><span style="color: #008000;">'following code line (together with the above Dim statement, it is a two-line code to instantiate an instance of a class), instantiates the clsStudent object:</span><br>Set iStudent = New clsStudent<br><br><span style="color: #008000;">'alternate single-line code to instantiate an instance of a class, however in this case the clsStudent object gets instantiated only when the class method is first called, ie. iStudent gets instantiated only when first used:</span><br><span style="color: #008000;">'Dim iStudent As New clsStudent</span><br><br><span style="color: #008000;">'sets the Name property in the clsStudent object to be the string "Peter", and passes this data to the strN variable in the Name property:</span><br><span style="color: #000000;">iStudent.Name = <span style="color: #333333;">"Peter"</span></span></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 60px; margin: 0px;">&nbsp;</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 60px; margin: 0px;"><span style="color: #008000;">'call the Name property in the clsStudent object</span><br>MsgBox iStudent.Name<br><br><span style="color: #008000;">'sets the Marks property in the clsStudent object to the value 45, and passes this data to the iMarks variable in the Marks property:</span><br>iStudent.Marks = 45<br><br><span style="color: #008000;">'call the Marks property in the clsStudent object</span><br>MsgBox iStudent.Marks<br><br><span style="color: #008000;">'call the Grade function from the clsStudent object:</span><br>MsgBox iStudent.Grade<br><br>MsgBox iStudent.Name &amp; " has got " &amp; iStudent.Marks &amp; " percent marks with a Grade " &amp; iStudent.Grade</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 30px; margin: 0px;"><br><strong>End Sub</strong></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;">&nbsp;</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;"><span style="color: #333333;"><strong><div class="img_caption none" style="float: none; width: 714px;"><img class="caption" src="./Excel VBA Custom Classes & Objects, Class Modules, Custom Events_files/customclasses_1a.gif" border="0" alt="" title="Image 1a"><p class="img_caption">Image 1a</p></div></strong></span></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;">&nbsp;</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;"><span style="color: #333333;"><strong><div class="img_caption none" style="float: none; width: 714px;"><img class="caption" src="./Excel VBA Custom Classes & Objects, Class Modules, Custom Events_files/customclasses_1b.gif" border="0" alt="" title="Image 1b"><p class="img_caption">Image 1b</p></div></strong></span></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;">&nbsp;</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;">------------------------------------------------------------------------------------------------------------------------</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;">&nbsp;</p>
+<p style="font-size: medium; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;"><strong>Example 2 - Create Class Properties by using Property Procedures, Property Let procedure accepting multiple arguments. For live code, <a href="http://www.globaliconnect.com/excel/downloadfiles/VBA/CustomClasses/CustomClasses2.xlsm">click to download excel file.</a></strong></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;">&nbsp;</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;"><em><strong>Insert Code in Class Module named clsRectangle:</strong></em></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;">&nbsp;</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 30px; margin: 0px;"><span style="color: #008000;">'Example - Create Class Properties by using Property Procedures, Property Let procedure accepting multiple arguments.</span><br>Private dblA As Double<br><br><strong>Public Property Let Area(lngth As Double, wdth As Double, ar As Double)</strong><br><span style="color: #008000;">'A Property Let procedure can accept multiple arguments, and in this case the last argument contains the value to be assigned to the property. This last argument in the argument list is the property value set by the calling procedure. The name and data type of each argument in a Property Let procedure and its corresponding Property Get procedure should be the same, except for the last argument in the Property Let procedure which is additional. All arguments before the last argument are passed to the Property Let (&amp; Property Get) procedure.</span><br><br><span style="color: #008000;">'In the case of a Property Let procedure with a single argument (at least one argument is required to be defined), this argument contains the value to be assigned to the property and is the value set by the calling procedure. In this case the Property Get procedure will have no argument.</span><br><br><span style="color: #008000;">'It is not a usual practice to pass multiple arguments in property procedures and sub-procedures or Functions are used for this.</span></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 60px; margin: 0px;"><br>dblA = ar<br><br>MsgBox "Arguments received - lngth: " &amp; lngth &amp; ", wdth: " &amp; wdth &amp; ", ar: " &amp; ar</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 30px; margin: 0px;"><br><strong>End Property</strong><br><br><strong>Public Property Get Area(lngth As Double, wdth As Double) As Double</strong></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 60px; margin: 0px;"><br>Area = dblA</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 30px; margin: 0px;"><br><strong>End Property</strong></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;">&nbsp;</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;">&nbsp;</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;"><em><strong>Insert Code in a Standard Code Module:</strong></em></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;">&nbsp;</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;"><strong>Sub clsRectangleRun()</strong><br><span style="color: #008000;">'This procedure instantiates an instance of a class, sets and calls class properties, passing multiple arguments to Property Let procedure:</span></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 30px; margin: 0px;"><br>Dim l As Double<br>Dim w As Double<br><br>Dim rect As New clsRectangle<br><br>l = InputBox("Enter Length of rectangle")<br>w = InputBox("Enter Width of rectangle")<br><br><span style="color: #008000;">'setting the property value - passes this data to the ar variable in the Area property:</span><br>rect.Area(l, w) = l * w<br><br><span style="color: #008000;">'accessing the Area property:</span><br>a = rect.Area(l, w)<br><br>MsgBox "Area of Rectangle with length " &amp; l &amp; ", width " &amp; w &amp; ", is " &amp; a</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;"><br><strong>End Sub</strong></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;">&nbsp;</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;">&nbsp;</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;">------------------------------------------------------------------------------------------------------------------------</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;">&nbsp;</p>
+<p style="font-size: medium; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;"><strong>Example 3 - Create Read-Only Class Property with only the PropertyGet_EndProperty block. For live code, <a href="http://www.globaliconnect.com/excel/downloadfiles/VBA/CustomClasses/CustomClasses3.xlsm">click to download excel file.</a></strong></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;">&nbsp;</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;"><em><strong>Insert Code in Class Module named clsRectArea:</strong></em></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;">&nbsp;</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 30px; margin: 0px;"><span style="color: #008000;">'Example - Create Read-Only Class Property with only the PropertyGet_EndProperty block.</span><br>Private dRectL As Double<br>Private dRectW As Double</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 30px; margin: 0px;"><br><strong>Public Property Let Length(l As Double)</strong></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 60px; margin: 0px;"><br>dRectL&nbsp;= l</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 30px; margin: 0px;"><br><strong>End Property</strong><br><br><strong>Public Property Get Length() As Double</strong></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 60px; margin: 0px;"><br>Length = dRectL</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 30px; margin: 0px;"><br><strong>End Property</strong><br><br><strong>Public Property Let Width(w As Double)</strong></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 60px; margin: 0px;"><br>dRectW&nbsp;= w</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 30px; margin: 0px;"><br><strong>End Property</strong><br><br><strong>Public Property Get Width() As Double</strong></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 60px; margin: 0px;"><br>Width = dRectW</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 30px; margin: 0px;"><br><strong>End Property</strong><br><br><strong>Public Property Get rArea() As Double</strong><br><span style="color: #008000;">'Read-Only property with only the PropertyGet_EndProperty block and no PropertyLet_EndProperty (or PropertySet_EndProperty) block.</span></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 60px; margin: 0px;"><br>rArea = Length * Width</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 30px; margin: 0px;"><br><strong>End Property</strong></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;">&nbsp;</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;">&nbsp;</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;"><em><strong>Insert Code in a Standard Code Module:</strong></em></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;">&nbsp;</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 30px; margin: 0px;"><strong>Sub clsRectAreaRun()</strong><br><span style="color: #008000;">'This procedure instantiates an instance of a class, sets and calls class properties.</span></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 60px; margin: 0px;"><br>Dim a As Double<br>Dim b As Double<br><br>Dim areaRect As New clsRectArea<br><br>a = InputBox("Enter Length of rectangle")<br>b = InputBox("Enter Width of rectangle")<br><br>areaRect.Length = a<br>areaRect.Width = b<br><br>MsgBox areaRect.rArea</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 30px; margin: 0px;"><br><strong>End Sub</strong></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;">&nbsp;</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;">------------------------------------------------------------------------------------------------------------------------</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;">&nbsp;</p>
+<p style="font-size: medium; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;"><strong>Example 4 - Using Property Set statement to set a reference to an object.</strong></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;"><strong>A Property Set procedure is used to create object properties which are actually pointers to other objects. Refer Images 2a, 2b &amp; 2c. For live code, <a href="http://www.globaliconnect.com/excel/downloadfiles/VBA/CustomClasses/CustomClasses4.xlsm">click to download excel file.</a></strong></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;">&nbsp;</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;"><em><strong>Insert Code in Class Module named clsCar:</strong></em></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;">&nbsp;</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 30px; margin: 0px;"><span style="color: #008000;">'Example - Using Property Set statement to set a reference to an object. A Property Set procedure is used to create object properties which are actually pointers to other objects.</span><br><br><span style="color: #008000;">'declare a private variable (ie. varCar) to store a reference to the clsMotorCars object:</span><br>Private varCar As clsMotorCars<br><br><strong>Public Property Set Car(objCar As clsMotorCars)</strong><br><span style="color: #008000;">'The Property Set statement sets a reference to an object, and assigns Car to an object.</span></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 60px; margin: 0px;"><br><span style="color: #008000;">'create an object variable (ie. varCar) and point it to the clsMotorCars object passed to the procedure:</span><br>Set varCar = objCar</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 30px; margin: 0px;"><br><strong>End Property</strong><br><br><strong>Public Property Get Car() As clsMotorCars</strong></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 60px; margin: 0px;"><br><span style="color: #008000;">'return the object variable (ie. varCar) created by the Property Set procedure:</span><br>Set Car = varCar</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 30px; margin: 0px;"><br><strong>End Property</strong></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;">&nbsp;</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;">&nbsp;</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;"><em><strong>Insert Code in Class Module named clsMotorCars:</strong></em></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;">&nbsp;</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 30px; margin: 0px;"><span style="color: #008000;">'Create Class Properties by using Property Procedures:</span><br>Private strColor As String<br>Private strName As String<br>Private dMG As Double<br><br><strong>Property Let Color(clr As String)</strong></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 60px; margin: 0px;">strColor = clr</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 30px; margin: 0px;"><strong>End Property</strong><br><br><strong>Property Get Color() As String</strong></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 60px; margin: 0px;">Color = strColor</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 30px; margin: 0px;"><strong>End Property</strong><br><br><strong>Property Let Name(nm As String)</strong></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 60px; margin: 0px;">strName = nm</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 30px; margin: 0px;"><strong>End Property</strong><br><br><strong>Property Get Name() As String</strong></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 60px; margin: 0px;">Name = strName</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 30px; margin: 0px;"><strong>End Property</strong><br><br><strong>Property Let Mileage(milesGallon As Double)</strong></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 60px; margin: 0px;">dMG&nbsp;= milesGallon</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 30px; margin: 0px;"><strong>End Property</strong><br><br><strong>Property Get Mileage() As Double</strong></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 60px; margin: 0px;">Mileage = dMG</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 30px; margin: 0px;"><strong>End Property</strong><br><br><strong>Function FuelBudget(FuelCost As Double, Distance As Double) As Double</strong></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 60px; margin: 0px;">FuelBudget = (Distance / Mileage) * FuelCost</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 30px; margin: 0px;"><strong>End Function</strong></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;">&nbsp;</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;">&nbsp;</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;"><em><strong>Insert Code in a Standard Code Module:</strong></em></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;">&nbsp;</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 30px; margin: 0px;"><strong>Sub propSetCars()</strong><br><span style="color: #008000;">'Using Property Set statement to set a reference to an object. A Property Set procedure is used to create object properties which are actually pointers to other objects.</span></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 60px; margin: 0px;"><br>Dim dDist As Double<br>Dim dCost As Double<br><br><span style="color: #008000;">'instantiate as a clsCar object ie. create a new instance of the clsCar object. A new object reference is created by using the New keyword.</span><br>Dim ownCar As clsCar<br>Set ownCar = New clsCar<br><br><span style="color: #008000;">'Car has been instantiated as a clsMotorCars object (note that Car is a property of the ownCar object). See below how to access the properties &amp; methods of clsMotorCars object:</span><br>Set ownCar.Car = New clsMotorCars<br><br><span style="color: #008000;">'enter property values:</span><br>ownCar.Car.Color = <span style="color: #333333;">"Yellow"</span><br>ownCar.Car.Name = <span style="color: #333333;">"Ford"</span><br>ownCar.Car.Mileage = 50<br>dDist&nbsp;= InputBox("Enter Distance in miles, covered by car in a month")<br>dCost&nbsp;= InputBox("Enter Cost of Fuel per gallon")<br><br><span style="color: #008000;">'return values from properties &amp; methods of clsMotorCars object:</span><br>MsgBox "Car Color is " &amp; ownCar.Car.Color<br>MsgBox "Car Model is " &amp; ownCar.Car.Name<br>MsgBox "Gives a Mileage of " &amp; ownCar.Car.Mileage &amp; " miles per gallon"<br><span style="color: #008000;">'call the FuelBudget function:</span><br>MsgBox "$" &amp; ownCar.Car.FuelBudget(dDist, dCost) &amp; " is the monthly cost of fuel"</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 30px; margin: 0px;"><br><strong>End Sub</strong></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;">&nbsp;</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;"><span style="color: #333333;"><strong><div class="img_caption none" style="float: none; width: 712px;"><img class="caption" src="./Excel VBA Custom Classes & Objects, Class Modules, Custom Events_files/customclasses_2a.gif" border="0" alt="" title="Image 2a"><p class="img_caption">Image 2a</p></div></strong></span></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;">&nbsp;</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;"><span style="color: #333333;"><strong><div class="img_caption none" style="float: none; width: 694px;"><img class="caption" src="./Excel VBA Custom Classes & Objects, Class Modules, Custom Events_files/customclasses_2b.gif" border="0" alt="" title="Image 2b"><p class="img_caption">Image 2b</p></div></strong></span></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;">&nbsp;</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;"><span style="color: #333333;"><strong><div class="img_caption none" style="float: none; width: 809px;"><img class="caption" src="./Excel VBA Custom Classes & Objects, Class Modules, Custom Events_files/customclasses_2c.gif" border="0" alt="" title="Image 2c"><p class="img_caption">Image 2c</p></div></strong></span></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;">&nbsp;</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;">------------------------------------------------------------------------------------------------------------------------</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;">&nbsp;</p>
+<p style="font-size: medium; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;"><strong>Example 5 - Using Property Set statement to set a reference to a Range object. For live code, <a href="http://www.globaliconnect.com/excel/downloadfiles/VBA/CustomClasses/CustomClasses5.xlsm">click to download excel file.</a></strong></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;">&nbsp;</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;"><em><strong>Insert Code in Class Module named clsSetRange:</strong></em></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;">&nbsp;</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 30px; margin: 0px;"><span style="color: #008000;">'Example - Using Property Set statement to set a reference to a Range object:</span><br>Private intColor As Integer<br>Private strName As String<br><span style="color: #008000;">'declare a private variable (ie. rngV) to store a reference to the Range object:</span><br>Private rngV As Range<br><br><strong>Public Property Set activeRange(oRng As Range)</strong></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 60px; margin: 0px;"><span style="color: #008000;">'create an object variable (ie. rngV) and point it to the Range object passed to the procedure:</span></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 60px; margin: 0px;">Set&nbsp;rngV = oRng</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 30px; margin: 0px;"><strong>End Property</strong><br><br><strong>Public Property Get activeRange() As Range</strong></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 60px; margin: 0px;">Set activeRange = rngV</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 30px; margin: 0px;"><strong>End Property</strong><br><br><strong>Property Let Name(nam As String)</strong></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 60px; margin: 0px;">strName = nam</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 30px; margin: 0px;"><strong>End Property</strong><br><br><strong>Property Get Name() As String</strong></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 60px; margin: 0px;">Name = strName</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 30px; margin: 0px;"><strong>End Property</strong><br><br><strong>Property Let Color(clr As Integer)</strong></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 60px; margin: 0px;">intColor = clr</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 30px; margin: 0px;"><strong>End Property</strong><br><br><strong>Property Get Color() As Integer</strong></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 60px; margin: 0px;">Color = intColor</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 30px; margin: 0px;"><strong>End Property</strong><br><br><strong>Sub methodColor()</strong></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 60px; margin: 0px;">activeRange.Interior.ColorIndex = Color</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 30px; margin: 0px;"><strong>End Sub</strong></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;">&nbsp;</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;">&nbsp;</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;"><em><strong>Insert Code in a Standard Code Module:</strong></em></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;">&nbsp;</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 30px; margin: 0px;"><strong>Sub clsSetRangeRun()</strong><br><span style="color: #008000;">'Example - Using Property Set statement to set a reference to a Range object.:</span></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 60px; margin: 0px;"><br><span style="color: #008000;">'Instantiate as a clsRange object ie. create a new instance of the clsSetRange object. A new object reference is created by using the New keyword.</span><br>Dim rngActive As clsSetRange<br>Set rngActive = New clsSetRange<br><br><span style="color: #008000;">'Set activeRange property (which is an object property) of clsSetRange object to ActiveCell, and pass this data to the oRng variable in the activeRange property:</span><br>Set rngActive.activeRange = ActiveCell<br><br><span style="color: #008000;">'enter ColorIndex, value 1 to 56:</span><br><span style="color: #008000;">'3 for red, 4 for green &amp; 5 for blue, ....</span><br>rngActive.Color = 5<br><br>If rngActive.Color &lt; 1 Or rngActive.Color &gt; 56 Then</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 90px; margin: 0px;">MsgBox "Error! Enter a value for ColorIndex between 1 and 56"</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 90px; margin: 0px;">Exit Sub</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 60px; margin: 0px;">End If<br><br><span style="color: #008000;">'call sub-procedure named methodColor:</span><br>rngActive.methodColor<br><br>MsgBox "Interior color, ColorIndex " &amp; rngActive.Color &amp; ", entered in cell " &amp; rngActive.activeRange.Address</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 30px; margin: 0px;"><br><strong>End Sub</strong></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;">&nbsp;</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;">&nbsp;</p>
+<hr>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;">&nbsp;</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;">&nbsp;</p>
+<p style="font-size: medium; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;"><strong><span style="color: #0000ff;">Custom Class Events</span></strong></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;">&nbsp;</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;">You can create your own class events also. Events are actions performed, or occurences, which trigger a VBA macro. A VBA code is triggered when an event occurs such as, clicking on a button, opening the workbook, selecting a cell or changing cell selection in a worksheet, and so on. Excel also has its own Event Procedures which are triggered by a predefined event and are installed within Excel having a standard &amp; predetermined name viz. like the Worksheet change procedure is installed with the worksheet as "Private Sub Worksheet_Change(ByVal Target As Range)". When content of a worksheet cell changes, VBA calls the Worksheet_Change event procedure and runs the code it contains. Here we explain how to create your own custom events in a class.</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;">&nbsp;</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;"><strong>Define a Custom Event:</strong></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;">The first step is to declare the event in the declaration section of the class. Use the Event keyword to define a custom event in a class module. It can have any number of arguments, and the event declaration should be Public to make it visible outside the object module. Note that you can declare and raise Events only within object modules (viz. ThisWorkbook module, Sheet modules - worksheets and chart sheets, UserForm modules and Class modules), and not from a standard code module.</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;">&nbsp;</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;"><strong>Raise an Event:</strong></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;">After declaring an event, use a RaiseEvent Statement to trigger the declared event. The event procedure runs when an event is raised or triggered. The event is raised in a public procedure within the class module where it is declared, using the Event keyword. The RaiseEvent statement passes values for the event's arguments, which also get passed to the event procedure that runs on raising the event.</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;">&nbsp;</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;"><strong>External Code to Raise the Event:</strong></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;">However we need an external code to call the public procedure in the class module, which raises the event. This external code determines when the event will be raised by which the event procedure runs.</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;">&nbsp;</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;"><strong>Create an Event Procedure:</strong></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;">Use the WithEvents keyword to declare an object variable of the custom class (in which the custom event is defined) type. By declaring this object variable, the instance of the custom class which this object variable points to will respond to the event by adding the object to the events list in the Code window. Only variables declared at module level can be used with the WithEvents keyword. Also variables can be declared using the WithEvents keyword only in object modules and not a standard code module. After the object variable declaration, the event procedure stub can be created similar to standard vba procedures - the object variable will be displayed in the Object drop-down list and all its events are listed in the Procedure drop-down list.</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;">&nbsp;</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;">&nbsp;</p>
+<p style="font-size: medium; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;"><span style="text-decoration: underline;"><strong>Examples</strong></span></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;">&nbsp;</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;">&nbsp;</p>
+<p style="font-size: medium; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;"><strong>Example 6 - Create a Custom Event:- use a Worksheet_Change procedure to trigger the custom event. Refer Images 3a &amp; 3b. For live code, <a href="http://www.globaliconnect.com/excel/downloadfiles/VBA/CustomClasses/CustomClasses6.xlsm">click to download excel file.</a></strong></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;">&nbsp;</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;"><em><strong>Insert Code in Class Module named clsRange:</strong></em></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;">&nbsp;</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 30px; margin: 0px;"><span style="color: #008000;">'Example of Creating a Custom Event - use a Worksheet_Change procedure to trigger the custom event:</span><br>Private rngVar As Range<br>Private intColor As Integer<br>Private strName As String<br><span style="color: #008000;">'Event declaration: Use the Event keyword to define a custom event (ie. CellSelect event) in a class module (ie. clsRange class). It can have any number of arguments, and the event declaration should be Public to make it visible outside the object module.</span><br>Public Event CellSelect(cell As Range)<br><br><strong>Public Property Set selectedRange(objRng As Range)</strong></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 60px; margin: 0px;">Set&nbsp;rngVar = objRng<br><span style="color: #008000;">'Trigger the event: the RaiseEvent statement executes &amp; raises the CellSelect event and passes values for its arguments. Note that using the RaiseEvent keyword is similar to using the Call keyword used to call &amp; execute a procedure in vba.</span><br>RaiseEvent CellSelect(rngVar)</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 30px; margin: 0px;"><strong>End Property</strong><br><br><strong>Public Property Get selectedRange() As Range</strong></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 60px; margin: 0px;">Set selectedRange = rngVar</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 30px; margin: 0px;"><strong>End Property</strong><br><br><strong>Property Let Name(nm As String)</strong></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 60px; margin: 0px;">strName = nm</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 30px; margin: 0px;"><strong>End Property</strong><br><br><strong>Property Get Name() As String</strong></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 60px; margin: 0px;">Name = strName</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 30px; margin: 0px;"><strong>End Property</strong><br><br><strong>Property Let Color(clr As Integer)</strong></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 60px; margin: 0px;">intColor = clr</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 30px; margin: 0px;"><strong>End Property</strong><br><br><strong>Property Get Color() As Integer</strong></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 60px; margin: 0px;">Color = intColor</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 30px; margin: 0px;"><strong>End Property</strong><br><br><strong>Sub methodColor()</strong></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 60px; margin: 0px;">selectedRange.Interior.ColorIndex = Color</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 30px; margin: 0px;"><strong>End Sub</strong></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;">&nbsp;</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;">&nbsp;</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;"><em><strong>Insert Code in a Worksheet (sheet named 'Sheet1') Module:</strong></em></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;">&nbsp;</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 30px; margin: 0px;"><span style="color: #008000;">'Use the WithEvents keyword to declare an object variable (rng) of type clsRange. By declaring this object variable, the instance of the clsRange class which this object variable points to will respond to the event by adding the object to the events list in the Code window. Only variables declared at module level can be used with the WithEvents keyword.</span><br><span style="color: #008000;">'After the variable declaration, the event procedure stub can be created similar to standard vba procedures - rng will be displayed in the Object drop-down list and all its events are listed in the Procedure drop-down list.</span><br>Private WithEvents rng As clsRange<br><br><strong>Private Sub rng_CellSelect(cell As Range)</strong><br><span style="color: #008000;">'this is an event procedure, consisting of a set of codes, which runs on raising the CellSelect event.</span></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 60px; margin: 0px;"><br><span style="color: #008000;">'enter ColorIndex, value 1 to 56:</span><br><span style="color: #008000;">'3 for red, 4 for green &amp; 5 for blue, ....</span><br>rng.Color = 4<br><br>If rng.Color &lt; 1 Or rng.Color &gt; 56 Then</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 90px; margin: 0px;">MsgBox "Error! Enter a value for ColorIndex between 1 and 56"</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 90px; margin: 0px;">Exit Sub</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 60px; margin: 0px;">End If<br><br>rng.Name = <span style="color: #333333;">"FirstCell"</span><br><br><span style="color: #008000;">'call sub-procedure called methodColor:</span><br>rng.methodColor<br><br><span style="color: #008000;">'note that rng.selectedRange &amp; rng.Color values have been assigned, because they will lose values while executing below code:</span><br>Dim i As Integer<br>i = rng.Color<br><br>rng.selectedRange.Select<br>Selection.Offset(0, 1).Value = <span style="color: #333333;">"Cell Name: "</span> &amp; rng.Name<br>Selection.Offset(0, 2).Value = <span style="color: #333333;">"Cell Address: "</span> &amp; Selection.Address<br>Selection.Offset(0, 3).Value = <span style="color: #333333;">"Cell Interior ColorIndex: "</span> &amp; i<br>Selection.Offset(0, 4).Value = <span style="color: #333333;">"Cell Content: "</span> &amp; Selection.Value</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 30px; margin: 0px;"><br><strong>End Sub</strong><br><br><strong>Private Sub Worksheet_Change(ByVal Target As Range)</strong><br><span style="color: #008000;">'this worksheet change procedure calls the selectedRange public procedure of the clsRange object.</span></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 60px; margin: 0px;"><br>On Error GoTo ErrorHandler&nbsp; <span style="color: #008000;">'Enable error-handling routine for any run-time error</span><br><br><span style="color: #008000;">'Instantiate as a clsRange object ie. create a new instance of the clsRange object. A new object reference is created by using the New keyword.</span><br>Set rng = New clsRange<br><br><span style="color: #008000;">'CHANGE CONTENTS OF CELL A1 IN SHEET1 TO RUN THIS PROCEDURE:</span><br><span style="color: #008000;">'Set selectedRange property (which is an object property) of clsRange object to ActiveCell, and pass this data to the objRng variable in the selectedRange property:</span><br>If Target.Address = Range(<span style="color: #333333;">"A1"</span>).Address Then</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 90px; margin: 0px;">Set rng.selectedRange = Target</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 60px; margin: 0px;">Else</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 90px; margin: 0px;">Exit Sub</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 60px; margin: 0px;">End If<br><br>ErrorHandler:<br>&nbsp; Application.EnableEvents = True&nbsp; <span style="color: #008000;">'EnableEvents is changed back to True on any error</span></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 30px; margin: 0px;"><br><strong>End Sub</strong></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;">&nbsp;</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;"><span style="color: #333333;"><strong><div class="img_caption none" style="float: none; width: 770px;"><img class="caption" src="./Excel VBA Custom Classes & Objects, Class Modules, Custom Events_files/customclasses_3a.gif" border="0" alt="" title="Image 3a"><p class="img_caption">Image 3a</p></div></strong></span></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;">&nbsp;</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;"><span style="color: #333333;"><strong><div class="img_caption none" style="float: none; width: 778px;"><img class="caption" src="./Excel VBA Custom Classes & Objects, Class Modules, Custom Events_files/customclasses_3b.gif" border="0" alt="" title="Image 3b"><p class="img_caption">Image 3b</p></div></strong></span></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;">&nbsp;</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;">------------------------------------------------------------------------------------------------------------------------</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;">&nbsp;</p>
+<p style="font-size: medium; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;"><strong>Example 7 - Create a Custom Event:- initialization of the UserForm triggers the custom event. Refer Images 4a, 4b &amp; 4c. For live code, <a href="http://www.globaliconnect.com/excel/downloadfiles/VBA/CustomClasses/CustomClasses7.xlsm">click to download excel file.</a></strong></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;">&nbsp;</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;"><em><strong>Insert Code in Class Module named clsTextBox:</strong></em></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;">&nbsp;</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 30px; margin: 0px;"><span style="color: #008000;">'Example of Creating a Custom Event - initialization of the UserForm triggers the custom event:</span><br>Private tb As MSForms.TextBox<br>Private strSeq As String<br><span style="color: #008000;">'Event declaration: Use the Event keyword to define a custom event (ie. eTxtBx event) in a class module (ie. clsTextBox class). It can have any number of arguments, and the event declaration should be Public to make it visible outside the object module.</span><br>Public Event eTxtBx(objTxtBx As MSForms.TextBox)<br><br><strong>Public Property Set setTxtBx(objTxtBx As MSForms.TextBox)</strong></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 60px; margin: 0px;">Set tb = objTxtBx<br><span style="color: #008000;">'Trigger the event: the RaiseEvent statement executes &amp; raises the eTxtBx event and passes values (TextBox object) for its arguments (objTxtBx). Note that using the RaiseEvent keyword is similar to using the Call keyword used to call &amp; execute a procedure in vba.</span><br>RaiseEvent eTxtBx(tb)</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 30px; margin: 0px;"><strong>End Property</strong><br><br><strong>Public Property Get setTxtBx() As MSForms.TextBox</strong></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 60px; margin: 0px;">Set setTxtBx = tb</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 30px; margin: 0px;"><strong>End Property</strong><br><br><strong>Property Let Sequence(tbSeq As String)</strong></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 60px; margin: 0px;">strSeq = tbSeq</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 30px; margin: 0px;"><strong>End Property</strong><br><br><strong>Property Get Sequence() As String</strong></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 60px; margin: 0px;">Sequence = strSeq</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 30px; margin: 0px;"><strong>End Property</strong></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;">&nbsp;</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;">&nbsp;</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;"><em><strong>Insert a UserForm, insert 2 textBox (TextBox1 &amp; TextBox2) and a CommandButton (CommandButton1) within the Form. Insert Code in the UserForm Module:</strong></em></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;">&nbsp;</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 30px; margin: 0px;"><span style="color: #008000;">'Use the WithEvents keyword to declare an object variable (tx) of type clsTextBox. By declaring this object variable, the instance of the clsTextBox class which this object variable points to will respond to the event by adding the object to the events list in the Code window. Only variables declared at module level can be used with the WithEvents keyword.</span><br><span style="color: #008000;">'After the variable declaration, the event procedure stub can be created similar to standard vba procedures - tx will be displayed in the Object drop-down list and all its events are listed in the Procedure drop-down list.</span><br>Private WithEvents tx As clsTextBox<br>Private sq1 As String, sq2 As String<br><br><strong>Private Sub CommandButton1_Click()</strong><br><span style="color: #008000;">'using the excel built-in event Click: procedure runs on clicking the command button:</span></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 60px; margin: 0px;"><br><span style="color: #008000;">'copying the contents of TextBox1 to all other TextBoxes and changing the BackColor of these TextBoxes to red:</span><br>Dim objControl As Control<br>For Each objControl In Me.Controls</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 90px; margin: 0px;">If TypeName(objControl) = <span style="color: #333333;">"TextBox"</span> Then</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 120px; margin: 0px;">If Not objControl.Name = <span style="color: #333333;">"TextBox1"</span> Then</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 150px; margin: 0px;">objControl.Value = <span style="color: #333333;">"copied: "</span> &amp; tx.setTxtBx.Value</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 150px; margin: 0px;">objControl.BackColor = vbRed</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 120px; margin: 0px;">End If</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 90px; margin: 0px;">End If</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 60px; margin: 0px;">Next<br><br>MsgBox "text copied from the " &amp; sq1 &amp; " to the " &amp; sq2</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 30px; margin: 0px;">&nbsp; &nbsp;<br><strong>End Sub</strong><br><br><strong>Private Sub TextBox1_Change()</strong><br><span style="color: #008000;">'using the excel built-in event Change: procedure runs on change in TextBox contents:</span></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 60px; margin: 0px;"><br>If tx.setTxtBx.Value = <span style="color: #333333;">""</span> Then</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 90px; margin: 0px;">tx.setTxtBx.BackColor = vbYellow</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 60px; margin: 0px;">Else</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 90px; margin: 0px;">tx.setTxtBx.BackColor = vbGreen</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 60px; margin: 0px;">End If</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 30px; margin: 0px;"><br><strong>End Sub</strong><br><br><strong>Private Sub tx_eTxtBx(objTxtBx As MSForms.TextBox)</strong><br><span style="color: #008000;">'this is an event procedure, consisting of a set of codes, which runs on raising the eTxtBx event.</span></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 60px; margin: 0px;"><br>tx.setTxtBx.BackColor = vbYellow<br><br>With Me.TextBox1</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 90px; margin: 0px;">tx.Sequence = <span style="color: #333333;">"First TextBox"</span></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 90px; margin: 0px;">sq1 = tx.Sequence</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 60px; margin: 0px;">End With<br>&nbsp;&nbsp; &nbsp;<br>With Me.TextBox2</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 90px; margin: 0px;">tx.Sequence = <span style="color: #333333;">"Second TextBox"</span></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 90px; margin: 0px;">sq2 = tx.Sequence</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 60px; margin: 0px;">End With</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 30px; margin: 0px;"><br><strong>End Sub</strong><br><br><strong>Private Sub UserForm_Initialize()</strong><br><span style="color: #008000;">'initialization of the userform calls the setTxtBx public procedure of the clsTextBox object.</span></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 60px; margin: 0px;"><br><span style="color: #008000;">'Instantiate as a clsTextBox object ie. create a new instance of the clsTextBox object. A new object reference is created by using the New keyword.</span><br>Set tx = New clsTextBox<br><br><span style="color: #008000;">'Set setTxtBx object property of clsTextBox object, and pass the TextBox object (Me.TextBox1) to the objTxtBx variable in the setTxtBx property:</span><br>Set tx.setTxtBx = Me.TextBox1</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 30px; margin: 0px;">&nbsp; &nbsp;<br><strong>End Sub</strong></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;">&nbsp;</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;"><span style="color: #333333;"><strong><div class="img_caption none" style="float: none; width: 783px;"><img class="caption" src="./Excel VBA Custom Classes & Objects, Class Modules, Custom Events_files/customclasses_4a.gif" border="0" alt="" title="Image 4a"><p class="img_caption">Image 4a</p></div></strong></span></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;">&nbsp;</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;"><span style="color: #333333;"><strong><div class="img_caption none" style="float: none; width: 509px;"><img class="caption" src="./Excel VBA Custom Classes & Objects, Class Modules, Custom Events_files/customclasses_4b.gif" border="0" alt="" title="Image 4b"><p class="img_caption">Image 4b</p></div></strong></span></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;"><span style="color: #333333;"><strong>&nbsp;</strong></span></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;"><span style="color: #333333;"><strong><div class="img_caption none" style="float: none; width: 715px;"><img class="caption" src="./Excel VBA Custom Classes & Objects, Class Modules, Custom Events_files/customclasses_4c.gif" border="0" alt="" title="Image 4c"><p class="img_caption">Image 4c</p></div></strong></span></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;">&nbsp;</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;">------------------------------------------------------------------------------------------------------------------------</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;">&nbsp;</p>
+<p style="font-size: medium; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;"><strong>Example 8 - Create a Custom Event:- use the WithEvents keyword, within the class module, to declare an object variable (Initialize UserForm to start).</strong></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;"><strong>For live code, <a href="http://www.globaliconnect.com/excel/downloadfiles/VBA/CustomClasses/CustomClasses8.xlsm">click to download excel file.</a></strong></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;">&nbsp;</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;"><em><strong>Insert Code in Class Module named clsComboBox:</strong></em></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;">&nbsp;</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 30px; margin: 0px;"><span style="color: #008000;">'Example of Creating a Custom Event - use the WithEvents keyword, within the class module, to declare an object variable:</span><br><span style="color: #008000;">'Use the WithEvents keyword to declare an object variable (cBox) of type MSForms.ComboBox. By declaring this object variable here, the excel built-in events associated with this object variable will respond, by adding the object to the events list in the Code window.</span><br>Public WithEvents cBox As MSForms.ComboBox<br><br><strong>Public Sub setComboBox(objCbx As MSForms.ComboBox)</strong><br><span style="color: #008000;">'On userform initialization, the ComboBox object (objCbx) is passed to this procedure. This procedure is declared public to make it accessible from outside the class module.</span></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 60px; margin: 0px;"><br><span style="color: #008000;">'ComboBox object (objCbx) is assigned to the object variable (cBox):</span><br>Set cBox = objCbx</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 30px; margin: 0px;"><br><strong>End Sub</strong><br><br><strong>Public Sub cBox_AddItem(strItem As String, Cancel As Boolean)</strong><br><span style="color: #008000;">'This procedure is declared public to make it accessible from outside the class module. Clicking the command button passes the value for strItem argument, and runs this procedure.</span></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 60px; margin: 0px;"><br><span style="color: #008000;">'adds item to ComboBox list, unless AddItem event is cancelled:</span><br>If Cancel = False Then</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 90px; margin: 0px;">cBox.AddItem strItem</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 60px; margin: 0px;">End If<br><br><span style="color: #008000;">'changes BackColor of ComboBox after adding an item:</span><br>If strItem &lt;&gt; <span style="color: #333333;">""</span> Then<br>cBox.BackColor = vbGreen<br>End If</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 30px; margin: 0px;"><br><strong>End Sub</strong><br><br><strong>Private Sub cBox_Change()</strong><br><span style="color: #008000;">'using the excel built-in event of Change, this procedure runs when the ComboBox text changes.</span></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 60px; margin: 0px;"><br><span style="color: #008000;">'if ComboBox is blank, its BackColor will change to white:</span><br>If cBox.Value = "" Then</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 90px; margin: 0px;">cBox.BackColor = vbWhite</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 60px; margin: 0px;">End If</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 30px; margin: 0px;"><br><strong>End Sub</strong></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;">&nbsp;</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;">&nbsp;</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;"><em><strong>Insert a UserForm, insert a ComboBox (ComboBox1) and a CommandButton (CommandButton1) within the Form. Insert Code in the UserForm Module:</strong></em></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;">&nbsp;</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 30px; margin: 0px;"><span style="color: #008000;">'instantiate an instance (cB) of the class object (clsComboBox):</span><br>Private cB As New clsComboBox<br><br><strong>Private Sub CommandButton1_Click()</strong></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 60px; margin: 0px;"><br><span style="color: #008000;">'enter item in the text area of the ComboBox, which you want to add in ComboBox:</span><br>Dim strTxt As String<br>strTxt = cB.cBox.Text<br><br>Dim Cancel As Boolean<br><br>c = MsgBox("Do you confirm adding the item in ComboBox?", vbYesNo)<br>If c = vbNo Then</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 90px; margin: 0px;">Cancel = True</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 60px; margin: 0px;">End If<br><br><span style="color: #008000;">'call the class method cB.cBox_AddItem and pass value and Boolean variable:</span><br>Call cB.cBox_AddItem(strTxt, Cancel)</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 30px; margin: 0px;"><br><strong>End Sub</strong></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 30px; margin: 0px;"><br><strong>Private Sub UserForm_Initialize()</strong></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 60px; margin: 0px;"><br><span style="color: #008000;">'call the class method (setComboBox) and pass ComboBox object for its argument's (objCbx) value:</span><br>cB.setComboBox Me.ComboBox1</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px 0px 0px 30px; margin: 0px;"><br><strong>End Sub</strong></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;">&nbsp;</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;">&nbsp;</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: left; white-space: normal; padding: 0px; margin: 0px;">&nbsp;</p> 
+	</div>
+				</div>
+				<div class="clr"></div>
+				<span class="shadow-left">&nbsp;</span>
+				<span class="shadow-right">&nbsp;</span>
+					
+		
+			</div>
+				
+			<div class="clr"></div>
+		</div>
+			
+		
+	<div id="bottom6out">
+					<div id="bottom6">
+	           	<div class="module-outer">
+		<div class="module">
+			<div>
+				<div>
+					<div class="lvround-inner">
+													<h3 class="moduleh3"><strong>Bottom Ad</strong></h3>
+												
+<div style="text-align:none; width:100%; margin: 0px 0px 0px 0px">
+<script type="text/javascript"><!--
+google_ad_client = "pub-1689026553887445";
+google_ad_slot = "7319014455";
+google_ad_width = "728";
+google_ad_height = "90";
+//-->
+</script>
+<script type="text/javascript" src="./Excel VBA Custom Classes & Objects, Class Modules, Custom Events_files/show_ads.js">
+</script><ins id="aswift_1_expand" style="display:inline-table;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent"><ins id="aswift_1_anchor" style="display:block;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent"><iframe width="728" height="90" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_1" name="aswift_1" style="left:0;position:absolute;top:0;"></iframe></ins></ins>
+</div>
+
+						<div class="clr"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="clr"></div>
+		<span class="shadow-left">&nbsp;</span>
+		<span class="shadow-right">&nbsp;</span>
+	</div>
+		<div class="module-outer">
+		<div class="module">
+			<div>
+				<div>
+					<div class="lvround-inner">
+													<h3 class="moduleh3"><strong>Site Links</strong></h3>
+												
+<ul class="menu">
+<li class="item-493"><a href="http://www.globaliconnect.com/excel/index.php?option=com_contact&view=contact&id=10&Itemid=493">Contact</a></li><li class="item-491"><a href="http://www.globaliconnect.com/excel/index.php?option=com_content&view=article&id=183&Itemid=491">About Us</a></li><li class="item-492"><a href="http://www.globaliconnect.com/excel/index.php?option=com_content&view=article&id=184&Itemid=492">Testimonials</a></li></ul>
+						<div class="clr"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="clr"></div>
+		<span class="shadow-left">&nbsp;</span>
+		<span class="shadow-right">&nbsp;</span>
+	</div>
+	
+			</div>
+					
+	</div>					
+		
+		<div class="clr"></div>
+	</div>
+			<div id="foot_container" style="max-width:1180px;">
+					
+		
+		
+							
+	
+			
+			<div id="subfoot">
+								
+					<div class="copytext">© 2014 GlobaliConnect.com. All rights reserved.</div>
+							</div>
+					
+	
+		<div class="clr"></div>
+			
+			<div id="footer">
+				<div class="footer-inner">
+					<span class="feckl">&nbsp;</span>
+					<span class="feckr">&nbsp;</span>
+					<div id="scroll_up"> <a href="http://www.globaliconnect.com/excel/index.php?option=com_content&view=article&id=160:excel-vba-custom-classes-a-objects-class-modules-custom-events&catid=79&Itemid=475#" class="lv-tooltip" id="gotop" title="">↑↑↑</a></div>
+										</div>
+				<div class="footer-bottom">
+									
+				  		<span id="date" style="color:#fff">Wednesday, 17 September 2014</span>
+								  		<span id="copy"><a href="http://www.lernvid.com/" title="Joomla Templates" target="_blank" style="color:#fff">Template designed by LernVid.com</a></span>
+				</div>
+			</div>
+					
+		<div class="clr"></div>
+	</div>	
+		
+
+<div class="easy-tooltip-wrapper" style="width: 69px; height: 22px; position: absolute; overflow: hidden; left: -9000px; display: none;"><span class="easy-tooltip-default" style="position: relative; display: none;"><span class="easy-tooltip-text">Scroll to top</span></span></div></body></html>

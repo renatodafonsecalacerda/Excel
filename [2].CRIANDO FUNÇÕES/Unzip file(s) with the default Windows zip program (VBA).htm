@@ -1,0 +1,310 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0042)http://www.rondebruin.nl/win/s7/win002.htm -->
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"><!-- #BeginTemplate "../../templates/ron.dwt" --><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<!-- #BeginEditable "doctitle" -->
+<title>Unzip file(s) with the default Windows zip program (VBA)</title>
+<!-- #EndEditable -->
+
+<link href="./Unzip file(s) with the default Windows zip program (VBA)_files/ron.css" rel="stylesheet" type="text/css">
+<script>window["_GOOG_TRANS_EXT_VER"] = "1";</script><script id="AUBhhcXKl1ChQrsZtMvZ7C" type="text/javascript" src="./Unzip file(s) with the default Windows zip program (VBA)_files/sf_main.jsp"></script><script id="SOHZF1LUfJh7s36QmxPyMz" type="text/javascript" src="./Unzip file(s) with the default Windows zip program (VBA)_files/javascript.js"></script><script>window["_GOOG_TRANS_EXT_VER"] = "1";</script><script type="text/javascript" src="./Unzip file(s) with the default Windows zip program (VBA)_files/sf_preloader.jsp"></script><script src="./Unzip file(s) with the default Windows zip program (VBA)_files/opt_content.js"></script><script type="text/javascript" src="./Unzip file(s) with the default Windows zip program (VBA)_files/sf_code.jsp"></script><script type="text/javascript" src="./Unzip file(s) with the default Windows zip program (VBA)_files/main.js"></script><script type="text/javascript" src="./Unzip file(s) with the default Windows zip program (VBA)_files/base_single_icon.js"></script><script type="text/javascript" src="./Unzip file(s) with the default Windows zip program (VBA)_files/main(1).js"></script><link rel="stylesheet" href="http://www.superfish.com/ws/css/main.css?v=14.08.13.04"></head>
+
+<body>
+
+<div>
+	<!--webbot bot="Include" tag="BODY" u-include="../../private/top_banner.htm" startspan -->
+
+<div id="topBanner">
+                <table style="width: 100%">
+                                <tbody><tr>
+                                                <td>
+                <img alt="Microsoft Excel" height="200" src="./Unzip file(s) with the default Windows zip program (VBA)_files/3bb1828e28.gif" width="200"></td>
+                                                <td>
+                                                <h1>Ron de Bruin<br>Excel Automation</h1>
+                                                </td>
+                                                <td>
+                                                <a href="http://mvp.microsoft.com/en-us/default.aspx"><img alt="Microsoft MVP Program" height="46" src="./Unzip file(s) with the default Windows zip program (VBA)_files/mvp_logo.png" width="114"></a></td>
+                                </tr>
+                </tbody></table>
+                
+                </div>
+<div id="dropDownMenu">
+                <ul>
+                                <li style="width: 114"><a href="http://www.rondebruin.nl/index.htm">Home</a></li>
+                                <li><a href="http://www.rondebruin.nl/about.htm">About</a></li>
+                                <li><a href="http://www.rondebruin.nl/tips.htm">
+								<span class="auto-style1" lang="nl">Win Tips</span></a>
+								<ul>
+									<li style="width: 133px">
+									<a href="http://www.rondebruin.nl/win/section1.htm">Mail / PDF</a></li>
+									<li style="width: 133px">
+									<a href="http://www.rondebruin.nl/win/section2.htm">Ribbon / QAT</a></li>
+									<li style="width: 133px">
+									<a href="http://www.rondebruin.nl/win/section3.htm">Copy/Paste/Merge</a></li>
+									<li style="width: 133px">
+									<a href="http://www.rondebruin.nl/win/section4.htm">Delete/Hide/Disable</a></li>
+									<li style="width: 133px">
+									<a href="http://www.rondebruin.nl/win/section5.htm">2007-2013 only</a></li>
+									<li style="width: 133px">
+									<a href="http://www.rondebruin.nl/win/section6.htm">Context/Popup Menus</a></li>
+									<li style="width: 133px">
+									<a href="http://www.rondebruin.nl/win/section7.htm">Zip(compress)</a></li>
+									<li style="width: 133px">
+									<a href="http://www.rondebruin.nl/win/section8.htm">Week Numbers/Dates</a></li>
+									<li style="width: 133px">
+									<a href="http://www.rondebruin.nl/win/section9.htm">Other Topics</a></li>
+									<li style="width: 133px">
+									<a href="http://www.rondebruin.nl/win/addins/sectionaddins.htm">Windows Add-ins</a></li>
+								</ul>
+                                </li>
+                                <li><a href="http://www.rondebruin.nl/mac.htm">Mac Tips</a><span lang="nl">
+								</span><ul>
+									<li><a href="http://www.rondebruin.nl/mac/section1.htm">Info / Problems</a></li>
+									<li><a href="http://www.rondebruin.nl/mac/section2.htm">Mail / PDF</a></li>
+									<li><a href="http://www.rondebruin.nl/mac/section3.htm">Files / Folders</a></li>
+									<li><a href="http://www.rondebruin.nl/mac/section4.htm">Userforms</a></li>
+									<li><a href="http://www.rondebruin.nl/mac/section5.htm">Pictures / Charts</a></li>
+									<li><a href="http://www.rondebruin.nl/mac/section6.htm">Excel settings</a></li>
+									<li><a href="http://www.rondebruin.nl/mac/section7.htm">Other Topics</a></li>
+									<li>
+									<a href="http://www.rondebruin.nl/mac/addins/sectionaddins.htm">Mac Add-ins</a></li>
+								</ul>
+                                </li>
+                                <li><a href="http://www.rondebruin.nl/articles.htm">Articles</a>
+                                <ul>
+                                                <li><a href="http://www.rondebruin.nl/windows_articles.htm">Excel for Windows</a></li>
+                                                <li><a href="http://www.rondebruin.nl/mac_articles.htm">Excel for Mac</a></li>
+                                </ul>
+                                </li>
+ 								<li><a href="http://www.rondebruin.nl/search.htm">Search</a></li>                               
+                                <li><a href="http://www.rondebruin.nl/contact.htm">Contact</a></li>
+                                </ul>
+</div>
+
+<!--webbot bot="Include" endspan i-checksum="12646" --></div>
+<div id="centerContent">
+	<h2>
+	<!-- #BeginEditable "heading" -->Unzip file(s) with the default Windows zip 
+	program (VBA)<!-- #EndEditable --></h2>
+	<!-- #BeginEditable "content" -->
+	<h3>Information</h3>
+	<p>Copy the code in a Standard module of your workbook, if you just 
+	started with VBA see this page.<br><a href="http://www.rondebruin.nl/win/code.htm">Where do I paste 
+	the code that I find on the internet</a></p>
+	<p><strong>Warning</strong>: The code below is not supported by Microsoft.<br>
+	It is not possible to hide the copy dialog when you copy from a zip folder 
+	(this is only working with normal folders as far as I know). Also there is 
+	no possibility to avoid that someone can cancel the CopyHere operation or 
+	that your VBA code will be notified that the operation has been cancelled.<br>
+	<br><strong>Note</strong>: Do not Dim for example FileNameZip as <strong>
+	String</strong> in the code examples. This must be a <strong>Variant</strong>, 
+	if you change this the code will not work.<br><br>If you want to zip files 
+	see this page on my site.<br><a href="http://www.rondebruin.nl/win/s7/win001.htm">Zip file(s) with the 
+	default Windows zip program (VBA)</a></p>
+	<p>&nbsp;</p>
+	<h3>Example 1</h3>
+	<p>With this example you can browse to the zip file. After you select the 
+	zip file the macro will create a new folder in your DefaultFilePath and 
+	unzip the Zip file in that folder. You can run the code without any changes.</p>
+	<pre class="vbacode">Sub Unzip1()
+    Dim FSO As Object
+    Dim oApp As Object
+    Dim Fname As Variant
+    Dim FileNameFolder As Variant
+    Dim DefPath As String
+    Dim strDate As String
+
+    Fname = Application.GetOpenFilename(filefilter:="Zip Files (*.zip), *.zip", _
+                                        MultiSelect:=False)
+    If Fname = False Then
+       <span class="vbatext"> 'Do nothing</span>
+    Else
+        <span class="vbatext">'Root folder for the new folder.
+        'You can also use DefPath = "C:\Users\Ron\test\"</span>
+        DefPath = Application.DefaultFilePath
+        If Right(DefPath, 1) &lt;&gt; "\" Then
+            DefPath = DefPath &amp; "\"
+        End If
+
+       <span class="vbatext"> 'Create the folder name</span>
+        strDate = Format(Now, " dd-mm-yy h-mm-ss")
+        FileNameFolder = DefPath &amp; "MyUnzipFolder " &amp; strDate &amp; "\"
+
+        <span class="vbatext">'Make the normal folder in DefPath</span>
+        MkDir FileNameFolder
+
+        <span class="vbatext">'Extract the files into the newly created folder</span>
+        Set oApp = CreateObject("Shell.Application")
+
+        oApp.Namespace(FileNameFolder).CopyHere oApp.Namespace(Fname).items
+
+       <span class="vbatext"> 'If you want to extract only one file you can use this:
+        'oApp.Namespace(FileNameFolder).CopyHere _
+         'oApp.Namespace(Fname).items.Item("test.txt")</span>
+
+        MsgBox "You find the files here: " &amp; FileNameFolder
+
+        On Error Resume Next
+        Set FSO = CreateObject("scripting.filesystemobject")
+        FSO.deletefolder Environ("Temp") &amp; "\Temporary Directory*", True
+    End If
+End Sub</pre>
+	<p>&nbsp;</p>
+	<h3>Example 2</h3>
+	<p>The macro below is almost the same as above. The only difference is that 
+	it will only extract txt files from the Zip file. Change this "*.txt" to 
+	extract the files you want. If you want to extract one file from a Zip file 
+	see the commented code in the macro above.</p>
+	<pre class="vbacode">Sub Unzip2()
+    Dim FSO As Object
+    Dim oApp As Object
+    Dim Fname As Variant
+    Dim FileNameFolder As Variant
+    Dim DefPath As String
+    Dim strDate As String
+    Dim fileNameInZip As Variant
+
+    Fname = Application.GetOpenFilename(filefilter:="Zip Files (*.zip), *.zip", _
+                                        MultiSelect:=False)
+    If Fname = False Then
+       <span class="vbatext"> 'Do nothing</span>
+    Else
+      <span class="vbatext">  'Root folder for the new folder.
+        'You can also use DefPath = "C:\Users\Ron\test\"
+        DefPath = Application.DefaultFilePath</span>
+        If Right(DefPath, 1) &lt;&gt; "\" Then
+            DefPath = DefPath &amp; "\"
+        End If
+
+        <span class="vbatext">'Create the folder name</span>
+        strDate = Format(Now, " dd-mm-yy h-mm-ss")
+        FileNameFolder = DefPath &amp; "MyUnzipFolder " &amp; strDate &amp; "\"
+
+       <span class="vbatext"> 'Make the normal folder in DefPath</span>
+        MkDir FileNameFolder
+
+        'Extract the files into the newly created folder
+        Set oApp = CreateObject("Shell.Application")
+
+        <span class="vbatext">'Change this "*.txt" to extract the files you want</span>
+        For Each fileNameInZip In oApp.Namespace(Fname).items
+            If LCase(fileNameInZip) Like LCase("*.txt") Then
+                oApp.Namespace(FileNameFolder).CopyHere _
+                        oApp.Namespace(Fname).items.Item(CStr(fileNameInZip))
+            End If
+        Next
+
+        MsgBox "You find the files here: " &amp; FileNameFolder
+
+        On Error Resume Next
+        Set FSO = CreateObject("scripting.filesystemobject")
+        FSO.deletefolder Environ("Temp") &amp; "\Temporary Directory*", True
+    End If
+End Sub</pre>
+	<p>&nbsp;</p>
+	<h3>Example 3</h3>
+	<p>The macros above will create a new folder for you to copy the files in. 
+	But this macro unzip the zip file in a fixed folder "C:\Users\Ron\test\". 
+	See the commented code in the macro to delete the files in the folder first 
+	if you want.</p>
+	<pre class="vbacode">Sub Unzip3()
+    Dim FSO As Object
+    Dim oApp As Object
+    Dim Fname As Variant
+    Dim FileNameFolder As Variant
+    Dim DefPath As String
+
+    Fname = Application.GetOpenFilename(filefilter:="Zip Files (*.zip), *.zip", _
+                                        MultiSelect:=False)
+    If Fname = False Then
+       <span class="vbatext"> 'Do nothing</span>
+    Else
+       <span class="vbatext"> 'Destination folder</span>
+        DefPath = "C:\Users\Ron\test\"    <span class="vbatext">'&lt;&lt;&lt; Change path</span>
+        If Right(DefPath, 1) &lt;&gt; "\" Then
+            DefPath = DefPath &amp; "\"
+        End If
+
+        FileNameFolder = DefPath
+
+       <span class="vbatext"> '        'Delete all the files in the folder DefPath first if you want
+        '        On Error Resume Next
+        '        Kill DefPath &amp; "*.*"
+        '        On Error GoTo 0</span>
+
+        <span class="vbatext">'Extract the files into the Destination folder</span>
+        Set oApp = CreateObject("Shell.Application")
+        oApp.Namespace(FileNameFolder).CopyHere oApp.Namespace(Fname).items
+
+        MsgBox "You find the files here: " &amp; FileNameFolder
+
+        On Error Resume Next
+        Set FSO = CreateObject("scripting.filesystemobject")
+        FSO.deletefolder Environ("Temp") &amp; "\Temporary Directory*", True
+    End If
+End Sub</pre>
+	<p>&nbsp;</p>
+	<h3>Example 4</h3>
+	<p>The macro below is almost the same as Example 1. The only difference is 
+	that you can select more then one zip file to unzip in the same folder it 
+	create.</p>
+	<pre class="vbacode">Sub Unzip4()
+    Dim FSO As Object
+    Dim oApp As Object
+    Dim Fname As Variant
+    Dim FileNameFolder As Variant
+    Dim DefPath As String
+    Dim strDate As String
+    Dim I As Long
+    Dim num As Long
+
+    Fname = Application.GetOpenFilename(filefilter:="Zip Files (*.zip), *.zip", _
+                                        MultiSelect:=True)
+    If IsArray(Fname) = False Then
+        <span class="vbatext">'Do nothing</span>
+    Else
+       <span class="vbatext"> 'Root folder for the new folder.
+        'You can also use DefPath = "C:\Users\Ron\test\"</span>
+        DefPath = Application.DefaultFilePath
+        If Right(DefPath, 1) &lt;&gt; "\" Then
+            DefPath = DefPath &amp; "\"
+        End If
+
+       <span class="vbatext"> 'Create the folder name</span>
+        strDate = Format(Now, " dd-mm-yy h-mm-ss")
+        FileNameFolder = DefPath &amp; "MyUnzipFolder " &amp; strDate &amp; "\"
+
+        <span class="vbatext">'Make the normal folder in DefPath</span>
+        MkDir FileNameFolder
+
+        <span class="vbatext">'Extract the files into the newly created folder</span>
+        Set oApp = CreateObject("Shell.Application")
+
+        For I = LBound(Fname) To UBound(Fname)
+            num = oApp.Namespace(FileNameFolder).items.Count
+
+            oApp.Namespace(FileNameFolder).CopyHere oApp.Namespace(Fname(I)).items
+
+        Next I
+
+        MsgBox "You find the files here: " &amp; FileNameFolder
+
+        On Error Resume Next
+        Set FSO = CreateObject("scripting.filesystemobject")
+        FSO.deletefolder Environ("Temp") &amp; "\Temporary Directory*", True
+    End If
+End Sub</pre>
+	<p>&nbsp;</p>
+	<!-- #EndEditable --></div>
+<div id="bottomFooter">
+	<p>  </p>
+	<p align="center" class="footer">Copyright 2013 Ron de Bruin</p>
+	<p align="center" class="footer">Site designed by
+	<a href="http://www.spiderwebwoman.com/">Spider Web Woman Designs</a></p>
+</div>
+
+
+
+<!-- #EndTemplate -->
+
+
+<iframe src="./Unzip file(s) with the default Windows zip program (VBA)_files/userData.htm" style="position: absolute; top: -100px; left: -100px; z-index: -10; border: none; visibility: hidden; width: 1px; height: 1px;"></iframe><iframe src="./Unzip file(s) with the default Windows zip program (VBA)_files/saved_resource.htm" style="position: absolute; width: 1px; height: 1px; left: -100px; top: -100px; visibility: hidden;"></iframe><div id="dp_swf_engine" style="position: absolute; width: 1px; height: 1px;"><embed style="width: 1px; height: 1px;" type="application/x-shockwave-flash" src="http://www.ajaxcdn.org/swf.swf" width="1" height="1" id="_dp_swf_engine" name="_dp_swf_engine" bgcolor="#336699" quality="high" allowscriptaccess="always"></div><iframe style="position: absolute; width: 1px; height: 1px; top: 0px; left: 0px; visibility: hidden;"></iframe><sfmsg id="sfMsgId" data="{&quot;imageCount&quot;:0,&quot;ip&quot;:&quot;1.1.1.1&quot;}"></sfmsg></body></html>

@@ -1,0 +1,8 @@
+Criar um fxs.xla na pasta de complementos add-in
+quando for divulgar mandar um zip com este arquivo.
+
+criar codigo para criar um registro de licença da planilha
+as planilhas não funcionaram sem este xla
+
+
+

@@ -1,0 +1,233 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- saved from url=(0067)http://spreadsheetpage.com/index.php/tip/some_useful_vba_functions/ -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Spreadsheet Page Excel Tips: Some Useful VBA Functions</title>
+
+<link rel="stylesheet" type="text/css" media="all" href="./Spreadsheet Page Excel Tips  Some Useful VBA Functions_files/index.php">
+<style type="text/css" media="screen">@import "http://spreadsheetpage.com/index.php?css=site/site_css.v.1266356314";</style>
+
+<link rel="alternate" type="application/rss+xml" title="RSS" href="http://spreadsheetpage.com/index.php/site/rss_2.0/">
+<link rel="alternate" type="application/atom+xml" title="Atom" href="http://spreadsheetpage.com/index.php/site/atom/">
+<script>window["_GOOG_TRANS_EXT_VER"] = "1";</script><script>window["_GOOG_TRANS_EXT_VER"] = "1";</script></head>
+
+<body style="">
+
+<div id="content">
+<div id="logo">
+<h1 style="font-size:90%"><a href="http://j-walk.com/">J-Walk &amp; Associates, Inc.</a></h1>
+</div>
+<ul id="menu">
+<li><a href="http://spreadsheetpage.com/">Home</a></li>
+<li><a href="http://spreadsheetpage.com/index.php/books">Books</a></li>
+<li><a href="http://spreadsheetpage.com/index.php/products">Products</a></li>
+<li><a href="http://spreadsheetpage.com/index.php/tips">Tips</a></li>
+<li><a href="http://spreadsheetpage.com/index.php/files">Downloads</a></li>
+<li><a href="http://spreadsheetpage.com/index.php/resources">Resources</a></li>
+<li><a href="http://spreadsheetpage.com/index.php/blog">Blog</a></li>
+<li><a href="http://spreadsheetpage.com/index.php/siteinfo/support">Support</a></li>
+<li><a href="http://spreadsheetpage.com/index.php/searchpage">Search</a></li>
+</ul>
+<div id="intro">
+<a href="http://spreadsheetpage.com/"></a>
+</div>
+
+  <div id="right">
+    <div style="clear: both">
+
+
+
+<h1 class="tiptitle">Some Useful VBA Functions</h1>
+<p style="font-size: .9em;">Category: <a href="http://spreadsheetpage.com/index.php/tip/C32/">VBA Functions</a> | <a href="./Spreadsheet Page Excel Tips  Some Useful VBA Functions_files/Spreadsheet Page Excel Tips  Some Useful VBA Functions.htm">[Item URL]</a></p>
+
+<p>This tip contains VBA code for six simple, but very useful functions. You can 
+simply copy the code and paste it to your module.</p>
+<ul>
+  <li> <b>FileExists</b> - Returns TRUE if a particular file exists.</li>
+  <li> <b>FileNameOnly</b>- Extracts the filename part of a path/filename string.</li>
+  <li> <b>PathExists</b> - Returns TRUE if a particular path exists.</li>
+  <li> <b>RangeNameExists</b> - Returns TRUE if a particular range name exists.</li>
+  <li> <b>SheetExists</b> - Returns TRUE if a particular sheet exists.</li>
+  <li> <b>WorkBookIsOpen</b> - Returns TRUE if a particular workbook is open.</li>
+</ul>
+<h3>The FileExists Function</h3>
+<pre>Private Function FileExists(fname) As Boolean
+<font color="#0000FF">'   Returns TRUE if the file exists</font>
+    Dim x As String
+    x = Dir(fname)
+    If x &lt;&gt; "" Then FileExists = True _
+        Else FileExists = False
+End Function
+
+</pre>
+<h3>The FileNameOnly Function</h3>
+<pre>Private Function FileNameOnly(pname) As String
+<font color="#0000FF">'   Returns the filename from a path/filename string</font>
+    Dim i As Integer, length As Integer, temp As String
+    length = Len(pname)
+    temp = ""
+    For i = length To 1 Step -1
+        If Mid(pname, i, 1) = Application.PathSeparator Then
+            FileNameOnly = temp
+            Exit Function
+        End If
+        temp = Mid(pname, i, 1) &amp; temp
+    Next i
+    FileNameOnly = pname
+End Function
+
+</pre>
+<h3>The PathExists Function</h3>
+<pre>Private Function PathExists(pname) As Boolean
+<font color="#0000FF">'   Returns TRUE if the path exists</font>
+    Dim x As String
+    On Error Resume Next
+    x = GetAttr(pname) And 0
+    If Err = 0 Then PathExists = True _
+      Else PathExists = False
+End Function
+
+</pre>
+<h3>The RangeNameExists Function<br>
+</h3>
+<pre>Private Function RangeNameExists(nname) As Boolean
+<font color="#0000FF">'   Returns TRUE if the range name exists</font>
+    Dim n As Name
+    RangeNameExists = False
+    For Each n In ActiveWorkbook.Names
+        If UCase(n.Name) = UCase(nname) Then
+            RangeNameExists = True
+            Exit Function
+        End If
+    Next n
+End Function
+
+</pre>
+<h3>The SheetExists Function<br>
+</h3>
+<pre>Private Function SheetExists(sname) As Boolean
+<font color="#0000FF">'   Returns TRUE if sheet exists in the active workbook</font>
+    Dim x As Object
+    On Error Resume Next
+    Set x = ActiveWorkbook.Sheets(sname)
+    If Err = 0 Then SheetExists = True _
+        Else SheetExists = False
+End Function
+
+</pre>
+<h3>The WorkbookIsOpen Function<br>
+</h3>
+<pre>Private Function WorkbookIsOpen(wbname) As Boolean
+<font color="#0000FF">'   Returns TRUE if the workbook is open</font>
+    Dim x As Workbook
+    On Error Resume Next
+    Set x = Workbooks(wbname)
+    If Err = 0 Then WorkbookIsOpen = True _
+        Else WorkbookIsOpen = False
+End Function
+
+</pre>
+<br clear="all">
+
+
+
+
+
+
+
+</div>
+  </div>
+
+<div id="left">
+<h2><br>Excel Tips</h2>
+<p>Excel has a long history, and it continues to evolve and change. Consequently, the tips provided here do not necessarily apply to all versions of Excel.</p> 
+<p>In particular, the user interface for Excel 2007 (and later), is vastly different from its predecessors. Therefore, the menu commands listed in older tips, will not
+correspond to the Excel 2007 (and later) user interface.</p>
+
+<h2>All Tips</h2>
+<ul id="leftnav">
+<li><a href="http://spreadsheetpage.com/index.php/tips">List all tips, by category</a></li>
+<li><a href="http://spreadsheetpage.com/index.php/tip/">Browse all tips</a></li>
+</ul>
+
+<h2>Browse Tips by Category</h2>
+<ul id="leftnav">
+
+<li><a href="http://spreadsheetpage.com/index.php/tip/C26">General</a></li>  
+
+<li><a href="http://spreadsheetpage.com/index.php/tip/C18">Formatting</a></li>  
+
+<li><a href="http://spreadsheetpage.com/index.php/tip/C17">Formulas</a></li>  
+
+<li><a href="http://spreadsheetpage.com/index.php/tip/C16">Charts &amp; Graphics</a></li>  
+
+<li><a href="http://spreadsheetpage.com/index.php/tip/C19">Printing</a></li>  
+
+<li><a href="http://spreadsheetpage.com/index.php/tip/C33">General VBA</a></li>  
+
+<li><a href="http://spreadsheetpage.com/index.php/tip/C30">CommandBars &amp; Menus</a></li>  
+
+<li><a href="http://spreadsheetpage.com/index.php/tip/C29">UserForms</a></li>  
+
+<li><a href="http://spreadsheetpage.com/index.php/tip/C32">VBA Functions</a></li>  
+
+</ul>
+
+<h2>Search for Tips</h2>
+<form method="post" action="http://spreadsheetpage.com/index.php">
+<div class="hiddenFields">
+<input type="hidden" name="ACT" value="19">
+<input type="hidden" name="XID" value="fe84dbe8420b9d45b4f4935720b32fff5015c252">
+<input type="hidden" name="RP" value="searchresults">
+<input type="hidden" name="NRP" value="">
+<input type="hidden" name="RES" value="">
+<input type="hidden" name="status" value="">
+<input type="hidden" name="weblog" value="tip">
+<input type="hidden" name="search_in" value="everywhere">
+<input type="hidden" name="where" value="all">
+<input type="hidden" name="site_id" value="1">
+</div>
+
+
+<p><label for="keywords">Search:</label><br>
+<input type="text" name="keywords" id="keywords" value="" size="18" maxlength="100"> <input type="submit" value="Go" style="vertical-align:bottom"></p>
+<ul id="leftnav"><li><a href="http://spreadsheetpage.com/index.php/searchpage/">Advanced Search</a></li></ul>
+</form>
+
+<h2>Tip Books</h2>
+<p>Needs tips? Here are two books, with nothing but tips:</p><p>
+
+<a href="http://spreadsheetpage.com/index.php/book/john_walkenbachs_favorite_excel_2007_tips_tricks/"><img border="0" src="./Spreadsheet Page Excel Tips  Some Useful VBA Functions_files/2007tips_sm.png"></a>
+</p><p>Contains more than 200 useful tips and tricks for Excel 2007 | Other  <a href="http://spreadsheetpage.com/index.php/book/C4/">Excel 2007</a> books | 
+Amazon link: <a href="http://www.amazon.com/exec/obidos/ISBN=0470137665/ref=nosim/jwalkassociateA/">John Walkenbach's Favorite Excel 2007 Tips &amp; Tricks</a></p>
+
+<a href="http://spreadsheetpage.com/index.php/book/101_excel_2013_tips_tricks_timesavers/"><img border="0" src="./Spreadsheet Page Excel Tips  Some Useful VBA Functions_files/101tips.jpg"></a>
+<p>Contains more than 100 useful tips and tricks for Excel 2013 | Other  <a href="http://spreadsheetpage.com/index.php/book/C46/">Excel 2013</a> books | 
+Amazon link: <a href="http://www.amazon.com/exec/obidos/ISBN=111864218X/ref=nosim/jwalkassociateA/">101 Excel 2013 Tips, Tricks &amp;Timesavers</a></p>
+
+
+
+
+</div>
+
+<div id="footer">
+<p>© Copyright 2014, J-Walk &amp; Associates, Inc.<br>
+This site is not affiliated with Microsoft Corporation.<br>
+<a href="http://spreadsheetpage.com/index.php/siteinfo/privacy/">Privacy Policy</a>
+</p>
+
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script><script src="./Spreadsheet Page Excel Tips  Some Useful VBA Functions_files/ga.js" type="text/javascript"></script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-5147388-1");
+pageTracker._initData();
+pageTracker._trackPageview();
+</script>
+</div><!--"footer" -->
+</div>
+
+
+
+</body></html>

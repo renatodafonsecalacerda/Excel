@@ -1,0 +1,1 @@
+<Boolean:IsModule> = DCount("*", "MSysObjects", "Name='" & <String:Name> & "' And [Type] = -32761")

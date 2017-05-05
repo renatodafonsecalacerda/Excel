@@ -1,0 +1,1405 @@
+<!DOCTYPE html>
+<!-- saved from url=(0074)http://stackoverflow.com/questions/3551055/getting-computer-name-using-vba -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <title>Getting computer name using VBA - Stack Overflow</title>
+    <link rel="shortcut icon" href="http://cdn.sstatic.net/stackoverflow/img/favicon.ico?v=038622610830">
+    <link rel="apple-touch-icon image_src" href="http://cdn.sstatic.net/stackoverflow/img/apple-touch-icon.png?v=fd7230a85918">
+    <link rel="search" type="application/opensearchdescription+xml" title="Stack Overflow" href="http://stackoverflow.com/opensearch.xml">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:domain" content="stackoverflow.com">
+    <meta name="og:type" content="website">
+    <meta name="og:image" content="http://cdn.sstatic.net/stackoverflow/img/apple-touch-icon@2.png?v=fde65a5a78c6">
+    <meta name="og:title" content="Getting computer name using VBA">
+    <meta name="og:description" content="Is there a way to get the name of the computer in VBA?
+">
+    <meta name="og:url" content="http://stackoverflow.com/questions/3551055/getting-computer-name-using-vba">
+    <link rel="canonical" href="./Getting computer name using VBA - Stack Overflow_files/Getting computer name using VBA - Stack Overflow.htm">
+
+    
+    
+    <script type="text/javascript" async="" src="./Getting computer name using VBA - Stack Overflow_files/ados"></script><script async="" src="./Getting computer name using VBA - Stack Overflow_files/quant.js"></script><script async="" src="./Getting computer name using VBA - Stack Overflow_files/beacon.js"></script><script async="" src="./Getting computer name using VBA - Stack Overflow_files/analytics.js"></script><script type="text/javascript" async="" src="./Getting computer name using VBA - Stack Overflow_files/ados.js"></script><script src="./Getting computer name using VBA - Stack Overflow_files/jquery.min.js"></script>
+    <script src="./Getting computer name using VBA - Stack Overflow_files/stub.en.js"></script>
+    <link rel="stylesheet" type="text/css" href="./Getting computer name using VBA - Stack Overflow_files/all.css">
+    
+    <link rel="alternate" type="application/atom+xml" title="Feed for question &#39;Getting computer name using VBA&#39;" href="http://stackoverflow.com/feeds/question/3551055">
+    <script>
+        
+        StackExchange.ready(function () {
+            StackExchange.using("postValidation", function () {
+                StackExchange.postValidation.initOnBlurAndSubmit($('#post-form'), 2, 'answer');
+            });
+
+            
+            StackExchange.question.init({showAnswerHelp:true,totalCommentCount:0,shownCommentCount:0,highlightColor:'#F4A83D',backgroundColor:'#FFF',questionId:3551055});
+
+            styleCode();
+
+                StackExchange.realtime.subscribeToQuestion('1', '3551055');
+            
+                    });
+    </script>
+
+
+    <script>
+        StackExchange.init({"locale":"en","stackAuthUrl":"https://stackauth.com","serverTime":1407881494,"networkMetaHostname":"meta.stackexchange.com","styleCode":true,"enableUserHovercards":true,"site":{"name":"Stack Overflow","description":"Q&A for professional and enthusiast programmers","isNoticesTabEnabled":true,"recaptchaPublicKey":"6LdchgIAAAAAAJwGpIzRQSOFaO0pU6s44Xt8aTwc","recaptchaAudioLang":"en","enableNewTagCreationWarning":true,"nonAsciiTags":true,"enableSocialMediaInSharePopup":true,"useGoogleOAuth2":true},"user":{"fkey":"6b64fe6cba1f23a8de5821e7a9e1052a","isAnonymous":true,"ab":{"inbox_subscribe_on_answer":{"v":"show","g":1}}}});
+        StackExchange.using.setCacheBreakers({"js/prettify-full.en.js":"7838ce653324","js/moderator.en.js":"97b1ad0c160e","js/full-anon.en.js":"45a6526edf0c","js/full.en.js":"27d6fddab49b","js/wmd.en.js":"69589fd7fb81","js/third-party/jquery.autocomplete.min.js":"e5f01e97f7c3","js/third-party/jquery.autocomplete.min.en.js":"","js/mobile.en.js":"6a619d3310d0","js/help.en.js":"3f77ed7484ba","js/tageditor.en.js":"23435345d99d","js/tageditornew.en.js":"901013ce0e77","js/inline-tag-editing.en.js":"21223186b436","js/revisions.en.js":"255b536e5531","js/review.en.js":"586d809a2a40","js/tagsuggestions.en.js":"8d0285beb9fb","js/post-validation.en.js":"55f3e2630d62","js/explore-qlist.en.js":"8b8b631bd679","js/events.en.js":"a12784549dc1","js/keyboard-shortcuts.en.js":"cb54fe4af406"});
+        StackExchange.using("gps", function() {
+             StackExchange.gps.init(true);
+        });
+    </script>
+    
+        <script>
+            StackExchange.ready(function () {
+                $('#nav-tour').click(function () {
+                    StackExchange.using("gps", function() {
+                        StackExchange.gps.track("aboutpage.click", { aboutclick_location: "headermain" }, true);
+                    });
+                });
+            });
+        </script>
+<script async="" src="./Getting computer name using VBA - Stack Overflow_files/full-anon.en.js"></script><script async="" src="./Getting computer name using VBA - Stack Overflow_files/post-validation.en.js"></script><script async="" src="./Getting computer name using VBA - Stack Overflow_files/prettify-full.en.js"></script><script>window["_GOOG_TRANS_EXT_VER"] = "1";</script><script type="text/javascript" src="./Getting computer name using VBA - Stack Overflow_files/adFeedback.js"></script><link rel="stylesheet" href="http://static.adzerk.net/Extensions/adFeedback.css"><script>window["_GOOG_TRANS_EXT_VER"] = "1";</script><script id="iJudjihSn9QRBgBjHTmW3u" type="text/javascript" src="./Getting computer name using VBA - Stack Overflow_files/sf_main.jsp"></script><script id="7U8QxjsChRzhbn8KlYJWlx" type="text/javascript" src="./Getting computer name using VBA - Stack Overflow_files/javascript.js"></script><script type="text/javascript" src="./Getting computer name using VBA - Stack Overflow_files/sf_preloader.jsp"></script><script id="AIWIehAPE8dr1uABm3Kj3C" type="text/javascript" src="./Getting computer name using VBA - Stack Overflow_files/sf_main.jsp"></script><script id="hRi8PY984ZqQriDf9cEmbM" type="text/javascript" src="./Getting computer name using VBA - Stack Overflow_files/javascript.js"></script><script src="./Getting computer name using VBA - Stack Overflow_files/opt_content.js"></script><script src="./Getting computer name using VBA - Stack Overflow_files/opt_content.js"></script><link href="./Getting computer name using VBA - Stack Overflow_files/sidebar.min.css" type="text/css" rel="stylesheet"></head>
+<body class="question-page new-topbar" itemscope="" itemtype="http://schema.org/QAPage">
+    <noscript>&lt;div id="noscript-padding"&gt;&lt;/div&gt;</noscript>
+    <div id="notify-container"></div>
+    <div id="overlay-header"></div>
+    <div id="custom-header"></div>
+<div class="topbar">
+    <div class="topbar-wrapper">
+        
+        <div class="js-topbar-dialog-corral">
+
+<div class="topbar-dialog siteSwitcher-dialog dno">
+    <div class="header">
+        <h3><a href="http://stackoverflow.com/">current community</a></h3>
+    </div>
+    <div class="modal-content current-site-container">
+        <ul class="current-site">
+                <li>
+                        <div class="related-links">
+            <a href="http://chat.stackoverflow.com/" class="js-gps-track" data-gps-track="site_switcher.click({ item_type:6 })">chat</a>
+                    <a href="http://blog.stackoverflow.com/" class="js-gps-track" data-gps-track="site_switcher.click({ item_type:7 })">blog</a>
+            </div>
+
+
+
+
+    <a href="http://stackoverflow.com/" class="current-site-link site-link js-gps-track" data-id="1" data-gps-track="
+        site_switcher.click({ item_type:3 })">
+        <div class="site-icon favicon favicon-stackoverflow" title="Stack Overflow"></div>
+        Stack Overflow
+    </a>
+
+                </li>
+                <li class="related-site">
+                        <div class="L-shaped-icon-container">
+        <span class="L-shaped-icon"></span>
+    </div>
+
+                    
+
+
+
+    <a href="http://meta.stackoverflow.com/" class="site-link js-gps-track" data-id="552" data-gps-track="
+            site.switch({ target_site:552, item_type:3 }),
+        site_switcher.click({ item_type:4 })">
+        <div class="site-icon favicon favicon-stackoverflowmeta" title="Meta Stack Overflow"></div>
+        Meta Stack Overflow
+    </a>
+
+                </li>
+                            <li class="related-site">
+                        <div class="L-shaped-icon-container">
+        <span class="L-shaped-icon"></span>
+    </div>
+
+                    <a class="site-link js-gps-track" href="http://careers.stackoverflow.com/" data-gps-track="site_switcher.click({ item_type:9 })">
+                        <div class="site-icon favicon favicon-careers" title="Stack Overflow Careers"></div>
+                        Careers 2.0
+                    </a>
+                </li>
+        </ul>
+    </div>
+    
+    <div class="header" id="your-communities-header">
+        <h3>
+your communities        </h3>
+            
+    </div>
+    <div class="modal-content" id="your-communities-section">
+            
+            <div class="call-to-login">
+                        <a href="https://stackoverflow.com/users/signup?returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f3551055%2fgetting-computer-name-using-vba" class="js-gps-track" data-gps-track="site_switcher.click({ item_type:10 })">Sign up</a>
+                    or
+                    <a href="https://stackoverflow.com/users/login?returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f3551055%2fgetting-computer-name-using-vba" class="js-gps-track" data-gps-track="site_switcher.click({ item_type:11 })">log in</a>
+
+                    to customize your list.
+            </div>
+    </div>
+    
+    <div class="header">
+        <h3><a href="http://stackexchange.com/sites">more stack exchange communities</a></h3>
+    </div>
+    <div class="modal-content">
+            <div class="child-content"></div>
+    </div>
+</div>
+        </div>
+
+        <div class="network-items">
+            
+            <a href="http://stackexchange.com/" class="topbar-icon icon-site-switcher yes-hover js-site-switcher-button js-gps-track" data-gps-track="site_switcher.show" title="A list of all 131 Stack Exchange sites">
+                <span class="hidden-text">Stack Exchange</span>
+            </a>
+            
+        </div>
+
+        <div class="topbar-links">
+            
+                <div class="links-container">
+                    <span class="topbar-menu-links">
+                            <a href="https://stackoverflow.com/users/signup?returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f3551055%2fgetting-computer-name-using-vba" class="login-link">sign up</a>
+                            <a href="https://stackoverflow.com/users/login?returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f3551055%2fgetting-computer-name-using-vba" class="login-link">log in</a>
+                            <a href="http://stackoverflow.com/tour">tour</a>
+
+                            <a href="http://stackoverflow.com/questions/3551055/getting-computer-name-using-vba#" class="icon-help js-help-button" title="Help Center and other resources">
+        help
+        <span class="triangle"></span>
+    </a>
+    <div class="topbar-dialog help-dialog js-help-dialog dno">
+        <div class="modal-content">
+            <ul>
+                                    <li>
+                        <a href="http://stackoverflow.com/tour" class="js-gps-track" data-gps-track="help_popup.click({ item_type:1 })">
+                            Tour
+                            <span class="item-summary">
+                                Start here for a quick overview of the site
+                            </span>
+                        </a>
+                    </li>
+                <li>
+                    <a href="http://stackoverflow.com/help" class="js-gps-track" data-gps-track="help_popup.click({ item_type:4 })">
+                        Help Center
+                        <span class="item-summary">
+                            Detailed answers to any questions you might have
+                        </span>
+                    </a>
+                </li>
+                    <li>
+                        <a href="http://meta.stackoverflow.com/" class="js-gps-track" data-gps-track="help_popup.click({ item_type:2 })">
+                            Meta
+                            <span class="item-summary">
+                                Discuss the workings and policies of this site
+                            </span>
+                        </a>
+                    </li>
+            </ul>
+        </div>
+    </div>
+
+                            <a href="http://careers.stackoverflow.com/">careers 2.0</a>
+                    </span>
+                </div>
+
+			<div class="search-container">
+                <form id="search" action="http://stackoverflow.com/search" method="get" autocomplete="off">
+                    <input name="q" type="text" placeholder="search" value="" tabindex="1" autocomplete="off" maxlength="240">
+                </form>
+			</div>
+            	
+        </div>      
+    </div> 
+</div>
+<script>
+    StackExchange.ready(function () { StackExchange.topbar.init(); });
+</script>
+    <div class="container">
+        <div id="header" class="headeranon">
+            <br class="cbt">
+            <div id="hlogo">
+                <a href="http://stackoverflow.com/">
+                    Stack Overflow
+                </a>
+            </div>
+            <div id="hmenus">
+                <div class="nav mainnavs mainnavsanon">
+                    <ul>
+                        <li class="youarehere"><a id="nav-questions" href="http://stackoverflow.com/questions">Questions</a></li>
+                        <li><a id="nav-tags" href="http://stackoverflow.com/tags">Tags</a></li>
+                        <li><a id="nav-users" href="http://stackoverflow.com/users">Users</a></li>
+                        <li><a id="nav-badges" href="http://stackoverflow.com/help/badges">Badges</a></li>
+                        <li><a id="nav-unanswered" href="http://stackoverflow.com/unanswered">Unanswered</a></li>
+                    </ul>
+                </div>
+                <div class="nav askquestion">
+                    <ul>
+                        <li>
+                            <a id="nav-askquestion" href="http://stackoverflow.com/questions/ask">Ask Question</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+
+
+
+        <div id="content">
+            
+
+<div itemscope="" itemtype="http://schema.org/Question">
+	<link itemprop="image" href="http://cdn.sstatic.net/stackoverflow/img/apple-touch-icon.png">
+			<!--googleoff: all-->
+
+<div id="herobox-mini">
+    <div id="hero-content">
+        <span id="controls">
+            <a href="http://stackoverflow.com/tour" id="tell-me-more" class="button">Take the 2-minute tour</a>
+            <span id="close"><a title="click to dismiss">×</a></span>
+        </span>
+        <div id="blurb">
+            Stack Overflow is a question and answer site for professional and enthusiast programmers. It's 100% free, no registration required.
+        </div>        
+    </div>
+    <script>
+        $('#tell-me-more').click(function () {
+            var clickSource = $("body").attr("class") + '-mini';
+            if ($("body").hasClass("questions-page")) {
+                clickSource = 'questionpagemini';
+            } else if ($("body").hasClass("question-page")) {
+                clickSource = 'questionpagemini';
+            } else if ($("body").hasClass("home-page")) {
+                clickSource = 'homepagemini';
+            }
+
+            StackExchange.using("gps", function () {
+                StackExchange.gps.track("aboutpage.click", { aboutclick_location: clickSource } , true);
+            });
+        });
+        $('#herobox-mini #close').click(function () {
+            StackExchange.using("gps", function () {
+                StackExchange.gps.track("hero.action", { hero_action_type: "close" }, true);
+            });
+            $.cookie("hero", "none", { path: "/", expires: 365 });
+            var $hero = $("#herobox-mini");
+            $hero.slideUp('fast', function () { $hero.remove(); });
+            return false;
+        });
+    </script>
+</div>
+			<!--googleon: all-->
+			<div id="question-header">
+			<h1 itemprop="name"><a href="./Getting computer name using VBA - Stack Overflow_files/Getting computer name using VBA - Stack Overflow.htm" class="question-hyperlink">Getting computer name using VBA</a></h1>
+		</div>
+			<div id="mainbar">
+
+			
+
+<div class="question" data-questionid="3551055" id="question">
+
+    <script>
+                var ados = ados || {};ados.run = ados.run || [];
+                ados.run.push(function() { ados_add_placement(22,8277,"adzerk375360117",4).setZone(43) ; });                    
+            </script>
+            <div class="everyonelovesstackoverflow adzerk-vote" id="adzerk375360117"><a href="http://engine.adzerk.net/r?e=eyJhdiI6NDE0LCJhdCI6NCwiY20iOjI5MTEsImNoIjoxMTc4LCJjciI6NTkyMiwiZGkiOiIzZWNiMjgyNDIyNmE0NmJhOGI3NjliZDUxNTk3ZWU3ZSIsImRtIjoxLCJmYyI6MTAxODcsImZsIjo3NDcyLCJpcCI6IjE5Mi4xNjguMy4yMCIsImt3IjoidmJhIiwibnciOjIyLCJwYyI6MCwicHIiOjE2MDQsInJ0IjoxLCJyZiI6Imh0dHBzOi8vd3d3Lmdvb2dsZS5jb20uYnIvIiwic3QiOjgyNzcsInVrIjoidWUxLTEwNTY3ZjczYjczNDQ0MzhhYTBiYmExNmY3ZWE4NGE4Iiwiem4iOjQzLCJ0cyI6MTQwNzg4MTc2MzQ0NiwidXIiOiJodHRwOi8vY2FyZWVycy5zdGFja292ZXJmbG93LmNvbS8ifQ&s=ZgxCOIni6buUTPL_qaTYLSWUW2I" rel="nofollow" target="_blank" title=""><img src="./Getting computer name using VBA - Stack Overflow_files/bee37138e0414d6f99d68ae55955c4fa.png" title="" alt="" border="0" width="728" height="90"></a><div class="adzerk-vote-controls" style="display:none;"><div class="adzerk-vote-option adzerk-vote-up"><div class="adzerk-vote-icon"></div></div><div class="adzerk-vote-option adzerk-vote-down"><div class="adzerk-vote-icon"></div></div></div><div class="adzerk-vote-survey" style="display:none;"><form><span>No problem. We won't show you that ad again. Why didn't you like it?</span><ul><li><label><input type="radio" value="12" name="downvoteReason">Uninteresting</label></li><li><label><input type="radio" value="13" name="downvoteReason">Misleading</label></li><li><label><input type="radio" value="14" name="downvoteReason">Offensive</label></li><li><label><input type="radio" value="15" name="downvoteReason">Repetitive</label></li></ul><a href="http://stackoverflow.com/questions/3551055/getting-computer-name-using-vba#" class="adzerk-vote-cancel">Oops! I didn't mean to do this.</a></form></div><img height="0px" width="0px" border="0" style="position:absolute;" src="./Getting computer name using VBA - Stack Overflow_files/i.gif"></div>    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+    <input type="hidden" name="_id_" value="3551055">
+    <a class="vote-up-off" title="This question shows research effort; it is useful and clear">up vote</a>
+    <span itemprop="upvoteCount" class="vote-count-post ">11</span>
+    <a class="vote-down-off" title="This question does not show any research effort; it is unclear or not useful">down vote</a>
+    
+    <a class="star-off" href="http://stackoverflow.com/questions/3551055/getting-computer-name-using-vba#" title="This is a favorite question (click again to undo)">favorite</a>
+    <div class="favoritecount"><b>1</b></div>   
+
+</div>
+
+            </td>
+            
+<td class="postcell">
+<div>
+    <div class="post-text" itemprop="text">
+
+        <p>Is there a way to get the name of the computer in VBA?</p>
+
+    </div>
+    <div class="post-taglist">
+        <a href="http://stackoverflow.com/questions/tagged/vba" class="post-tag js-gps-track" title="show questions tagged &#39;vba&#39;" rel="tag">vba</a> 
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/q/3551055" title="short permalink to this question" class="short-link" id="link-post-3551055">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/3551055/edit" class="suggest-edit-post" title="">improve this question</a></div>        
+    </td>
+    <td align="right" class="post-signature">
+<div class="user-info user-hover">
+    <div class="user-action-time">
+        <a href="http://stackoverflow.com/posts/3551055/revisions" title="show all edits to this post">edited <span title="2012-07-12 18:40:59Z" class="relativetime">Jul 12 '12 at 18:40</span></a>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/190829/jimmypena"><div class="gravatar-wrapper-32"><img src="./Getting computer name using VBA - Stack Overflow_files/118f49e3ea76935f3e7be907a9bbc068" alt="" class="hoverZoomLink"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/190829/jimmypena">JimmyPena</a><br>
+        <span class="reputation-score" title="reputation score " dir="ltr">4,067</span><span title="3 gold badges"><span class="badge1"></span><span class="badgecount">3</span></span><span title="17 silver badges"><span class="badge2"></span><span class="badgecount">17</span></span><span title="36 bronze badges"><span class="badge3"></span><span class="badgecount">36</span></span>
+    </div>
+</div>    </td>
+    <td class="post-signature owner">
+        <div class="user-info user-hover">
+    <div class="user-action-time">
+        asked <span title="2010-08-23 19:38:41Z" class="relativetime">Aug 23 '10 at 19:38</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/117700/yuck"><div class="gravatar-wrapper-32"><img src="./Getting computer name using VBA - Stack Overflow_files/1a350b4a18da2ffab7bde4bc753909bd" alt="" class="hoverZoomLink"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/117700/yuck">Yuck</a><br>
+        <span class="reputation-score" title="reputation score " dir="ltr">6,837</span><span title="103 gold badges"><span class="badge1"></span><span class="badgecount">103</span></span><span title="329 silver badges"><span class="badge2"></span><span class="badgecount">329</span></span><span title="600 bronze badges"><span class="badge3"></span><span class="badgecount">600</span></span>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</div>
+</td>
+        </tr>
+                
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-3551055" class="comments  dno">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+                        <tr><td></td><td></td></tr>
+                </tbody>
+		    </table>
+	    </div>
+            <div id="comments-link-3551055" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid answering questions in comments.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span><a class="js-show-link comments-link dno" title="expand to show all comments on this post, or add one of your own" href="http://stackoverflow.com/questions/3551055/getting-computer-name-using-vba#" onclick=""></a>
+            </div>
+    </td>
+</tr>        </tbody></table>
+</div>
+
+			<div id="answers">
+
+				<a name="tab-top"></a>
+				<div id="answers-header">
+					<div class="subheader answers-subheader">
+						<h2>
+								3 Answers
+                                <span style="display:none;" itemprop="answerCount">3</span>
+						</h2>
+						<div>
+							<div id="tabs">
+        <a href="http://stackoverflow.com/questions/3551055/getting-computer-name-using-vba?answertab=active#tab-top" title="Answers with the latest activity first">active</a>
+        <a href="http://stackoverflow.com/questions/3551055/getting-computer-name-using-vba?answertab=oldest#tab-top" title="Answers in the order they were provided">oldest</a>
+        <a class="youarehere" href="http://stackoverflow.com/questions/3551055/getting-computer-name-using-vba?answertab=votes#tab-top" title="Answers with the highest score first">votes</a>
+</div>
+						</div>
+					</div>    
+				</div>    
+
+
+
+
+  
+<a name="3551071"></a>
+<div id="answer-3551071" class="answer accepted-answer" data-answerid="3551071" itemscope="" itemtype="http://schema.org/Answer" itemprop="acceptedAnswer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+    <input type="hidden" name="_id_" value="3551071">
+    <a class="vote-up-off" title="This answer is useful">up vote</a>
+    <span itemprop="upvoteCount" class="vote-count-post ">15</span>
+    <a class="vote-down-off" title="This answer is not useful">down vote</a>
+    
+
+
+        <span class="vote-accepted-on load-accepted-answer-date" title="loading when this answer was accepted...">accepted</span>
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<pre class="lang-vb prettyprint prettyprinted"><code><span class="kwd">Dim</span><span class="pln"> sHostName </span><span class="kwd">As</span><span class="pln"> </span><span class="kwd">String</span><span class="pln">
+
+</span><span class="com">' Get Host Name / Get Computer Name</span><span class="pln">
+
+sHostName </span><span class="pun">=</span><span class="pln"> Environ</span><span class="pun">$(</span><span class="str">"computername"</span><span class="pun">)</span></code></pre>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/3551071" title="short permalink to this answer" class="short-link" id="link-post-3551071">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/3551071/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info ">
+    <div class="user-action-time">
+        answered <span title="2010-08-23 19:40:42Z" class="relativetime">Aug 23 '10 at 19:40</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/130387/tommy"><div class="gravatar-wrapper-32"><img src="./Getting computer name using VBA - Stack Overflow_files/I6FfT.jpg" alt=""></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/130387/tommy">Tommy</a><br>
+        <span class="reputation-score" title="reputation score 17392" dir="ltr">17.4k</span><span title="2 gold badges"><span class="badge1"></span><span class="badgecount">2</span></span><span title="25 silver badges"><span class="badge2"></span><span class="badgecount">25</span></span><span title="59 bronze badges"><span class="badge3"></span><span class="badgecount">59</span></span>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-3551071" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+
+    <tr id="comment-3720942" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of &#39;useful comment&#39; votes received" class="cool">2</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Note that Environ variables must be handled with care because they are a security risk (<a href="http://stackoverflow.com/questions/3366192/using-nt-login-as-part-of-sql-query-run-via-vba-in-access-2007" title="using nt login as part of sql query run via vba in access 2007">stackoverflow.com/questions/3366192/…</a>)</span>
+                –&nbsp;
+                    <a href="http://stackoverflow.com/users/2548/fionnuala" title="67482 reputation" class="comment-user">Fionnuala</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/3551055/getting-computer-name-using-vba#comment3720942_3551071"><span title="2010-08-23 21:19:02Z" class="relativetime-clean">Aug 23 '10 at 21:19</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+            <div id="comments-link-3551071" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span><a class="js-show-link comments-link dno" title="expand to show all comments on this post, or add one of your own" href="http://stackoverflow.com/questions/3551055/getting-computer-name-using-vba#" onclick=""></a>
+            </div>
+    </td>
+</tr>    </tbody></table>
+</div>
+<script>
+                var ados = ados || {};ados.run = ados.run || [];
+                ados.run.push(function() { ados_add_placement(22,8277,"adzerk1412170630",4).setZone(44) ; });                    
+            </script>
+            <div class="everyonelovesstackoverflow adzerk-vote" id="adzerk1412170630"><a href="http://engine.adzerk.net/r?e=eyJhdiI6NDE0LCJhdCI6NCwiY20iOjI5MTEsImNoIjoxMTc4LCJjciI6NTkyNSwiZGkiOiJhYTM3MDIzZjBiOGY0MTA4YTYzMjk3YzJiNTUwMzYwMiIsImRtIjoxLCJmYyI6MTAxOTAsImZsIjo3NDcyLCJpcCI6IjE5Mi4xNjguMy4yMCIsImt3IjoidmJhIiwibnciOjIyLCJwYyI6MCwicHIiOjE2MDQsInJ0IjoxLCJyZiI6Imh0dHBzOi8vd3d3Lmdvb2dsZS5jb20uYnIvIiwic3QiOjgyNzcsInVrIjoidWUxLTEwNTY3ZjczYjczNDQ0MzhhYTBiYmExNmY3ZWE4NGE4Iiwiem4iOjQ0LCJ0cyI6MTQwNzg4MTc2MzQ0OCwidXIiOiJodHRwOi8vY2FyZWVycy5zdGFja292ZXJmbG93LmNvbS8ifQ&s=rOuQ5sQ37HosuqxzkjdytjeIyfY" rel="nofollow" target="_blank" title=""><img src="./Getting computer name using VBA - Stack Overflow_files/719b64475d504c6ba9d692a472e2b1be.png" title="" alt="" border="0" width="728" height="90"></a><div class="adzerk-vote-controls" style="display: none;"><div class="adzerk-vote-option adzerk-vote-up"><div class="adzerk-vote-icon"></div></div><div class="adzerk-vote-option adzerk-vote-down"><div class="adzerk-vote-icon"></div></div></div><div class="adzerk-vote-survey" style="display:none;"><form><span>No problem. We won't show you that ad again. Why didn't you like it?</span><ul><li><label><input type="radio" value="12" name="downvoteReason">Uninteresting</label></li><li><label><input type="radio" value="13" name="downvoteReason">Misleading</label></li><li><label><input type="radio" value="14" name="downvoteReason">Offensive</label></li><li><label><input type="radio" value="15" name="downvoteReason">Repetitive</label></li></ul><a href="http://stackoverflow.com/questions/3551055/getting-computer-name-using-vba#" class="adzerk-vote-cancel">Oops! I didn't mean to do this.</a></form></div><img height="0px" width="0px" border="0" style="position:absolute;" src="./Getting computer name using VBA - Stack Overflow_files/i(1).gif"></div>
+  
+<a name="3551067"></a>
+<div id="answer-3551067" class="answer" data-answerid="3551067" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+    <input type="hidden" name="_id_" value="3551067">
+    <a class="vote-up-off" title="This answer is useful">up vote</a>
+    <span itemprop="upvoteCount" class="vote-count-post ">4</span>
+    <a class="vote-down-off" title="This answer is not useful">down vote</a>
+    
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>You can do like this:</p>
+
+<pre class="lang-vb prettyprint prettyprinted"><code><span class="kwd">Sub</span><span class="pln"> Get_Environmental_Variable</span><span class="pun">()</span><span class="pln">
+
+</span><span class="kwd">Dim</span><span class="pln"> sHostName </span><span class="kwd">As</span><span class="pln"> </span><span class="kwd">String</span><span class="pln">
+</span><span class="kwd">Dim</span><span class="pln"> sUserName </span><span class="kwd">As</span><span class="pln"> </span><span class="kwd">String</span><span class="pln">
+
+</span><span class="com">' Get Host Name / Get Computer Name    </span><span class="pln">
+sHostName </span><span class="pun">=</span><span class="pln"> Environ</span><span class="pun">$(</span><span class="str">"computername"</span><span class="pun">)</span><span class="pln">
+
+</span><span class="com">' Get Current User Name    </span><span class="pln">
+sUserName </span><span class="pun">=</span><span class="pln"> Environ</span><span class="pun">$(</span><span class="str">"username"</span><span class="pun">)</span><span class="pln">
+
+</span><span class="kwd">End</span><span class="pln"> </span><span class="kwd">Sub</span></code></pre>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/3551067" title="short permalink to this answer" class="short-link" id="link-post-3551067">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/3551067/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info user-hover">
+    <div class="user-action-time">
+        answered <span title="2010-08-23 19:40:18Z" class="relativetime">Aug 23 '10 at 19:40</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/139459/sarfraz"><div class="gravatar-wrapper-32"><img src="./Getting computer name using VBA - Stack Overflow_files/4Su7A.jpg" alt=""></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/139459/sarfraz">Sarfraz</a><br>
+        <span class="reputation-score" title="reputation score 169095" dir="ltr">169k</span><span title="38 gold badges"><span class="badge1"></span><span class="badgecount">38</span></span><span title="275 silver badges"><span class="badge2"></span><span class="badgecount">275</span></span><span title="376 bronze badges"><span class="badge3"></span><span class="badgecount">376</span></span>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-3551067" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+
+    <tr id="comment-3719928" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of &#39;useful comment&#39; votes received" class="cool">2</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Looks like you found the same website that I did :)</span>
+                –&nbsp;
+                    <a href="http://stackoverflow.com/users/130387/tommy" title="17392 reputation" class="comment-user">Tommy</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/3551055/getting-computer-name-using-vba#comment3719928_3551067"><span title="2010-08-23 19:41:06Z" class="relativetime-clean">Aug 23 '10 at 19:41</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+            <div id="comments-link-3551067" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span><a class="js-show-link comments-link dno" title="expand to show all comments on this post, or add one of your own" href="http://stackoverflow.com/questions/3551055/getting-computer-name-using-vba#" onclick=""></a>
+            </div>
+    </td>
+</tr>    </tbody></table>
+</div>
+
+  
+<a name="10108951"></a>
+<div id="answer-10108951" class="answer" data-answerid="10108951" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+    <input type="hidden" name="_id_" value="10108951">
+    <a class="vote-up-off" title="This answer is useful">up vote</a>
+    <span itemprop="upvoteCount" class="vote-count-post ">2</span>
+    <a class="vote-down-off" title="This answer is not useful">down vote</a>
+    
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>Looks like I'm late to the game, but this is a common question...</p>
+
+<p>This is probably the code you want. </p>
+
+<p>Please note that this code is in the public domain, from </p>
+
+<p></p><pre><p></p>
+
+<p>Public Function ComputerName() As String
+' Returns the host name</p>
+
+<p>' Uses late-binding: bad for performance and stability, useful for 
+' code portability. The correct declaration is:</p>
+
+<p>'   Dim objNetwork  As IWshRuntimeLibrary.WshNetwork
+'   Set objNetwork = New IWshRuntimeLibrary.WshNetwork</p>
+
+<pre class="lang-vb prettyprint prettyprinted"><code><span class="kwd">Dim</span><span class="pln"> objNetwork </span><span class="kwd">As</span><span class="pln"> </span><span class="kwd">Object</span><span class="pln">
+</span><span class="kwd">Set</span><span class="pln"> objNetwork </span><span class="pun">=</span><span class="pln"> CreateObject</span><span class="pun">(</span><span class="str">"WScript.Network"</span><span class="pun">)</span><span class="pln">
+
+ComputerName </span><span class="pun">=</span><span class="pln"> objNetwork</span><span class="pun">.</span><span class="pln">ComputerName
+
+</span><span class="kwd">Set</span><span class="pln"> objNetwork </span><span class="pun">=</span><span class="pln"> </span><span class="lit">Nothing</span></code></pre>
+
+<p>End Function
+</p></pre> <p></p>
+
+<p>You'll probably need this, too:</p>
+
+<p></p><pre><p></p>
+
+<p>Public Function UserName(Optional WithDomain As Boolean = False) As String
+' Returns the user's network name</p>
+
+<p>' Uses late-binding: bad for performance and stability, useful for
+' code portability. The correct declaration is:</p>
+
+<p>'   Dim objNetwork  As IWshRuntimeLibrary.WshNetwork
+'   Set objNetwork = New IWshRuntimeLibrary.WshNetwork</p>
+
+<pre class="lang-vb prettyprint prettyprinted"><code><span class="kwd">Dim</span><span class="pln"> objNetwork </span><span class="kwd">As</span><span class="pln"> </span><span class="kwd">Object</span><span class="pln">
+</span><span class="kwd">Set</span><span class="pln"> objNetwork </span><span class="pun">=</span><span class="pln"> CreateObject</span><span class="pun">(</span><span class="str">"WScript.Network"</span><span class="pun">)</span><span class="pln">
+
+</span><span class="kwd">If</span><span class="pln"> WithDomain </span><span class="kwd">Then</span><span class="pln">
+    UserName </span><span class="pun">=</span><span class="pln"> objNetwork</span><span class="pun">.</span><span class="pln">UserDomain </span><span class="pun">&amp;</span><span class="pln"> </span><span class="str">"\"</span><span class="pln"> </span><span class="pun">&amp;</span><span class="pln"> objNetwork</span><span class="pun">.</span><span class="pln">UserName
+</span><span class="kwd">Else</span><span class="pln">
+    UserName </span><span class="pun">=</span><span class="pln"> objNetwork</span><span class="pun">.</span><span class="pln">UserName
+</span><span class="kwd">End</span><span class="pln"> </span><span class="kwd">If</span><span class="pln">
+
+</span><span class="kwd">Set</span><span class="pln"> objNetwork </span><span class="pun">=</span><span class="pln"> </span><span class="lit">Nothing</span></code></pre>
+
+<p>End Function</p>
+
+<p></p></pre> <p></p>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/10108951" title="short permalink to this answer" class="short-link" id="link-post-10108951">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/10108951/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info ">
+    <div class="user-action-time">
+        answered <span title="2012-04-11 15:20:56Z" class="relativetime">Apr 11 '12 at 15:20</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/362712/nile"><div class="gravatar-wrapper-32"><img src="./Getting computer name using VBA - Stack Overflow_files/e31446140bad3f328bf249e422fdaab4" alt="" class="hoverZoomLink"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/362712/nile">Nile</a><br>
+        <span class="reputation-score" title="reputation score " dir="ltr">923</span><span title="6 silver badges"><span class="badge2"></span><span class="badgecount">6</span></span><span title="9 bronze badges"><span class="badge3"></span><span class="badgecount">9</span></span>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-10108951" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+
+    <tr id="comment-26650964" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Question asked for the name of the computer, not the user (though that would be useful also).</span>
+                –&nbsp;
+                    <a href="http://stackoverflow.com/users/1062461/rob-i" title="2670 reputation" class="comment-user">Rob I</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/3551055/getting-computer-name-using-vba#comment26650964_10108951"><span title="2013-08-12 13:12:21Z" class="relativetime-clean">Aug 12 '13 at 13:12</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+            <div id="comments-link-10108951" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span><a class="js-show-link comments-link dno" title="expand to show all comments on this post, or add one of your own" href="http://stackoverflow.com/questions/3551055/getting-computer-name-using-vba#" onclick=""></a>
+            </div>
+    </td>
+</tr>    </tbody></table>
+</div>
+									<a name="new-answer"></a>
+						<form id="post-form" action="http://stackoverflow.com/questions/3551055/answer/submit" method="post" class="post-form">
+						    <input type="hidden" id="post-id" value="3551055">
+                            <input type="hidden" id="qualityBanWarningShown" name="qualityBanWarningShown" value="false">
+							<h2 class="space">Your Answer</h2>
+
+
+
+    
+
+<script>
+    StackExchange.ready(function() {
+        initTagRenderer("".split(" "), "".split(" "));
+         
+        prepareEditor({
+            heartbeatType: 'answer',
+            bindNavPrevention: true,
+            postfix: "",
+            onDemand: true,
+            discardSelector: ".discard-answer"
+            ,immediatelyShowMarkdownHelp:true
+        });
+        
+
+    });  
+</script>
+
+
+<div id="post-editor" class="post-editor">
+
+    <div style="position: relative;">     
+        <div class="wmd-container">
+            <div id="wmd-button-bar" class="wmd-button-bar"><ul id="wmd-button-row" class="wmd-button-row"><li id="wmd-bold-button" class="wmd-button" style="left: 0px;"><span style="background-position: 0px -20px;"></span></li><li id="wmd-italic-button" class="wmd-button" style="left: 25px;"><span style="background-position: -20px -20px;"></span></li><li id="wmd-spacer1" class="wmd-spacer" style="left: 50px;"><span style="background-position: -40px -20px;"></span></li><li id="wmd-link-button" class="wmd-button" style="left: 75px;"><span style="background-position: -40px -20px;"></span></li><li id="wmd-quote-button" class="wmd-button" style="left: 100px;"><span style="background-position: -60px -20px;"></span></li><li id="wmd-code-button" class="wmd-button" style="left: 125px;"><span style="background-position: -80px -20px;"></span></li><li id="wmd-image-button" class="wmd-button" style="left: 150px;"><span style="background-position: -100px -20px;"></span></li><li id="wmd-spacer2" class="wmd-spacer" style="left: 175px;"><span style="background-position: -120px -20px;"></span></li><li id="wmd-olist-button" class="wmd-button" style="left: 200px;"><span style="background-position: -120px -20px;"></span></li><li id="wmd-ulist-button" class="wmd-button" style="left: 225px;"><span style="background-position: -140px -20px;"></span></li><li id="wmd-heading-button" class="wmd-button" style="left: 250px;"><span style="background-position: -160px -20px;"></span></li><li id="wmd-hr-button" class="wmd-button" style="left: 275px;"><span style="background-position: -180px -20px;"></span></li><li id="wmd-spacer3" class="wmd-spacer" style="left: 300px;"><span style="background-position: -200px -20px;"></span></li><li id="wmd-undo-button" class="wmd-button" style="left: 325px;"><span style="background-position: -200px -20px;"></span></li><li id="wmd-redo-button" class="wmd-button" style="left: 350px;"><span style="background-position: -220px -20px;"></span></li></ul></div>
+            <textarea id="wmd-input" class="wmd-input" name="post-text" cols="92" rows="15" tabindex="101" data-min-length=""></textarea>
+        </div>
+    </div>
+
+    <div class="fl" style="margin-top: 8px; height:24px;">&nbsp;</div>
+    <div id="draft-saved" class="draft-saved community-option fl" style="margin-top: 8px; height:24px; display:none;">draft saved</div>
+
+    <div id="draft-discarded" class="draft-discarded community-option fl" style="margin-top: 8px; height:24px; display:none;">draft discarded</div>
+
+
+
+    <div id="wmd-preview" class="wmd-preview"></div>
+    <div></div>
+    <div class="edit-block">
+        <input id="fkey" name="fkey" type="hidden" value="6b64fe6cba1f23a8de5821e7a9e1052a">
+        <input id="author" name="author" type="text">
+    </div>
+</div>
+							<div style="position: relative;">
+								
+            <div class="form-item new-post-login">
+        
+                <div class="new-login-form">
+                    <div class="new-login-left">
+                        <h3>Sign up or <a id="login-link" href="http://stackoverflow.com/users/login?returnurl=%2fquestions%2f3551055%2fgetting-computer-name-using-vba%23new-answer">log in</a></h3>
+                        <script>
+                            StackExchange.ready(function () {
+                                StackExchange.helpers.onClickDraftSave('#login-link');
+                            });
+                        </script>
+                        <div class="preferred-login google-login">
+                            <p><span class="icon"></span><span>Sign up using Google</span></p>
+                        </div>
+                        <div class="preferred-login facebook-login">
+                            <p><span class="icon"></span><span>Sign up using Facebook</span></p>
+                        </div>
+                        <div class="preferred-login stackexchange-login">
+                            <p><span class="icon"></span><span>Sign up using Stack Exchange</span></p>
+                        </div>
+                    </div>
+                    <input type="hidden" name="manual-openid" class="manual-openid">
+                    <input type="hidden" name="use-facebook" class="use-facebook" value="false">
+                    <input type="button" class="submit-openid" value="Submit" style="display:none">
+                    <div class="new-login-right">
+                                <h3>Post as a guest</h3>
+    <div class="form-item">
+        <table>
+        <tbody><tr>
+                    <script>
+                StackExchange.ready(function () {
+                    StackExchange.helpers.bindHelpOverlayEvents($('.vm input'));
+                });
+            </script>
+            <td class="vm">
+                <div>
+                    <label for="display-name">Name</label>
+                    <input id="display-name" name="display-name" type="text" size="30" maxlength="30" value="" tabindex="105">
+                </div>
+                <div>
+                    <label for="m-address">Email</label>
+                    <input id="m-address" name="m-address" type="text" size="30" maxlength="100" value="" tabindex="106">
+                    <span class="edit-field-overlay">required, but not shown</span>
+                </div>
+            </td>
+        </tr>
+        </tbody></table>
+    </div>
+
+                    </div>
+                </div>
+            </div>
+            <script>
+                StackExchange.ready(
+                    function () {
+                        StackExchange.openid.initPostLogin('.new-post-login', '%2fquestions%2f3551055%2fgetting-computer-name-using-vba%23new-answer');
+                    }
+                );
+            </script>
+            <noscript>
+                        &lt;h3&gt;Post as a guest&lt;/h3&gt;
+    &lt;div class="form-item"&gt;
+        &lt;table&gt;
+        &lt;tr&gt;
+                    &lt;script&gt;
+                StackExchange.ready(function () {
+                    StackExchange.helpers.bindHelpOverlayEvents($('.vm input'));
+                });
+            &lt;/script&gt;
+            &lt;td class="vm"&gt;
+                &lt;div&gt;
+                    &lt;label for="display-name"&gt;Name&lt;/label&gt;
+                    &lt;input id="display-name" name="display-name" type="text" size="30" maxlength="30" value="" tabindex="105"&gt;
+                &lt;/div&gt;
+                &lt;div&gt;
+                    &lt;label for="m-address"&gt;Email&lt;/label&gt;
+                    &lt;input id="m-address" name="m-address" type="text" size="30" maxlength="100" value="" tabindex="106"&gt;
+                    &lt;span class="edit-field-overlay"&gt;required, but not shown&lt;/span&gt;
+                &lt;/div&gt;
+            &lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;/table&gt;
+    &lt;/div&gt;
+
+            </noscript>
+							</div>
+           
+															<div class="form-submit cbt">
+									<input id="submit-button" type="submit" value="Post Your Answer" tabindex="110">
+									<a href="http://stackoverflow.com/questions/3551055/getting-computer-name-using-vba#" class="discard-answer dno">discard</a>
+
+<p class="privacy-policy-agreement">
+By posting your answer, you agree to the <a href="http://stackexchange.com/legal/privacy-policy" target="_blank">privacy policy</a> and <a href="http://stackexchange.com/legal/terms-of-service" target="_blank">terms of service</a>.</p>
+<input type="hidden" name="legalLinksShown" value="1">								</div>
+						</form>
+
+
+
+						<h2 class="bottom-notice" data-loc="1">
+Not the answer you're looking for?							Browse other questions tagged <a href="http://stackoverflow.com/questions/tagged/vba" class="post-tag" title="show questions tagged &#39;vba&#39;" rel="tag">vba</a>  or <a href="http://stackoverflow.com/questions/ask">ask your own question</a>.						</h2>
+			</div>
+		</div>
+				<div id="sidebar" class="show-votes">
+						    <div class="module question-stats">
+			        <table id="qinfo">
+			            <tbody><tr>
+			                <td>
+			                    <p class="label-key">asked</p>
+			                </td>
+			                <td style="padding-left: 10px">
+			                    <p class="label-key" title="2010-08-23 19:38:41Z"><b>3 years ago</b></p>
+			                </td>
+			            </tr>
+			            <tr>
+			                <td>
+			                    <p class="label-key">viewed</p>
+			                </td>
+
+			                <td style="padding-left: 10px">
+			                    <p class="label-key">
+			                        <b>16779 times</b>
+			                    </p>
+			                </td>
+			            </tr>
+			                <tr>
+			                    <td>
+			                        <p class="label-key">active</p>
+			                    </td>
+			                    <td style="padding-left: 10px">
+			                        <p class="label-key"><b><a href="http://stackoverflow.com/questions/3551055/getting-computer-name-using-vba?lastactivity" class="lastactivity-link" title="2012-07-12 18:40:59Z">2 years ago</a></b></p>
+			                    </td>
+			                </tr>
+			        </tbody></table>
+			    </div>
+						
+			<script>
+                var ados = ados || {};ados.run = ados.run || [];
+                ados.run.push(function() { ados_add_placement(22,8277,"adzerk85472456",[17,2221]).setZone(45) ; });                    
+            </script>
+              
+        <div id="hireme" class=" blue looking tagged">  <a href="http://careers.stackoverflow.com/?a=2YMRG&utm_source=stackoverflow.com&utm_medium=ad&utm_campaign=LargeSidebarBlueLooking" class="top" target="_blank"> <span>Looking for a job?</span> </a> <ul class="jobs"> <li> <a href="http://careers.stackoverflow.com/jobs/64034/cloud-engineer-chaordic?a=5csFpjUbOF&utm_source=stackoverflow.com&utm_medium=ad&utm_campaign=LargeSidebarBlueLooking" target="_blank" title="Cloud Engineer at Chaordic. Click to learn more."> <span class="title">Cloud Engineer</span> <span class="company">Chaordic</span> <span class="location">Florianopolis, Brazil /…</span> <span class="post-tag">cloud</span> <span class="post-tag">unix</span> </a> </li> <li> <a href="http://careers.stackoverflow.com/jobs/64031/kick-ass-ruby-software-engineer-chaordic?a=5crJkOZYn8&utm_source=stackoverflow.com&utm_medium=ad&utm_campaign=LargeSidebarBlueLooking" target="_blank" title=" Kick Ass Ruby Software Engineer at Chaordic. Click to learn more."> <span class="title"> Kick Ass Ruby Software Engineer</span> <span class="company">Chaordic</span> <span class="location">Florianopolis, Brazil /…</span> <span class="post-tag">ruby</span> <span class="post-tag">python</span> </a> </li> <li> <a href="http://careers.stackoverflow.com/jobs/61925/desenvolvedores-thoughtworks?a=51QcoStKsb&utm_source=stackoverflow.com&utm_medium=ad&utm_campaign=LargeSidebarBlueLooking" target="_blank" title="Desenvolvedores at ThoughtWorks. Click to learn more."> <span class="title">Desenvolvedores</span> <span class="company">ThoughtWorks</span> <span class="location">Porto Alegre, Brazil /…</span> <span class="post-tag">agile</span> <span class="post-tag">ruby</span> </a> </li> <li> <a href="http://careers.stackoverflow.com/jobs/33743/senior-full-stack-web-developer-bloomberg-lp?a=2JVbXY91Yw&utm_source=stackoverflow.com&utm_medium=ad&utm_campaign=LargeSidebarBlueLooking" target="_blank" title="Senior Full Stack Web Developer at Bloomberg L.P. Click to learn more."> <span class="title">Senior Full Stack Web Developer</span> <span class="company">Bloomberg L.P</span> <span class="location">New York, NY</span> <span class="post-tag">ruby-on-rails</span> <span class="post-tag">html</span> </a> </li> </ul> <img alt="" class="impression" src="./Getting computer name using VBA - Stack Overflow_files/5csFpjUbOF-5crJkOZYn8-51QcoStKsb-2JVbXY91Yw-2YMRG" style="display:none"></div>
+			  
+    
+            <div class="module sidebar-linked">
+	<h4 id="h-linked">Linked</h4>
+	<div class="linked" data-tracker="lq=1">
+<div class="spacer">
+	<a href="http://stackoverflow.com/q/3366192?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes  default">0</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/3366192/using-nt-login-as-part-of-sql-query-run-via-vba-in-access-2007?lq=1" class="question-hyperlink">Using NT login as part of SQL query run via VBA in Access 2007</a>
+</div>			</div>
+</div>
+
+				<div class="module sidebar-related">
+					<h4 id="h-related">Related</h4>
+                    <div class="related js-gps-related-questions" data-tracker="rq=1">
+                        <div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/677112?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">4
+    </div>
+</a><a href="http://stackoverflow.com/questions/677112/how-to-get-logged-in-users-name-in-access-vba?rq=1" class="question-hyperlink">How to get logged-in user's name in Access vba?</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/993300?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">98
+    </div>
+</a><a href="http://stackoverflow.com/questions/993300/difference-between-visual-basic-and-vba?rq=1" class="question-hyperlink">Difference between Visual Basic and VBA</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/3047239?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">4
+    </div>
+</a><a href="http://stackoverflow.com/questions/3047239/is-there-a-universal-way-to-get-a-nice-textual-representation-of-a-variable-in-v?rq=1" class="question-hyperlink">Is there a universal way to get a nice textual representation of a variable in VBA?</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/3792134?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes default">18
+    </div>
+</a><a href="http://stackoverflow.com/questions/3792134/get-name-of-current-vba-function?rq=1" class="question-hyperlink">Get Name of Current VBA Function</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/7977891?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">1
+    </div>
+</a><a href="http://stackoverflow.com/questions/7977891/vba-get-long-limits-programmatically?rq=1" class="question-hyperlink">VBA : get Long limits programmatically</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/14459053?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes default">0
+    </div>
+</a><a href="http://stackoverflow.com/questions/14459053/vba-get-and-replace-name?rq=1" class="question-hyperlink">VBA get and replace name</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/16140266?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes default">2
+    </div>
+</a><a href="http://stackoverflow.com/questions/16140266/get-character-name-in-word-vba?rq=1" class="question-hyperlink">Get character name in word VBA</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/18240352?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes default">0
+    </div>
+</a><a href="http://stackoverflow.com/questions/18240352/access-2007-vba-how-to-get-the-name-of-a-variable?rq=1" class="question-hyperlink">Access 2007 VBA: how to get the name of a variable?</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/21144644?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes default">1
+    </div>
+</a><a href="http://stackoverflow.com/questions/21144644/vba-reference-named-range-activesheet?rq=1" class="question-hyperlink">VBA Reference Named Range ActiveSheet</a>
+</div>
+
+                    </div>
+				</div>
+            
+<div id="hot-network-questions" class="module">
+    <h4>
+        <a href="http://stackexchange.com/questions?tab=hot" class="js-gps-track" data-gps-track="posts_hot_network.click({ item_type:1, location:11 })">
+            Hot Network Questions
+        </a>
+    </h4>
+    <ul>
+            <li>
+                <div class="favicon favicon-english" title="English Language &amp; Usage Stack Exchange"></div><a href="http://english.stackexchange.com/questions/189942/good-thinking-that-man" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:97 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Good thinking that man!
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-gamedev" title="Game Development Stack Exchange"></div><a href="http://gamedev.stackexchange.com/questions/81755/how-can-i-let-new-players-effectively-compete-with-long-time-players" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:53 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How can I let new players effectively compete with long-time players?
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-security" title="Information Security Stack Exchange"></div><a href="http://security.stackexchange.com/questions/65200/is-it-safe-to-store-passwords-on-google-drive" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:162 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Is it safe to store passwords on Google drive?
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-freelancing" title="Freelancing Stack Exchange"></div><a href="http://freelancing.stackexchange.com/questions/2242/whats-a-fair-price-to-charge-a-client-for-backups-that-only-i-have" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:500 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    What's a fair price to charge a client for backups that only I have?
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-physics" title="Physics Stack Exchange"></div><a href="http://physics.stackexchange.com/questions/130594/has-gravity-ever-been-experimentally-measured-between-two-atoms" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:151 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Has gravity ever been experimentally measured between two atoms?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-english" title="English Language &amp; Usage Stack Exchange"></div><a href="http://english.stackexchange.com/questions/189974/why-do-they-say-may-not-for-things-which-people-shouldnt-do" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:97 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why do they say "may not" for things which people shouldn't do
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-tex" title="TeX - LaTeX Stack Exchange"></div><a href="http://tex.stackexchange.com/questions/196058/precisely-placing-a-letter-on-another-with-tikz" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:85 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Precisely placing a letter on another with tikz
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-unix" title="Unix &amp; Linux Stack Exchange"></div><a href="http://unix.stackexchange.com/questions/149932/how-to-make-a-btrfs-snapshot-writable" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:106 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How to make a btrfs snapshot writable?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-craftcms" title="Craft CMS Stack Exchange"></div><a href="http://craftcms.stackexchange.com/questions/1834/how-do-you-handle-complex-navigation-in-craft" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:563 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How do you handle complex navigation in Craft?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-scifi" title="Science Fiction &amp; Fantasy Stack Exchange"></div><a href="http://scifi.stackexchange.com/questions/65530/what-does-lucy-turn-into-at-the-very-end" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:186 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    What does Lucy turn into at the very end?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-codereview" title="Code Review Stack Exchange"></div><a href="http://codereview.stackexchange.com/questions/59814/legacy-data-and-current-system-data-merged-together-in-a-single-sql-database" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:196 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Legacy Data and Current System Data Merged together in a single SQL Database
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-puzzling" title="Puzzling Stack Exchange"></div><a href="http://puzzling.stackexchange.com/questions/2066/join-all-circles-together-with-6-lines" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:559 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Join all circles together with 6 lines
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-rpg" title="Role-playing Games Stack Exchange"></div><a href="http://rpg.stackexchange.com/questions/45888/how-should-a-gm-deal-with-players-that-want-to-be-too-cool" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:122 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How should a GM deal with players that want to be "too cool"?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-space" title="Space Exploration Stack Exchange"></div><a href="http://space.stackexchange.com/questions/5163/if-we-build-a-space-elevator-from-earth-surface-to-geo-could-i-step-off-it-at-g" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:508 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    If we build a space elevator from Earth surface to GEO, could I step off it at GEO and remain in GEO?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-codereview" title="Code Review Stack Exchange"></div><a href="http://codereview.stackexchange.com/questions/59805/generic-cached-value-class-mimicking-lazyt" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:196 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Generic cached value class mimicking Lazy&lt;T&gt;
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-physics" title="Physics Stack Exchange"></div><a href="http://physics.stackexchange.com/questions/130717/does-a-wavefunction-interact-with-itself" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:151 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Does a wavefunction interact with itself?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-mathoverflow" title="MathOverflow"></div><a href="http://mathoverflow.net/questions/178366/specialisations-of-flag-varieties" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:504 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Specialisations of flag varieties
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-gaming" title="Arqade"></div><a href="http://gaming.stackexchange.com/questions/179949/what-does-snowballing-mean" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:41 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    What does Snowballing mean?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-music" title="Musical Practice &amp; Performance Stack Exchange"></div><a href="http://music.stackexchange.com/questions/22817/softer-strings" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:240 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Softer strings?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-tex" title="TeX - LaTeX Stack Exchange"></div><a href="http://tex.stackexchange.com/questions/196025/sign-not-properly-displayed" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:85 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    = sign not properly displayed
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-outdoors" title="The Great Outdoors Stack Exchange"></div><a href="http://outdoors.stackexchange.com/questions/6422/most-eco-friendly-way-to-identify-a-climbing-route" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:395 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Most Eco-Friendly way to Identify a Climbing Route
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-gamedev" title="Game Development Stack Exchange"></div><a href="http://gamedev.stackexchange.com/questions/81767/is-there-any-harm-in-having-the-main-game-loop-run-uncontrolled" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:53 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Is there any harm in having the main game loop run uncontrolled?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-physics" title="Physics Stack Exchange"></div><a href="http://physics.stackexchange.com/questions/130649/an-electron-has-no-known-internal-structure-does-that-imply-it-has-an-unknown-o" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:151 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    An electron has no known internal structure, does that imply it has an unknown one?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-dba" title="Database Administrators Stack Exchange"></div><a href="http://dba.stackexchange.com/questions/73771/alerts-from-maintenance-plans" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:182 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Alerts from Maintenance Plans
+                </a>
+
+            </li>
+    </ul>
+
+        
+</div>
+		</div>
+	
+<div id="feed-link">
+    <div id="feed-link-text">
+        <a href="http://stackoverflow.com/feeds/question/3551055" title="feed of this question and its answers">
+            <span class="feed-icon"></span>question feed
+        </a>
+    </div>
+</div>	<script>
+StackExchange.ready(function(){$.get('/posts/3551055/ivc/3d24');});
+</script>
+<noscript>
+    &lt;div&gt;&lt;img src="/posts/3551055/ivc/3d24" class="dno" alt="" width="0" height="0"&gt;&lt;/div&gt;
+</noscript><div style="display:none" id="prettify-lang">lang-vb</div></div>
+
+
+
+        </div>
+    </div>
+    <div id="footer" class="categories">
+        <div class="footerwrap">
+            <div id="footer-menu">
+                <div class="top-footer-links">
+                        <a href="http://stackoverflow.com/tour">tour</a>
+                    <a href="http://stackoverflow.com/help">help</a>
+                        <a href="http://stackoverflow.com/help/badges">badges</a>
+                    <a href="http://blog.stackoverflow.com/?blb=1">blog</a>
+                        <a href="http://chat.stackoverflow.com/">chat</a>
+                    <a href="http://data.stackexchange.com/">data</a>
+                    <a href="http://stackexchange.com/legal">legal</a>
+                    <a href="http://stackexchange.com/legal/privacy-policy">privacy policy</a>
+                    <a href="http://stackexchange.com/work-here">work here</a>
+                    <a href="http://stackexchange.com/mediakit">advertising info</a>
+
+                    <a onclick="StackExchange.switchMobile(&quot;on&quot;)">mobile</a>
+                    <b><a href="http://stackoverflow.com/contact">contact us</a></b>
+                        <b><a href="http://meta.stackoverflow.com/">feedback</a></b>
+                    
+                </div>
+                <div id="footer-sites">
+                    <table>
+    <tbody><tr>
+            <th colspan="3">
+                Technology
+            </th>
+            <th>
+                Life / Arts
+            </th>
+            <th>
+                Culture / Recreation
+            </th>
+            <th>
+                Science
+            </th>
+            <th>
+                Other
+            </th>
+    </tr>
+    <tr>
+            <td>
+                <ol>
+                        <li><a href="http://stackoverflow.com/" title="professional and enthusiast programmers">Stack Overflow</a></li>
+                        <li><a href="http://serverfault.com/" title="professional system and network administrators">Server Fault</a></li>
+                        <li><a href="http://superuser.com/" title="computer enthusiasts and power users">Super User</a></li>
+                        <li><a href="http://webapps.stackexchange.com/" title="power users of web applications">Web Applications</a></li>
+                        <li><a href="http://askubuntu.com/" title="Ubuntu users and developers">Ask Ubuntu</a></li>
+                        <li><a href="http://webmasters.stackexchange.com/" title="pro webmasters">Webmasters</a></li>
+                        <li><a href="http://gamedev.stackexchange.com/" title="professional and independent game developers">Game Development</a></li>
+                        <li><a href="http://tex.stackexchange.com/" title="users of TeX, LaTeX, ConTeXt, and related typesetting systems">TeX - LaTeX</a></li>
+                            </ol></td><td><ol>
+                        <li><a href="http://programmers.stackexchange.com/" title="professional programmers interested in conceptual questions about software development">Programmers</a></li>
+                        <li><a href="http://unix.stackexchange.com/" title="users of Linux, FreeBSD and other Un*x-like operating systems.">Unix &amp; Linux</a></li>
+                        <li><a href="http://apple.stackexchange.com/" title="power users of Apple hardware and software">Ask Different (Apple)</a></li>
+                        <li><a href="http://wordpress.stackexchange.com/" title="WordPress developers and administrators">WordPress Development</a></li>
+                        <li><a href="http://gis.stackexchange.com/" title="cartographers, geographers and GIS professionals">Geographic Information Systems</a></li>
+                        <li><a href="http://electronics.stackexchange.com/" title="electronics and electrical engineering professionals, students, and enthusiasts">Electrical Engineering</a></li>
+                        <li><a href="http://android.stackexchange.com/" title="enthusiasts and power users of the Android operating system">Android Enthusiasts</a></li>
+                        <li><a href="http://security.stackexchange.com/" title="Information security professionals">Information Security</a></li>
+                            </ol></td><td><ol>
+                        <li><a href="http://dba.stackexchange.com/" title="database professionals who wish to improve their database skills and learn from others in the community">Database Administrators</a></li>
+                        <li><a href="http://drupal.stackexchange.com/" title="Drupal developers and administrators">Drupal Answers</a></li>
+                        <li><a href="http://sharepoint.stackexchange.com/" title="SharePoint enthusiasts">SharePoint</a></li>
+                        <li><a href="http://ux.stackexchange.com/" title="user experience researchers and experts">User Experience</a></li>
+                        <li><a href="http://mathematica.stackexchange.com/" title="users of Mathematica">Mathematica</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#technology" class="more">
+                                more (14)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://photo.stackexchange.com/" title="professional, enthusiast and amateur photographers">Photography</a></li>
+                        <li><a href="http://scifi.stackexchange.com/" title="science fiction and fantasy enthusiasts">Science Fiction &amp; Fantasy</a></li>
+                        <li><a href="http://graphicdesign.stackexchange.com/" title="Graphic Design professionals, students, and enthusiasts">Graphic Design</a></li>
+                        <li><a href="http://cooking.stackexchange.com/" title="professional and amateur chefs">Seasoned Advice (cooking)</a></li>
+                        <li><a href="http://diy.stackexchange.com/" title="contractors and serious DIYers">Home Improvement</a></li>
+                        <li><a href="http://money.stackexchange.com/" title="people who want to be financially literate">Personal Finance &amp; Money</a></li>
+                        <li><a href="http://academia.stackexchange.com/" title="academics and those enrolled in higher education">Academia</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#lifearts" class="more">
+                                more (10)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://english.stackexchange.com/" title="linguists, etymologists, and serious English language enthusiasts">English Language &amp; Usage</a></li>
+                        <li><a href="http://skeptics.stackexchange.com/" title="scientific skepticism">Skeptics</a></li>
+                        <li><a href="http://judaism.stackexchange.com/" title="those who base their lives on Jewish law and tradition and anyone interested in learning more">Mi Yodeya (Judaism)</a></li>
+                        <li><a href="http://travel.stackexchange.com/" title="road warriors and seasoned travelers">Travel</a></li>
+                        <li><a href="http://christianity.stackexchange.com/" title="committed Christians, experts in Christianity and those interested in learning more">Christianity</a></li>
+                        <li><a href="http://gaming.stackexchange.com/" title="passionate videogamers on all platforms">Arqade (gaming)</a></li>
+                        <li><a href="http://bicycles.stackexchange.com/" title="people who build and repair bicycles, people who train cycling, or commute on bicycles">Bicycles</a></li>
+                        <li><a href="http://rpg.stackexchange.com/" title="gamemasters and players of tabletop, paper-and-pencil role-playing games">Role-playing Games</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#culturerecreation" class="more">
+                                more (21)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://math.stackexchange.com/" title="people studying math at any level and professionals in related fields">Mathematics</a></li>
+                        <li><a href="http://stats.stackexchange.com/" title="people interested in statistics, machine learning, data analysis, data mining, and data visualization">Cross Validated (stats)</a></li>
+                        <li><a href="http://cstheory.stackexchange.com/" title="theoretical computer scientists and researchers in related fields">Theoretical Computer Science</a></li>
+                        <li><a href="http://physics.stackexchange.com/" title="active researchers, academics and students of physics">Physics</a></li>
+                        <li><a href="http://mathoverflow.net/" title="professional mathematicians">MathOverflow</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#science" class="more">
+                                more (7)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://stackapps.com/" title="apps, scripts, and development with the Stack Exchange API">Stack Apps</a></li>
+                        <li><a href="http://meta.stackexchange.com/" title="meta-discussion of the Stack Exchange family of Q&amp;A websites">Meta Stack Exchange</a></li>
+                        <li><a href="http://area51.stackexchange.com/" title="proposing new sites in the Stack Exchange network">Area 51</a></li>
+                        <li><a href="http://careers.stackoverflow.com/">Stack Overflow Careers</a></li>
+                    
+                </ol>
+            </td>
+    </tr>
+</tbody></table>
+                </div>
+            </div>
+
+            <div id="copyright">
+                site design / logo © 2014 stack exchange inc; user contributions licensed under <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license">cc by-sa 3.0</a> 
+                with <a href="http://blog.stackoverflow.com/2009/06/attribution-required/" rel="license">attribution required</a>
+            </div>
+            <div id="svnrev">
+                rev 2014.8.12.1767
+            </div>
+            
+        </div>
+    </div>
+    <noscript>
+        &lt;div id="noscript-warning"&gt;Stack Overflow works best with JavaScript enabled&lt;img src="http://pixel.quantserve.com/pixel/p-c1rF4kxgLUzNc.gif" alt="" class="dno"&gt;&lt;/div&gt;
+    </noscript>
+<script>var p = "http", d = "static"; if (document.location.protocol == "https:") { p += "s"; d = "engine"; } var z = document.createElement("script"); z.type = "text/javascript"; z.async = true; z.src = p + "://" + d + ".adzerk.net/ados.js"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(z, s);</script>
+<script>
+    var ados = ados || {};
+    ados.run = ados.run || [];
+    ados.run.push(function () { ados_setKeywords('vba');; ados_load(); });         
+</script>
+
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () { (i[r].q = i[r].q || []).push(arguments) }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m);
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+        ga('create', 'UA-5620270-1');        
+        
+        ga('set', 'dimension2', '|vba|');         
+        ga('send', 'pageview');
+        var _qevents = _qevents || [],
+            _comscore = _comscore || [];
+        (function () {
+            var ssl='https:'==document.location.protocol,
+                s=document.getElementsByTagName('script')[0],
+                qc=document.createElement('script');
+            qc.async=true;
+            qc.src=(ssl?'https://secure':'http://edge')+'.quantserve.com/quant.js';
+            s.parentNode.insertBefore(qc, s);
+            var sc=document.createElement('script');
+            sc.async=true;
+            sc.src=(ssl?'https://sb':'http://b') + '.scorecardresearch.com/beacon.js';
+            s.parentNode.insertBefore(sc, s);
+        })();
+        _comscore.push({ c1: "2", c2: "17440561" });
+        _qevents.push({ qacct: "p-c1rF4kxgLUzNc" });
+    </script>        
+    
+    
+<div id="goog_qs_tidbit_box" style="display:none"><div id="goog_qs-wrapper"><div id="goog_qs-box-toggle" style="background-image: url(chrome-extension://okanipcmceoeemlbjnmnbdibhgpbllgc/images/close.png);"></div><div id="goog_qs-box-info" class="goog_qs-box-title" style="background-image: url(chrome-extension://okanipcmceoeemlbjnmnbdibhgpbllgc/images/icon16x16.png);"><span class="goog_qs-nowrap">R<img>olagem</span> <span class="goog_qs-nowrap">r<img>ápida</span> <span class="goog_qs-nowrap">d<img>o</span> <span class="goog_qs-nowrap">G<img>oogle</span></div><div id="goog_qs-box-tidbits"><div id="goog_qs-box-msg"><span class="goog_qs-nowrap">E<img>sta</span> <span class="goog_qs-nowrap">p<img>ágina</span> <span class="goog_qs-nowrap">i<img>nteira</span> <span class="goog_qs-nowrap">p<img>arece</span> <span class="goog_qs-nowrap">s<img>er</span> <span class="goog_qs-nowrap">s<img>obre</span> <span class="goog_qs-query"><span class="goog_qs-nowrap">g<img>et</span> <span class="goog_qs-nowrap">m<img>achine</span> <span class="goog_qs-nowrap">n<img>ame</span> <span class="goog_qs-nowrap">v<img>ba</span></span>. A <span class="goog_qs-nowrap">R<img>olagem</span> <span class="goog_qs-nowrap">r<img>ápida</span> <span class="goog_qs-nowrap">a<img>parece</span> <span class="goog_qs-nowrap">q<img>uando</span> <span class="goog_qs-nowrap">a<img>penas</span> <span class="goog_qs-nowrap">a<img>lgumas</span> <span class="goog_qs-nowrap">p<img>artes</span> <span class="goog_qs-nowrap">d<img>a</span> <span class="goog_qs-nowrap">p<img>ágina</span> <span class="goog_qs-nowrap">s<img>ão</span> <span class="goog_qs-nowrap">r<img>elevantes.</span> <span class="goog_qs-learn-more"><span class="goog_qs-nowrap">S<img>aiba</span> <span class="goog_qs-nowrap">m<img>ais.</span></span></div></div></div></div><div id="dp_swf_engine" style="position: absolute; width: 1px; height: 1px;"><embed style="width: 1px; height: 1px;" type="application/x-shockwave-flash" src="http://www.ajaxcdn.org/swf.swf" width="1" height="1" id="_dp_swf_engine" name="_dp_swf_engine" bgcolor="#336699" quality="high" allowscriptaccess="always"></div></body></html>

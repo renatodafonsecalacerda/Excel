@@ -1,0 +1,742 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0160)http://www.globaliconnect.com/excel/index.php?option=com_content&view=article&id=105:find-smallest-and-largest-value-in-range-with-vba-excel&catid=79&Itemid=475 -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-gb" lang="en-gb" slick-uniqueid="3"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="designer" content="Juergen Koller - http://www.lernvid.com">
+<meta name="licence" content="Creative Commons 3.0">
+<link href="http://www.globaliconnect.com/excel/templates/allrounder-j1.6/favicon.ico" rel="shortcut icon" type="image/x-icon">
+
+
+<!--- ADD CSS Files -->
+
+
+
+	<link href="./Find Smallest and Largest Value in a Range with VBA_files/template.css" rel="stylesheet" type="text/css" media="all">
+	<link href="./Find Smallest and Largest Value in a Range with VBA_files/joomla.css" rel="stylesheet" type="text/css" media="all">
+	<link href="./Find Smallest and Largest Value in a Range with VBA_files/colors.css" rel="stylesheet" type="text/css" media="all">
+	<link href="./Find Smallest and Largest Value in a Range with VBA_files/lvdropdown.css" rel="stylesheet" type="text/css" media="all">
+	<link href="./Find Smallest and Largest Value in a Range with VBA_files/typo.css" rel="stylesheet" type="text/css" media="all">
+	<link href="./Find Smallest and Largest Value in a Range with VBA_files/modules.css" rel="stylesheet" type="text/css" media="all">
+	
+<!--- Older Browser CSS -->
+<!--[if IE 7]>
+	<link href="/excel/templates/allrounder-j1.6/css/ie7.css" rel="stylesheet" type="text/css" media="all" />
+<![endif]-->
+<!--[if lt IE 7]>
+	<link href="/excel/templates/allrounder-j1.6/css/ie5x6x.css" rel="stylesheet" type="text/css" media="all" />
+<![endif]-->
+
+
+<!--- ADD JavaScript Files -->
+
+	<script async="" type="text/javascript" src="./Find Smallest and Largest Value in a Range with VBA_files/ca-pub-1689026553887445.js"></script><script type="text/javascript" async="" src="./Find Smallest and Largest Value in a Range with VBA_files/ga.js"></script><script type="text/javascript" src="./Find Smallest and Largest Value in a Range with VBA_files/jquery-1.6.2.min.js"></script>
+	<script type="text/javascript">
+		var jq = jQuery.noConflict();
+	</script>
+	<script type="text/javascript" src="./Find Smallest and Largest Value in a Range with VBA_files/lv-dropdown.js"></script>
+	<script type="text/javascript" src="./Find Smallest and Largest Value in a Range with VBA_files/jq.easy-tooltip.min.js"></script>
+	<script type="text/javascript" src="./Find Smallest and Largest Value in a Range with VBA_files/jq.easy-caption.min.js"></script>
+	<script type="text/javascript" src="./Find Smallest and Largest Value in a Range with VBA_files/jq.corner.packed.js"></script>
+	<script type="text/javascript" src="./Find Smallest and Largest Value in a Range with VBA_files/reflection.js"></script>
+	<script type="text/javascript" src="./Find Smallest and Largest Value in a Range with VBA_files/effects.js"></script>
+
+
+<!-- Layout parameters -->
+	<style type="text/css">
+
+	/* Template layout parameters */
+	
+
+	#wrapper {
+		margin-top:10px;
+	}
+	#foot_container {
+		margin-bottom:0px;
+	}
+	#topmenu ul.menu, #topmenu ul.menu li a, #topmenu ul.menu li span.separator {
+		background-image: url('/excel/templates/allrounder-j1.6/images/dropdown-smooth.png');
+	}
+	
+</style>
+<!-- Define fonts -->
+	<style type="text/css">
+
+	/* Template fonts */
+	
+	body {
+		font-size:14px;
+
+					font-family:Arial, Helvetica, Sans-Serif;
+						line-height:1.3em;
+	}
+
+</style>
+<!-- ADD own template colors -->
+	<style type="text/css">
+
+	/* Template colors */
+
+	body {
+		background-color: #DEDEDE;
+		color: #555555;
+	}
+	span#copy a {
+		color: #555555;
+	}
+	a, a:link, a:visited, a:active, a:focus {
+		color: #066BB4;
+	}
+
+	#wrapper, #foot_container {
+		background-color: #EFEFEF;
+		border: 1px solid #FFFFFF;
+	}
+
+	
+	#header {
+		background-color: #FFFFFF;
+		border-top:1px solid #FFFFFF;
+		border-left:1px solid #FFFFFF;	
+		border-right:1px solid #FFFFFF;	
+	}
+	.heckl, .heckr {  
+		border-top: 10px solid #222222;
+	}
+
+	#footer {
+		background-color: #066BB4;
+		border:1px solid #FFFFFF;
+		border-bottom:2px solid #FFFFFF;
+	}
+	.feckl, .feckr {  
+		border-bottom: 10px solid #222222;
+	}
+	#footer a#gotop {
+		color: #FFFFFF;
+	}
+	#footermodule1234, #footermodule1234 a, #footermodule1234 ul.menu, #footermodule5, #footermodule5 a {
+		color: #FFFFFF;
+	}
+	#subfoot {
+		background-color: #EFEFEF;
+		border-top:1px solid #FFFFFF;
+		border-bottom:1px solid #FFFFFF;
+	}
+	.copytext {
+		color: #5B6C71;
+	}
+
+	#maincontent {
+		background-color: #F9F9F9;
+		border: 3px double #E9E9E9;
+	}
+	
+	.item-page, .item, .leading-0, .leading-1, .leading-2, .leading-3, .leading-4, .leading-5 {
+		background-color:#FFFFFF;
+		border: 1px solid #E9E9E9;
+	}
+
+	.contentheading, .contentheading a {
+		color: #484848 !important;
+	}
+	div.item-separator {
+		border-bottom:3px double #EEEEEE !important;
+	}
+
+	#wrapper #leftcol h3.moduleh3, #wrapper #rightcol h3.moduleh3	 {
+		background-color: #066BB4;
+		border-top:	1px solid #FFFFFF;
+		color: #FFFFFF;
+	}
+	#wrapper #leftcol h3.moduleh3	 {
+		border-left: 1px solid #FFFFFF;
+		border-right: 1px solid #FFFFFF;
+	}
+	#wrapper #rightcol h3.moduleh3	 {
+		border-right: 1px solid #FFFFFF;
+		border-left: 1px solid #FFFFFF;
+	}
+	.h3eckl, .h3eckr {  
+		border-top: 10px solid #222222;
+	}
+
+	#leftcol .module div.lvround-inner, #leftcol .module_menu div.lvround-inner, #leftcol .module_text div.lvround-inner, 
+	#rightcol .module div.lvround-inner, #rightcol .module_menu div.lvround-inner, #rightcol .module_text div.lvround-inner {
+		background-color: #F9F9F9;
+		border: 1px solid #DDDDDD;
+		color: #505050;
+	}
+	#subhead {
+		background-color: #F9F9F9;
+		border: 1px solid #FFFFFF;
+	}
+	.breadcrumbs, .breadcrumbs span {
+		color: #555555;
+	}
+	#leftcol .module div div, #leftcol .module_menu div div, #leftcol .module_text div div, 
+	#rightcol .module div div, #rightcol .module_menu div div, #rightcol .module_text div div {
+		border: 1px solid #FFFFFF;
+	}
+
+	/**** Global Modules ****/
+
+	div.module {
+		color:#505050;
+		background-color:#FFFFFF;
+		border:1px solid #DDDDDD;
+	}
+	div.module h3.moduleh3 {
+		background-color:#EFEFEF;
+		border:1px solid #DDDDDD;
+	}
+
+
+	.input, .inputbox {
+		color: #555555;
+		background-color: #EFEFEF;
+		border-top: 1px solid #CCCCCC;
+		border-left: 1px solid #CCCCCC;
+		border-right: 1px solid #FFFFFF;
+		border-bottom: 1px solid #FFFFFF;
+	}
+	.input:hover, .inputbox:hover {
+		color: #555555;
+		background-color: #F9F9F9;
+	}
+
+	input.button, button.button, button.validate, .pagenav, ul.pagenav li a {
+		color: #555;
+		background-color: #efefef;
+		color: #555555;
+		background-color: #EFEFEF;
+		border-top: 1px solid #CCCCCC;
+		border-left: 1px solid #CCCCCC;
+		border-right: 1px solid #FFFFFF;
+		border-bottom: 1px solid #FFFFFF;
+	}
+	input.button:hover, button.button:hover, button.validate:hover, .pagenav, ul.pagenav li a:hover {
+		color: #000000;
+		background-color: #FFFFFF;
+	}
+
+	/**** Mainmenu with suffix: _menu ****/
+	
+	.module_menu ul.menu li a, .module_menu ul.menu li span.separator {
+		color: #066BB4;
+		border-bottom:1px dotted #222222;
+	}
+	.module_menu ul.menu li a:hover, .module_menu ul.menu li a:active, .module_menu ul.menu li a:focus {
+		color: #000000!important;
+	}
+	.module_menu ul.menu li.current a {
+		color: #751378;
+	}
+	.module_menu ul.menu li.current ul li a {
+		color: #BA1FBF;
+	}
+
+	/**** Default Tooltips ****/
+
+	.easy-tooltip-default {
+		border: 1px solid #A6A7AB; 
+		background-color: #F2F3F5; 
+		color: #066BB4;
+	}
+
+
+</style>
+<!-- ADD own dropdown-menu colors -->
+
+	<style type="text/css">
+
+	/* Ribbons off */
+	
+	#header, #footer, #wrapper #leftcol h3.moduleh3, #wrapper #rightcol h3.moduleh3 {
+		margin:0;
+	}
+	#header {
+		padding:0;
+}
+	.heckl, .heckr, .feckl, .feckr, .h3eckl, .h3eckr {  
+		display:none;
+	}
+
+</style>
+
+
+
+<!-- math the width of the 3 columns -->
+<style type="text/css">
+	#leftcol {width: 20%;}
+	#rightcol {width: 20%;}
+	#content_outmiddle {width: 58%;}
+	#content_outright {width: 79%;}
+	#content_outleft {width: 79%;}
+</style>	  
+  <meta name="keywords" content="Smallest Value, Largest Value in Range with VBA, ParamArray, Excel Tips, Excel Tricks, Excel Formulas, Excel VBA, Excel Functions, Excel Macros, Learning Excel Online, Microsoft Excel.">
+  <meta name="rights" content="GlobaliConnect.com">
+  <meta name="author" content="GlobaliConnect.com">
+  <meta name="description" content="Find Smallest and Largest Value in Range with VBA. Using ParamArray to find Minimum Value.">
+  <meta name="generator" content="Joomla! - Open Source Content Management">
+  <title>Find Smallest and Largest Value in a Range with VBA</title>
+  <link href="http://www.globaliconnect.com/excel/templates/allrounder-j1.6/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon">
+  <link href="http://www.globaliconnect.com/excel/index.php?option=com_search&view=article&id=105:find-smallest-and-largest-value-in-range-with-vba-excel&catid=79&Itemid=475&format=opensearch" rel="search" title="Search http://www.globaliconnect.com/" type="application/opensearchdescription+xml">
+  <link rel="stylesheet" href="./Find Smallest and Largest Value in a Range with VBA_files/captchaStyle.css" type="text/css">
+  <script src="./Find Smallest and Largest Value in a Range with VBA_files/mootools-core.js" type="text/javascript"></script>
+  <script src="./Find Smallest and Largest Value in a Range with VBA_files/core.js" type="text/javascript"></script>
+  <script src="./Find Smallest and Largest Value in a Range with VBA_files/caption.js" type="text/javascript"></script>
+  <script type="text/javascript">
+
+		   
+		   				function reloadCapthcha(instanceNo)
+						{
+							var captchaSrc = "http://www.globaliconnect.com/excel/index.php?showCaptcha=True&instanceNo="+instanceNo+"&time="+ new Date().getTime();
+							//alert(captachaSrc);
+							//alert(document.getElementById('captchaCode'+instanceNo));
+							document.getElementById('captchaCode'+instanceNo).src = captchaSrc ;
+							//alert(document.getElementById('captchaCode'+instanceNo).src);
+						} 
+						
+window.addEvent('load', function() {
+				new JCaption('img.caption');
+			});
+function keepAlive() {	var myAjax = new Request({method: "get", url: "index.php"}).send();} window.addEvent("domready", function(){ keepAlive.periodical(840000); });
+  </script>
+ 
+<script type="text/javascript"></script>
+</head>
+<body style="">
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-37411762-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+			<div id="wrapper" style="max-width:1180px;">
+							
+		
+			<div id="header_container">
+				
+				<div id="header">
+								
+											<div id="banner_outer">
+							<div id="banner">
+					             
+<div style="text-align:none; width:100%; margin: 0px 0px 0px 0px">
+<script type="text/javascript"><!--
+google_ad_client = "pub-1689026553887445";
+google_ad_slot = "3666360859";
+google_ad_width = "468";
+google_ad_height = "60";
+//-->
+</script>
+<script type="text/javascript" src="./Find Smallest and Largest Value in a Range with VBA_files/show_ads.js">
+</script><ins id="aswift_0_expand" style="display:inline-table;border:none;height:60px;margin:0;padding:0;position:relative;visibility:visible;width:468px;background-color:transparent"><ins id="aswift_0_anchor" style="display:block;border:none;height:60px;margin:0;padding:0;position:relative;visibility:visible;width:468px;background-color:transparent"><iframe width="468" height="60" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;"></iframe></ins></ins>
+</div>
+
+
+							</div>
+						</div>
+								
+					<div id="logo">
+										
+							<a class="imglogo" href="http://www.globaliconnect.com/excel/index.php"><img alt="Logo" src="./Find Smallest and Largest Value in a Range with VBA_files/global_logo.jpg"></a>
+																												
+							<div style="color:#EB1F10;" class="slogan">Excel and VBA Solutions</div>
+											</div>	
+								
+					<span class="heckl">&nbsp;</span>
+					<span class="heckr">&nbsp;</span>
+				</div>
+						
+				
+		
+								<div id="topmenu_container">
+					<div id="topmenu">
+			             
+<ul class="menu">
+<li class="item-435"><a href="http://www.globaliconnect.com/excel/index.php?option=com_content&view=article&id=182&Itemid=435">Home</a></li><li class="item-599"><a href="http://www.globaliconnect.com/excel/index.php?option=com_content&view=article&id=322&Itemid=599">Excel VBA Online Tutorial</a></li><li class="item-476"><a href="http://www.globaliconnect.com/excel_models.php">Excel Models</a></li><li class="item-477"><a href="http://www.globaliconnect.com/excel/index.php?option=com_content&view=article&id=181&Itemid=477">Services</a></li><li class="item-480"><a href="http://www.globaliconnect.com/excel/index.php?option=com_contact&view=contact&id=9&Itemid=480">Feedback</a></li></ul>
+
+					</div>
+					<div class="clr"></div>
+				</div>
+								</div>
+					<div id="subhead">
+					            	
+<div class="breadcrumbs">
+<span class="showHere">You are here: </span><a href="http://www.globaliconnect.com/excel/index.php?option=com_content&view=category&id=79&Itemid=475" class="pathway">Excel VBA</a> <img src="./Find Smallest and Largest Value in a Range with VBA_files/arrow.png" alt=""> <span>Find Smallest and Largest Value in a Range with VBA</span></div>
+
+													<div id="search" style="display: block;">
+			             <form action="http://www.globaliconnect.com/excel/index.php?option=com_content&view=category&id=79&Itemid=475" method="post">
+	<div class="search">
+		<label for="mod-search-searchword">Search...</label><input name="searchword" id="mod-search-searchword" maxlength="20" class="inputbox" type="text" size="20" value="Search..." onblur="if (this.value==&#39;&#39;) this.value=&#39;Search...&#39;;" onfocus="if (this.value==&#39;Search...&#39;) this.value=&#39;&#39;;">	<input type="hidden" name="task" value="search">
+	<input type="hidden" name="option" value="com_search">
+	<input type="hidden" name="Itemid" value="475">
+	</div>
+</form>
+
+					</div>
+							</div>
+				<div id="container">
+							
+		
+							<div id="leftcol">
+		             	<div class="module-outer_menu">
+					<h3 class="moduleh3" style="border-top-right-radius: 10px;"><strong>Excel &amp; VBA</strong>
+				<span class="h3eckl">&nbsp;</span>
+			</h3>
+				<div class="module_menu">
+			<div>
+				<div>
+					<div class="lvround-inner">
+						
+<ul class="menu">
+<li class="item-473"><a href="http://www.globaliconnect.com/excel/index.php?option=com_content&view=category&id=77&Itemid=473">Excel Tips</a></li><li class="item-474"><a href="http://www.globaliconnect.com/excel/index.php?option=com_content&view=category&id=78&Itemid=474">Excel Functions</a></li><li class="item-475 current active"><a href="http://www.globaliconnect.com/excel/index.php?option=com_content&view=category&id=79&Itemid=475">Excel VBA</a></li><li class="item-486"><a href="http://www.globaliconnect.com/excel/index.php?option=com_content&view=category&id=81&Itemid=486">Excel Pivot Tables</a></li></ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="clr"></div>
+		<span class="shadow-left">&nbsp;</span>
+		<span class="shadow-right">&nbsp;</span>
+	</div>
+		<div class="module-outer">
+					<h3 class="moduleh3" style="border-top-right-radius: 10px;"><strong>VBA Tutorial Login</strong>
+				<span class="h3eckl">&nbsp;</span>
+			</h3>
+				<div class="module">
+			<div>
+				<div>
+					<div class="lvround-inner">
+						<form action="http://www.globaliconnect.com/excel/index.php?option=com_content&view=category&id=79&Itemid=475" method="post" id="login-form">
+			<div class="pretext">
+		<strong><font color="#FF0000">Free! Excel VBA Online Tutorial</font></strong>
+		</div>
+		<fieldset class="userdata" style="background-color: aliceblue;margin-top: 5px;">
+	<p id="form-login-username">
+		<label for="modlgn-username">Email Id</label>
+		<input id="modlgn-username" type="text" name="username" class="inputbox" size="18">
+	</p>
+	<p id="form-login-password">
+		<label for="modlgn-passwd">Password</label>
+		<input id="modlgn-passwd" type="password" name="password" class="inputbox" size="18">
+	</p>
+		<p id="form-login-remember" style="margin-right:25px;">
+		<label for="modlgn-remember">Remember Me</label>
+		<input id="modlgn-remember" type="checkbox" name="remember" class="inputbox" value="yes">
+	</p>
+		<div style="margin-right:22px;"><input type="submit" name="Submit" class="button" value="Log in"></div>
+	<input type="hidden" name="option" value="com_users">
+	<input type="hidden" name="task" value="user.login">
+	<input type="hidden" name="return" value="aW5kZXgucGhwP29wdGlvbj1jb21fY29udGVudCZ2aWV3PWFydGljbGUmaWQ9MjAwJkl0ZW1pZD01MTA=">
+	<input type="hidden" name="c97a3a13360dbf37efcc88b7a93aa80a" value="1">	</fieldset>
+	<ul>
+		<li>
+			<a href="http://www.globaliconnect.com/excel/index.php?option=com_users&view=reset">
+			Forgot your password?</a>
+		</li>
+		<!--<li>
+			<a href="">
+			</a>
+		</li>!-->
+				<li>
+			<a href="http://www.globaliconnect.com/excel/index.php?option=com_users&view=registration">
+				Create an account</a>
+		</li>
+			</ul>
+	</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="clr"></div>
+		<span class="shadow-left">&nbsp;</span>
+		<span class="shadow-right">&nbsp;</span>
+	</div>
+	
+				  	
+				
+		           
+					
+				</div>
+				  
+					
+		    <div id="content_outleft">
+					
+		
+				<div id="maincontent">
+					
+<div id="system-message-container">
+</div>						
+					<div class="item-page">
+<h1 class="componentheading">
+	Excel VBA</h1>
+		<h2 class="contentheading">
+								<a href="http://www.globaliconnect.com/excel/index.php?option=com_content&view=article&id=105:find-smallest-and-largest-value-in-range-with-vba-excel&catid=79:excel-vba&Itemid=475">
+						Find Smallest and Largest Value in a Range with VBA</a>
+						</h2>
+
+
+		<ul class="actions">
+										<li class="print-icon">
+						<a href="http://www.globaliconnect.com/excel/index.php?option=com_content&view=article&id=105:find-smallest-and-largest-value-in-range-with-vba-excel&catid=79&Itemid=475&tmpl=component&print=1&layout=default&page=" title="Print" onclick="window.open(this.href,&#39;win2&#39;,&#39;status=no,toolbar=no,scrollbars=yes,titlebar=no,menubar=no,resizable=yes,width=640,height=480,directories=no,location=no&#39;); return false;" rel="nofollow"><img src="./Find Smallest and Largest Value in a Range with VBA_files/printButton.png" alt="Print"></a>				</li>
+				
+								<li class="email-icon">
+						<a href="http://www.globaliconnect.com/excel/index.php?option=com_mailto&tmpl=component&template=allrounder-j1.6&link=d7a6d9ee39a40792d84e9b7ab3ffcf3ea65998cc" title="Email" onclick="window.open(this.href,&#39;win2&#39;,&#39;width=400,height=350,menubar=yes,resizable=yes&#39;); return false;"><img src="./Find Smallest and Largest Value in a Range with VBA_files/emailButton.png" alt="Email"></a>				</li>
+												</ul>
+
+	
+	<span class="content_rating">User Rating:&nbsp;<img src="./Find Smallest and Largest Value in a Range with VBA_files/rating_star.png" alt=""><img src="./Find Smallest and Largest Value in a Range with VBA_files/rating_star.png" alt=""><img src="./Find Smallest and Largest Value in a Range with VBA_files/rating_star.png" alt=""><img src="./Find Smallest and Largest Value in a Range with VBA_files/rating_star.png" alt=""><img src="./Find Smallest and Largest Value in a Range with VBA_files/rating_star.png" alt="">&nbsp;/&nbsp;14</span>
+<br>
+<form method="post" action="http://www.globaliconnect.com/excel/index.php?option=com_content&view=article&id=105:find-smallest-and-largest-value-in-range-with-vba-excel&catid=79&Itemid=475&hitcount=0"><div class="content_vote">Poor<input type="radio" title="Vote 1" name="user_rating" value="1"><input type="radio" title="Vote 2" name="user_rating" value="2"><input type="radio" title="Vote 3" name="user_rating" value="3"><input type="radio" title="Vote 4" name="user_rating" value="4"><input type="radio" title="Vote 5" name="user_rating" value="5" checked="checked">Best&nbsp;<input class="button" type="submit" name="submit_vote" value="Rate"><input type="hidden" name="task" value="article.vote"><input type="hidden" name="hitcount" value="0"><input type="hidden" name="url" value="http://www.globaliconnect.com/excel/index.php?option=com_content&amp;view=article&amp;id=105:find-smallest-and-largest-value-in-range-with-vba-excel&amp;catid=79&amp;Itemid=475&amp;hitcount=0"><input type="hidden" name="c97a3a13360dbf37efcc88b7a93aa80a" value="1"></div></form>
+
+<a class="article-detailer">Details</a>
+<dl class="article-info" style="display: none;">
+	 <dt class="article-info-term">Details</dt>
+						<dd class="category-name">
+													Category: Excel VBA							</dd>
+						
+		</dl>
+
+	
+	<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; word-spacing: normal; letter-spacing: normal; text-align: justify; white-space: normal; padding: 0px; margin: 0px;">&nbsp;</p>
+<p style="font-size: medium; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; word-spacing: normal; letter-spacing: normal; text-align: justify; white-space: normal; padding: 0px; margin: 0px;"><span style="color: #ff0000;"><strong>Finding Smallest and Largest Value with VBA. Using ParamArray to find Minimum Value.</strong></span></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; word-spacing: normal; letter-spacing: normal; text-align: justify; white-space: normal; padding: 0px; margin: 0px;">&nbsp;</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; word-spacing: normal; letter-spacing: normal; text-align: justify; white-space: normal; padding: 0px; margin: 0px;"><span style="color: #333333;"><strong>Related Links:</strong></span></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; word-spacing: normal; letter-spacing: normal; text-align: justify; white-space: normal; padding: 0px; margin: 0px;"><a href="http://www.globaliconnect.com/excel/index.php?option=com_content&view=article&id=104:finding-smallest-largest-k-th-smallest-and-k-th-largest-numbers-in-a-range-in-excel&catid=77&Itemid=473">Remove Duplicates in a range, using "Find 'Smallest', 'Largest', 'K-th Smallest' and 'K-th Largest' Numbers in a Range, with Excel Functions.</a></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; word-spacing: normal; letter-spacing: normal; text-align: justify; white-space: normal; padding: 0px; margin: 0px;">&nbsp;</p>
+<hr>
+<p style="font-size: medium; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; word-spacing: normal; letter-spacing: normal; text-align: justify; white-space: normal; padding: 0px; margin: 0px;"><span style="color: #ff0000;"><strong>Determine smallest value in range</strong></span></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; word-spacing: normal; letter-spacing: normal; text-align: justify; white-space: normal; padding: 0px; margin: 0px;">&nbsp;</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; word-spacing: normal; letter-spacing: normal; text-align: justify; white-space: normal; padding: 0px; margin: 0px;"><span style="color: #000000;"><strong>Sub Smallest()</strong></span><br><span style="color: #008000;">'Cells with dates also return a value, and get covered for determining smallest value. Percentages will convert and return numerics.</span><br><br><span style="color: #000000;">Dim rng As Range</span><br><span style="color: #000000;">Dim minimum As Double</span></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; word-spacing: normal; letter-spacing: normal; text-align: justify; white-space: normal; padding: 0px 0px 0px 30px; margin: 0px;"><span style="color: #339966;">&nbsp;</span></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; word-spacing: normal; letter-spacing: normal; text-align: justify; white-space: normal; padding: 0px 0px 0px 30px; margin: 0px;"><span style="color: #008000;">'Set range from which to determine smallest value</span><br><span style="color: #000000;">Set rng = Sheet1.Range("A1:Z100")</span><br><br></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; word-spacing: normal; letter-spacing: normal; text-align: justify; white-space: normal; padding: 0px 0px 0px 30px; margin: 0px;"><span style="color: #008000;">'Worksheet function MIN returns the smallest value in a range&nbsp;</span></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; word-spacing: normal; letter-spacing: normal; text-align: justify; white-space: normal; padding: 0px 0px 0px 30px; margin: 0px;"><span style="color: #000000;">minimum = Application.WorksheetFunction.Min(rng)</span><br><br><span style="color: #008000;">'Displays smallest value</span><br><span style="color: #000000;">MsgBox minimum</span><br><br></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; word-spacing: normal; letter-spacing: normal; text-align: justify; white-space: normal; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; margin: 0px;"><br><strong><span style="color: #000000;">End Sub</span></strong></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; word-spacing: normal; letter-spacing: normal; text-align: justify; white-space: normal; padding: 0px; margin: 0px;"><span style="color: #000000;">&nbsp;</span></p>
+<hr>
+<p style="font-size: medium; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; word-spacing: normal; letter-spacing: normal; text-align: justify; white-space: normal; padding: 0px; margin: 0px;"><span style="color: #ff0000;"><strong>Determine largest value in range</strong></span></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; word-spacing: normal; letter-spacing: normal; text-align: justify; white-space: normal; padding: 0px; margin: 0px;"><br><span style="color: #000000;"><strong>Sub Largest()</strong></span><br><span style="color: #008000;">'Cells with dates also return a value, and get covered for determining largest value. Percentages will convert and return numerics.</span><br><br><span style="color: #000000;">Dim rng As Range</span><br><span style="color: #000000;">Dim maximum As Double</span></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; word-spacing: normal; letter-spacing: normal; text-align: justify; white-space: normal; padding: 0px 0px 0px 30px; margin: 0px;"><span style="color: #339966;">&nbsp;</span></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; word-spacing: normal; letter-spacing: normal; text-align: justify; white-space: normal; padding: 0px 0px 0px 30px; margin: 0px;"><span style="color: #008000;">'Set range from which to determine largest value</span><br><span style="color: #000000;">Set rng = Sheet1.Range("A1:Z100")</span><br><br></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; word-spacing: normal; letter-spacing: normal; text-align: justify; white-space: normal; padding: 0px 0px 0px 30px; margin: 0px;"><span style="color: #008000;">'Worksheet function MAX returns the largest value in a range&nbsp;</span></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; word-spacing: normal; letter-spacing: normal; text-align: justify; white-space: normal; padding: 0px 0px 0px 30px; margin: 0px;"><span style="color: #000000;">maximum = Application.WorksheetFunction.Max(rng)</span><br><br><span style="color: #008000;">'Displays largest value</span><br><span style="color: #000000;">MsgBox maximum</span><br><br></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; word-spacing: normal; letter-spacing: normal; text-align: justify; white-space: normal; padding: 0px; margin: 0px;"><br><strong><span style="color: #000000;">End Sub</span></strong></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; word-spacing: normal; letter-spacing: normal; text-align: justify; white-space: normal; padding: 0px; margin: 0px;"><span style="color: #000000;">&nbsp;</span></p>
+<hr>
+<p style="font-size: medium; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; word-spacing: normal; letter-spacing: normal; text-align: justify; white-space: normal; padding: 0px; margin: 0px;"><span style="color: #ff0000;"><strong>Determine smallest value in each non-blank row and display message mentioning row no. and the value.</strong></span></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; word-spacing: normal; letter-spacing: normal; text-align: justify; white-space: normal; padding: 0px; margin: 0px;"><br><span style="color: #000000;"><strong>Sub rowSmallest()</strong></span><br><span style="color: #008000;">'Cells with dates also return a value, and get covered for determining smallest value. Percentages will convert and return numerics.</span><br><br><span style="color: #000000;">Dim rng As Range</span><br><span style="color: #000000;">Dim currentRow As Long</span><br><span style="color: #000000;">Dim minValue As Double</span><br><span style="color: #000000;">Dim lastRow As Long</span></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; word-spacing: normal; letter-spacing: normal; text-align: justify; white-space: normal; padding: 0px 0px 0px 30px; margin: 0px;">&nbsp;</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; word-spacing: normal; letter-spacing: normal; text-align: justify; white-space: normal; padding: 0px 0px 0px 30px; margin: 0px;"><span style="color: #008000;">'Determines the last used row number in worksheet</span><br><span style="color: #000000;">lastRow = Sheet1.UsedRange.Row - 1 + Sheet1.UsedRange.Rows.Count</span><br><br><span style="color: #000000;">For currentRow = 1 To lastRow</span><br><span style="color: #000000;">Set rng = Sheet1.Rows(currentRow)</span></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; word-spacing: normal; letter-spacing: normal; text-align: justify; white-space: normal; padding: 0px 0px 0px 60px; margin: 0px;">&nbsp;</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; word-spacing: normal; letter-spacing: normal; text-align: justify; white-space: normal; padding: 0px 0px 0px 60px; margin: 0px;"><span style="color: #008000;">'Checks for empty rows provided there are no formulas (including ="" ) or spaces present in any of the cells&nbsp;</span> <br><span style="color: #000000;">If WorksheetFunction.CountA(rng) = 0 Then</span></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; word-spacing: normal; letter-spacing: normal; text-align: justify; white-space: normal; padding: 0px 0px 0px 90px; margin: 0px;"><span style="color: #000000;">MsgBox "Row " &amp; currentRow &amp; " is blank."</span></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; word-spacing: normal; letter-spacing: normal; text-align: justify; white-space: normal; padding: 0px 0px 0px 60px; margin: 0px;"><span style="color: #000000;">Else</span></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; word-spacing: normal; letter-spacing: normal; text-align: justify; white-space: normal; padding: 0px 0px 0px 90px; margin: 0px;"><span style="color: #000000;">minValue = Application.WorksheetFunction.Min(rng)</span><br><span style="color: #000000;">MsgBox "The smallest value in row " &amp; currentRow &amp; " is " &amp; minValue</span></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; word-spacing: normal; letter-spacing: normal; text-align: justify; white-space: normal; padding: 0px 0px 0px 60px; margin: 0px;"><span style="color: #000000;">End If</span></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; word-spacing: normal; letter-spacing: normal; text-align: justify; white-space: normal; padding: 0px 0px 0px 30px; margin: 0px;"><br><span style="color: #000000;">Next currentRow</span></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; word-spacing: normal; letter-spacing: normal; text-align: justify; white-space: normal; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; margin: 0px;"><br><strong><span style="color: #000000;">End Sub</span></strong></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; word-spacing: normal; letter-spacing: normal; text-align: justify; white-space: normal; padding: 0px; margin: 0px;">&nbsp;</p>
+<hr>
+<p style="font-size: medium; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; word-spacing: normal; letter-spacing: normal; text-align: justify; white-space: normal; padding: 0px; margin: 0px;"><span style="color: #ff0000;"><strong>Determine smallest value in range, highlight and return its address</strong></span></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: justify; white-space: normal; padding: 0px; margin: 0px;"><br><strong>Sub Smallest_Value_Highlight_Address()</strong><br><span style="color: #008000;">'Determines smallest value in range, highlights it and returns its address</span><br><span style="color: #008000;">'Cells with dates also return a value, and get covered for determining smallest value. Percentages will convert and return numerics.</span><br><span style="color: #008000;">'Determines values from the active worksheet</span></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: justify; white-space: normal; padding: 0px; margin: 0px;">&nbsp;</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: justify; white-space: normal; padding: 0px 0px 0px 30px; margin: 0px;">Dim strData As String<br>Dim rng As Range<br>Dim vValue As Variant<br>Dim rngCol As Range<br>Dim lngRow As Long</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: justify; white-space: normal; padding: 0px 0px 0px 30px; margin: 0px;">Dim rngAdd As Range</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: justify; white-space: normal; padding: 0px 0px 0px 30px; margin: 0px;">&nbsp;&nbsp;&nbsp; &nbsp;</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: justify; white-space: normal; padding: 0px 0px 0px 30px; margin: 0px;"><span style="color: #008000;">'Enter desired range in which to find the smallest value</span></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: justify; white-space: normal; padding: 0px 0px 0px 30px; margin: 0px;">strData = "<span style="color: #333333;">A1:Z100</span>"</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: justify; white-space: normal; padding: 0px 0px 0px 30px; margin: 0px;"><br>Set rng = Range(strData)</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: justify; white-space: normal; padding: 0px 0px 0px 30px; margin: 0px;">&nbsp;&nbsp;&nbsp; &nbsp;</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: justify; white-space: normal; padding: 0px 0px 0px 30px; margin: 0px;"><span style="color: #008000;">'Determines smallest value in range</span><br>vValue = Application.WorksheetFunction.Min(rng)</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: justify; white-space: normal; padding: 0px 0px 0px 30px; margin: 0px;">&nbsp;</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: justify; white-space: normal; padding: 0px 0px 0px 30px; margin: 0px;">For Each rngCol In rng.Columns</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: justify; white-space: normal; padding: 0px 0px 0px 60px; margin: 0px;"><span style="color: #008000;">'Determines in case the smallest value exists in a particular column</span></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: justify; white-space: normal; padding: 0px 0px 0px 60px; margin: 0px;">If Application.WorksheetFunction.CountIf(rngCol, vValue) &gt; 0 Then</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: justify; white-space: normal; padding: 0px 0px 0px 90px; margin: 0px;"><span style="color: #008000;">'Returns row number of the smallest value, in the column which has the same</span></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: justify; white-space: normal; padding: 0px 0px 0px 90px; margin: 0px;">lngRow = Application.WorksheetFunction.Match(vValue, rngCol, 0)</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: justify; white-space: normal; padding: 0px 0px 0px 90px; margin: 0px;">&nbsp; <br><span style="color: #008000;">'Returns cell address of the smallest value</span></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: justify; white-space: normal; padding: 0px 0px 0px 90px; margin: 0px;">Set rngAdd = rngCol.cells(lngRow, 1)</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: justify; white-space: normal; padding: 0px 0px 0px 90px; margin: 0px;">&nbsp;&nbsp; &nbsp;<br><span style="color: #008000;">'Selects smallest value to highlight with color</span></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: justify; white-space: normal; padding: 0px 0px 0px 90px; margin: 0px;">rngAdd.Select</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: justify; white-space: normal; padding: 0px 0px 0px 90px; margin: 0px;">&nbsp;&nbsp; &nbsp;</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: justify; white-space: normal; padding: 0px 0px 0px 90px; margin: 0px;">With Selection</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: justify; white-space: normal; padding: 0px 0px 0px 120px; margin: 0px;">.Interior.Color = RGB(255, 255, 0)</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: justify; white-space: normal; padding: 0px 0px 0px 90px; margin: 0px;">End With</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: justify; white-space: normal; padding: 0px 0px 0px 90px; margin: 0px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<br><span style="color: #008000;">'Message displays the searched range, smallest value, and its address</span></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: justify; white-space: normal; padding: 0px 0px 0px 90px; margin: 0px;">MsgBox "Smallest Value in Range(""" &amp; strData &amp; """) is " &amp; vValue &amp; ", in Cell " &amp; rngAdd.Address &amp; "."</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: justify; white-space: normal; padding: 0px 0px 0px 90px; margin: 0px;">Exit Sub</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: justify; white-space: normal; padding: 0px 0px 0px 60px; margin: 0px;">End If</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: justify; white-space: normal; padding: 0px 0px 0px 30px; margin: 0px;">Next</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; color: #000000; word-spacing: normal; letter-spacing: normal; text-align: justify; white-space: normal; padding: 0px; margin: 0px;"><br><strong>End Sub</strong><br>&nbsp;</p>
+<hr>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; word-spacing: normal; letter-spacing: normal; text-align: justify; white-space: normal; padding: 0px; margin: 0px;">-------------------------------------------------------------------------------------------------------------------------------------------------------------<br><span style="color: #008000;">'ParamArray (Parameter Array): It is not possible to call a procedure with more arguments than the procedure declaration specifies. VBA allows use of optional parameters but you have to know the number of elements in the array ahead of time, when you define the procedure. The ParamArray keyword lets you pass in any number of values. The function receives them as an array. The ParamArray argument makes it possible for a procedure (a function or a subroutine) to accept an arbitrary number of arguments, each of a possibly different type (by using a Variant).</span></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; word-spacing: normal; letter-spacing: normal; text-align: justify; white-space: normal; padding: 0px; margin: 0px;">-------------------------------------------------------------------------------------------------------------------------------------------------------------</p>
+<p style="font-size: medium; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; word-spacing: normal; letter-spacing: normal; text-align: justify; white-space: normal; padding: 0px; margin: 0px;"><span style="color: #ff0000;"><strong>Determine Minimum Value from a List</strong></span></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; word-spacing: normal; letter-spacing: normal; text-align: justify; white-space: normal; padding: 0px; margin: 0px;"><br><strong><span style="color: #000000;">Function MinInList(ParamArray ArrayList() As Variant)</span></strong><br><span style="color: #008000;">'Function will return the minimum value from a list of values</span><br>&nbsp; &nbsp;<br><span style="color: #000000;">Dim n As Integer</span><br><span style="color: #000000;">Dim iValue As Variant</span></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; word-spacing: normal; letter-spacing: normal; text-align: justify; white-space: normal; padding: 0px; margin: 0px;">&nbsp;</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; word-spacing: normal; letter-spacing: normal; text-align: justify; white-space: normal; padding: 0px; margin: 0px;"><span style="color: #008000;">'Set the variable iValue - initialize to the first item or value in list.&nbsp; &nbsp;</span><br><span style="color: #000000;">iValue = ArrayList(0)</span><br><br></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; word-spacing: normal; letter-spacing: normal; text-align: justify; white-space: normal; padding: 0px 0px 0px 30px; margin: 0px;"><span style="color: #008000;">'Checks each item or value in the list to find the smallest.</span><br><span style="color: #008000;">'The UBound function is used with the LBound function to determine the size of an array. Use the LBound function to find the lower limit of an array dimension. Since array subscripts start at 0, the length of a dimension is greater by one than the highest available subscript for that dimension. The largest available subscript for the indicated dimension of an array can be obtained by using the Ubound function.</span><br><span style="color: #000000;">For n = 0 To UBound(ArrayList)</span><br><br></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; word-spacing: normal; letter-spacing: normal; text-align: justify; white-space: normal; padding: 0px 0px 0px 60px; margin: 0px;"><span style="color: #008000;">'Determines the smallest value.</span></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; word-spacing: normal; letter-spacing: normal; text-align: justify; white-space: normal; padding: 0px 0px 0px 60px; margin: 0px;"><span style="color: #000000;">If ArrayList(n) &lt; iValue Then</span><br><span style="color: #000000;">iValue = ArrayList(n)</span><br><span style="color: #000000;">End If</span><br><br></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; word-spacing: normal; letter-spacing: normal; text-align: justify; white-space: normal; padding: 0px 0px 0px 30px; margin: 0px;"><span style="color: #000000;">Next n</span></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; word-spacing: normal; letter-spacing: normal; text-align: justify; white-space: normal; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; margin: 0px;"><br><span style="color: #000000;">MinInList = iValue</span><br>&nbsp; &nbsp;<br><strong><span style="color: #000000;">End Function</span></strong></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; word-spacing: normal; letter-spacing: normal; text-align: justify; white-space: normal; padding: 0px; margin: 0px;">&nbsp;</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; word-spacing: normal; letter-spacing: normal; text-align: justify; white-space: normal; padding: 0px; margin: 0px;"><br><span style="color: #000000;"><strong>Sub SmallestValueInList()</strong></span><br><span style="color: #008000;">'Returns minimum value from a List - Calls Function MinInList.</span></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; word-spacing: normal; letter-spacing: normal; text-align: justify; white-space: normal; padding: 0px 0px 0px 30px; margin: 0px;">&nbsp;</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; word-spacing: normal; letter-spacing: normal; text-align: justify; white-space: normal; padding: 0px 0px 0px 30px; margin: 0px;"><span style="color: #008000;">'Cells(16, 5) contains -308, Range("B13") contains -400 and Range("D19") contains the date "2/1/2011". Value returned is -400, being the smallest.</span><br><span style="color: #000000;">MsgBox MinInList(1, -5, 3, -8, -9, hello, 10 * -1, cells(16, 5), Range("B13"), Range("D19"))</span><br><br><span style="color: #008000;">'Range("D19") contains the date "2/1/2011", Range("H8") contains the date "3/5/2010" and Range("I10") contains the date "3/5/2009". Date returned is "3/5/2009", being the smallest.</span><br><span style="color: #000000;">MsgBox MinInList(Range("D19"), Range("H8"), Range("I10"))</span><br><br></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; word-spacing: normal; letter-spacing: normal; text-align: justify; white-space: normal; padding: 0px; margin: 0px;"><strong><span style="color: #000000;">End Sub</span></strong></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; word-spacing: normal; letter-spacing: normal; text-align: justify; white-space: normal; padding: 0px; margin: 0px;">&nbsp;</p>
+<hr>
+<p style="font-size: medium; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; word-spacing: normal; letter-spacing: normal; text-align: justify; white-space: normal; padding: 0px; margin: 0px;"><span style="color: #ff0000;"><strong>Determine Maximum Value from a List</strong></span>&nbsp;</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; word-spacing: normal; letter-spacing: normal; text-align: justify; white-space: normal; padding: 0px; margin: 0px;"><br><span style="color: #000000;">Function MaxInList(ParamArray ArrayList() As Variant)</span><br><span style="color: #008000;">'Function will return the maximum value from a list of values</span><br>&nbsp; &nbsp;<br><span style="color: #000000;">Dim n As Integer</span><br><span style="color: #000000;">Dim iValue As Variant</span></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; word-spacing: normal; letter-spacing: normal; text-align: justify; white-space: normal; padding: 0px; margin: 0px;">&nbsp;</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; word-spacing: normal; letter-spacing: normal; text-align: justify; white-space: normal; padding: 0px; margin: 0px;"><span style="color: #008000;">'Set the variable iValue - initialize to the first item or value in list.&nbsp; &nbsp;</span><br><span style="color: #000000;">iValue = ArrayList(0)</span><br><br></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; word-spacing: normal; letter-spacing: normal; text-align: justify; white-space: normal; padding: 0px 0px 0px 30px; margin: 0px;"><span style="color: #008000;">'Checks each item or value in the list to find the largest.</span><br><span style="color: #000000;">For n = 0 To UBound(ArrayList)</span></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; word-spacing: normal; letter-spacing: normal; text-align: justify; white-space: normal; padding: 0px 0px 0px 60px; margin: 0px;"><span style="color: #008000;">'Determines the largest value.</span></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; word-spacing: normal; letter-spacing: normal; text-align: justify; white-space: normal; padding: 0px 0px 0px 60px; margin: 0px;"><span style="color: #000000;">If ArrayList(n) &gt; iValue Then</span><br><span style="color: #000000;">iValue = ArrayList(n)</span></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; word-spacing: normal; letter-spacing: normal; text-align: justify; white-space: normal; padding: 0px 0px 0px 60px; margin: 0px;"><span style="color: #000000;">End If</span><br><br></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; word-spacing: normal; letter-spacing: normal; text-align: justify; white-space: normal; padding: 0px 0px 0px 30px; margin: 0px;"><span style="color: #000000;">Next n</span></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; word-spacing: normal; letter-spacing: normal; text-align: justify; white-space: normal; padding: 0px; margin: 0px;"><br><span style="color: #000000;">MaxInList = iValue</span><br>&nbsp; &nbsp;<br><strong><span style="color: #000000;">End Function</span></strong></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; word-spacing: normal; letter-spacing: normal; text-align: justify; white-space: normal; padding: 0px; margin: 0px;">&nbsp;</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; word-spacing: normal; letter-spacing: normal; text-align: justify; white-space: normal; padding: 0px; margin: 0px;"><br><span style="color: #000000;"><strong>Sub LargestValueInList()</strong></span><br><span style="color: #008000;">'Returns maximum value from a List- Calls Function MaxInList.</span></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; word-spacing: normal; letter-spacing: normal; text-align: justify; white-space: normal; padding: 0px 0px 0px 30px; margin: 0px;">&nbsp;</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; word-spacing: normal; letter-spacing: normal; text-align: justify; white-space: normal; padding: 0px 0px 0px 30px; margin: 0px;"><span style="color: #008000;">'Range("K7") contains 3000. Value returned and displayed in message box is 3000, being the largest.</span><br><span style="color: #000000;">MsgBox MaxInList(1, -5, 3, -8, -9, hello, 10 * -1, Range("K7"))</span></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; word-spacing: normal; letter-spacing: normal; text-align: justify; white-space: normal; padding: 0px 0px 0px 30px; margin: 0px;">&nbsp;</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; word-spacing: normal; letter-spacing: normal; text-align: justify; white-space: normal; padding: 0px 0px 0px 30px; margin: 0px;"><span style="color: #008000;">'Range("D19") contains the date "2/1/2011", Range("H8") contains the date "3/5/2010" and Range("I10") contains the date "3/5/2009". Date returned is "2/1/2011", being the largest.</span><br style="color: #339966;"><span style="color: #000000;">MsgBox MaxInList(Range("D19"), Range("H8"), Range("I10"))</span><br><br></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; word-spacing: normal; letter-spacing: normal; text-align: justify; white-space: normal; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; margin: 0px;"><span style="color: #000000;"><strong>End Sub</strong></span><br><br></p>
+<hr>
+<p style="font-size: medium; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; word-spacing: normal; letter-spacing: normal; text-align: justify; white-space: normal; padding: 0px; margin: 0px;"><span style="color: #ff0000;"><strong>Determine Minimum Value from a Parameter Array (also works for nested array or a multiple column range)</strong></span></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; word-spacing: normal; letter-spacing: normal; text-align: justify; white-space: normal; padding: 0px; margin: 0px;"><br><span style="color: #000000;"><strong>Function minimum(ParamArray Values() As Variant)</strong></span><br><span style="color: #008000;">'Returns minimum value from a Parameter Array (also works for nested array or a multiple column range).</span><br>&nbsp; &nbsp;<br><span style="color: #000000;">Dim Item As Variant</span><br><span style="color: #000000;">Dim Part As Variant</span></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; word-spacing: normal; letter-spacing: normal; text-align: justify; white-space: normal; padding: 0px; margin: 0px;">&nbsp; &nbsp;<br><span style="color: #000000;">For Each Item In Values</span></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; word-spacing: normal; letter-spacing: normal; text-align: justify; white-space: normal; padding: 0px 0px 0px 30px; margin: 0px;">&nbsp;</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; word-spacing: normal; letter-spacing: normal; text-align: justify; white-space: normal; padding: 0px 0px 0px 30px; margin: 0px;"><span style="color: #008000;">'Checks if an item in the array of Values is itself an array (viz. nested array) and determines minimum value therein</span><br><span style="color: #000000;">If IsArray(Item) Then</span><br><br></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; word-spacing: normal; letter-spacing: normal; text-align: justify; white-space: normal; padding: 0px 0px 0px 60px; margin: 0px;"><span style="color: #000000;">For Each Part In Item</span></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; word-spacing: normal; letter-spacing: normal; text-align: justify; white-space: normal; padding: 0px 0px 0px 90px; margin: 0px;"><span style="color: #000000;">minimum = minimum(Part, minimum)</span></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; word-spacing: normal; letter-spacing: normal; text-align: justify; white-space: normal; padding: 0px 0px 0px 60px; margin: 0px;"><span style="color: #000000;">Next</span></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; word-spacing: normal; letter-spacing: normal; text-align: justify; white-space: normal; padding: 0px 0px 0px 30px; margin: 0px;"><span style="color: #008000;">'If an item in the array of Values is not an array&nbsp;</span></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; word-spacing: normal; letter-spacing: normal; text-align: justify; white-space: normal; padding: 0px 0px 0px 30px; margin: 0px;"><span style="color: #000000;">Else</span><br><br></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; word-spacing: normal; letter-spacing: normal; text-align: justify; white-space: normal; padding: 0px 0px 0px 60px; margin: 0px;"><span style="color: #000000;">If Not IsEmpty(minimum) Then</span></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; word-spacing: normal; letter-spacing: normal; text-align: justify; white-space: normal; padding: 0px 0px 0px 90px; margin: 0px;"><span style="color: #000000;">If Item &lt; minimum And Not IsEmpty(Item) Then</span></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; word-spacing: normal; letter-spacing: normal; text-align: justify; white-space: normal; padding: 0px 0px 0px 120px; margin: 0px;"><span style="color: #000000;">minimum = Item</span></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; word-spacing: normal; letter-spacing: normal; text-align: justify; white-space: normal; padding: 0px 0px 0px 90px; margin: 0px;"><span style="color: #000000;">End If</span></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; word-spacing: normal; letter-spacing: normal; text-align: justify; white-space: normal; padding: 0px 0px 0px 60px; margin: 0px;"><span style="color: #000000;">Else</span></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; word-spacing: normal; letter-spacing: normal; text-align: justify; white-space: normal; padding: 0px 0px 0px 90px; margin: 0px;"><span style="color: #000000;">minimum = Item</span></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; word-spacing: normal; letter-spacing: normal; text-align: justify; white-space: normal; padding: 0px 0px 0px 60px; margin: 0px;"><span style="color: #000000;">End If</span></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; word-spacing: normal; letter-spacing: normal; text-align: justify; white-space: normal; padding: 0px 0px 0px 30px; margin: 0px;"><br><span style="color: #000000;">End If</span></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; word-spacing: normal; letter-spacing: normal; text-align: justify; white-space: normal; padding: 0px 0px 0px 30px; margin: 0px;">&nbsp;</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; word-spacing: normal; letter-spacing: normal; text-align: justify; white-space: normal; padding: 0px; margin: 0px;"><span style="color: #000000;">Next</span></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; word-spacing: normal; letter-spacing: normal; text-align: justify; white-space: normal; padding: 0px; margin: 0px;">&nbsp; &nbsp;<br><strong><span style="color: #000000;">End Function</span></strong></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; word-spacing: normal; letter-spacing: normal; text-align: justify; white-space: normal; padding: 0px; margin: 0px;">&nbsp;</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; word-spacing: normal; letter-spacing: normal; text-align: justify; white-space: normal; padding: 0px; margin: 0px;"><br><span style="color: #000000;"><strong>Sub SmallestValue()</strong></span><br><span style="color: #008000;">'Returns minimum value from a Parameter Array (also works for nested array or a multiple column range).</span></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; word-spacing: normal; letter-spacing: normal; text-align: justify; white-space: normal; padding: 0px 0px 0px 30px; margin: 0px;">&nbsp;</p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; word-spacing: normal; letter-spacing: normal; text-align: justify; white-space: normal; padding: 0px 0px 0px 30px; margin: 0px;"><span style="color: #339966;"><span style="color: #008000;">'Returns -25</span>.</span><br><span style="color: #000000;">MsgBox minimum(Array(11, 20, -16), -14, hello, -18.5, Array(1, Array(1 * -25, -21, -1), -11))</span><br><br><span style="color: #339966;"><span style="color: #008000;">'Returns 11</span>.</span><br><span style="color: #000000;">MsgBox minimum(16.5, 11, 20)</span><br><br><span style="color: #008000;">'Returns -7700, smallest value in range which is in cell "B27".</span><br><span style="color: #000000;">MsgBox minimum(Range("A1:Z100"))</span><br><br><span style="color: #008000;">'Cells(16, 5) contains -308, Range("B13") contains -400 and Range("D19") contains the date "2/1/2011". Value returned is -400, being the smallest.</span><br><span style="color: #000000;">MsgBox minimum(1, -5, 3, -8, -9, hello, 10 * -1, cells(16, 5), Range("B13"), Range("D19"))</span><br><br><span style="color: #008000;">'Range("D19") contains the date "2/1/2011", Range("H8") contains the date "3/5/2010" and Range("I10") contains the date "3/5/2009". Date returned is "3/5/2009", being the smallest.</span><br><span style="color: #000000;">MsgBox minimum(Range("D19"), Range("H8"), Range("I10"))</span><br><br></p>
+<p style="font-size: small; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; word-spacing: normal; letter-spacing: normal; text-align: justify; white-space: normal; padding: 0px; margin: 0px;"><strong><span style="color: #000000;">End Sub</span></strong><br><br><br></p> 
+	</div>
+				</div>
+				<div class="clr"></div>
+				<span class="shadow-left">&nbsp;</span>
+				<span class="shadow-right">&nbsp;</span>
+					
+		
+			</div>
+				
+			<div class="clr"></div>
+		</div>
+			
+		
+	<div id="bottom6out">
+					<div id="bottom6">
+	           	<div class="module-outer">
+		<div class="module">
+			<div>
+				<div>
+					<div class="lvround-inner">
+													<h3 class="moduleh3"><strong>Bottom Ad</strong></h3>
+												
+<div style="text-align:none; width:100%; margin: 0px 0px 0px 0px">
+<script type="text/javascript"><!--
+google_ad_client = "pub-1689026553887445";
+google_ad_slot = "7319014455";
+google_ad_width = "728";
+google_ad_height = "90";
+//-->
+</script>
+<script type="text/javascript" src="./Find Smallest and Largest Value in a Range with VBA_files/show_ads.js">
+</script><ins id="aswift_1_expand" style="display:inline-table;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent"><ins id="aswift_1_anchor" style="display:block;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent"><iframe width="728" height="90" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_1" name="aswift_1" style="left:0;position:absolute;top:0;"></iframe></ins></ins>
+</div>
+
+						<div class="clr"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="clr"></div>
+		<span class="shadow-left">&nbsp;</span>
+		<span class="shadow-right">&nbsp;</span>
+	</div>
+		<div class="module-outer">
+		<div class="module">
+			<div>
+				<div>
+					<div class="lvround-inner">
+													<h3 class="moduleh3"><strong>Site Links</strong></h3>
+												
+<ul class="menu">
+<li class="item-493"><a href="http://www.globaliconnect.com/excel/index.php?option=com_contact&view=contact&id=10&Itemid=493">Contact</a></li><li class="item-491"><a href="http://www.globaliconnect.com/excel/index.php?option=com_content&view=article&id=183&Itemid=491">About Us</a></li><li class="item-492"><a href="http://www.globaliconnect.com/excel/index.php?option=com_content&view=article&id=184&Itemid=492">Testimonials</a></li></ul>
+						<div class="clr"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="clr"></div>
+		<span class="shadow-left">&nbsp;</span>
+		<span class="shadow-right">&nbsp;</span>
+	</div>
+	
+			</div>
+					
+	</div>					
+		
+		<div class="clr"></div>
+	</div>
+			<div id="foot_container" style="max-width:1180px;">
+					
+		
+		
+							
+	
+			
+			<div id="subfoot">
+								
+					<div class="copytext">© 2014 GlobaliConnect.com. All rights reserved.</div>
+							</div>
+					
+	
+		<div class="clr"></div>
+			
+			<div id="footer">
+				<div class="footer-inner">
+					<span class="feckl">&nbsp;</span>
+					<span class="feckr">&nbsp;</span>
+					<div id="scroll_up"> <a href="http://www.globaliconnect.com/excel/index.php?option=com_content&view=article&id=105:find-smallest-and-largest-value-in-range-with-vba-excel&catid=79&Itemid=475#" class="lv-tooltip" id="gotop" title="">↑↑↑</a></div>
+										</div>
+				<div class="footer-bottom">
+									
+				  		<span id="date" style="color:#fff">Wednesday, 01 October 2014</span>
+								  		<span id="copy"><a href="http://www.lernvid.com/" title="Joomla Templates" target="_blank" style="color:#fff">Template designed by LernVid.com</a></span>
+				</div>
+			</div>
+					
+		<div class="clr"></div>
+	</div>	
+		
+
+<div class="easy-tooltip-wrapper" style="width: 69px; height: 22px; position: absolute; overflow: hidden; left: -9000px; display: none;"><span class="easy-tooltip-default" style="position: relative; display: none;"><span class="easy-tooltip-text">Scroll to top</span></span></div><iframe id="google_osd_static_frame_9159836622420" name="google_osd_static_frame" style="display: none; width: 0px; height: 0px;"></iframe></body></html>

@@ -1,0 +1,1597 @@
+<!DOCTYPE html>
+<!-- saved from url=(0120)http://stackoverflow.com/questions/8412404/is-it-good-practice-to-leave-debug-print-instructions-in-code-that-goes-in-pr -->
+<html itemscope="" itemtype="http://schema.org/QAPage"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <title>excel vba - Is it good practice to leave "Debug.Print" instructions in code that goes in "production"? - Stack Overflow</title>
+    <link rel="shortcut icon" href="http://cdn.sstatic.net/stackoverflow/img/favicon.ico?v=038622610830">
+    <link rel="apple-touch-icon image_src" href="http://cdn.sstatic.net/stackoverflow/img/apple-touch-icon.png?v=fd7230a85918">
+    <link rel="search" type="application/opensearchdescription+xml" href="http://stackoverflow.com/opensearch.xml">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:domain" content="stackoverflow.com">
+    <meta property="og:type" content="website">
+    <meta property="og:image" itemprop="image primaryImageOfPage" content="http://cdn.sstatic.net/stackoverflow/img/apple-touch-icon@2.png?v=fde65a5a78c6">
+    <meta name="twitter:title" property="og:title" itemprop="title name" content="Is it good practice to leave &quot;Debug.Print&quot; instructions in code that goes in &quot;production&quot;?">
+    <meta name="twitter:description" property="og:description" itemprop="description" content="In Excel VBA, is it good practice to leave Debug.Print instructions in code that goes in &quot;production&quot; ? That is quite useful to debug the sheets realtime at the user&#39;s machine when something goes w...">
+    <meta property="og:url" content="http://stackoverflow.com/questions/8412404/is-it-good-practice-to-leave-debug-print-instructions-in-code-that-goes-in-pr">
+    <link rel="canonical" href="./excel vba - Is it good practice to leave  Debug.Print  instructions in code that goes in  production   - Stack Overflow_files/excel vba - Is it good practice to leave  Debug.Print  instructions in code that goes in  production   - Stack Overflow.htm">
+
+    
+    
+    <script type="text/javascript" async="" src="./excel vba - Is it good practice to leave  Debug.Print  instructions in code that goes in  production   - Stack Overflow_files/ados"></script><script async="" src="./excel vba - Is it good practice to leave  Debug.Print  instructions in code that goes in  production   - Stack Overflow_files/quant.js"></script><script async="" src="./excel vba - Is it good practice to leave  Debug.Print  instructions in code that goes in  production   - Stack Overflow_files/beacon.js"></script><script async="" src="./excel vba - Is it good practice to leave  Debug.Print  instructions in code that goes in  production   - Stack Overflow_files/analytics.js"></script><script type="text/javascript" async="" src="./excel vba - Is it good practice to leave  Debug.Print  instructions in code that goes in  production   - Stack Overflow_files/ados.js"></script><script src="./excel vba - Is it good practice to leave  Debug.Print  instructions in code that goes in  production   - Stack Overflow_files/jquery.min.js"></script>
+    <script src="./excel vba - Is it good practice to leave  Debug.Print  instructions in code that goes in  production   - Stack Overflow_files/stub.en.js"></script>
+    <link rel="stylesheet" type="text/css" href="./excel vba - Is it good practice to leave  Debug.Print  instructions in code that goes in  production   - Stack Overflow_files/all.css">
+    
+    <link rel="alternate" type="application/atom+xml" href="http://stackoverflow.com/feeds/question/8412404">
+    <script>
+        
+        StackExchange.ready(function () {
+                
+                StackExchange.using("snippets", function () {
+                    StackExchange.snippets.initSnippetRenderer();
+                });
+                
+
+            StackExchange.using("postValidation", function () {
+                StackExchange.postValidation.initOnBlurAndSubmit($('#post-form'), 2, 'answer');
+            });
+
+            
+            StackExchange.question.init({showAnswerHelp:true,totalCommentCount:3,shownCommentCount:3,highlightColor:'#F4A83D',backgroundColor:'#FFF',questionId:8412404});
+
+            styleCode();
+
+                StackExchange.realtime.subscribeToQuestion('1', '8412404');
+            
+                    });
+    </script>
+
+
+    <script>
+        StackExchange.init({"locale":"en","stackAuthUrl":"https://stackauth.com","serverTime":1411564540,"networkMetaHostname":"meta.stackexchange.com","routeName":"Questions/Show","styleCode":true,"enableUserHovercards":true,"snippets":{"enabled":true,"domain":"stacksnippets.net"},"site":{"name":"Stack Overflow","description":"Q&A for professional and enthusiast programmers","isNoticesTabEnabled":true,"recaptchaPublicKey":"6LdchgIAAAAAAJwGpIzRQSOFaO0pU6s44Xt8aTwc","recaptchaAudioLang":"en","enableNewTagCreationWarning":true,"nonAsciiTags":true,"enableSocialMediaInSharePopup":true,"useGoogleOAuth2":true},"user":{"fkey":"c9dae8b8232ca8f9dc064b9f5fd34be5","isAnonymous":true,"ab":{"tutorial_tooltips":{"v":"a","g":2},"homepage_recommended_algo":{"v":"a","g":1}}}});
+        StackExchange.using.setCacheBreakers({"js/prettify-full.en.js":"72c4594c1440","js/moderator.en.js":"3bf88d4bfb80","js/full-anon.en.js":"858d702394a1","js/full.en.js":"69ffd279fcc6","js/wmd.en.js":"ac30a8974621","js/third-party/jquery.autocomplete.min.js":"e5f01e97f7c3","js/third-party/jquery.autocomplete.min.en.js":"","js/mobile.en.js":"5a1e717ab0e4","js/help.en.js":"4a00463b8aeb","js/tageditor.en.js":"fb6ca50266c2","js/tageditornew.en.js":"2fba13c2b41b","js/inline-tag-editing.en.js":"f3bc12920b00","js/revisions.en.js":"989c474e85a9","js/review.en.js":"27f50f24f96e","js/tagsuggestions.en.js":"bc2c996faeda","js/post-validation.en.js":"2b94f6deede6","js/explore-qlist.en.js":"4e6f969d97ee","js/events.en.js":"bf6641268766","js/keyboard-shortcuts.en.js":"6bbc5475f8a8","js/external-editor.en.js":"0cab63d6a599","js/external-editor.en.js":"0cab63d6a599","js/snippet-javascript.en.js":"1d24a2177620","js/snippet-javascript-codemirror.en.js":"156cb1a568a2"});
+        StackExchange.using("gps", function() {
+             StackExchange.gps.init(true);
+        });
+    </script>
+    
+        <script>
+            StackExchange.ready(function () {
+                $('#nav-tour').click(function () {
+                    StackExchange.using("gps", function() {
+                        StackExchange.gps.track("aboutpage.click", { aboutclick_location: "headermain" }, true);
+                    });
+                });
+            });
+        </script>
+    
+    
+<script async="" src="./excel vba - Is it good practice to leave  Debug.Print  instructions in code that goes in  production   - Stack Overflow_files/full-anon.en.js"></script><script async="" src="./excel vba - Is it good practice to leave  Debug.Print  instructions in code that goes in  production   - Stack Overflow_files/snippet-javascript.en.js"></script><script async="" src="./excel vba - Is it good practice to leave  Debug.Print  instructions in code that goes in  production   - Stack Overflow_files/post-validation.en.js"></script><script async="" src="./excel vba - Is it good practice to leave  Debug.Print  instructions in code that goes in  production   - Stack Overflow_files/prettify-full.en.js"></script><script async="" src="./excel vba - Is it good practice to leave  Debug.Print  instructions in code that goes in  production   - Stack Overflow_files/external-editor.en.js"></script><script type="text/javascript" src="./excel vba - Is it good practice to leave  Debug.Print  instructions in code that goes in  production   - Stack Overflow_files/adFeedback.js"></script><link rel="stylesheet" href="http://static.adzerk.net/Extensions/adFeedback.css"><link href="./excel vba - Is it good practice to leave  Debug.Print  instructions in code that goes in  production   - Stack Overflow_files/sidebar.min.css" type="text/css" rel="stylesheet"></head>
+<body class="question-page new-topbar">
+    <noscript>&lt;div id="noscript-padding"&gt;&lt;/div&gt;</noscript>
+    <div id="notify-container"></div>
+    <div id="overlay-header"></div>
+    <div id="custom-header"></div>
+<div class="topbar">
+    <div class="topbar-wrapper">
+        
+        <div class="js-topbar-dialog-corral">
+
+<div class="topbar-dialog siteSwitcher-dialog dno">
+    <div class="header">
+        <h3><a href="http://stackoverflow.com/">current community</a></h3>
+    </div>
+    <div class="modal-content current-site-container">
+        <ul class="current-site">
+                <li>
+                        <div class="related-links">
+            <a href="http://chat.stackoverflow.com/" class="js-gps-track" data-gps-track="site_switcher.click({ item_type:6 })">chat</a>
+                    <a href="http://blog.stackoverflow.com/" class="js-gps-track" data-gps-track="site_switcher.click({ item_type:7 })">blog</a>
+            </div>
+
+
+
+
+    <a href="http://stackoverflow.com/" class="current-site-link site-link js-gps-track" data-id="1" data-gps-track="
+        site_switcher.click({ item_type:3 })">
+        <div class="site-icon favicon favicon-stackoverflow"></div>
+        Stack Overflow
+    </a>
+
+                </li>
+                <li class="related-site">
+                        <div class="L-shaped-icon-container">
+        <span class="L-shaped-icon"></span>
+    </div>
+
+                    
+
+
+
+    <a href="http://meta.stackoverflow.com/" class="site-link js-gps-track" data-id="552" data-gps-track="
+            site.switch({ target_site:552, item_type:3 }),
+        site_switcher.click({ item_type:4 })">
+        <div class="site-icon favicon favicon-stackoverflowmeta"></div>
+        Meta Stack Overflow
+    </a>
+
+                </li>
+                            <li class="related-site">
+                        <div class="L-shaped-icon-container">
+        <span class="L-shaped-icon"></span>
+    </div>
+
+                    <a class="site-link js-gps-track" href="http://careers.stackoverflow.com/?utm_source=stackoverflow.com&utm_medium=site-ui&utm_campaign=multicollider" data-gps-track="site_switcher.click({ item_type:9 })">
+                        <div class="site-icon favicon favicon-careers"></div>
+                        Careers 2.0
+                    </a>
+                </li>
+        </ul>
+    </div>
+    
+    <div class="header" id="your-communities-header">
+        <h3>
+your communities        </h3>
+            
+    </div>
+    <div class="modal-content" id="your-communities-section">
+            
+            <div class="call-to-login">
+                        <a href="https://stackoverflow.com/users/signup?returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f8412404%2fis-it-good-practice-to-leave-debug-print-instructions-in-code-that-goes-in-pr" class="js-gps-track" data-gps-track="site_switcher.click({ item_type:10 })">Sign up</a>
+                    or
+                    <a href="https://stackoverflow.com/users/login?returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f8412404%2fis-it-good-practice-to-leave-debug-print-instructions-in-code-that-goes-in-pr" class="js-gps-track" data-gps-track="site_switcher.click({ item_type:11 })">log in</a>
+
+                    to customize your list.
+            </div>
+    </div>
+    
+    <div class="header">
+        <h3><a href="http://stackexchange.com/sites">more stack exchange communities</a></h3>
+    </div>
+    <div class="modal-content">
+            <div class="child-content"></div>
+    </div>
+</div>
+        </div>
+
+        <div class="network-items">
+            
+            <a href="http://stackexchange.com/" class="topbar-icon icon-site-switcher yes-hover js-site-switcher-button js-gps-track" data-gps-track="site_switcher.show">
+                <span class="hidden-text">Stack Exchange</span>
+            </a>
+            
+        </div>
+
+        <div class="topbar-links">
+            
+                <div class="links-container">
+                    <span class="topbar-menu-links">
+                            <a href="https://stackoverflow.com/users/signup?returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f8412404%2fis-it-good-practice-to-leave-debug-print-instructions-in-code-that-goes-in-pr" class="login-link">sign up</a>
+                            <a href="https://stackoverflow.com/users/login?returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f8412404%2fis-it-good-practice-to-leave-debug-print-instructions-in-code-that-goes-in-pr" class="login-link">log in</a>
+                            <a href="http://stackoverflow.com/tour">tour</a>
+
+                            <a href="http://stackoverflow.com/questions/8412404/is-it-good-practice-to-leave-debug-print-instructions-in-code-that-goes-in-pr#" class="icon-help js-help-button">
+        help
+        <span class="triangle"></span>
+    </a>
+    <div class="topbar-dialog help-dialog js-help-dialog dno">
+        <div class="modal-content">
+            <ul>
+                                    <li>
+                        <a href="http://stackoverflow.com/tour" class="js-gps-track" data-gps-track="help_popup.click({ item_type:1 })">
+                            Tour
+                            <span class="item-summary">
+                                Start here for a quick overview of the site
+                            </span>
+                        </a>
+                    </li>
+                <li>
+                    <a href="http://stackoverflow.com/help" class="js-gps-track" data-gps-track="help_popup.click({ item_type:4 })">
+                        Help Center
+                        <span class="item-summary">
+                            Detailed answers to any questions you might have
+                        </span>
+                    </a>
+                </li>
+                    <li>
+                        <a href="http://meta.stackoverflow.com/" class="js-gps-track" data-gps-track="help_popup.click({ item_type:2 })">
+                            Meta
+                            <span class="item-summary">
+                                Discuss the workings and policies of this site
+                            </span>
+                        </a>
+                    </li>
+            </ul>
+        </div>
+    </div>
+
+                            <a href="http://careers.stackoverflow.com/">careers 2.0</a>
+                    </span>
+                </div>
+
+			<div class="search-container">
+                <form id="search" action="http://stackoverflow.com/search" method="get" autocomplete="off">
+                    <input name="q" type="text" placeholder="search" value="" tabindex="1" autocomplete="off" maxlength="240">
+                </form>
+			</div>
+            	
+        </div>      
+    </div> 
+</div>
+<script>
+    StackExchange.ready(function () { StackExchange.topbar.init(); });
+</script>
+    <div class="container">
+        <div id="header" class="headeranon">
+            <br class="cbt">
+            <div id="hlogo">
+                <a href="http://stackoverflow.com/">
+                    Stack Overflow
+                </a>
+            </div>
+            <div id="hmenus">
+                <div class="nav mainnavs mainnavsanon">
+                    <ul>
+                        <li class="youarehere"><a id="nav-questions" href="http://stackoverflow.com/questions">Questions</a></li>
+                        <li><a id="nav-tags" href="http://stackoverflow.com/tags">Tags</a></li>
+                        <li><a id="nav-users" href="http://stackoverflow.com/users">Users</a></li>
+                        <li><a id="nav-badges" href="http://stackoverflow.com/help/badges">Badges</a></li>
+                        <li><a id="nav-unanswered" href="http://stackoverflow.com/unanswered">Unanswered</a></li>
+                    </ul>
+                </div>
+                <div class="nav askquestion">
+                    <ul>
+                        <li>
+                            <a id="nav-askquestion" href="http://stackoverflow.com/questions/ask">Ask Question</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+
+
+
+        <div id="content" class="snippet-hidden">
+            
+
+<div itemscope="" itemtype="http://schema.org/Question">
+	<link itemprop="image" href="http://cdn.sstatic.net/stackoverflow/img/apple-touch-icon.png">
+			<!--googleoff: all-->
+
+<div id="herobox-mini">
+    <div id="hero-content">
+        <span id="controls">
+            <a href="http://stackoverflow.com/tour" id="tell-me-more" class="button">Take the 2-minute tour</a>
+            <span id="close"><a>×</a></span>
+        </span>
+        <div id="blurb">
+            Stack Overflow is a question and answer site for professional and enthusiast programmers. It's 100% free, no registration required.
+        </div>        
+    </div>
+    <script>
+        $('#tell-me-more').click(function () {
+            var clickSource = $("body").attr("class") + '-mini';
+            if ($("body").hasClass("questions-page")) {
+                clickSource = 'questionpagemini';
+            } else if ($("body").hasClass("question-page")) {
+                clickSource = 'questionpagemini';
+            } else if ($("body").hasClass("home-page")) {
+                clickSource = 'homepagemini';
+            }
+
+            StackExchange.using("gps", function () {
+                StackExchange.gps.track("aboutpage.click", { aboutclick_location: clickSource } , true);
+            });
+        });
+        $('#herobox-mini #close').click(function () {
+            StackExchange.using("gps", function () {
+                StackExchange.gps.track("hero.action", { hero_action_type: "close" }, true);
+            });
+            $.cookie("hero", "none", { path: "/", expires: 365 });
+            var $hero = $("#herobox-mini");
+            $hero.slideUp('fast', function () { $hero.remove(); });
+            return false;
+        });
+    </script>
+</div>
+			<!--googleon: all-->
+			<div id="question-header">
+			<h1 itemprop="name"><a href="./excel vba - Is it good practice to leave  Debug.Print  instructions in code that goes in  production   - Stack Overflow_files/excel vba - Is it good practice to leave  Debug.Print  instructions in code that goes in  production   - Stack Overflow.htm" class="question-hyperlink">Is it good practice to leave “Debug.Print” instructions in code that goes in “production”?</a></h1>
+		</div>
+			<div id="mainbar">
+
+			
+
+<div class="question" data-questionid="8412404" id="question">
+
+    <script>
+                var ados = ados || {};ados.run = ados.run || [];
+                ados.run.push(function() { ados_add_placement(22,8277,"adzerk826301442",4).setZone(43) ; });                    
+            </script>
+            <div class="everyonelovesstackoverflow adzerk-vote" id="adzerk826301442"><a href="http://engine.adzerk.net/r?e=eyJhdiI6NDE0LCJhdCI6NCwiYnQiOjAsImNtIjo4NDcsImNoIjoxMTc4LCJjciI6MTA3NjgsImRpIjoiNTJjZGRhZDI4NGZiNDJhNWEyNTkyMTMzZTg0NDZlYzQiLCJkbSI6MSwiZmMiOjE2ODg1LCJmbCI6MjQ0NCwiaXAiOiIxOTIuMTY4LjMuMjAiLCJrdyI6ImV4Y2VsLXZiYSIsIm53IjoyMiwicGMiOjAsInByIjoxNTY4LCJydCI6MSwicmYiOiJodHRwczovL3d3dy5nb29nbGUuY29tLmJyLyIsInN0Ijo4Mjc3LCJ1ayI6InVlMS0wZjM5YmZmOWI0MWI0NWIzYWFkNDdkZjk5YzlhMTU1MiIsInpuIjo0MywidHMiOjE0MTE1NjQ1NDMwNzEsInVyIjoiaHR0cDovL2NhcmVlcnMuc3RhY2tvdmVyZmxvdy5jb20vam9icy90ZWxlY29tbXV0ZT91dG1fc291cmNlPXN0YWNrZXhjaGFuZ2UuY29tJnV0bV9tZWRpdW09YWQmdXRtX2NhbXBhaWduPWhvdXNlLWFkcy1jYXRjaC1hbGwtYWxsLXNpdGVzJnV0bV9jb250ZW50PWxiLXdvcmstZnJvbS1ob21lLWRvZyJ9&s=doS56LMDRRR4jos_7meK3xLXhmo" rel="nofollow" target="_blank"><img src="./excel vba - Is it good practice to leave  Debug.Print  instructions in code that goes in  production   - Stack Overflow_files/a61df59863ed44e59446d0b9bb805c56.jpg" alt="" border="0" width="728" height="90"></a><img height="0px" width="0px" border="0" style="position:absolute;" src="./excel vba - Is it good practice to leave  Debug.Print  instructions in code that goes in  production   - Stack Overflow_files/i.gif"><div class="adzerk-vote-controls" style="display:none;"><div class="adzerk-vote-option adzerk-vote-up"><div class="adzerk-vote-icon"></div></div><div class="adzerk-vote-option adzerk-vote-down"><div class="adzerk-vote-icon"></div></div></div><div class="adzerk-vote-survey" style="display:none;"><form><span>No problem. We won't show you that ad again. Why didn't you like it?</span><ul><li><label><input type="radio" value="12" name="downvoteReason">Uninteresting</label></li><li><label><input type="radio" value="13" name="downvoteReason">Misleading</label></li><li><label><input type="radio" value="14" name="downvoteReason">Offensive</label></li><li><label><input type="radio" value="15" name="downvoteReason">Repetitive</label></li></ul><a href="http://stackoverflow.com/questions/8412404/is-it-good-practice-to-leave-debug-print-instructions-in-code-that-goes-in-pr#" class="adzerk-vote-cancel">Oops! I didn't mean to do this.</a></form></div></div>    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+    <input type="hidden" name="_id_" value="8412404">
+    <a class="vote-up-off">up vote</a>
+    <span itemprop="upvoteCount" class="vote-count-post ">5</span>
+    <a class="vote-down-off">down vote</a>
+    
+    <a class="star-off" href="http://stackoverflow.com/questions/8412404/is-it-good-practice-to-leave-debug-print-instructions-in-code-that-goes-in-pr#">favorite</a>
+    <div class="favoritecount"><b>5</b></div>   
+
+</div>
+
+            </td>
+            
+<td class="postcell">
+<div>
+    <div class="post-text" itemprop="text">
+
+        <p>In Excel VBA, is it good practice to leave <code>Debug.Print</code> instructions in code that goes in "production" ? That is quite useful to debug the sheets realtime at the user's machine when something goes wrong. Does it affect performance when Visual Studio is closed ? If not, what would you advise ?</p>
+
+    </div>
+    <div class="post-taglist">
+        <a href="http://stackoverflow.com/questions/tagged/excel-vba" class="post-tag js-gps-track" rel="tag">excel-vba</a> 
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/q/8412404" class="short-link" id="link-post-8412404">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/8412404/edit" class="suggest-edit-post">improve this question</a></div>        
+    </td>
+    <td align="right" class="post-signature">
+<div class="user-info user-hover">
+    <div class="user-action-time">
+        <a href="http://stackoverflow.com/posts/8412404/revisions">edited <span class="relativetime">Dec 7 '11 at 9:06</span></a>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/1073107/dash"><div class="gravatar-wrapper-32"><img src="./excel vba - Is it good practice to leave  Debug.Print  instructions in code that goes in  production   - Stack Overflow_files/e0a15c66b701655574fa134e666f3ee7" alt="" width="32" height="32" class="hoverZoomLink"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/1073107/dash">dash</a><br>
+        <span class="reputation-score" dir="ltr">22.8k</span><span><span class="badge1"></span><span class="badgecount">2</span></span><span><span class="badge2"></span><span class="badgecount">18</span></span><span><span class="badge3"></span><span class="badgecount">37</span></span>
+    </div>
+</div>    </td>
+    <td class="post-signature owner">
+        <div class="user-info ">
+    <div class="user-action-time">
+        asked <span class="relativetime">Dec 7 '11 at 8:41</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/1029944/franklin"><div class="gravatar-wrapper-32"><img src="./excel vba - Is it good practice to leave  Debug.Print  instructions in code that goes in  production   - Stack Overflow_files/9e3eb329b17e7fccf3b9e8867370975f" alt="" width="32" height="32" class="hoverZoomLink"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/1029944/franklin">Franklin</a><br>
+        <span class="reputation-score" dir="ltr">2,043</span><span><span class="badge1"></span><span class="badgecount">6</span></span><span><span class="badge2"></span><span class="badgecount">32</span></span><span><span class="badge3"></span><span class="badgecount">74</span></span>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</div>
+</td>
+        </tr>
+                
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-8412404" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+
+    <tr id="comment-10390984" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">You say "Visual Studio" but you are talking about VBA, right? Do you mean VBE?</span>
+                –&nbsp;
+                    <a href="http://stackoverflow.com/users/754233/issun" class="comment-user">Issun</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/8412404/is-it-good-practice-to-leave-debug-print-instructions-in-code-that-goes-in-pr#comment10390984_8412404"><span class="relativetime-clean">Dec 7 '11 at 9:14</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-10391057" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Ahhh, yes I guess I just understand what people referred to as VBE now... Yes I guess so :)  [ALT + F11]</span>
+                –&nbsp;
+                    <a href="http://stackoverflow.com/users/1029944/franklin" class="comment-user owner">Franklin</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/8412404/is-it-good-practice-to-leave-debug-print-instructions-in-code-that-goes-in-pr#comment10391057_8412404"><span class="relativetime-clean">Dec 7 '11 at 9:17</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-10395967" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">1) If it is important to capture what the user was doing when the things went wrong, a transaction log would seen a better option. Start a new file per run or per day; delete any over 48 hours old.  Yes there is a performance cost but how would you measure it. 2) Visual Studio is MS's development environment for its professional languages.  <span class="goog_qs-tidbit goog_qs-tidbit-0">VB 2010 is hundreds of times faster than VBA/VBE and has thousands of cool facilities.  You can access Excel from it if you want to use a</span> worksheet.</span>
+                –&nbsp;
+                    <a href="http://stackoverflow.com/users/973283/tony-dallimore" class="comment-user">Tony Dallimore</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/8412404/is-it-good-practice-to-leave-debug-print-instructions-in-code-that-goes-in-pr#comment10395967_8412404"><span class="relativetime-clean">Dec 7 '11 at 13:37</span></a></span>
+                    <span class="edited-yes"></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+            <div id="comments-link-8412404" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link ">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span><a class="js-show-link comments-link dno" href="http://stackoverflow.com/questions/8412404/is-it-good-practice-to-leave-debug-print-instructions-in-code-that-goes-in-pr#" onclick=""></a>
+            </div>
+    </td>
+</tr>        </tbody></table>
+</div>
+
+			<div id="answers">
+
+				<a name="tab-top"></a>
+				<div id="answers-header">
+					<div class="subheader answers-subheader">
+						<h2>
+								2 Answers
+                                <span style="display:none;" itemprop="answerCount">2</span>
+						</h2>
+						<div>
+							<div id="tabs">
+        <a href="http://stackoverflow.com/questions/8412404/is-it-good-practice-to-leave-debug-print-instructions-in-code-that-goes-in-pr?answertab=active#tab-top">active</a>
+        <a href="http://stackoverflow.com/questions/8412404/is-it-good-practice-to-leave-debug-print-instructions-in-code-that-goes-in-pr?answertab=oldest#tab-top">oldest</a>
+        <a class="youarehere" href="http://stackoverflow.com/questions/8412404/is-it-good-practice-to-leave-debug-print-instructions-in-code-that-goes-in-pr?answertab=votes#tab-top">votes</a>
+</div>
+						</div>
+					</div>    
+				</div>    
+
+
+
+
+  
+<a name="8412488"></a>
+<div id="answer-8412488" class="answer accepted-answer" data-answerid="8412488" itemscope="" itemtype="http://schema.org/Answer" itemprop="acceptedAnswer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+    <input type="hidden" name="_id_" value="8412488">
+    <a class="vote-up-off">up vote</a>
+    <span itemprop="upvoteCount" class="vote-count-post ">11</span>
+    <a class="vote-down-off">down vote</a>
+    
+
+
+        <span class="vote-accepted-on load-accepted-answer-date">accepted</span>
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>Debug.Print instruction DO have a small performance cost. So I would avoid them in loops that are executed a zillion times. Except for those cases, I think it's ok to keep them.<br>
+You could also use conditional compilation directives (<code>#if</code>) in combination with a compiler constant (<code>#const</code>) to enable/disable them globally without performance impact.</p>
+
+<pre class="lang-vb prettyprint prettyprinted"><code><span class="pun">#</span><span class="kwd">CONST</span><span class="pln"> developMode </span><span class="pun">=</span><span class="pln"> </span><span class="lit">True</span><span class="pln">
+
+</span><span class="kwd">sub</span><span class="pln"> Xyz
+  </span><span class="pun">#</span><span class="kwd">If</span><span class="pln"> developMode </span><span class="kwd">Then</span><span class="pln">
+    Debug</span><span class="pun">.</span><span class="pln">Print </span><span class="str">"something"</span><span class="pln">
+  </span><span class="pun">#</span><span class="kwd">End</span><span class="pln"> </span><span class="kwd">If</span><span class="pln">
+</span><span class="kwd">End</span><span class="pln"> </span><span class="kwd">Sub</span></code></pre>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/8412488" class="short-link" id="link-post-8412488">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/8412488/edit" class="suggest-edit-post">improve this answer</a></div>                    </td>
+    <td align="right" class="post-signature">
+<div class="user-info ">
+    <div class="user-action-time">
+        <a href="http://stackoverflow.com/posts/8412488/revisions">edited <span class="relativetime">Dec 7 '11 at 8:57</span></a>
+    </div>
+    <div class="user-gravatar32">
+        
+    </div>
+    <div class="user-details">
+        <br>
+        
+    </div>
+</div>    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info user-hover">
+    <div class="user-action-time">
+        answered <span class="relativetime">Dec 7 '11 at 8:47</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/78522/idevlop"><div class="gravatar-wrapper-32"><img src="./excel vba - Is it good practice to leave  Debug.Print  instructions in code that goes in  production   - Stack Overflow_files/3facb4a672d9fbeb9f2ed6b5acc65633" alt="" width="32" height="32" class="hoverZoomLink"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/78522/idevlop">iDevlop</a><br>
+        <span class="reputation-score" dir="ltr">10.2k</span><span><span class="badge1"></span><span class="badgecount">3</span></span><span><span class="badge2"></span><span class="badgecount">27</span></span><span><span class="badge3"></span><span class="badgecount">61</span></span>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-8412488" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="1" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+
+    <tr id="comment-10390734" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span class="cool">1</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">@iDevelop +1 Learn something new everyday - didn't realise Excel supported conditional compilation! Thanks.</span>
+                –&nbsp;
+                    <a href="http://stackoverflow.com/users/1073107/dash" class="comment-user">dash</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/8412404/is-it-good-practice-to-leave-debug-print-instructions-in-code-that-goes-in-pr#comment10390734_8412488"><span class="relativetime-clean">Dec 7 '11 at 9:00</span></a></span>
+                    <span class="edited-yes"></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-10390736" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">that does seem interesting, thanks !</span>
+                –&nbsp;
+                    <a href="http://stackoverflow.com/users/1029944/franklin" class="comment-user owner">Franklin</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/8412404/is-it-good-practice-to-leave-debug-print-instructions-in-code-that-goes-in-pr#comment10390736_8412488"><span class="relativetime-clean">Dec 7 '11 at 9:00</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-10390871" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Clear enough to desserve a +1 :). Btw, conditional compilation (and some useful other stuff) was discussed in this interesting thread: <a href="http://stackoverflow.com/questions/1070863/hidden-features-of-vba">stackoverflow.com/questions/1070863/hidden-features-of-vba</a></span>
+                –&nbsp;
+                    <a href="http://stackoverflow.com/users/649687/jmax" class="comment-user">JMax</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/8412404/is-it-good-practice-to-leave-debug-print-instructions-in-code-that-goes-in-pr#comment10390871_8412488"><span class="relativetime-clean">Dec 7 '11 at 9:08</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-10402267" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Do you have a source for this?</span>
+                –&nbsp;
+                    <a href="http://stackoverflow.com/users/190829/jimmypena" class="comment-user">JimmyPena</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/8412404/is-it-good-practice-to-leave-debug-print-instructions-in-code-that-goes-in-pr#comment10402267_8412488"><span class="relativetime-clean">Dec 7 '11 at 18:18</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-10899510" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span class="cool">1</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">@Lunatik: that's fine too, but in regarding performance impact, a global (well any "normal") variable WILL have an impact on performance, while a compiler constant will not (when set to production mode).</span>
+                –&nbsp;
+                    <a href="http://stackoverflow.com/users/78522/idevlop" class="comment-user">iDevlop</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/8412404/is-it-good-practice-to-leave-debug-print-instructions-in-code-that-goes-in-pr#comment10899510_8412488"><span class="relativetime-clean">Jan 5 '12 at 19:53</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+            <div id="comments-link-8412488" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link  dno"></a><span class="js-link-separator dno">&nbsp;|&nbsp;</span><a class="js-show-link comments-link " href="http://stackoverflow.com/questions/8412404/is-it-good-practice-to-leave-debug-print-instructions-in-code-that-goes-in-pr#" onclick="">show <b>1</b> more comment</a>
+            </div>
+    </td>
+</tr>    </tbody></table>
+</div>
+<script>
+                var ados = ados || {};ados.run = ados.run || [];
+                ados.run.push(function() { ados_add_placement(22,8277,"adzerk559463238",4).setZone(44) ; });                    
+            </script>
+            <div class="everyonelovesstackoverflow adzerk-vote" id="adzerk559463238"><a href="http://engine.adzerk.net/r?e=eyJhdiI6NDE0LCJhdCI6NCwiYnQiOjAsImNtIjo4NDcsImNoIjoxMTc4LCJjciI6NTkyMCwiZGkiOiI4NzM2NGI5NjQ3NmM0NDYyYTU2OTVkOTE3OTRhNDE5YiIsImRtIjoxLCJmYyI6ODgwNiwiZmwiOjI0NDQsImlwIjoiMTkyLjE2OC4zLjIwIiwia3ciOiJleGNlbC12YmEiLCJudyI6MjIsInBjIjowLCJwciI6MTU2OCwicnQiOjEsInJmIjoiaHR0cHM6Ly93d3cuZ29vZ2xlLmNvbS5ici8iLCJzdCI6ODI3NywidWsiOiJ1ZTEtMGYzOWJmZjliNDFiNDViM2FhZDQ3ZGY5OWM5YTE1NTIiLCJ6biI6NDQsInRzIjoxNDExNTY0NTQzMDczLCJ1ciI6Imh0dHA6Ly9jYXJlZXJzLnN0YWNrb3ZlcmZsb3cuY29tP3V0bV9zb3VyY2U9c3RhY2tleGNoYW5nZS5jb20mdXRtX21lZGl1bT1hZCZ1dG1fY2FtcGFpZ249aG91c2UtYWRzLWNhdGNoLWFsbC1hbGwtc2l0ZXMmdXRtX2NvbnRlbnQ9bGItZ2l0aHViIn0&s=PpHSvG7CL5FybMuArdGj9ROoDEA" rel="nofollow" target="_blank"><img src="./excel vba - Is it good practice to leave  Debug.Print  instructions in code that goes in  production   - Stack Overflow_files/60abb4b317034aa2af0bc697e6f02963.png" alt="" border="0" width="728" height="90"></a><img height="0px" width="0px" border="0" style="position:absolute;" src="./excel vba - Is it good practice to leave  Debug.Print  instructions in code that goes in  production   - Stack Overflow_files/i(1).gif"><div class="adzerk-vote-controls" style="display:none;"><div class="adzerk-vote-option adzerk-vote-up"><div class="adzerk-vote-icon"></div></div><div class="adzerk-vote-option adzerk-vote-down"><div class="adzerk-vote-icon"></div></div></div><div class="adzerk-vote-survey" style="display:none;"><form><span>No problem. We won't show you that ad again. Why didn't you like it?</span><ul><li><label><input type="radio" value="12" name="downvoteReason">Uninteresting</label></li><li><label><input type="radio" value="13" name="downvoteReason">Misleading</label></li><li><label><input type="radio" value="14" name="downvoteReason">Offensive</label></li><li><label><input type="radio" value="15" name="downvoteReason">Repetitive</label></li></ul><a href="http://stackoverflow.com/questions/8412404/is-it-good-practice-to-leave-debug-print-instructions-in-code-that-goes-in-pr#" class="adzerk-vote-cancel">Oops! I didn't mean to do this.</a></form></div></div>
+  
+<a name="8412509"></a>
+<div id="answer-8412509" class="answer" data-answerid="8412509" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+    <input type="hidden" name="_id_" value="8412509">
+    <a class="vote-up-off">up vote</a>
+    <span itemprop="upvoteCount" class="vote-count-post ">2</span>
+    <a class="vote-down-off">down vote</a>
+    
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>I usually have two versions; prod without debugging, and prod with debugging. That, combined with the catchall error handler logging, means that if a user experiences issues, I can deploy the debug version to them and they can run that up.</p>
+
+<p>I have a macro that I run that comments out the debug.print statements, so it's not a real maintenance overhead.</p>
+
+<p>The problem with running a debug version all the time (and, with Excel VBA it's not usually a performance thing) is that your app is constantly emitting information that it doesn't need too. In an environment with controlled spreadsheets, for example, this can be seen as a bad thing.</p>
+
+<p>In terms of global error handling, you still need the On Error GoTo statement for every function you want error handling in. You can, however, pipe these to a common function:</p>
+
+<pre class="lang-vb prettyprint prettyprinted"><code><span class="kwd">Public</span><span class="pln"> </span><span class="kwd">Function</span><span class="pln"> HandleTheNastyErrors</span><span class="pun">(</span><span class="pln">E </span><span class="kwd">As</span><span class="pln"> ErrObject</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">ByVal</span><span class="pln"> writeLog </span><span class="kwd">As</span><span class="pln"> </span><span class="kwd">Boolean</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="lit">True</span><span class="pun">)</span><span class="pln"> 
+
+    </span><span class="kwd">Select</span><span class="pln"> </span><span class="kwd">Case</span><span class="pln"> E</span><span class="pun">.</span><span class="pln">Number 
+
+    </span><span class="kwd">Case</span><span class="pln"> xxx 
+
+        </span><span class="pun">...</span><span class="pln">specific </span><span class="kwd">error</span><span class="pln"> handling</span><span class="pun">...</span><span class="pln"> 
+
+    </span><span class="kwd">Case</span><span class="pln"> </span><span class="kwd">Else</span><span class="pln"> 
+        </span><span class="pun">...</span><span class="pln"> Display a message </span><span class="kwd">to</span><span class="pln"> the user about how you dont know what happened</span><span class="pun">....</span><span class="pln">             
+    </span><span class="kwd">End</span><span class="pln"> </span><span class="kwd">Select</span><span class="pln"> 
+
+    </span><span class="kwd">If</span><span class="pln"> writeLog </span><span class="kwd">Then</span><span class="pln">
+
+       </span><span class="pun">...</span><span class="pln">Log Writing Code</span><span class="pun">...</span><span class="pln">
+
+    </span><span class="kwd">End</span><span class="pln"> </span><span class="kwd">If</span><span class="pln">
+
+</span><span class="kwd">End</span><span class="pln"> </span><span class="kwd">Function</span><span class="pln"> </span></code></pre>
+
+<p>And then, OnError:</p>
+
+<pre class="lang-vb prettyprint prettyprinted"><code><span class="pln">ErrorHandler</span><span class="pun">:</span><span class="pln">
+ </span><span class="kwd">Call</span><span class="pln"> HandleTheNastyErrors</span><span class="pun">(</span><span class="pln">Err</span><span class="pun">,</span><span class="pln"> </span><span class="lit">True</span><span class="pun">)</span></code></pre>
+
+<p>Show do the trick</p>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/8412509" class="short-link" id="link-post-8412509">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/8412509/edit" class="suggest-edit-post">improve this answer</a></div>                    </td>
+    <td align="right" class="post-signature">
+<div class="user-info ">
+    <div class="user-action-time">
+        <a href="http://stackoverflow.com/posts/8412509/revisions">edited <span class="relativetime">Dec 7 '11 at 9:29</span></a>
+    </div>
+    <div class="user-gravatar32">
+        
+    </div>
+    <div class="user-details">
+        <br>
+        
+    </div>
+</div>    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info user-hover">
+    <div class="user-action-time">
+        answered <span class="relativetime">Dec 7 '11 at 8:50</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/1073107/dash"><div class="gravatar-wrapper-32"><img src="./excel vba - Is it good practice to leave  Debug.Print  instructions in code that goes in  production   - Stack Overflow_files/e0a15c66b701655574fa134e666f3ee7" alt="" width="32" height="32" class="hoverZoomLink"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/1073107/dash">dash</a><br>
+        <span class="reputation-score" dir="ltr">22.8k</span><span><span class="badge1"></span><span class="badgecount">2</span></span><span><span class="badge2"></span><span class="badgecount">18</span></span><span><span class="badge3"></span><span class="badgecount">37</span></span>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-8412509" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+
+    <tr id="comment-10390758" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Could you comment on your "catch all" ? I don't really have ideas of how to handle errors smartly and somehow generically so far. Thanks !</span>
+                –&nbsp;
+                    <a href="http://stackoverflow.com/users/1029944/franklin" class="comment-user owner">Franklin</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/8412404/is-it-good-practice-to-leave-debug-print-instructions-in-code-that-goes-in-pr#comment10390758_8412509"><span class="relativetime-clean">Dec 7 '11 at 9:01</span></a></span>
+                    <span class="edited-yes"></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-10390938" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">@jeromeG There you go. Hope it helps.</span>
+                –&nbsp;
+                    <a href="http://stackoverflow.com/users/1073107/dash" class="comment-user">dash</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/8412404/is-it-good-practice-to-leave-debug-print-instructions-in-code-that-goes-in-pr#comment10390938_8412509"><span class="relativetime-clean">Dec 7 '11 at 9:12</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+            <div id="comments-link-8412509" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link ">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span><a class="js-show-link comments-link dno" href="http://stackoverflow.com/questions/8412404/is-it-good-practice-to-leave-debug-print-instructions-in-code-that-goes-in-pr#" onclick=""></a>
+            </div>
+    </td>
+</tr>    </tbody></table>
+</div>
+									<a name="new-answer"></a>
+						<form id="post-form" action="http://stackoverflow.com/questions/8412404/answer/submit" method="post" class="post-form">
+						    <input type="hidden" id="post-id" value="8412404">
+                            <input type="hidden" id="qualityBanWarningShown" name="qualityBanWarningShown" value="false">
+                            <input type="hidden" name="referrer" value="https://www.google.com.br/">
+							<h2 class="space">Your Answer</h2>
+
+
+
+            <script>
+            StackExchange.ifUsing("editor", function () {
+                StackExchange.using("externalEditor", function () {
+                    StackExchange.using("snippets", function () {
+                        StackExchange.snippets.init();
+                    });
+                });
+            }, "code-snippets");
+        </script>
+    
+
+<script>
+    StackExchange.ready(function() {
+        initTagRenderer("".split(" "), "".split(" "));
+       
+        StackExchange.using("externalEditor", function() {
+            // Have to fire editor after snippets, if snippets enabled
+            if (StackExchange.options.snippets.enabled) {
+                StackExchange.using("snippets", function() {
+                    createEditor();
+                });
+            }
+            else {
+                createEditor();
+            }
+        });
+
+        function createEditor() {
+            prepareEditor({
+                heartbeatType: 'answer',
+                bindNavPrevention: true,
+                postfix: "",
+                    onDemand: true,
+                    discardSelector: ".discard-answer"
+                ,immediatelyShowMarkdownHelp:true
+                });
+                
+
+        }
+    });  
+</script>
+
+
+<div id="post-editor" class="post-editor">
+
+    <div style="position: relative;">     
+        <div class="wmd-container">
+            <div id="wmd-button-bar" class="wmd-button-bar"><ul id="wmd-button-row" class="wmd-button-row"><li id="wmd-bold-button" class="wmd-button" style="left: 0px;"><span style="background-position: 0px -20px;"></span></li><li id="wmd-italic-button" class="wmd-button" style="left: 25px;"><span style="background-position: -20px -20px;"></span></li><li id="wmd-spacer1" class="wmd-spacer" style="left: 50px;"><span style="background-position: -40px -20px;"></span></li><li id="wmd-link-button" class="wmd-button" style="left: 75px;"><span style="background-position: -40px -20px;"></span></li><li id="wmd-quote-button" class="wmd-button" style="left: 100px;"><span style="background-position: -60px -20px;"></span></li><li id="wmd-code-button" class="wmd-button" style="left: 125px;"><span style="background-position: -80px -20px;"></span></li><li id="wmd-image-button" class="wmd-button" style="left: 150px;"><span style="background-position: -100px -20px;"></span></li><li id="wmd-spacer2" class="wmd-spacer" style="left: 175px;"><span style="background-position: -120px -20px;"></span></li><li id="wmd-olist-button" class="wmd-button" style="left: 200px;"><span style="background-position: -120px -20px;"></span></li><li id="wmd-ulist-button" class="wmd-button" style="left: 225px;"><span style="background-position: -140px -20px;"></span></li><li id="wmd-heading-button" class="wmd-button" style="left: 250px;"><span style="background-position: -160px -20px;"></span></li><li id="wmd-hr-button" class="wmd-button" style="left: 275px;"><span style="background-position: -180px -20px;"></span></li><li id="wmd-spacer3" class="wmd-spacer" style="left: 300px;"><span style="background-position: -200px -20px;"></span></li><li id="wmd-undo-button" class="wmd-button" style="left: 325px;"><span style="background-position: -200px -20px;"></span></li><li id="wmd-redo-button" class="wmd-button" style="left: 350px;"><span style="background-position: -220px -20px;"></span></li></ul></div>
+            <textarea id="wmd-input" class="wmd-input" name="post-text" cols="92" rows="15" tabindex="101" data-min-length=""></textarea>
+        </div>
+    </div>
+
+    <div class="fl" style="margin-top: 8px; height:24px;">&nbsp;</div>
+    <div id="draft-saved" class="draft-saved community-option fl" style="margin-top: 8px; height:24px; display:none;">draft saved</div>
+
+    <div id="draft-discarded" class="draft-discarded community-option fl" style="margin-top: 8px; height:24px; display:none;">draft discarded</div>
+
+
+
+    <div id="wmd-preview" class="wmd-preview"></div>
+    <div></div>
+    <div class="edit-block">
+        <input id="fkey" name="fkey" type="hidden" value="c9dae8b8232ca8f9dc064b9f5fd34be5">
+        <input id="author" name="author" type="text">
+    </div>
+</div>
+							<div style="position: relative;">
+								
+            <div class="form-item new-post-login">
+        
+                <div class="new-login-form">
+                    <div class="new-login-left">
+                        <h3>Sign up or <a id="login-link" href="http://stackoverflow.com/users/login?returnurl=%2fquestions%2f8412404%2fis-it-good-practice-to-leave-debug-print-instructions-in-code-that-goes-in-pr%23new-answer">log in</a></h3>
+                        <script>
+                            StackExchange.ready(function () {
+                                StackExchange.helpers.onClickDraftSave('#login-link');
+                            });
+                        </script>
+                        <div class="preferred-login google-login">
+                            <p><span class="icon"></span><span>Sign up using Google</span></p>
+                        </div>
+                        <div class="preferred-login facebook-login">
+                            <p><span class="icon"></span><span>Sign up using Facebook</span></p>
+                        </div>
+                        <div class="preferred-login stackexchange-login">
+                            <p><span class="icon"></span><span>Sign up using Stack Exchange</span></p>
+                        </div>
+                    </div>
+                    <input type="hidden" name="manual-openid" class="manual-openid">
+                    <input type="hidden" name="use-facebook" class="use-facebook" value="false">
+                    <input type="hidden" name="use-google-oauth2" class="use-google-oauth2" value="false">
+                    <input type="button" class="submit-openid" value="Submit" style="display:none">
+                    <div class="new-login-right">
+                                <h3>Post as a guest</h3>
+    <div class="form-item">
+        <table>
+        <tbody><tr>
+                    <script>
+                StackExchange.ready(function () {
+                    StackExchange.helpers.bindHelpOverlayEvents($('.vm input'));
+                });
+            </script>
+            <td class="vm">
+                <div>
+                    <label for="display-name">Name</label>
+                    <input id="display-name" name="display-name" type="text" size="30" maxlength="30" value="" tabindex="105">
+                </div>
+                <div>
+                    <label for="m-address">Email</label>
+                    <input id="m-address" name="m-address" type="text" size="30" maxlength="100" value="" tabindex="106">
+                    <span class="edit-field-overlay">required, but not shown</span>
+                </div>
+            </td>
+        </tr>
+        </tbody></table>
+    </div>
+
+                    </div>
+                </div>
+            </div>
+            <script>
+                StackExchange.ready(
+                    function () {
+                        StackExchange.openid.initPostLogin('.new-post-login', '%2fquestions%2f8412404%2fis-it-good-practice-to-leave-debug-print-instructions-in-code-that-goes-in-pr%23new-answer');
+                    }
+                );
+            </script>
+            <noscript>
+                        &lt;h3&gt;Post as a guest&lt;/h3&gt;
+    &lt;div class="form-item"&gt;
+        &lt;table&gt;
+        &lt;tr&gt;
+                    &lt;script&gt;
+                StackExchange.ready(function () {
+                    StackExchange.helpers.bindHelpOverlayEvents($('.vm input'));
+                });
+            &lt;/script&gt;
+            &lt;td class="vm"&gt;
+                &lt;div&gt;
+                    &lt;label for="display-name"&gt;Name&lt;/label&gt;
+                    &lt;input id="display-name" name="display-name" type="text" size="30" maxlength="30" value="" tabindex="105"&gt;
+                &lt;/div&gt;
+                &lt;div&gt;
+                    &lt;label for="m-address"&gt;Email&lt;/label&gt;
+                    &lt;input id="m-address" name="m-address" type="text" size="30" maxlength="100" value="" tabindex="106"&gt;
+                    &lt;span class="edit-field-overlay"&gt;required, but not shown&lt;/span&gt;
+                &lt;/div&gt;
+            &lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;/table&gt;
+    &lt;/div&gt;
+
+            </noscript>
+							</div>
+           
+															<div class="form-submit cbt">
+									<input id="submit-button" type="submit" value="Post Your Answer" tabindex="110">
+									<a href="http://stackoverflow.com/questions/8412404/is-it-good-practice-to-leave-debug-print-instructions-in-code-that-goes-in-pr#" class="discard-answer dno">discard</a>
+
+<p class="privacy-policy-agreement">
+By posting your answer, you agree to the <a href="http://stackexchange.com/legal/privacy-policy" target="_blank">privacy policy</a> and <a href="http://stackexchange.com/legal/terms-of-service" target="_blank">terms of service</a>.</p>
+<input type="hidden" name="legalLinksShown" value="1">								</div>
+						</form>
+
+
+
+						<h2 class="bottom-notice" data-loc="1">
+Not the answer you're looking for?							Browse other questions tagged <a href="http://stackoverflow.com/questions/tagged/excel-vba" class="post-tag" rel="tag">excel-vba</a>  or <a href="http://stackoverflow.com/questions/ask">ask your own question</a>.						</h2>
+			</div>
+		</div>
+				<div id="sidebar" class="show-votes">
+						    <div class="module question-stats">
+			        <table id="qinfo">
+			            <tbody><tr>
+			                <td>
+			                    <p class="label-key">asked</p>
+			                </td>
+			                <td style="padding-left: 10px">
+			                    <p class="label-key"><b>2 years ago</b></p>
+			                </td>
+			            </tr>
+			            <tr>
+			                <td>
+			                    <p class="label-key">viewed</p>
+			                </td>
+
+			                <td style="padding-left: 10px">
+			                    <p class="label-key">
+			                        <b>3910 times</b>
+			                    </p>
+			                </td>
+			            </tr>
+			                <tr>
+			                    <td>
+			                        <p class="label-key">active</p>
+			                    </td>
+			                    <td style="padding-left: 10px">
+			                        <p class="label-key"><b><a href="http://stackoverflow.com/questions/8412404/is-it-good-practice-to-leave-debug-print-instructions-in-code-that-goes-in-pr?lastactivity" class="lastactivity-link">2 years ago</a></b></p>
+			                    </td>
+			                </tr>
+			        </tbody></table>
+			    </div>
+						
+			<script>
+                var ados = ados || {};ados.run = ados.run || [];
+                ados.run.push(function() { ados_add_placement(22,8277,"adzerk1674987401",[17,2221]).setZone(45) ; });                    
+            </script>
+              
+        <div id="hireme" class=" orange looking tagged">  <a href="http://careers.stackoverflow.com/?a=33bEc&utm_source=stackoverflow.com&utm_medium=ad&utm_campaign=jobs-large-sidebar-orange-looking" class="top" target="_blank"> <span>Looking for a job?</span> </a> <ul class="jobs"> <li> <a href="http://careers.stackoverflow.com/jobs/61925/desenvolvedores-thoughtworks?a=51QcoSy9eF&utm_source=stackoverflow.com&utm_medium=ad&utm_campaign=jobs-large-sidebar-orange-looking" target="_blank"> <span class="title">Desenvolvedores</span> <span class="company">ThoughtWorks</span> <span class="location">Porto Alegre, Brazil /…</span> <span class="post-tag">agile</span> <span class="post-tag">ruby</span> </a> </li> <li> <a href="http://careers.stackoverflow.com/jobs/66161/information-retrieval-warmage-search-engineer-chaordic?a=5naKQKQkD0&utm_source=stackoverflow.com&utm_medium=ad&utm_campaign=jobs-large-sidebar-orange-looking" target="_blank"> <span class="title">Information Retrieval Warmage (Search Engineer)</span> <span class="company">Chaordic</span> <span class="location">Florianopolis, Brazil /…</span> <span class="post-tag">search</span> <span class="post-tag">python</span> </a> </li> <li> <a href="http://careers.stackoverflow.com/jobs/68344/jedi-frontend-engineer-chaordic?a=5yakjuDshJ&utm_source=stackoverflow.com&utm_medium=ad&utm_campaign=jobs-large-sidebar-orange-looking" target="_blank"> <span class="title">Jedi Frontend Engineer</span> <span class="company">Chaordic</span> <span class="location">Florianopolis, Brazil /…</span> <span class="post-tag">css</span> <span class="post-tag">html</span> </a> </li> <li> <a href="http://careers.stackoverflow.com/jobs/66511/software-engineer-frontend-29630-sungard?a=5oVX8S3hly&utm_source=stackoverflow.com&utm_medium=ad&utm_campaign=jobs-large-sidebar-orange-looking" target="_blank"> <span class="title">Software Engineer (Frontend) - 29630</span> <span class="company">SunGard</span> <span class="location">Belgrade, Serbia</span> <span class="post-tag">html5</span> <span class="post-tag">javascript</span> </a> </li> </ul> <img alt="" class="impression" src="./excel vba - Is it good practice to leave  Debug.Print  instructions in code that goes in  production   - Stack Overflow_files/51QcoSy9eF-5naKQKQkD0-5yakjuDshJ-5oVX8S3hly-33bEc" style="display:none"></div>
+			<div style="margin-bottom: 10px;">
+        
+
+<style type="text/css">
+#newsletter-ad {
+    width: 190px;
+    height: 250px;
+    overflow: hidden;
+    background: url('//cdn.sstatic.net/stackoverflow/img/newsletter-ad.png');
+    padding: 0 15px 0 15px;
+}
+#newsletter-ad-header {
+    margin-top: 60px;
+}
+#newsletter-ad ul {
+    margin: 1em 0 1em 1.5em;
+}
+#newsletter-ad ul li {
+    margin-bottom: 5px;
+}
+#newsletter-signup-container {
+    text-align: center;
+}
+#newsletter-preview-container {
+    margin-top: 10px;
+    text-align: center;
+}
+#newsletter-email-input {
+    width: 200px;
+}
+</style>
+
+<script>
+    StackExchange.ready(function () {
+        StackExchange.newsletterAd.init();
+    });
+</script>
+
+<div id="newsletter-ad">
+    <p id="newsletter-ad-header">Get the <b>weekly newsletter!</b></p>
+    <ul>
+        <li>Top questions and answers</li>
+        <li>Important announcements</li>
+        <li>Unanswered questions</li>
+    </ul>
+    <div id="newsletter-signup-container"><input id="newsletter-signup" type="button" value="Sign up for the newsletter"></div>
+    <p id="newsletter-preview-container">see an <a href="http://stackexchange.com/newsletters/newsletter?site=stackoverflow.com" id="newsletter-preview">example newsletter</a></p>
+    <div class="dno">
+        
+<p class="privacy-policy-agreement">
+By subscribing, you agree to the <a href="http://stackexchange.com/legal/privacy-policy" target="_blank">privacy policy</a> and <a href="http://stackexchange.com/legal/terms-of-service" target="_blank">terms of service</a>.</p>
+<input type="hidden" name="legalLinksShown" value="1">
+    </div>
+</div>
+
+    </div>  
+    
+            <div class="module sidebar-linked">
+	<h4 id="h-linked">Linked</h4>
+	<div class="linked" data-tracker="lq=1">
+<div class="spacer">
+	<a href="http://stackoverflow.com/q/1070863?lq=1">
+		<div class="answer-votes  default">29</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/1070863/hidden-features-of-vba?lq=1" class="question-hyperlink">Hidden features of VBA</a>
+</div>			</div>
+</div>
+
+				<div class="module sidebar-related">
+					<h4 id="h-related">Related</h4>
+                    <div class="related js-gps-related-questions" data-tracker="rq=1">
+                        <div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/5943976?rq=1">
+    <div class="answer-votes default">3
+    </div>
+</a><a href="http://stackoverflow.com/questions/5943976/new-data-connection-created-when-changing-connection-string-using-excel-vba?rq=1" class="question-hyperlink">New data connection created when changing connection string using Excel VBA</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/9628544?rq=1">
+    <div class="answer-votes answered-accepted default">4
+    </div>
+</a><a href="http://stackoverflow.com/questions/9628544/advice-on-debugging-machine-specific-excel-vba-issue?rq=1" class="question-hyperlink">Advice on Debugging Machine-Specific Excel VBA Issue</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/12711286?rq=1">
+    <div class="answer-votes answered-accepted default">1
+    </div>
+</a><a href="http://stackoverflow.com/questions/12711286/vba-error-handling-what-are-the-best-practices-for-the-given-situation?rq=1" class="question-hyperlink">VBA error handling - what are the best practices for the given situation?</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/13196909?rq=1">
+    <div class="answer-votes answered-accepted default">9
+    </div>
+</a><a href="http://stackoverflow.com/questions/13196909/vba-enums-give-occasional-constant-expression-required-errors?rq=1" class="question-hyperlink">VBA enums give occasional “Constant Expression Required” errors</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/18804203?rq=1">
+    <div class="answer-votes answered-accepted default">1
+    </div>
+</a><a href="http://stackoverflow.com/questions/18804203/keeping-a-count-in-a-dictionary-bad-result-when-running-the-code-good-result-a?rq=1" class="question-hyperlink">Keeping a count in a dictionary, bad result when running the code, good result adding inspections</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/19663732?rq=1">
+    <div class="answer-votes default">4
+    </div>
+</a><a href="http://stackoverflow.com/questions/19663732/typeof-is-child-from-parent-causes-broken-excel-file?rq=1" class="question-hyperlink">“TypeOf…Is Child” from Parent causes broken Excel file</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/21417748?rq=1">
+    <div class="answer-votes answered-accepted default">1
+    </div>
+</a><a href="http://stackoverflow.com/questions/21417748/range1-range2-returns-strange-addresses?rq=1" class="question-hyperlink">Range1.Range2 returns strange addresses</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/22380829?rq=1">
+    <div class="answer-votes answered-accepted default">3
+    </div>
+</a><a href="http://stackoverflow.com/questions/22380829/whats-the-color-code-of-bad-and-good-highlights-on-excel-vba?rq=1" class="question-hyperlink">What's the color code of Bad and Good Highlights on Excel VBA?</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/22459454?rq=1">
+    <div class="answer-votes default">0
+    </div>
+</a><a href="http://stackoverflow.com/questions/22459454/vba-programatically-hide-worksheets-in-another-workbook?rq=1" class="question-hyperlink">VBA programatically hide worksheets in another workbook</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/25088298?rq=1">
+    <div class="answer-votes default">0
+    </div>
+</a><a href="http://stackoverflow.com/questions/25088298/moving-activex-button-code-from-a-sheet-to-a-module-leaves-the-button-useless-n?rq=1" class="question-hyperlink">Moving ActiveX button code from a sheet to a module leaves the button useless. Need help to fix it</a>
+</div>
+
+                    </div>
+				</div>
+            
+<div id="hot-network-questions" class="module">
+    <h4>
+        <a href="http://stackexchange.com/questions?tab=hot" class="js-gps-track" data-gps-track="posts_hot_network.click({ item_type:1, location:11 })">
+            Hot Network Questions
+        </a>
+    </h4>
+    <ul>
+            <li>
+                <div class="favicon favicon-security"></div><a href="http://security.stackexchange.com/questions/68071/new-payment-option-on-paypal-enter-your-online-banking-id-password-is-my-pa" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:162 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    New payment option on Paypal "Enter your online banking ID + password": Is my password sent to Paypal?
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-ell"></div><a href="http://ell.stackexchange.com/questions/34168/in-all-valid-data-bits-what-does-valid-refer-to" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:481 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    In "All valid data bits", what does "valid" refer to?
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-security"></div><a href="http://security.stackexchange.com/questions/67893/is-it-dangerous-to-post-my-mac-address-publicly" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:162 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Is it dangerous to post my MAC address publicly?
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-academia"></div><a href="http://academia.stackexchange.com/questions/28930/does-significant-editing-of-a-paper-with-the-possibility-of-minor-contributions" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:415 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Does significant editing of a paper with the possibility of minor contributions to its scientific content warrant co-authorship?
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-biology"></div><a href="http://biology.stackexchange.com/questions/21578/how-and-why-did-mammals-go-back-to-the-oceans" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:375 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How and why did mammals go back to the oceans?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-codereview"></div><a href="http://codereview.stackexchange.com/questions/63746/builder-pattern-for-car-class" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:196 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Builder Pattern for Car class
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-aviation"></div><a href="http://aviation.stackexchange.com/questions/8686/why-do-fighter-jets-still-have-guns-cannons" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:528 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why do fighter jets still have guns/cannons?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-superuser"></div><a href="http://superuser.com/questions/816018/what-is-a-relationship-between-unix-linux-ubuntu-and-debian" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:3 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    What is a relationship between Unix, Linux, Ubuntu and Debian?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-codereview"></div><a href="http://codereview.stackexchange.com/questions/63753/steganography-for-images" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:196 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Steganography for images
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-stackoverflow"></div><a href="http://stackoverflow.com/questions/26014368/c11-move-when-returning-a-lock" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:1 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    C++11 move when returning a lock
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-earthscience"></div><a href="http://earthscience.stackexchange.com/questions/2521/why-is-there-a-seasonal-cycle-to-the-amount-of-co2-in-the-atmosphere" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:553 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why is there a seasonal cycle to the amount of CO2 in the atmosphere?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-tridion"></div><a href="http://tridion.stackexchange.com/questions/7961/what-is-the-java-equivalent-of-resultset-isempty-in-the-smarttarget-api" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:485 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    What is the JAVA equivalent of ResultSet.IsEmpty in the SmartTarget API
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-italian"></div><a href="http://italian.stackexchange.com/questions/2396/quando-usare-mercatino-mercato-supermercato-ipermercato" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:524 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Quando usare: mercatino, mercato, supermercato, ipermercato
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-electronics"></div><a href="http://electronics.stackexchange.com/questions/130606/why-at-an-open-circuit-electrons-are-not-pushed-out-from-the-conductor-under-the" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:135 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    why at an open circuit electrons are not pushed out from the conductor under the influence of power source?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-tex"></div><a href="http://tex.stackexchange.com/questions/202705/includegraphics-number-sign-in-filename" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:85 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    \includegraphics: number sign # in filename
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-academia"></div><a href="http://academia.stackexchange.com/questions/28857/is-it-plagiarism-for-my-thesis-advisor-to-publish-a-paper-using-content-from-my" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:415 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Is it plagiarism for my thesis advisor to publish a paper using content from my thesis without citation?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-tex"></div><a href="http://tex.stackexchange.com/questions/202879/best-latex-editor-for-large-documents" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:85 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Best LaTeX editor for LARGE documents
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-photo"></div><a href="http://photo.stackexchange.com/questions/54439/stepping-up-my-lighting-for-lego-photography" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:61 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Stepping up my lighting for lego photography
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-codegolf"></div><a href="http://codegolf.stackexchange.com/questions/38093/little-chandler-is-sad-draw-him-a-cloud-to-cheer-him-up" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:200 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Little Chandler is sad. Draw him a cloud to cheer him up
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-rpg"></div><a href="http://rpg.stackexchange.com/questions/48365/does-rope-last-forever" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:122 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Does rope last forever?
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-scifi"></div><a href="http://scifi.stackexchange.com/questions/68280/why-not-let-a-dwarf-carry-the-one-ring-to-mount-doom-since-their-will-cannot-be" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:186 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why not let a dwarf carry the One Ring to Mount Doom, since their will cannot be dominated by the rings of power?
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-stackoverflow"></div><a href="http://stackoverflow.com/questions/26013183/automatic-xvalue-optimization" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:1 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Automatic xvalue optimization
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-gardening"></div><a href="http://gardening.stackexchange.com/questions/14132/do-pine-beetles-kill-healthy-pitch-pines-or-is-it-safe-to-plant-seedlings-to-re" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:269 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Do pine beetles kill healthy pitch pines, or is it safe to plant seedlings to replace trees killed by them?
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-space"></div><a href="http://space.stackexchange.com/questions/5436/cheap-cost-of-mangalyaan" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:508 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Cheap cost of Mangalyaan
+                </a>
+
+            </li>
+    </ul>
+
+        <a href="http://stackoverflow.com/questions/8412404/is-it-good-practice-to-leave-debug-print-instructions-in-code-that-goes-in-pr#" class="show-more js-show-more js-gps-track" data-gps-track="posts_hot_network.click({ item_type:3, location:11 })">
+            more hot questions
+        </a>
+</div>
+		</div>
+	
+<div id="feed-link">
+    <div id="feed-link-text">
+        <a href="http://stackoverflow.com/feeds/question/8412404">
+            <span class="feed-icon"></span>question feed
+        </a>
+    </div>
+</div>	<script>
+StackExchange.ready(function(){$.get('/posts/8412404/ivc/9af4');});
+</script>
+<noscript>
+    &lt;div&gt;&lt;img src="/posts/8412404/ivc/9af4" class="dno" alt="" width="0" height="0"&gt;&lt;/div&gt;
+</noscript><div style="display:none" id="prettify-lang">lang-vb</div></div>
+
+
+
+        </div>
+    </div>
+    <div id="footer" class="categories">
+        <div class="footerwrap">
+            <div id="footer-menu">
+                <div class="top-footer-links">
+                        <a href="http://stackoverflow.com/tour">tour</a>
+                    <a href="http://stackoverflow.com/help">help</a>
+                        <a href="http://stackoverflow.com/help/badges">badges</a>
+                    <a href="http://blog.stackoverflow.com/?blb=1">blog</a>
+                        <a href="http://chat.stackoverflow.com/">chat</a>
+                    <a href="http://data.stackexchange.com/">data</a>
+                    <a href="http://stackexchange.com/legal">legal</a>
+                    <a href="http://stackexchange.com/legal/privacy-policy">privacy policy</a>
+                    <a href="http://stackexchange.com/work-here">work here</a>
+                    <a href="http://stackexchange.com/mediakit">advertising info</a>
+
+                    <a onclick="StackExchange.switchMobile(&quot;on&quot;)">mobile</a>
+                    <b><a href="http://stackoverflow.com/contact">contact us</a></b>
+                        <b><a href="http://meta.stackoverflow.com/">feedback</a></b>
+                    
+                </div>
+                <div id="footer-sites">
+                    <table>
+    <tbody><tr>
+            <th colspan="3">
+                Technology
+            </th>
+            <th>
+                Life / Arts
+            </th>
+            <th>
+                Culture / Recreation
+            </th>
+            <th>
+                Science
+            </th>
+            <th>
+                Other
+            </th>
+    </tr>
+    <tr>
+            <td>
+                <ol>
+                        <li><a href="http://stackoverflow.com/">Stack Overflow</a></li>
+                        <li><a href="http://serverfault.com/">Server Fault</a></li>
+                        <li><a href="http://superuser.com/">Super User</a></li>
+                        <li><a href="http://webapps.stackexchange.com/">Web Applications</a></li>
+                        <li><a href="http://askubuntu.com/">Ask Ubuntu</a></li>
+                        <li><a href="http://webmasters.stackexchange.com/">Webmasters</a></li>
+                        <li><a href="http://gamedev.stackexchange.com/">Game Development</a></li>
+                        <li><a href="http://tex.stackexchange.com/">TeX - LaTeX</a></li>
+                            </ol></td><td><ol>
+                        <li><a href="http://programmers.stackexchange.com/">Programmers</a></li>
+                        <li><a href="http://unix.stackexchange.com/">Unix &amp; Linux</a></li>
+                        <li><a href="http://apple.stackexchange.com/">Ask Different (Apple)</a></li>
+                        <li><a href="http://wordpress.stackexchange.com/">WordPress Development</a></li>
+                        <li><a href="http://gis.stackexchange.com/">Geographic Information Systems</a></li>
+                        <li><a href="http://electronics.stackexchange.com/">Electrical Engineering</a></li>
+                        <li><a href="http://android.stackexchange.com/">Android Enthusiasts</a></li>
+                        <li><a href="http://security.stackexchange.com/">Information Security</a></li>
+                            </ol></td><td><ol>
+                        <li><a href="http://dba.stackexchange.com/">Database Administrators</a></li>
+                        <li><a href="http://drupal.stackexchange.com/">Drupal Answers</a></li>
+                        <li><a href="http://sharepoint.stackexchange.com/">SharePoint</a></li>
+                        <li><a href="http://ux.stackexchange.com/">User Experience</a></li>
+                        <li><a href="http://mathematica.stackexchange.com/">Mathematica</a></li>
+                        <li><a href="http://salesforce.stackexchange.com/">Salesforce</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#technology" class="more">
+                                more (13)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://photo.stackexchange.com/">Photography</a></li>
+                        <li><a href="http://scifi.stackexchange.com/">Science Fiction &amp; Fantasy</a></li>
+                        <li><a href="http://graphicdesign.stackexchange.com/">Graphic Design</a></li>
+                        <li><a href="http://cooking.stackexchange.com/">Seasoned Advice (cooking)</a></li>
+                        <li><a href="http://diy.stackexchange.com/">Home Improvement</a></li>
+                        <li><a href="http://money.stackexchange.com/">Personal Finance &amp; Money</a></li>
+                        <li><a href="http://academia.stackexchange.com/">Academia</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#lifearts" class="more">
+                                more (10)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://english.stackexchange.com/">English Language &amp; Usage</a></li>
+                        <li><a href="http://skeptics.stackexchange.com/">Skeptics</a></li>
+                        <li><a href="http://judaism.stackexchange.com/">Mi Yodeya (Judaism)</a></li>
+                        <li><a href="http://travel.stackexchange.com/">Travel</a></li>
+                        <li><a href="http://christianity.stackexchange.com/">Christianity</a></li>
+                        <li><a href="http://gaming.stackexchange.com/">Arqade (gaming)</a></li>
+                        <li><a href="http://bicycles.stackexchange.com/">Bicycles</a></li>
+                        <li><a href="http://rpg.stackexchange.com/">Role-playing Games</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#culturerecreation" class="more">
+                                more (21)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://math.stackexchange.com/">Mathematics</a></li>
+                        <li><a href="http://stats.stackexchange.com/">Cross Validated (stats)</a></li>
+                        <li><a href="http://cstheory.stackexchange.com/">Theoretical Computer Science</a></li>
+                        <li><a href="http://physics.stackexchange.com/">Physics</a></li>
+                        <li><a href="http://mathoverflow.net/">MathOverflow</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#science" class="more">
+                                more (7)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://stackapps.com/">Stack Apps</a></li>
+                        <li><a href="http://meta.stackexchange.com/">Meta Stack Exchange</a></li>
+                        <li><a href="http://area51.stackexchange.com/">Area 51</a></li>
+                        <li><a href="http://careers.stackoverflow.com/?utm_source=stackoverflow.com&utm_medium=site-ui&utm_campaign=footerlink">Stack Overflow Careers</a></li>
+                    
+                </ol>
+            </td>
+    </tr>
+</tbody></table>
+                </div>
+            </div>
+
+            <div id="copyright">
+                site design / logo © 2014 stack exchange inc; user contributions licensed under <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license">cc by-sa 3.0</a> 
+                with <a href="http://blog.stackoverflow.com/2009/06/attribution-required/" rel="license">attribution required</a>
+            </div>
+            <div id="svnrev">
+                rev 2014.9.24.1889
+            </div>
+            
+        </div>
+    <iframe id="global-auth-frame" style="display:none" src="./excel vba - Is it good practice to leave  Debug.Print  instructions in code that goes in  production   - Stack Overflow_files/read.htm"></iframe></div>
+    <noscript>
+        &lt;div id="noscript-warning"&gt;Stack Overflow works best with JavaScript enabled&lt;img src="http://pixel.quantserve.com/pixel/p-c1rF4kxgLUzNc.gif" alt="" class="dno"&gt;&lt;/div&gt;
+    </noscript>
+<script>var p = "http", d = "static"; if (document.location.protocol == "https:") { p += "s"; d = "engine"; } var z = document.createElement("script"); z.type = "text/javascript"; z.async = true; z.src = p + "://" + d + ".adzerk.net/ados.js"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(z, s);</script>
+<script>
+    var ados = ados || {};
+    ados.run = ados.run || [];
+    ados.run.push(function () { ados_setKeywords('excel-vba');; ados_load(); });         
+</script>
+
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () { (i[r].q = i[r].q || []).push(arguments) }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m);
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+        ga('create', 'UA-5620270-1');        
+        
+        ga('set', 'dimension2', '|excel-vba|');         
+        ga('send', 'pageview');
+        var _qevents = _qevents || [],
+            _comscore = _comscore || [];
+        (function () {
+            var ssl='https:'==document.location.protocol,
+                s=document.getElementsByTagName('script')[0],
+                qc=document.createElement('script');
+            qc.async=true;
+            qc.src=(ssl?'https://secure':'http://edge')+'.quantserve.com/quant.js';
+            s.parentNode.insertBefore(qc, s);
+            var sc=document.createElement('script');
+            sc.async=true;
+            sc.src=(ssl?'https://sb':'http://b') + '.scorecardresearch.com/beacon.js';
+            s.parentNode.insertBefore(sc, s);
+        })();
+        _comscore.push({ c1: "2", c2: "17440561" });
+        _qevents.push({ qacct: "p-c1rF4kxgLUzNc" });
+    </script>        
+    
+    
+<div id="goog_qs_tidbit_box" class="notranslate goog_qs-slideup"><div id="goog_qs-wrapper"><div id="goog_qs-box-toggle" style="background-image: url(chrome-extension://okanipcmceoeemlbjnmnbdibhgpbllgc/images/minimize.png);"></div><div id="goog_qs-box-help" style="background-image: url(chrome-extension://okanipcmceoeemlbjnmnbdibhgpbllgc/images/help.png);"></div><div id="goog_qs-box-info" style="background-image: url(chrome-extension://okanipcmceoeemlbjnmnbdibhgpbllgc/images/icon16x16.png);"><span class="goog_qs-nowrap">C<img>orrespondências</span> <span class="goog_qs-nowrap">n<img>a</span> <span class="goog_qs-nowrap">p<img>ágina</span> <span class="goog_qs-nowrap">p<img>ara</span> <span class="goog_qs-query">#if <span class="goog_qs-nowrap">d<img>ebug</span> <span class="goog_qs-nowrap">v<img>ba</span></span></div><div id="goog_qs-box-tidbits"><div class="goog_qs-box-tidbit"><span class="goog_qs-nowrap">V<img>B</span> <span class="goog_qs-nowrap">2<img>010</span> <span class="goog_qs-nowrap">i<img>s</span> <span class="goog_qs-nowrap">h<img>undreds</span> <span class="goog_qs-nowrap">o<img>f</span> <span class="goog_qs-nowrap">t<img>imes</span> <span class="goog_qs-nowrap">f<img>aster</span> <span class="goog_qs-nowrap">t<img>han</span> <em><span class="goog_qs-nowrap">V<img>BA</span></em>/VBE <span class="goog_qs-nowrap">a<img>nd</span> <span class="goog_qs-nowrap">h<img>as</span> <span class="goog_qs-nowrap">t<img>housands</span> <span class="goog_qs-nowrap">o<img>f</span> <span class="goog_qs-nowrap">c<img>ool</span> <span class="goog_qs-nowrap">f<img>acilities.</span> <span class="goog_qs-nowrap">Y<img>ou</span> <span class="goog_qs-nowrap">c<img>an</span> <span class="goog_qs-nowrap">a<img>ccess</span> <span class="goog_qs-nowrap">E<img>xcel</span> <span class="goog_qs-nowrap">f<img>rom</span> <span class="goog_qs-nowrap">i<img>t</span> <em><span class="goog_qs-nowrap">i<img>f</span></em> <span class="goog_qs-nowrap">y<img>ou</span> <span class="goog_qs-nowrap">w<img>ant</span> <span class="goog_qs-nowrap">t<img>o</span> <span class="goog_qs-nowrap">u<img>se</span> <span class="goog_qs-nowrap">a<img>...</span> <span class="goog_qs-go">»</span></div></div><div id="goog_qs-box-bottom"><div class="goog_qs-more-matches" id="goog_qs-box-more-tidbits"><span class="goog_qs-nowrap">M<img>ais</span> <span class="goog_qs-nowrap">c<img>orrespondências</span> <span class="goog_qs-go">»</span></div><div class="goog_qs-more-matches" id="goog_qs-box-fewer-tidbits" style="display:none"><span class="goog_qs-go">«</span>  <span class="goog_qs-nowrap">M<img>enos</span> <span class="goog_qs-nowrap">c<img>orrespondências</span></div><div id="goog_qs-box-feedback-link"><span class="goog_qs-nowrap">F<img>eedback</span></div> <div id="goog_qs-box-new-bug"><span class="goog_qs-nowrap">B<img>ug</span></div></div><div style="clear:both"></div></div></div><div id="gtx-trans" style="position: absolute; left: 286px; top: 1029.6875px;"><div class="gtx-trans-icon"></div></div></body></html>
