@@ -1,0 +1,74 @@
+BODY {
+	FONT: 70% verdana,arial,helvetica; BACKGROUND-COLOR: white
+}
+TD {
+	FONT-SIZE: 70%; LINE-HEIGHT: 1.5em
+}
+A:link {
+	COLOR: #0000ff; TEXT-DECORATION: none
+}
+A:visited {
+	COLOR: #800080; TEXT-DECORATION: none
+}
+A:hover {
+	COLOR: #0000ff; TEXT-DECORATION: underline
+}
+P {
+	LINE-HEIGHT: 1.5em; MARGIN-BOTTOM: 1em; MARGIN-TOP: 0.5em
+}
+PRE {
+	BACKGROUND: #eeeeee; MARGIN-BOTTOM: 1em; MARGIN-LEFT: 0px; MARGIN-TOP: 1em; PADDING-BOTTOM: 5pt; PADDING-LEFT: 5pt; PADDING-RIGHT: 5pt; PADDING-TOP: 5pt
+}
+H1 {
+	FONT: 200% verdana,arial,helvetica; MARGIN: 0px 0px 5px
+}
+H2 {
+	FONT: 160% verdana,arial,helvetica; MARGIN-BOTTOM: 0.5em
+}
+H3 {
+	FONT: bold 125% verdana,arial,helvetica; MARGIN-BOTTOM: 0.5em
+}
+H4 {
+	FONT: bold 100% verdana,arial,helvetica; MARGIN-BOTTOM: 0.5em
+}
+H5 {
+	FONT: bold 100% verdana,arial,helvetica; MARGIN-BOTTOM: 0.5em
+}
+H6 {
+	FONT: bold 100% verdana,arial,helvetica; MARGIN-BOTTOM: 0.5em
+}
+UL {
+	MARGIN-BOTTOM: 10px; MARGIN-LEFT: 17px; MARGIN-TOP: 10px
+}
+OL {
+	MARGIN-BOTTOM: 10px; MARGIN-LEFT: 25px; MARGIN-TOP: 10px
+}
+UL LI {
+	LINE-HEIGHT: 150%; MARGIN-BOTTOM: 0.5em; MARGIN-LEFT: 1em
+}
+OL LI {
+	LINE-HEIGHT: 150%; MARGIN-BOTTOM: 0.5em; MARGIN-LEFT: 1em
+}
+.tip {
+	COLOR: #0000FF; FONT-SIZE: 95%; MARGIN-LEFT: 50; MARGIN-RIGHT: 50
+}
+.note {
+	COLOR: #000099; FONT-SIZE: 95%; MARGIN-LEFT: 50; MARGIN-RIGHT: 50
+}
+.legal {
+	COLOR: #000099; FONT-SIZE: 95%
+}
+.boxout { 
+	COLOR: #000000; FONT-SIZE: 95%; LINE-HEIGHT: 1.25 em; MARGIN-LEFT: 1em; 
+    MARGIN-RIGHT: 0.5em
+}
+.index {
+	LINE-HEIGHT: 100%; MARGIN-BOTTOM: 0em
+}
+.tnahead {
+	FONT: 180% verdana,arial,helvetica; MARGIN-BOTTOM: 0.25em; MARGIN-LEFT: 0.5em
+}
+.radiolabel {
+	MARGIN-BOTTOM: 1em;
+}
+.code        { font-family: Courier New; font-size: 120%; color: #000000; line-height: 1.25em }

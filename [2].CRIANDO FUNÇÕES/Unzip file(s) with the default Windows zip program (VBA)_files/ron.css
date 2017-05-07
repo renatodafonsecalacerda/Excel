@@ -1,0 +1,135 @@
+﻿.mainContent {
+	text-align: left;
+	vertical-align: top;
+	padding: 5px;
+}
+.pictures {
+	text-align: left;
+	vertical-align: top;
+	padding: 5px;
+}
+.whatsnew {
+	background-color: #99CCFF;
+	border: thin solid #000000;
+	margin: 0px;
+	padding: 5px;
+	text-align: left;
+	vertical-align: top;
+}
+.vbacode {
+    color: #3366CC;
+}
+.vbatext {
+    color: black;
+}
+a:hover {
+	color: #FF0000;
+}
+a:visited:hover {
+	color: #FF0000;
+}
+a {
+	color: navy;
+}
+a:visited {
+	color: teal;
+}
+
+html {
+	overflow-y:scroll;
+}
+body {
+	background-color: white;
+	color: black;
+	font-family: Verdana, Geneva, Arial, Helvetica, serif;
+	font-size: .9em;
+	margin: 0px;
+}
+img {
+	border: 0px;
+}
+p.footer {
+	color: gray;
+	font-size: .9em;
+}
+p.footer a:link {
+	color: gray;
+	text-decoration: none;
+}
+p.footer a:visited {
+	color: gray;
+	text-decoration: none;
+}
+p.footer a:hover {
+	color: gray;
+}
+p.footer a:active {
+	color: gray;
+	text-decoration: none;
+}
+h1 {
+	color:#8fc871;
+}
+h2 {
+	color:#2B5835;
+}
+h3 {
+	color:#2B5835;
+}
+#topBanner {
+	width: 800px;
+	margin-right: auto;
+	margin-left: auto;
+}
+#centerContent {
+	width: 800px;
+	margin-right: auto;
+	margin-left: auto;
+}
+#bottomFooter {
+	width: 800px;
+	margin-right: auto;
+	margin-left: auto;
+}
+#dropDownMenu {
+	font-family: Verdana, Geneva, Arial, Helvetica, serif;
+	background-color: #c8e6b3;
+	border: 1px solid #8fc871;
+	margin-top: 0.9em;
+	position: relative;
+	z-index: 10;
+	width: 799px;
+	margin-right: auto;
+	margin-left: auto;
+}
+#dropDownMenu ul {
+	padding: 0px;
+	margin: 0px;
+	height: 25px;
+}
+#dropDownMenu ul li {
+	display: inline;
+	width: 114px;
+	float: left;
+	font-size: 0.9em;
+	height: 25px;
+}
+#dropDownMenu ul li a {
+	color: #000000;
+	text-decoration: none;
+	background-color: #c8e6b3;
+	line-height: 25px;
+	display: block;
+	padding-left: 8px;
+}
+#dropDownMenu ul li ul {
+	visibility: hidden;
+}
+#dropDownMenu ul li a:hover {
+	color: #FF0000;
+	background-color: #c8e6b3;
+}
+#dropDownMenu ul li:hover ul {
+	visibility: visible;
+	font-size: 0.9em;
+}

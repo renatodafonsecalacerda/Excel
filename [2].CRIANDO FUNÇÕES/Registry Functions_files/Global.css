@@ -1,0 +1,844 @@
+/*
+File: Global.css
+By:   Chip Pearson, chip@cpearson.com , www.cpearson.com 
+Date: 15-June-2007
+Revised: 27-December-2013
+This is the primary stylesheet for all pages and applications on the cpearson.com web site.
+*/
+/*****************************************************************************
+
+
+The basic layout is:
+ *****************************************************************************/
+/*
+REVISIONS FOR NEW MASTER PAGE COLUMN LAYOUT 28-DECEMBER-2013
+*/
+div.columns       { width: 100%;}
+div.columns div   { float: left; }
+div.leftcolumn   { border-right-color:navy;border-right-style:solid;border-right-width:1px;border-top-width:1px;border-top-style:solid;border-top-color:navy; width:200px; font-family:Arial; font-size:12px; color:maroon;padding-top:5px;margin-top:5px;}
+div.centercolumn { font-family:Arial;font-size:10px;color:maroon; padding-top:5px;left:200px;margin-top:5px;margin-right:5px; width:100px; width:auto; min-width:790px;}
+div.rightcolumn { border-left-color:navy;border-left-style:solid;border-left-width:1px;border-top-width:1px;border-top-style:solid;border-top-color:navy;      width:200px;font-family:Arial; font-size:12px; color:maroon;padding-top:5px;margin-top:5px;padding-left:5px;right:0;}
+div.clear         { clear: both; }
+
+.rightcolumn {
+	width:200px;
+	font-family:Arial;
+	font-size:12px;
+	color:maroon;
+	right:0;
+}
+
+.divTableHeader {
+	border-width:1px;
+	border-color:black;
+	border-style:solid;
+	height:30px;
+	width:50px;
+	text-align:center;
+	vertical-align:central;
+	background-color:grey;
+
+}
+.divTableData {
+	border-width:1px;
+	border-color:red;
+	border-style:solid;
+	height:30px;
+	width:50px;
+	text-align:center;
+	vertical-align:central;
+	background-color:white;
+}
+
+.button2 {
+	margin:4px;
+	text-align:center;
+	border-style:solid;
+    border-color:yellow;
+    border-width:2px;
+    background-color:maroon;
+    width:125px;
+    color:yellow;
+    height:35px;
+}
+
+
+divSpreadsheetGearComponent {
+	border-width:2px;
+	border-color:navy;
+	border-style:solid;
+}
+
+.divSpreadsheetGearComponent {
+	border-width:2px;
+	border-color:navy;
+	border-style:solid;
+}
+
+.pageheader {
+    border: 1px solid maroon;
+	font-family:Arial;
+    font-size:larger;    
+    color:maroon;
+    height:300px;
+    align-content:center;
+    vertical-align:top;
+	padding-bottom:10px;
+}
+
+.sitedate {
+	padding-left:15px;
+	padding-bottom:15px;
+	width:222px;
+	height:32px;
+}
+
+.sitedateright {
+	padding-left:15px;
+	padding-bottom:15px;
+	width:251px;
+	height:47px;
+	float:right;
+	margin-right:10px;
+	right:10px;
+	padding-right:10px;
+}
+
+
+.button {
+    border-style:solid;
+    border-color:yellow;
+    border-width:2px;
+    background-color:maroon;
+    width:125px;
+    color:yellow;
+    height:35px;
+	text-align:center;
+	
+ 
+}
+
+
+
+.pagefooter {
+    border-style:solid;
+    border-color:maroon;
+    border-width:1px;
+    align-content:center;
+    font-family:Arial;
+    font-size:10px;    
+    color:maroon;    
+    position:relative;
+    vertical-align:top;
+	margin-top:5px;
+	margin-bottom:5px;
+}
+
+#citation_div {
+    border: 1px solid navy;
+	width:1073px;
+    height:45px;
+	margin-left:3px;
+	color:navy;
+	
+}
+
+.citation_div {
+    border-style:solid;
+    border-width:1px;
+    border-color:navy;
+    width:900px;
+    height:45px;
+	margin-left:3px;
+	color:navy;
+}
+
+.citethispage {
+	margin-left: 10px;
+	font-size: small;
+	color:#800000;
+	
+}
+.citethispagetext {
+	margin-left: 10px;
+	font-size: small;
+	font-family: 'Courier New';
+	color: navy;
+}
+/*
+END REVISIONS FOR NEW MASTER PAGE COLUMN LAYOUT 28-DECEMBER-2013
+*/
+
+
+#TopButtons 
+{
+   text-align:center;
+   width:700px;
+   height:auto;
+}
+
+
+#left_col {
+/*	width:10%;			5-April-2008*/
+	width:200px;    /* was 75px; */
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	height: 59px;   /* added new for ads */
+    float:left;
+}
+
+#right_col {
+/*	width:10%;			5-April-2008 */
+	width:180px;
+	position: absolute; /* 29Jan2011 was absolute */
+	top: 0px;
+	right: 0px;
+    height: 59px;
+    float:left;
+}
+
+#page_content {
+/*	margin-right:10%;
+	margin-left: 10%;
+*/
+/*
+	19-July-2008 ADDED:
+*/
+	width:590px; /* was 600px */
+	float:left;
+	margin-right:170px;
+	margin-left:180px; /* was 100px */
+    
+}
+
+#page_content_center {
+	margin-right:100px;
+	margin-left:100px;
+	text-align:center;
+    float:left;
+}
+
+
+#top-navigation-center {
+	margin-right:100px;
+	margin-left:100px;
+	align-content:center;
+}
+
+
+
+	
+#divHeaderRow {
+	position: relative;
+	width: 800px;
+}
+
+/* new 20-dec */
+p {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: small;
+	font-weight: normal;
+	font-style: normal;
+	font-variant: normal;
+	text-transform: none;
+	color: #800000;
+}
+
+p.leftindent
+{
+	width:10%;
+}
+p.center
+{
+	width:80%;
+}
+p.right
+{
+	width:10%;
+}
+
+
+body 
+{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: small;
+	font-weight: normal;
+	font-style: normal;
+	font-variant: normal;
+	text-transform: none;
+	color: #800000;
+}
+
+.main {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: small;
+	font-weight: normal;
+	font-style: normal;
+	font-variant: normal;
+	text-transform: none;
+	color: #800000;
+}
+
+
+
+
+
+
+
+.left_ligit 
+{
+width:180px;    
+}
+
+.right_ligit
+{
+width:180px;    
+}
+
+.mainmedium
+{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size:medium;
+	font-weight: normal;
+	font-style: normal;
+	font-variant: normal;
+	text-transform: none;
+	color: #800000;
+}
+
+.redmain
+{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size:medium;
+	font-weight: normal;
+	font-style: normal;
+	font-variant: normal;
+	text-transform: none;
+	color:red;
+}
+.imagelink
+{
+	border-style:none;
+}
+.imagemargins
+{
+	border-style:none;
+	margin-bottom:25px;
+	margin-top: 25px;
+	margin-left:25px;
+	margin-right:25px;
+}
+
+.code {
+	font-family: "Courier New", Courier, monospace;
+	font-size: small;
+	font-weight: normal;
+	font-style: normal;
+	font-variant: normal;
+	text-transform: none;
+	color: #000080;
+}
+
+.comments {
+	font-family: "Courier New", Courier, monospace;
+	font-size: small;
+	font-weight: normal;
+	font-style: normal;
+	font-variant: normal;
+	text-transform: none;
+	color: #008000;
+}
+
+.xml {
+	font-family: "Courier New", Courier, monospace;
+	font-size: small;
+	font-weight: normal;
+	font-style: normal;
+	font-variant: normal;
+	text-transform: none;
+	color: #0000FF;
+}
+
+.pagebannerLess
+{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size:x-large;
+	background-color:maroon;
+	color:yellow;
+	border:medium;
+	border-color:maroon;
+	border-style:double;
+	border-width:thin;
+	text-align:center;
+}
+
+
+.pagetopic {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: x-large;
+	font-weight: normal;
+	font-style: normal;
+	font-variant: normal;
+	text-transform: none;
+	color: #800000;
+/*
+	border-top-style:double;
+	border-top-color:maroon;
+	border-top-width:medium;
+	
+	border-bottom-style:double;
+	border-bottom-color:maroon;
+	border-bottom-width:medium;
+	
+*/
+}
+
+.sectionheader {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: large;
+	font-weight: normal;
+	font-style: italic;
+	font-variant: normal;
+	text-transform: none;
+	color: #800000;
+}
+
+.FullBox {
+	font-family:Arial, Helvetica, sans-serif;
+	padding:5px;
+	margin:10px;
+	border: medium double #800000;
+	font-size: small;
+	font-weight: normal;
+	font-style: normal;
+	font-variant: normal;
+	text-transform: none;
+	color: #800000;
+}
+
+.CenterFullBox {
+	font-family:Arial, Helvetica, sans-serif;
+	padding:5px;
+	margin:10px;
+	border: medium double #800000;
+	font-size: small;
+	font-weight: normal;
+	font-style: normal;
+	font-variant: normal;
+	text-transform: none;
+	color: #800000;
+	text-align:center;
+}
+
+
+.SizeBox {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: small;
+	font-weight: normal;
+	font-style: normal;
+	font-variant: normal;
+	text-transform: none;
+	color: #800000;
+	border: medium double #800000;
+	padding:5px;
+	margin:10px;
+}
+.XMLData {
+	font-family: "Courier New", Courier, monospace;
+	font-size: small;
+	font-weight: normal;
+	font-style: normal;
+	font-variant: normal;
+	text-transform: none;
+	color:navy;
+	
+}
+
+.namespace {
+	font-family: "Courier New", Courier, monospace;
+	font-size: small;
+	font-weight: normal;
+	font-style: normal;
+	font-variant: normal;
+	text-transform: none;
+	color: #808000;
+}
+
+
+
+a:active {
+	color: #FF0000;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: small;
+	font-weight: normal;
+	font-style: normal;
+	font-variant: normal;
+	text-transform: none;
+}
+
+
+
+.LinkMedium {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size:medium ;
+	font-weight: normal;
+	font-style: normal;
+	font-variant: normal;
+	text-transform: none;
+	color: #FF0000;
+}
+
+
+a:link {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: small;
+	font-weight: normal;
+	font-style: normal;
+	font-variant: normal;
+	text-transform: none;
+	color:#660066;
+}
+a:visited {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: small;
+	font-weight: normal;
+	font-style: normal;
+	font-variant: normal;
+	text-transform: none;
+	color:#990033
+	
+}
+.filename {
+	font-family: "Courier New", Courier, monospace;
+	font-size: small;
+	font-weight: normal;
+	font-style: normal;
+	font-variant: normal;
+	text-transform: none;
+	color: #000080;
+}
+a:hover {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: small;
+	font-weight: normal;
+	font-style: normal;
+	font-variant: normal;
+	text-transform: none;
+	color: #0000FF;
+	
+}
+.xSmall {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: x-small;
+	font-weight: normal;
+	font-style: normal;
+	font-variant: normal;
+	text-transform: none;
+	color: #800000;
+}
+.TopicLetter {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: x-large;
+	font-weight: normal;
+	font-style: italic;
+	font-variant: normal;
+	text-transform: none;
+	color: #800000;
+}
+.keys {
+	font-family: "Courier New", Courier, monospace;
+	font-size: small;
+	font-weight: normal;
+	font-style: normal;
+	font-variant: normal;
+	text-transform: none;
+	color: #FF0000;
+}
+.smallcapsword {
+	font-family: Arial, Helvetica, sans-serif;
+/*	font-size: small;  */
+	font-weight: normal;
+	font-style: normal;
+	font-variant: small-caps;
+/*	text-transform: uppercase; */
+	/* color: #800000; */
+}
+.definedword {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: small;
+	font-weight: normal;
+	font-style: italic;
+	font-variant: normal;
+	text-transform: none;
+	color: #800000;
+}
+
+a.definition {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: small;
+	font-weight: normal;
+	font-style: italic;
+	font-variant: normal;
+	text-transform: none;
+	color: #800000;
+}
+a.nochange
+{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: small;
+	font-weight: normal;
+	font-style: normal;
+	font-variant: normal;
+	text-transform: none;
+	color: #FF0000;	
+}
+	
+	
+
+
+.MainTableLeft {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: small;
+	font-weight: normal;
+	font-style: normal;
+	font-variant: normal;
+	text-transform: none;
+	color: #800000;
+/*	width:5%; 					5-Apirl-2008 */
+	width:75px;
+	text-align:left;
+	vertical-align:top;
+}
+	
+.MainTableCenter {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: small;
+	font-weight: normal;
+	font-style: normal;
+	font-variant: normal;
+	text-transform: none;
+	color: #800000;
+/*	width:80%;			5-April-2008 */
+	width:650px;
+	text-align:left;
+	vertical-align:top;
+}
+
+.MainTableRight {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: small;
+	font-weight: normal;
+	font-style: normal;
+	font-variant: normal;
+	text-transform: none;
+	color: #800000;
+/*	width:10%;  			5-April-2008 */
+	width:100px;
+	text-align:left;
+	vertical-align:top;
+}
+
+
+	
+
+
+.pagebanner2 {
+	font-family: Nina;
+	font-size: xx-large;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	background-color:maroon;
+	color: #FFFF99;
+	border:medium;
+	border-color:maroon;
+	border-style:double;
+	border-width:thin;
+	text-align:center;
+}
+
+.pagebanner
+{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size:xx-large;
+	background-color:maroon;
+	color:#FFFF99;
+	border:medium;
+	border-color:maroon;
+	border-style:double;
+	border-width:thin;
+	text-align:center;
+}
+
+p.Center
+{
+	text-align:center;
+}	
+
+.sql {
+	font-family: "Courier New", Courier, monospace;
+	font-size: small;
+	font-weight: normal;
+	font-style: italic;
+	font-variant: normal;
+	color: #003399;
+}
+
+
+p.warning {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: small;
+	font-weight: normal;
+	font-style: normal;
+	font-variant: normal;
+	text-transform: none;
+	color: #000066;
+	background-color:#FF9999;
+	margin-left:10%;
+	margin-right:10%;
+}
+
+p.definiton {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: small;
+	font-weight: normal;
+	font-style: normal;
+	font-variant: normal;
+	text-transform: none;
+	color: #000066;
+	background-color:#ADDCEB;
+	margin-left:10%;
+	margin-right:10%;
+}
+
+p.information {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: small;
+	font-weight: normal;
+	font-style: normal;
+	font-variant: normal;
+	text-transform: none;
+	color: #000066;
+	background-color:#ADDCEB;
+	margin-left:10%;
+	margin-right:10%;
+}
+
+
+
+
+div.precode {
+	font-family: "Courier New", Courier, monospace;
+	font-size: medium;
+	font-weight: normal;
+	font-style: normal;
+	font-variant: normal;
+	text-transform: none;
+	color: #000080;
+}
+
+.importantcode {
+	font-family: "Courier New", Courier, monospace;
+	font-size: small;
+	font-weight: normal;
+	font-style: normal;
+	font-variant: normal;
+	text-transform: none;
+	color: #000080;
+	background-color: #FFFF00;
+}
+.formula {
+	font-family: "Courier New", Courier, monospace;
+	font-size: small;
+	font-weight: bold;
+	font-style: normal;
+	font-variant: normal;
+	text-transform: none;
+	color:#660066; 
+}
+.keystrokes {
+	font-family: "Courier New", Courier, monospace;
+	font-size: medium;
+	font-weight: normal;
+	font-style: normal;
+	font-variant: small-caps;
+	text-transform: uppercase;
+	color: #FF0000;
+}
+
+.keystroke {
+	font-family: "Courier New", Courier, monospace;
+	font-size: medium;
+	font-weight: normal;
+	font-style: normal;
+	font-variant: small-caps;
+	text-transform: uppercase;
+	color: #FF0000;
+}
+
+
+
+.warning 
+{
+	font-family:Arial;
+	font-size:small;
+	font-style:normal;
+	font-weight:bold;
+	color:Red;
+}
+p.footerbanner
+{
+	border-color:rgb(149,55,53);
+	border-style:double;
+	border-width:medium;
+	text-align:center;
+	color:rgb(149,55,53);
+}
+
+.downloadtitle 
+{
+	font-family:Arial;
+	font-size:medium;
+	font-style:normal;
+	font-weight:normal;
+	color:Purple;
+}
+
+.classname
+{
+ font-family:Courier New;
+ font-size:small;
+ text-align:left;
+color: #000080;
+} 
+ 
+p.sidebar
+{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: small;
+	font-weight: normal;
+	font-style: normal;
+	font-variant: normal;
+	text-transform: none;
+	color: #000080;
+	background-color: #ffff00;
+	margin-left: 10%;
+	margin-right: 10%;
+}
+
+/*
+Image float styles added CHP 13-Nov-2008
+*/
+img.FloatTextOnLeft
+{
+    float:right;
+    margin-right:10px;
+    margin-left:10px;    
+}
+img.FloatTextOnRight
+{
+    float:left;
+    margin-left:10px;
+    margin-right:10px;
+}    

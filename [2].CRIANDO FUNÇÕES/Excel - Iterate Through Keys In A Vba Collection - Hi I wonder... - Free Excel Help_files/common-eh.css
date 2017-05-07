@@ -1,0 +1,110 @@
+#sharing_sharethis_tuts {
+	clear:both;
+	float:left;
+	margin:10px;
+}
+#sharing_sharethis_howto {
+	float:right;
+	text-align:right;
+	margin:10px;
+}
+
+.top_link_container {
+	font-size:12px;
+	padding:2px;
+	margin-left:10px;
+}
+.top_link_container a:hover{
+	text-decoration:none;
+}
+.page_content_container {
+	/*max-height:565px;*/
+	width:750px;
+	margin-bottom:10px;
+}
+.page_title_content {
+	padding-bottom:5px;
+	border-bottom:1px solid #CCCCCC;
+}
+
+.search_box_eh_how_to {
+}
+.search_box_ev {
+	background-color:#000000;
+	margin-left:300px;
+	margin-top:10px;
+}
+
+.code_block_container {
+	border: solid 1px #000000;
+	padding:5px;
+	background-color:#CCCCCC;
+	width:95%;
+	height:250px;
+	overflow:auto;
+}
+
+.page_content_topic {
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:18px;
+	font-weight:bold;
+	margin:0px;
+	padding:0px;
+	text-indent:0px;
+}
+#eh_section_title {
+    border-style: none none solid;
+    border-width: 2px;
+    color: #006600;
+    font-family: "Atlantic Inline";
+    font-size: 24px;
+    margin-bottom: 4px;
+    text-decoration: none;
+}
+.h1_section_title {
+	padding:0px;
+	margin:0px;
+	color: #006600;
+    font-family: "Atlantic Inline";
+    font-size: 24px;
+}
+
+.dir_cat_link {
+	font-size:14px;
+	font-weight:bold;
+	padding:2px;
+}
+.dir_cat_link a{
+	text-decoration:underline;
+}
+.dir_cat_link a:hover{
+	text-decoration:none;
+}
+
+.link_page_title {
+	font-size:18px;
+	font-weight:bold;
+}
+.link_page_title a{
+	font-weight:bold;
+	text-decoration:underline;
+}
+.link_page_title a:hover{
+	font-weight:bold;
+	text-decoration:none;
+}
+.link_page_view_content {
+	font-size:16px;
+	font-weight:bold;
+	color:#000000;
+}
+.link_page_view_content a{
+	font-size:16px;
+	font-weight:bold;
+	text-decoration:underline;
+}
+.link_page_view_content a:hover{
+	font-size:16px;
+	font-weight:bold;
+	text-decoration:none;
+}

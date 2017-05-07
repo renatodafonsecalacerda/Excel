@@ -1,0 +1,3 @@
+window.rtbsBidA = (typeof window.rtbsBidA  === 'object' ) ? window.rtbsBidA : {};
+window.rtbsBidA["634720962"] = {bidder_id: 9, logging_beacons: ["http://opt.media.net/rtbs/pixel?key=9%3A%3A20140926%3A%3A19%3A%3ABR%3A%3A172.16.202.33_7016&value=10&bid=9&country=BR&cid=8CUB4162P&crid=634720962&domain=analysistabs.com&size=300x250&buyerid=null", "http://opt.media.net/ybnca/exchangenotify?aid=null&domain=analysistabs.com&price=0.1&cgid=7226&cid=34600&rid=1574879&url=&cc=BR&td=&lid=&t=1411759242018"], bid: 0.1, variant: 0, tp: "http://opt.media.net/rtbs/timeline?date=2014-09-26&hour=19&url=http%3A%2F%2Fanalysistabs.com%2Fexcel-vba%2Fhyperlinks-examples%2F&domain=analysistabs.com&b2b=0.0&b9b=0.1&bc=0.1&rtbW=9&<cm_win_macro>"};
+;

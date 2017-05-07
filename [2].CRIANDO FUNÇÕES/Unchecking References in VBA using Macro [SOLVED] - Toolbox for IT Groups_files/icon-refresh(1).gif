@@ -1,0 +1,1771 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://www.facebook.com/2008/fbml">
+<head id="ctl00_m_Head1"><title>
+	Visual Basic for Applications - Toolbox for IT Groups
+</title><link rel="shortcut icon" href="http://images.ittoolbox.com/favicon.ico" /><script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" type="text/javascript"></script><link rel="Stylesheet" type="text/css" href="http://cdn.toolbox.com/BUILD_2872/rds/master.css" /><link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet" type="text/css" />
+    
+    
+    <meta id="ctl00_m_headerContent_headerContent_pageMetaReloader" http-equiv="refresh" content="480"></meta>
+        <script language=javascript>
+        $(document).ready(function(){
+            $($(".breadcrumb-linkbox")[0]).css("display","none");
+            $($(".breadcrumb-separator")[0]).css("display","none");
+        });
+    </script>
+
+
+<script type="text/javascript">
+    (function () {
+        var useSSL = 'https:' == document.location.protocol;
+        var src = (useSSL ? 'https:' : 'http:') +
+ 	'//www.googletagservices.com/tag/js/gpt.js';
+        document.write('<scr' + 'ipt src="' + src + '"></scr' + 'ipt>');
+    })();
+</script>
+<script src="//cdn.optimizely.com/js/522310735.js"></script>
+<script type='text/javascript' src='http://c.amazon-adsystem.com/aax2/amzn_ads.js'></script>
+<script type='text/javascript'>
+    try {
+        amznads.getAds('3101');
+    } catch(e) { /*ignore*/}
+</script>
+<script type='text/javascript'>
+try {
+    amznads.setTargetingForGPTAsync('amznslots');
+} catch(e) { /*ignore*/}
+</script>
+ <script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-45137848-1']);
+  _gaq.push(['_setDomainName', 'ittoolbox.com']);
+  _gaq.push(['_setCustomVar', 1,'Community','Toolbox for IT',3]);
+  _gaq.push(['_setCustomVar', 2,'SubCommunity','Visual Basic',3]);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' :
+		'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0];
+		s.parentNode.insertBefore(ga, s);
+  })();
+ </script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="keywords" content="vb-vba-l,vba, visual basic for applications, vba group, vba forum,visual basic" /><meta name="description" content="A forum where peers share technical expertise, solve problems, and discuss issues related to the use of Visual Basic for Applications (VBA)." /><link rel="canonical" href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/"></link><meta name="zdid" content="0x51CA6168" /><script type="text/javascript">
+googletag.cmd.push(function () {
+	googletag.defineSlot("/4585/zd.toolbox/VisualBasic_Section", [728, 90], "div-gpt-ad-1736655939-0")
+		.addService(googletag.pubads())
+		.setCollapseEmptyDiv(true);
+	googletag.defineSlot("/4585/zd.toolbox/VisualBasic_Section", [[300, 250], [300, 600]], "div-gpt-ad-1736655939-1")
+		.addService(googletag.pubads())
+		.setCollapseEmptyDiv(true);
+	googletag.defineSlot("/4585/zd.toolbox/VisualBasic_Section", [[300, 250], [300, 600]], "div-gpt-ad-1736655939-2")
+		.addService(googletag.pubads())
+		.setCollapseEmptyDiv(true);
+	googletag.pubads().setTargeting("zdid", "0x51CA6168");
+	googletag.pubads().setTargeting("ref", "toolbox.com");
+	googletag.pubads().setTargeting("cmn", "zd");
+	googletag.pubads().setTargeting("zdtopic", ["vba","visual basic for applications","vba group","vba forum"]);
+	googletag.pubads().enableSingleRequest();
+	googletag.pubads().collapseEmptyDivs();
+	googletag.enableServices();
+});
+</script></head>
+<body> 
+ <script type="text/javascript">	
+    var isCorpSite = false;
+    var signinURL = 'https://login.toolbox.com/';            
+    var vertBaseURL = 'http://it.toolbox.com/';
+    var CDNImageURL = 'http://cdn.toolbox.com/BUILD_2872/';
+    var CurrentVerticalName = 'Toolbox for IT';
+    var siteCookieDomain = '.ittoolbox.com';
+
+    function setCookie(name, value, exdays) {  var exdate = new Date();  exdate.setTime(exdate.getTime());  if (exdays) {  exdays = exdays * 1000 * 60 * 60 * 24;  }  var expires_date = new Date(exdate.getTime() + (exdays));   var domain = "";  if ( siteCookieDomain )  domain = ";domain=" + siteCookieDomain;   document.cookie = name + "=" + escape(value) + ((exdays) ? ";expires=" + expires_date.toGMTString() : "") + ";path=/" + domain;  }   
+    function getCookie(check_name) {  var ca = document.cookie.split(";");  var tc = '';  var cn = '';  var cf = false;   for (var i = 0; i < ca.length; i++) {  tc = ca[i].substr(0, ca[i].indexOf("="));  cn = ca[i].substr(ca[i].indexOf("=") + 1);  tc = tc.replace(/^\s+|\s+$/g, "");  if (tc == check_name) {  cf = true;  return unescape(cn);  break;  }  }  if (!cf) {  return null;  } }
+    </script>
+<div id="lightbox-panel"></div>
+<X-BBSKIP>
+
+
+<form name="aspnetForm" method="post" action="/groups/technical-functional/vb-vba-l/rds/icon-refresh.gif" id="aspnetForm">
+<div>
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['aspnetForm'];
+if (!theForm) {
+    theForm = document.aspnetForm;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script type='text/javascript'>$(function () { $('img[groupchamp|="true"]').attr('src', 'http://cdn.toolbox.com/BUILD_2872/rds/groupchamp.png'); });</script><script type="text/javascript">function Toggle(tab){tab=$(tab);if(tab.hasClass("tabbednav-up")) return;if(tab.hasClass("tabbednav-down"))tab.removeClass("tabbednav-down");tab.parent().children("div.tabbednav-up").removeClass("tabbednav-up").addClass("tabbednav-down");tab.addClass("tabbednav-up");var tabContainer=$("#"+tab.attr("tabcontainerid"));tabContainer.siblings("div").hide();tabContainer.show();tab.siblings("input[type|=hidden]").val(tab.attr("tabindex"))}function LoadTabContainer(tab,code){var tabContainer=$("#"+$(tab).attr("tabcontainerid"));tabContainer.children("[loader|=true]").show();var html=eval(code);tabContainer.html(html);$(tab).attr("onclick","");$(tab).bind("click",function(){Toggle(tab)});tabContainer.children("[loader|=true]").hide()}</script>
+<div id="header" style="display:none">
+<div id="ctl00_m_logoandads" class="header-normal">
+
+<a href="http://www.toolbox.com/" class="header-logolink"></a>
+</div>
+</div>
+
+
+
+    
+    <div id="zd-header">
+        <div id="zd-headerinner">
+            <a href="http://www.ziffdavis.com/" class="ZDlogo"></a>
+        </div>
+    </div>
+   
+    <div class="dynaheader-logobar">
+        <div class="dynaheader-logoinner">
+            <div class="dynaheader-logoleft">
+                <a href="http://it.toolbox.com/"><img src="http://cdn.toolbox.com/BUILD_2872/rds/dynamicheader/dynaheader-sprite.png" border=0 /></a>
+            </div>
+            <div class="dynaheader-logoright">
+                <table border=0 width=100% cellpadding=0 cellspacing=0>
+                    <tr>
+                        <td align=center width=500>
+                            
+
+<script type="text/javascript">
+    var _action = 'http://it.toolbox.com/home/search/';
+    var _mainArgumentName = 'r';
+    var _additionalArgumentName = null;
+    var _additionalArgumentName = '';
+    var _additionalArgumentValue = '';
+</script>
+<div id="dynaheader-searchbox">
+    <input id="query" type="text" defaultButton="btnGlobalSearch" class="dynaheader-search" watermark="Search Toolbox.com" />            
+    <input id="btnGlobalSearch" class="dynaheader-searchexbutton" type="button" onclick="GlobalSearch()" />
+</div>
+
+
+                        </td>
+                        <td valign=middle align=right>                
+                            
+                                <div class="dynaheader-signinbox">
+                                    <div class="dynaheader-triggersignin dynaheader-header" style="display:inline">Log In</div>
+                                        <div id="ctl00_m_GN_signin_form" class="dynaheader-panel dn-panel dynaheader-signingpanel">
+                                            <div id="signin_message"></div>
+                                            <div style="padding:10px">
+                                                E-mail or User ID<br />
+                                                <input type="text" style="width:180px; height:20px" id="signin_form_username" name="u" tabindex="900" />
+                                            </div>
+                                            <div style="padding:10px">
+                                                Password<br />
+                                                <input type="password" style="width:180px; height:20px" id="signin_form_password" name="p" tabindex="901"/>
+                                            </div>
+                                            <div style="padding:10px">
+                                                <input type="checkbox" name="keepMeSignedIn" id="kmsiCB" value="true" tabindex="903" checked />&nbsp;
+                                                <span style="font-family:'Open Sans'; color:white">Keep me signed in</span>
+                                                
+                                            </div>
+                                            <div style="padding:10px">
+                                                <input type="button" id="btnSignIn" value="" tabindex="905" class="signinbuttonbig" />
+                                            </div>
+                                            <a id="ctl00_m_GN_ltbSignin_RecoverPassword" href="http://it.toolbox.com/home/recover-password">Recover Password</a>
+                                        </div>
+                                        <a href="http://it.toolbox.com//home/register" class="dynaheader-header" style="white-space:nowrap; display:inline" hpx="createaccount">Create an Account</a>
+                                    
+                                </div>
+                               
+                            
+                        </td>
+                    </tr>
+                </table>
+                </div>
+            </div>
+        </div>
+
+     
+    <div class="dynaheader-navbar">
+        <div class="dynaheader-navinner">
+        <table border=0 cellpadding=0 cellspacing=0 width=940 height=41><tr><td class="dynaheader-navleft" width=504>
+            <div>
+
+                <div class="dynaheader-vertrule"></div>
+                <a href="http://it.toolbox.com/" class="dynaheader-home"></a>
+                <div class="dynaheader-vertrule"></div>
+                <a href="http://it.toolbox.com/blogs/" class="dynaheader-tabbutton">Blogs</a>
+                <div class="dynaheader-vertrule"></div>
+                <div class="dynaheader-trigger dynaheader-tabbuttondropdown">Discussions</div>
+                <div id="dynaheader-discusspanel" class="dn-panel dynaheader-panel">
+                    <div id="animationholder" style="width:2000px; height:290px">
+                        <div id="topiclist" class="dynaheader-bucket">
+                            <div class="dynaheader-panelhed">CHOOSE A TOPIC</div>
+							
+									<div class="dynaheader-dispanel">
+								
+									<a class="dynaheader-dirtopics" href='javascript:discussionPaneHandler("showGroups", 17)'>Business Intelligence</a>
+																									
+								
+									<a class="dynaheader-dirtopics" href='javascript:discussionPaneHandler("showGroups", 19)'>C Languages</a>
+																									
+								
+									<a class="dynaheader-dirtopics" href='javascript:discussionPaneHandler("showGroups", 78)'>Cloud Computing</a>
+																									
+								
+									<a class="dynaheader-dirtopics" href='javascript:discussionPaneHandler("showGroups", 75)'>Communications Technology</a>
+																									
+								
+									<a class="dynaheader-dirtopics" href='javascript:discussionPaneHandler("showGroups", 1)'>CRM</a>
+																									
+								
+									<a class="dynaheader-dirtopics" href='javascript:discussionPaneHandler("showGroups", 76)'>Data Center</a>
+																									
+								
+									<a class="dynaheader-dirtopics" href='javascript:discussionPaneHandler("showGroups", 15)'>Data Warehouse</a>
+																									
+								
+									<a class="dynaheader-dirtopics" href='javascript:discussionPaneHandler("showGroups", 25)'>Database</a>
+																									
+								
+									<a class="dynaheader-dirtopics" href='javascript:discussionPaneHandler("showGroups", 28)'>Emerging Technology and Trends</a>
+																									
+								
+									<a class="dynaheader-dirtopics" href='javascript:discussionPaneHandler("showGroups", 2)'>Enterprise Architecture and EAI</a>
+									</div><div class='dynaheader-panelvertrule' style='height:270px; margin-top:0px; '></div><div class='dynaheader-dispanel' style='padding-left:15px'>																
+								
+									<a class="dynaheader-dirtopics" href='javascript:discussionPaneHandler("showGroups", 4)'>ERP</a>
+																									
+								
+									<a class="dynaheader-dirtopics" href='javascript:discussionPaneHandler("showGroups", 31)'>Hardware</a>
+																									
+								
+									<a class="dynaheader-dirtopics" href='javascript:discussionPaneHandler("showGroups", 32)'>IT Management and Strategy</a>
+																									
+								
+									<a class="dynaheader-dirtopics" href='javascript:discussionPaneHandler("showGroups", 18)'>Java</a>
+																									
+								
+									<a class="dynaheader-dirtopics" href='javascript:discussionPaneHandler("showGroups", 13)'>Knowledge Management</a>
+																									
+								
+									<a class="dynaheader-dirtopics" href='javascript:discussionPaneHandler("showGroups", 12)'>Linux</a>
+																									
+								
+									<a class="dynaheader-dirtopics" href='javascript:discussionPaneHandler("showGroups", 10)'>Networking</a>
+																									
+								
+									<a class="dynaheader-dirtopics" href='javascript:discussionPaneHandler("showGroups", 9)'>Oracle</a>
+																									
+								
+									<a class="dynaheader-dirtopics" href='javascript:discussionPaneHandler("showGroups", 8)'>PeopleSoft</a>
+																									
+								
+									<a class="dynaheader-dirtopics" href='javascript:discussionPaneHandler("showGroups", 29)'>Project and Portfolio Management</a>
+									</div><div class='dynaheader-panelvertrule' style='height:270px; margin-top:0px; '></div><div class='dynaheader-dispanel' style='padding-left:15px'>																
+								
+									<a class="dynaheader-dirtopics" href='javascript:discussionPaneHandler("showGroups", 6)'>SAP</a>
+																									
+								
+									<a class="dynaheader-dirtopics" href='javascript:discussionPaneHandler("showGroups", 7)'>SCM</a>
+																									
+								
+									<a class="dynaheader-dirtopics" href='javascript:discussionPaneHandler("showGroups", 24)'>Security</a>
+																									
+								
+									<a class="dynaheader-dirtopics" href='javascript:discussionPaneHandler("showGroups", 23)'>Siebel</a>
+																									
+								
+									<a class="dynaheader-dirtopics" href='javascript:discussionPaneHandler("showGroups", 22)'>Storage</a>
+																									
+								
+									<a class="dynaheader-dirtopics" href='javascript:discussionPaneHandler("showGroups", 14)'>UNIX</a>
+																									
+								
+									<a class="dynaheader-dirtopics" href='javascript:discussionPaneHandler("showGroups", 21)'>Visual Basic</a>
+																									
+								
+									<a class="dynaheader-dirtopics" href='javascript:discussionPaneHandler("showGroups", 11)'>Web Design and Development</a>
+																									
+								
+									<a class="dynaheader-dirtopics" href='javascript:discussionPaneHandler("showGroups", 26)'>Windows</a>
+																									
+								
+									</div>
+								
+                        </div> 
+                        <div id="groupslistbox" class="dynaheader-bucket">
+                            <a class="dynaheader-backlink" href="javascript:discussionPaneHandler('showTopics')">< Back</a>
+                            <a id="dynaheader-backbutton" href="javascript:discussionPaneHandler('showTopics')"></a>
+                            <div class="dynaheader-panelhed">
+                                CHOOSE A DISCUSSION GROUP
+                            </div>
+                            <div id="groupslist" style="height:250px"></div>
+                        </div>
+                    </div> 
+                </div>    
+                <div class="dynaheader-vertrule"></div>
+                <a href="http://it.toolbox.com/companies/white-papers/" class="dynaheader-tabbutton">Research</a>
+                <div class="dynaheader-vertrule"></div>
+                <div class="dynaheader-trigger dynaheader-tabbuttondropdown">Directory</div>
+                <div id="dynaheader-directorypanel" class="dn-panel dynaheader-panel">
+                    <div class="dynaheader-dirpanel">
+                        <a href="http://it.toolbox.com/topics" class="dynaheader-panelhed">TOPICS</a>
+                        <div class="dn-dirTopics">
+						
+                            <a class="dynaheader-dirtopics" href="http://database.ittoolbox.com/">Database</a>
+                            <a class="dynaheader-dirtopics" href="http://hardware.ittoolbox.com/">Hardware</a>
+                            <a class="dynaheader-dirtopics" href="http://networking.ittoolbox.com/">Networking</a>
+                            <a class="dynaheader-dirtopics" href="http://sap.ittoolbox.com/">SAP</a>
+                            <a class="dynaheader-dirtopics" href="http://security.ittoolbox.com/">Security</a>
+                            <a class="dynaheader-dirtopics" href="http://webdesign.ittoolbox.com/">Web Design</a>
+						
+                        </div>
+                    </div>
+                    <div class="dynaheader-panelvertrule"></div>
+                    <div class="dynaheader-dirpanel">
+                        <a href="http://it.toolbox.com/people" class="dynaheader-panelhed">MEMBERS</a>
+                        <div id="memberSlideDisplay"></div>
+                        <div id="memberSlideHolder" style="display:none">
+							<div class="memberSlide"><div class="member"><div class="floatleft"><img src='http://userimages.ittoolbox.com/user/5/5/1/s_1368155.jpg' class="post-pic"></div><div class="floatleft" style="padding-left:10px"><a href='http://it.toolbox.com/people/dacree/' class="dynaheader-dirtopics memberLinkbox">DACREE </a></div></div></div><div class="memberSlide"><div class="member"><div class="floatleft"><img src='http://userimages.ittoolbox.com/user/2/1/0/s_1681012.jpg' class="post-pic"></div><div class="floatleft" style="padding-left:10px"><a href='http://it.toolbox.com/people/achang01/' class="dynaheader-dirtopics memberLinkbox">achang </a></div></div></div><div class="memberSlide"><div class="member"><div class="floatleft"><img src='http://userimages.ittoolbox.com/user/3/0/3/s_1124303.jpg' class="post-pic"></div><div class="floatleft" style="padding-left:10px"><a href='http://it.toolbox.com/people/mikemj/' class="dynaheader-dirtopics memberLinkbox">Michael Meyers-Jouan </a></div></div></div><div class="memberSlide"><div class="member"><div class="floatleft"><img src='http://userimages.ittoolbox.com/user/6/5/7/s_2192756.jpg' class="post-pic"></div><div class="floatleft" style="padding-left:10px"><a href='http://it.toolbox.com/people/paul_pedant/' class="dynaheader-dirtopics memberLinkbox">Paul_Pedant </a></div></div></div><div class="memberSlide"><div class="member"><div class="floatleft"><img src='http://userimages.ittoolbox.com/user/0/8/1/s_888180.jpg' class="post-pic"></div><div class="floatleft" style="padding-left:10px"><a href='http://it.toolbox.com/people/jalal-hajigholamali/' class="dynaheader-dirtopics memberLinkbox">jalal.hajighola </a></div></div></div><div class="memberSlide"><div class="member"><div class="floatleft"><img src='http://userimages.ittoolbox.com/user/1/3/1/s_2684131.jpg' class="post-pic"></div><div class="floatleft" style="padding-left:10px"><a href='http://it.toolbox.com/people/mohammadmoini/' class="dynaheader-dirtopics memberLinkbox">mohammadmoini </a></div></div></div><div class="memberSlide"><div class="member"><div class="floatleft"><img src='http://userimages.ittoolbox.com/user/1/6/9/s_518961.jpg' class="post-pic"></div><div class="floatleft" style="padding-left:10px"><a href='http://it.toolbox.com/people/rasilon/' class="dynaheader-dirtopics memberLinkbox">Hank Arnold </a></div></div></div><div class="memberSlide"><div class="member"><div class="floatleft"><img src='http://userimages.ittoolbox.com/user/9/4/5/s_27549.jpg' class="post-pic"></div><div class="floatleft" style="padding-left:10px"><a href='http://it.toolbox.com/people/caddickd/' class="dynaheader-dirtopics memberLinkbox">D. Caddick </a></div></div></div><div class="memberSlide"><div class="member"><div class="floatleft"><img src='http://userimages.ittoolbox.com/user/6/1/0/s_1135016.jpg' class="post-pic"></div><div class="floatleft" style="padding-left:10px"><a href='http://it.toolbox.com/people/andrew_s_baker/' class="dynaheader-dirtopics memberLinkbox">Andrew.S.Baker </a></div></div></div><div class="memberSlide"><div class="member"><div class="floatleft"><img src='http://userimages.ittoolbox.com/user/0/2/7/s_4625720.jpg' class="post-pic"></div><div class="floatleft" style="padding-left:10px"><a href='http://it.toolbox.com/people/marvinm80/' class="dynaheader-dirtopics memberLinkbox">MarvinM80 </a></div></div></div><div class="memberSlide"><div class="member"><div class="floatleft"><img src='http://userimages.ittoolbox.com/user/2/6/1/s_4038162.jpg' class="post-pic"></div><div class="floatleft" style="padding-left:10px"><a href='http://it.toolbox.com/people/voip_news/' class="dynaheader-dirtopics memberLinkbox">VoIP_News </a></div></div></div><div class="memberSlide"><div class="member"><div class="floatleft"><img src='http://userimages.ittoolbox.com/user/2/6/7/s_3370762.jpg' class="post-pic"></div><div class="floatleft" style="padding-left:10px"><a href='http://it.toolbox.com/people/insidecrm/' class="dynaheader-dirtopics memberLinkbox">Inside-CRM </a></div></div></div><div class="memberSlide"><div class="member"><div class="floatleft"><img src='http://userimages.ittoolbox.com/user/0/1/2/s_4152210.jpg' class="post-pic"></div><div class="floatleft" style="padding-left:10px"><a href='http://it.toolbox.com/people/inside_erp/' class="dynaheader-dirtopics memberLinkbox">Inside-ERP </a></div></div></div><div class="memberSlide"><div class="member"><div class="floatleft"><img src='http://userimages.ittoolbox.com/user/6/3/8/s_1503836.jpg' class="post-pic"></div><div class="floatleft" style="padding-left:10px"><a href='http://it.toolbox.com/people/infinate_loop/' class="dynaheader-dirtopics memberLinkbox">JoeTorre </a></div></div></div><div class="memberSlide"><div class="member"><div class="floatleft"><img src='http://userimages.ittoolbox.com/user/7/3/8/s_5239837.jpg' class="post-pic"></div><div class="floatleft" style="padding-left:10px"><a href='http://it.toolbox.com/people/bluesguyaz59/' class="dynaheader-dirtopics memberLinkbox">bluesguyAZ59 </a></div></div></div><div class="memberSlide"><div class="member"><div class="floatleft"><img src='http://userimages.ittoolbox.com/user/8/4/3/s_6348.jpg' class="post-pic"></div><div class="floatleft" style="padding-left:10px"><a href='http://it.toolbox.com/people/romeo_ninov/' class="dynaheader-dirtopics memberLinkbox">RomeoNinov </a></div></div></div><div class="memberSlide"><div class="member"><div class="floatleft"><img src='http://userimages.ittoolbox.com/user/0/4/1/s_393140.jpg' class="post-pic"></div><div class="floatleft" style="padding-left:10px"><a href='http://it.toolbox.com/people/chrisdaypinkyltd/' class="dynaheader-dirtopics memberLinkbox">Chris_Day </a></div></div></div><div class="memberSlide"><div class="member"><div class="floatleft"><img src='http://userimages.ittoolbox.com/user/9/2/2/s_694229.jpg' class="post-pic"></div><div class="floatleft" style="padding-left:10px"><a href='http://it.toolbox.com/people/rtlinton/' class="dynaheader-dirtopics memberLinkbox">Richard </a></div></div></div><div class="memberSlide"><div class="member"><div class="floatleft"><img src='http://userimages.ittoolbox.com/user/4/0/0/s_4031004.jpg' class="post-pic"></div><div class="floatleft" style="padding-left:10px"><a href='http://it.toolbox.com/people/it-management/' class="dynaheader-dirtopics memberLinkbox">IT-Management </a></div></div></div><div class="memberSlide"><div class="member"><div class="floatleft"><img src='http://userimages.ittoolbox.com/user/1/3/4/s_638431.jpg' class="post-pic"></div><div class="floatleft" style="padding-left:10px"><a href='http://it.toolbox.com/people/terrycurran999/' class="dynaheader-dirtopics memberLinkbox">Terence Curran </a></div></div></div><div class="memberSlide"><div class="member"><div class="floatleft"><img src='http://userimages.ittoolbox.com/user/2/5/6/s_607652.jpg' class="post-pic"></div><div class="floatleft" style="padding-left:10px"><a href='http://it.toolbox.com/people/dwildsch/' class="dynaheader-dirtopics memberLinkbox">David </a></div></div></div><div class="memberSlide"><div class="member"><div class="floatleft"><img src='http://userimages.ittoolbox.com/user/4/1/7/s_1941714.jpg' class="post-pic"></div><div class="floatleft" style="padding-left:10px"><a href='http://it.toolbox.com/people/applemcg/' class="dynaheader-dirtopics memberLinkbox">applemcg </a></div></div></div><div class="memberSlide"><div class="member"><div class="floatleft"><img src='http://userimages.ittoolbox.com/user/0/9/8/s_2376890.jpg' class="post-pic"></div><div class="floatleft" style="padding-left:10px"><a href='http://it.toolbox.com/people/mabeleira/' class="dynaheader-dirtopics memberLinkbox">mabeleira </a></div></div></div><div class="memberSlide"><div class="member"><div class="floatleft"><img src='http://userimages.ittoolbox.com/user/7/7/8/s_1683877.jpg' class="post-pic"></div><div class="floatleft" style="padding-left:10px"><a href='http://it.toolbox.com/people/lcc352/' class="dynaheader-dirtopics memberLinkbox">LCC352 </a></div></div></div><div class="memberSlide"><div class="member"><div class="floatleft"><img src='http://userimages.ittoolbox.com/user/9/8/1/s_853189.jpg' class="post-pic"></div><div class="floatleft" style="padding-left:10px"><a href='http://it.toolbox.com/people/rdwilson2/' class="dynaheader-dirtopics memberLinkbox">Ralph D. Wilson II </a></div></div></div><div class="memberSlide"><div class="member"><div class="floatleft"><img src='http://userimages.ittoolbox.com/user/4/4/3/s_5079344.jpg' class="post-pic"></div><div class="floatleft" style="padding-left:10px"><a href='http://it.toolbox.com/people/devds/' class="dynaheader-dirtopics memberLinkbox">vishal_chaudhar </a></div></div></div><div class="memberSlide"><div class="member"><div class="floatleft"><img src='http://userimages.ittoolbox.com/user/5/1/4/s_1047415.jpg' class="post-pic"></div><div class="floatleft" style="padding-left:10px"><a href='http://it.toolbox.com/people/donbarclay/' class="dynaheader-dirtopics memberLinkbox">donbarclay </a></div></div></div><div class="memberSlide"><div class="member"><div class="floatleft"><img src='http://userimages.ittoolbox.com/user/3/8/0/s_381083.jpg' class="post-pic"></div><div class="floatleft" style="padding-left:10px"><a href='http://it.toolbox.com/people/taliesinuk/' class="dynaheader-dirtopics memberLinkbox">RichardChan </a></div></div></div><div class="memberSlide"><div class="member"><div class="floatleft"><img src='http://userimages.ittoolbox.com/user/9/2/6/s_710629.jpg' class="post-pic"></div><div class="floatleft" style="padding-left:10px"><a href='http://it.toolbox.com/people/vasco4it/' class="dynaheader-dirtopics memberLinkbox">Vasco </a></div></div></div><div class="memberSlide"><div class="member"><div class="floatleft"><img src='http://userimages.ittoolbox.com/user/7/4/7/s_1565747.jpg' class="post-pic"></div><div class="floatleft" style="padding-left:10px"><a href='http://it.toolbox.com/people/sd007/' class="dynaheader-dirtopics memberLinkbox">Bond </a></div></div></div>
+                        </div>
+                    </div>
+                    <div class="dynaheader-panelvertrule"></div>
+                    <div class="dynaheader-dirpanel">
+                        <a href="http://it.toolbox.com/companies" class="dynaheader-panelhed">COMPANIES</a>
+                        
+                                <div class="member">         
+                                    <div class="floatleft"><a href="http://it.toolbox.com/companies/ManageEngine"><div class="userimage-defaultbadge" lazysource="http://userimages.ittoolbox.com/vendor/9/1/8/b_2280819.jpg"></div></a>
+</div>
+                                    <div class="floatleft">
+<a href="http://it.toolbox.com/companies/ManageEngine" class="dynaheader-dircomps">ZOHO Corporation</a></div>
+                                    <div class="clear"></div>                   
+                                </div>
+                            
+                                <div class="member">         
+                                    <div class="floatleft"><a href="http://it.toolbox.com/companies/alfresco"><div class="userimage-defaultbadge" lazysource="http://userimages.ittoolbox.com/vendor/0/1/1/b_1274110.jpg"></div></a>
+</div>
+                                    <div class="floatleft">
+<a href="http://it.toolbox.com/companies/alfresco" class="dynaheader-dircomps">Alfresco Software, Inc.</a></div>
+                                    <div class="clear"></div>                   
+                                </div>
+                            
+                                <div class="member">         
+                                    <div class="floatleft"><a href="http://it.toolbox.com/companies/avaya"><div class="userimage-defaultbadge" lazysource="http://userimages.ittoolbox.com/vendor/3/3/3/b_1255333.jpg"></div></a>
+</div>
+                                    <div class="floatleft">
+<a href="http://it.toolbox.com/companies/avaya" class="dynaheader-dircomps">Avaya</a></div>
+                                    <div class="clear"></div>                   
+                                </div>
+                            
+                                <div class="member">         
+                                    <div class="floatleft"><a href="http://it.toolbox.com/companies/edgewave"><div class="userimage-defaultbadge" lazysource="http://userimages.ittoolbox.com/vendor/9/9/1/b_2700199.jpg"></div></a>
+</div>
+                                    <div class="floatleft">
+<a href="http://it.toolbox.com/companies/edgewave" class="dynaheader-dircomps">EdgeWave</a></div>
+                                    <div class="clear"></div>                   
+                                </div>
+                            
+                    </div>
+                    <div class="clear"></div>
+                    <div style="height:20px">
+                        <div class="dynaheader-dirpanel dynaheader-dirpanelshort">
+                            <a href="http://it.toolbox.com/topics" class="dynaheader-panellink">View All Topics</a>
+                        </div> 
+                        <div class="dynaheader-dirpanel dynaheader-dirpanelshort">
+                            <a href="http://it.toolbox.com/people" class="dynaheader-panellink">View All Members</a>
+                        </div>
+                        <div class="dynaheader-dirpanel dynaheader-dirpanelshort">
+                             <a href="http://it.toolbox.com/companies" class="dynaheader-panellink">View All Companies</a>
+                        </div>
+                    </div>    
+                </div>
+
+            </div>
+            </td>
+            <td valign=top>
+            <div class="dynaheader-navright">
+
+                <div class="dynaheader-vertrule" style="float:right"></div>
+                <a href="http://it.toolbox.com/blogs/start-new-blog.aspx" id="ctl00_m_GN_posticon" class="dynaheader-post" title="Write a Blog Post"></a>
+                <a href="http://it.toolbox.com/ask-a-question/" class="dynaheader-askq" title="Ask a Question"></a>
+                <div class="dynaheader-triggersearch" id="dynaheader-searchbutton" title="Search"></div>
+                <div class="dynaheader-panel" id="dynaheader-searchpanel"></div>
+
+            </div>
+            </td></tr></table>
+
+        </div>
+    </div>
+
+ 
+
+
+
+<div id="content">		
+    <div>
+<div>
+<div align="center" style="margin-top:inherit;margin-bottom:20px">
+	
+	<div id="div-gpt-ad-1736655939-0">
+		<script type="text/javascript">
+			googletag.cmd.push(function() {
+			  googletag.display("div-gpt-ad-1736655939-0");
+		});
+		</script>
+	</div>
+
+</div>
+        </div>
+        
+            
+    </div> 
+    
+    <div><script src="http://static.adziff.com/qhint/topad_tb.js"></script></div>
+
+</X-BBSKIP>
+	<div class="content-leftcol">
+	
+    <div style="padding:0px 0px 0px 10px">
+        <div style="width:535px; padding:4px; border-bottom:1px solid #ccc; background-color:#f1f0f0; margin-bottom:15px; padding-bottom:5px">
+            <div>
+	
+			<div class="breadcrumb-linkbox size11">
+				<a href='http://it.toolbox.com/' class="gray">
+				Toolbox for IT</a>
+			</div>
+		
+			<div class="breadcrumb-separator"></div>
+		
+			<div class="breadcrumb-linkbox size11">
+				<a href='http://it.toolbox.com/topics' class="gray">
+				Topics</a>
+			</div>
+		
+			<div class="breadcrumb-separator"></div>
+		
+			<div class="breadcrumb-linkbox size11">
+				<a href='http://visualbasic.ittoolbox.com' class="gray">
+				Visual Basic</a>
+			</div>
+		
+			<div class="breadcrumb-separator"></div>
+		
+			<div class="breadcrumb-linkbox size11">
+				<a href='http://visualbasic.ittoolbox.com/groups' class="gray">
+				Groups</a>
+			</div>
+		
+			<span class="breadcrumb-separator"></span>
+		
+	<div class="clear"></div>
+	<div class="spacer-ittybitty"></div>
+</div>
+<span class="gray size17"></span>
+
+            
+
+
+            <div class="floatright" style="margin-top:-10px; margin-right:5px">
+                <table class="button-outergreen" cellpadding="0" cellspacing="0">
+	<tr>
+		<td class="button-innergreen">
+            
+            <a class="button" href="http://it.toolbox.com/ask-a-question/vb-vba-l">Ask a New Question</a>
+        </td>
+	</tr>
+</table>
+
+
+                <div style="display:none"></div>
+            </div>
+
+
+            <div class="group-about floatleft">
+	            <table cellpadding="0" cellspacing="0">
+		            <tr>
+			            <td valign="top">
+				            
+				            <div>
+	
+					            <h1 class="darkgray size17 floatleft">
+						            Visual Basic for Applications</h1>
+				            
+</div>
+			            </td>
+			            <td valign="top" style="display:none">
+				            <div class="link-arrowdropdown" id="group_info">
+				            </div>
+				
+			            </td>
+		            </tr>
+		            <tr>
+			            <td colspan="2">
+				            <div id="aboutpanel" class="panel-small" style="display: none">
+					            <div class="button-close">
+					            </div>
+					            <span>A forum where peers share technical expertise, solve problems, and discuss issues related to the use of Visual Basic for Applications (VBA).</span>
+					            
+					            <div class="spacer-small">
+					            </div>
+					            <div class="darkgray">
+						            <a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/">Home</a>
+						            <span class="slash">|</span>
+						            <a href="http://it.toolbox.com/home/invite?t=1003536">Invite Peers</a>
+						            <span class="slash">|</span>
+						            <a href="/groups">More Visual Basic Groups</a>
+					            </div>
+				            </div>
+			            </td>
+		            </tr>
+	            </table>
+            </div>        
+
+            
+
+
+
+<div class="clear"></div>
+
+
+<script type="text/javascript" language="javascript">
+    var about_visible = false;
+
+    function showAbout() {
+        $('#group_info').attr('src', 'http://images.ittoolbox.com/vt/uc/uc_uparrow.png');
+        $('#aboutpanel').fadeIn('fast', function() {
+            about_visible = true;
+
+        });
+    }
+
+    function hideAbout() {
+        $('#group_info').attr('src', 'http://images.ittoolbox.com/vt/uc/uc_downarrow.png');
+        $('#aboutpanel').fadeOut('fast', function() {
+            about_visible = false;
+        });
+    }
+
+    $(document).ready(function() {
+        $('#group_info').click(function() {
+            if (!about_visible) {
+                showAbout();
+            }
+            else {
+                hideAbout();
+            }
+        });
+
+        $('.button-close').click(function () {
+            hideAbout();
+        });
+    });
+        
+</script>
+        </div>
+        <div class="spacer"></div>
+        
+    
+
+<div style="position:relative; z-index:700">
+    <div id="OnPageRegistration">
+        <div class="button-close" style="margin:0 7px 0 0; height: 15px"></div>
+        
+<div id="confirmation" style="display: none; padding: 0 35px 0 20px">
+    <div class="confirm-ok">Your account is ready.<span id="OnPageRegConfirmMessage" class="anthracite"></span></div>
+    <div style="float:left;"><img src="http://cdn.toolbox.com/BUILD_2872/rds/icon-refresh.gif" alt="Loading" /></div>
+    <div class="anthracite" style="float:left; padding: 0 0 0 5px;">You're now being signed in.</div>
+</div>
+<div id="mainRegForm" class="clear">
+	
+	
+	
+	
+	
+	
+    <div class="clear" style="padding: 0 30px 10px 30px">
+		<div id="joinheader" class="spacer">
+            <h2 style="font-size: 26px; line-height: 26px;" class="blue normal">Solve problems - It's Free</h2>
+            <div class="size12 anthracite regular">Create your account in seconds</div>
+            <div class="clear"></div>
+		</div>
+        <div id="reg-signin" class="clear"></div>
+		
+                
+<div style="width: 310px">
+    <div id="ctl00_m_m_i_o_r_s_v_validationSummary" class="confirm-error" style="display:none;">
+    <ul id="ctl00_m_m_i_o_r_s_v_errorsList" class="spacer-small"></ul>
+    <span id="ctl00_m_m_i_o_r_s_v_EmailDuplicateErrorMessage" style="display: none;">
+        E-mail address is taken 
+        <br />
+        <br />        
+        <span class="bold anthracite">If this is your account,</span><br /><a href='https://login.toolbox.com/1/signin?u=' class="bold">sign in here</a>
+    </span>
+</div>
+
+</div>
+<div class="anthracite size12 bold">
+    Email address</div>
+<div class="spacer-small">
+    <input name="ctl00$m$m$i$o$r$s$txtEmail" type="text" id="ctl00_m_m_i_o_r_s_txtEmail" tabindex="1003" class="textbox310 onPageRegEmail" defaultButton="onPageRegJoin" />
+</div>
+<div class="anthracite size12 bold">
+    Username</div>
+<div class="spacer-small">
+    <input name="ctl00$m$m$i$o$r$s$txtProfileName" type="text" id="ctl00_m_m_i_o_r_s_txtProfileName" class="textbox310" tabindex="1004" onfocus="hideProfileNameSuggestBox();" defaultButton="onPageRegJoin" />
+    <br />
+    <span class="gray size10">Between 5 and 30 characters. No spaces please</span>
+    <div id="ProfileInUseErrorMessage" class="confirm-error" style="display: none">
+        The Profile Name is already in use</div>
+    <div id="availableUserNames" class="suggestor"></div>
+</div>
+<div class="anthracite size12 bold">
+    Password</div>
+<div class="spacer">
+    <input name="ctl00$m$m$i$o$r$s$txtPassword" type="password" id="ctl00_m_m_i_o_r_s_txtPassword" tabindex="1005" class="textbox310" defaultButton="onPageRegJoin" />
+</div>
+<div class="bold anthracite spacer-tiny">
+    Notify me of new activity in this group:</div>
+<table class="form-label spacer" border="0" cellpadding="0" cellspacing="0">
+    <tr>
+        <td style="width: 100px">
+            <input type="radio" id="radReal" name="mailfrequency" checked="checked" value="mail" tabindex="1006" />
+            <label class="size10 anthracite" for="radReal">Real Time</label>
+        </td>
+        <td style="width: 100px">
+            <input type="radio" id="radDaily" name="mailfrequency" value="summary" tabindex="1007" />
+            <label class="size10 anthracite" for="radDaily">Daily</label>
+        </td>
+        <td style="width: 100px">
+            <input type="radio" id="radNoMail" name="mailfrequency" value="nomail" tabindex="1008" />
+            <label class="size10 anthracite" for="radNoMail">Never</label>
+        </td>
+    </tr>
+</table>
+<div class="anthracite bold spacer-tiny">
+    Keep me informed of the latest:</div>
+<table class="form-label spacer" border="0" cellpadding="0" cellspacing="0">
+    <tr>
+        <td style="width: 100px">
+            <input id="ctl00_m_m_i_o_r_s_chkWhitePapers" type="checkbox" name="ctl00$m$m$i$o$r$s$chkWhitePapers" checked="checked" tabindex="1009" />
+            <label class="size10 anthracite" for="ctl00_m_m_i_o_r_s_chkWhitePapers">White Papers</label>
+        </td>
+        <td style="width: 100px">
+            <input id="ctl00_m_m_i_o_r_s_chkNewsletter" type="checkbox" name="ctl00$m$m$i$o$r$s$chkNewsletter" checked="checked" tabindex="1010" />
+            <label class="size10 anthracite" for="ctl00_m_m_i_o_r_s_chkNewsletter">Newsletter</label>
+        </td>
+        <td style="width: 100px">
+            <input id="ctl00_m_m_i_o_r_s_chkJobs" type="checkbox" name="ctl00$m$m$i$o$r$s$chkJobs" checked="checked" tabindex="1011" />
+            <label class="size10 anthracite" for="ctl00_m_m_i_o_r_s_chkJobs">Jobs</label>
+        </td>
+    </tr>
+</table>
+<div id="register-buttonbox" class="floatleft">
+    <table cellspacing="0" cellpadding="0" class="button-outerblue spacer-small">
+        <tbody>
+            <tr>
+                <td class="button-innerblue">
+                    <input type="button" class="button" id="onPageRegJoin" onclick="Register()" value="JOIN NOW"
+                        name="onPageRegJoin" tabindex="1012" />
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<img id="reg-loading" src="http://cdn.toolbox.com/BUILD_2872/rds/icon-refresh.gif" alt="Loading" class="floatleft" style="display: none; padding-top: 3px; padding-left: 10px" />
+<div class="clear"></div>
+<span class="gray size10">By clicking "Join Now", you agree to Toolbox for Technology    
+    <a href='http://www.ziffdavis.com/terms-of-use' target="_blank" class="size10">terms of use</a>, and have read and understand our <a
+        href='http://www.toolbox.com/privacypolicy.aspx' target="_blank" class="size10">privacy policy</a>.</span>
+
+<div class="displaynone">
+    <input id="bEmail" type="text" name="email" value="" />
+</div>
+
+            
+        
+        
+        <div class="clear"></div>
+    </div>
+</div>
+<input id="regOptions" type="hidden" value="" />
+<script type="text/javascript" language="javascript">
+    var isAjax = true;
+    var useRecaptcha = false;
+    var requireFullName = false;
+    var profileNameClientId = 'ctl00_m_m_i_o_r_s_txtProfileName';
+    var emailClientId = 'ctl00_m_m_i_o_r_s_txtEmail';
+    var emailDuplicateMessageClientId = 'ctl00_m_m_i_o_r_s_v_EmailDuplicateErrorMessage';
+    var validationSummaryClientId = 'ctl00_m_m_i_o_r_s_v_validationSummary';
+    var fnameboxId = '';
+	var lnameboxId = '';
+    var aoiClientId = '';
+    var siteId = '21';
+    var passwordClientId = 'ctl00_m_m_i_o_r_s_txtPassword';
+    var provider = '0';
+    var providerId = '';
+
+    function checkEmailValid()
+    {
+        
+            var emailBox = document.getElementById(emailClientId);
+            if ( emailBox != null && emailBox.value.length > 0 ) {
+                $.ajax({ 
+                    type: "POST", 
+                    url:"/api/home/register/email/1/",
+                    data:"email=" + emailBox.value,
+                    dataType: "json",
+                    success: function(msg) {handleEmailAvailResult(msg);}
+                });
+            }
+            else {
+                $('#' + emailDuplicateMessageClientId).hide();
+            }
+        
+    }
+        
+        
+
+    function handleValidation(response, vFirstName, vLastName, vAoi) {
+        if (response == null || response.message == "failed") {
+            $('#ctl00_m_m_i_o_r_s_v_validationSummary').show();
+
+            $('#ctl00_m_m_i_o_r_s_v_errorsList').html('');
+                
+            for (var error in response.errors) {
+                // need a new captcha
+                if(useRecaptcha && response.errors[error] == "The response does not match"){
+                    Recaptcha.reload();
+                }
+                $('#ctl00_m_m_i_o_r_s_v_errorsList').append('<div><strong>' + response.errors[error] + '</strong></div>');
+            }
+        }
+        else{
+            doReg(vFirstName, vLastName, vAoi, response.code);
+        }
+    }
+        
+    $(document).ready(function() {
+        var fnamebox = document.getElementById(fnameboxId);
+        try 
+        {
+    	    fnamebox.focus();            
+        } 
+        catch(e) { }
+
+        $('#' + profileNameClientId).blur(function() {
+            checkProfileValid();
+        });
+
+        $('#' + emailClientId).blur(function() {
+            checkEmailValid();
+        });
+            
+        $('#onPageRegJoin').click(function(e) {
+			return submitReg();
+        });
+    });
+        
+	function submitReg(){
+		validate();
+        setWatermarks();
+        return false;
+	}
+
+    var pendingConnections = '[{"Mailing":1,"Name":"vb-vba-l","ConnectionType":2}]';
+    function doReg(rFirstName, rLastName, rAoi, code){
+            
+        if(loadingFlag) return;
+        loading();
+
+        $.ajax({
+            type: "POST",
+            url: '/api/home/register/process/1/?ajax=' + isAjax + "&section=technical-functional&group=vb-vba-l&rds%2ficon-refresh.gif",
+            dataType: 'json',
+            data: {
+                Email: $("#ctl00_m_m_i_o_r_s_txtEmail").val(),
+                ProfileName: $("#ctl00_m_m_i_o_r_s_txtProfileName").val(),
+                refinfo: '{"SubProductID":0,"ProductID":2,"Stimulus":1,"UserLocalID":0,"SourceInfo":{"FullURL":"http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/unchecking-references-in-vba-using-macro-4735351","Host":"visualbasic.ittoolbox.com","Product":"groups","SubProduct":"technical-functional","SubProductName":"vb-vba-l","KBID":0,"SiteID":21,"PathSegments":["groups","technical-functional","vb-vba-l","unchecking-references-in-vba-using-macro-4735351"]},"ExternalReferrer":null}',
+                Password: $("#ctl00_m_m_i_o_r_s_txtPassword").val(),
+                MainAOIID: rAoi,
+                miscfwdcontext: '{}',
+                pendcon: pendingConnections,
+                googledata: '{"email":null,"groupName":null,"campaign":null,"googleuid":null,"area":null,"TargetEntityID":0}',
+                premember: 'False',
+                FirstName: rFirstName,
+                LastName: rLastName,
+                ValidatedCode: code,
+                require_fullname: requireFullName,
+                subweekly: $("#ctl00_m_m_i_o_r_s_chkNewsletter").attr("checked"),
+                subjobs: $("#ctl00_m_m_i_o_r_s_chkJobs").attr("checked"),
+                subwp: $("#ctl00_m_m_i_o_r_s_chkWhitePapers").attr("checked"),
+                options: 'groupEID=1003536|regSubProd=0',
+                requestemail: '',
+				ProviderEnum: '0',
+				ProviderID: '',
+                onpageredirect: 'http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/',
+                mailfrequency: getMailFrequency(),
+                markHelpfulMessageId: $("#regOptions").val()
+            },
+            success: function(data){
+                if(data == null) handleProcessFail(data);
+                if(data.Error) handleProcessFail(data);
+                if(data.RedirectURL == null) {
+                    handleProcessFail(data);
+                }
+                else {
+                    if(!isAjax){
+                        onRegSuccess(data);
+                    } else {
+                        var s = s_gi(s_account);
+                        s.linkTrackVars = 'prop33,eVar33,events';
+                        s.linkTrackEvents = 'event13';
+                        s.eVar33 = "onpage-registration";
+                        s.prop33 = "onpage-registration";
+                        s.events = 'event13';
+                        s.tl(this, 'o', "onpage-registration"); 
+
+                        var mrf = $("#mainRegForm");
+                        mrf.slideUp(600);
+                        $("#confirmation").slideDown(600);
+						if (data.Message != "")
+                        {
+                            $('#OnPageRegConfirmMessage').html(data.Message);
+                        }
+                        setTimeout(function(){ onRegSuccess(data);}, 3000);
+                    }
+                }
+                    
+            },
+            error: function(data, err){
+                    
+                handleProcessFail(err);
+                    
+            }
+        });
+        
+    }
+    function onRegSuccess(pdata){            
+        $.post("/api/signin",
+	        {
+		        username: $("#ctl00_m_m_i_o_r_s_txtProfileName").val(),
+		        password: $("#ctl00_m_m_i_o_r_s_txtPassword").val(),
+				provider: "0",
+                contenttype: "json",
+				r: pdata.RedirectURL
+	        },
+
+	        function (data, status) {
+				if (data.success)
+				{
+                    window.location = data.message;
+				}
+				else
+				{
+					$('#reg-signin').html(data.message);
+				}
+	        });
+
+            
+    }
+	
+</script>
+    
+    </div>
+</div>
+<script language="javascript" type="text/javascript">
+    $('.button-close').click(function () {
+        CloseRegistration();
+    });
+</script>
+    <div>
+
+<div class="tabbednav-box">
+	
+			
+			<a data-layoutname="" href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/"><div class="tabbednav-up" tabcontainerid="ctl00_m_m_i_t_rptTabContents_ctl00_divTabContent">
+					<span class="tabHandle">All</span>
+				</div></a>
+		
+		
+			
+			<a data-layoutname="" href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/solved/"><div class="tabbednav-down" tabcontainerid="ctl00_m_m_i_t_rptTabContents_ctl01_divTabContent">
+					<span class="tabHandle">Solutions</span>
+				</div></a>
+		
+		
+			
+			<a data-layoutname="" rel="nofollow" hpx="GroupHome:UnansweredTab" href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/unanswered/"><div class="tabbednav-down" tabcontainerid="ctl00_m_m_i_t_rptTabContents_ctl02_divTabContent">
+					<span class="tabHandle">Unanswered</span>
+				</div></a>
+		
+	<div class="clear"></div>	
+	<input type="hidden" name="ctl00$m$m$i$t$ctl00" id="ctl00_m_m_i_t_ctl00" value="0" />
+</div>
+<div class="tabbednav-contentlargetop">
+	<div class="tabbednav-contentlargeleft"></div>
+	<div class="tabbednav-contentlargeright"></div>
+	<div class="clear"></div>
+</div>
+<div data-marker="contentMarker" class="tabbednav-contentlarge">
+	   
+			<div id="ctl00_m_m_i_t_rptTabContents_ctl00_divTabContent" Style="">
+								
+				
+			</div>            
+		   
+			<div id="ctl00_m_m_i_t_rptTabContents_ctl01_divTabContent" Style="display:none;">
+								
+				
+			</div>            
+		   
+			<div id="ctl00_m_m_i_t_rptTabContents_ctl02_divTabContent" Style="display:none;">
+								
+				
+			</div>            
+		
+            <div class="clear"></div>
+        
+</div>
+
+</div>
+        
+        
+        
+    
+    <style type="text/css">    .pr17 { padding-right: 5px; }    .pb15 { padding-bottom: 20px; padding-right: 25px; }    .pb10 { padding-left: 10px; }</style><table style="margin:-5px 10px 0px 10px" cellpadding=0 cellspacing=0><tr><td>&nbsp;</td><td valign=top class="anthracite" style="width: 700px;">Title</td><td valign=top class="anthracite" style="padding:0px 20px 10px 0px;">Replies</td><td valign=top class="anthracite" style="width:200px;">Last Post</td></tr><tr><td valign="top" class="pr17"><a><div class="userimage-defaulttiny badgePopup" bID="1915662" badgeEntityID="1915662"></div></a></td><td valign="top" class="pb15"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/auto-mscomct2ocx-in-syswow64-5563796" class="size15 bold" title="Is there a way to create a file that will 
+a) paste MSCOMCT2.OCX in SYSWOW64 and 
+b) register it and
+c) reference it in VBA 
+so that my excel file with macro can work fine on another PC from the...">Auto MSCOMCT2.OCX in SYSWOW64</a><br /><div class="floatleft size11">by <a class="size11" href="http://it.toolbox.com/people/ac045364/">daniel houle</a></div></td><td valign="top" class="bold anthracite">                3            </td><td valign="top"><span class="size12 anthracite">1 day ago</span><div style="white-space:nowrap" class="size11"><div class="floatleft size11">by <a class="size11" href="http://it.toolbox.com/people/ac045364/">daniel houle</a></div></div></td></tr><tr><td valign="top" class="pr17"><a><div class="userimage-defaulttiny"></div></a></td><td valign="top" class="pb15"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/getting-file-details-from-ftp-server-through-vba-5564530" class="size15 bold" title="Hi All,
+
+I want to know if there is a way to connect to an FTP Server through VBA. I want to pull the file details located on a FTP Server such as all names of files available, last saved/modified...">Getting File Details from FTP Server Through VBA</a><br /><div class="floatleft size11">by <a class="size11" href="http://it.toolbox.com/people/community_member/?u=65095">Sachin</a></div></td><td valign="top" class="bold anthracite">                2            </td><td valign="top"><span class="size12 anthracite">4 days ago</span><div style="white-space:nowrap" class="size11"><div class="floatleft size11">by <a class="size11" href="http://it.toolbox.com/people/community_member/?u=65131">Sachin</a></div></div></td></tr><tr><td valign="top" class="pr17"><a><div class="userimage-defaulttiny badgePopup" bID="1300897" badgeEntityID="1300897"></div></a></td><td valign="top" class="pb15"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/error-handling-in-visual-basic-60-5562860" class="size15 bold" title="I have code that connects to a sql server data base through a VPN. I want to put in an error handler to give the user a message if the VPN is disconnected. I've tried this in my code
+on error goto...">Error Handling in Visual Basic 6.0</a><br /><div class="floatleft size11">by <a class="size11" href="http://it.toolbox.com/people/moose4098/">Warren Herbert</a></div></td><td valign="top" class="bold anthracite">                13            </td><td valign="top"><span class="size12 anthracite">5 days ago</span><div style="white-space:nowrap" class="size11"><div class="floatleft size11">by <a class="size11" href="http://it.toolbox.com/people/moose4098/">Warren Herbert</a></div></div></td></tr><tr><td valign="top" class="pr17"><a><div class="userimage-defaulttiny badgePopup" bID="5295352" badgeEntityID="5295352"></div></a></td><td valign="top" class="pb15"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/good-vbadocumentation-5563850" class="size15 bold" title="Hi all,
+new to this site and newbee to VBA (specifically Publisher).
+So my question is pretty logical - does anybody know a real good book about VBA?
+Searching the Web didn't give me a real deep...">Good VBA-Documentation?</a><br /><div class="floatleft size11">by <a class="size11" href="http://it.toolbox.com/people/hgvons/">hgvons</a></div></td><td valign="top" class="bold anthracite">                3            </td><td valign="top"><span class="size12 anthracite">5 days ago</span><div style="white-space:nowrap" class="size11"><div class="floatleft size11">by <a class="size11" href="http://it.toolbox.com/people/davesmithmiap/">davesmithmiap</a></div></div></td></tr><tr><td valign="top" class="pr17"><a><div class="userimage-defaulttiny"></div></a></td><td valign="top" class="pb15"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/select-4-values-from-4-comboboxes-to-display-name-on-a-textbox-5561900" class="size15 bold" title="I have a scenario that the users have to pick 4 values from each dropdown. If all of those values match with what is in database/table (more than 100 rows). It will return a result on a textbox...">Select 4 Values from 4 Comboboxes to Display Name On a Textbox</a><br /><div class="floatleft size11">by <a class="size11" href="http://it.toolbox.com/people/community_member/?u=64906">rcdev</a></div></td><td valign="top" class="bold anthracite">                1            </td><td valign="top"><span class="size12 anthracite">9 days ago</span><div style="white-space:nowrap" class="size11"><div class="floatleft size11">by <a class="size11" href="http://it.toolbox.com/people/mikemj/">Michael Meyers-Jouan</a></div></div></td></tr><tr><td valign="top" class="pr17"><a><div class="userimage-defaulttiny badgePopup" bID="1559509" badgeEntityID="1559509"></div></a></td><td valign="top" class="pb15"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/docmdcopyobject-causes-error-3024-5560665" class="size15 bold" title="When I use
+NewTableName=&quot;tblMulTLock_&quot; & SystemNumber
+docmd.copyobject ,NewTableName,acTable,&quot;tblMulTLock_&quot;
+
+works fine creating a Local Copy with the correct name
+
+however when I try to create...">docmd.CopyObject Causes Error 3024</a><br /><div class="floatleft size11">by <a class="size11" href="http://it.toolbox.com/people/magnacarta/">jon Carter</a></div></td><td valign="top" class="bold anthracite">                2            </td><td valign="top"><span class="size12 anthracite">10 days ago</span><div style="white-space:nowrap" class="size11"><div class="floatleft size11">by <a class="size11" href="http://it.toolbox.com/people/magnacarta/">jon Carter</a></div></div></td></tr><tr><td valign="top" class="pr17"><a><div class="userimage-defaulttiny"></div></a></td><td valign="top" class="pb15"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/how-to-check-programmatically-if-a-cell-is-a-number-in-excel-2010-5561127" class="size15 bold" title="How to check programmatically if a cell is a number.
+My code does not the bolean function IsNumber
+
+like 
+If IsNumber(cells(x,y)) =false then
+' do something
+end if">How to check programmatically if a cell is a number in Excel 2010</a><br /><div class="floatleft size11">by <a class="size11" href="http://it.toolbox.com/people/community_member/?u=64447">user_87144</a></div></td><td valign="top" class="bold anthracite">                3            </td><td valign="top"><span class="size12 anthracite">10 days ago</span><div style="white-space:nowrap" class="size11"><div class="floatleft size11">by <a class="size11" href="http://it.toolbox.com/people/malika111/">Malika111</a></div></div></td></tr><tr><td valign="top" class="pr17"><a><div class="userimage-defaulttiny"></div></a></td><td valign="top" class="pb15"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/how-to-get-all-the-attributes-of-a-mail-in-outlook-through-vba-into-excel-5559991" class="size15 bold" title="I want to get all the attributes of a received mail such as sender, subject, time etc. Is there a way I can get these things in excel through vba.">HOw to Get All the Attributes of a Mail in Outlook Through VBA into Excel?</a><br /><div class="floatleft size11">by <a class="size11" href="http://it.toolbox.com/people/community_member/?u=64768">Mrunal</a></div></td><td valign="top" class="bold anthracite">                2            </td><td valign="top"><span class="size12 anthracite">11 days ago</span><div style="white-space:nowrap" class="size11"><div class="floatleft size11">by <a class="size11" href="http://it.toolbox.com/people/mikemj/">Michael Meyers-Jouan</a></div></div></td></tr><tr><td valign="top" class="pr17"><a><div class="userimage-defaulttiny badgePopup" bID="2226291" badgeEntityID="2226291"></div></a></td><td valign="top" class="pb15"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/how-to-add-an-item-to-a-pdfpage-with-vba-5559673" class="size15 bold" title="I know how to create pdf's with VBA, and I do know how to add pages to an existing pdf-file.
+
+What I would like to know if it is possible to add an item to an existing pdf-page.
+For example I would...">How to Add an Item to a Pdf-page With Vba</a><br /><div class="floatleft size11">by <a class="size11" href="http://it.toolbox.com/people/johan-k/">curious</a></div></td><td valign="top" class="bold anthracite">                0            </td><td valign="top"><span class="size12 anthracite">12 days ago</span><div style="white-space:nowrap" class="size11"><div class="floatleft size11">by <a class="size11" href="http://it.toolbox.com/people/johan-k/">curious</a></div></div></td></tr><tr><td valign="top" class="pr17"><a><div class="userimage-defaulttiny badgePopup" bID="5291635" badgeEntityID="5291635"></div></a></td><td valign="top" class="pb15"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/how-to-move-to-the-next-and-previous-record-in-a-database-using-visual-basic-6-5558088" class="size15 bold" title="how to move to the next and previous record in a database using 6">How to Move to the Next and Previous Record in a Database Using Visual Basic 6</a><br /><div class="floatleft size11">by <a class="size11" href="http://it.toolbox.com/people/inno42004/">inno42004</a></div></td><td valign="top" class="bold anthracite">                2            </td><td valign="top"><span class="size12 anthracite">12 days ago</span><div style="white-space:nowrap" class="size11"><div class="floatleft size11">by <a class="size11" href="http://it.toolbox.com/people/robcr/">Rob Crombie</a></div></div></td></tr><tr><td valign="top" class="pr17"><a><div class="userimage-defaulttiny"></div></a></td><td valign="top" class="pb15"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/pick-up-data-from-excel-sheet-columns-in-a-macro-script-on-mainframes-5558285" class="size15 bold" title="Hi All,
+
+I have recorded a macro which enters some data in say 4 screens in quick 3270 emulator. 
+Now I would like to edit that macro to get data from the excel sheet which has data in the respective...">Pick Up Data From Excel Sheet Columns In A Macro Script On Mainframes</a><br /><div class="floatleft size11">by <a class="size11" href="http://it.toolbox.com/people/community_member/?u=64637">Awalia</a></div></td><td valign="top" class="bold anthracite">                1            </td><td valign="top"><span class="size12 anthracite">13 days ago</span><div style="white-space:nowrap" class="size11"><div class="floatleft size11">by <a class="size11" href="http://it.toolbox.com/people/mikemj/">Michael Meyers-Jouan</a></div></div></td></tr><tr><td valign="top" class="pr17"><a><div class="userimage-defaulttiny badgePopup" bID="5289305" badgeEntityID="5289305"></div></a></td><td valign="top" class="pb15"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/images-in-datareports-5556422" class="size15 bold" title="I have saved images in directory. Now I want to set the images along with record in data reports in vb6. How I can connect the record at run time?">Images in Datareports</a><br /><div class="floatleft size11">by <a class="size11" href="http://it.toolbox.com/people/sarojmehtacdlu/">sarojmehtacdlu</a></div></td><td valign="top" class="bold anthracite">                1            </td><td valign="top"><span class="size12 anthracite">15 days ago</span><div style="white-space:nowrap" class="size11"><div class="floatleft size11">by <a class="size11" href="http://it.toolbox.com/people/user966725/">kanakrathore</a></div></div></td></tr><tr><td valign="top" class="pr17"><a><div class="userimage-defaulttiny"></div></a></td><td valign="top" class="pb15"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/how-to-split-access-report-data-into-2-equal-columns-5555307" class="size15 bold" title="I have an access report that prints key employee Cell phone numbers, the only info is Lname, fname, and Cell_number. Currently there are 50 entries. I the detail section of my report, I would like...">How to Split Access Report Data Into 2 Equal Columns?</a><br /><div class="floatleft size11">by <a class="size11" href="http://it.toolbox.com/people/community_member/?u=64443">lyonsden1214</a></div></td><td valign="top" class="bold anthracite">                4            </td><td valign="top"><span class="size12 anthracite">18 days ago</span><div style="white-space:nowrap" class="size11"><div class="floatleft size11">by <a class="size11" href="http://it.toolbox.com/people/mikemj/">Michael Meyers-Jouan</a></div></div></td></tr><tr><td valign="top" class="pr17"><a><div class="userimage-defaulttiny"></div></a></td><td valign="top" class="pb15"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/how-to-format-a-cell-in-excel-2010-to-have-a-suffix-x-added-automatically-5555327" class="size15 bold" title="Hi,
+
+When I type a integer number in a cell, I would like to have a letter x added as a suffix.
+Example, I type 4 and in a cell and the result will show 4x.
+How to define the custom format for the...">How to Format a Cell in Excel 2010 to Have a Suffix X Added Automatically</a><br /><div class="floatleft size11">by <a class="size11" href="http://it.toolbox.com/people/community_member/?u=64447">user_87144</a></div></td><td valign="top" class="bold anthracite">                5            </td><td valign="top"><span class="size12 anthracite">18 days ago</span><div style="white-space:nowrap" class="size11"><div class="floatleft size11">by <a class="size11" href="http://it.toolbox.com/people/arsabra/">ARSABRA</a></div></div></td></tr><tr><td valign="top" class="pr17"><a><div class="userimage-defaulttiny"></div></a></td><td valign="top" class="pb15"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/how-to-hideshow-ribbon-programmaticaly-vba-in-excel-2010-5344065" class="size15 bold" title="I need to have the ribbon hidden in my on open routine
+
+Can someone help on this ?
+
+thansk
+Mimi">How to hide/show ribbon programmaticaly (VBA) in Excel 2010</a><br /><div class="floatleft size11">by <a class="size11" href="http://it.toolbox.com/people/community_member/?u=39247">MimiHayek</a></div></td><td valign="top" class="bold anthracite">                7            </td><td valign="top"><span class="size12 anthracite">19 days ago</span><div style="white-space:nowrap" class="size11"><div class="floatleft size11">by <a class="size11" href="http://it.toolbox.com/people/manvendrasinghtomarnew/">manvendrasinghtomarnew</a></div></div></td></tr><tr><td valign="top" class="pr17"><a><div class="userimage-defaulttiny badgePopup" bID="5265598" badgeEntityID="5265598"></div></a></td><td valign="top" class="pb15"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/alternative-for-vba-5544453" class="size15 bold" title="Hi,
+Is there anyother alternative available for VBA to get the output in excel sheets. Note: other then macros and VBA">Alternative for VBA</a><br /><div class="floatleft size11">by <a class="size11" href="http://it.toolbox.com/people/nvbalavignesh/">nvbalavignesh</a></div></td><td valign="top" class="bold anthracite">                12            </td><td valign="top"><span class="size12 anthracite">25 days ago</span><div style="white-space:nowrap" class="size11"><div class="floatleft size11">by <a class="size11" href="http://it.toolbox.com/people/batesview/">John Warner</a></div></div></td></tr><tr><td valign="top" class="pr17"><a><div class="userimage-defaulttiny badgePopup" bID="5281877" badgeEntityID="5281877"></div></a></td><td valign="top" class="pb15"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/programmatically-produced-charts-inserted-on-a-worksheet-shrink-and-distort-5548752" class="size15 bold" title="I have created a complex data capture and reporting application which outputs 9 charts onto a worksheet and another 6 on a different worksheet in another workbook.
+
+The data for the graphs is gathered...">Programmatically Produced Charts Inserted On a Worksheet Shrink and Distort</a><br /><div class="floatleft size11">by <a class="size11" href="http://it.toolbox.com/people/ivorshaer/">ivorshaer</a></div></td><td valign="top" class="bold anthracite">                2            </td><td valign="top"><span class="size12 anthracite">26 days ago</span><div style="white-space:nowrap" class="size11"><div class="floatleft size11">by <a class="size11" href="http://it.toolbox.com/people/ivorshaer/">ivorshaer</a></div></div></td></tr><tr><td valign="top" class="pr17"><a><div class="userimage-defaulttiny badgePopup" bID="5281514" badgeEntityID="5281514"></div></a></td><td valign="top" class="pb15"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/how-do-you-update-access-2010-email-with-a-new-receipients-address-5548355" class="size15 bold" title="We use MS Access 2010 and have several automated emails going out from it upon completion of tasks within the db, but several people have left the organization and I need to remove their names from...">How do you update Access 2010 email with a new receipients address?</a><br /><div class="floatleft size11">by <a class="size11" href="http://it.toolbox.com/people/swinkler1017/">swinkler1017</a></div></td><td valign="top" class="bold anthracite">                2            </td><td valign="top"><span class="size12 anthracite">27 days ago</span><div style="white-space:nowrap" class="size11"><div class="floatleft size11">by <a class="size11" href="http://it.toolbox.com/people/mikemj/">Michael Meyers-Jouan</a></div></div></td></tr><tr><td valign="top" class="pr17"><a><div class="userimage-defaulttiny badgePopup" bID="5280976" badgeEntityID="5280976"></div></a></td><td valign="top" class="pb15"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/automatic-trigger-of-defect-dumps-from-quality-center-5548169" class="size15 bold" title="I have requirement wherein I want that Defect dumps are saved in excel on Firdays at 4 PM of its own . I have created the excel macro which stores the defect dumps and saves it a specified location...">Automatic Trigger of Defect Dumps from Quality Center</a><br /><div class="floatleft size11">by <a class="size11" href="http://it.toolbox.com/people/er_raman1986/">er_raman1986</a></div></td><td valign="top" class="bold anthracite">                2            </td><td valign="top"><span class="size12 anthracite">27 days ago</span><div style="white-space:nowrap" class="size11"><div class="floatleft size11">by <a class="size11" href="http://it.toolbox.com/people/er_raman1986/">er_raman1986</a></div></div></td></tr><tr><td valign="top" class="pr17"><a><div class="userimage-defaulttiny badgePopup" lazysource="http://userimages.ittoolbox.com/user/0/7/3/t_1179370.jpg" bID="1179370" badgeEntityID="1179370"></div></a></td><td valign="top" class="pb15"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/vba-from-excel-using-word-for-body-of-email-5546933" class="size15 bold" title="2 Laptops with the same OS (W7) and the same Office Pro. when I loging to Laptop 1 I can run my email code but not when I log into Laptop 2. The code has issues with setting the object and sending...">VBA from Excel Using Word for Body of Email</a><br /><div class="floatleft size11">by <a class="size11" href="http://it.toolbox.com/people/ltworf/">robert wynter</a></div></td><td valign="top" class="bold anthracite">                6            </td><td valign="top"><span class="size12 anthracite">28 days ago</span><div style="white-space:nowrap" class="size11"><div class="floatleft size11">by <a class="size11" href="http://it.toolbox.com/people/neilr/">Neil Rogers</a></div></div></td></tr><tr><td valign="top" class="pr17"><a><div class="userimage-defaulttiny badgePopup" lazysource="http://userimages.ittoolbox.com/user/1/9/6/t_1350691.jpg" bID="1350691" badgeEntityID="1350691"></div></a></td><td valign="top" class="pb15"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/read-openoffice-cal-file-in-vb6-5547859" class="size15 bold" title="How to read openoffice cal file in vb6?">Read Openoffice Cal File in VB6</a><br /><div class="floatleft size11">by <a class="size11" href="http://it.toolbox.com/people/yogeshmankar/">Yogesh Mankar</a></div></td><td valign="top" class="bold anthracite">                1            </td><td valign="top"><span class="size12 anthracite">28 days ago</span><div style="white-space:nowrap" class="size11"><div class="floatleft size11">by <a class="size11" href="http://it.toolbox.com/people/achang01/">A Chang</a></div></div></td></tr><tr><td valign="top" class="pr17"><a><div class="userimage-defaulttiny badgePopup" bID="5266248" badgeEntityID="5266248"></div></a></td><td valign="top" class="pb15"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/divide-a-picture-into-grid-5538102" class="size15 bold" title="I want to divide a picture into grid (Matrix Format). for example 5*5 or 9*9 etc. and show it into windows form.">Divide a Picture into Grid</a><br /><div class="floatleft size11">by <a class="size11" href="http://it.toolbox.com/people/vdatta49/">vdatta49</a></div></td><td valign="top" class="bold anthracite">                11            </td><td valign="top"><span class="size12 anthracite">Jul 18</span><div style="white-space:nowrap" class="size11"><div class="floatleft size11">by <a class="size11" href="http://it.toolbox.com/people/achang01/">A Chang</a></div></div></td></tr><tr><td valign="top" class="pr17"><a><div class="userimage-defaulttiny badgePopup" lazysource="http://userimages.ittoolbox.com/user/9/3/0/t_1188039.jpg" bID="1188039" badgeEntityID="1188039"></div></a></td><td valign="top" class="pb15"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/avoiding-conflict-schedules-5536174" class="size15 bold" title="hello! need help! is there anybody can share a vb code on how to test time inputs that avoid conflicts on the previous saved on the database?">Avoiding Conflict Schedules</a><br /><div class="floatleft size11">by <a class="size11" href="http://it.toolbox.com/people/joko0124/">joko fernandez</a></div></td><td valign="top" class="bold anthracite">                8            </td><td valign="top"><span class="size12 anthracite">Jul 8</span><div style="white-space:nowrap" class="size11"><div class="floatleft size11">by <a class="size11" href="http://it.toolbox.com/people/batesview/">John Warner</a></div></div></td></tr><tr><td valign="top" class="pr17"><a><div class="userimage-defaulttiny badgePopup" bID="4263194" badgeEntityID="4263194"></div></a></td><td valign="top" class="pb15"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/saving-temp-file-for-use-on-other-terminals-5537789" class="size15 bold" title="I have a user form which sends a worksheet by email. I save the worksheet in a temp file named LWorkbook.Name and then add this file to the email. This works fine frm the terminal on which I wrote...">Saving Temp File for Use On Other Terminals</a><br /><div class="floatleft size11">by <a class="size11" href="http://it.toolbox.com/people/brianardent/">BrianArdent</a></div></td><td valign="top" class="bold anthracite">                2            </td><td valign="top"><span class="size12 anthracite">Jul 7</span><div style="white-space:nowrap" class="size11"><div class="floatleft size11">by <a class="size11" href="http://it.toolbox.com/people/brianardent/">BrianArdent</a></div></div></td></tr><tr><td valign="top" class="pr17"><a><div class="userimage-defaulttiny"></div></a></td><td valign="top" class="pb15"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/how-to-run-bd2-query-from-vba-to-ibm-mainframe-using-macro-5536426" class="size15 bold" title="Hi,
+actually I want to send some db2 query thru vba to Mainframe database and result should be copied in my same workbook in different sheet. so give me some idea, how can I start, I never access...">How to Run bd2 Query from VBA to IBM Mainframe using Macro</a><br /><div class="floatleft size11">by <a class="size11" href="http://it.toolbox.com/people/community_member/?u=63192">rajesh</a></div></td><td valign="top" class="bold anthracite">                2            </td><td valign="top"><span class="size12 anthracite">Jul 7</span><div style="white-space:nowrap" class="size11"><div class="floatleft size11">by <a class="size11" href="http://it.toolbox.com/people/community_member/?u=63192">rajesh</a></div></div></td></tr></table><div class="pb10"></div>
+    <div><div class="groups-calborder"><span class="size12 anthracite bold">Visual Basic for Applications Message Archive</span><div class="spacer-small"></div><table border="0" cellpadding="0" cellspacing="0" class="groups-caltable"><tr><td class="groups-caldividervert">&nbsp;</td><td class="groups-calpad">Jan</td><td>Feb</td><td>Mar</td><td>Apr</td><td>May</td><td>Jun</td><td>Jul</td><td>Aug</td><td>Sep</td><td>Oct</td><td>Nov</td><td>Dec</td></tr><tr><td colspan=13 class="rule-gray"></td></tr><tr><td class="groups-caldividervert">2014</td><td class="groups-calpad"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/1/2014">98</a>&nbsp;                            </td><td class="groups-calpad"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/2/2014">69</a>&nbsp;                            </td><td class="groups-calpad"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/3/2014">43</a>&nbsp;                            </td><td class="groups-calpad"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/4/2014">44</a>&nbsp;                            </td><td class="groups-calpad"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/5/2014">80</a>&nbsp;                            </td><td class="groups-calpad"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/6/2014">79</a>&nbsp;                            </td><td class="groups-calpad"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/7/2014">80</a>&nbsp;                            </td><td class="groups-calpad"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/8/2014">45</a>&nbsp;                            </td><td class="groups-calpad">                                &nbsp;                            </td><td class="groups-calpad">                                &nbsp;                            </td><td class="groups-calpad">                                &nbsp;                            </td><td class="groups-calpad">                                &nbsp;                            </td></tr><tr><td colspan=13 class="rule-gray"></td></tr><tr><td class="groups-caldividervert">2013</td><td class="groups-calpad"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/1/2013">27</a>&nbsp;                            </td><td class="groups-calpad"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/2/2013">24</a>&nbsp;                            </td><td class="groups-calpad"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/3/2013">61</a>&nbsp;                            </td><td class="groups-calpad"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/4/2013">21</a>&nbsp;                            </td><td class="groups-calpad"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/5/2013">33</a>&nbsp;                            </td><td class="groups-calpad"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/6/2013">16</a>&nbsp;                            </td><td class="groups-calpad"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/7/2013">32</a>&nbsp;                            </td><td class="groups-calpad"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/8/2013">103</a>&nbsp;                            </td><td class="groups-calpad"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/9/2013">22</a>&nbsp;                            </td><td class="groups-calpad"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/10/2013">109</a>&nbsp;                            </td><td class="groups-calpad"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/11/2013">40</a>&nbsp;                            </td><td class="groups-calpad"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/12/2013">39</a>&nbsp;                            </td></tr><tr><td colspan=13 class="rule-gray"></td></tr><tr><td class="groups-caldividervert">2012</td><td class="groups-calpad"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/1/2012">85</a>&nbsp;                            </td><td class="groups-calpad"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/2/2012">90</a>&nbsp;                            </td><td class="groups-calpad"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/3/2012">127</a>&nbsp;                            </td><td class="groups-calpad"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/4/2012">72</a>&nbsp;                            </td><td class="groups-calpad"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/5/2012">96</a>&nbsp;                            </td><td class="groups-calpad"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/6/2012">79</a>&nbsp;                            </td><td class="groups-calpad"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/7/2012">23</a>&nbsp;                            </td><td class="groups-calpad"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/8/2012">56</a>&nbsp;                            </td><td class="groups-calpad"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/9/2012">50</a>&nbsp;                            </td><td class="groups-calpad"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/10/2012">124</a>&nbsp;                            </td><td class="groups-calpad"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/11/2012">77</a>&nbsp;                            </td><td class="groups-calpad"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/12/2012">38</a>&nbsp;                            </td></tr><tr><td colspan=13 class="rule-gray"></td></tr><tr><td class="groups-caldividervert">2011</td><td class="groups-calpad"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/1/2011">166</a>&nbsp;                            </td><td class="groups-calpad"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/2/2011">121</a>&nbsp;                            </td><td class="groups-calpad"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/3/2011">117</a>&nbsp;                            </td><td class="groups-calpad"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/4/2011">104</a>&nbsp;                            </td><td class="groups-calpad"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/5/2011">87</a>&nbsp;                            </td><td class="groups-calpad"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/6/2011">74</a>&nbsp;                            </td><td class="groups-calpad"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/7/2011">34</a>&nbsp;                            </td><td class="groups-calpad"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/8/2011">39</a>&nbsp;                            </td><td class="groups-calpad"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/9/2011">112</a>&nbsp;                            </td><td class="groups-calpad"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/10/2011">31</a>&nbsp;                            </td><td class="groups-calpad"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/11/2011">133</a>&nbsp;                            </td><td class="groups-calpad"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/12/2011">66</a>&nbsp;                            </td></tr><tr><td colspan=13 class="rule-gray"></td></tr><tr><td class="groups-caldividervert">2010</td><td class="groups-calpad"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/1/2010">98</a>&nbsp;                            </td><td class="groups-calpad"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/2/2010">177</a>&nbsp;                            </td><td class="groups-calpad"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/3/2010">306</a>&nbsp;                            </td><td class="groups-calpad"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/4/2010">175</a>&nbsp;                            </td><td class="groups-calpad"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/5/2010">57</a>&nbsp;                            </td><td class="groups-calpad"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/6/2010">98</a>&nbsp;                            </td><td class="groups-calpad"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/7/2010">146</a>&nbsp;                            </td><td class="groups-calpad"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/8/2010">71</a>&nbsp;                            </td><td class="groups-calpad"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/9/2010">117</a>&nbsp;                            </td><td class="groups-calpad"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/10/2010">94</a>&nbsp;                            </td><td class="groups-calpad"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/11/2010">167</a>&nbsp;                            </td><td class="groups-calpad"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/12/2010">102</a>&nbsp;                            </td></tr><tr><td colspan=13 class="rule-gray"></td></tr><tr><td class="groups-caldividervert">2009</td><td class="groups-calpad"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/1/2009">64</a>&nbsp;                            </td><td class="groups-calpad"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/2/2009">142</a>&nbsp;                            </td><td class="groups-calpad"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/3/2009">133</a>&nbsp;                            </td><td class="groups-calpad"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/4/2009">161</a>&nbsp;                            </td><td class="groups-calpad"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/5/2009">123</a>&nbsp;                            </td><td class="groups-calpad"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/6/2009">129</a>&nbsp;                            </td><td class="groups-calpad"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/7/2009">195</a>&nbsp;                            </td><td class="groups-calpad"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/8/2009">139</a>&nbsp;                            </td><td class="groups-calpad"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/9/2009">130</a>&nbsp;                            </td><td class="groups-calpad"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/10/2009">111</a>&nbsp;                            </td><td class="groups-calpad"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/11/2009">105</a>&nbsp;                            </td><td class="groups-calpad"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/12/2009">57</a>&nbsp;                            </td></tr><tr><td colspan=13 class="rule-gray"></td></tr><tr><td class="groups-caldividervert">2008</td><td class="groups-calpad"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/1/2008">89</a>&nbsp;                            </td><td class="groups-calpad"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/2/2008">98</a>&nbsp;                            </td><td class="groups-calpad"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/3/2008">68</a>&nbsp;                            </td><td class="groups-calpad"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/4/2008">138</a>&nbsp;                            </td><td class="groups-calpad"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/5/2008">75</a>&nbsp;                            </td><td class="groups-calpad"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/6/2008">156</a>&nbsp;                            </td><td class="groups-calpad"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/7/2008">114</a>&nbsp;                            </td><td class="groups-calpad"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/8/2008">92</a>&nbsp;                            </td><td class="groups-calpad"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/9/2008">152</a>&nbsp;                            </td><td class="groups-calpad"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/10/2008">97</a>&nbsp;                            </td><td class="groups-calpad"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/11/2008">51</a>&nbsp;                            </td><td class="groups-calpad"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/12/2008">51</a>&nbsp;                            </td></tr><tr><td colspan=13 class="rule-gray"></td></tr><tr><td class="groups-caldividervert">2007</td><td class="groups-calpad"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/1/2007">19</a>&nbsp;                            </td><td class="groups-calpad"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/2/2007">39</a>&nbsp;                            </td><td class="groups-calpad"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/3/2007">36</a>&nbsp;                            </td><td class="groups-calpad"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/4/2007">25</a>&nbsp;                            </td><td class="groups-calpad"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/5/2007">38</a>&nbsp;                            </td><td class="groups-calpad"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/6/2007">207</a>&nbsp;                            </td><td class="groups-calpad"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/7/2007">201</a>&nbsp;                            </td><td class="groups-calpad"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/8/2007">131</a>&nbsp;                            </td><td class="groups-calpad"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/9/2007">102</a>&nbsp;                            </td><td class="groups-calpad"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/10/2007">136</a>&nbsp;                            </td><td class="groups-calpad"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/11/2007">97</a>&nbsp;                            </td><td class="groups-calpad"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/12/2007">61</a>&nbsp;                            </td></tr><tr><td colspan=13 class="rule-gray"></td></tr><tr><td class="groups-caldividervert">2006</td><td class="groups-calpad"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/1/2006">16</a>&nbsp;                            </td><td class="groups-calpad"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/2/2006">2</a>&nbsp;                            </td><td class="groups-calpad"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/3/2006">41</a>&nbsp;                            </td><td class="groups-calpad"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/4/2006">74</a>&nbsp;                            </td><td class="groups-calpad"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/5/2006">55</a>&nbsp;                            </td><td class="groups-calpad"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/6/2006">46</a>&nbsp;                            </td><td class="groups-calpad"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/7/2006">49</a>&nbsp;                            </td><td class="groups-calpad"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/8/2006">22</a>&nbsp;                            </td><td class="groups-calpad"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/9/2006">1</a>&nbsp;                            </td><td class="groups-calpad"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/10/2006">30</a>&nbsp;                            </td><td class="groups-calpad"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/11/2006">20</a>&nbsp;                            </td><td class="groups-calpad"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/12/2006">34</a>&nbsp;                            </td></tr><tr><td colspan=13 class="rule-gray"></td></tr><tr><td class="groups-caldividervert">2005</td><td class="groups-calpad"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/1/2005">31</a>&nbsp;                            </td><td class="groups-calpad"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/2/2005">22</a>&nbsp;                            </td><td class="groups-calpad"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/3/2005">22</a>&nbsp;                            </td><td class="groups-calpad"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/4/2005">30</a>&nbsp;                            </td><td class="groups-calpad"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/5/2005">57</a>&nbsp;                            </td><td class="groups-calpad"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/6/2005">47</a>&nbsp;                            </td><td class="groups-calpad"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/7/2005">11</a>&nbsp;                            </td><td class="groups-calpad"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/8/2005">15</a>&nbsp;                            </td><td class="groups-calpad"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/9/2005">19</a>&nbsp;                            </td><td class="groups-calpad"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/10/2005">26</a>&nbsp;                            </td><td class="groups-calpad"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/11/2005">35</a>&nbsp;                            </td><td class="groups-calpad"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/12/2005">40</a>&nbsp;                            </td></tr><tr><td colspan=13 class="rule-gray"></td></tr><tr><td class="groups-caldividervert">2004</td><td class="groups-calpad"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/1/2004">5</a>&nbsp;                            </td><td class="groups-calpad"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/2/2004">54</a>&nbsp;                            </td><td class="groups-calpad"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/3/2004">11</a>&nbsp;                            </td><td class="groups-calpad"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/4/2004">32</a>&nbsp;                            </td><td class="groups-calpad"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/5/2004">7</a>&nbsp;                            </td><td class="groups-calpad"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/6/2004">16</a>&nbsp;                            </td><td class="groups-calpad"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/7/2004">54</a>&nbsp;                            </td><td class="groups-calpad"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/8/2004">15</a>&nbsp;                            </td><td class="groups-calpad"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/9/2004">74</a>&nbsp;                            </td><td class="groups-calpad"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/10/2004">54</a>&nbsp;                            </td><td class="groups-calpad"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/11/2004">109</a>&nbsp;                            </td><td class="groups-calpad"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/12/2004">30</a>&nbsp;                            </td></tr><tr><td colspan=13 class="rule-gray"></td></tr><tr><td class="groups-caldividervert">2003</td><td class="groups-calpad"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/1/2003">27</a>&nbsp;                            </td><td class="groups-calpad"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/2/2003">29</a>&nbsp;                            </td><td class="groups-calpad"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/3/2003">2</a>&nbsp;                            </td><td class="groups-calpad"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/4/2003">16</a>&nbsp;                            </td><td class="groups-calpad"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/5/2003">37</a>&nbsp;                            </td><td class="groups-calpad"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/6/2003">23</a>&nbsp;                            </td><td class="groups-calpad"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/7/2003">13</a>&nbsp;                            </td><td class="groups-calpad"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/8/2003">25</a>&nbsp;                            </td><td class="groups-calpad"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/9/2003">28</a>&nbsp;                            </td><td class="groups-calpad"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/10/2003">6</a>&nbsp;                            </td><td class="groups-calpad"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/11/2003">16</a>&nbsp;                            </td><td class="groups-calpad"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/12/2003">22</a>&nbsp;                            </td></tr><tr><td colspan=13 class="rule-gray"></td></tr><tr><td class="groups-caldividervert">2002</td><td class="groups-calpad">                                &nbsp;                            </td><td class="groups-calpad">                                &nbsp;                            </td><td class="groups-calpad">                                &nbsp;                            </td><td class="groups-calpad">                                &nbsp;                            </td><td class="groups-calpad">                                &nbsp;                            </td><td class="groups-calpad">                                &nbsp;                            </td><td class="groups-calpad">                                &nbsp;                            </td><td class="groups-calpad">                                &nbsp;                            </td><td class="groups-calpad">                                &nbsp;                            </td><td class="groups-calpad"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/10/2002">8</a>&nbsp;                            </td><td class="groups-calpad"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/11/2002">43</a>&nbsp;                            </td><td class="groups-calpad"><a href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/12/2002">40</a>&nbsp;                            </td></tr><tr><td colspan=13 class="rule-gray"></td></tr></table></div></div>
+    <div class="spacer clear"></div>
+    
+
+
+
+
+    <script type="text/javascript" language="javascript" src="http://cdn.toolbox.com/BUILD_2872/js/groupsallfunctions.js"></script>
+    
+        
+
+<style type="text/css" >
+    .popupvariant {display:none;}
+</style>
+
+<div id="popupdiv" class="ctapopup-groupvariant">
+    <div class="ctapopup-groupvariant-topslice"></div>
+    <div class="ctapopup-groupvariant-midslice">
+        <div class="popupvariant" id="divVariantB" variantname="join">
+            <div id="ctl00_m_m_CTAVariants1_Div1" class="size20 white ctapopup-header">
+                <div class="ctapopup-closebutton">X</div>
+                Get Answers - It's Free
+            </div>           
+            <div class="black size13 spacer-small">If you're looking for <span class="black bold">Visual Basic for Applications</span> help, sign up and take advantage of <span class="black bold">8,792  </span> Visual Basic professionals who are here to help you.</div>
+            <div style="margin-top:8px"> 
+                <input name="ctl00$m$m$CTAVariants1$txtEmailB" type="text" id="ctl00_m_m_CTAVariants1_txtEmailB" tabindex="2000" class="floatleft textboxrightcol" Watermark="Your email address" defaultbutton="ctl00_m_m_CTAVariants1_btnJoin_btnCTA" style="width: 275px;" />                
+  		        <div class="floatright">
+			        <table id="ctl00_m_m_CTAVariants1_btnJoin_tbCt" class="button-outerblue" cellpadding="0" cellspacing="0">
+	<tr>
+		<td id="ctl00_m_m_CTAVariants1_btnJoin_tdCt" class="button-innerblue">
+            <input type="button" name="ctl00$m$m$CTAVariants1$btnJoin$btnCTA" value="JOIN" onclick="return false;__doPostBack('ctl00$m$m$CTAVariants1$btnJoin$btnCTA','')" id="ctl00_m_m_CTAVariants1_btnJoin_btnCTA" tabindex="2001" class="button" />
+            
+        </td>
+	</tr>
+</table>
+
+                    
+		        </div>
+            </div>
+            <div class="clear"></div>
+            
+            
+        </div>
+    </div>
+    <div class="ctapopup-groupvariant-bottomslice"></div>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        $('.ctapopup-closebutton').click(function () {
+            $('#popupdiv').hide('fast');
+        });
+
+        $('#ctl00_m_m_CTAVariants1_btnJoin_btnCTA').click(function () {
+            var email = $('#ctl00_m_m_CTAVariants1_txtEmailB').val();
+            if (CtaEmailIsValid(email)) {
+                $('#popupdiv').hide();
+                $('input[class*="onPageRegEmail"]').val(email);
+                ShowRegistration('ctaVariantB');
+            }
+            return false;
+        });
+    });
+
+    // check the cookie to see if we should show this...
+    var varCookie = 'grpVariant';
+    if (!getCookie(varCookie)) {
+        // find the variants
+        var variants = $('#popupdiv .popupvariant');
+        if (variants.length) {
+            var variant = variants[0];
+            samplecontentversion = "joingroup-" + $(variant).attr('variantname');
+            // make the variant visible
+            $(variant).show();
+            // set the cookie.
+            setCookie(varCookie, '1', 1);
+            // make the popup fade in.
+            $('#popupdiv').show('fast');
+        }
+    }
+
+</script>
+
+
+    </div>
+
+    <div id="ctl00_m_Outbrain_OutbrainAd" class="outbrainpanel" style="width:530px;">
+	
+        <div id="ctl00_m_Outbrain_OutBrainAdThumb">
+		
+	        <div class="OUTBRAIN" data-src="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/rds/icon-refresh.gif" data-widget-id="AR_4" data-ob-template="toolbox" ></div>
+	        <script type="text/javascript" async="async" src="http://widgets.outbrain.com/outbrain.js"></script>            
+	    
+	</div>
+	    <div id="ctl00_m_Outbrain_OutBrainAdText">
+		
+	        <div class="OUTBRAIN" data-src="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/rds/icon-refresh.gif" data-widget-id="AR_2" data-ob-template="toolbox" ></div>
+	        <script type="text/javascript" async="async" src="http://widgets.outbrain.com/outbrain.js"></script>           
+	    
+	</div>
+    
+</div>
+ 
+	<div class="sponsoredlinks clear">
+	    <div id="ctl00_m_marchexAd">
+	
+		
+ 
+	    
+</div>
+	    
+	</div>
+    </div>
+    <div class="content-rightcol">
+        
+            
+
+    
+     
+    <div class="clear"></div>
+    <div class="spacer-small">
+        <div align="center" style="margin-top:inherit;margin-bottom:20px">
+	
+	<div id="div-gpt-ad-1736655939-1">
+		<script type="text/javascript">
+			googletag.cmd.push(function() {
+			  googletag.display("div-gpt-ad-1736655939-1");
+		});
+		</script>
+	</div>
+
+</div>
+    </div>
+    
+    <div class="spacer"></div> 
+    
+
+
+<style type="text/css" >
+    .primaryvariant {display:none;}
+</style>
+
+
+<div class="box-containerbase" style="background-color: #eef6f9">
+    
+    <div id="primarydiv" >
+        <div id="ctl00_m_r_r_primaryCTA_scPrimaryCTA_pnlPrimaryCta">
+	
+            <div id="ctl00_m_r_r_primaryCTA_scPrimaryCTA_divctaWelcomes" class="primaryvariant" variantname="ctaWelcome">
+                <div class="size20 black spacer-small bold">Welcome to Toolbox.com</div>               
+                <div class="black size13 spacer-small">Working in IT can be hard, especially when you need answers. That's why 2.1 million IT professionals use Toolbox.com to make their jobs a little easier.</div>
+            </div>  
+            <div id="divjoinNow" style="display:none">
+                
+<a id="ctl00_m_r_r_primaryCTA_scPrimaryCTA_lnkJoinNow_hl" href="javascript:ShowRegistration();" style="font-size:14pt;">Join Now</a>
+            </div>               	                    
+            <div style="border-top: 1px solid #CCC; padding-top: 10px; margin-top: 12px;" id="rContent"></div>
+            
+            
+        
+</div>                 
+    </div>
+    <div id="divJoinGroupConfirmation" style="border:1px solid #9bc49b; background-color:#E3F9E3; display: none; float:left; padding:8px; margin:4px 0px 4px 0px;clear:both;">
+        <a id="ctl00_m_r_r_primaryCTA_scPrimaryCTA_hplConfLink" class="uc_netclose" href="javascript: void(0);"></a>
+        <span id="ctl00_m_r_r_primaryCTA_scPrimaryCTA_divConfirmationMessage"></span>    
+    </div>
+	
+    <div style="clear:both"></div>
+		
+
+ 
+
+    <div style="clear:both"></div>
+</div>
+
+
+<script type="text/javascript" language="javascript">
+
+    var variants = $('#primarydiv .primaryvariant');
+    if (variants.length) {
+        // roll the dice and pick one.
+        var variant = variants[Math.floor(Math.random() * variants.length)];
+        //samplecontentversion = $(variant).attr('variantname');
+        // make the variant visible
+        $(variant).show();
+    }
+
+    $(document).ready(function () {
+
+        $.ajax({
+            type: 'POST',
+            url: 'http://visualbasic.ittoolbox.com/api/related-group-messages/21/1003536/',
+            data: { referrer: document.referrer, groupmessageid: '0' },
+            success: (function (data) {
+                var divContainer = $('#rContent');
+                divContainer.html(data);
+
+                divContainer.find("[hpx]").click(function () {
+                    SiteCatalystLinkTracking($(this).attr("hpx"));
+                });
+
+                var searchreturn = $('#hidSEResult').val();
+
+                var trackingImpressionName;
+                var resultStatus = "NoResult";
+                if (searchreturn == 2) {
+                    resultStatus = "Result";
+                }
+
+                //samplecontentversion = samplecontentversion + resultStatus;
+
+                var subProduct = $(variant).attr('variantname') + resultStatus;
+
+                switch ($(variant).attr('variantname')) {
+                    case 'ctaAnswers':
+                        trackingImpressionName = "G:ctaAnswers" + resultStatus;
+                        break;
+                    case 'ctaCompany':
+                        trackingImpressionName = "G:ctaCompany" + resultStatus;
+                        break;
+                    case 'ctaWelcome':
+                        trackingImpressionName = "G:ctaWelcome" + resultStatus;
+                        break;
+                }
+
+                $('#ctl00_m_r_r_primaryCTA_scPrimaryCTA_lnkJoinNow_hl').attr("href", "javascript:ShowRegistration('" + subProduct + "')");
+
+                $('#divjoinNow').show();
+                if ($(variant).attr('variantname').length != 0) {
+
+                    //SCImpressionTracking(trackingImpressionName);
+
+                }
+
+            })
+        });
+
+
+    });    
+</script>
+
+
+    	
+	
+    <div class="spacer">
+        <div class="box-standardtitlebase box-standard">
+    <span class="bold anthracite size12 floatleft">Group Leaders</span>
+    <div class="floatright">
+        
+    </div>
+    <div style="clear:both"></div>
+</div>
+<div class="box-containerbase">
+    
+	<div>
+	
+        <h2 class="anthracite size12">Helpful Poster</h2>
+		<div>
+			<div class="floatleft">
+				<a><div class="userimage-defaultbadge badgePopup" lazysource="http://userimages.ittoolbox.com/user/9/9/8/b_844899.jpg" bID="844899" badgeEntityID="844899"></div></a>
+
+			</div>
+			<div id="votedAuthor" class="floatleft">
+                
+<a href="http://it.toolbox.com/people/martinwalke/">Martin Walke</a>
+                
+                
+                
+			</div>
+			<div class="clear"></div>
+		</div>
+    
+</div>
+
+    <div>
+	
+        <div class="spacer-small"></div>
+        <h2 class="anthracite size12">Top Contributor</h2>
+		<div>
+			<div class="floatleft">
+				<a><div class="userimage-defaultbadge badgePopup" lazysource="http://userimages.ittoolbox.com/user/3/0/3/b_1124303.jpg" bID="1124303" badgeEntityID="1124303"></div></a>
+
+			</div>
+			<div id="tcAuthor" class="floatleft">
+                
+<a href="http://it.toolbox.com/people/mikemj/">Michael Meyers-Jouan</a>
+                
+
+<img style="border-width:0px;" class="paddingleft1" title="Group Champion - contributes expertise and encourages discussion." groupchamp="true" />
+
+                <br />CEO, COO, CFO, CMO, Pres, GM
+                
+		    </div>
+			<div class="clear"></div>
+		</div>
+    
+</div>
+
+    <div>
+	
+        <div class="spacer-small"></div>
+        <h2 class="anthracite size12">Achievement Earner</h2>
+		<div>
+			<div class="floatleft">
+				<a><div class="userimage-defaultbadge badgePopup" bID="1915662" badgeEntityID="1915662"></div></a>
+
+			</div>
+			<div id="achievementAuthors" class="floatleft">
+                
+<a href="http://it.toolbox.com/people/ac045364/">daniel houle</a>
+                
+                
+                
+			</div>
+			<div class="clear"></div>
+		</div>
+    
+</div>
+	<div>
+        <div class="floatright">
+            
+<a class="link-button" href="http://visualbasic.ittoolbox.com/groups/technical-functional/vb-vba-l/leaders">View&nbsp;All&nbsp;Leaders</a>
+        </div>
+		<div class="clear"></div>  
+	</div>
+
+    <div style="clear:both"></div>
+</div>
+    
+    </div>
+    <div class="spacer-small">
+        <div align="center" style="margin-top:inherit;margin-bottom:20px">
+	
+	<div id="div-gpt-ad-1736655939-2">
+		<script type="text/javascript">
+			googletag.cmd.push(function() {
+			  googletag.display("div-gpt-ad-1736655939-2");
+		});
+		</script>
+	</div>
+
+</div>
+    </div>
+    <div class="spacer">
+        <div>
+
+</div>
+    </div>
+    <div class="spacer">
+        
+<div class="box-containerbase">
+    
+        <div class="cta-iphone">
+            <div class="spacer-tiny">
+                <strong class="size18 bold blue">Toolbox.com for iPhone</strong>
+            </div>
+            <div class="spacer">
+                <div class="floatleft">Solve problems on the go.</div>
+                
+<a href="http://www.toolbox.com/help/mobile/">Learn More...</a>
+                <div class="clear"></div>
+            </div>
+            <div class="floatright">
+                
+<a class="link-button" href="http://itunes.apple.com/us/app/toolbox.com/id512310959?mt=8">Download&nbsp;Now</a>
+            </div>
+        </div>
+        <div class="clear"></div>
+    
+    <div style="clear:both"></div>
+</div>
+
+    
+    </div>
+
+    <div class="spacer">
+        <div class="box-standardtitlebase box-standard"><span class="bold anthracite size12 floatleft">Reference Material for This Group</span><div class="floatright"></div><div style="clear:both"></div></div><div class="box-containerbase"><div class="spacer-tiny"><ul><li class="link-indent"><img class="link-image-carat" src="http://cdn.toolbox.com/BUILD_2872/rds/carat-blue.png" style="border-width:0px;" /><a class="darkgray" href="http://it.toolbox.com/wiki/index.php/Excel_Macro_to_Rename_Worksheet_Tabs">Excel Macro to Rename Worksheet Tabs</a></li><div class="clear spacer-ittybitty"></div><li class="link-indent"><img class="link-image-carat" src="http://cdn.toolbox.com/BUILD_2872/rds/carat-blue.png" style="border-width:0px;" /><a class="darkgray" href="http://it.toolbox.com/wiki/index.php/Find_an_Excel_File_and_Open_It_-_Import_and_Export">Find an Excel File and Open It - Import and Export</a></li></ul></div><div style="float:right;"><a class="link-button" href="http://it.toolbox.com/wiki/index.php/Category:vb-vba-l">View&nbsp;All</a></div><a class="link-button" href="http://it.toolbox.com/wiki/index.php?title=Special:CreatePage&amp;cat=vb-vba-l">Create&nbsp;an&nbsp;Article</a><div class="clear"></div><div style="clear:both"></div></div>
+    </div>
+    <div class="spacer">
+        
+    </div>
+    
+
+    </div>
+    <div class="clear"></div>
+</div>
+
+
+<X-BBSKIP>
+<div>
+	
+ <div id="footer">
+ <div id="footer-inner">
+ <div>
+ <div>
+		
+  <div class="footer-colsmall">
+   
+<div class="footer-header lightgray spacer-small">Toolbox for IT</div>
+<a class="footer-link" href="http://it.toolbox.com/home/" >My Home</a>
+<a class="footer-link" href="http://it.toolbox.com/topics/" >Topics</a>
+<a class="footer-link" href="http://it.toolbox.com/people/" >People</a>
+<a class="footer-link" href="http://it.toolbox.com/companies/" >Companies</a>
+<a class="footer-link" href="http://it.toolbox.com/jobs/" >Jobs</a>
+<a class="footer-link" href="http://it.toolbox.com/companies/white-papers/" >White Paper Library</a>
+   <br />
+   
+<div class="footer-colsmall spacer-small">
+<div>
+			
+ <div class="footer-header lightgray">Collaboration Tools</div>
+ <a href="http://it.toolbox.com/groups/" class="footer-link">Discussion Groups</a>
+ <a href="http://it.toolbox.com/blogs/" class="footer-link">Blogs</a>
+ <a href="http://it.toolbox.com/wiki/" class="footer-link">Wiki</a>  
+
+		</div>
+
+
+</div>
+   
+<div class="footer-header lightgray">Follow Toolbox.com</div>
+
+<a href="http://twitter.com/toolboxforit" class="footer-link" target="_blank" >Toolbox for IT on Twitter</a>  
+
+<a href="http://twitter.com/toolboxdotcom" class="footer-link" target="_blank" >Toolbox.com on Twitter</a>  
+<a href="http://www.facebook.com/pages/Toolboxcom/117012708708" class="footer-link" target="_blank" >Toolbox.com on Facebook</a>  
+
+  </div>
+  <div class="footer-colwide">
+<div class="footer-header lightgray spacer-small">Topics on Toolbox for IT</div>
+<div>
+ <div class="footer-topicsbox">
+ <div class="footer-header lightgray">Data Center</div>
+    <a href="http://datacenter.ittoolbox.com/" class="footer-link">Data Center</a>
+ <div class="spacer"></div>
+ <div class="footer-header lightgray">Development</div>
+    <a href="http://c.ittoolbox.com/" class="footer-link">C Languages</a>
+    <a href="http://java.ittoolbox.com/" class="footer-link">Java</a>
+    <a href="http://visualbasic.ittoolbox.com/" class="footer-link">Visual Basic</a>
+    <a href="http://webdesign.ittoolbox.com/" class="footer-link">Web Design &amp; Development</a>
+ <div class="spacer"></div>
+ <div class="footer-header lightgray">Enterprise Applications</div>
+    <a href="http://crm.ittoolbox.com/" class="footer-link">CRM</a>
+    <a href="http://erp.ittoolbox.com/" class="footer-link">ERP</a>
+    <a href="http://peoplesoft.ittoolbox.com/" class="footer-link">PeopleSoft</a>
+    <a href="http://sap.ittoolbox.com/" class="footer-link">SAP</a>
+    <a href="http://supplychain.ittoolbox.com/" class="footer-link">SCM</a>
+    <a href="http://siebel.ittoolbox.com/" class="footer-link">Siebel</a>
+ </div>
+ <div class="footer-topicsbox">
+ <div class="footer-header lightgray">Enterprise Architecture &amp; EAI</div>
+    <a href="http://eai.ittoolbox.com/" class="footer-link">Enterprise Architecture & EAI</a>
+ <div class="spacer"></div>
+ <div class="footer-header lightgray"> Information Management</div>
+    <a href="http://businessintelligence.ittoolbox.com/" class="footer-link">Business Intelligence</a>
+    <a href="http://database.ittoolbox.com/" class="footer-link">Database</a>
+    <a href="http://datawarehouse.ittoolbox.com/" class="footer-link">Data Warehouse</a>
+    <a href="http://knowledgemanagement.ittoolbox.com/" class="footer-link">Knowledge Management</a>
+    <a href="http://oracle.ittoolbox.com/" class="footer-link">Oracle</a>
+ <div class="spacer"></div>
+ <div class="footer-header lightgray">IT Management &amp; Strategy</div>
+    <a href="http://emergingtech.ittoolbox.com/" class="footer-link">Emerging Technology &amp; Trends</a>
+    <a href="http://cio.ittoolbox.com/" class="footer-link">IT Management &amp; Strategy</a>
+    <a href="http://projectmanagement.ittoolbox.com/" class="footer-link">Project &amp; Portfolio Management</a>
+
+ <div class="spacer"></div>
+ <div class="footer-header lightgray">Cloud Computing</div>
+    <a href="http://cloud.ittoolbox.com/" class="footer-link">Cloud Computing</a>
+ </div>
+
+ <div class="footer-topicsbox">
+ <div class="footer-header lightgray">Networking &amp; Infrastructure</div>
+    <a href="http://hardware.ittoolbox.com/" class="footer-link">Hardware</a>
+    <a href="http://networking.ittoolbox.com/" class="footer-link">Networking</a>
+    <a href="http://telephony.ittoolbox.com/" class="footer-link">Communications Technology</a>
+ <div class="spacer"></div>
+ <div class="footer-header lightgray">Operating Systems</div>
+    <a href="http://linux.ittoolbox.com/" class="footer-link">Linux</a>
+    <a href="http://unix.ittoolbox.com/" class="footer-link">UNIX</a>
+    <a href="http://windows.ittoolbox.com/" class="footer-link">Windows</a>
+ <div class="spacer"></div>
+ <div class="footer-header lightgray">Security</div>
+    <a href="http://security.ittoolbox.com/" class="footer-link">Security</a>
+ <div class="spacer"></div>
+ <div class="footer-header lightgray">Storage</div>
+    <a href="http://storage.ittoolbox.com/" class="footer-link">Storage</a>
+ </div>
+ </div>    
+
+
+</div>
+
+  
+<div class="footer-colsmall">
+<div class="footer-header gray spacer-small">Toolbox.com</div>
+<a href="http://www.toolbox.com/about/" class="footer-link-gray">About</a>
+<a href="http://www.toolbox.com/news/" class="footer-link-gray">News</a>
+<a href="http://www.toolbox.com/PrivacyPolicy.aspx" class="footer-link-gray">Privacy</a>
+<a href="http://www.ziffdavis.com/terms-of-use" class="footer-link-gray">Terms of Use</a>
+<a href="http://www.toolbox.com/careers/" class="footer-link-gray">Work at Toolbox.com</a>
+<a href="http://www.toolbox.com/it/advertising/" class="footer-link-gray">Advertise</a>
+<a href="http://www.toolbox.com/contact/" class="footer-link-gray">Contact us</a>
+<a href="http://www.toolbox.com/Feedback.aspx" class="footer-link-gray">Provide Feedback</a>
+
+<br />
+<a href="http://www.toolbox.com/help" class="footer-link-gray">Help Topics</a>
+<a href="http://www.toolbox.com/Feedback.aspx" class="footer-link-gray">Technical Support</a>
+<div class="gray" style="padding: 0px 0px 0px 12px;">PCMag Digital Group</div>
+    <!--
+  Evidon tag
+  cid: 660
+  pid: 8
+-->
+<script type="text/javascript" language="javascript">
+
+    document.write("<a id=\"_bapw-link\" class=\"SiteFooterNavItem\" style=\"cursor:pointer !important; display:none;\"><img id=\"_bapw-icon\" style=\"display:inline !important;border:0px!important;outline:0px!important;vertical-align:middle !important\"\/> <span style=\"vertical-align:middle !important\">AdChoices<\/span><\/a>");
+
+    document.write("<a id=\"_bapw-link\" href=\"#\" target=\"_blank\" style=\"text-decoration:none !important; display:none;\"><span style=\"vertical-align:middle !important\">Cookie Consent<\/span><\/a>");
+
+    //Call out to Akamai and lookup the country
+    var NOTICE_ID;
+    var callback = { 'done': false };
+
+    var s = document.createElement('script');
+    s.type = 'text/javascript';
+    s.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'c.betrad.com/geo/c.js';
+    s.async = false;
+
+    s.onreadystatechange = s.onload = function () {
+
+        var state = s.readyState;
+
+        if (!callback.done && (!state || /loaded|complete/.test(state))) {
+            callback.done = true;
+            if (window._bap_p_country === 'at') {
+                NOTICE_ID = showImplied(2757);
+            } else if (window._bap_p_country === 'be') {
+                NOTICE_ID = showImplied(2758);
+            } else if (window._bap_p_country === 'bg') {
+                NOTICE_ID = showImplied(2759);
+            } else if (window._bap_p_country === 'ca') {
+                NOTICE_ID = showInPage(2718);
+            } else if (window._bap_p_country === 'ch') {
+                NOTICE_ID = showImplied(2792);
+            } else if (window._bap_p_country === 'cz') {
+                NOTICE_ID = showImplied(2760);
+            } else if (window._bap_p_country === 'de') {
+                NOTICE_ID = showImplied(2764);
+            } else if (window._bap_p_country === 'ee') {
+                NOTICE_ID = showImplied(2761);
+            } else if (window._bap_p_country === 'es') {
+                NOTICE_ID = showImplied(2790);
+            } else if (window._bap_p_country === 'fi') {
+                NOTICE_ID = showImplied(2762);
+            } else if (window._bap_p_country === 'fr') {
+                NOTICE_ID = showImplied(2763);
+            } else if (window._bap_p_country === 'gb') {
+                NOTICE_ID = showImplied(2753);
+            } else if (window._bap_p_country === 'gr') {
+                NOTICE_ID = showImplied(2765);
+            } else if (window._bap_p_country === 'hu') {
+                NOTICE_ID = showImplied(2766);
+            } else if (window._bap_p_country === 'ie') {
+                NOTICE_ID = showImplied(2767);
+            } else if (window._bap_p_country === 'it') {
+                NOTICE_ID = showImplied(2778);
+            } else if (window._bap_p_country === 'lt') {
+                NOTICE_ID = showImplied(2780);
+            } else if (window._bap_p_country === 'lu') {
+                NOTICE_ID = showImplied(2781);
+            } else if (window._bap_p_country === 'lv') {
+                NOTICE_ID = showImplied(2779);
+            } else if (window._bap_p_country === 'nl') {
+                NOTICE_ID = showImplied(2782);
+            } else if (window._bap_p_country === 'no') {
+                NOTICE_ID = showImplied(2783);
+            } else if (window._bap_p_country === 'pl') {
+                NOTICE_ID = showImplied(2785);
+            } else if (window._bap_p_country === 'pt') {
+                NOTICE_ID = showImplied(2786);
+            } else if (window._bap_p_country === 'ro') {
+                NOTICE_ID = showImplied(2787);
+            } else if (window._bap_p_country === 'se') {
+                NOTICE_ID = showImplied(2791);
+            } else if (window._bap_p_country === 'si') {
+                NOTICE_ID = showImplied(2789);
+            } else if (window._bap_p_country === 'sk') {
+                NOTICE_ID = showImplied(2788);
+            } else if (window._bap_p_country === 'us') {
+                NOTICE_ID = showInPage(2752);
+            } else {
+                NOTICE_ID = showInPage(2752);
+            }
+        }
+    };
+
+    // use body if available. more safe in IE
+    (document.body || head).appendChild(s);
+
+
+    function showInPage(NOTICE_ID) {
+        document.getElementById("_bapw-link").style.display = 'inline';
+        (function () {
+            var e = document, b, a = (e.location.protocol == "https:" ? "https" : "http"), c = (a == "https" ? "https://info.evidon.com/c/betrad/pub/" : "http://cdn.betrad.com/pub/");
+            e.getElementById("_bapw-icon").src = c + "icon1.png";
+            e.getElementById("_bapw-link").onclick = function () {
+                var f = this;
+                function d(i, l) {
+                    var j = e.getElementsByTagName("head")[0] || e.documentElement, h = false, g = e.createElement("script");
+                    function k() {
+                        g.onload = g.onreadystatechange = null;
+                        j.removeChild(g);
+                        l()
+                    }
+                    g.src = i;
+                    g.onreadystatechange = function () {
+                        if (!h && (this.readyState == "loaded" || this.readyState == "complete")) {
+                            h = true;
+                            k()
+                        }
+                    };
+                    g.onload = k;
+                    j.insertBefore(g, j.firstChild)
+                }
+                this.onclick = "return false";
+                d(a + "://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js", function () {
+                    d(c + "pub1.js", function () {
+                        BAPW.i(f, { pid: NOTICE_ID, ocid: 660 }, false)
+                    })
+                });
+                return false
+            };
+            b = e.createElement("img");
+            b.src = a + "://l.betrad.com/pub/p.gif?pid=" + NOTICE_ID + "&ocid=660&ii=1&r=" + Math.random();
+            b.height = "1";
+            b.width = "1";
+            e.body.appendChild(b);
+        })();
+    }
+
+
+    function showImplied(NOTICE_ID) {
+        document.getElementById("_bapw-link").style.display = 'inline';
+        (function () {
+            var ev = document.createElement('script');
+            ev.type = 'text/javascript';
+            ev.async = true;
+            ev.setAttribute('data-ev-tag-pid', NOTICE_ID);
+            ev.setAttribute('data-ev-tag-ocid', 660);
+            ev.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'c.betrad.com/pub/tag.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(ev, s);
+        })();
+
+        (function () {
+            var hn = document.createElement('script');
+            hn.type = 'text/javascript';
+            hn.async = true;
+            hn.setAttribute('data-ev-hover-pid', NOTICE_ID);
+            hn.setAttribute('data-ev-hover-ocid', 660);
+            hn.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'c.betrad.com/geo/h1.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(hn, s);
+        })();
+    }
+
+
+</script> 
+<br />
+<br />
+<div>
+			
+ <div class="footer-header gray spacer-small">Other Communities</div>
+ 
+ <span>
+    <a href="http://hr.toolbox.com" class="footer-link-gray">Toolbox for HR</a> 
+ </span>
+ <span>
+    <a href="http://finance.toolbox.com" class="footer-link-gray">Toolbox for Finance</a> 
+ </span>
+
+		</div>
+
+</div>
+ 
+	</div>                
+ </div>
+ 
+ 
+<div style="clear:both"></div>
+<div id="footer-disclaimer">
+    Copyright 1998-2014 Ziff Davis, LLC (Toolbox.com). All rights reserved. All product names are trademarks of their respective companies.  Toolbox.com is not<br />
+    affiliated with or endorsed by any company listed at this site.
+</div>
+<br /><br />
+</div>
+</div>
+
+</div>
+
+
+</X-BBSKIP>
+
+
+
+
+<div>
+
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEWCgLIruDfCgKT367jDgKoi5rbAwL1voqYDgKDvdJZAsnB+uMIAuOy/50GArPXyMkGAoz+4bgLAtqM2IoFtiQVAcqF3uwh4FhrC4Q9p/EloNo=" />
+</div><input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKLTk2NzU1OTQyOGQYAgUeX19Db250cm9sc1JlcXVpcmVQb3N0QmFja0tleV9fFgMFIGN0bDAwJG0kbSRpJG8kciRzJGNoa1doaXRlUGFwZXJzBR9jdGwwMCRtJG0kaSRvJHIkcyRjaGtOZXdzbGV0dGVyBRljdGwwMCRtJG0kaSRvJHIkcyRjaGtKb2JzBSpjdGwwMCRtJHIkciRjSm9pbkNUQSRzY0pvaW5Ob3ckbXR2Sm9pblZpZXcPD2RmZJse7BCnJ5LJMnfhKCS96FWdU8SH" /></form>
+
+
+<script src="http://cdn.toolbox.com/BUILD_2872/js/toolbox.common.js" language="javascript" type="text/javascript"></script> 
+<script type="text/javascript">
+    InitCodeHighlighting('http://cdn.toolbox.com/BUILD_2872/', 'http://it.toolbox.com/');
+</script>
+
+<!-- popunder window -->
+
+<script type="text/javascript">
+    var popundercookie = getCookie("PopunderState");
+    if (popundercookie == "pagetwo") {
+        //Added Condition to check Popular-research page calling Master page - TND-5006
+        if (window.location.href.indexOf("api/popular-research") < 0) {
+            popunder = window.open("/api/popular-research/", "", "height=600, scrollbars=yes, width=970");
+            popunder.blur();
+            window.focus();
+        }
+    } 
+</script>
+
+<!-- begin zdbb -->
+<script type="text/javascript" src="http://cdn.static.zdtag.com/js/9nCgMGobEeGubBIxORg8RQ.js">
+</script>
+<!-- end zdbb -->
+<script language='JavaScript1.1' src='http://pixel.mathtag.com/event/js?mt_id=129816&mt_adid=102987'></script>
+
+<script>$.get('/api/t/2/rt/?u=http%3a%2f%2fvisualbasic.ittoolbox.com%2fgroups%2ftechnical-functional%2fvb-vba-l%2f&r=' + escape(document.referrer));</script>
+
+<!-- Start of Content Template Javascript include -->
+<!-- Start LinkSmart -->
+<script type="text/javascript">
+            // <![CDATA[
+                var _mb_site_guid =
+ "dbedee453f5c0a0873ebad72c5676a482568b3f1b4c6b497c614e97a3719a33e";
+                (function (d, t) {
+                    var mb = d.createElement(t), s = d.getElementsByTagName(t)[0];
+                    mb.async = mb.src = '//cdn.linksmart.com/linksmart_2.3.0.min.js';
+                    s.parentNode.insertBefore(mb, s);
+                } (document, 'script'));
+            // ]]>
+            </script>
+<!-- End LinkSmart -->
+
+<!-- Begin comScore Tag -->
+<script>
+var _comscore = _comscore || [];
+_comscore.push(
+{ c1: "2", c2: "6036202" }
+);
+(function ()
+{ var s = document.createElement("script"), el = document.getElementsByTagName("script")[0]; s.async = true; s.src = (document.location.protocol == "https:" ? "https://sb" : "http://b") + ".scorecardresearch.com/beacon.js"; el.parentNode.insertBefore(s, el); }
+)();
+</script>
+<noscript>
+<img src="http://b.scorecardresearch.com/p?c1=2&c2=6036202&cv=2.0&cj=1" />
+</noscript>
+<!-- End comScore Tag -->
+
+<!-- START Nielsen Online SiteCensus V6.0 -->
+<!-- COPYRIGHT 2012 Nielsen Online -->
+<script type="text/javascript">
+(function () {
+var d = new Image(1, 1);
+d.onerror = d.onload = function ()
+{ d.onerror = d.onload = null; };
+d.src = ["//secure-us.imrworldwide.com/cgi-bin/m?ci=us-806031h&cg=0&cc=1&si=", escape(window.location.href), "&rp=", escape(document.referrer), "&ts=compact&rnd=", (new Date()).getTime()].join('');
+})();
+</script>
+<noscript>
+<div>
+<img src="//secure-us.imrworldwide.com/cgi-bin/m?ci=us-806031h&cg=0&cc=1&ts=noscript"
+width="1" height="1" alt="" />
+</div>
+</noscript>
+<!-- END Nielsen Online SiteCensus V6.0 -->
+<!-- End of Content Template Javascript include -->
+</body>
+</html>
+

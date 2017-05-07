@@ -1,0 +1,129 @@
+﻿.texto {
+	font-family: Verdana;
+	font-size: 12px;
+	color: black;
+	white-space: normal;
+}
+
+img {
+   border:1px solid #021a40;
+    width: 1000px;
+    height: 80px;
+}
+
+.forcor0 {
+	font-family: Verdana;
+	font-size: 12px;
+	font-weight: bold;
+	color: black;
+}
+
+.forcor1 {
+	font-family: Verdana;
+	font-size: 12px;
+	font-weight: bold;
+	color: blue;
+}
+
+.forcor2 {
+	font-family: Verdana;
+	font-size: 12px;
+	font-weight: bold;
+	color: green;
+}
+
+.forcor3 {
+	font-family: Verdana;
+	font-size: 12px;
+	font-weight: bold;
+	color: fuchsia;
+}
+
+.forcor4 {
+	font-family: Verdana;
+	font-size: 12px;
+	font-weight: bold;
+	color: Olive;
+}
+
+.forvalor {
+	font-family: Verdana;
+	font-size: 12px;
+	font-weight: normal;
+	color: Red;
+}
+
+.titulo {
+    font-family: Verdana;
+	font-weight: bold;
+	font-size: 18px;
+	color: Maroon;
+}
+
+.subtitulo {
+    font-family: Verdana;
+	font-size: 15px;
+	color: Maroon;
+}
+
+em {
+	font-family: Verdana;
+	text-decoration: none;
+    font-style: italic;
+	color: Green;
+}
+
+a {
+	font-family:Verdana;
+	text-decoration: none;
+	font-weight: bold;
+	color: navy;
+}
+
+a:link {
+}
+
+a:visited {
+}
+
+a:hover {
+}
+
+a:active {
+}
+
+.csharpcode, .csharpcode pre
+{
+	font-size: small;
+	color: black;
+	font-family: Consolas, "Courier New", Courier, Monospace;
+	background-color: #ffffff;
+	/*white-space: pre;*/
+}
+
+.csharpcode pre { margin: 0em; }
+
+.csharpcode .rem { color: #008000; }
+
+.csharpcode .kwrd { color: #0000ff; }
+
+.csharpcode .str { color: #006080; }
+
+.csharpcode .op { color: #0000c0; }
+
+.csharpcode .preproc { color: #cc6633; }
+
+.csharpcode .asp { background-color: #ffff00; }
+
+.csharpcode .html { color: #800000; }
+
+.csharpcode .attr { color: #ff0000; }
+
+.csharpcode .alt 
+{
+	background-color: #f4f4f4;
+	width: 100%;
+	margin: 0em;
+}
+
+.csharpcode .lnum { color: #606060; }
